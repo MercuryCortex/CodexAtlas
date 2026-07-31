@@ -70,16 +70,63 @@
   const FAN_BRAID_U    =  0.30;  // braid amplitude (in P, flat)
   const FAN_COMP       =  0.78;  // braided angular-pitch compression
   const FAN_DY         =  0.34;  // fan origin sits at cy + Rh * this
-  const RAIL_X         =  0.885; // rails at ± Rh * RAIL_X
-  const RAIL_Y_SPAN    =  0.60;  // rails run cy ± Rh * RAIL_Y_SPAN
-  // THE RAILS GET REAL MASS (2026-07-31) — a rail item is a real
-  // engine instance now, so it needs a RADIUS like every other member.
-  // The glyph rides the rail PITCH exactly as a god's disk rides P:
-  // a 24-spine Scriptorium reads fat, a 150-slot Court reads slim, and
-  // 2·r ≤ pitch at both ends of the clamp so slots can never touch.
+  // ── THE INNER BAND (2026-07-31 wave 3) — John's ring design ──
+  // His words: "Families nodes stay outside as they are in their own
+  // 'imaginary circle band' --- then we display the court ALSO in a
+  // circular band fashion, one level inner inside the main families
+  // … with a slightly bigger size than the current which is almost
+  // atomic size. --- then naturally inside these 2 bands we got the
+  // amazing diagrams fan and cascade as we have."
+  //
+  // DECISION — ONE ring, SECTIONED BY ARC: the Scriptorium owns the
+  // LEFT half-arc, the Court the RIGHT. Argued: (1) it keeps the
+  // left/right mental model the vertical rails taught (docs left,
+  // court right) so nothing John learned moves; (2) the
+  // rails.<side> contract (count / shown / overflow / parkedIds,
+  // shelf count / shown) is consumed by the chrome, the debug
+  // surfaces and both gates — arc sectioning changes only WHERE
+  // things stand, never what is claimed; (3) the ring keeps a GAP at
+  // 12 and 6 o'clock, so the crown's text column and the cascade's
+  // foot stay clear, and the two arc ENDS give the headers and the
+  // overflow line anchors that provably clear the 15px claim rule.
+  //
+  // GLYPHS READ AS OBJECTS (his "almost atomic size" complaint —
+  // measured 1.2-2.7 CSS px radius at the isolate fit): the band has
+  // THICKNESS. Items fill nSub concentric sub-rows (auto-solved
+  // 1..bandRows) with a half-pitch stagger, so the pitch — and the
+  // glyph radius that rides it — multiplies by the sub-row count
+  // instead of splitting one arc into 150 atomic slots.
+  const BAND_R_FRAC    =  0.86;  // band centreline radius (× Rh)
+  const BAND_GAP_DEG   =  24;    // arc gap at 12 & 6 o'clock (deg, each side of the axis)
+  const BAND_ROWS_MAX  =  3;     // sub-row cap (auto-solves 1..this)
+  const BAND_TREE_R    =  0.86;  // cascade/fan zone radius (× Rh) while the band stands.
+                                 // Same as the band centreline on purpose: the cascade's
+                                 // own chord (0.74) and circle-fit (0.86) laws keep the
+                                 // beds ~15% off their zone's rim, so the measured bed
+                                 // extent stays inside the band's INNER edge (asserted
+                                 // per family in check-familytree.mjs) while the gods
+                                 // keep ~95% of their pre-ring size.
+  // Band-case cascade span (fractions of the TREE radius, not Rh):
+  // wider than the open-house span because the band's 12/6 o'clock
+  // gaps free the vertical axis — this claws back most of the god
+  // size the smaller tree radius would otherwise cost.
+  const BAND_TREE_TOP  = -0.64;
+  const BAND_TREE_BOT  =  0.92;
+  const BAND_PITCH_TGT =  9;     // add a sub-row until the pitch reaches this (wu)
+  const BAND_PITCH_MAX =  30;    // a tiny court is centred, not smeared over the arc
+  const BAND_SHELF_GAP =  20;    // arc air between shelves (wu) — must beat 2·RAIL_R_MAX
+                                 // or two max-size glyphs touch across a shelf boundary
+  const BAND_END_PAD   =  26;    // arc reserved at each end (header/foot air)
+  const BAND_SUB_DR    =  0.90;  // sub-row radial spacing (× pitch)
+  const BAND_CAP_CLEAR =  26;    // caption clearance off the band's outer edge (wu):
+                                 // ≥ 17 screen px at the smallest gate viewport, which
+                                 // beats sqrt(7² + 15²) — the exact radius at which NO
+                                 // bearing can fail both halves of the claim() test
+  const BAND_CAP_TIER  =  22;    // alternating caption radial tier (wu) so two short
+                                 // neighbouring shelves can never claim() each other off
   const RAIL_R_FRAC    =  0.40;  // glyph radius = pitch * this
-  const RAIL_R_MIN     =  1.6;   // (pitch floor 3.8 ⇒ 2·1.6 < 3.8)
-  const RAIL_R_MAX     =  3.6;   // (pitch ceil  9.0 ⇒ 2·3.6 < 9.0)
+  const RAIL_R_MAX     =  9;     // hard ceiling (wu); the 0.49·minDist law below is
+                                 // what actually guarantees glyphs can never touch
   // DISPLAY cap per rail. 'Other' holds 2,336 non-deity members; a
   // 2,336-slot column is neither drawable nor readable. Capping is a
   // display decision, never a claim: `count` stays the family's TRUE
@@ -136,8 +183,20 @@
   //               lie — rails.<side>.count stays the family's true
   //               mass, and shelf.shown vs shelf.count says which
   //               shelves are showing a head)
-  //   railGlyph:  number  default 0.40   rail glyph radius as a fraction
-  //               of the solved rail pitch, clamped to [1.6, 3.6] wu
+  //   railGlyph:  number  default 0.40   band glyph radius as a fraction
+  //               of the solved band pitch (hard-capped by the
+  //               0.49·minDist no-touch law and RAIL_R_MAX)
+  //   ── the three zones (2026-07-31 wave 3, all × Rh unless noted) ──
+  //   portInset:  number  default 1.0    horizon ports ring radius
+  //   bandR:      number  default 0.86   inner band centreline radius
+  //   bandGap:    number  default 24     band arc gap at 12 & 6 o'clock (DEGREES)
+  //   bandRows:   number  default 3     max concentric sub-rows for the band
+  //   treeR:      number  default 0.80   cascade/fan zone radius while the
+  //               band stands. HONEST ZERO: when the house holds no
+  //               docs and no court (rails off, deity-only family,
+  //               degrade branch) there is no band and the tree uses
+  //               the FULL house exactly as before this pass —
+  //               byte-identical output.
   // }
   function familyTreeLayout(nodes, opts) {
     const o = opts || {};
@@ -185,6 +244,19 @@
     // Degrade gracefully: a family with no tree-kind members in this
     // mode still opens — everything becomes the cascade.
     if (!tree.length) { tree = members.slice(); docs = []; court = []; }
+    // THE THREE ZONES (2026-07-31 wave 3) — outside in: the horizon
+    // ports (portR), the inner band (the family's own non-deity mass,
+    // §7), and the tree zone (Rt) holding the cascade/fan. The band
+    // exists only when there is mass to put on it; with no band the
+    // tree keeps the FULL house radius — byte-identical to the
+    // pre-ring output (honest zero: rails off ⇒ the 07-30 house).
+    const hasBand = (docs.length + court.length) > 0;
+    const Rt = hasBand
+      ? Rh * Math.max(0.35, Math.min(1, num(o.treeR, BAND_TREE_R)))
+      : Rh;
+    const treeTop = hasBand ? BAND_TREE_TOP : CASCADE_TOP;
+    const treeBot = hasBand ? BAND_TREE_BOT : CASCADE_BOTTOM;
+    const portR = Rh * Math.max(0.7, Math.min(1.25, num(o.portInset, 1)));
     // CANONICAL HONESTY (2026-07-31 wave 2, CR-1 / crown-noun-*) — the
     // CROWN counts this `tree` array, so the crown's NOUN has to name
     // what is in it. Only this file knows: treeKindOf routes by vault
@@ -581,17 +653,20 @@
       let totalU = 0, maxWU = 0, nB = 0;
       for (const b of beds) { if (!b) continue; totalU += b.bedU; maxWU = Math.max(maxWU, b.wU); nB++; }
       totalU += BED_GAP * Math.max(0, nB - 1);
-      const usable = Rh * (CASCADE_BOTTOM - CASCADE_TOP);
+      // 2026-07-31 wave 3 — the cascade solves against the TREE ZONE
+      // radius Rt (the innermost of the three zones), not Rh. With no
+      // band Rt === Rh and every number below is the pre-ring value.
+      const usable = Rt * (treeBot - treeTop);
       // P fills the vertical band OR the chord, capped; the spread
       // dial stretches but the vertical band ALWAYS re-clamps —
       // otherwise the bottom bed slides to the rim, its chord goes
       // to zero and the overflow guard nukes P (the toy's Greek bug).
-      P = Math.min(usable / Math.max(1, totalU), (2 * Rh * CASCADE_CHORD) / Math.max(1, maxWU), Rh * 0.16);
+      P = Math.min(usable / Math.max(1, totalU), (2 * Rt * CASCADE_CHORD) / Math.max(1, maxWU), Rt * 0.16);
       P = Math.min(P * spread, usable / Math.max(1, totalU));
       for (let attempt = 0; attempt < 2; attempt++) {
         const contentH = totalU * P;
-        let y = Math.max(cy + Rh * CASCADE_TOP,
-          Math.min(cy + Rh * CASCADE_BIAS - contentH / 2, cy + Rh * CASCADE_BOTTOM - contentH));
+        let y = Math.max(cy + Rt * treeTop,
+          Math.min(cy + Rt * CASCADE_BIAS - contentH / 2, cy + Rt * treeBot - contentH));
         let shrink = 1;
         rowMeta = [];
         let firstBandTop = null;
@@ -604,7 +679,7 @@
           }
           const bandY = y + (b.bedU * P) / 2;
           const dy = bandY - cy;
-          const half = Math.sqrt(Math.max(Rh * Rh * 0.0144, Rh * Rh - dy * dy));
+          const half = Math.sqrt(Math.max(Rt * Rt * 0.0144, Rt * Rt - dy * dy));
           const fitR = (half * 2 * 0.86) / Math.max(1e-6, b.wU * P);
           if (fitR < 1) shrink = Math.min(shrink, fitR);
           if (firstBandTop == null) firstBandTop = y;
@@ -624,7 +699,7 @@
         if (shrink >= 0.999 || attempt === 1) break;   // never shrink after the last placement
         P *= Math.max(0.5, shrink);   // deterministic second pass
       }
-      const topY = (rowMeta.find(m => m.y != null) || { y: cy + Rh * CASCADE_TOP }).y;
+      const topY = (rowMeta.find(m => m.y != null) || { y: cy + Rt * treeTop }).y;
       // CROWN CLEARANCE — the crown is not a point, it is a stack: the
       // family name, the arc/orphan line, the SCRIPTORIUM/COURT line,
       // and the CASCADE/FAN chips. That is four rows, ~68 screen px at
@@ -633,13 +708,22 @@
       // on top of the first rank's discs the moment the rails gave the
       // crown a second line. 132 clears the whole stack and still sits
       // inside the `cy - Rh * 0.84` ceiling below, which is untouched.
-      crown = { x: cx, y: Math.max(cy - Rh * 0.84, topY - Math.min(P * 1.9, 132)) };
+      // WAVE 3 — with the band standing, the crown stack is TALLER
+      // (the type scale lifted every chrome row from 17 to 21 screen
+      // px), and the tree zone is smaller, so the same P buys less
+      // world clearance. The band case therefore floors the gap at 96
+      // world units (~66 screen px at the isolate fit — three type
+      // rows plus the title) and lets big-P houses take up to 170.
+      // The no-band branch is byte-identical to the pre-ring formula.
+      crown = { x: cx, y: Math.max(cy - Rh * 0.84, topY - (hasBand
+        ? Math.max(96, Math.min(P * 2.2, 170))
+        : Math.min(P * 1.9, 132))) };
     } else {
       // FAN — the crown is the TRUNK: origin below center so the
       // crest of rings fills the house instead of hugging the rim.
       // Ring capacity in units is P-free (each member needs 1 unit
       // of arc → capacity = span×radU); overfull rings BRAID.
-      fanDy = Rh * FAN_DY;
+      fanDy = Rt * FAN_DY;   // wave 3: the fan lives in the tree zone
       const rings = rows.map(row => (row.length ? bedLayout(row, Infinity) : null));
       const radU = [], braidOn = [];
       let prevRad = 0;
@@ -655,8 +739,8 @@
         prevRad = radU[r];
       });
       const outerU = radU.length ? radU[radU.length - 1] + 0.6 : FAN_R_IN_U;
-      P = Math.min((Rh + fanDy * 0.82) / outerU, Rh * 0.15);
-      P = Math.min(P * spread, (Rh + fanDy * 0.92) / outerU);
+      P = Math.min((Rt + fanDy * 0.82) / outerU, Rt * 0.15);
+      P = Math.min(P * spread, (Rt + fanDy * 0.92) / outerU);
       for (let attempt = 0; attempt < 2; attempt++) {
         rowMeta = [];
         let worst = 1;
@@ -674,7 +758,7 @@
             const x = cx + Math.cos(ang) * rad;
             const y = cy + fanDy + Math.sin(ang) * rad;
             const dc = Math.sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy));
-            const lim = Rh * 0.94 - nodeR(sl.m);
+            const lim = Rt * 0.94 - nodeR(sl.m);
             if (dc > lim) worst = Math.min(worst, lim / Math.max(1e-6, dc));
             positions.set(tree[sl.m].id, { x, y });
             radii.set(tree[sl.m].id, nodeR(sl.m));
@@ -690,10 +774,12 @@
       crown = { x: cx, y: cy + fanDy };
     }
 
-    // ── 7. Court rails — SHELVES, not lists ─────────────────
-    // Scriptorium (docs) left, grouped into era shelves (gap-split,
-    // ≤5 + UNDATED); the court (everything else) right, grouped by
-    // vault type (top 4 kinds with ≥2 members + MORE).
+    // ── 7. THE INNER BAND — one ring, two arcs of SHELVES ───
+    // (wave 3; design argument at the BAND constants above.)
+    // Scriptorium (docs) on the LEFT arc, grouped into era shelves
+    // (gap-split, ≤5 + UNDATED); the court (everything else) on the
+    // RIGHT arc, grouped by vault type (top 4 kinds with ≥2 members
+    // + MORE). Both arcs leave the 12 and 6 o'clock gaps clear.
     const fmtDate = (d) => d == null ? 'UNDATED' : (d < 0 ? (-d) + ' BCE' : d + ' CE');
     const fmtRange = (a, b) => {
       if (a == null || b == null || a === b) return fmtDate(a == null ? b : a);
@@ -802,9 +888,17 @@
       }
       return take;
     }
+    // THE BAND BUILDER (2026-07-31 wave 3) — one side's arc of the
+    // inner ring. `side` keeps its old meaning (-1 Scriptorium /
+    // +1 Court) and everything the old vertical rail CLAIMED is
+    // preserved: count is the family's true mass, shown + overflow
+    // add up to it, every shelf reports shown vs count, the parked
+    // remainder goes to the crown at radius zero. Only the GEOMETRY
+    // changed: slots stand on nSub concentric sub-rows along the
+    // side's arc, captions anchor OUTBOARD of the band (between band
+    // and ports) on alternating radial tiers, and the header / foot
+    // anchor at the arc's two ends.
     function buildRail(groups, side) {
-      const x = cx + side * Rh * RAIL_X;
-      const yA = cy - Rh * RAIL_Y_SPAN, yB = cy + Rh * RAIL_Y_SPAN;
       let T = 0;
       for (const g of groups) T += g.items.length;
       if (!T) return null;
@@ -835,37 +929,106 @@
       }
       let S = 0;
       for (const g of shown) S += g.items.length;
-      const capH = 13, pad = 4, gap = 10, G = shown.length;
-      const fixed = G * (capH + pad) + Math.max(0, G - 1) * gap;
-      const pitch = Math.max(3.8, Math.min(9, (yB - yA - fixed) / Math.max(1, S - G)));
-      const total = fixed + (S - G) * pitch;
-      const glyphR = Math.max(RAIL_R_MIN, Math.min(RAIL_R_MAX, pitch * rFrac));
-      let y = Math.max(yA, cy - total / 2);
+      const G = shown.length;
+      // ── the arc ────────────────────────────────────────────
+      const bandR  = Rh * Math.max(0.5, Math.min(1.02, num(o.bandR, BAND_R_FRAC)));
+      const gapRad = Math.max(4, Math.min(60, num(o.bandGap, BAND_GAP_DEG))) * Math.PI / 180;
+      const rowsMax = Math.max(1, Math.min(4, Math.round(num(o.bandRows, BAND_ROWS_MAX))));
+      const span = Math.PI - 2 * gapRad;       // radians per side arc
+      const L = bandR * span;                  // arc budget (wu, centreline)
+      // arcU (wu along the centreline, 0 = TOP end) → world angle.
+      // Right side runs -90°+gap → +90°-gap through 0 (3 o'clock);
+      // left side mirrors through 180°. Screen y grows downward, so
+      // sin(-π/2) is the top of the ring.
+      const angAt = (u) => (side > 0)
+        ? (-Math.PI / 2 + gapRad + (u / L) * span)
+        : (-Math.PI / 2 - gapRad - (u / L) * span);
+      // Sub-rows: the FEWEST that reach a readable pitch (so a small
+      // court stays a single clean row and a 150-slot one thickens
+      // instead of atomising). The half-pitch stagger overhang of an
+      // odd sub-row is budgeted per shelf.
+      const fixed = 2 * BAND_END_PAD + Math.max(0, G - 1) * BAND_SHELF_GAP;
+      let nSub = 1, cols = [], pitch = 0;
+      for (;; nSub++) {
+        cols = shown.map(g => Math.ceil(g.items.length / nSub));
+        let steps = 0;
+        for (const c of cols) steps += Math.max(0, c - 1);
+        const raw = (L - fixed) / Math.max(1, steps + (nSub > 1 ? 0.5 * G : 0));
+        pitch = Math.max(0.4, Math.min(BAND_PITCH_MAX, raw));
+        if (nSub >= rowsMax || raw >= BAND_PITCH_TGT) break;
+      }
+      const dr = pitch * BAND_SUB_DR;
+      // The closest two slots can stand: arc neighbours on one sub-row
+      // are `pitch` apart ALONG THE CENTRELINE — but an inner sub-row
+      // rides a smaller circle, so its chord shrinks by rInner/bandR
+      // (measured: 4 sub-rows at a tight pitch overlapped by exactly
+      // that factor). Staggered diagonal neighbours are
+      // hypot(shrunk pitch/2, dr). Glyphs cap at 0.49 of the worst of
+      // these, so NO dial position can make two glyphs touch — the
+      // invariant the old clamp pair only held at its defaults.
+      const rInner = bandR - ((nSub - 1) / 2) * dr;
+      const shrink = Math.max(0.5, Math.min(1, rInner / bandR));
+      const minDist = Math.min(BAND_SHELF_GAP,
+        (nSub > 1) ? Math.min(pitch * shrink, Math.hypot((pitch / 2) * shrink, dr)) : pitch);
+      const glyphR = Math.min(RAIL_R_MAX, Math.max(0.8, pitch * rFrac), 0.49 * minDist);
+      const thick = (nSub - 1) * dr + 2 * glyphR;
+      // Centre the run in the arc (a tiny court reads as a held
+      // object at 3 / 9 o'clock, not a smear from crown to foot).
+      let run = Math.max(0, G - 1) * BAND_SHELF_GAP;
+      cols.forEach((c) => { run += Math.max(0, c - 1) * pitch + (nSub > 1 ? pitch / 2 : 0); });
+      let u = Math.max(BAND_END_PAD, (L - run) / 2);
+      const anchor = (uu, rad) => {
+        const a = angAt(Math.max(0, Math.min(L, uu)));
+        return { x: cx + Math.cos(a) * rad, y: cy + Math.sin(a) * rad,
+                 ux: Math.cos(a), uy: Math.sin(a), a };
+      };
       // `parkedIds` is the remainder's id list — the view needs it to
       // bake an honest external class for the wires that land on the
       // crown (wave 2, EDGE-2), and re-deriving it in the view would
       // be a second source of truth.
-      const rail = { x, side, count: T, shown: S, overflow: T - S, pitch, glyphR,
+      const rail = { side, count: T, shown: S, overflow: T - S, pitch, glyphR,
+                     nSub, dr, r: bandR, rIn: bandR - thick / 2, rOut: bandR + thick / 2,
+                     a0: angAt(0), a1: angAt(L), gapRad,
+                     head: anchor(0, bandR), foot: null,
                      parkedIds: parked, shelves: [] };
-      for (const g of shown) {
-        const shelf = {
-          label: g.label, count: g.count, shown: g.items.length,
-          capY: y + capH / 2, spineId: null, items: [],
-        };
-        y += capH + pad;
+      const capBase = bandR + thick / 2 + BAND_CAP_CLEAR;
+      const runStart = u;
+      shown.forEach((g, gi) => {
+        const shelf = { label: g.label, count: g.count, shown: g.items.length,
+                        spineId: null, items: [] };
         let bd = -1;
         g.items.forEach((n, k) => {
+          const col = Math.floor(k / nSub), sub = k % nSub;
+          const stag = (nSub > 1 && (sub % 2) === 1) ? pitch / 2 : 0;
+          const a = angAt(u + col * pitch + stag);
+          const rad = bandR + (sub - (nSub - 1) / 2) * dr;
+          const x = cx + Math.cos(a) * rad, y = cy + Math.sin(a) * rad;
           positions.set(n.id, { x, y });
           radii.set(n.id, glyphR);
-          shelf.items.push({ id: n.id, y });
+          shelf.items.push({ id: n.id, x, y, a });
           const d = degOf(n.id);
           if (d > bd) { bd = d; shelf.spineId = n.id; }
-          if (k < g.items.length - 1) y += pitch;
         });
-        shelf.y1 = y;
-        y += gap;
+        const uEnd = u + Math.max(0, cols[gi] - 1) * pitch + (nSub > 1 ? pitch / 2 : 0);
+        shelf.a0 = angAt(u);
+        shelf.a1 = angAt(uEnd);
+        // Caption anchor: the shelf's mid-bearing, OUTBOARD of the
+        // band. Alternating radial tiers keep two short neighbouring
+        // shelves' captions out of each other's 15px claim band even
+        // where the arc runs nearly horizontal (its top and bottom).
+        const capA = angAt((u + uEnd) / 2);
+        const capR = capBase + (gi % 2) * BAND_CAP_TIER;
+        shelf.capX = cx + Math.cos(capA) * capR;
+        shelf.capY = cy + Math.sin(capA) * capR;
+        shelf.ux = Math.cos(capA);
+        shelf.uy = Math.sin(capA);
+        shelf.capA = capA;
         rail.shelves.push(shelf);
-      }
+        u = uEnd + BAND_SHELF_GAP;
+      });
+      rail.foot = anchor(u - BAND_SHELF_GAP + BAND_END_PAD, bandR);
+      rail.runA0 = angAt(runStart);
+      rail.runA1 = angAt(Math.max(0, Math.min(L, u - BAND_SHELF_GAP)));
       return rail;
     }
     const rails = {
@@ -890,8 +1053,8 @@
       if (typeof ang !== 'number' || !isFinite(ang)) {
         ang = (strHash(g) % 6283) / 1000;   // deterministic fallback bearing
       }
-      const px = cx + Math.cos(ang) * Rh;
-      const py = cy + Math.sin(ang) * Rh;
+      const px = cx + Math.cos(ang) * portR;
+      const py = cy + Math.sin(ang) * portR;
       const cnt = num(weights[g], 0);
       const pr = cnt ? Math.max(5, Math.min(15, 3 + Math.log(cnt + 1) * 1.9)) : 2.5;
       for (const n of groupsSeen.get(g)) positions.set(n.id, { x: px, y: py });
@@ -952,6 +1115,13 @@
         groupKey, geometry, RK,
         center: { x: cx, y: cy },
         radius: Rh,
+        // THE THREE ZONES (wave 3) — what the view and the probes
+        // need to reason about the macro geometry without re-deriving
+        // it: the tree zone the cascade solved against, the port ring,
+        // and whether a band stands at all (rails carry its radii).
+        treeR: Rt,
+        portR,
+        hasBand,
         pitch: P,
         fanDy,
         crown,
