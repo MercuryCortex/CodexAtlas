@@ -430,7 +430,14 @@ checkUnion('Other', 'cascade', (r, h) => {
 // quietly measuring a fiction.
 const forgeSrc = readFileSync(join(root, 'src/js/views/forge.js'), 'utf8');
 const treeSrc  = readFileSync(join(root, 'src/js/engine/layout/familytree.js'), 'utf8');
-const LAB_SRC  = readFileSync(join(root, 'src/js/forge/lab-panel.js'), 'utf8');
+// 2026-07-31 — the house dials moved OUT of the Node Lab into their own
+// DEV door (John: "IN TH ENODE LAB?!?!?!?! ... is SUPER CLUTTED / I
+// ASKED TO DO ITS OWN CLEAN SIMPLE TO ACESS ONE OPANEL FOR HTIS"). The
+// house rows this harness pins live in house-panel.js now; the row
+// builders themselves live in the shared panel-kit.js. Live-mount
+// coverage of both is §D of check-house-interaction.mjs.
+const HOUSE_PANEL_SRC = readFileSync(join(root, 'src/js/forge/house-panel.js'), 'utf8');
+const PANEL_KIT_SRC   = readFileSync(join(root, 'src/js/forge/panel-kit.js'), 'utf8');
 const must = (re, what, src) => {
   if (re.test(src || forgeSrc)) ok('source still says: ' + what);
   else fail('SOURCE DRIFT — the code no longer says: ' + what);
@@ -1292,22 +1299,22 @@ must(/\/\/ AND NO AABB PASS OF ITS OWN/,
 must(/if \(rankTreeIds && !rankTreeIds\.has\(id\)\) continue;/,
   'the RANK pass names the cascade and nothing else (band mass + parked remainder keep the reach path)');
 // A CONTROL HE CANNOT FIND IS UNSHIPPED (the standing rule, breached
-// four times in three days). Both wave-4 dials must be in the LAB, in
-// a section that DECLARES itself open, and the open-state fallback
-// that makes a declared-open NEW section actually open for a returning
-// user must still be there — that fallback is the structural fix, and
-// without it this section ships invisible exactly like the last one.
+// four times in three days). Both wave-4 dials must be in the HOUSE
+// panel, in a section that DECLARES itself open, and the open-state
+// fallback that makes a declared-open NEW section actually open for a
+// returning user must still be there — that fallback is the structural
+// fix, and without it a section ships invisible exactly like the last
+// three did.
 {
-  const labSrc = readFileSync(join(root, 'src/js/forge/lab-panel.js'), 'utf8');
-  const sec = /\{ id: 'housenames', title: '([^']+)', open: true,/.exec(labSrc);
-  if (sec) ok('LAB has a section "' + sec[1] + '", declared OPEN');
-  else fail('the wave-4 dials have no open LAB section — the control is unfindable');
-  must(/\['house_name_max',\s+'House names'/, 'LAB row: House names (the ceiling)', labSrc);
-  must(/\{ k: 'radio',\s+key: 'house_title_slot' \}/, 'LAB row: Title corner', labSrc);
+  const sec = /\{ id: 'words', title: '([^']+)', open: true,/.exec(HOUSE_PANEL_SRC);
+  if (sec) ok('the HOUSE panel has a section "' + sec[1] + '", declared OPEN');
+  else fail('the wave-4 dials have no open section — the control is unfindable');
+  must(/\['house_name_max',\s+'House names'/, 'HOUSE row: House names (the ceiling)', HOUSE_PANEL_SRC);
+  must(/\{ k: 'radio',\s+key: 'house_title_slot' \}/, 'HOUSE row: Title corner', HOUSE_PANEL_SRC);
   must(/if \(!Object\.prototype\.hasOwnProperty\.call\(openState, sec\.id\)\) openState\[sec\.id\] = !!sec\.open;/,
-    'a NEW section falls back to its DECLARED open state for a returning user', labSrc);
+    'a NEW section falls back to its DECLARED open state for a returning user', PANEL_KIT_SRC);
   must(/else if \(mode === 'relabel' && api\.relabel\) api\.relabel\(\);/,
-    'the LAB routes a name dial through relabel(), not a redraw the idle-skip swallows', labSrc);
+    'the dial machine routes a name dial through relabel(), not a redraw the idle-skip swallows', PANEL_KIT_SRC);
   must(/relabel\(\) \{ try \{ syncLabels\(\); \}/,
     'forge.js exposes relabel() — the label SET is rebuilt, so the dial is not dead until the next pan');
   must(/local\._hullsIdleTitle === _hts/,
@@ -1644,10 +1651,12 @@ console.log('\n── W5-DATE · the rank gutter follows both distributions ─�
 must(/const capOff = \(typeof local\.params\.house_rank_cap_off === 'number'\)/,
   'the rank date\'s stand-off is a dial, not a baked 14px', forgeSrc);
 must(/house_rank_cap_off:\s*14,/, 'house_rank_cap_off ships at 14px');
-must(/\{ k: 'slider', key: 'house_rank_cap_off' \}/, 'LAB row: Date offset', LAB_SRC);
-must(/\{ k: 'radio',\s*key: 'house_pack' \}/, 'LAB row: Distribution', LAB_SRC);
-must(/id: 'housepack', title: 'Distribution \+ margins', open: true/,
-  'the Distribution + margins section opens by DEFAULT', LAB_SRC);
+must(/\{ k: 'slider', key: 'house_rank_cap_off' \}/, 'HOUSE row: Date offset', HOUSE_PANEL_SRC);
+must(/\{ k: 'radio',\s*key: 'house_pack' \}/, 'HOUSE row: Distribution', HOUSE_PANEL_SRC);
+must(/id: 'tree', title: 'The tree — the gods', open: true/,
+  'the tree section (where Distribution lives) opens by DEFAULT', HOUSE_PANEL_SRC);
+must(/id: 'gaps', title: 'The gaps between them', open: true/,
+  'the margins section opens by DEFAULT', HOUSE_PANEL_SRC);
 {
   let bad = 0, rows = 0;
   const NODE_BY_ID2 = new Map(NODES.map(n => [n.id, n]));

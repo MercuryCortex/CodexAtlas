@@ -15,9 +15,20 @@
 // there is no second list to keep in sync. Open/closed state is
 // remembered per section.
 //
-// The GROUND is NOT here. It graduated to the canonical VIEW panel
-// on 2026-07-29 (John: "these are not dev panel") — see
+// 2026-07-31 — THE HOUSE MOVED OUT. Four house sections had
+// accumulated here and John could not find the controls he asked
+// for by name: "IN TH ENODE LAB?!?!?!?! ... is SUPER CLUTTED".
+// Every house dial now lives behind its own DEV door —
+// src/js/forge/house-panel.js. This file is back to the eight
+// recipe sections it was built for and holds NO house residue.
+//
+// The GROUND is NOT here either. It graduated to the canonical
+// VIEW panel on 2026-07-29 (John: "these are not dev panel") — see
 // src/js/forge/view-settings.js + src/js/forge/ground.js.
+//
+// THE ROWS ARE NOT BUILT HERE. src/js/forge/panel-kit.js is the ONE
+// slider/toggle/radio machine in the tree; this file is a dial
+// TABLE plus a recipe string. The house panel drives the same kit.
 //
 // BOUNDARY CONTRACT:
 //   window._forgeLabPanel.attach({ local, api })
@@ -31,19 +42,17 @@
 // ============================================================
 (function () {
   function attach({ local, api }) {
-    // REVIEW P1 — the panel survives forge view remounts on
-    // document.body; the old early-return left it wired to a DEAD
-    // mount's params (dials inert, persisted recipe silently
-    // reverted). Rebuild against the fresh {local, api} instead.
-    const stale = document.getElementById('forge-lab-panel');
-    if (stale) stale.remove();
-    const staleCss = document.getElementById('forge-lab-panel-css');
-    if (staleCss) staleCss.remove();
+    if (!(window._forgePanelKit && typeof window._forgePanelKit.mount === 'function')) {
+      if (typeof console !== 'undefined' && console.warn) {
+        console.warn('[lab-panel] window._forgePanelKit not loaded — node lab inert.');
+      }
+      return;
+    }
 
     const SLIDERS = [
       // [param, label, min, max, step, unit, mode] — mode: 'redraw'
-      // (default), 'refocus' (state/palette rebuild), 'rebake'
-      // (node radii repack).
+      // (default), 'refocus' (state/palette rebuild), 'rebake' (node
+      // radii repack).
       ['recipe_hover_zoom',  'Hover zoom',   1,    2.2,  0.01, '×'],
       ['recipe_click_zoom',  'Click zoom',   1,    3,    0.01, '×'],
       ['recipe_bubble',      'Bubble',       1,    1.5,  0.01, '×'],
@@ -69,7 +78,8 @@
       // exposed nowhere; with only those two the band is FLAT below
       // ~1.5× fit and idle / boned / hot all clamp to one hairline.
       // Hot px is the width a fully-hot wire is guaranteed to reach;
-      // 0 restores the old flat clamp exactly.
+      // 0 restores the old flat clamp exactly. NOT house-only — these
+      // are every wire on the map, so they stay in the LAB.
       ['wire_min_screen_px', 'Wire min',     0.5,  3,    0.1,  'px', 'redraw'],
       ['wire_max_screen_px', 'Wire max',     1,    6,    0.1,  'px', 'redraw'],
       ['wire_hot_screen_px', 'Wire hot',     0,    6,    0.1,  'px', 'redraw'],
@@ -84,140 +94,6 @@
       ['film_floor',    'Film floor',   0,  1,  0.01, '',  'bg'],
       ['film_full_pct', 'Film full at', 5,  40, 1,    '%'],
       ['film_fade_pct', 'Film fades by',10, 80, 1,    '%'],
-      // THE HOUSE (2026-07-30) — the family-isolate tree. Spread is
-      // a scrub (snaps); the tween length applies to the next ramp.
-      // BONES: resting visibility of the house's own kinship wires
-      // (0 = the old invisible slate idle, 1 = full hover-hot).
-      ['house_spread',   'House spread', 0.85, 1.5, 0.01, '×', 'house'],
-      ['house_bones',    'House bones',  0,    1,   0.01, '',  'refocus'],
-      // THE BONE READS AS AN ARC (2026-07-31). Secondary = how loud a
-      // non-primary parent arc is against the spine (1 = the old flat
-      // lift). Sag = how far a bone bows off its own chord. Bone px =
-      // the primary arc's width floor on screen.
-      ['house_bone_secondary', 'Bone secondary', 0, 1,  0.01, '',  'refocus'],
-      ['house_arc_sag',  'Arc sag',      0,    0.5, 0.01, '',  'redraw'],
-      ['house_bone_px',  'Bone width',   0,    6,   0.1,  'px', 'redraw'],
-      ['house_veil',     'House veil',   0,    1,   0.01, ''],
-      ['house_tween_ms', 'House tween',  200,  800, 10,   'ms'],
-      // THE RAILS (2026-07-31) — the Scriptorium + the Court are real
-      // mass now, so their three numbers are dials, not baked constants.
-      // Cap = how many slots a rail may DISPLAY (the family's true count
-      // is what the header and the crown claim either way).
-      ['house_rail_cap',   'Rail cap',   20,   400, 10,   '',  'house'],
-      ['house_rail_glyph', 'Rail glyph', 0.2,  0.7, 0.02, '×', 'house'],
-      ['house_rail_hit',   'Rail hit',   0,    12,  0.5,  'wu', 'house'],
-      // WAVE 3 interaction laws — the sibling agent shipped both dials
-      // but could not add their rows (this file was mine that wave).
-      // Exit radius: how far out an empty click must land to leave the
-      // house, as a fraction of Rh. 0 restores the old
-      // click-anywhere-to-leave behaviour exactly.
-      ['house_exit_r',   'Exit radius', 0,    1.4, 0.02, '×', 'redraw'],
-      ['house_port_hit', 'Port hit',    0,    24,  1,    'px', 'redraw'],
-      // THE THREE ZONES (2026-07-31 wave 3) — John asked for this
-      // panel by name: "a panel just dedicated to the sizes macro of
-      // these three sections". Outside in: the horizon ports ring,
-      // the inner band (Scriptorium + Court on one arc-sectioned
-      // ring), and the tree zone the cascade/fan solves against.
-      // Plus the house chrome's type scale. All live on the standing
-      // house (they re-run the layout via houseSnap).
-      ['house_port_inset', 'Ports ring',  0.85, 1.15, 0.005, '×', 'house'],
-      ['house_band_r',     'Band radius', 0.60, 1.00, 0.005, '×', 'house'],
-      ['house_band_gap',   'Band gap top', 8,   45,   1,     '°', 'house'],
-      // WAVE 4 — the band writes on its own curve and uses the space
-      // it has. Gap low = the 6-o'clock opening (smaller = more arc,
-      // John's "push the limit of the rows on the bottom"); row pitch
-      // = how thick a crowded shelf grows (16 → Christian's docs run
-      // 3 sub-rows, 9 → the old thin band); header arc = the top-end
-      // reserve the curved SCRIPTORIUM/COURT titles ride; caption
-      // clear = air between the band's glyphs and its curved text.
-      ['house_band_gap_bot', 'Band gap low', 2, 45,   1,     '°', 'house'],
-      ['house_band_pitch', 'Band row pitch', 6, 30,   1,     'wu', 'house'],
-      ['house_band_head',  'Header arc',  80,   400,  10,    'wu', 'house'],
-      ['house_cap_clear',  'Caption clear', 0,  40,   1,     'wu', 'house'],
-      ['house_band_rows',  'Band rows',   1,    4,    1,     '',  'house'],
-      ['house_tree_r',     'Tree zone',   0.50, 1.00, 0.005, '×', 'house'],
-      ['house_type_scale', 'Type scale',  0.8,  1.6,  0.05,  '×', 'house'],
-      // THE GODS GET THEIR NAMES BACK (2026-07-31 wave 4). John: "the
-      // DEities nodes are the most important and NEVER appear, i need
-      // to OVER to see the names.... even at 100% scale!" MEASURED
-      // before the fix: 5 of Norse's 50 gods carried a name at camera
-      // scale 1.0 (3 at the isolate's own fit), with all 50 drawn at
-      // the identical radius. This is the CEILING on how many cascade
-      // members may be named at once — collision still decides who
-      // prints. 120 clears the biggest family in the vault (Vedic,
-      // 97); 0 is the honest zero (the pre-wave-4 zoom ladder alone).
-      ['house_name_max',   'House names', 0,    200,  5,     '',  'relabel'],
-      // ── THE DISTRIBUTION + THE MARGINS (2026-07-31 wave 5) ──────
-      // John: "and add on the dev panel the controls to adjust".
-      // Every number this wave touched is here, in a section that
-      // opens by default. THE FOUR MARGINS are guaranteed clearances
-      // in WORLD UNITS — drag one up and the band and the tree give
-      // ground live (the gate proves no pair ever comes inside them).
-      // Measured at these defaults BEFORE the wave: tree→band 4.0,
-      // caption→ports 9.6, sub-row 1.15, glyph 2.00.
-      ['house_m_tree',   'Gods → band',   0,   60, 1,   'wu', 'house'],
-      ['house_m_port',   'Band → ports',  0,   60, 1,   'wu', 'house'],
-      ['house_m_sub',    'Sub-row gap',   0,   20, 0.5, 'wu', 'house'],
-      ['house_m_glyph',  'Glyph gap',     0,   20, 0.5, 'wu', 'house'],
-      // THE THREE PITCH TERMS — what decides how big a god is. All
-      // three ship at design/family-tree.html's ratified values.
-      // Chord + fill widen the beds (past ~0.78 / 0.90 Greek's circle
-      // fit binds and its cascade leaves the house centre); Bed cap
-      // is the ceiling that binds on SMALL families — reach for it
-      // when a 12-god house looks under-scaled.
-      ['house_bed_chord', 'Bed chord',    0.60, 1.00, 0.01, '×', 'house'],
-      ['house_bed_fill',  'Bed fill',     0.60, 1.00, 0.01, '×', 'house'],
-      ['house_bed_cap',   'Bed cap',      0.08, 0.32, 0.005, '×', 'house'],
-      // The rank DATE's own stand-off from the cascade's left gutter
-      // (the fan crest rides the same dial at its 8/14 ratio).
-      ['house_rank_cap_off', 'Date offset', 0, 40, 1, 'px', 'redraw'],
-      // The wheel-state "CLICK A FAMILY TITLE — THE HOUSE" line. 0 =
-      // the wheel paints byte-identical to before the hint existed.
-      // (Agent C shipped the dial; its LAB row could not be added from
-      // that worktree because this file was sibling-owned.)
-      ['house_hint_line',  'Way-in hint', 0,   1,   1,    '',   'redraw'],
-    ];
-    // THE HOUSE — layout radios. GEOMETRY GRADUATED (2026-07-30):
-    // Cascade | Fan is a CANONICAL view control now — it lives in the
-    // VIEW panel ("House layout") and persists with the view
-    // settings, per John's toggles-change-the-view ruling. The LAB
-    // keeps only the tuning radios; flipping one while isolated
-    // TWEENS the house (api.houseMorph), never snaps.
-    // [param, caption, options, apiAfter] — apiAfter defaults to the
-    // house morph (a layout dial). REST WIRES is not a layout dial:
-    // it moves one uniform, so a plain redraw is the whole update.
-    const HOUSE_RADIOS = [
-      // WAVE 5 — WHICH PACKING LAW places the ranks. 'bed' is the
-      // app's shipped law (the default: John's "if its different keep
-      // it"), 'toy' is design/family-tree.html's — the ratified
-      // reference. In CASCADE the flip moves every god in every
-      // family (33-76 wu measured). In FAN the two laws only differ
-      // where a RANK IS EMPTY, which is 2 of 36 families under
-      // Ranks=lineage and 11 of 36 under Ranks=era: that is the only
-      // place the two files' fans actually disagree, and pretending
-      // otherwise would be a fake dial.
-      ['house_pack',       'Distribution', ['bed', 'toy']],
-      ['house_ranks',      'Ranks',      ['lineage', 'era']],
-      ['house_rank_caption', 'Rank caption', ['date', 'gen', 'off'], 'redraw'],
-      ['house_orphans',    'Unparented', ['domain', 'degree']],
-      // THE RAILS (2026-07-31) — 'off' is the honest zero: the house
-      // holds deities only, exactly as it did on 07-30.
-      ['house_rails',      'Rails',      ['on', 'off']],
-      // 2026-07-31 — the isolate drags ~4,400 wires between two OTHER
-      // families into the house (plus ~2,000 zero-length ones that
-      // draw as solid radial spikes off every port), covering half the
-      // tree's own pixels. 'off' is the shipped default: a wire
-      // between two families neither of which is this house says
-      // nothing about this house. Hover still lights a deity's own.
-      ['house_rest_wires', 'Rest wires', ['full', 'stubs', 'off'], 'redraw'],
-      // THE TITLE BLOCK IS A LOCKED SCREEN FIXTURE (2026-07-31 wave 4).
-      // John: "just find locked spots for these, the nodes should not
-      // be influenced by this title block." Which TOP corner it locks
-      // to. Default 'left' because the DEV / LAB drawer is pinned top
-      // right; 'right' is for when that drawer is closed. Never the
-      // bottom — the bottom bar owns that edge. Not a layout dial: the
-      // block no longer touches the layout at all, which is the point.
-      ['house_title_slot', 'Title corner', ['left', 'right'], 'relabel'],
     ];
     const TOGGLES = [
       ['recipe_irid',   'Iridescence'],
@@ -243,76 +119,10 @@
     // ── THE SECTIONS ────────────────────────────────────────────
     // One area of interest per section, in the order John reaches
     // for them. `open` is only the FIRST-RUN state — after that his
-    // own collapse choices win (persisted below). Every slider key
-    // must appear exactly once; anything not listed would silently
-    // never render, so the builder asserts on that at the end.
+    // own collapse choices win (the kit persists them). Every slider
+    // key must appear exactly once; anything not listed would
+    // silently never render, so the kit warns on that.
     const SECTIONS = [
-      // THE HOUSE SITS FIRST (2026-07-31). John, twice: he could not
-      // find the Cascade/Fan toggle, then could not find this panel
-      // at all — "theres no the house ..". Both existed and both were
-      // collapsed at the bottom of ten sections. The house is the
-      // surface under active work; it goes where his eye lands.
-      { id: 'house', title: 'The House — family isolate', open: true, items: [
-        { k: 'house' },
-        { k: 'slider', key: 'house_spread' },
-        { k: 'slider', key: 'house_bones' },
-        { k: 'slider', key: 'house_bone_secondary' },
-        { k: 'slider', key: 'house_arc_sag' },
-        { k: 'slider', key: 'house_bone_px' },
-        { k: 'slider', key: 'house_veil' },
-        { k: 'slider', key: 'house_tween_ms' },
-        { k: 'slider', key: 'house_rail_cap' },
-        { k: 'slider', key: 'house_rail_hit' },
-        { k: 'slider', key: 'house_exit_r' },
-        { k: 'slider', key: 'house_port_hit' },
-        { k: 'slider', key: 'house_hint_line' },
-      ] },
-      // THE SIZES PANEL (2026-07-31 wave 3) — John, by name: "it will
-      // be easier to dev this if you add also a panel just dedicated
-      // to the sizes macro of these three sections". The three
-      // concentric zones of the house (ports ring / inner band /
-      // tree zone), the band's glyph size, and the chrome type scale.
-      { id: 'housesizes', title: 'House sizes — the three zones', open: true, items: [
-        { k: 'slider', key: 'house_port_inset' },
-        { k: 'slider', key: 'house_band_r' },
-        { k: 'slider', key: 'house_band_gap' },
-        { k: 'slider', key: 'house_band_gap_bot' },
-        { k: 'slider', key: 'house_band_pitch' },
-        { k: 'slider', key: 'house_band_head' },
-        { k: 'slider', key: 'house_cap_clear' },
-        { k: 'slider', key: 'house_band_rows' },
-        { k: 'slider', key: 'house_rail_glyph' },
-        { k: 'slider', key: 'house_tree_r' },
-        { k: 'slider', key: 'house_type_scale' },
-      ] },
-      // THE NAMES + THE TITLE BLOCK (2026-07-31 wave 4) — his two
-      // loudest complaints of the round, side by side, in a section
-      // that opens by default (a control he cannot find is unshipped;
-      // that has now happened four times). "House names" is the
-      // ceiling on how many gods may be named at once; "Title corner"
-      // is which top corner the locked title block stands in.
-      { id: 'housenames', title: 'House names + title block', open: true, items: [
-        { k: 'slider', key: 'house_name_max' },
-        { k: 'radio',  key: 'house_title_slot' },
-      ] },
-      // THE DISTRIBUTION + THE MARGINS (2026-07-31 wave 5) — the
-      // three things John asked this round for, in one section that
-      // opens by default. It sits directly under The House because
-      // "a control you can't find is unshipped" has now cost four
-      // rounds, and because these are the dials he will be dragging
-      // while he judges the picture.
-      { id: 'housepack', title: 'Distribution + margins', open: true, items: [
-        { k: 'radio',  key: 'house_pack' },
-        { k: 'radio',  key: 'house_rank_caption' },
-        { k: 'slider', key: 'house_rank_cap_off' },
-        { k: 'slider', key: 'house_m_tree' },
-        { k: 'slider', key: 'house_m_port' },
-        { k: 'slider', key: 'house_m_sub' },
-        { k: 'slider', key: 'house_m_glyph' },
-        { k: 'slider', key: 'house_bed_chord' },
-        { k: 'slider', key: 'house_bed_fill' },
-        { k: 'slider', key: 'house_bed_cap' },
-      ] },
       { id: 'nodes', title: 'Nodes', open: true, items: [
         { k: 'slider', key: 'recipe_hover_zoom' },
         { k: 'slider', key: 'recipe_click_zoom' },
@@ -364,114 +174,9 @@
       ] },
     ];
 
-    const defaults = {};
-    for (const [k] of SLIDERS) defaults[k] = local.params[k];
-    for (const [k] of TOGGLES) defaults[k] = local.params[k];
-    for (const [k] of CASTS)   defaults[k] = local.params[k];
-    for (const [k] of VOICES)  defaults[k] = local.params[k];
-    for (const [k] of HOUSE_RADIOS) defaults[k] = local.params[k];
-    const ALL_KEYS = Object.keys(defaults);
-
-    // Persistence — John's dials must survive a reload (they reset
-    // from PARAM_DEFAULTS every mount otherwise). The recipe line
-    // stays the formal spec; this is just working memory.
-    const LS_KEY = 'forge.labRecipe.v1';
-    function persist() {
-      const o = {};
-      for (const k of ALL_KEYS) o[k] = local.params[k];
-      try { localStorage.setItem(LS_KEY, JSON.stringify(o)); } catch (_) { /* ignore */ }
-    }
-    let stored = null;
-    try { stored = JSON.parse(localStorage.getItem(LS_KEY) || 'null'); } catch (_) { /* ignore */ }
-    if (stored && typeof stored === 'object') {
-      for (const k of ALL_KEYS) if (k in stored) local.params[k] = stored[k];
-      // Applied after mount ⇒ radii/dress may be stale — refresh once.
-      if (local.mode) { api.refreshDress(); if (api.rebake) api.rebake(); }
-    }
-    // Which sections are open — remembered separately from the
-    // recipe, because it is workspace state, not a spec value.
-    const OPEN_KEY = 'forge.labPanel.open.v1';
-    let openState = null;
-    try { openState = JSON.parse(localStorage.getItem(OPEN_KEY) || 'null'); } catch (_) { /* ignore */ }
-    if (!openState || typeof openState !== 'object') openState = {};
-    // 2026-07-31 — a section added AFTER this key was first written had
-    // no entry here, and `undefined` is falsy, so every new section
-    // silently shipped COLLAPSED to anyone who had ever opened the LAB.
-    // That is exactly how the "House sizes" panel John asked for BY NAME
-    // arrived invisible to him. An id we have never stored falls back to
-    // its DECLARED default; one he has actually toggled keeps his choice.
-    for (const sec of SECTIONS) {
-      if (!Object.prototype.hasOwnProperty.call(openState, sec.id)) openState[sec.id] = !!sec.open;
-    }
-    function persistOpen() {
-      try { localStorage.setItem(OPEN_KEY, JSON.stringify(openState)); } catch (_) { /* ignore */ }
-    }
-
-    const css = document.createElement('style');
-    css.id = 'forge-lab-panel-css';
-    css.textContent = [
-      '#forge-lab-panel{position:fixed;top:64px;right:12px;z-index:220;width:240px;max-height:calc(100vh - 140px);',
-      'overflow-y:auto;background:rgba(10,8,22,.92);backdrop-filter:blur(10px);border:1px solid rgba(211,184,119,.28);',
-      'border-radius:4px;padding:10px 12px;font:10px ui-monospace,"SF Mono",Menlo,monospace;color:#918ab4;',
-      'letter-spacing:.06em}',
-      '#forge-lab-panel h4{margin:0 0 8px;font-size:10px;letter-spacing:.24em;color:#d3b877;font-weight:600}',
-      '#forge-lab-panel .lp-row{margin:7px 0 2px;display:flex;justify-content:space-between;text-transform:uppercase;font-size:8.5px}',
-      '#forge-lab-panel .lp-row b{color:#d3b877;font-weight:600}',
-      // SAFARI FIX (2026-07-29): Safari ignores accent-color on range
-      // inputs and fell back to the fat native white slider — the
-      // panel looked broken next to Chromium. Style the track/thumb
-      // explicitly; -webkit-appearance:none is what unlocks them.
-      '#forge-lab-panel input[type=range]{width:100%;accent-color:#d3b877;height:14px;background:transparent;margin:0;',
-      '-webkit-appearance:none;appearance:none}',
-      '#forge-lab-panel input[type=range]::-webkit-slider-runnable-track{height:2px;border-radius:1px;',
-      'background:rgba(145,138,180,.35)}',
-      '#forge-lab-panel input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;',
-      'width:10px;height:10px;margin-top:-4px;border-radius:50%;background:#d3b877;border:none}',
-      '#forge-lab-panel input[type=range]::-moz-range-track{height:2px;border-radius:1px;background:rgba(145,138,180,.35)}',
-      '#forge-lab-panel input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#d3b877;border:none}',
-      '#forge-lab-panel .lp-chips{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0}',
-      '#forge-lab-panel .lp-chip{font:8.5px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;',
-      'padding:4px 7px;border-radius:2px;cursor:pointer;background:transparent;color:#918ab4;border:1px solid rgba(145,138,180,.35)}',
-      '#forge-lab-panel .lp-chip.on{color:#231b08;background:#d3b877;border-color:#d3b877}',
-      '#forge-lab-panel .lp-cast{margin:4px 0 2px;font-size:8px;text-transform:uppercase;color:#5e5885}',
-      // ── collapsible section headers ──
-      '#forge-lab-panel .lp-sec{width:100%;display:flex;align-items:center;gap:6px;margin:9px 0 0;padding:5px 0;',
-      'background:none;border:none;border-top:1px solid rgba(211,184,119,.16);cursor:pointer;',
-      'font:9px ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#d3b877;text-align:left}',
-      '#forge-lab-panel .lp-sec:hover{color:#f0e2bd}',
-      '#forge-lab-panel .lp-sec .lp-caret{display:inline-block;width:8px;color:#5e5885;transition:transform .12s ease-out}',
-      '#forge-lab-panel .lp-sec.open .lp-caret{transform:rotate(90deg);color:#d3b877}',
-      '#forge-lab-panel .lp-secbody{display:none;padding-bottom:2px}',
-      '#forge-lab-panel .lp-secbody.open{display:block}',
-      '#forge-lab-panel .lp-recipe{margin-top:10px;padding:6px 8px;border:1px dashed rgba(211,184,119,.3);border-radius:3px;',
-      'font-size:8.5px;line-height:1.5;color:#918ab4;word-break:break-word;user-select:all}',
-      '#forge-lab-panel .lp-btns{display:flex;gap:6px;margin-top:8px}',
-      '#forge-lab-panel .lp-btn{flex:1;font:9px ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;',
-      'background:transparent;color:#d3b877;border:1px solid rgba(211,184,119,.4);border-radius:2px;padding:5px 0;cursor:pointer}',
-      '#forge-lab-panel .lp-x{position:absolute;top:8px;right:10px;cursor:pointer;color:#5e5885;background:none;border:none;font-size:12px}',
-    ].join('');
-    document.head.appendChild(css);
-
-    const el = document.createElement('div');
-    el.id = 'forge-lab-panel';
-    el.innerHTML = '<button class="lp-x" title="hide">×</button><h4>NODE LAB · LIVE</h4>';
-    document.body.appendChild(el);
-    el.querySelector('.lp-x').addEventListener('click', () => { el.style.display = 'none'; });
-
-    const recipeEl = document.createElement('div');
-
-    function fmt(k, v) {
-      if (k === 'recipe_wake_cap' || k === 'recipe_gate_px' || k === 'recipe_wake_radius_px'
-          || k === 'film_full_pct' || k === 'film_fade_pct'
-          || k === 'house_tween_ms' || k === 'house_band_gap'
-          || k === 'house_band_gap_bot' || k === 'house_band_pitch'
-          || k === 'house_band_head' || k === 'house_cap_clear'
-          || k === 'house_band_rows' || k === 'house_rail_cap'
-          || k === 'house_name_max'
-          || k === 'house_m_tree' || k === 'house_m_port'
-          || k === 'house_rank_cap_off') return String(Math.round(v));
-      return (+v).toFixed(2);
-    }
+    // THE RECIPE LINE — nodes, light, glass, wake, wires, film. The
+    // HOUSE terms moved out with the dials: src/js/forge/house-panel.js
+    // prints its own line, so neither panel claims the other's spec.
     function recipeStr() {
       const p = local.params;
       const cast = (p.dress_hub === p.dress_mid && p.dress_mid === p.dress_small)
@@ -491,210 +196,41 @@
         + ' · gate ' + Math.round(p.recipe_gate_px) + 'px'
         + ' · core w ' + p.recipe_core_white.toFixed(2) + ' a ' + p.recipe_core_alpha.toFixed(2)
         + ' · ring a ' + p.recipe_ring_alpha.toFixed(2)
-        + ' · FAMILY-TREE layout=' + (p.house_geometry || 'cascade')
-        + ' pack=' + (p.house_pack === 'toy' ? 'toy' : 'bed')
-        + ' · MARGINS tree ' + Math.round(
-            typeof p.house_m_tree === 'number' ? p.house_m_tree : 16)
-        + '/port ' + Math.round(typeof p.house_m_port === 'number' ? p.house_m_port : 12)
-        + '/sub ' + (+(typeof p.house_m_sub === 'number' ? p.house_m_sub : 3)).toFixed(1)
-        + '/glyph ' + (+(typeof p.house_m_glyph === 'number' ? p.house_m_glyph : 3)).toFixed(1)
-        + ' · BED chord ' + (+p.house_bed_chord || 0.74).toFixed(2)
-        + ' fill ' + (+p.house_bed_fill || 0.86).toFixed(2)
-        + ' cap ' + (+p.house_bed_cap || 0.16).toFixed(3)
-        + ' · DATE off ' + Math.round(
-            typeof p.house_rank_cap_off === 'number' ? p.house_rank_cap_off : 14) + 'px'
-        + ' ranks=' + (p.house_ranks === 'era' ? 'era' : 'lineage+era')
-        + ' unparented=' + (p.house_orphans || 'domain')
-        + ' spread=' + (+p.house_spread || 1.1).toFixed(2)
-        + ' tween=' + Math.round(p.house_tween_ms || 450)
-        + ' · BONES ' + (+p.house_bones || 0).toFixed(2)
-        + '/2nd ' + (+p.house_bone_secondary || 0).toFixed(2)
-        + ' sag ' + (+p.house_arc_sag || 0).toFixed(2)
-        + ' ' + (+p.house_bone_px || 0).toFixed(1) + 'px'
-        + ' · rest-wires ' + (p.house_rest_wires || 'off')
-        + ' · ZONES port ' + (+p.house_port_inset || 1).toFixed(2)
-        + ' band ' + (+p.house_band_r || 0.86).toFixed(2)
-        + ' gap ' + Math.round(p.house_band_gap || 24)
-        + '/' + Math.round((typeof p.house_band_gap_bot === 'number') ? p.house_band_gap_bot : 12)
-        + ' pitch ' + Math.round(p.house_band_pitch || 16)
-        + ' head ' + Math.round(p.house_band_head || 230)
-        + ' capcl ' + Math.round((typeof p.house_cap_clear === 'number') ? p.house_cap_clear : 10)
-        + ' rows ' + Math.round(p.house_band_rows || 3)
-        + ' tree ' + (+p.house_tree_r || 0.86).toFixed(2)
-        + ' type x' + (+p.house_type_scale || 1).toFixed(2)
-        + ' · NAMES max ' + Math.round(
-            typeof p.house_name_max === 'number' ? p.house_name_max : 120)
-        + ' title ' + (p.house_title_slot === 'right' ? 'right' : 'left')
         + ' · WIRE px ' + (+p.wire_min_screen_px || 0).toFixed(1)
         + '/' + (+p.wire_max_screen_px || 0).toFixed(1)
-        + ' hot ' + (+p.wire_hot_screen_px || 0).toFixed(1);
-    }
-    function syncRecipe() { recipeEl.textContent = recipeStr(); }
-
-    // ── builders (unchanged behaviour; they just append into a
-    //    section body now instead of straight into the panel) ──
-    const SLIDER_BY_KEY = {};
-    for (const s of SLIDERS) SLIDER_BY_KEY[s[0]] = s;
-    // A house radio can be placed on its own, in a section that is
-    // about it, instead of only inside the whole-block `{k:'house'}`
-    // row. Whatever an explicit `{k:'radio'}` item places is recorded
-    // here so the block cannot render it a SECOND time — two live
-    // copies of one control is the "which of these is the real one"
-    // bug, not a convenience.
-    // Collected UP FRONT, because the whole-block row is in the FIRST
-    // section and an explicit item may sit in a later one.
-    const RADIO_BY_KEY = {};
-    for (const r of HOUSE_RADIOS) RADIO_BY_KEY[r[0]] = r;
-    const radioPlaced = new Set();
-    for (const sec of SECTIONS) {
-      for (const it of sec.items) if (it.k === 'radio' && RADIO_BY_KEY[it.key]) radioPlaced.add(it.key);
-    }
-    const used = new Set();
-
-    function addSlider(host, key) {
-      const spec = SLIDER_BY_KEY[key];
-      if (!spec) return;
-      used.add(key);
-      const [, label, min, max, step, unit, mode] = spec;
-      const row = document.createElement('div');
-      row.className = 'lp-row';
-      row.innerHTML = '<span>' + label + '</span><b></b>';
-      const val = row.querySelector('b');
-      const inp = document.createElement('input');
-      inp.type = 'range'; inp.min = min; inp.max = max; inp.step = step;
-      inp.value = local.params[key];
-      val.textContent = fmt(key, local.params[key]) + unit;
-      inp.addEventListener('input', () => {
-        local.params[key] = +inp.value;
-        val.textContent = fmt(key, inp.value) + unit;
-        syncRecipe();
-        persist();
-        if (mode === 'rebake' && api.rebake) api.rebake();
-        else if (mode === 'refocus' && api.refocus) api.refocus();
-        else if (mode === 'house' && api.houseSnap) api.houseSnap();
-        // WAVE 4 — a dial that changes WHICH names are eligible must
-        // rebuild the label set; a plain redraw hits the paint's
-        // idle-skip cache and the dial reads as dead. See forge.js's
-        // api.relabel.
-        else if (mode === 'relabel' && api.relabel) api.relabel();
-        else api.redraw();
-      });
-      host.appendChild(row); host.appendChild(inp);
+        + ' hot ' + (+p.wire_hot_screen_px || 0).toFixed(1)
+        + ' · FILM floor ' + (+p.film_floor || 0).toFixed(2)
+        + ' full ' + Math.round(p.film_full_pct || 0) + '%'
+        + ' fade ' + Math.round(p.film_fade_pct || 0) + '%';
     }
 
-    function addToggles(host, keys) {
-      const tog = document.createElement('div');
-      tog.className = 'lp-chips';
-      for (const key of keys) {
-        const spec = TOGGLES.find(t => t[0] === key);
-        if (!spec) continue;
-        const b = document.createElement('button');
-        b.className = 'lp-chip' + (local.params[key] ? ' on' : '');
-        b.textContent = spec[1];
-        b.addEventListener('click', () => {
-          local.params[key] = local.params[key] ? 0 : 1;
-          b.classList.toggle('on', !!local.params[key]);
-          syncRecipe();
-          persist();
-          api.redraw();
-        });
-        tog.appendChild(b);
-      }
-      host.appendChild(tog);
-    }
-
-    function addRadioRow(host, key, caption, opts, after) {
-      const cap = document.createElement('div');
-      cap.className = 'lp-cast'; cap.textContent = caption;
-      host.appendChild(cap);
-      const row = document.createElement('div');
-      row.className = 'lp-chips';
-      for (const d of opts) {
-        const b = document.createElement('button');
-        b.className = 'lp-chip' + (local.params[key] === d ? ' on' : '');
-        b.dataset.k = key; b.dataset.d = d;
-        b.textContent = d;
-        b.addEventListener('click', () => {
-          local.params[key] = d;
-          for (const s of row.children) s.classList.toggle('on', s.dataset.d === d);
-          syncRecipe();
-          persist();
-          if (after) after();
-          api.redraw();
-        });
-        row.appendChild(b);
-      }
-      host.appendChild(row);
-    }
-
-    for (const sec of SECTIONS) {
-      const head = document.createElement('button');
-      head.className = 'lp-sec' + (openState[sec.id] ? ' open' : '');
-      head.innerHTML = '<span class="lp-caret">▸</span><span>' + sec.title + '</span>';
-      const body = document.createElement('div');
-      body.className = 'lp-secbody' + (openState[sec.id] ? ' open' : '');
-      head.addEventListener('click', () => {
-        openState[sec.id] = !openState[sec.id];
-        head.classList.toggle('open', openState[sec.id]);
-        body.classList.toggle('open', openState[sec.id]);
-        persistOpen();
-      });
-      el.appendChild(head); el.appendChild(body);
-
-      for (const it of sec.items) {
-        if (it.k === 'slider')  addSlider(body, it.key);
-        else if (it.k === 'radio') {
-          const spec = RADIO_BY_KEY[it.key];
-          if (spec) addRadioRow(body, spec[0], spec[1], spec[2], api[spec[3] || 'houseMorph']);
-        }
-        else if (it.k === 'toggles') addToggles(body, it.keys);
-        else if (it.k === 'casts') {
+    window._forgePanelKit.mount({
+      id: 'forge-lab-panel',
+      title: 'NODE LAB · LIVE',
+      local, api,
+      sliders: SLIDERS,
+      toggles: TOGGLES,
+      sections: SECTIONS,
+      // The cast + voice rows are radio rows over keys with no dial
+      // table of their own; the kit still owns/persists them.
+      extraKeys: CASTS.map(c => c[0]).concat(VOICES.map(v => v[0])),
+      render: {
+        casts(host, ctx) {
           for (const [key, label] of CASTS) {
-            addRadioRow(body, key, 'Cast — ' + label, DRESSES, api.refreshDress);
+            ctx.addRadioRow(host, key, 'Cast — ' + label, DRESSES, api.refreshDress);
           }
-        } else if (it.k === 'voices') {
-          for (const [key, label, opts] of VOICES) addRadioRow(body, key, label, opts);
-        } else if (it.k === 'house') {
-          for (const [key, label, opts, apiAfter] of HOUSE_RADIOS) {
-            if (radioPlaced.has(key)) continue;   // an explicit {k:'radio'} owns it
-            addRadioRow(body, key, label, opts, api[apiAfter || 'houseMorph']);
-          }
-        }
-      }
-    }
-    // A dial that fell out of SECTIONS would vanish from the panel
-    // silently — loud in the console instead.
-    for (const [k] of SLIDERS) {
-      if (!used.has(k)) console.warn('[lab-panel] slider not placed in any section:', k);
-    }
-
-    recipeEl.className = 'lp-recipe';
-    el.appendChild(recipeEl);
-    const btns = document.createElement('div');
-    btns.className = 'lp-btns';
-    const copyB = document.createElement('button');
-    copyB.className = 'lp-btn'; copyB.textContent = 'Copy';
-    copyB.addEventListener('click', () => {
-      const txt = recipeStr();
-      const done = () => { copyB.textContent = 'Copied ✓'; setTimeout(() => { copyB.textContent = 'Copy'; }, 1200); };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(txt).then(done, () => window.prompt('Copy the recipe:', txt));
-      } else window.prompt('Copy the recipe:', txt);
+        },
+        voices(host, ctx) {
+          for (const [key, label, opts] of VOICES) ctx.addRadioRow(host, key, label, opts);
+        },
+      },
+      storeKey: 'forge.labRecipe.v1',
+      openKey:  'forge.labPanel.open.v1',
+      recipe: recipeStr,
+      // Applied after mount ⇒ radii/dress may be stale — refresh once.
+      onRestore() { if (local.mode) { api.refreshDress(); if (api.rebake) api.rebake(); } },
+      onReset()   { api.refreshDress(); if (api.rebake) api.rebake(); },
     });
-    const resetB = document.createElement('button');
-    resetB.className = 'lp-btn'; resetB.textContent = 'Reset';
-    resetB.addEventListener('click', () => {
-      try { localStorage.removeItem(LS_KEY); } catch (_) { /* ignore */ }
-      Object.assign(local.params, defaults);
-      el.remove(); css.remove();
-      attach({ local, api });
-      api.refreshDress();
-      if (api.rebake) api.rebake();
-      api.redraw();
-    });
-    btns.appendChild(copyB); btns.appendChild(resetB);
-    el.appendChild(btns);
-    syncRecipe();
   }
 
   window._forgeLabPanel = { attach };

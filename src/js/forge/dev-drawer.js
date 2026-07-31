@@ -5,12 +5,14 @@
 // 2026-07-30 — §3 of AUDIT/2026-07-29-fable-dev-drawer-and-tree-
 // labels.md, built to the design/dev-drawer.html contract. Six
 // bottom-bar cells had accumulated; four were workshop tools.
-// Now: ONE `DEV` button + a drop-up launcher of five rows —
-// NODE LAB / FX / STYLE / STATS / OVERVIEW. LEGEND · VIEW ·
+// Now: ONE `DEV` button + a drop-up launcher of six rows —
+// NODE LAB / HOUSE / FX / STYLE / STATS / OVERVIEW. LEGEND · VIEW ·
 // ✦ FOLIO stay canonical on the bar (John's ruling, twice over).
+// (HOUSE joined 2026-07-31 — the family-isolate dials had grown
+// into four sections of the Node Lab and John could not find them.)
 //
 // THE CONTRACT (every rule clickable in the mockup):
-//   1. One editor at a time — LAB, FX, STYLE share the fixed
+//   1. One editor at a time — LAB, HOUSE, FX, STYLE share the fixed
 //      top-right slot (the LAB's spot); opening one closes the
 //      others.
 //   2. STATS is exempt — a read-only HUD may sit open (or pinned)
@@ -67,6 +69,7 @@
 
   // ── state probes — the module's classes/attrs ARE its contract ──
   function labPanel()   { return document.getElementById('forge-lab-panel'); }
+  function housePanel() { return document.getElementById('forge-house-panel'); }
   function statsPanel() { return document.getElementById('forge-debug-panel'); }
 
   function closeAriaPanel(panelId, btnId) {
@@ -94,8 +97,21 @@
       isOpen() { const p = document.getElementById('forge-stylepanel'); return !!p && p.classList.contains('is-open'); },
       close()  { closeAriaPanel('forge-stylepanel', 'forge-stylepanel-btn'); },
     },
+    // THE SIXTH DOOR (2026-07-31) — the house got its own panel out of
+    // the Node Lab's eleven sections ("is SUPER CLUTTED"). Same display
+    // idiom as the LAB, so the one-editor-at-a-time law covers it for
+    // free: opening HOUSE closes LAB / FX / STYLE, and vice versa.
+    house: {
+      isOpen() { const p = housePanel(); return !!p && p.style.display !== 'none'; },
+      close() {
+        const p = housePanel();
+        if (p) p.style.display = 'none';
+        const b = document.getElementById('forge-housepanel-btn');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      },
+    },
   };
-  const EDITOR_KEYS = ['lab', 'fx', 'style'];
+  const EDITOR_KEYS = ['lab', 'house', 'fx', 'style'];
 
   function statsOpen() {
     // Popover open OR the pinned perf HUD present — both are visible
@@ -118,18 +134,14 @@
   // ── dots + the STATS × berth ─────────────────────────────────
   function sync() {
     if (!cur) return;
-    const open = {
-      lab: EDITORS.lab.isOpen(),
-      fx: EDITORS.fx.isOpen(),
-      style: EDITORS.style.isOpen(),
-      stats: statsOpen(),
-      overview: overviewOpen(),
-    };
+    // Derived from EDITOR_KEYS, not a hand-kept list — a sixth editor
+    // added to EDITORS lights its dot without a second edit here.
+    const open = { stats: statsOpen(), overview: overviewOpen() };
+    for (const k of EDITOR_KEYS) open[k] = EDITORS[k].isOpen();
     for (const r of cur.rows) {
       r.classList.toggle('is-open', !!open[r.getAttribute('data-dev-panel')]);
     }
-    cur.btn.classList.toggle('has-open',
-      open.lab || open.fx || open.style || open.stats || open.overview);
+    cur.btn.classList.toggle('has-open', Object.keys(open).some((k) => open[k]));
     // The stats popover is untouchable (zero edits in debug-stats.js)
     // and re-renders its innerHTML every 250ms, so a child × would be
     // wiped. Its × is a fixed SIBLING placed over the header strip
@@ -177,7 +189,7 @@
       const t = ev.target;
       if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) {
         const inDev = cur.drawer.contains(t)
-          || ['forge-fxpanel', 'forge-stylepanel', 'forge-lab-panel'].some((id) => {
+          || ['forge-fxpanel', 'forge-stylepanel', 'forge-lab-panel', 'forge-house-panel'].some((id) => {
             const p = document.getElementById(id);
             return !!(p && p.contains(t));
           });
