@@ -885,6 +885,57 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
 if (titleBlockFail === 0) ok('the title block prints all four rows, 6 families × 4 viewports ('
   + titleBlockTot + ' placements)');
 else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused');
+// BOTH SLOTS, and the block never touches the band. The 'right' slot
+// is a dial John can reach, so it gets the same proof as the default:
+// every row inside the viewport and clear of the keep-outs, and no row
+// overlapping the band's on-screen ring at any gate viewport.
+{
+  let offScreen = 0, onBand = 0, koBad = 0, cases = 0;
+  for (const fam of ['Greek', 'Christian', 'Vedic', 'Other']) {
+    const lay = houseUnion(fam, 'cascade');
+    const h = lay.house;
+    const st = h.stats;
+    const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
+    const rowsTxt = [
+      titleW(fam),
+      mw(st.tree + ' ' + noun + ' · ' + st.kinArcs + ' LINEAGE ARCS · ' + st.orphanCount + ' STAND ON THEIR ERA', T_HEAD),
+      mw(st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT', T_CAP),
+      110,
+    ];
+    for (const slot of ['left', 'right']) {
+      for (const vp of RING_VPS) {
+        const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
+        const a = titleAnchor(vp, slot);
+        const CR = rowOf(T_HEAD);
+        for (let r = 0; r < 4; r++) {
+          cases++;
+          const w = rowsTxt[r];
+          const y = a.y + CR * r;
+          const x0 = a.right ? a.x - w : a.x, x1 = a.right ? a.x : a.x + w;
+          if (y < KO_TOP || y > vp.h - KO_BOT) koBad++;
+          if (x0 < 0 || x1 > vp.w) offScreen++;
+          // the band's on-screen ring, sampled: does any point of it
+          // fall inside this row's box?
+          for (const rl of [h.rails.left, h.rails.right]) {
+            if (!rl || !rl.shelves.length) continue;
+            for (let k = 0; k <= 720; k++) {
+              const ang = rl.a0 + ((rl.a1 - rl.a0) * k) / 720;
+              const px = vp.w / 2 + Math.cos(ang) * rl.rOut * scale;
+              const py = vp.h / 2 + Math.sin(ang) * rl.rOut * scale;
+              if (px >= x0 && px <= x1 && Math.abs(py - y) <= 11) { onBand++; k = 721; }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (koBad === 0) ok('both title slots clear the top/bottom keep-outs at every gate viewport (' + cases + ' rows)');
+  else fail(koBad + ' title-block rows land in a chrome keep-out');
+  if (offScreen === 0) ok('both title slots keep every row inside the viewport');
+  else fail(offScreen + ' title-block rows run off the viewport');
+  if (onBand === 0) ok('the title block never overlaps the band ring — the 12 o\'clock gap keeps the corners free');
+  else fail(onBand + ' title-block rows sit on the band');
+}
 
 // ── W3-HOSTILE ▸ the dial extremes can never make slots touch ──
 // The overlap that survived first contact: 4 sub-rows at a tight
