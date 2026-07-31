@@ -7481,7 +7481,9 @@
         // room he was reading. Leaving the old wording would have the
         // map instructing him to do something that now does nothing —
         // the worst kind of false claim, since he would blame the click.
-        txt = 'CLICK OUTSIDE THE CIRCLE OR ESC — THE WHEEL · CLICK A PORT — TRAVEL';
+        // The DEV ▸ HOUSE pointer rides the same line (postmortem #4:
+        // findability from HIS seat, not a hidden drawer row).
+        txt = 'CLICK OUTSIDE THE CIRCLE OR ESC — THE WHEEL · CLICK A PORT — TRAVEL · DEV ▸ HOUSE — THE DIALS';
       } else if (local.params.house_hint_line
           && !local._isolateFamily && !local._house
           && document.body.classList.contains('fv-layout-wheel')
@@ -9097,6 +9099,32 @@
         }
         document.body.classList.toggle('fv-isolated', !!fam);
       } catch (_) { /* ignore */ }
+      // FIRST HOUSE ⇒ THE PANEL INTRODUCES ITSELF, ONCE (2026-07-31,
+      // postmortem #4: the panel "exists, opens, verified live, still
+      // not found" — nine deploys of machine-side verification never
+      // put it in front of him). The first time a house is EVER
+      // entered on this machine, its panel opens by itself; the flag
+      // makes sure it never nags again, and the DEV door owns it from
+      // then on. Same one-editor-at-a-time law as the drawer rows.
+      if (fam) {
+        try {
+          if (!localStorage.getItem('forge.housePanelIntroduced.v1')) {
+            const p = document.getElementById('forge-house-panel');
+            if (p) {
+              const lab = document.getElementById('forge-lab-panel');
+              if (lab) lab.style.display = 'none';
+              for (const pid of ['forge-fxpanel', 'forge-stylepanel']) {
+                const q = document.getElementById(pid);
+                if (q) q.classList.remove('is-open');
+              }
+              p.style.display = '';
+              const b = document.getElementById('forge-housepanel-btn');
+              if (b) b.setAttribute('aria-expanded', 'true');
+              localStorage.setItem('forge.housePanelIntroduced.v1', '1');
+            }
+          }
+        } catch (_) { /* storage/DOM unavailable — never break entry */ }
+      }
       // 2 ▸ restate + draw.
       try { recomputeFocus(); } catch (_) { /* ignore */ }
       startAnimLoop();
