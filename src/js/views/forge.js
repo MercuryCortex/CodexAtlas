@@ -724,6 +724,11 @@
     house_spread:          1.10,
     house_tween_ms:        450,
     house_ranks:           'lineage',   // 'lineage' | 'era'
+    // What the rank gutter says. 'date' = the row's true date span, the
+    // axis the ratified design shipped and John reads the house by;
+    // 'gen' = the generation numeral, only where it is provably true;
+    // 'off' = an empty gutter.
+    house_rank_caption:    'date',      // 'date' | 'gen' | 'off'
     house_orphans:         'domain',    // 'domain'  | 'degree'
     // THE BONES (2026-07-30) — resting edge-state lift for the
     // house's own kinship wires (0 = old invisible idle, 1 = full
@@ -6900,12 +6905,46 @@
         return (-a) + ' BCE–' + b + ' CE';
       };
       const hasBones = (st.kinArcs || 0) > 0;
+      // ── THE DATES COME BACK (2026-07-31, John: "i just want the
+      // DATES !!!!!!!!!!") ────────────────────────────────────────────
+      // The ratified design shipped a date on EVERY rank, in BOTH
+      // geometries — `AUDIT/2026-07-29-fable-family-tree-isolate.md`:
+      // "era-ranked rows beneath, each row a faint stratum with its
+      // date at the left", and `design/family-tree.html` draws
+      // `fmtDate(m.dmin)` down the cascade's left gutter and on each
+      // fan ring's crest. That is the axis he reads the house by.
+      //
+      // Wave 2 replaced it with GEN numerals on a real finding — a row
+      // is a LAYOUT rank, so a bare year over it can imply a
+      // chronology the data does not make — but the cure removed the
+      // feature instead of correcting it, and the numeral almost never
+      // qualifies, so the gutter went empty. His words for the result:
+      // "ZERO function".
+      //
+      // Both concerns are satisfiable at once: print the row's TRUE
+      // date SPAN. A row that really is one moment prints one year
+      // exactly as the toy did; a row spanning 700 BCE–100 CE says so
+      // instead of claiming "700 BCE". Nothing is asserted that the
+      // vault does not hold, and the axis is back.
+      //
+      // The GEN numeral is not deleted — it moves to where it is
+      // provably true, appended only when the row is a single
+      // generation of real kin. `house_rank_caption` ('date' | 'gen' |
+      // 'off') is the dial; 'date' ships.
+      const capMode = (local.params.house_rank_caption === 'gen'
+                    || local.params.house_rank_caption === 'off')
+        ? local.params.house_rank_caption : 'date';
+      const trueGen = (rm) => (rm.n && hasBones && rm.offLineage === 0
+        && rm.layerMin != null && rm.layerMin === rm.layerMax)
+        ? ('GEN ' + romanNum(rm.layerMin + 1)) : null;
       const capFor = (rm) => {
-        if (ranksEra) return (rm.dmin == null) ? null : fmtRangeD(rm.dmin, rm.dmax);
-        if (!rm.n || !hasBones) return null;
-        if (rm.offLineage !== 0) return null;   // someone here is not here by lineage
-        if (rm.layerMin == null || rm.layerMin !== rm.layerMax) return null;   // spans depths
-        return 'GEN ' + romanNum(rm.layerMin + 1);
+        if (capMode === 'off') return null;
+        if (capMode === 'gen') return trueGen(rm);
+        if (rm.dmin == null) return trueGen(rm);   // undated rank: the numeral or nothing
+        const d = fmtRangeD(rm.dmin, rm.dmax);
+        if (ranksEra) return d;                    // pure-era: rank IS the date, nothing to add
+        const g = trueGen(rm);
+        return g ? (d + ' · ' + g) : d;
       };
       font('500', TYPE.cap);
       ctx.fillStyle = _labelsTextColor;

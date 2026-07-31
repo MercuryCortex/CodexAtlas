@@ -164,6 +164,7 @@
     // it moves one uniform, so a plain redraw is the whole update.
     const HOUSE_RADIOS = [
       ['house_ranks',      'Ranks',      ['lineage', 'era']],
+      ['house_rank_caption', 'Rank caption', ['date', 'gen', 'off'], 'redraw'],
       ['house_orphans',    'Unparented', ['domain', 'degree']],
       // THE RAILS (2026-07-31) — 'off' is the honest zero: the house
       // holds deities only, exactly as it did on 07-30.

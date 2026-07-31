@@ -1116,13 +1116,27 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Other']) {
 // or lower; `adonis` carries zero lineage edges and was captioned a
 // second-generation descendant.
 console.log('\n── W2-E · GEN numerals only where the row IS one generation ──');
-must(/if \(rm\.offLineage !== 0\) return null;/, 'a row holding a member who is not there by lineage carries no numeral');
-must(/if \(rm\.layerMin == null \|\| rm\.layerMin !== rm\.layerMax\) return null;/,
+// 2026-07-31 — the numeral rule MOVED into trueGen() when the dates came
+// back (John: "i just want the DATES"). Same four guarantees, one
+// expression: a numeral needs members, bones, nobody off-lineage, and a
+// single depth — and it is the row's OWN depth. The behavioural
+// assertions below are unchanged and still measure the real vault.
+must(/const trueGen = \(rm\) => \(rm\.n && hasBones && rm\.offLineage === 0/,
+  'a numeral needs members, lineage arcs in the house, and nobody there for a non-lineage reason');
+must(/&& rm\.layerMin != null && rm\.layerMin === rm\.layerMax\)/,
   'a row spanning two lineage depths carries no numeral');
-must(/return 'GEN ' \+ romanNum\(rm\.layerMin \+ 1\);/, 'the numeral is the row\'s own depth, not its index');
-must(/if \(!rm\.n \|\| !hasBones\) return null;/, 'a house with zero lineage arcs numbers nothing');
-must(/return \(rm\.dmin == null\) \? null : fmtRangeD\(rm\.dmin, rm\.dmax\);/,
-  'the era caption prints the row\'s RANGE, not its minimum');
+must(/\? \('GEN ' \+ romanNum\(rm\.layerMin \+ 1\)\) : null;/,
+  "the numeral is the row's own depth, not its index");
+// THE DATES ARE BACK on every rank in both geometries (the ratified
+// design's own axis) and they print the row's true SPAN — which is what
+// keeps a bare year off a row spanning 700 BCE-100 CE.
+must(/const d = fmtRangeD\(rm\.dmin, rm\.dmax\);/,
+  "the rank caption prints the row's RANGE, not its minimum");
+must(/house_rank_caption:    'date',/,
+  'the dates ship ON by default — the gutter is the axis the design shipped',
+  forgeSrc);
+must(/return g \? \(d \+ ' · ' \+ g\) : d;/,
+  'the numeral rides WITH the date where it is true, instead of replacing it');
 for (const fam of ['Greek', 'Norse', 'Vedic', 'Christian', 'Chinese']) {
   const lay = houseUnion(fam, 'cascade');
   const h = lay.house;
