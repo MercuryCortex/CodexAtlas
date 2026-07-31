@@ -683,10 +683,11 @@ console.log('');
   const missing = keys.filter(k => !(k in PD));
   if (!missing.length) ok('all ' + keys.length + ' house_* params the panel drives exist in PARAM_DEFAULTS');
   else fail('dials for params that do not exist: ' + missing.join(', '));
-  // 39 → 41 on 2026-07-31: +God size (postmortem #5, the direct dial
-  // asked for by name) and +Captions flat|curved (postmortem #6).
-  if (hRows === 41) ok('41 controls — every house dial in the app, in one panel');
-  else fail('the panel renders ' + hRows + ' controls (expected 41 — a dial was dropped or double-placed)');
+  // 39 → 42 on 2026-07-31: +God size (postmortem #5, the direct dial
+  // asked for by name), +Captions flat|curved (postmortem #6), and
+  // +Era lines (the stratum dial, postmortem #2).
+  if (hRows === 42) ok('42 controls — every house dial in the app, in one panel');
+  else fail('the panel renders ' + hRows + ' controls (expected 42 — a dial was dropped or double-placed)');
   // house_geometry (CASCADE/FAN) is CANONICAL and lives on the crown.
   if (!H.secs.some(s => s.rows.some(r => r.opts && r.opts.includes('cascade'))))
     ok('Cascade | Fan is NOT here — it is canonical and stays on the VIEW panel');

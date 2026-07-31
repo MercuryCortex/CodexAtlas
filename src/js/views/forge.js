@@ -737,6 +737,9 @@
     // ZERO rotated text and John twice read the arc captions as
     // random — 'flat' ships; 'curved' stays a dial for his eye.
     house_caption_style:   'flat',      // 'flat' | 'curved'
+    // THE STRATUM LINES (2026-07-31, postmortem #2): the faint shelf
+    // under each rank the ratified design specifies. 0 = off.
+    house_stratum:         0.07,
     house_orphans:         'domain',    // 'domain'  | 'degree'
     // THE BONES (2026-07-30) — resting edge-state lift for the
     // house's own kinship wires (0 = old invisible idle, 1 = full
@@ -6955,6 +6958,44 @@
       }
       ctx.globalAlpha = 1;
 
+      // 4a ▸ THE STRATUM LINES (2026-07-31, postmortem #2 — the
+      // ratified design: "each row a faint stratum with its date at
+      // the left"). The layout has computed rowMeta.lineY on every
+      // build and NOTHING consumed it — the design's missing feature
+      // was sitting in the return value. Strokes, not strings: they
+      // paint under the ink and never claim (the registry governs
+      // text; a hairline cannot occlude a word). house_stratum is the
+      // dial; 0 = off, byte-identical to before the lines existed.
+      const stratumA = (typeof local.params.house_stratum === 'number')
+        ? local.params.house_stratum : 0.07;
+      if (stratumA > 0 && house.rowMeta && house.rowMeta.length) {
+        ctx.save();
+        ctx.strokeStyle = 'rgba(145,138,180,' + Math.min(0.5, stratumA) + ')';
+        ctx.lineWidth = 1;
+        if (house.geometry === 'cascade') {
+          for (const rm of house.rowMeta) {
+            if (!rm.n || rm.y == null) continue;
+            const ly = (rm.lineY != null) ? rm.lineY : rm.y;
+            const hl = rm.half * 0.94;
+            const p1 = W2S(house.center.x - hl, ly);
+            const p2 = W2S(house.center.x + hl, ly);
+            ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+          }
+        } else {
+          // FAN — the toy's ring ghosts: a faint arc per rank about
+          // the trunk, upper hemisphere only.
+          const fc = W2S(house.center.x, house.center.y + (house.fanDy || 0));
+          const hw = Math.PI * 0.60;
+          for (const rm of house.rowMeta) {
+            if (!rm.n || !(rm.rad > 0)) continue;
+            ctx.beginPath();
+            ctx.arc(fc.x, fc.y, rm.rad * camS, -Math.PI / 2 - hw, -Math.PI / 2 + hw);
+            ctx.stroke();
+          }
+        }
+        ctx.restore();
+      }
+
       // 4 ▸ RANK CAPTIONS — deduped, right-aligned into the gutter
       // (cascade) or on the ring crest (fan).
       // CANONICAL HONESTY (2026-07-31, era-captions-fake-timeline) —
@@ -7057,13 +7098,22 @@
         ? local.params.house_rank_cap_off : 14;
       if (house.geometry === 'cascade') {
         ctx.textAlign = 'right';
+        // THE GUTTER IS ONE AXIS (2026-07-31, postmortem #2). Every
+        // date right-aligns to a single column at the WIDEST bed's
+        // left edge — outside the whole node field — instead of
+        // riding each row's own width, which floated narrow rows'
+        // dates mid-canvas beside gods. One x, many ys: an axis.
+        let maxHalfW = 0;
+        for (const rm of house.rowMeta) {
+          if (rm.y != null && rm.w / 2 > maxHalfW) maxHalfW = rm.w / 2;
+        }
         for (let ri = 0; ri < house.rowMeta.length; ri++) {
           const rm = house.rowMeta[ri];
           if (rm.y == null) continue;
           const txt = capFor(rm);
           if (txt == null || txt === lastCap) continue;
           const w = ctx.measureText(txt).width;
-          const es = W2S(house.center.x - rm.w / 2, rm.y);
+          const es = W2S(house.center.x - maxHalfW, rm.y);
           const ex = es.x - capOff, ey = es.y;
           if (ex - w < 4) continue;
           if (!claim(ex - w / 2, ey, w + 4)) continue;

@@ -133,6 +133,8 @@
       // The rank DATE's own stand-off from the cascade's left gutter
       // (the fan crest rides the same dial at its 8/14 ratio).
       ['house_rank_cap_off',  'Date offset',   0,    40,   1,     'px', 'redraw'],
+      // The faint shelf line under each rank (the design's stratum).
+      ['house_stratum',       'Era lines',     0,    0.3,  0.01,  '',   'redraw'],
       // The wheel-state "CLICK A FAMILY TITLE — THE HOUSE" line. 0 = the
       // wheel paints byte-identical to before the hint existed.
       ['house_hint_line',     'Way-in hint',   0,    1,    1,     '',   'redraw'],
@@ -236,6 +238,7 @@
           { k: 'radio',  key: 'house_rank_caption' },
           { k: 'radio',  key: 'house_caption_style' },
           { k: 'slider', key: 'house_rank_cap_off' },
+          { k: 'slider', key: 'house_stratum' },
           { k: 'radio',  key: 'house_title_slot' },
           { k: 'slider', key: 'house_hint_line' },
         ] },
@@ -295,6 +298,7 @@
         + ' caption ' + (p.house_rank_caption || 'date')
         + ' style ' + (p.house_caption_style === 'curved' ? 'curved' : 'flat')
         + ' date off ' + Math.round(num(p.house_rank_cap_off, 14)) + 'px'
+        + ' strata ' + num(p.house_stratum, 0.07).toFixed(2)
         + ' title ' + (p.house_title_slot === 'left' || p.house_title_slot === 'right'
                         ? p.house_title_slot : 'center')
         + ' hint ' + Math.round(num(p.house_hint_line, 1))

@@ -1713,13 +1713,19 @@ console.log('\n── W5-PACK · the two distributions, and what each one moves 
 }
 
 // ── W5-DATE ▸ THE RANK DATES SURVIVE BOTH DISTRIBUTIONS ────────
-// The gutter anchors on `house.center.x − rowMeta.w / 2` — the row's
-// own left edge. The toy pack puts that edge somewhere else (its
-// stack sits 0.10·Rt lower, so a different bed is the widest), so the
-// assertion is that rowMeta stays a TRUE description of the row under
-// both packs: the anchor really is the leftmost god's edge, and the
-// date really is the row's own span.
+// Since 2026-07-31 (postmortem #2) the VIEW anchors every date on ONE
+// column — the WIDEST bed's left edge — so the gutter reads as an
+// axis, not a stray per row. rowMeta must still be a TRUE description
+// of each row under both packs (the axis derives from max(rm.w/2), so
+// a lying rm.w moves the whole axis): the per-row assertions below
+// keep that honest, and the stratum line now consumes rm.lineY.
 console.log('\n── W5-DATE · the rank gutter follows both distributions ──');
+must(/let maxHalfW = 0;[\s\S]{0,900}const es = W2S\(house\.center\.x - maxHalfW, rm\.y\);/,
+  'every cascade date right-aligns to ONE axis at the widest bed\'s left edge (postmortem #2)', forgeSrc);
+must(/const ly = \(rm\.lineY != null\) \? rm\.lineY : rm\.y;/,
+  'the stratum line consumes the layout\'s lineY — computed since wave 5, finally drawn', forgeSrc);
+must(/house_stratum:\s+0\.07,/,
+  'the stratum dial ships at 0.07 — visible, faint, and 0 turns it off', forgeSrc);
 must(/const capOff = \(typeof local\.params\.house_rank_cap_off === 'number'\)/,
   'the rank date\'s stand-off is a dial, not a baked 14px', forgeSrc);
 must(/house_rank_cap_off:\s*14,/, 'house_rank_cap_off ships at 14px');
