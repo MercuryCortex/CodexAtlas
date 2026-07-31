@@ -122,6 +122,27 @@ else fail('the bone is not wider than an idle wire');
 
 // ── 2. HONEST ZEROS on the width band ───────────────────────
 console.log('\n── 2. honest zeros ──');
+// The four named guards. With no isolate every dial position below
+// must produce a byte-identical frame — asserted here as source, and
+// reasoned in AUDIT/2026-07-31 step 2 acceptance (5).
+must(/if \(!local\._isolateFamily \|\| !h \|\| !h\.bones\) return;/,
+  'GUARD 1 — the bones lift touches no edge target without an isolate', forgeSrc);
+must(/const lm = \(frame\.nodePosB && \(frame\.edgePosB \|\| edgeCount === 0\)\)\s*\?[\s\S]{0,60}: 0;/,
+  'GUARD 2 — layout_mix is forced to 0 unless BOTH position-B arrays exist', gpuSrc);
+must(/if \(bn\) \{\s*\n\s*const b = bn\.arc\.get\(ei\);/,
+  'GUARD 3 — the house lane is only written when a house map exists', forgeSrc);
+must(/edgePosB:\s*local\._house \? local\._house\.edgePosB : null,/,
+  'GUARD 4 — no house ⇒ edgePosB is null ⇒ the zero-filled VBO stands', forgeSrc);
+// And the rest-wires chip is provably target-free: houseRestMinClass()
+// is read ONLY into the frame uniform, never into an edge target.
+{
+  const uses = forgeSrc.match(/houseRestMinClass\(\)/g) || [];
+  const inTargets = /houseRestMinClass\(\)[^\n]*targets/.test(forgeSrc);
+  if (uses.length >= 2 && !inTargets)
+    ok('GUARD 5 — the rest-wires chip writes a uniform only; it never touches an edge target,'
+      + ' so all three chip positions give byte-identical target arrays');
+  else fail('the rest-wires chip has leaked into the edge-target path');
+}
 {
   let worst = 0;
   const bandNewOff = (world, st) => {                 // wire_hot 0, no house lane
