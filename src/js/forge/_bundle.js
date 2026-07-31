@@ -5511,6 +5511,30 @@
       // prints. 120 clears the biggest family in the vault (Vedic,
       // 97); 0 is the honest zero (the pre-wave-4 zoom ladder alone).
       ['house_name_max',   'House names', 0,    200,  5,     '',  'relabel'],
+      // ── THE DISTRIBUTION + THE MARGINS (2026-07-31 wave 5) ──────
+      // John: "and add on the dev panel the controls to adjust".
+      // Every number this wave touched is here, in a section that
+      // opens by default. THE FOUR MARGINS are guaranteed clearances
+      // in WORLD UNITS — drag one up and the band and the tree give
+      // ground live (the gate proves no pair ever comes inside them).
+      // Measured at these defaults BEFORE the wave: tree→band 4.0,
+      // caption→ports 9.6, sub-row 1.15, glyph 2.00.
+      ['house_m_tree',   'Gods → band',   0,   60, 1,   'wu', 'house'],
+      ['house_m_port',   'Band → ports',  0,   60, 1,   'wu', 'house'],
+      ['house_m_sub',    'Sub-row gap',   0,   20, 0.5, 'wu', 'house'],
+      ['house_m_glyph',  'Glyph gap',     0,   20, 0.5, 'wu', 'house'],
+      // THE THREE PITCH TERMS — what decides how big a god is. All
+      // three ship at design/family-tree.html's ratified values.
+      // Chord + fill widen the beds (past ~0.78 / 0.90 Greek's circle
+      // fit binds and its cascade leaves the house centre); Bed cap
+      // is the ceiling that binds on SMALL families — reach for it
+      // when a 12-god house looks under-scaled.
+      ['house_bed_chord', 'Bed chord',    0.60, 1.00, 0.01, '×', 'house'],
+      ['house_bed_fill',  'Bed fill',     0.60, 1.00, 0.01, '×', 'house'],
+      ['house_bed_cap',   'Bed cap',      0.08, 0.32, 0.005, '×', 'house'],
+      // The rank DATE's own stand-off from the cascade's left gutter
+      // (the fan crest rides the same dial at its 8/14 ratio).
+      ['house_rank_cap_off', 'Date offset', 0, 40, 1, 'px', 'redraw'],
       // The wheel-state "CLICK A FAMILY TITLE — THE HOUSE" line. 0 =
       // the wheel paints byte-identical to before the hint existed.
       // (Agent C shipped the dial; its LAB row could not be added from
@@ -5527,6 +5551,16 @@
     // house morph (a layout dial). REST WIRES is not a layout dial:
     // it moves one uniform, so a plain redraw is the whole update.
     const HOUSE_RADIOS = [
+      // WAVE 5 — WHICH PACKING LAW places the ranks. 'bed' is the
+      // app's shipped law (the default: John's "if its different keep
+      // it"), 'toy' is design/family-tree.html's — the ratified
+      // reference. In CASCADE the flip moves every god in every
+      // family (33-76 wu measured). In FAN the two laws only differ
+      // where a RANK IS EMPTY, which is 2 of 36 families under
+      // Ranks=lineage and 11 of 36 under Ranks=era: that is the only
+      // place the two files' fans actually disagree, and pretending
+      // otherwise would be a fake dial.
+      ['house_pack',       'Distribution', ['bed', 'toy']],
       ['house_ranks',      'Ranks',      ['lineage', 'era']],
       ['house_rank_caption', 'Rank caption', ['date', 'gen', 'off'], 'redraw'],
       ['house_orphans',    'Unparented', ['domain', 'degree']],
@@ -5624,6 +5658,24 @@
       { id: 'housenames', title: 'House names + title block', open: true, items: [
         { k: 'slider', key: 'house_name_max' },
         { k: 'radio',  key: 'house_title_slot' },
+      ] },
+      // THE DISTRIBUTION + THE MARGINS (2026-07-31 wave 5) — the
+      // three things John asked this round for, in one section that
+      // opens by default. It sits directly under The House because
+      // "a control you can't find is unshipped" has now cost four
+      // rounds, and because these are the dials he will be dragging
+      // while he judges the picture.
+      { id: 'housepack', title: 'Distribution + margins', open: true, items: [
+        { k: 'radio',  key: 'house_pack' },
+        { k: 'radio',  key: 'house_rank_caption' },
+        { k: 'slider', key: 'house_rank_cap_off' },
+        { k: 'slider', key: 'house_m_tree' },
+        { k: 'slider', key: 'house_m_port' },
+        { k: 'slider', key: 'house_m_sub' },
+        { k: 'slider', key: 'house_m_glyph' },
+        { k: 'slider', key: 'house_bed_chord' },
+        { k: 'slider', key: 'house_bed_fill' },
+        { k: 'slider', key: 'house_bed_cap' },
       ] },
       { id: 'nodes', title: 'Nodes', open: true, items: [
         { k: 'slider', key: 'recipe_hover_zoom' },
@@ -5779,7 +5831,9 @@
           || k === 'house_band_gap_bot' || k === 'house_band_pitch'
           || k === 'house_band_head' || k === 'house_cap_clear'
           || k === 'house_band_rows' || k === 'house_rail_cap'
-          || k === 'house_name_max') return String(Math.round(v));
+          || k === 'house_name_max'
+          || k === 'house_m_tree' || k === 'house_m_port'
+          || k === 'house_rank_cap_off') return String(Math.round(v));
       return (+v).toFixed(2);
     }
     function recipeStr() {
@@ -5802,6 +5856,17 @@
         + ' · core w ' + p.recipe_core_white.toFixed(2) + ' a ' + p.recipe_core_alpha.toFixed(2)
         + ' · ring a ' + p.recipe_ring_alpha.toFixed(2)
         + ' · FAMILY-TREE layout=' + (p.house_geometry || 'cascade')
+        + ' pack=' + (p.house_pack === 'toy' ? 'toy' : 'bed')
+        + ' · MARGINS tree ' + Math.round(
+            typeof p.house_m_tree === 'number' ? p.house_m_tree : 16)
+        + '/port ' + Math.round(typeof p.house_m_port === 'number' ? p.house_m_port : 12)
+        + '/sub ' + (+(typeof p.house_m_sub === 'number' ? p.house_m_sub : 3)).toFixed(1)
+        + '/glyph ' + (+(typeof p.house_m_glyph === 'number' ? p.house_m_glyph : 3)).toFixed(1)
+        + ' · BED chord ' + (+p.house_bed_chord || 0.74).toFixed(2)
+        + ' fill ' + (+p.house_bed_fill || 0.86).toFixed(2)
+        + ' cap ' + (+p.house_bed_cap || 0.16).toFixed(3)
+        + ' · DATE off ' + Math.round(
+            typeof p.house_rank_cap_off === 'number' ? p.house_rank_cap_off : 14) + 'px'
         + ' ranks=' + (p.house_ranks === 'era' ? 'era' : 'lineage+era')
         + ' unparented=' + (p.house_orphans || 'domain')
         + ' spread=' + (+p.house_spread || 1.1).toFixed(2)
