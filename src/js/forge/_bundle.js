@@ -1406,10 +1406,84 @@
 
     window.addEventListener('resize', hide);
 
+    // ── THE PORT CARD (2026-07-31 wave 3, LAW 2) ────────────────
+    // A horizon port is not a node: it is the point every node of one
+    // family collapses onto while another family's house stands. The
+    // node card would have to pick one of them and name it, which is
+    // a lie about what the pointer is on — so the port gets its own
+    // card, and every number on it is counted from the live mode by
+    // the view (housePortCardInfo), never estimated here.
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function metaRow(k, v) {
+      return '<div class="forge-hover-card-meta-row">'
+           + '<span class="forge-hover-card-meta-k">' + esc(k) + '</span>'
+           + '<span class="forge-hover-card-meta-v">' + esc(v) + '</span></div>';
+    }
+    function showPort(info) {
+      if (!info || !info.group) return;
+      const one = (n, s, p) => n + ' ' + (n === 1 ? s : (p || (s + 's')));
+      nameEl.textContent = info.group;
+      tradEl.textContent = 'HORIZON PORT';
+      tradEl.style.display = '';
+      const nm = info.members || 0;
+      descEl.textContent = one(nm, 'node') + ' of this family '
+        + (nm === 1 ? 'stands' : 'stand') + ' at this point — click to travel.';
+      descEl.style.display = '';
+      const pills = [];
+      const counts = info.buckets || {};
+      for (const b of BUCKET_ORDER) {
+        const n = counts[b] || 0;
+        if (!n) continue;
+        pills.push(
+          '<span class="forge-hover-card-wire" style="color:' + bucketHex(b) + '">'
+          +   '<span class="forge-hover-card-wire-dot" style="background:' + bucketHex(b) + '"></span>'
+          +   n
+          + '</span>'
+        );
+      }
+      wiresEl.innerHTML = pills.join('');
+      wiresEl.style.display = pills.length ? '' : 'none';
+      const rows = [];
+      if (info.wires) {
+        rows.push(metaRow('Lit', one(info.wires, 'wire') + ' to ' + (info.house || 'this house')));
+        rows.push(metaRow('Lands on', info.touches + ' of ' + info.houseMembers + ' in the house'));
+      } else {
+        rows.push(metaRow('Lit', 'no wire reaches this house'));
+      }
+      // Honest remainder: wires whose house end is a rail item parked
+      // off-stage have no terminus to draw to, so they are counted but
+      // never lit. Saying so is cheaper than a line that goes nowhere.
+      if (info.parked) rows.push(metaRow('Off-stage', one(info.parked, 'wire') + ' to parked nodes'));
+      metaEl.innerHTML = rows.join('');
+      metaEl.style.display = rows.length ? '' : 'none';
+      img.style.display = 'none';
+      img.removeAttribute('src');
+      card.classList.add('is-shown');
+      measure();
+      pickAnchor();
+      applyTransform();
+    }
+
     local._onHoverChange = function (id) {
+      // The port card and the node card share one element and one
+      // timer. The view sets the port FIRST and then clears the node
+      // hover, so an unguarded clearTimeout here would cancel the
+      // port card's own scheduled show before it ever painted.
+      // A cleared node hover with a port standing is not "nothing
+      // hovered" — it is "the port owns this slot".
+      if (!id && local._portHoverGroup) return;
       if (showId) { clearTimeout(showId); showId = 0; }
       if (!id) { hide(); return; }
       showId = setTimeout(() => { showId = 0; showFor(id); }, 150);
+    };
+    local._onPortHoverChange = function (info) {
+      if (showId) { clearTimeout(showId); showId = 0; }
+      if (!info) { hide(); return; }
+      showId = setTimeout(() => { showId = 0; showPort(info); }, 150);
     };
     canvas.addEventListener('mouseleave', hide);
   }
@@ -5396,6 +5470,26 @@
       ['house_rail_cap',   'Rail cap',   20,   400, 10,   '',  'house'],
       ['house_rail_glyph', 'Rail glyph', 0.2,  0.7, 0.02, '×', 'house'],
       ['house_rail_hit',   'Rail hit',   0,    12,  0.5,  'wu', 'house'],
+      // WAVE 3 interaction laws — the sibling agent shipped both dials
+      // but could not add their rows (this file was mine that wave).
+      // Exit radius: how far out an empty click must land to leave the
+      // house, as a fraction of Rh. 0 restores the old
+      // click-anywhere-to-leave behaviour exactly.
+      ['house_exit_r',   'Exit radius', 0,    1.4, 0.02, '×', 'redraw'],
+      ['house_port_hit', 'Port hit',    0,    24,  1,    'px', 'redraw'],
+      // THE THREE ZONES (2026-07-31 wave 3) — John asked for this
+      // panel by name: "a panel just dedicated to the sizes macro of
+      // these three sections". Outside in: the horizon ports ring,
+      // the inner band (Scriptorium + Court on one arc-sectioned
+      // ring), and the tree zone the cascade/fan solves against.
+      // Plus the house chrome's type scale. All live on the standing
+      // house (they re-run the layout via houseSnap).
+      ['house_port_inset', 'Ports ring',  0.85, 1.15, 0.005, '×', 'house'],
+      ['house_band_r',     'Band radius', 0.60, 1.00, 0.005, '×', 'house'],
+      ['house_band_gap',   'Band gap',    8,    45,   1,     '°', 'house'],
+      ['house_band_rows',  'Band rows',   1,    4,    1,     '',  'house'],
+      ['house_tree_r',     'Tree zone',   0.50, 1.00, 0.005, '×', 'house'],
+      ['house_type_scale', 'Type scale',  0.8,  1.6,  0.05,  '×', 'house'],
       // The wheel-state "CLICK A FAMILY TITLE — THE HOUSE" line. 0 =
       // the wheel paints byte-identical to before the hint existed.
       // (Agent C shipped the dial; its LAB row could not be added from
@@ -5512,9 +5606,24 @@
         { k: 'slider', key: 'house_veil' },
         { k: 'slider', key: 'house_tween_ms' },
         { k: 'slider', key: 'house_rail_cap' },
-        { k: 'slider', key: 'house_rail_glyph' },
         { k: 'slider', key: 'house_rail_hit' },
+        { k: 'slider', key: 'house_exit_r' },
+        { k: 'slider', key: 'house_port_hit' },
         { k: 'slider', key: 'house_hint_line' },
+      ] },
+      // THE SIZES PANEL (2026-07-31 wave 3) — John, by name: "it will
+      // be easier to dev this if you add also a panel just dedicated
+      // to the sizes macro of these three sections". The three
+      // concentric zones of the house (ports ring / inner band /
+      // tree zone), the band's glyph size, and the chrome type scale.
+      { id: 'housesizes', title: 'House sizes — the three zones', open: false, items: [
+        { k: 'slider', key: 'house_port_inset' },
+        { k: 'slider', key: 'house_band_r' },
+        { k: 'slider', key: 'house_band_gap' },
+        { k: 'slider', key: 'house_band_rows' },
+        { k: 'slider', key: 'house_rail_glyph' },
+        { k: 'slider', key: 'house_tree_r' },
+        { k: 'slider', key: 'house_type_scale' },
       ] },
     ];
 
@@ -5611,7 +5720,8 @@
     function fmt(k, v) {
       if (k === 'recipe_wake_cap' || k === 'recipe_gate_px' || k === 'recipe_wake_radius_px'
           || k === 'film_full_pct' || k === 'film_fade_pct'
-          || k === 'house_tween_ms') return String(Math.round(v));
+          || k === 'house_tween_ms' || k === 'house_band_gap'
+          || k === 'house_band_rows' || k === 'house_rail_cap') return String(Math.round(v));
       return (+v).toFixed(2);
     }
     function recipeStr() {
@@ -5643,6 +5753,12 @@
         + ' sag ' + (+p.house_arc_sag || 0).toFixed(2)
         + ' ' + (+p.house_bone_px || 0).toFixed(1) + 'px'
         + ' · rest-wires ' + (p.house_rest_wires || 'off')
+        + ' · ZONES port ' + (+p.house_port_inset || 1).toFixed(2)
+        + ' band ' + (+p.house_band_r || 0.86).toFixed(2)
+        + ' gap ' + Math.round(p.house_band_gap || 24)
+        + ' rows ' + Math.round(p.house_band_rows || 3)
+        + ' tree ' + (+p.house_tree_r || 0.86).toFixed(2)
+        + ' type x' + (+p.house_type_scale || 1).toFixed(2)
         + ' · WIRE px ' + (+p.wire_min_screen_px || 0).toFixed(1)
         + '/' + (+p.wire_max_screen_px || 0).toFixed(1)
         + ' hot ' + (+p.wire_hot_screen_px || 0).toFixed(1);

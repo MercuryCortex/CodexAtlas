@@ -6781,8 +6781,26 @@
           }
           if (spineY != null && sh.spineId) {
             const node = nodesById && nodesById.get ? nodesById.get(sh.spineId) : null;
-            const title = (node && node.title) || sh.spineId;
+            const full = (node && node.title) || sh.spineId;
             font('500', TYPE.name);
+            // A SPINE NAME IS A LABEL, NOT THE RECORD (2026-07-31 wave 3).
+            // The vault's titles run long — "Kitāb al-Shifā' (The Book of
+            // Healing — Avicenna's encyclopedic philosophical *summa*)",
+            // "Gregorian Modes — The Medieval Church Modes and Sacred
+            // Tonal Architecture". At the new legible type those cross
+            // half the viewport and clamp against the frame edge, which
+            // reads as a bug and buys nothing: the full record is one
+            // hover away in the card. Cap at a quarter of the width and
+            // ellipsize on a word boundary where one is available.
+            const CAP_W = vp.w * 0.25;
+            let title = full;
+            if (ctx.measureText(title).width > CAP_W) {
+              while (title.length > 4 && ctx.measureText(title + '…').width > CAP_W) {
+                const cut = title.lastIndexOf(' ');
+                title = (cut > 6) ? title.slice(0, cut) : title.slice(0, -1);
+              }
+              title = title.replace(/[\s—–-]+$/, '') + '…';
+            }
             const sw = ctx.measureText(title).width;
             const sx = outR ? Math.min(spineLx, vp.w - 6 - sw) : Math.max(spineLx, 6 + sw);
             const scx = outR ? sx + sw / 2 : sx - sw / 2;
@@ -6863,7 +6881,14 @@
     function renderHintLine(ctx, placed, vp) {
       let txt = null;
       if (houseAtRest()) {
-        txt = 'CLICK EMPTY SPACE OR ESC — THE WHEEL · CLICK A PORT — TRAVEL';
+        // 2026-07-31 wave 3 — the string had to move with LAW 1. An
+        // empty click no longer leaves from anywhere: it only counts
+        // OUTSIDE the house circle, because inside, the tree is mostly
+        // air and a slightly-missed disc was throwing John out of the
+        // room he was reading. Leaving the old wording would have the
+        // map instructing him to do something that now does nothing —
+        // the worst kind of false claim, since he would blame the click.
+        txt = 'CLICK OUTSIDE THE CIRCLE OR ESC — THE WHEEL · CLICK A PORT — TRAVEL';
       } else if (local.params.house_hint_line
           && !local._isolateFamily && !local._house
           && document.body.classList.contains('fv-layout-wheel')

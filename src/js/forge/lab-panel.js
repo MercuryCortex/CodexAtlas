@@ -106,6 +106,13 @@
       ['house_rail_cap',   'Rail cap',   20,   400, 10,   '',  'house'],
       ['house_rail_glyph', 'Rail glyph', 0.2,  0.7, 0.02, '×', 'house'],
       ['house_rail_hit',   'Rail hit',   0,    12,  0.5,  'wu', 'house'],
+      // WAVE 3 interaction laws — the sibling agent shipped both dials
+      // but could not add their rows (this file was mine that wave).
+      // Exit radius: how far out an empty click must land to leave the
+      // house, as a fraction of Rh. 0 restores the old
+      // click-anywhere-to-leave behaviour exactly.
+      ['house_exit_r',   'Exit radius', 0,    1.4, 0.02, '×', 'redraw'],
+      ['house_port_hit', 'Port hit',    0,    24,  1,    'px', 'redraw'],
       // THE THREE ZONES (2026-07-31 wave 3) — John asked for this
       // panel by name: "a panel just dedicated to the sizes macro of
       // these three sections". Outside in: the horizon ports ring,
@@ -236,6 +243,8 @@
         { k: 'slider', key: 'house_tween_ms' },
         { k: 'slider', key: 'house_rail_cap' },
         { k: 'slider', key: 'house_rail_hit' },
+        { k: 'slider', key: 'house_exit_r' },
+        { k: 'slider', key: 'house_port_hit' },
         { k: 'slider', key: 'house_hint_line' },
       ] },
       // THE SIZES PANEL (2026-07-31 wave 3) — John, by name: "it will
