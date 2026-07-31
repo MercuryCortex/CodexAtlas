@@ -139,7 +139,7 @@ The regex was never the gap — it existed in two places. **Nothing ran it.**
   **allowlist** of project pseudonyms (a denylist would mean writing the real
   identity into the hook).
 - `_FOUNDER-PROTOCOL/audit.sh` (shared, all projects): the hard regex was
-  `redacted@gmail|john ?filipe` and walked straight past the bare handle; hits
+  anchored on the real name and the gmail address and walked straight past the bare handle; hits
   are now filtered through `git check-ignore` so `PROJECT-IDENTITY.md`
   (gitignored by design) stops making the gate cry wolf on every push.
 
