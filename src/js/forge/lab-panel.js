@@ -126,6 +126,16 @@
       ['house_band_rows',  'Band rows',   1,    4,    1,     '',  'house'],
       ['house_tree_r',     'Tree zone',   0.50, 1.00, 0.005, '×', 'house'],
       ['house_type_scale', 'Type scale',  0.8,  1.6,  0.05,  '×', 'house'],
+      // THE GODS GET THEIR NAMES BACK (2026-07-31 wave 4). John: "the
+      // DEities nodes are the most important and NEVER appear, i need
+      // to OVER to see the names.... even at 100% scale!" MEASURED
+      // before the fix: 5 of Norse's 50 gods carried a name at camera
+      // scale 1.0 (3 at the isolate's own fit), with all 50 drawn at
+      // the identical radius. This is the CEILING on how many cascade
+      // members may be named at once — collision still decides who
+      // prints. 120 clears the biggest family in the vault (Vedic,
+      // 97); 0 is the honest zero (the pre-wave-4 zoom ladder alone).
+      ['house_name_max',   'House names', 0,    200,  5,     '',  'relabel'],
       // The wheel-state "CLICK A FAMILY TITLE — THE HOUSE" line. 0 =
       // the wheel paints byte-identical to before the hint existed.
       // (Agent C shipped the dial; its LAB row could not be added from
@@ -154,6 +164,14 @@
       // between two families neither of which is this house says
       // nothing about this house. Hover still lights a deity's own.
       ['house_rest_wires', 'Rest wires', ['full', 'stubs', 'off'], 'redraw'],
+      // THE TITLE BLOCK IS A LOCKED SCREEN FIXTURE (2026-07-31 wave 4).
+      // John: "just find locked spots for these, the nodes should not
+      // be influenced by this title block." Which TOP corner it locks
+      // to. Default 'left' because the DEV / LAB drawer is pinned top
+      // right; 'right' is for when that drawer is closed. Never the
+      // bottom — the bottom bar owns that edge. Not a layout dial: the
+      // block no longer touches the layout at all, which is the point.
+      ['house_title_slot', 'Title corner', ['left', 'right'], 'relabel'],
     ];
     const TOGGLES = [
       ['recipe_irid',   'Iridescence'],
@@ -216,6 +234,16 @@
         { k: 'slider', key: 'house_rail_glyph' },
         { k: 'slider', key: 'house_tree_r' },
         { k: 'slider', key: 'house_type_scale' },
+      ] },
+      // THE NAMES + THE TITLE BLOCK (2026-07-31 wave 4) — his two
+      // loudest complaints of the round, side by side, in a section
+      // that opens by default (a control he cannot find is unshipped;
+      // that has now happened four times). "House names" is the
+      // ceiling on how many gods may be named at once; "Title corner"
+      // is which top corner the locked title block stands in.
+      { id: 'housenames', title: 'House names + title block', open: true, items: [
+        { k: 'slider', key: 'house_name_max' },
+        { k: 'radio',  key: 'house_title_slot' },
       ] },
       { id: 'nodes', title: 'Nodes', open: true, items: [
         { k: 'slider', key: 'recipe_hover_zoom' },
@@ -368,7 +396,8 @@
       if (k === 'recipe_wake_cap' || k === 'recipe_gate_px' || k === 'recipe_wake_radius_px'
           || k === 'film_full_pct' || k === 'film_fade_pct'
           || k === 'house_tween_ms' || k === 'house_band_gap'
-          || k === 'house_band_rows' || k === 'house_rail_cap') return String(Math.round(v));
+          || k === 'house_band_rows' || k === 'house_rail_cap'
+          || k === 'house_name_max') return String(Math.round(v));
       return (+v).toFixed(2);
     }
     function recipeStr() {
@@ -406,6 +435,9 @@
         + ' rows ' + Math.round(p.house_band_rows || 3)
         + ' tree ' + (+p.house_tree_r || 0.86).toFixed(2)
         + ' type x' + (+p.house_type_scale || 1).toFixed(2)
+        + ' · NAMES max ' + Math.round(
+            typeof p.house_name_max === 'number' ? p.house_name_max : 120)
+        + ' title ' + (p.house_title_slot === 'right' ? 'right' : 'left')
         + ' · WIRE px ' + (+p.wire_min_screen_px || 0).toFixed(1)
         + '/' + (+p.wire_max_screen_px || 0).toFixed(1)
         + ' hot ' + (+p.wire_hot_screen_px || 0).toFixed(1);
@@ -416,6 +448,20 @@
     //    section body now instead of straight into the panel) ──
     const SLIDER_BY_KEY = {};
     for (const s of SLIDERS) SLIDER_BY_KEY[s[0]] = s;
+    // A house radio can be placed on its own, in a section that is
+    // about it, instead of only inside the whole-block `{k:'house'}`
+    // row. Whatever an explicit `{k:'radio'}` item places is recorded
+    // here so the block cannot render it a SECOND time — two live
+    // copies of one control is the "which of these is the real one"
+    // bug, not a convenience.
+    // Collected UP FRONT, because the whole-block row is in the FIRST
+    // section and an explicit item may sit in a later one.
+    const RADIO_BY_KEY = {};
+    for (const r of HOUSE_RADIOS) RADIO_BY_KEY[r[0]] = r;
+    const radioPlaced = new Set();
+    for (const sec of SECTIONS) {
+      for (const it of sec.items) if (it.k === 'radio' && RADIO_BY_KEY[it.key]) radioPlaced.add(it.key);
+    }
     const used = new Set();
 
     function addSlider(host, key) {
@@ -439,6 +485,11 @@
         if (mode === 'rebake' && api.rebake) api.rebake();
         else if (mode === 'refocus' && api.refocus) api.refocus();
         else if (mode === 'house' && api.houseSnap) api.houseSnap();
+        // WAVE 4 — a dial that changes WHICH names are eligible must
+        // rebuild the label set; a plain redraw hits the paint's
+        // idle-skip cache and the dial reads as dead. See forge.js's
+        // api.relabel.
+        else if (mode === 'relabel' && api.relabel) api.relabel();
         else api.redraw();
       });
       host.appendChild(row); host.appendChild(inp);
@@ -505,6 +556,10 @@
 
       for (const it of sec.items) {
         if (it.k === 'slider')  addSlider(body, it.key);
+        else if (it.k === 'radio') {
+          const spec = RADIO_BY_KEY[it.key];
+          if (spec) addRadioRow(body, spec[0], spec[1], spec[2], api[spec[3] || 'houseMorph']);
+        }
         else if (it.k === 'toggles') addToggles(body, it.keys);
         else if (it.k === 'casts') {
           for (const [key, label] of CASTS) {
@@ -514,6 +569,7 @@
           for (const [key, label, opts] of VOICES) addRadioRow(body, key, label, opts);
         } else if (it.k === 'house') {
           for (const [key, label, opts, apiAfter] of HOUSE_RADIOS) {
+            if (radioPlaced.has(key)) continue;   // an explicit {k:'radio'} owns it
             addRadioRow(body, key, label, opts, api[apiAfter || 'houseMorph']);
           }
         }

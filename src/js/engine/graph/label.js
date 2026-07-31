@@ -42,8 +42,49 @@
   //                                        custom width estimator
   //                   worldToScreen: (x, y) => {x,y}    REQUIRED
   //                                        for screen-space collision
+  //                   ── THE OPEN SET (2026-07-31 wave 4) ──
+  //                   openIds:  Set<id>   nodes that are NAME-WORTHY by
+  //                             their own presentation, not by the
+  //                             wheel's degree percentile. See the
+  //                             argument below.
+  //                   openMax:  number    how many of them may be
+  //                             admitted (0 = none; an explicit 0 is
+  //                             honoured, it is not "absent").
+  //                   openRank: Map<id, number>  higher goes first —
+  //                             degree, so collision resolves ties in
+  //                             an order the reader can name.
   //                 }
   // @returns Set<nodeId>  the ids that SHOULD show a label at idle.
+  //
+  // ── WHY THE OPEN SET EXISTS (2026-07-31 wave 4) ────────────────
+  // John: "the DEities nodes are the most important and NEVER appear,
+  // i need to OVER to see the names.... even at 100% scale!"
+  //
+  // MEASURED: in the Norse house at camScale 1.0, 5 of 50 gods were
+  // eligible for a name (3 at the isolate's own fit scale of ~0.70) —
+  // and all 50 are drawn at the IDENTICAL radius (worldR 23.84).
+  //
+  // The tier ladder is not broken; it is answering a question the
+  // house does not ask. `tier` is a degree percentile taken across the
+  // WHOLE wheel, and ON the wheel it correlates with disc size, so
+  // gating names on zoom declutters honestly: a big disc earns its
+  // name first. The house throws that correlation away — it re-sizes
+  // every member onto its own radius lane, so 50 equally-large discs
+  // stand there with 47 of them mute for a reason nothing on screen
+  // expresses.
+  //
+  // So: inside a house, name-worthiness follows the house's own
+  // presentation. `openIds` is admitted with NO zoom gate and NO
+  // centre-weight budget, ordered by `openRank`.
+  //
+  // AND NO AABB PASS OF ITS OWN — deliberate, per law 5 (ONE LABEL
+  // REGISTRY). The view's renderLabelsCanvas runs the real,
+  // priority-ordered `claim()` over every name AND every piece of
+  // house chrome. A second collision pass here, with a different
+  // width estimate and a different rect, could only ever refuse a
+  // name the real registry would have printed — which is the exact
+  // complaint. The open set is CANDIDACY; `claim()` decides who
+  // prints. `openMax` is the ceiling, and it is a LAB dial.
   function computeIdleLabelVisibility(hitNodes, camScale, opts) {
     // Phase 24-CENTER-WEIGHT (2026-05-26) — smoother tier progression.
     // Was [0, 1.0, 1.8, 2.0, 2.5, 3.5] which had a cliff at 1.8→2.0
@@ -86,12 +127,47 @@
 
     if (!w2s) return new Set();
 
+    // ── Pass 0: THE OPEN SET (see the header argument) ─────────
+    // No zoom gate, no centre-weight budget, no AABB of its own.
+    // Deterministic: openRank desc, then id.
+    const openIds  = (opts && opts.openIds instanceof Set) ? opts.openIds : null;
+    const openMax  = (opts && typeof opts.openMax === 'number')   // an explicit 0 means ZERO
+      ? Math.max(0, Math.floor(opts.openMax)) : 0;
+    const openRank = (opts && opts.openRank instanceof Map) ? opts.openRank : null;
+    // HONEST ZERO of the ceiling dial: openMax 0 means the open pass
+    // does not run AT ALL — including its exclusion from the ladder
+    // below. Otherwise setting the dial to 0 would delete every house
+    // name instead of handing the house back to the zoom ladder, which
+    // is not what "off" means.
+    const openOn = !!(openIds && openIds.size && openMax > 0);
+    const out = new Set();
+    if (openOn) {
+      const open = [];
+      for (let i = 0; i < hitNodes.length; i++) {
+        const n = hitNodes[i];
+        if (!openIds.has(n.id)) continue;
+        if (useVpCull) {
+          const s = w2s(n.x, n.y);
+          if (s.x < -vMargin || s.x > vp.w + vMargin
+              || s.y < -vMargin || s.y > vp.h + vMargin) continue;
+        }
+        open.push(n);
+      }
+      const rankOf = (n) => (openRank ? (openRank.get(n.id) || 0) : 0);
+      open.sort((a, b) => (rankOf(b) - rankOf(a)) || (a.id < b.id ? -1 : 1));
+      for (let i = 0; i < open.length && out.size < openMax; i++) out.add(open[i].id);
+    }
+
     // Pass 1: per-tier eligibility by zoom threshold.
     // tierBuckets[T] = nodes of tier T that pass camScale.
+    // An open-set member never enters the ladder — it is already
+    // admitted (or already over the ceiling), and letting it compete
+    // again would spend a tier budget on a decided name.
     const NUM_TIERS = 6;
     const tierBuckets = [[], [], [], [], [], []];
     for (let i = 0; i < hitNodes.length; i++) {
       const n = hitNodes[i];
+      if (openOn && openIds.has(n.id)) continue;
       const t = n.tier | 0;
       if (t < 0 || t >= NUM_TIERS) continue;
       const need = thresh[t];
@@ -111,7 +187,6 @@
     //
     // Per-tier soft budgets prevent any single tier from starving
     // others. The OVERALL `cap` (label_idle_max) is the hard limit.
-    const out = new Set();
     const boxes = [];   // [x0, y0, x1, y1] per shown label
     const halfH = sizePx * 0.6 + padPx;
     const tierBudget = [

@@ -623,6 +623,8 @@ must(/const TYPE = \{ head: 11 \* ts, name: 10 \* ts, cap: 9\.5 \* ts \};/,
 must(/const row = \(px\) => Math\.max\(16, Math\.round\(px \* 1\.9\)\);/,
   'row pitch DERIVES from the step size and always clears the 15px rule');
 must(/const CROWN_ROW = row\(TYPE\.head\);/, 'the crown stack pitch derives from the HEAD step');
+must(/const anchor = houseTitleAnchor\(vp\);\n\s+const cs = \{ x: anchor\.x, y: anchor\.y \};/,
+  'the title block anchors on the SCREEN fixture, never on the world crown (wave 4)');
 must(/const aStep = 22 \/ Math\.max\(1e-6, rl\.r \* camS\);/,
   'the band obstacle shield follows the ARC at 22px screen pitch');
 must(/let hx = hp\.x \+ rl\.head\.ux \* 26;/,
@@ -656,26 +658,73 @@ function claimSim(placed, cx0, y, w, vpH) {
   return true;
 }
 const RING_VPS = [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }, { w: 900, h: 1600 }];
+// THE LOCKED SCREEN FIXTURE (2026-07-31 wave 4) — mirrors forge.js's
+// houseTitleAnchor + the four rows of renderHouseChrome §1/§1b. No
+// camera term appears anywhere in it, which is the whole claim.
+const TITLE_PAD = 24, TITLE_TOP = 66;
+const titleAnchor = (vp, slot) => ({
+  right: slot === 'right',
+  x: (slot === 'right') ? Math.max(TITLE_PAD, vp.w - TITLE_PAD) : TITLE_PAD,
+  y: TITLE_TOP,
+});
+// The family name is SVG (11px mono, letter-spacing .24em, uppercase);
+// 0.85em per glyph is the conservative advance for a collision test.
+const titleW = (fam) => String(fam).length * 11 * 0.85 + 12;
+let titleBlockFail = 0, titleBlockTot = 0;
+// The deity names paint in the SANS face at label_size (14 CSS px);
+// 0.52em is the conservative average advance for Inter at that size.
+const sansW = (str) => String(str).length * 14 * 0.52;
+// The wheel's tier percentiles over the DEITIES block, mirroring
+// engine/graph/node.js — the rank pass walks names in tier order, and
+// label.js's open set feeds it in DEGREE order inside a tier.
+const W4_DEITIES = NODES.filter(n => n && n.type === 'deity');
+const W4_DIDS = new Set(W4_DEITIES.map(n => n.id));
+const W4_DEG = degreeMap(W4_DEITIES, EDGES.filter(e => W4_DIDS.has(e.source) && W4_DIDS.has(e.target)));
+const W4_SORTED = W4_DEITIES.map(n => W4_DEG.get(n.id) || 0).sort((a, b) => b - a);
+const W4_Q = (p) => W4_SORTED[Math.min(W4_SORTED.length - 1, Math.floor(W4_SORTED.length * p))] || 0;
+const W4_CUT = [W4_Q(0.04), W4_Q(0.15), W4_Q(0.40), W4_Q(0.60), W4_Q(0.80)];
+const w4TierOf = (id) => {
+  const d = W4_DEG.get(id) || 0;
+  for (let t = 0; t < 5; t++) if (d >= W4_CUT[t]) return t;
+  return 5;
+};
 for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'Other']) {
   const lay = houseUnion(fam, 'cascade');
   const h = lay.house;
   let headerFail = 0, capFail = 0, capTot = 0, spineFail = 0, spineTot = 0;
   let footFail = 0, footTot = 0, nameBlocked = 0, nameTot = 0, clampSkip = 0;
+  let godTot = 0, godPrinted = 0, godClamped = 0;
+  // The rank pass's own order: tier asc, then degree desc, then id.
+  const nameOrder = [];
+  for (const row of h.rows) for (const id of row) nameOrder.push(id);
+  nameOrder.sort((a, b) => (w4TierOf(a) - w4TierOf(b))
+    || ((W4_DEG.get(b) || 0) - (W4_DEG.get(a) || 0)) || (a < b ? -1 : 1));
   for (const vp of RING_VPS) {
     const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
     const W2S = (x, y) => ({ x: vp.w / 2 + x * scale, y: vp.h / 2 + y * scale });
     const placed = [];
-    // 1 ▸ the crown stack (HIGH half, before the rails) — width from
-    // the real strings the crown prints for this family.
+    // 1 ▸ THE TITLE BLOCK (HIGH half, first of all) — the family name,
+    // both stat lines and the CASCADE/FAN chips, on the locked screen
+    // fixture. Width from the real strings this family prints.
     const st = h.stats;
-    const cs = W2S(h.crown.x, h.crown.y);
+    const anch = titleAnchor(vp, 'left');
+    const cs = { x: anch.x, y: anch.y };
+    const cenX = (w) => anch.right ? (anch.x - w / 2) : (anch.x + w / 2);
     const CROWN_ROW = rowOf(T_HEAD);
     const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
     const line1 = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' LINEAGE ARCS · ' + st.orphanCount + ' STAND ON THEIR ERA';
     const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
-    claimSim(placed, cs.x, cs.y + CROWN_ROW, mw(line1, T_HEAD), vp.h);
-    claimSim(placed, cs.x, cs.y + CROWN_ROW * 2, mw(line2, T_CAP), vp.h);
-    claimSim(placed, cs.x, cs.y + CROWN_ROW * 3, 110, vp.h);          // CASCADE/FAN chip reserve
+    const tw = titleW(fam);
+    const w1 = mw(line1, T_HEAD), w2b = mw(line2, T_CAP);
+    // Row 0 is syncHulls' published title rect, seeded into `placed`
+    // before the canvas pass — same as local._titleRects.
+    const rows4 = [
+      claimSim(placed, cenX(tw), cs.y, tw, vp.h),
+      claimSim(placed, cenX(w1), cs.y + CROWN_ROW, w1, vp.h),
+      claimSim(placed, cenX(w2b), cs.y + CROWN_ROW * 2, w2b, vp.h),
+      claimSim(placed, cenX(110), cs.y + CROWN_ROW * 3, 110, vp.h),   // CASCADE/FAN chip reserve
+    ];
+    for (const r of rows4) { titleBlockTot++; if (!r) titleBlockFail++; }
     // 2 ▸ the band shield, exactly as renderHouseChrome claims it
     for (const rl of [h.rails.left, h.rails.right]) {
       if (!rl || !rl.shelves.length) continue;
@@ -747,6 +796,30 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
       ly = Math.max(KO_TOP + 2, Math.min(vp.h - KO_BOT - 2, ly));
       claimSim(placed, left ? lx - w / 2 : lx + w / 2, ly, w + 8, vp.h);
     }
+    // 5b ▸ THE GOD NAMES (2026-07-31 wave 4) — the whole point of the
+    // open set, replayed through the REAL registry in the REAL order:
+    // title block → band shield → headers → captions/spines → ports →
+    // THESE → the low half. PROVE A PROMISED STRING ACTUALLY PRINTS.
+    // Position and rect are renderLabelsCanvas's own: centred above the
+    // disc at s.y − r·scale − 6 (width = measured + 10, sans 14px),
+    // and — house only — the mirrored row at s.y + r·scale + 16 when
+    // the row above is taken.
+    for (const id of nameOrder) {
+      const p = lay.positions.get(id);
+      if (!p) continue;
+      const s = W2S(p.x, p.y);
+      if (s.x < -100 || s.x > vp.w + 100 || s.y < -100 || s.y > vp.h + 100) continue;
+      const node = NODE_BY_ID.get(id);
+      const title = (node && node.title) || id;
+      const wpx = sansW(title) + 10;
+      const rBub = (lay.radii.get(id) || 0) * scale;
+      const ly = s.y - rBub - 6;
+      if (ly < KO_TOP || ly > vp.h - KO_BOT) { godClamped++; continue; }
+      godTot++;
+      if (claimSim(placed, s.x, ly, wpx, vp.h)) { godPrinted++; continue; }
+      const ly2 = s.y + rBub + 16;
+      if (claimSim(placed, s.x, ly2, wpx, vp.h)) godPrinted++;
+    }
     // 6 ▸ every slot's radially-outboard REACH name vs the shield
     // (the wave-2 standard: a name that FITS beside the band must not
     // be blocked by the shield; a name clamped by the viewport edge
@@ -795,7 +868,23 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
   else fail(fam + ': ' + footFail + ' of ' + footTot + ' overflow feet refused');
   if (nameBlocked === 0) ok(fam + ': 0 of ' + nameTot + ' slot reach-names blocked by the band shield');
   else fail(fam + ': ' + nameBlocked + ' of ' + nameTot + ' slot reach-names blocked by the shield');
+  // WAVE 4 — the gods' names, actually printed through the registry.
+  // The floor is deliberately a FRACTION, not a count: a name that
+  // loses to another NAME is the collision rule working, but a house
+  // where most gods still cannot print would mean the open set never
+  // reached the registry (the defect John reported).
+  const godPct = godTot ? (100 * godPrinted / godTot) : 100;
+  if (godPct >= 62) {
+    ok(fam + ': ' + godPrinted + ' of ' + godTot + ' god names PRINT through the real registry ('
+      + godPct.toFixed(0) + '%, 4 viewports'
+      + (godClamped ? '; ' + godClamped + ' keep-out clamped' : '') + ')');
+  } else {
+    fail(fam + ': only ' + godPrinted + ' of ' + godTot + ' god names print (' + godPct.toFixed(0) + '%)');
+  }
 }
+if (titleBlockFail === 0) ok('the title block prints all four rows, 6 families × 4 viewports ('
+  + titleBlockTot + ' placements)');
+else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused');
 
 // ── W3-HOSTILE ▸ the dial extremes can never make slots touch ──
 // The overlap that survived first contact: 4 sub-rows at a tight
@@ -938,10 +1027,214 @@ must(/const snap = local\._houseModeSnapshot;[\s\S]{0,160}return snap\.nodes;/,
   readFileSync(join(root, 'src/js/forge/search-autocomplete.js'), 'utf8'));
 must(/const env = houseChromeEnv\(ctx, placed, vp\);[\s\S]{0,300}if \(env\.claim\(vp\.w \/ 2, hy, w\)\)/,
   'renderHintLine goes through the ONE claim(), not a second copy of the collision math (law 5)');
-must(/claim\(cs\.x \+ \(wFan - wCas\) \/ 2, chipY/,
+must(/claim\(chipX \+ \(wFan - wCas\) \/ 2, chipY/,
   'the CASCADE/FAN registry reserve is centred on the rect the chips actually occupy');
+must(/const chipX = anchor\.right \? \(anchor\.x - wFan - 8\) : \(anchor\.x \+ wCas \+ 8\);/,
+  'the chips ride the title block\'s own edge, flush with the stack (wave 4)');
 must(/else chipsG\.style\.removeProperty\('--family-color'\);/,
   'a house with no hull colour clears the chip colour instead of keeping the previous family\'s');
+
+// ════════════════════════════════════════════════════════════════
+// W4 ▸ THE GODS GET THEIR NAMES BACK
+// ════════════════════════════════════════════════════════════════
+// John: "the DEities nodes are the most important and NEVER appear,
+// i need to OVER to see the names.... even at 100% scale!"
+//
+// The old rule: a name is eligible when camScale clears the node's
+// TIER threshold, tier being a degree percentile over the WHOLE
+// wheel. Inside a house that is the wrong question — the house
+// re-sizes every member onto its own radius lane, so every god is
+// drawn the same and only the top few percent are ever named.
+//
+// This section measures BOTH rules against the real vault at the
+// scale the isolate actually flies to.
+console.log('\n── W4 · house names: admitted before vs after (the ladder vs the open set) ──');
+const labelSrc = readFileSync(join(root, 'src/js/engine/graph/label.js'), 'utf8');
+must(/opts\.openIds\s*=\s*treeIds;/,
+  'syncLabels admits the CASCADE to the idle set (the open set)');
+must(/if \(openOn && openIds\.has\(n\.id\)\) continue;/,
+  '(label.js) an open-set member never also competes in the zoom ladder', labelSrc);
+// HONEST ZERO of the ceiling dial, measured (not source-pinned): with
+// the ceiling at 0 the function must behave EXACTLY as if the house
+// had never handed it an open set — the ladder alone.
+{
+  globalThis.AtlasEngineGraph = undefined;
+  new Function(labelSrc)();
+  const fn = globalThis.AtlasEngineGraph.computeIdleLabelVisibility;
+  const hn = [];
+  for (let i = 0; i < 60; i++) {
+    hn.push({ id: 'probe-' + i, x: (i % 10) * 90, y: Math.floor(i / 10) * 70, r: 9, tier: i % 6 });
+  }
+  const base = { worldToScreen: (x, y) => ({ x: x + 40, y: y + 60 }), viewport: { w: 1000, h: 700 },
+    maxLabels: 100, labelSizePx: 14, collisionPaddingPx: 4,
+    tierZoomThresholds: [0, 0.8, 1.2, 1.6, 2.0, 2.8] };
+  const all = new Set(hn.map(n => n.id));
+  const rank = new Map(hn.map((n, i) => [n.id, 60 - i]));
+  const key = (s) => Array.from(s).sort().join('|');
+  let zeroOK = true, dialOK = true;
+  for (const cs of [0.5, 0.7, 1.0, 1.4, 2.0, 3.0]) {
+    const ladder = key(fn(hn, cs, Object.assign({}, base)));
+    if (ladder !== key(fn(hn, cs, Object.assign({}, base, { openIds: all, openMax: 0, openRank: rank })))) zeroOK = false;
+    const opened = fn(hn, cs, Object.assign({}, base, { openIds: all, openMax: 60, openRank: rank }));
+    if (opened.size !== 60) dialOK = false;
+  }
+  if (zeroOK) ok('(label.js) ceiling 0 ⇒ output identical to the plain zoom ladder (honest zero of the dial)');
+  else fail('(label.js) ceiling 0 does NOT reduce to the plain ladder');
+  if (dialOK) ok('(label.js) ceiling 60 ⇒ all 60 open candidates admitted at every zoom, no ladder gate');
+  else fail('(label.js) the open set is still being gated by zoom');
+}
+must(/const openMax\s*=\s*\(opts && typeof opts\.openMax === 'number'\)/,
+  '(label.js) openMax reads by TYPE — an explicit 0 means zero, not "absent"', labelSrc);
+must(/\/\/ AND NO AABB PASS OF ITS OWN/,
+  '(label.js) the open set runs NO second collision pass — law 5, the view\'s claim() is the ONE registry', labelSrc);
+must(/if \(rankTreeIds && !rankTreeIds\.has\(id\)\) continue;/,
+  'the RANK pass names the cascade and nothing else (band mass + parked remainder keep the reach path)');
+// A CONTROL HE CANNOT FIND IS UNSHIPPED (the standing rule, breached
+// four times in three days). Both wave-4 dials must be in the LAB, in
+// a section that DECLARES itself open, and the open-state fallback
+// that makes a declared-open NEW section actually open for a returning
+// user must still be there — that fallback is the structural fix, and
+// without it this section ships invisible exactly like the last one.
+{
+  const labSrc = readFileSync(join(root, 'src/js/forge/lab-panel.js'), 'utf8');
+  const sec = /\{ id: 'housenames', title: '([^']+)', open: true,/.exec(labSrc);
+  if (sec) ok('LAB has a section "' + sec[1] + '", declared OPEN');
+  else fail('the wave-4 dials have no open LAB section — the control is unfindable');
+  must(/\['house_name_max',\s+'House names'/, 'LAB row: House names (the ceiling)', labSrc);
+  must(/\{ k: 'radio',\s+key: 'house_title_slot' \}/, 'LAB row: Title corner', labSrc);
+  must(/if \(!Object\.prototype\.hasOwnProperty\.call\(openState, sec\.id\)\) openState\[sec\.id\] = !!sec\.open;/,
+    'a NEW section falls back to its DECLARED open state for a returning user', labSrc);
+  must(/else if \(mode === 'relabel' && api\.relabel\) api\.relabel\(\);/,
+    'the LAB routes a name dial through relabel(), not a redraw the idle-skip swallows', labSrc);
+  must(/relabel\(\) \{ try \{ syncLabels\(\); \}/,
+    'forge.js exposes relabel() — the label SET is rebuilt, so the dial is not dead until the next pan');
+  must(/local\._hullsIdleTitle === _hts/,
+    'syncHulls\' idle cache carries the title slot, so the corner dial actually moves the block');
+}
+
+// The wheel's tier percentiles, exactly as engine/graph/node.js cuts
+// them (4 / 15 / 40 / 60 / 80%), taken over the DEITIES wheel — which
+// is the block the house pins its percentiles to.
+{
+  const deities = NODES.filter(n => n && n.type === 'deity');
+  const dIds = new Set(deities.map(n => n.id));
+  const dEdges = EDGES.filter(e => dIds.has(e.source) && dIds.has(e.target));
+  const wheelDeg = degreeMap(deities, dEdges);
+  const sorted = deities.map(n => wheelDeg.get(n.id) || 0).sort((a, b) => b - a);
+  const q = (p) => sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * p))] || 0;
+  const cut = [q(0.04), q(0.15), q(0.40), q(0.60), q(0.80)];
+  const tierOf = (id) => {
+    const d = wheelDeg.get(id) || 0;
+    for (let t = 0; t < 5; t++) if (d >= cut[t]) return t;
+    return 5;
+  };
+  const THRESH = [0, 0.8, 1.2, 1.6, 2.0, 2.8];   // label.js tierZoomThresholds
+  const NAME_MAX = 120;                          // PARAM_DEFAULTS.house_name_max
+  const FIT = 900 / 1220;                        // the isolate's own fit at 1440x900
+  let mute = 0;
+  console.log('    family        cascade  named@fit  named@1.0  →  admitted (ceiling ' + NAME_MAX + ')');
+  for (const fam of ['Greek', 'Norse', 'Vedic', 'Christian', 'Chinese', 'Egyptian', 'Mesopotamian']) {
+    const h = houseUnion(fam, 'cascade').house;
+    const ids = [];
+    for (const row of h.rows) for (const id of row) ids.push(id);
+    const eligible = (cs) => ids.filter(id => cs + 1e-6 >= THRESH[tierOf(id)]).length;
+    const after = Math.min(ids.length, NAME_MAX);
+    if (after <= eligible(FIT)) mute++;
+    console.log('    ' + fam.padEnd(14) + String(ids.length).padStart(5)
+      + String(eligible(FIT)).padStart(10) + String(eligible(1.0)).padStart(11)
+      + '  →  ' + after + ' (' + (after - eligible(FIT)) + ' gods who had no name)');
+  }
+  if (mute === 0) ok('every family names MORE of its cascade than the zoom ladder did at the isolate fit');
+  else fail(mute + ' families gained nothing — the open set is not reaching them');
+  // The ceiling has to clear the biggest cascade in the vault, or the
+  // default silently truncates a family and John reads it as the bug
+  // he already reported.
+  let biggest = 0, biggestFam = '';
+  for (const fam of new Set(NODES.map(n => (n && n.family) || 'Other'))) {
+    const h = houseUnion(fam, 'cascade').house;
+    let n = 0;
+    for (const row of h.rows) n += row.length;
+    if (n > biggest) { biggest = n; biggestFam = fam; }
+  }
+  if (NAME_MAX >= biggest) {
+    ok('the default ceiling ' + NAME_MAX + ' clears the largest cascade in the vault ('
+      + biggestFam + ', ' + biggest + ')');
+  } else {
+    fail('house_name_max ' + NAME_MAX + ' truncates ' + biggestFam + ' (' + biggest + ' members)');
+  }
+}
+
+// ════════════════════════════════════════════════════════════════
+// W4-SPAN ▸ THE CROWN'S RESERVED WORLD SPAN, GIVEN BACK
+// ════════════════════════════════════════════════════════════════
+// CASCADE_BIAS pushed the whole cascade 0.10·Rt BELOW the house
+// centre so a four-row caption stack had a clear column above the
+// first rank. The block is a screen fixture now, so the offset is
+// SOLVED per family instead. These floors are the MEASURED post-fix
+// median god radii minus a hair — a future edit that shrinks the
+// gods (the exact regression the symmetric-span variant caused on
+// Mesopotamian, −10%) fails here instead of being noticed by eye.
+console.log('\n── W4-SPAN · the cascade re-centres, and no family loses size ──');
+must(/const solveVOffset = \(P0\) => \{/,
+  '(layout) the cascade SOLVES its vertical offset instead of a hard-coded caption bias', treeSrc);
+must(/let s = 1;\s*\/\/ clamped: "already fits" is the ceiling/,
+  '(layout) the fit objective is clamped at 1, so a house that needs no shift stays CENTRED', treeSrc);
+if (!/const\s+CASCADE_BIAS\s*=/.test(treeSrc)) ok('(layout) CASCADE_BIAS is gone — nothing reserves world space for the caption');
+else fail('(layout) CASCADE_BIAS still exists: the tree is still being pushed aside by a title');
+{
+  // Measured 2026-07-31 wave 4 on the real vault, floored at 99%.
+  const FLOOR = {
+    Greek: 19.0, Norse: 20.8, Vedic: 16.8, Christian: 28.0, Chinese: 22.8,
+    Egyptian: 16.6, Mesopotamian: 16.5, Celtic: 24.0, Mesoamerican: 20.0, Baltic: 32.6,
+  };
+  let low = 0;
+  const line = [];
+  for (const fam of Object.keys(FLOOR)) {
+    const lay = houseUnion(fam, 'cascade');
+    const ids = [];
+    for (const row of lay.house.rows) for (const id of row) ids.push(id);
+    const rs = ids.map(id => lay.radii.get(id) || 0).sort((a, b) => a - b);
+    const med = rs.length ? rs[Math.floor(rs.length / 2)] : 0;
+    line.push(fam + ' ' + med.toFixed(1));
+    if (med < FLOOR[fam]) { low++; fail(fam + ': median god radius ' + med.toFixed(1)
+      + ' wu is UNDER the wave-4 floor ' + FLOOR[fam]); }
+  }
+  if (!low) ok('median god radius holds or beats the wave-4 floor in all ' + line.length
+    + ' families — ' + line.join(' · '));
+  // And the tree really is CENTRED now (the visible half of his
+  // complaint): the cascade's own vertical mid-point sits near the
+  // house centre unless the circle fit genuinely needs otherwise.
+  // EXPECT_CENTRED are the families whose circle fit does NOT bind, so
+  // the solver's tie-break lands them on the house centre. Egyptian
+  // and Mesopotamian are printed but excluded on purpose: their widest
+  // bed genuinely wants to sit off-centre, and that offset is what
+  // buys Egyptian its +5.8%. A caption is not what moves them.
+  const EXPECT_CENTRED = new Set(['Greek', 'Norse', 'Vedic', 'Christian', 'Chinese',
+    'Celtic', 'Mesoamerican', 'Baltic']);
+  let centred = 0, tot = 0;
+  const mids = [];
+  for (const fam of [...EXPECT_CENTRED, 'Egyptian', 'Mesopotamian']) {
+    const lay = houseUnion(fam, 'cascade');
+    let yTop = Infinity, yBot = -Infinity;
+    for (const row of lay.house.rows) for (const id of row) {
+      const p = lay.positions.get(id), r = lay.radii.get(id) || 0;
+      yTop = Math.min(yTop, p.y - r); yBot = Math.max(yBot, p.y + r);
+    }
+    const mid = (yTop + yBot) / 2;
+    mids.push(fam + ' ' + (mid >= 0 ? '+' : '') + mid.toFixed(0));
+    if (!EXPECT_CENTRED.has(fam)) continue;
+    tot++;
+    if (Math.abs(mid) <= 0.04 * lay.house.radius) centred++;
+  }
+  console.log('    cascade vertical mid-point (wu off the house centre): ' + mids.join(' · '));
+  if (centred === tot) ok(tot + ' of ' + tot + ' fit-unbound cascades now sit ON the house centre'
+    + ' (every one was +43…+63 wu below it under CASCADE_BIAS)');
+  else fail((tot - centred) + ' of ' + tot + ' cascades are still shoved off centre');
+  // Determinism of the solver — the whole layout is pinned on this.
+  const a = houseUnion('Vedic', 'cascade'), b = houseUnion('Vedic', 'cascade');
+  if (snapshot(a) === snapshot(b)) ok('the solved offset is deterministic (Vedic, two runs byte-equal)');
+  else fail('the vertical-offset solver is NON-DETERMINISTIC');
+}
 
 console.log('');
 if (failures) { console.error(failures + ' FAILURE(S)'); process.exit(1); }
