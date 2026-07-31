@@ -128,10 +128,14 @@
   //               members become the tree — the house never breaks.
   //   dateOf:     n => year|null         default n.date_earliest
   //   domainOf:   n => string            default first token of n.domains
-  //   railMax:    number  default 150    DISPLAY cap per rail; the
-  //               remainder is parked on the crown with no radius and
-  //               reported as rails.<side>.overflow (never a count lie —
-  //               rails.<side>.count stays the family's true mass)
+  //   railMax:    number  default 150    DISPLAY cap per rail; spent
+  //               proportionally with a floor of one slot per shelf so
+  //               no KIND is ever deleted outright, and the remainder
+  //               is parked on the crown at radius 0 and reported as
+  //               rails.<side>.overflow / .parkedIds (never a count
+  //               lie — rails.<side>.count stays the family's true
+  //               mass, and shelf.shown vs shelf.count says which
+  //               shelves are showing a head)
   //   railGlyph:  number  default 0.40   rail glyph radius as a fraction
   //               of the solved rail pitch, clamped to [1.6, 3.6] wu
   // }
@@ -181,6 +185,25 @@
     // Degrade gracefully: a family with no tree-kind members in this
     // mode still opens — everything becomes the cascade.
     if (!tree.length) { tree = members.slice(); docs = []; court = []; }
+    // CANONICAL HONESTY (2026-07-31 wave 2, CR-1 / crown-noun-*) — the
+    // CROWN counts this `tree` array, so the crown's NOUN has to name
+    // what is in it. Only this file knows: treeKindOf routes by vault
+    // type, and the degrade branch above can hand the cascade a
+    // completely different population from the one the caller's mode
+    // filter named. So report the cascade's OWN composition and let
+    // the view print a word for THAT — never for the wheel mode.
+    //   treeKind    the single vault type when the cascade is pure,
+    //               null when it holds more than one kind
+    //   treeTypes   {type: count} for every kind in the cascade
+    // Derived AFTER the degrade branch, so it is true on every path
+    // (deity house, corpus-section house, deity-less family alike).
+    const treeTypes = Object.create(null);
+    for (const n of tree) {
+      const t = String((n && n.type) || 'other');
+      treeTypes[t] = (treeTypes[t] || 0) + 1;
+    }
+    const treeTypeKeys = Object.keys(treeTypes);
+    const treeKind = (treeTypeKeys.length === 1) ? treeTypeKeys[0] : null;
     // Deterministic base order (input order is layout-cache dependent).
     tree.sort((a, b) => (a.id < b.id ? -1 : 1));
 
@@ -371,6 +394,37 @@
       }
     }
 
+    // A ROW IS A LAYOUT RANK, NOT A GENERATION (2026-07-31 wave 2,
+    // CR-4). §4 above builds a row index out of THREE different
+    // things: a component's era offset, its lineage depth, and — for
+    // anything unconnected — a pure era bucket. Only a row whose
+    // members all share ONE lineage depth and NONE of whom were
+    // placed by date is a generation; measured on the vault, 15 of
+    // Greek's parentless deities and 30 of Norse's print under GEN II
+    // or lower today. So the layout reports the provenance of every
+    // row and the view prints a numeral only where it is true.
+    const eraPlacedAt = (i) => (ranksMode === 'era')
+      || (parents[i].length === 0 && children[i].length === 0);
+    // dates + lineage provenance for one row, shared by both geometries.
+    const rowStats = (row) => {
+      let dlo = Infinity, dhi = -Infinity;
+      let lmin = Infinity, lmax = -Infinity, ep = 0;
+      for (const n of row) {
+        const d = dateOf(tree[n]);
+        if (d != null) { if (d < dlo) dlo = d; if (d > dhi) dhi = d; }
+        if (layer[n] < lmin) lmin = layer[n];
+        if (layer[n] > lmax) lmax = layer[n];
+        if (eraPlacedAt(n)) ep++;
+      }
+      return {
+        dmin: dlo > dhi ? null : dlo,
+        dmax: dlo > dhi ? null : dhi,
+        layerMin: row.length ? lmin : null,
+        layerMax: row.length ? lmax : null,
+        eraPlaced: ep,
+      };
+    };
+
     // ── 5. Ordering within ranks ────────────────────────────
     const rows = [];
     for (let r = 0; r < RK; r++) rows.push([]);
@@ -518,7 +572,11 @@
         let firstBandTop = null;
         rows.forEach((row, r) => {
           const b = beds[r];
-          if (!b) { rowMeta.push({ y: null, n: 0, dmin: null, dmax: null }); return; }
+          if (!b) {
+            rowMeta.push({ y: null, n: 0, dmin: null, dmax: null,
+                           layerMin: null, layerMax: null, eraPlaced: 0 });
+            return;
+          }
           const bandY = y + (b.bedU * P) / 2;
           const dy = bandY - cy;
           const half = Math.sqrt(Math.max(Rh * Rh * 0.0144, Rh * Rh - dy * dy));
@@ -532,17 +590,10 @@
             });
             radii.set(tree[sl.m].id, nodeR(sl.m));
           }
-          let rdmin = Infinity, rdmax = -Infinity;
-          for (const n of row) {
-            const d = dateOf(tree[n]);
-            if (d != null) { if (d < rdmin) rdmin = d; if (d > rdmax) rdmax = d; }
-          }
-          rowMeta.push({
+          rowMeta.push(Object.assign({
             y: bandY, half, w: b.wU * P, n: row.length,
             lineY: bandY + (b.bedU * P) / 2 + P * 0.44,
-            dmin: rdmin > rdmax ? null : rdmin,
-            dmax: rdmin > rdmax ? null : rdmax,
-          });
+          }, rowStats(row)));
           y += b.bedU * P + BED_GAP * P;
         });
         if (shrink >= 0.999 || attempt === 1) break;   // never shrink after the last placement
@@ -586,7 +637,11 @@
         let worst = 1;
         rows.forEach((row, r) => {
           const g = rings[r];
-          if (!g) { rowMeta.push({ rad: radU[r] * P, n: 0, dmin: null, dmax: null }); return; }
+          if (!g) {
+            rowMeta.push({ rad: radU[r] * P, n: 0, dmin: null, dmax: null,
+                           layerMin: null, layerMax: null, eraPlaced: 0 });
+            return;
+          }
           const compK = braidOn[r] ? FAN_COMP : 1;
           g.slots.forEach((sl, si) => {
             const ang = -Math.PI / 2 + ((sl.xU - g.wU / 2) * compK) / radU[r];
@@ -599,16 +654,9 @@
             positions.set(tree[sl.m].id, { x, y });
             radii.set(tree[sl.m].id, nodeR(sl.m));
           });
-          let rdmin = Infinity, rdmax = -Infinity;
-          for (const n of row) {
-            const d = dateOf(tree[n]);
-            if (d != null) { if (d < rdmin) rdmin = d; if (d > rdmax) rdmax = d; }
-          }
-          rowMeta.push({
+          rowMeta.push(Object.assign({
             rad: radU[r] * P, n: row.length, braid: braidOn[r],
-            dmin: rdmin > rdmax ? null : rdmin,
-            dmax: rdmin > rdmax ? null : rdmax,
-          });
+          }, rowStats(row)));
         });
         if (worst >= 0.999 || attempt === 1) break;   // never shrink after the last placement
         P *= Math.max(0.5, worst);
@@ -683,6 +731,52 @@
     //   3. the pitch divides by the number of INTRA-SHELF gaps (S − G),
     //      which is what `total` counts — the old `T − 1` over-counted
     //      by G−1 and degenerated when every shelf held one item.
+    // SPEND THE CAP SO EVERY SHELF SURVIVES (2026-07-31 wave 2, CR-3).
+    // The old spend was greedy in shelf order, and kindShelves sorts
+    // biggest-kind-first — so the largest kind ate the WHOLE cap and
+    // four of Christian's five court kinds vanished with nothing on
+    // screen saying so, under a header reading "330 OF ALL KINDS".
+    // Deleting a kind the header counts is a count lie; a short shelf
+    // is not.
+    //
+    // WHY PROPORTIONAL AND NOT ROUND-ROBIN: the rail's shape is read.
+    // Equal shares would draw PERSONS·555 and RITUALS·11 as columns of
+    // the same height — a second lie, about mass. A proportional head
+    // keeps each shelf's share of the column equal to its share of the
+    // court, so the rail reads as the court's real composition, while
+    // the floor of one slot guarantees no kind is silently deleted.
+    // Deterministic: fixed pass order, integer arithmetic, no floats
+    // compared for equality.
+    function spendCap(sizes, cap) {
+      const G = sizes.length;
+      const take = new Array(G).fill(0);
+      let room = Math.max(0, cap);
+      // 1 ▸ the floor — one slot per shelf, in shelf order. (Both
+      //     shelf builders cap at ≤ 6 groups and the LAB cap floor is
+      //     20, so this can never starve the proportional pass.)
+      for (let i = 0; i < G && room > 0; i++) { take[i] = 1; room--; }
+      // 2 ▸ water-fill the rest proportionally to unmet demand. A
+      //     shelf that fills up hands its share back on the next pass;
+      //     the max(1) keeps every pass making progress, and the guard
+      //     bounds the loop no matter what the data does.
+      for (let pass = 0; pass < 64 && room > 0; pass++) {
+        let need = 0;
+        for (let i = 0; i < G; i++) need += Math.max(0, sizes[i] - take[i]);
+        if (!need) break;
+        let given = 0;
+        for (let i = 0; i < G && given < room; i++) {
+          const want = sizes[i] - take[i];
+          if (want <= 0) continue;
+          const share = Math.max(1, Math.floor((room * want) / need));
+          const add = Math.min(want, share, room - given);
+          take[i] += add;
+          given += add;
+        }
+        if (!given) break;
+        room -= given;
+      }
+      return take;
+    }
     function buildRail(groups, side) {
       const x = cx + side * Rh * RAIL_X;
       const yA = cy - Rh * RAIL_Y_SPAN, yB = cy + Rh * RAIL_Y_SPAN;
@@ -691,19 +785,28 @@
       if (!T) return null;
       const cap   = Math.max(1, Math.round(num(o.railMax, RAIL_MAX)));
       const rFrac = Math.max(0.05, Math.min(1, num(o.railGlyph, RAIL_R_FRAC)));
-      // Cap in shelf order (docs oldest-first, court biggest-kind-first)
-      // so what survives is the head of an order the reader can name.
+      // Within a shelf the head is still the head of an order the
+      // reader can name (docs oldest-first, court highest-degree-first).
+      const takes = spendCap(groups.map(g => g.items.length), cap);
       const shown = [];
-      let room = cap;
-      for (const g of groups) {
-        const take = Math.max(0, Math.min(room, g.items.length));
+      const parked = [];
+      for (let gi = 0; gi < groups.length; gi++) {
+        const g = groups[gi];
+        const take = Math.max(0, Math.min(takes[gi], g.items.length));
         if (take > 0) {
           shown.push({ label: g.label, count: g.items.length, items: g.items.slice(0, take) });
         }
         for (let k = take; k < g.items.length; k++) {
-          positions.set(g.items[k].id, { x: crown.x, y: crown.y });   // parked, no radius
+          // PARKED — on the crown, at ZERO radius. "No radius entry"
+          // was NOT zero: the view's bake fell back to the WHEEL
+          // radius, so a rail item that was also a MODE member stacked
+          // a full-size, hit-testable disc on the family name (wave 2,
+          // GUEST-2). An explicit 0 is the promise this file's header
+          // already makes.
+          positions.set(g.items[k].id, { x: crown.x, y: crown.y });
+          radii.set(g.items[k].id, 0);
+          parked.push(g.items[k].id);
         }
-        room -= take;
       }
       let S = 0;
       for (const g of shown) S += g.items.length;
@@ -713,7 +816,12 @@
       const total = fixed + (S - G) * pitch;
       const glyphR = Math.max(RAIL_R_MIN, Math.min(RAIL_R_MAX, pitch * rFrac));
       let y = Math.max(yA, cy - total / 2);
-      const rail = { x, side, count: T, shown: S, overflow: T - S, pitch, glyphR, shelves: [] };
+      // `parkedIds` is the remainder's id list — the view needs it to
+      // bake an honest external class for the wires that land on the
+      // crown (wave 2, EDGE-2), and re-deriving it in the view would
+      // be a second source of truth.
+      const rail = { x, side, count: T, shown: S, overflow: T - S, pitch, glyphR,
+                     parkedIds: parked, shelves: [] };
       for (const g of shown) {
         const shelf = {
           label: g.label, count: g.count, shown: g.items.length,
@@ -833,6 +941,10 @@
         stats: {
           members: members.length,
           tree: N,
+          // What the cascade ACTUALLY holds — the crown's noun for
+          // `tree` is derived from this and never from the wheel mode.
+          treeKind,
+          treeTypes,
           docs: docs.length,
           court: court.length,
           kinArcs: idArcs.length,

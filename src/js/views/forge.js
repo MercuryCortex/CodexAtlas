@@ -5880,11 +5880,18 @@
       // (they are house members, so the houseMembers guard admits
       // them), which IS the toy's promise: titles arrive when the
       // pointer approaches the rail.
-      const rankSkip = houseAtRest() ? houseGuestIdSet() : null;
+      // WAVE 2 — the skip is the RAIL set, not the guest set. In
+      // person/theme/tradition/event modes the court rail is made of
+      // MODE MEMBERS, and a rank pass would carpet those columns for
+      // exactly the reason it would carpet a guest's.
+      const atHouseNow = houseAtRest();
+      const railSide = atHouseNow ? houseRailSideMap() : null;
+      const rankSkip = atHouseNow ? houseGuestIdSet() : null;
       if (visible && visible.size) for (const id of visible) {
         const n = hitById ? hitById.get(id) : null;
         if (!n) continue;
         if (rankSkip && rankSkip.has(id)) continue;
+        if (railSide && railSide.has(id)) continue;
         // Rank priority follows the tier ladder: a hub outranks a
         // long-tail name, exactly as label.js already decided.
         const c = { id, n, pri: 1000 - (n.tier | 0) * 10, target: 1, reach: 0, rv: 1 };
@@ -5967,7 +5974,28 @@
         // ONE position for every name — above the node, clearing the
         // dress bubble so a woken node's name never sits in its glow.
         const dy = (c.reach && anim === 'rise') ? 6 * (1 - c.rv) : 0;
-        const ly = s.y - c.n.r * camScale * (c.reach ? bubbleK : 1) - 6 + dy;
+        const rBub = c.n.r * camScale * (c.reach ? bubbleK : 1);
+        // A RAIL SLOT'S NAME GOES OUTBOARD (2026-07-31 wave 2,
+        // rail-obstacle-column-blocks-the-rails-own-names). The rail's
+        // obstacle column is claimed at the rail's own screen x, and a
+        // rail item's screen x IS that x — so a name placed above the
+        // glyph collided with the column every time: measured 463 of
+        // 463 slots blocked across Greek/Christian/Norse at 1440x900,
+        // i.e. the ratified "titles arrive when the pointer approaches
+        // the rail" could never happen. Beside the rail it clears the
+        // column by construction (offset ≥ 9 > the column's 7px half-
+        // band) and the existing 15px y-rule thins the woken column to
+        // a readable density on its own. The column stays intact for
+        // deity names, which is what it is for.
+        const rs = railSide ? (railSide.get(c.id) || 0) : 0;
+        let lx = s.x, ly;
+        if (rs) {
+          lx = s.x + rs * (rBub + 9 + wpx / 2);
+          lx = Math.max(wpx / 2 + 6, Math.min(vp.w - wpx / 2 - 6, lx));
+          ly = s.y + 4 + dy;   // baseline 'bottom' → optically on the glyph's row
+        } else {
+          ly = s.y - rBub - 6 + dy;
+        }
         // Chrome keep-out: never draw a name into the top pill band or
         // the bottom bar. Skipping (rather than nudging) is deliberate —
         // a nudged name would point at the wrong node.
@@ -5975,12 +6003,12 @@
         let ok = true;
         for (let k = 0; k < placed.length; k++) {
           const P = placed[k];
-          if (Math.abs(s.x - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
+          if (Math.abs(lx - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
         }
         if (!ok) continue;
-        placed.push([s.x, ly, wpx]);
+        placed.push([lx, ly, wpx]);
         seen.add(c.id);
-        draws.push({ c, title, x: s.x, y: ly, wpx });
+        draws.push({ c, title, x: lx, y: ly, wpx });
       }
       // THE HOUSE (2026-07-31) — LOW-priority chrome lands here: the
       // names above have claimed their rects, so shelf captions,
@@ -6004,16 +6032,23 @@
         const node = nodesById ? nodesById.get(id) : null;
         const title = (node && node.title) || id;
         const wpx = ctx.measureText(title).width + 10;
-        const ly = s.y - n.r * camScale - 6;
+        // A leaving rail name must leave from where it stood (outboard),
+        // or the crossfade would teleport it onto the column.
+        const rs = railSide ? (railSide.get(id) || 0) : 0;
+        const lx = rs
+          ? Math.max(wpx / 2 + 6, Math.min(vp.w - wpx / 2 - 6,
+              s.x + rs * (n.r * camScale + 9 + wpx / 2)))
+          : s.x;
+        const ly = rs ? (s.y + 4) : (s.y - n.r * camScale - 6);
         if (ly < KEEPOUT_TOP || ly > vp.h - KEEPOUT_BOTTOM) { fade.delete(id); continue; }
         let ok = true;
         for (let k = 0; k < placed.length; k++) {
           const P = placed[k];
-          if (Math.abs(s.x - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
+          if (Math.abs(lx - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
         }
         if (!ok) continue;   // an arriving name owns the spot — this one just goes
-        placed.push([s.x, ly, wpx]);
-        draws.push({ c: { id, target: 0, reach: 0, rv: 0 }, title, x: s.x, y: ly, wpx });
+        placed.push([lx, ly, wpx]);
+        draws.push({ c: { id, target: 0, reach: 0, rv: 0 }, title, x: lx, y: ly, wpx });
       }
 
       // 3 ▸ DRAW — one alpha tween per name (John: "flow nice").
@@ -6103,7 +6138,8 @@
       };
       return { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, yOK, claim, halo, restore };
     }
-    // Lineage ranks are GENERATIONS — caption numerals for them.
+    // Numeral for a row that IS one generation (see capFor — a layout
+    // rank is not a generation, so most rows never reach this).
     function romanNum(n) {
       const T = [[100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'],
                  [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
@@ -6167,12 +6203,30 @@
       const cs = W2S(house.crown.x, house.crown.y);
       ctx.font = '500 8.5px ' + HOUSE_MONO;
       ctx.textAlign = 'center';
-      // CANONICAL HONESTY (2026-07-31, crown-noun-in-the-line) — the
-      // noun is the mode registry's own label: a Documents house
-      // holds DOCUMENTS, not a 'line'. 'IN THE LINE' asserted
-      // kinship vocabulary the data does not make in 29 of 30 modes.
-      const modeEntry = (modemod.MODES || []).find((x) => x.value === m.id);
-      const nodeWord = String((modeEntry && modeEntry.label) || m.id || 'NODES').toUpperCase();
+      // CANONICAL HONESTY (2026-07-31 wave 2 — CR-1, crown-noun-counts-
+      // a-different-population, crown-noun-vs-tree-population).
+      //
+      // Line 1 counts `st.tree`: the CASCADE. So its noun must name
+      // the cascade, and nothing else. The previous rule took the noun
+      // from the WHEEL MODE, which was true only while the house held
+      // the mode's own single-type nodes. THE RAILS ended that: a
+      // house now resolves its own membership, treeKindOf sorts the
+      // family's DEITIES into the cascade whatever mode you entered
+      // from, and the crown printed "80 DOCUMENTS" twelve pixels above
+      // a rail header correctly reading "THE SCRIPTORIUM — 24 DOCS".
+      //
+      // The layout is the only thing that knows what it put in the
+      // cascade, so it now says: stats.treeKind is the single vault
+      // type when the cascade is pure, null when it is mixed (which
+      // only the degrade branch can produce — a family with no
+      // tree-kind members, e.g. a corpus-section house). A MIXED tree
+      // gets the neutral 'MEMBERS': naming any one type would be the
+      // same lie in a smaller font. The pluralisation is byte-for-byte
+      // kindShelves' own law, so the crown and the court shelf that
+      // holds the same kind print the same word.
+      const nodeWord = st.treeKind
+        ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase()
+        : 'MEMBERS';
       const line1 = st.tree + ' ' + nodeWord + ' · ' + st.kinArcs + ' LINEAGE ARCS · '
         + st.orphanCount + ' STAND ON THEIR ERA';
       // THE CROWN STACK PITCH (2026-07-31) — `claim` rejects anything
@@ -6307,10 +6361,47 @@
       // layout returns); dates are reserved for ranks='era', where
       // rank IS monotone in date. The caption's CONTENT switches
       // with the existing house_ranks dial — no new dial.
+      //
+      // WAVE 2 (CR-4 + CR-6) — both halves of that caption were still
+      // claims the data does not make:
+      //
+      //  · GEN N asserted a GENERATION, but the row index is a LAYOUT
+      //    rank: familytree §4 builds it out of a component's era
+      //    offset PLUS its lineage depth, and drops anything
+      //    unconnected into a pure era bucket. Measured on the vault,
+      //    15 parentless Greek deities, 30 Norse and 62 Vedic printed
+      //    under GEN II or lower — `adonis` carries zero lineage edges
+      //    and was captioned a second-generation descendant. The
+      //    layout now reports each row's provenance (layerMin/layerMax
+      //    = the true generation depths it spans, eraPlaced = how many
+      //    of its members were placed by DATE rather than by lineage),
+      //    and the numeral prints ONLY where the row is one generation
+      //    and nothing in it was placed by date. A mixed row carries
+      //    no numeral — an empty gutter is honest, a wrong one is not.
+      //    The numeral also uses the row's OWN depth, not its index.
+      //    And a house with no bones has no generations to number at
+      //    all (the Chinese case: "0 LINEAGE ARCS" beside a GEN III).
+      //
+      //  · The era caption printed rm.dmin alone over a bucket up to
+      //    800 years wide (Vedic row 4: "700 BCE" over 700 BCE–100 CE).
+      //    It now prints the RANGE, the same way the Scriptorium
+      //    shelves already do.
       const ranksEra = (local.params.house_ranks === 'era');
-      const capFor = (rm, ri) => {
-        if (ranksEra) return (rm.dmin == null) ? null : fmtD(rm.dmin);
-        return (rm.n > 0) ? ('GEN ' + romanNum(ri + 1)) : null;
+      // Same law as familytree.js's fmtRange, so a rank caption and a
+      // doc-shelf caption spanning the same years read identically.
+      const fmtRangeD = (a, b) => {
+        if (a == null || b == null || a === b) return fmtD(a == null ? b : a);
+        if (a < 0 && b < 0) return (-a) + '–' + (-b) + ' BCE';
+        if (a >= 0 && b >= 0) return a + '–' + b + ' CE';
+        return (-a) + ' BCE–' + b + ' CE';
+      };
+      const hasBones = (st.kinArcs || 0) > 0;
+      const capFor = (rm) => {
+        if (ranksEra) return (rm.dmin == null) ? null : fmtRangeD(rm.dmin, rm.dmax);
+        if (!rm.n || !hasBones) return null;
+        if (rm.eraPlaced !== 0) return null;              // someone here stands on a date
+        if (rm.layerMin == null || rm.layerMin !== rm.layerMax) return null;   // spans depths
+        return 'GEN ' + romanNum(rm.layerMin + 1);
       };
       ctx.font = '500 8.5px ' + HOUSE_MONO;
       ctx.fillStyle = _labelsTextColor;
@@ -6320,7 +6411,7 @@
         for (let ri = 0; ri < house.rowMeta.length; ri++) {
           const rm = house.rowMeta[ri];
           if (rm.y == null) continue;
-          const txt = capFor(rm, ri);
+          const txt = capFor(rm);
           if (txt == null || txt === lastCap) continue;
           const w = ctx.measureText(txt).width;
           const es = W2S(house.center.x - rm.w / 2, rm.y);
@@ -6338,7 +6429,7 @@
         const fanY = house.center.y + (house.fanDy || 0);
         for (let ri = 0; ri < house.rowMeta.length; ri++) {
           const rm = house.rowMeta[ri];
-          const txt = capFor(rm, ri);
+          const txt = capFor(rm);
           if (txt == null || txt === lastCap) continue;
           const w = ctx.measureText(txt).width;
           const es = W2S(house.center.x, fanY - rm.rad);
@@ -6366,16 +6457,43 @@
 
       // 5 ▸ THE LIBRARY — shelf captions with counts (gold), then one
       // spine name per shelf (its highest-degree member, whole title).
+      // THE RAIL'S OWN SCREEN-SPACE ROW PITCH (2026-07-31 wave 2).
+      // Every string on a rail is offset from the one above it in
+      // SCREEN px, never in world units — the same remedy the crown
+      // stack (CROWN_ROW) and the rail headers (top.y - 22) already
+      // use. A shelf lays out capY, then capH/2 + pad = 10.5 WORLD
+      // units to its first item; at the house fit scale that is 6.9-8.6
+      // screen px, and claim() refuses anything within 15. So every
+      // COURT spine name on every family at every viewport was refused
+      // by its own caption (measured 5/5 Greek, 4/4 Norse, 5/5
+      // Egyptian, 5/5 Mesopotamian). RAIL_ROW clears the band by
+      // construction at any zoom. The spine name has no leader line
+      // and does not point at its glyph, so it owes the item's world y
+      // nothing.
+      const RAIL_ROW = 17;
+      // Outboard x offsets, in screen px, measured from the rail's own
+      // column. The obstacle column is claimed as [top.x, y, 14], so
+      // claim() refuses a string whose centre is within (w + 14) / 2 =
+      // w/2 + 7 of it: an offset of 10 (caption) or 11 (spine/name)
+      // clears that band by 3-4 px at every zoom. Do not drop these
+      // below 8.
+      const RAIL_CAP_DX = 10, RAIL_NAME_DX = 11;
       for (const rl of [rails.left, rails.right]) {
         if (!rl || !rl.shelves) continue;
         const left = rl.side < 0;
         ctx.textAlign = left ? 'right' : 'left';
         for (const sh of rl.shelves) {
           const cp = W2S(rl.x, sh.capY);
-          const txt = sh.label + ' · ' + sh.count;
+          // CR-5 — the caption labels the COLUMN it sits above, not the
+          // vault. "PERSONS · 199" over exactly 150 dots was the one
+          // number a reader can check by eye. The rail HEADER still
+          // carries the family's true mass; this one says how much of
+          // it is on stage.
+          const txt = sh.label + ' · '
+            + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
           ctx.font = '600 7.5px ' + HOUSE_MONO;
           const w = ctx.measureText(txt).width;
-          let lx = left ? cp.x - 10 : cp.x + 10;
+          let lx = left ? cp.x - RAIL_CAP_DX : cp.x + RAIL_CAP_DX;
           lx = left ? Math.max(lx, 6 + w) : Math.min(lx, vp.w - 6 - w);
           const cx0 = left ? lx - w / 2 : lx + w / 2;
           if (claim(cx0, cp.y, w + 4)) {
@@ -6389,15 +6507,37 @@
           const title = (node && node.title) || sh.spineId;
           const it = sh.items.find(x => x.id === sh.spineId) || sh.items[0];
           if (!it) continue;
-          const sp = W2S(rl.x, it.y);
+          const cp = W2S(rl.x, sh.capY);
+          const sy = cp.y + RAIL_ROW;   // one clear row under its own caption
           ctx.font = '500 7.5px ' + HOUSE_MONO;
           const w = ctx.measureText(title).width;
-          let lx = left ? sp.x - 9 : sp.x + 9;
+          let lx = left ? cp.x - RAIL_NAME_DX : cp.x + RAIL_NAME_DX;
           lx = left ? Math.max(lx, 6 + w) : Math.min(lx, vp.w - 6 - w);
           const cx0 = left ? lx - w / 2 : lx + w / 2;
-          if (claim(cx0, sp.y, w + 4)) {
+          if (claim(cx0, sy, w + 4)) {
             ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.72;
-            halo(title, lx, sp.y);
+            halo(title, lx, sy);
+          }
+        }
+        // 5b ▸ THE REMAINDER GETS A VOICE (CR-3 / GUEST-3). The layout
+        // has always returned `overflow` — the honest count of what the
+        // display cap left off-stage — and nothing rendered it, so the
+        // reader counted 150 dots under a header claiming 2,317 with no
+        // way to learn the difference. Lowest-priority line of all, at
+        // the foot of the rail, one obstacle pitch clear of the last
+        // obstacle rect (the same 22px the header uses at the top).
+        if (rl.overflow > 0) {
+          const foot = W2S(rl.x, rl.shelves[rl.shelves.length - 1].y1 + 8);
+          const fy = foot.y + 22;
+          const ftxt = '+' + rl.overflow + ' NOT SHOWN';
+          ctx.font = '600 7.5px ' + HOUSE_MONO;
+          const w = ctx.measureText(ftxt).width;
+          let lx = left ? foot.x - RAIL_CAP_DX : foot.x + RAIL_CAP_DX;
+          lx = left ? Math.max(lx, 6 + w) : Math.min(lx, vp.w - 6 - w);
+          const cx0 = left ? lx - w / 2 : lx + w / 2;
+          if (claim(cx0, fy, w + 4)) {
+            ctx.fillStyle = gold; ctx.globalAlpha = 0.5;
+            halo(ftxt, lx, fy);
           }
         }
       }
@@ -6809,6 +6949,26 @@
     function houseGuestIdSet() {
       return houseGuestState() ? local._houseGuestIds : null;
     }
+    // id → rail side (-1 left / +1 right) for every DISPLAYED rail slot.
+    // A rail item is NOT the same population as a guest: treeKindOf
+    // routes by vault TYPE, so in person/theme/tradition/event modes
+    // hundreds of MODE MEMBERS stand on the court rail (wave 2,
+    // GUEST-2). Anything that treats "is this on a rail" as "is this a
+    // guest" is wrong in those modes. Cached on the house object — the
+    // rails only move when a new house is built.
+    function houseRailSideMap() {
+      const hs = local._house;
+      if (!hs || !hs.lay || !hs.lay.house) return null;
+      if (hs._railSide) return hs._railSide;
+      const map = new Map();
+      const rails = hs.lay.house.rails || {};
+      for (const rl of [rails.left, rails.right]) {
+        if (!rl || !rl.shelves) continue;
+        for (const sh of rl.shelves) for (const it of sh.items) map.set(it.id, rl.side);
+      }
+      hs._railSide = map;
+      return map;
+    }
 
     // Every vault node of this family that the current mode filtered
     // out. Deterministic (sorted by id) so two builds are byte-equal.
@@ -6979,7 +7139,16 @@
           out[i * 4]     = np.data[i * NODE_FLOATS];
           out[i * 4 + 1] = np.data[i * NODE_FLOATS + 1];
         }
-        out[i * 4 + 2] = (typeof hr === 'number' && hr > 0) ? hr : wheelR;
+        // WAVE 2 (GUEST-2) — an EXPLICIT ZERO from the layout must
+        // survive. familytree parks the rail's overflow on the crown at
+        // radius 0; with `hr > 0` here that 0 was discarded and the
+        // node fell back to its WHEEL radius, so in person/theme/
+        // tradition/event modes (where rail items are mode members with
+        // a real wheel radius, not zeroed guests) hundreds of full-size
+        // discs stacked on the family name. Every other radii.set in
+        // familytree.js writes a positive value, so `hr > 0` was doing
+        // no other work.
+        out[i * 4 + 2] = (typeof hr === 'number') ? hr : wheelR;
       }
       return out;
     }
@@ -7007,7 +7176,25 @@
       const radii = buildRadiiMap(m.nodePacked);
       if (houseRadii) for (const [id, r] of houseRadii) radii.set(id, r);
       const wheelPos = m.positions;
-      const E = m.edgePacked.instanceCount;
+      // SIZE FROM THE EDGES, NOT FROM THE PACK (2026-07-31 wave 2,
+      // edgeposb-stale-length-on-augmented-repack). This used to read
+      // `m.edgePacked.instanceCount`, but rebakeNodes bakes position-B
+      // BEFORE its trailing rebakeEdges re-packs — so on any path that
+      // grows the edge set while a house stands (port travel into a
+      // bigger family, the LAB rails dial flipped back on, a zoom
+      // re-pack under a changed viewport cull) this was sized against
+      // the PREVIOUS family's pack. The array then stayed short while
+      // drawFrame uploaded the new, larger edgeCount: `writeBuffer:
+      // Number of bytes to write is too large`, thrown out of an
+      // unguarded chain. Counting here with packEdges' own renderable
+      // law (graph/edge.js:159-165 — both endpoints present in the
+      // layout positions) is byte-identical whenever the pack is fresh
+      // and correct when it is not, and it fixes every caller at once.
+      let E = 0;
+      for (let ei = 0; ei < m.edges.length; ei++) {
+        const e = m.edges[ei];
+        if (wheelPos.has(e.source) && wheelPos.has(e.target)) E++;
+      }
       const out = new Float32Array(E * 6);
       let i = 0;
       for (let ei = 0; ei < m.edges.length; ei++) {
@@ -7133,6 +7320,26 @@
       // own `primary` flag comes along for free, so the anchor arc can
       // outrank the secondary parents.
       const H = lay.house;
+      // THE PARKED REMAINDER HAS NO TERMINUS (2026-07-31 wave 2,
+      // EDGE-2) — external class 3. buildRail returns the ids it parked
+      // on the crown (rails.<side>.parkedIds) rather than the view
+      // re-deriving them, so there is one source of truth for "which
+      // members are off-stage". The class is written LAST so it wins
+      // over the 0/1/2 the member sweep assigned: a wire to a node with
+      // no visible endpoint is not a member wire, whatever its other
+      // end is. See the shader note at webgpu.js's `parked`.
+      {
+        const parkedIds = new Set();
+        for (const rl of [H.rails && H.rails.left, H.rails && H.rails.right]) {
+          if (rl && rl.parkedIds) for (const id of rl.parkedIds) parkedIds.add(id);
+        }
+        if (parkedIds.size) {
+          for (let ei = 0; ei < m.edges.length; ei++) {
+            const e = m.edges[ei];
+            if (parkedIds.has(e.source) || parkedIds.has(e.target)) extern[ei] = 3;
+          }
+        }
+      }
       const bones = { arc: new Map(), lat: new Set(), extern,
                       arcPairs: 0, latPairs: 0, primary: 0 };
       for (const a of (H.arcs || [])) {
@@ -7356,8 +7563,16 @@
       // pointer misses a spine the reader can plainly see, the click
       // falls through to empty space and EXITS THE HOUSE — the worst
       // possible misread of intent. (The toy ships the same 10px slack.)
-      // Parked overflow guests keep radius 0 and stay unhittable.
-      const guestIds = atHouse ? houseGuestIdSet() : null;
+      // WAVE 2 (GUEST-2) — parked overflow is radius 0 in the layout,
+      // and this is where that 0 has to survive: `posB[z] || wheelR`
+      // is falsy on an explicit 0 and handed the parked pile an 11-wu
+      // hit disc on the crown. Read the z lane once and fall back only
+      // when the LAYOUT supplied nothing for this node (a non-member on
+      // its horizon port). Rail SLACK is likewise a property of being
+      // on a rail, not of being a guest — in Figures mode the court
+      // rail is made of mode members, and those got no slack at all.
+      const railIds = atHouse ? houseRailSideMap() : null;
+      const laidRadii = atHouse && local._house.lay && local._house.lay.radii;
       const railHit = Math.max(0, (typeof local.params.house_rail_hit === 'number')
         ? local.params.house_rail_hit : 5);
       let maxR = 0;
@@ -7369,8 +7584,10 @@
           // offsets must follow the displayed (big) gods.
           hn.x = local._house.nodePosB[i * 4];
           hn.y = local._house.nodePosB[i * 4 + 1];
-          hn.r = local._house.nodePosB[i * 4 + 2] || np.data[i * NODE_FLOATS + 2];
-          if (guestIds && hn.r > 0 && hn.r < railHit && guestIds.has(hn.id)) hn.r = railHit;
+          const pz = local._house.nodePosB[i * 4 + 2];
+          const laid = !!(laidRadii && laidRadii.has(hn.id));
+          hn.r = (laid || pz > 0) ? pz : np.data[i * NODE_FLOATS + 2];
+          if (railIds && hn.r > 0 && hn.r < railHit && railIds.has(hn.id)) hn.r = railHit;
         } else {
           hn.x = np.data[i * NODE_FLOATS];
           hn.y = np.data[i * NODE_FLOATS + 1];

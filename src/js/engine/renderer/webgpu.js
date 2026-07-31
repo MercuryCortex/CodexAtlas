@@ -718,7 +718,7 @@
       @location(2) state:        f32,
       @location(3) bucket_index: f32,    // interpolated; floor() in fs
       @location(4) edge_t:       f32,    // 0 at source, 1 at target — gradient direction
-      @location(5) ext_class:    f32,    // instance-constant; 0 in-house, 1 member↔port, 2 port↔port
+      @location(5) ext_class:    f32,    // instance-constant; 0 in-house, 1 member↔port, 2 port↔port, 3 parked (no terminus)
     };
 
     fn bezier_pos(p0: vec2<f32>, p1: vec2<f32>, p2: vec2<f32>, t: f32) -> vec2<f32> {
@@ -878,10 +878,21 @@
       // (3 = hide nothing). Hovering a deity still lights its own
       // external wires because the focus pass drives their state to
       // 1 and the ramp below hands them back.
-      // HONEST ZEROS: layout_mix.x is 0 with no isolate ⇒ ext == 0 ⇒
-      // 'hidden' is exactly the pre-07-31 step(1.5, state).
-      let ext       = step(v.layout_mix.w, in.ext_class) * v.layout_mix.x
-                      * (1.0 - smoothstep(0.55, 0.95, vis_state));
+      // CLASS 3 = PARKED (2026-07-31 wave 2, EDGE-2). The rail's
+      // display cap parks its remainder ON THE CROWN at radius 0 —
+      // deliberately invisible and unhittable — so a wire to one of
+      // them points at nothing and lands on the family name. Both
+      // endpoints are house members, so it was class 0, which no chip
+      // threshold can reach: ~180-195 idle wires converged on the crown
+      // as a starburst. Class 3 hides UNCONDITIONALLY while the mix is
+      // up — not via the chip and not exempted by hover, because this
+      // is not a rest-wires preference, it is a wire with no terminus.
+      // HONEST ZEROS: layout_mix.x is 0 with no isolate ⇒ both terms
+      // are 0 ⇒ 'hidden' is exactly the pre-07-31 step(1.5, state).
+      let parked    = step(2.5, in.ext_class) * v.layout_mix.x;
+      let ext       = max(parked,
+                      step(v.layout_mix.w, in.ext_class) * v.layout_mix.x
+                      * (1.0 - smoothstep(0.55, 0.95, vis_state)));
       let hidden    = max(step(1.5, in.state), ext);  // 1.0 if HIDDEN, else 0.0
       let color    = mix(in.edge_color, hot, vis_state);
       // Dim multiplier: idle (state=0) is dimmed by dim_amount
@@ -2156,7 +2167,14 @@
           const bytes = nodeCount * 16;
           const r = ensureBuffer(nodePosBVbo, nodePosBVboSize, bytes, 'forge-node-posb-vbo');
           nodePosBVbo = r.buf; nodePosBVboSize = r.size;
-          if (frame.nodePosB && (frame.nodePosBDirty || r.grew)) {
+          // The length test is BELT AND BRACES (2026-07-31 wave 2). The
+          // caller sizes both B arrays from its own live edge/node
+          // lists now, so a skew should be impossible; if one ever
+          // returns, a stale frame is a far cheaper failure than an
+          // uncaught OperationError thrown mid-rebake, which strands
+          // _isolateFamily and _house pointing at different families.
+          if (frame.nodePosB && frame.nodePosB.length >= nodeCount * 4
+              && (frame.nodePosBDirty || r.grew)) {
             device.queue.writeBuffer(nodePosBVbo, 0, frame.nodePosB, 0, nodeCount * 4);
           }
         }
@@ -2167,7 +2185,8 @@
           const bytes = edgeCount * 24;
           const r = ensureBuffer(edgePosBVbo, edgePosBVboSize, bytes, 'forge-edge-posb-vbo');
           edgePosBVbo = r.buf; edgePosBVboSize = r.size;
-          if (frame.edgePosB && (frame.edgePosBDirty || r.grew)) {
+          if (frame.edgePosB && frame.edgePosB.length >= edgeCount * 6
+              && (frame.edgePosBDirty || r.grew)) {
             device.queue.writeBuffer(edgePosBVbo, 0, frame.edgePosB, 0, edgeCount * 6);
           }
         }
