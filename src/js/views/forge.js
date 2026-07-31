@@ -8317,8 +8317,32 @@
     function emptyClickAt(cssX, cssY) {
       local._lastClickId = null;
       local._lastClickT  = 0;
+      // INSIDE THE CIRCLE STILL CLEARS (2026-07-31, John: "if i click
+      // inside the circle empty doesnt exit to the other mode but it
+      // should clear the selections made"). Wave 3 made an inside
+      // click a total no-op, which over-corrected: he wanted the
+      // MODE SWITCH protected, not the dismiss gesture. So the one
+      // gesture now carries two meanings by where it lands —
+      //   inside  → drop the selection, stay in the house
+      //   outside → leave the house (and, per LAW 3, CARRY the
+      //             selection home so a transmission survives the
+      //             switch; the next empty click clears it)
+      // Nothing to clear inside ⇒ genuinely nothing happens, which is
+      // the reading that stopped a slightly-missed disc throwing him
+      // out of the room in the first place.
       if (local._isolateFamily && local._house
-          && !houseExitZoneAt(cssX, cssY)) return 'inside-ignored';
+          && !houseExitZoneAt(cssX, cssY)) {
+        if (local.lockedSet.size === 0) return 'inside-ignored';
+        local.lockedSet.clear();
+        const lEl = document.getElementById('forge-status-lock');
+        if (lEl) lEl.textContent = '—';
+        recomputeFocus();
+        saveRuntimeState();
+        if (typeof local._onLockChange === 'function') {
+          try { local._onLockChange(null, 'clear'); } catch (e) { /* ignore */ }
+        }
+        return 'inside-lock-cleared';
+      }
       const wasHouse = !!local._isolateFamily;
       const hadLock  = local.lockedSet.size > 0;
       toggleLock(null);

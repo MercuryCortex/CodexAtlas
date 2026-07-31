@@ -59,8 +59,18 @@ const mustNot = (re, what, src) => {
 // §A.1  LAW 1 — an empty click only exits from OUTSIDE the circle
 // ════════════════════════════════════════════════════════════
 console.log('\n── LAW 1 · empty click only counts outside the circle ──');
-must(/if \(local\._isolateFamily && local\._house\s*\n\s*&& !houseExitZoneAt\(cssX, cssY\)\) return 'inside-ignored';/,
-  'the empty-click gesture RETURNS without doing anything when the pointer is inside the house circle',
+// 2026-07-31 — John refined LAW 1: an inside click must still CLEAR the
+// selection, it just must not switch modes. Wave 3's total no-op
+// over-corrected. Two assertions now: the mode switch is still gated,
+// AND an inside click with a lock standing drops it and stays.
+must(/if \(local\._isolateFamily && local\._house\s*\n\s*&& !houseExitZoneAt\(cssX, cssY\)\) \{/,
+  'the empty-click gesture is still gated on the house circle before it can leave',
+  forgeSrc);
+must(/if \(local\.lockedSet\.size === 0\) return 'inside-ignored';\s*\n\s*local\.lockedSet\.clear\(\);/,
+  'an INSIDE empty click clears the selection and stays in the house (nothing to clear ⇒ genuine no-op)',
+  forgeSrc);
+must(/return 'inside-lock-cleared';/,
+  'the inside-clear outcome is reported distinctly so the live probe can tell the two apart',
   forgeSrc);
 must(/if \(hit == null\) \{\s*\n\s*emptyClickAt\(cssX, cssY\);\s*\n\s*return;\s*\n\s*\}/,
   'the canvas click path routes an empty hit through that ONE function', forgeSrc);
