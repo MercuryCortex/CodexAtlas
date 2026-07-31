@@ -1,0 +1,92 @@
+#!/bin/sh
+# ============================================================
+# CODEX ATLAS pre-push hook — THE ANONYMITY GATE
+#
+# Why this exists (2026-07-31): an audit found John's real handle
+# sitting in a TRACKED, already-pushed file (00_meta/HANDOFF-2026-07-17.md)
+# for eleven days. The identity regex was never the gap — the regex
+# already existed in two places. The gap was that NOTHING RAN IT.
+# pre-commit has no identity check and there was no pre-push hook at
+# all, so a leak could reach a remote unchallenged.
+#
+# This hook is the gate, and it delegates to the ONE source of truth:
+#   ~/Desktop/PRODUCT DEVELOPMENT/_FOUNDER-PROTOCOL/audit.sh
+# It does NOT keep its own copy of the pattern (that would be the
+# fourth copy and the fourth thing to drift). If the protocol kit is
+# missing, the hook refuses the push rather than passing blind.
+#
+# Install:  ln -sf ../../scripts/git-hooks/pre-push .git/hooks/pre-push
+# Bypass (NEVER for routine work):  git push --no-verify
+# ============================================================
+
+set -u
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT" || exit 1
+
+PROTOCOL_AUDIT="$HOME/Desktop/PRODUCT DEVELOPMENT/_FOUNDER-PROTOCOL/audit.sh"
+
+printf '\n[pre-push] anonymity gate\n'
+
+if [ ! -x "$PROTOCOL_AUDIT" ]; then
+  echo "  ❌ Cannot find the founder-protocol audit at:" >&2
+  echo "     $PROTOCOL_AUDIT" >&2
+  echo "  The anonymity gate cannot run, so this push is refused." >&2
+  echo "  Restore _FOUNDER-PROTOCOL/ or push with --no-verify only if" >&2
+  echo "  John has explicitly authorised it." >&2
+  exit 1
+fi
+
+# audit.sh exits 1 on a HARD leak (real name / real email in tracked
+# content, leaky git authorship, missing .gitignore coverage) and 0
+# when clean-or-warnings-only. Show its output either way — the warn
+# lines are worth reading before a push.
+OUT="$("$PROTOCOL_AUDIT" "$REPO_ROOT" 2>&1)"
+STATUS=$?
+printf '%s\n' "$OUT" | sed 's/^/  /'
+
+if [ "$STATUS" -ne 0 ]; then
+  echo "" >&2
+  echo "  ❌ PUSH REFUSED — the anonymity audit found a hard leak." >&2
+  echo "  Fix the file(s) above and commit before pushing. If the leak" >&2
+  echo "  is already in git HISTORY, scrubbing the working file is not" >&2
+  echo "  enough — tell John, the history rewrite is his call." >&2
+  exit 1
+fi
+
+# Second gate: authorship of the commits actually leaving. This is an
+# ALLOWLIST, not a denylist — a denylist would mean writing the real
+# identity into this very file (which is exactly the leak we are
+# preventing, and audit.sh section 1 would then flag this hook).
+# Anything not on the list stops the push and gets read by a human.
+ALLOWED_AUTHORS='^(Codex Atlas( \(local\))?|opus-infra-1 \(Claude\))$'
+ALLOWED_EMAILS='^(codex-atlas@local|claude@anthropic\.com)$'
+
+BAD_AUTHOR=0
+# stdin is: <local ref> <local sha> <remote ref> <remote sha>
+while read -r _local_ref local_sha _remote_ref remote_sha; do
+  [ "$local_sha" = "0000000000000000000000000000000000000000" ] && continue
+  if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
+    RANGE="$local_sha"
+  else
+    RANGE="$remote_sha..$local_sha"
+  fi
+  STRANGERS="$(git log --format='%an|%ae%n%cn|%ce' "$RANGE" 2>/dev/null | sort -u \
+    | while IFS='|' read -r nm em; do
+        printf '%s' "$nm" | grep -qE "$ALLOWED_AUTHORS" \
+          && printf '%s' "$em" | grep -qE "$ALLOWED_EMAILS" \
+          || printf '%s <%s>\n' "$nm" "$em"
+      done)"
+  if [ -n "$STRANGERS" ]; then
+    echo "" >&2
+    echo "  ❌ PUSH REFUSED — commit authorship is not a project pseudonym:" >&2
+    printf '%s\n' "$STRANGERS" | sed 's/^/     /' >&2
+    echo "  Expected: Codex Atlas <codex-atlas@local>." >&2
+    BAD_AUTHOR=1
+  fi
+done
+
+[ "$BAD_AUTHOR" -ne 0 ] && exit 1
+
+echo "  ✅ anonymity gate passed"
+exit 0
