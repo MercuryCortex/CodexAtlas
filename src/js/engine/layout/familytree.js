@@ -72,6 +72,20 @@
   const FAN_DY         =  0.34;  // fan origin sits at cy + Rh * this
   const RAIL_X         =  0.885; // rails at ± Rh * RAIL_X
   const RAIL_Y_SPAN    =  0.60;  // rails run cy ± Rh * RAIL_Y_SPAN
+  // THE RAILS GET REAL MASS (2026-07-31) — a rail item is a real
+  // engine instance now, so it needs a RADIUS like every other member.
+  // The glyph rides the rail PITCH exactly as a god's disk rides P:
+  // a 24-spine Scriptorium reads fat, a 150-slot Court reads slim, and
+  // 2·r ≤ pitch at both ends of the clamp so slots can never touch.
+  const RAIL_R_FRAC    =  0.40;  // glyph radius = pitch * this
+  const RAIL_R_MIN     =  1.6;   // (pitch floor 3.8 ⇒ 2·1.6 < 3.8)
+  const RAIL_R_MAX     =  3.6;   // (pitch ceil  9.0 ⇒ 2·3.6 < 9.0)
+  // DISPLAY cap per rail. 'Other' holds 2,336 non-deity members; a
+  // 2,336-slot column is neither drawable nor readable. Capping is a
+  // display decision, never a claim: `count` stays the family's TRUE
+  // mass (what the header and the crown assert) and `overflow` is the
+  // honest remainder, parked ON the crown at zero radius.
+  const RAIL_MAX       =  150;
   const WORLD_MARGIN   =  70;    // worldExtent pad beyond Rh
 
   function num(v, d) { return (typeof v === 'number' && isFinite(v)) ? v : d; }
@@ -114,6 +128,12 @@
   //               members become the tree — the house never breaks.
   //   dateOf:     n => year|null         default n.date_earliest
   //   domainOf:   n => string            default first token of n.domains
+  //   railMax:    number  default 150    DISPLAY cap per rail; the
+  //               remainder is parked on the crown with no radius and
+  //               reported as rails.<side>.overflow (never a count lie —
+  //               rails.<side>.count stays the family's true mass)
+  //   railGlyph:  number  default 0.40   rail glyph radius as a fraction
+  //               of the solved rail pitch, clamped to [1.6, 3.6] wu
   // }
   function familyTreeLayout(nodes, opts) {
     const o = opts || {};
@@ -644,24 +664,58 @@
       }
       return g;
     }
+    // 2026-07-31 — a rail item is now real mass (an engine instance at
+    // a real position with a real radius), not a caption. Three changes
+    // from the 07-30 shell, everything else untouched:
+    //   1. every DISPLAYED item gets a radius in `radii` — without one
+    //      the view bakes a wheel-sized dot into position-B;
+    //   2. the rail is capped at `railMax` and the remainder is parked
+    //      ON the crown at no radius, so no edge is ever left with a
+    //      dead endpoint and 'Other' cannot build a 2,336-slot column;
+    //   3. the pitch divides by the number of INTRA-SHELF gaps (S − G),
+    //      which is what `total` counts — the old `T − 1` over-counted
+    //      by G−1 and degenerated when every shelf held one item.
     function buildRail(groups, side) {
       const x = cx + side * Rh * RAIL_X;
       const yA = cy - Rh * RAIL_Y_SPAN, yB = cy + Rh * RAIL_Y_SPAN;
       let T = 0;
       for (const g of groups) T += g.items.length;
       if (!T) return null;
-      const capH = 13, pad = 4, gap = 10, G = groups.length;
-      const fixed = G * (capH + pad) + (G - 1) * gap;
-      const pitch = Math.max(3.8, Math.min(9, (yB - yA - fixed) / Math.max(1, T - 1)));
-      const total = fixed + (T - G) * pitch;
-      let y = Math.max(yA, cy - total / 2);
-      const rail = { x, side, count: T, shelves: [] };
+      const cap   = Math.max(1, Math.round(num(o.railMax, RAIL_MAX)));
+      const rFrac = Math.max(0.05, Math.min(1, num(o.railGlyph, RAIL_R_FRAC)));
+      // Cap in shelf order (docs oldest-first, court biggest-kind-first)
+      // so what survives is the head of an order the reader can name.
+      const shown = [];
+      let room = cap;
       for (const g of groups) {
-        const shelf = { label: g.label, count: g.items.length, capY: y + capH / 2, spineId: null, items: [] };
+        const take = Math.max(0, Math.min(room, g.items.length));
+        if (take > 0) {
+          shown.push({ label: g.label, count: g.items.length, items: g.items.slice(0, take) });
+        }
+        for (let k = take; k < g.items.length; k++) {
+          positions.set(g.items[k].id, { x: crown.x, y: crown.y });   // parked, no radius
+        }
+        room -= take;
+      }
+      let S = 0;
+      for (const g of shown) S += g.items.length;
+      const capH = 13, pad = 4, gap = 10, G = shown.length;
+      const fixed = G * (capH + pad) + Math.max(0, G - 1) * gap;
+      const pitch = Math.max(3.8, Math.min(9, (yB - yA - fixed) / Math.max(1, S - G)));
+      const total = fixed + (S - G) * pitch;
+      const glyphR = Math.max(RAIL_R_MIN, Math.min(RAIL_R_MAX, pitch * rFrac));
+      let y = Math.max(yA, cy - total / 2);
+      const rail = { x, side, count: T, shown: S, overflow: T - S, pitch, glyphR, shelves: [] };
+      for (const g of shown) {
+        const shelf = {
+          label: g.label, count: g.count, shown: g.items.length,
+          capY: y + capH / 2, spineId: null, items: [],
+        };
         y += capH + pad;
         let bd = -1;
         g.items.forEach((n, k) => {
           positions.set(n.id, { x, y });
+          radii.set(n.id, glyphR);
           shelf.items.push({ id: n.id, y });
           const d = degOf(n.id);
           if (d > bd) { bd = d; shelf.spineId = n.id; }

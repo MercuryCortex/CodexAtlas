@@ -711,6 +711,15 @@
     // recedes (0 = full wheel atmosphere, 1 = externals invisible
     // until hover). Bones + hover wires ride the hot ramp above it.
     house_veil:            0.55,
+    // ── THE RAILS (2026-07-31) — the family's OWN documents + court ──
+    // John was shown "38 DOCS" / "52 PERSONS · PLACES · RITES" in the
+    // approved toy and got neither, on any family, because every mode
+    // is single-type. The house now resolves its own membership.
+    // 'off' is the honest zero: byte-identical to the 07-30 house.
+    house_rails:           'on',    // 'on' | 'off'
+    house_rail_cap:        150,     // DISPLAYED items per rail ('Other' holds 2,336)
+    house_rail_glyph:      0.40,    // glyph radius as a fraction of the rail pitch
+    house_rail_hit:        5,       // hit-radius floor for a rail glyph (world units)
   });
 
   function render(rootEl) {
@@ -5704,9 +5713,19 @@
       const byId = new Map();
       const dressOnL = (local.params.recipe_hover_zoom || 0) >= 1;
       const revealOn = dressOnL && (local.params.recipe_label || 0) >= 1;
+      // THE RAILS (2026-07-31) — a rail guest never competes for a RANK
+      // label. A high-degree scripture would otherwise displace a deity
+      // name in the middle of the tree, and the rails are a column of
+      // 24-150 slots at ~4 world units of pitch — a rank pass would
+      // carpet them. Guests stay fully in the REACH/wake path below
+      // (they are house members, so the houseMembers guard admits
+      // them), which IS the toy's promise: titles arrive when the
+      // pointer approaches the rail.
+      const rankSkip = houseAtRest() ? houseGuestIdSet() : null;
       if (visible && visible.size) for (const id of visible) {
         const n = hitById ? hitById.get(id) : null;
         if (!n) continue;
+        if (rankSkip && rankSkip.has(id)) continue;
         // Rank priority follows the tier ladder: a hub outranks a
         // long-tail name, exactly as label.js already decided.
         const c = { id, n, pri: 1000 - (n.tier | 0) * 10, target: 1, reach: 0, rv: 1 };
@@ -6290,6 +6309,218 @@
         spread:   (typeof p.house_spread === 'number') ? p.house_spread : 1.10,
         ranks:    (p.house_ranks === 'era') ? 'era' : 'lineage',
         orphans:  (p.house_orphans === 'degree') ? 'degree' : 'domain',
+        // THE RAILS (2026-07-31) — dials, never baked numbers.
+        railMax:   (typeof p.house_rail_cap === 'number') ? p.house_rail_cap : 150,
+        railGlyph: (typeof p.house_rail_glyph === 'number') ? p.house_rail_glyph : 0.40,
+      };
+    }
+
+    // ════════════════════════════════════════════════════════════
+    // THE RAILS GET REAL MASS  (2026-07-31)
+    // ════════════════════════════════════════════════════════════
+    // John was shown 'THE SCRIPTORIUM — 38 DOCS' and 'THE COURT — 52'
+    // in the approved toy and the app never delivered either, on any
+    // family. The chrome was never missing: renderHouseChrome already
+    // draws both headers, both shelf ladders and the crown's second
+    // line the moment stats.docs / stats.court are non-zero. What was
+    // missing is the DATA — buildHouse is fed local.mode.nodes, and
+    // every one of the 30 modes is single-type (mode.js), so a family
+    // house could only ever contain deities and docs.length was 0 by
+    // construction, forever.
+    //
+    // So the house resolves its OWN membership: the family's documents
+    // and court join the mode state as GUESTS, the engine's own
+    // rebakeNodes() packs them, and buildHouse then sees a mixed set —
+    // familytree.js splits it into tree / docs / court and lays the two
+    // rails out. No new draw path, no second renderer, no chrome edit.
+    //
+    // The three laws this had to satisfy:
+    //  · HONEST ZEROS — a guest's WHEEL radius (buffer A) is zeroed, so
+    //    mix(0, railR, 0) = 0: with the mix at home a guest is literally
+    //    not on screen. The augmentation exists only between enter and
+    //    exit-settle, and the settle restores the un-augmented mode set
+    //    and re-packs once — packNodes is deterministic over identical
+    //    inputs, so the wheel pack returns byte-for-byte.
+    //  · NO WHEEL RE-SIZE — buildTierClassifier is a PERCENTILE over
+    //    whatever node list it is handed, so packing the union would
+    //    move every tier boundary and re-size every god on the wheel.
+    //    packModeNodes() therefore packs in two blocks: the wheel set
+    //    with its own degrees and its own percentiles first, guests
+    //    appended after. Buffer A's prefix is untouched.
+    //  · REST IS STILL — guests add no loop-keeper. Everything here
+    //    runs inside the existing enter / settle / rebake calls.
+    //
+    // v1 scope: INTRA-FAMILY wires only (member↔guest, guest↔guest), so
+    // the horizon ports keep exactly today's aggregates.
+
+    // The snapshot is only valid for the mode object it was taken from.
+    // rebuildForMode builds a brand-new local.mode, so identity is the
+    // check that keeps a stale snapshot from being restored onto the
+    // wrong wheel.
+    function houseGuestState() {
+      const s = local._houseModeSnapshot;
+      if (!s) return null;
+      if (s.mode !== local.mode) {
+        local._houseModeSnapshot = null;
+        local._houseGuests = null;
+        local._houseGuestIds = null;
+        local._houseGuestSig = null;
+        return null;
+      }
+      return s;
+    }
+    // The resident guest ids, or null when the house holds none. One
+    // accessor so no caller reads a snapshot that belongs to a dead mode.
+    function houseGuestIdSet() {
+      return houseGuestState() ? local._houseGuestIds : null;
+    }
+
+    // Every vault node of this family that the current mode filtered
+    // out. Deterministic (sorted by id) so two builds are byte-equal.
+    function houseGuestsOf(fam) {
+      const m = local.mode;
+      if (!m || !m.nodes || !fam) return [];
+      if (local.params.house_rails === 'off') return [];
+      // LAW 2 — grouping is a parameter. isolateGroupOf routes through
+      // local.mode.isolateGroupBy; a Codex corpus-section predicate is
+      // only defined for nodes INSIDE that corpus, so those houses keep
+      // today's behaviour until the predicate is verified vault-wide.
+      if (m.isolateGroupBy) return [];
+      const s = houseGuestState();
+      const base = s ? s.nodes : m.nodes;
+      const inMode = new Set();
+      for (const n of base) inMode.add(n.id);
+      const out = [];
+      for (const n of allNodes) {
+        if (!n || !n.id || inMode.has(n.id)) continue;
+        if (isolateGroupOf(n) === fam) out.push(n);
+      }
+      out.sort((a, b) => (a.id < b.id ? -1 : 1));
+      return out;
+    }
+
+    // Put the un-augmented mode state back. Returns true when it
+    // actually changed something (the caller then re-packs).
+    function restoreModeSnapshot() {
+      const s = houseGuestState();
+      local._houseGuests = null;
+      local._houseGuestIds = null;
+      local._houseGuestSig = null;
+      local._houseModeSnapshot = null;
+      if (!s) return false;
+      const m = local.mode;
+      m.nodes = s.nodes;
+      m.edges = s.edges;
+      m.positions = s.positions;
+      m.adjacency = s.adjacency;
+      m.nodesById = s.nodesById;
+      return true;
+    }
+
+    // Fold this family's guests into the mode state. Returns true when
+    // the mode state CHANGED (so the caller knows to rebakeNodes()) and
+    // false when the right guests are already in place — that makes a
+    // spread-slider scrub free.
+    function augmentModeForHouse(fam) {
+      const m = local.mode;
+      if (!m || !m.nodes) return false;
+      const guests = houseGuestsOf(fam);
+      if (!guests.length) return restoreModeSnapshot();
+      const sig = fam + '|' + guests.length;
+      const prev = houseGuestState();
+      if (prev && local._houseGuestSig === sig) return false;
+      const base = prev || {
+        mode: m,
+        nodes: m.nodes, edges: m.edges, positions: m.positions,
+        adjacency: m.adjacency, nodesById: m.nodesById,
+      };
+      // Where a guest waits while the wheel is showing: its own family's
+      // wedge. On enter the library POURS OUT of the wedge into the
+      // rails as the mix ramps; on exit it pours back and vanishes.
+      // (Both ends are radius 0, so this is motion, never a stray dot.)
+      const hd = m.hullData || {};
+      const ctr = hd.center || { x: 0, y: 0 };
+      let park = { x: ctr.x, y: ctr.y };
+      for (const h of (hd.hulls || [])) {
+        if (h.family !== fam) continue;
+        const ang = (h.wedgeCenter != null) ? h.wedgeCenter
+          : ((h.a0 != null && h.a1 != null) ? (h.a0 + h.a1) / 2 : h.centroidAngle);
+        if (typeof ang === 'number' && isFinite(ang)) {
+          const rr = (hd.outerRadius || 540) * 0.6;
+          park = { x: ctr.x + Math.cos(ang) * rr, y: ctr.y + Math.sin(ang) * rr };
+        }
+        break;
+      }
+      const guestIds = new Set();
+      for (const n of guests) guestIds.add(n.id);
+      const nodes = base.nodes.concat(guests);
+      const positions = new Map(base.positions);
+      for (const n of guests) positions.set(n.id, { x: park.x, y: park.y });
+      const nodesById = new Map(base.nodesById);
+      for (const n of guests) nodesById.set(n.id, n);
+      const inHouse = new Set();
+      for (const n of nodes) if (isolateGroupOf(n) === fam) inHouse.add(n.id);
+      const extra = [];
+      for (const e of allEdges) {
+        if (!e) continue;
+        if (!guestIds.has(e.source) && !guestIds.has(e.target)) continue;
+        if (!inHouse.has(e.source) || !inHouse.has(e.target)) continue;
+        extra.push(e);
+      }
+      local._houseModeSnapshot = base;
+      m.nodes = nodes;
+      m.positions = positions;
+      m.nodesById = nodesById;
+      m.edges = base.edges.concat(extra);
+      m.adjacency = graph.buildAdjacency(m.edges);
+      local._houseGuests = guests;
+      local._houseGuestIds = guestIds;
+      local._houseGuestSig = sig;
+      return true;
+    }
+
+    // The node pack, guests-aware. buildTierClassifier (node.js) sorts
+    // whatever list it is handed and cuts percentiles out of it, so
+    // handing it the union would shift every boundary and re-size every
+    // god on the wheel the moment a house opens. Two blocks instead:
+    // the wheel set packed exactly as it is packed with no isolate, then
+    // the guests appended with their wheel radius zeroed. Buffer A's
+    // PREFIX is byte-identical to the un-isolated pack.
+    function packModeNodes() {
+      const m = local.mode;
+      const overrides = nodeOverridesFromParams();
+      const s = houseGuestState();
+      const guests = s ? local._houseGuests : null;
+      if (!s || !guests || !guests.length) {
+        const deg = layout.computeDegree(m.nodes, m.edges);
+        return { np: graph.packNodes(m.nodes, m.positions, deg, overrides), deg };
+      }
+      const degBase = layout.computeDegree(s.nodes, s.edges);
+      const npBase  = graph.packNodes(s.nodes, s.positions, degBase, overrides);
+      const degAll  = layout.computeDegree(m.nodes, m.edges);
+      const npG     = graph.packNodes(guests, m.positions, degAll, overrides);
+      // HONEST ZEROS — a guest has no business on the wheel. Zero its
+      // buffer-A radius AFTER the pack (packNodes' min-screen-px clamp
+      // would otherwise floor it back up); the house radius arrives via
+      // position-B, and mix(0, railR, 0) = 0 exactly.
+      for (let i = 0; i < npG.instanceCount; i++) npG.data[i * NODE_FLOATS + 2] = 0;
+      const total = npBase.instanceCount + npG.instanceCount;
+      const data = new Float32Array(total * NODE_FLOATS);
+      data.set(npBase.data, 0);
+      data.set(npG.data, npBase.instanceCount * NODE_FLOATS);
+      // Tier lookups stay pinned to the wheel's own degrees too — a
+      // deity must not change tier (and therefore label rank) because
+      // a document arrived.
+      const deg = new Map(degAll);
+      for (const [id, d] of degBase) deg.set(id, d);
+      return {
+        np: {
+          data,
+          instanceCount: total,
+          idIndex: npBase.idIndex.concat(npG.idIndex),
+          tierFor: npBase.tierFor,
+        },
+        deg,
       };
     }
 
@@ -6476,6 +6707,19 @@
     // a settled one returns false and the loop dies — REST IS STILL.
     function tickLayoutMix(dt) {
       let alive = false;
+      // THE RAILS (2026-07-31) — the exit re-pack must be made at the
+      // camera's FINAL scale or packNodes' screen-px clamp bakes a
+      // slightly different radius than the pre-enter pack did. Normally
+      // the ramp and the fly are the same 450 ms driven by the same dt,
+      // so the camera has already landed when the mix hits 0; but an
+      // exit taken MID-ENTER has a shorter ramp than fly. Re-pack once
+      // when the camera actually stops. No loop-keeper: the camera's
+      // own motion is what is holding this loop open, and this returns
+      // nothing that keeps it alive.
+      if (local._houseRepackPending && !camera.isAnimating()) {
+        local._houseRepackPending = false;
+        try { rebakeNodes(); } catch (_) { /* ignore */ }
+      }
       const lm = local._layoutMix;
       const dur = Math.max(0.05, (local.params.house_tween_ms || 450) / 1000);
       if (lm && lm.value !== lm.target) {
@@ -6506,13 +6750,27 @@
     // Ramp end — the world is at rest again: rebuild the CPU world
     // (hit grid, label + hull idle caches), free exit state.
     function settleHouse() {
+      let restored = false;
       if (local._layoutMix && local._layoutMix.value === 0
           && local._layoutMix.target === 0 && !local._isolateFamily) {
         local._layoutMix = null;
         local._house = null;
         local._houseTravel = null;
+        // THE RAILS (2026-07-31) — home again: the guests go back where
+        // they came from and the wheel is re-packed ONCE. packNodes is
+        // deterministic over identical inputs, so this returns buffer A
+        // byte-for-byte to its pre-enter state (LAW 3). No snapshot
+        // means no guests were ever added — then this is a no-op and
+        // the exit path is exactly what it was before this feature.
+        restored = restoreModeSnapshot();
       }
       document.body.classList.remove('fv-house-flight');
+      if (restored) {
+        try { rebakeNodes(); } catch (_) { /* ignore */ }
+        // If the camera is still flying home this pack was made at a
+        // mid-flight scale — tickLayoutMix re-packs once it lands.
+        local._houseRepackPending = camera.isAnimating();
+      }
       rebakeHitPositions();
       local._labelsIdleCamS = null;   // bust the idle-skip caches so
       local._hullsIdleCamS  = null;   // chrome repaints at the new rest
@@ -6527,6 +6785,15 @@
       if (!m || !m.hitNodes || !m.nodePacked) return;
       const atHouse = houseAtRest();
       const np = m.nodePacked;
+      // THE RAILS (2026-07-31) — a rail glyph is ~2-4 world units, well
+      // under the practical hit radius at house zoom. Without slack the
+      // pointer misses a spine the reader can plainly see, the click
+      // falls through to empty space and EXITS THE HOUSE — the worst
+      // possible misread of intent. (The toy ships the same 10px slack.)
+      // Parked overflow guests keep radius 0 and stay unhittable.
+      const guestIds = atHouse ? houseGuestIdSet() : null;
+      const railHit = Math.max(0, (typeof local.params.house_rail_hit === 'number')
+        ? local.params.house_rail_hit : 5);
       let maxR = 0;
       for (let i = 0; i < m.hitNodes.length; i++) {
         const hn = m.hitNodes[i];
@@ -6537,6 +6804,7 @@
           hn.x = local._house.nodePosB[i * 4];
           hn.y = local._house.nodePosB[i * 4 + 1];
           hn.r = local._house.nodePosB[i * 4 + 2] || np.data[i * NODE_FLOATS + 2];
+          if (guestIds && hn.r > 0 && hn.r < railHit && guestIds.has(hn.id)) hn.r = railHit;
         } else {
           hn.x = np.data[i * NODE_FLOATS];
           hn.y = np.data[i * NODE_FLOATS + 1];
@@ -6574,6 +6842,13 @@
     function refreshHouse(tween) {
       const fam = local._isolateFamily;
       if (!fam) return;
+      // THE RAILS — the guest set is a function of the dials
+      // (house_rails on/off), so re-resolve it before rebuilding.
+      // augmentModeForHouse returns false when the right guests are
+      // already resident, which keeps a spread-slider scrub free.
+      let augmented = false;
+      try { augmented = augmentModeForHouse(fam); } catch (_) { augmented = false; }
+      if (augmented) rebakeNodes();
       const next = buildHouse(fam);
       if (!next) return;
       if (tween && houseAtRest()) {
@@ -6634,8 +6909,26 @@
         // a group with no members in this mode simply doesn't enter.
         const prevFam = local._isolateFamily;
         local._isolateFamily = fam;   // isolateGroupOf is state-free; set first for buildHouse's dim consumers
+        // THE RAILS (2026-07-31) — resolve the house's OWN membership
+        // BEFORE the layout runs: this family's documents and court join
+        // the mode set, the engine's own rebake packs them (guests at
+        // radius 0 in buffer A), and buildHouse below then sees a mixed
+        // set — which is the whole reason the Scriptorium and the Court
+        // have been empty on every family since the house shipped.
+        let augmented = false;
+        try { augmented = augmentModeForHouse(fam); } catch (_) { augmented = false; }
+        if (augmented) rebakeNodes();
         const next = buildHouse(fam);
-        if (!next) { local._isolateFamily = prevFam; return; }
+        if (!next) {
+          local._isolateFamily = prevFam;
+          if (augmented) {
+            try {
+              if (prevFam) augmentModeForHouse(prevFam); else restoreModeSnapshot();
+            } catch (_) { /* ignore */ }
+            rebakeNodes();
+          }
+          return;
+        }
         if (wasIsolated && local._house && local._layoutMix && local._layoutMix.value > 0) {
           // PORT TRAVEL / family switch — morph house→house without
           // going home first (the isolate is a corridor, not a cul-de-sac).
@@ -8669,8 +8962,15 @@
       // M-F1 spurious-rebake-on-old-mode bug is back).
       local.rebakeNodesCount = (local.rebakeNodesCount || 0) + 1;
       const m = local.mode;
-      const deg = layout.computeDegree(m.nodes, m.edges);
-      const np = graph.packNodes(m.nodes, m.positions, deg, nodeOverridesFromParams());
+      // THE RAILS (2026-07-31) — packModeNodes is the plain
+      // computeDegree + packNodes pair when no house guests are
+      // resident (byte-identical to what stood here before), and a
+      // two-block pack when they are: wheel first with its own tier
+      // percentiles, guests appended at radius 0. See the block above
+      // setIsolateFamily for why the percentiles must stay pinned.
+      const packed = packModeNodes();
+      const deg = packed.deg;
+      const np = packed.np;
       m.nodePacked = np;
       // Tier classifier so hitNodes know their tier for the
       // label-hierarchy module. N6 (Phase 1B) — reuse the
@@ -8711,8 +9011,23 @@
       // positions + house radii to the hit world if at rest.
       if (local._house) {
         try {
-          local._house.nodePosB.set(bakeNodePosB(local._house.lay.positions, local._house.lay.radii));
-          local._house.edgePosB.set(bakeEdgePosB(local._house.lay.positions, local._house.lay.radii));
+          const nb = bakeNodePosB(local._house.lay.positions, local._house.lay.radii);
+          const eb = bakeEdgePosB(local._house.lay.positions, local._house.lay.radii);
+          // THE RAILS (2026-07-31) — a guest set arriving or leaving
+          // (enter / port travel / the rails dial) changes the instance
+          // count, so the B arrays may have to GROW or SHRINK. .set()
+          // on a length mismatch throws and would leave the house
+          // holding geometry for a pack that no longer exists.
+          const grew = (local._house.nodePosB.length !== nb.length)
+                    || (local._house.edgePosB.length !== eb.length);
+          if (local._house.nodePosB.length === nb.length) local._house.nodePosB.set(nb);
+          else local._house.nodePosB = nb;
+          if (local._house.edgePosB.length === eb.length) local._house.edgePosB.set(eb);
+          else local._house.edgePosB = eb;
+          // A morph in flight lerps between two arrays of the OLD size;
+          // once the size moved it can only produce NaN. Drop it — the
+          // caller re-targets right after.
+          if (grew && local._houseTravel) local._houseTravel = null;
           local._housePosBDirty = true;
         } catch (_) { /* ignore */ }
         rebakeHitPositions();
