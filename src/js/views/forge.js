@@ -722,6 +722,10 @@
     // tween / bones / veil are DEV tuning dials (LAB ▸ The House).
     house_geometry:        'cascade',   // 'cascade' | 'fan' — CANONICAL (crown chips own it, 2026-07-31)
     house_spread:          1.10,
+    // THE GOD-SIZE DIAL (2026-07-31, postmortem #5 — asked for BY
+    // NAME many times, shipped adjacent controls instead). A direct
+    // multiplier on node radius; positions never move.
+    house_god_size:        1.0,
     house_tween_ms:        450,
     house_ranks:           'lineage',   // 'lineage' | 'era'
     // What the rank gutter says. 'date' = the row's true date span, the
@@ -729,6 +733,10 @@
     // 'gen' = the generation numeral, only where it is provably true;
     // 'off' = an empty gutter.
     house_rank_caption:    'date',      // 'date' | 'gen' | 'off'
+    // CAPTION STYLE (2026-07-31, postmortem #6). The ratified toy has
+    // ZERO rotated text and John twice read the arc captions as
+    // random — 'flat' ships; 'curved' stays a dial for his eye.
+    house_caption_style:   'flat',      // 'flat' | 'curved'
     house_orphans:         'domain',    // 'domain'  | 'degree'
     // THE BONES (2026-07-30) — resting edge-state lift for the
     // house's own kinship wires (0 = old invisible idle, 1 = full
@@ -869,14 +877,14 @@
     // (Vedic is the largest cascade at 97). 0 is the honest zero —
     // the ladder alone, i.e. the pre-wave-4 picture.
     house_name_max:        120,
-    // THE TITLE BLOCK IS A LOCKED SCREEN FIXTURE (2026-07-31 wave 4).
-    // John: "the title is taking TOO MUCH space and central that
-    // forces the nodes to be around it… theres no reason for that,
-    // just find locked spots for these, the nodes should not be
-    // influenced by this title block." Which top corner it locks to —
-    // 'left' (default: the DEV/LAB drawer lives top-RIGHT) or
-    // 'right'. Never the bottom: the bottom bar owns that edge.
-    house_title_slot:      'left',   // 'left' | 'right'
+    // THE TITLE SLOT (re-ratified 2026-07-31, postmortem worklist #1).
+    // 'center' — the DEFAULT and the toy's law: centred over the
+    // house, above the ring's 12 o'clock gap, paint-only (it claims
+    // screen rects, reserves NO world space, so it cannot push a
+    // god — John's wave-4 condition still holds). 'left'/'right'
+    // keep the wave-4 corner fixtures as dials. Never the bottom:
+    // the bottom bar owns that edge.
+    house_title_slot:      'center',   // 'center' | 'left' | 'right'
     // THE HINT LINE (2026-07-31) — the wheel-state hint in the same
     // slot the house's exit line uses ('CLICK A FAMILY TITLE — THE
     // HOUSE'). Ship-a-dial law: on by default, 0 = the wheel paints
@@ -5588,7 +5596,7 @@
           isolatedTitleEl = labelEl;
           const a = houseTitleAnchor(vp);
           const lxStr = a.x.toFixed(1), lyStr = a.y.toFixed(1);
-          const anch = a.right ? 'end' : 'start';
+          const anch = a.center ? 'middle' : (a.right ? 'end' : 'start');
           if (labelEl._lastAnchor !== anch) {
             labelEl.setAttribute('text-anchor', anch); labelEl._lastAnchor = anch;
           }
@@ -5597,7 +5605,7 @@
           if (labelEl._lastVis !== '') { labelEl.style.opacity = ''; labelEl._lastVis = ''; }
           const w = (labelEl._w || 80);
           titlePlaced.length = 0;
-          titlePlaced.push([a.right ? a.x - w / 2 : a.x + w / 2, a.y, w / 2 + 6]);
+          titlePlaced.push([a.center ? a.x : (a.right ? a.x - w / 2 : a.x + w / 2), a.y, w / 2 + 6]);
           break;
         }
       }
@@ -6544,15 +6552,47 @@
     // claims its rects FIRST in the paint, so nothing lands under it.
     const HOUSE_TITLE_PAD = 24;   // screen px in from the stage edge
     const HOUSE_TITLE_TOP = 66;   // KEEPOUT_TOP (52) + the title's own body
+    // ══ 'center' IS THE RATIFIED SLOT (2026-07-31, postmortem
+    // worklist #1). John, twice: "PLACE it NICELY where it was BUT on
+    // a nicer spot ie on top of the inner circle central where doesnt
+    // distub." The corner slots stay as dials; the DEFAULT is the
+    // toy's own law — the title centred over the house, hanging ABOVE
+    // the ring's 12 o'clock gap (or the crown when no band stands).
+    // PAINT-ONLY: it projects the layout through the camera but
+    // reserves no world space and claims screen rects like any other
+    // chrome, so it cannot push a single god — his one condition.
+    // The screen clamps keep it on-stage at any pan/zoom.
     function houseTitleAnchor(vp) {
-      const right = (local.params.house_title_slot === 'right');
-      const w = (vp && vp.w) || 0;
-      return {
-        right,
-        // Never let the pad invert on a hostile viewport.
-        x: right ? Math.max(HOUSE_TITLE_PAD, w - HOUSE_TITLE_PAD) : HOUSE_TITLE_PAD,
-        y: HOUSE_TITLE_TOP,
-      };
+      const slot = local.params.house_title_slot;
+      const w = (vp && vp.w) || 0, h = (vp && vp.h) || 0;
+      if (slot === 'left' || slot === 'right') {
+        const right = (slot === 'right');
+        return {
+          right, center: false,
+          // Never let the pad invert on a hostile viewport.
+          x: right ? Math.max(HOUSE_TITLE_PAD, w - HOUSE_TITLE_PAD) : HOUSE_TITLE_PAD,
+          y: HOUSE_TITLE_TOP,
+        };
+      }
+      const hs = local._house;
+      const house = hs && hs.lay && hs.lay.house;
+      let x = w / 2, y = HOUSE_TITLE_TOP;
+      if (house && house.center) {
+        const ts = Math.max(0.7, Math.min(2,
+          (typeof local.params.house_type_scale === 'number') ? local.params.house_type_scale : 1));
+        // name + two stat lines + chips = 3 row steps below the anchor,
+        // plus visual air — the whole stack ends where the circle begins.
+        const stackH = Math.max(16, Math.round(11 * ts * 1.9)) * 3 + 10;
+        const rl = house.rails && (house.rails.left || house.rails.right);
+        const topWorldY = rl ? (house.center.y - rl.r)
+          : (house.geometry === 'fan'
+            ? (house.center.y - house.treeR)
+            : (house.crown ? house.crown.y : house.center.y - house.treeR));
+        const p = camera.worldToScreen(house.center.x, topWorldY, vp);
+        x = Math.max(170, Math.min(Math.max(170, w - 170), p.x));
+        y = Math.max(HOUSE_TITLE_TOP, Math.min(Math.max(HOUSE_TITLE_TOP, h - 160), p.y - stackH));
+      }
+      return { right: false, center: true, x, y };
     }
     // Shared per-half ctx setup + the ONE claim() (byte-identical
     // collision math to the caller's name pass). Each half calls
@@ -6708,10 +6748,12 @@
       const anchor = houseTitleAnchor(vp);
       const cs = { x: anchor.x, y: anchor.y };
       font('500', TYPE.head);
-      ctx.textAlign = anchor.right ? 'right' : 'left';
-      // claim() takes a rect CENTRE; the block is edge-aligned, so a
-      // line of width w centres half its width inboard of the anchor.
-      const cenX = (w) => anchor.right ? (anchor.x - w / 2) : (anchor.x + w / 2);
+      ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
+      // claim() takes a rect CENTRE; the corner slots are edge-aligned,
+      // so a line of width w centres half its width inboard — the
+      // centre slot is already the centre.
+      const cenX = (w) => anchor.center ? anchor.x
+        : (anchor.right ? (anchor.x - w / 2) : (anchor.x + w / 2));
       // CANONICAL HONESTY (2026-07-31 wave 2 — CR-1, crown-noun-counts-
       // a-different-population, crown-noun-vs-tree-population).
       //
@@ -6766,7 +6808,7 @@
       // blank to hide.
       const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
       font('500', TYPE.cap);
-      ctx.textAlign = anchor.right ? 'right' : 'left';
+      ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
       const w2 = ctx.measureText(line2).width;
       if (claim(cenX(w2 + 8), cs.y + CROWN_ROW * 2, w2 + 8)) {
         ctx.fillStyle = _labelsTextColor;
@@ -6825,7 +6867,8 @@
         // stack instead of straddling it: left slot ⇒ CASCADE's first
         // glyph starts on the block's left edge; right slot ⇒ FAN's
         // last glyph ends on its right edge.
-        const chipX = anchor.right ? (anchor.x - wFan - 8) : (anchor.x + wCas + 8);
+        const chipX = anchor.center ? (anchor.x + (wCas - wFan) / 2)
+          : (anchor.right ? (anchor.x - wFan - 8) : (anchor.x + wCas + 8));
         claim(chipX + (wFan - wCas) / 2, chipY, wCas + wFan + 22);   // best-effort reserve; the control shows regardless
         const chips = chipsG.querySelectorAll('.forge-house-chip');
         for (let ci = 0; ci < chips.length; ci++) {
@@ -7091,6 +7134,34 @@
         if (w == null) { w = ctx.measureText(ch).width; wcache.set(k, w); }
         return w;
       };
+      // ── the FLAT writer (2026-07-31 — the ratified default) ───
+      // The toy has ZERO rotated text, and John twice read the arc
+      // captions as random. A flat run stands at its bearing on the
+      // caption annulus and grows horizontally AWAY from the circle,
+      // one rect through the ONE claim() (law 5). house_caption_style
+      // ('flat' | 'curved') is the dial — the arc writer below stays,
+      // for his eye to compare live.
+      const flat = (local.params.house_caption_style !== 'curved');
+      const flatW = (text, rWu, aRef, sizePx, color, alpha, opts) => {
+        const o = opts || {};
+        if (!text) return null;
+        const rr = rWu * camS + sizePx / 2;
+        const gx = ctr.x + Math.cos(aRef) * rr;
+        const gy = ctr.y + Math.sin(aRef) * rr + (o.dy || 0);
+        const leftSide = Math.cos(aRef) < 0;
+        const w = ctx.measureText(text).width;
+        if (!claim(leftSide ? gx - w / 2 : gx + w / 2, gy, w + 6)) return null;
+        ctx.fillStyle = color;
+        ctx.globalAlpha = alpha;
+        ctx.textAlign = leftSide ? 'right' : 'left';
+        ctx.textBaseline = 'middle';
+        ctx.lineJoin = 'round';
+        ctx.miterLimit = 2;
+        ctx.lineWidth = Math.max(1.4, Math.min(3.2, sizePx * 0.26));
+        ctx.strokeText(text, gx, gy);
+        ctx.fillText(text, gx, gy);
+        return { x: gx, y: gy, leftSide };
+      };
       // ── the curved-run writer ─────────────────────────────────
       // rWu   the INNER edge of the text's annulus (world units)
       // aRef  centre bearing — or, with opts.edge, the leading edge
@@ -7200,9 +7271,16 @@
           ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
           : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
         font('600', TYPE.head);
-        // Tier 1, over the reserved top arc (rl.headA) — radially
-        // clear of the tier-0 first caption by construction.
-        arcRun(header, rl.capR + rl.capTier, rl.headA, TYPE.head, _labelsTextColor, 0.85);
+        if (flat) {
+          // FLAT: the header stands at the top end of its own arc,
+          // horizontal, growing away from the circle — the toy's
+          // rail-header law adapted to the ring.
+          flatW(header, rl.capR + rl.capTier, rl.headA, TYPE.head, _labelsTextColor, 0.85);
+        } else {
+          // Tier 1, over the reserved top arc (rl.headA) — radially
+          // clear of the tier-0 first caption by construction.
+          arcRun(header, rl.capR + rl.capTier, rl.headA, TYPE.head, _labelsTextColor, 0.85);
+        }
         for (const sh of rl.shelves) {
           // WHAT AN ERA CAPTION IS (John: the "clunky dates … with
           // ZERO function"): a Scriptorium shelf's caption. The docs
@@ -7224,7 +7302,9 @@
           const txt = sh.label + ' · '
             + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
           font('600', TYPE.cap);
-          const res = arcRun(txt, sh.capR, sh.capA, TYPE.cap, gold, 0.85);
+          const res = flat
+            ? flatW(txt, sh.capR, sh.capA, TYPE.cap, gold, 0.85)
+            : arcRun(txt, sh.capR, sh.capA, TYPE.cap, gold, 0.85);
           if (res) {
             tie(rl, sh);
             landed.push([rl, sh, res]);
@@ -7238,7 +7318,8 @@
         // bottom opening space", where no shelf can ever stand).
         if (rl.overflow > 0 && rl.foot) {
           font('600', TYPE.cap);
-          arcRun('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, gold, 0.65);
+          if (flat) flatW('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, gold, 0.65);
+          else arcRun('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, gold, 0.65);
         }
       }
       // PASS 2 — the spine names follow their captions along the
@@ -7265,18 +7346,29 @@
           }
           title = title.replace(/[\s—–-]+$/, '') + '…';
         }
-        // The spine inherits its caption's flip: a run straddling the
-        // 3/9 o'clock line must not flip halfway through the pair and
-        // write itself backwards over the caption it follows. The GAP
-        // is dynamic, derived FROM the bucket law: where the arc runs
-        // vertically the follower must advance a full 16px y-band or
-        // its first bucket shares its own caption's last one (Δcx≈0
-        // there, so claim() refuses — measured, that hid "Plato" and
-        // every other vertical-arc spine); where the arc runs
-        // horizontally the x-halves separate any positive gap.
-        const gapPx = Math.min(48, 17 / Math.max(0.36, Math.abs(Math.cos(res.aEnd))));
-        const sr = arcRun(title, sh.capR, res.aEnd, TYPE.name, _labelsTextColor, 0.9,
-                          { edge: true, flip: res.flip, gap: gapPx });
+        let sr = null;
+        if (flat) {
+          // FLAT: the spine stands one clear row OUTWARD of its
+          // caption at the same bearing — up in the top half, down in
+          // the bottom, so the pair always grows away from the ring.
+          // The 16px minimum is the claim law's own floor.
+          const dy = (Math.sin(sh.capA) >= 0 ? 1 : -1)
+            * Math.max(16, Math.round(TYPE.name * 1.9));
+          sr = flatW(title, sh.capR, sh.capA, TYPE.name, _labelsTextColor, 0.9, { dy });
+        } else {
+          // The spine inherits its caption's flip: a run straddling the
+          // 3/9 o'clock line must not flip halfway through the pair and
+          // write itself backwards over the caption it follows. The GAP
+          // is dynamic, derived FROM the bucket law: where the arc runs
+          // vertically the follower must advance a full 16px y-band or
+          // its first bucket shares its own caption's last one (Δcx≈0
+          // there, so claim() refuses — measured, that hid "Plato" and
+          // every other vertical-arc spine); where the arc runs
+          // horizontally the x-halves separate any positive gap.
+          const gapPx = Math.min(48, 17 / Math.max(0.36, Math.abs(Math.cos(res.aEnd))));
+          sr = arcRun(title, sh.capR, res.aEnd, TYPE.name, _labelsTextColor, 0.9,
+                      { edge: true, flip: res.flip, gap: gapPx });
+        }
         if (sr && local._bandSpineIds) {
           // This node is now named. The reach pass must not name it
           // a second time in the big face — see the ONE NAME PER
@@ -7644,6 +7736,7 @@
       return {
         geometry: (p.house_geometry === 'fan') ? 'fan' : 'cascade',
         spread:   (typeof p.house_spread === 'number') ? p.house_spread : 1.10,
+        godSize:  (typeof p.house_god_size === 'number') ? p.house_god_size : 1,
         ranks:    (p.house_ranks === 'era') ? 'era' : 'lineage',
         orphans:  (p.house_orphans === 'degree') ? 'degree' : 'domain',
         // THE RAILS (2026-07-31) — dials, never baked numbers.

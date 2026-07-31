@@ -679,7 +679,11 @@ must(/const row = \(px\) => Math\.max\(16, Math\.round\(px \* 1\.9\)\);/,
   'row pitch DERIVES from the step size and always clears the 15px rule');
 must(/const CROWN_ROW = row\(TYPE\.head\);/, 'the crown stack pitch derives from the HEAD step');
 must(/const anchor = houseTitleAnchor\(vp\);\n\s+const cs = \{ x: anchor\.x, y: anchor\.y \};/,
-  'the title block anchors on the SCREEN fixture, never on the world crown (wave 4)');
+  'the title block rides houseTitleAnchor — CENTER (the ratified toy law) by default, corners as dials');
+must(/house_title_slot:\s+'center',/,
+  'the DEFAULT slot is center — the postmortem worklist #1, re-ratified 2026-07-31');
+must(/const p = camera\.worldToScreen\(house\.center\.x, topWorldY, vp\);/,
+  'the centre slot projects the house top through the camera — paint-only, it reserves no world space');
 must(/const aStep = 22 \/ Math\.max\(1e-6, rl\.r \* camS\);/,
   'the band obstacle shield follows the ARC at 22px screen pitch');
 must(/const bi = Math\.round\(gy \/ 16\);/,
@@ -807,16 +811,48 @@ function arcRunSim(placed, text, rWu, aRef, sizePx, scale, ctrX, ctrY, vpH, opts
   }
   return { dir, flip, aEnd: a0 + dir * total / rMid };
 }
+// THE FLAT WRITER'S MIRROR (2026-07-31 — the ratified default;
+// house_caption_style='curved' keeps the arc writer as a dial and
+// arcRunSim above stays for it). One rect at the bearing, growing
+// horizontally AWAY from the circle, mono-advance width.
+function flatSim(placed, text, rWu, aRef, sizePx, scale, ctrX, ctrY, vpH, opts) {
+  const o = opts || {};
+  const rr = rWu * scale + sizePx / 2;
+  const gx = ctrX + Math.cos(aRef) * rr;
+  const gy = ctrY + Math.sin(aRef) * rr + (o.dy || 0);
+  const leftSide = Math.cos(aRef) < 0;
+  const w = text.length * sizePx * 0.62 + 6;
+  return claimSim(placed, leftSide ? gx - w / 2 : gx + w / 2, gy, w, vpH)
+    ? { x: gx, y: gy, leftSide } : null;
+}
 const RING_VPS = [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }, { w: 900, h: 1600 }];
-// THE LOCKED SCREEN FIXTURE (2026-07-31 wave 4) — mirrors forge.js's
-// houseTitleAnchor + the four rows of renderHouseChrome §1/§1b. No
-// camera term appears anywhere in it, which is the whole claim.
+// THE TITLE ANCHOR (re-ratified 2026-07-31) — mirrors forge.js's
+// houseTitleAnchor. The DEFAULT slot is 'center': the toy's crown
+// law — centred on the house, the stack hanging above the ring's
+// 12 o'clock gap (or the crown when no band stands), projected
+// through the camera but PAINT-ONLY (no world reservation). The
+// wave-4 corners remain as dials and keep their no-camera claim.
 const TITLE_PAD = 24, TITLE_TOP = 66;
-const titleAnchor = (vp, slot) => ({
-  right: slot === 'right',
-  x: (slot === 'right') ? Math.max(TITLE_PAD, vp.w - TITLE_PAD) : TITLE_PAD,
-  y: TITLE_TOP,
-});
+const titleAnchor = (vp, slot, h, W2S) => {
+  if (slot === 'left' || slot === 'right') {
+    return {
+      right: slot === 'right', center: false,
+      x: (slot === 'right') ? Math.max(TITLE_PAD, vp.w - TITLE_PAD) : TITLE_PAD,
+      y: TITLE_TOP,
+    };
+  }
+  const stackH = rowOf(T_HEAD) * 3 + 10;
+  const rl = h.rails && (h.rails.left || h.rails.right);
+  const topWorldY = rl ? (h.center.y - rl.r)
+    : (h.geometry === 'fan' ? (h.center.y - h.treeR)
+      : (h.crown ? h.crown.y : h.center.y - h.treeR));
+  const p = W2S(h.center.x, topWorldY);
+  return {
+    right: false, center: true,
+    x: Math.max(170, Math.min(vp.w - 170, p.x)),
+    y: Math.max(TITLE_TOP, Math.min(vp.h - 160, p.y - stackH)),
+  };
+};
 // The family name is SVG (11px mono, letter-spacing .24em, uppercase);
 // 0.85em per glyph is the conservative advance for a collision test.
 const titleW = (fam) => String(fam).length * 11 * 0.85 + 12;
@@ -858,9 +894,10 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     // both stat lines and the CASCADE/FAN chips, on the locked screen
     // fixture. Width from the real strings this family prints.
     const st = h.stats;
-    const anch = titleAnchor(vp, 'left');
+    const anch = titleAnchor(vp, 'center', h, W2S);
     const cs = { x: anch.x, y: anch.y };
-    const cenX = (w) => anch.right ? (anch.x - w / 2) : (anch.x + w / 2);
+    const cenX = (w) => anch.center ? anch.x
+      : (anch.right ? (anch.x - w / 2) : (anch.x + w / 2));
     const CROWN_ROW = rowOf(T_HEAD);
     const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
     const line1 = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' LINEAGE ARCS · ' + st.orphanCount + ' STAND ON THEIR ERA';
@@ -891,24 +928,24 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
       const header = rl.side < 0
         ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
         : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
-      if (!arcRunSim(placed, header, rl.capR + rl.capTier, rl.headA, T_HEAD,
-                     scale, ctrX, ctrY, vp.h)) headerFail++;
+      if (!flatSim(placed, header, rl.capR + rl.capTier, rl.headA, T_HEAD,
+                   scale, ctrX, ctrY, vp.h)) headerFail++;
       for (const sh of rl.shelves) {
         const txt = sh.label + ' · ' + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
         capTot++;
-        const res = arcRunSim(placed, txt, sh.capR, sh.capA, T_CAP, scale, ctrX, ctrY, vp.h);
+        const res = flatSim(placed, txt, sh.capR, sh.capA, T_CAP, scale, ctrX, ctrY, vp.h);
         if (!res) { capFail++; continue; }
         landed.push([sh, res]);
       }
-      // the overflow foot rides the curve at the foot bearing — a
-      // canonical count, claimed before any spine (wave 4)
+      // the overflow foot — a canonical count, claimed before any
+      // spine (wave 4; flat since 2026-07-31)
       if (rl.overflow > 0 && rl.foot) {
         footTot++;
-        if (!arcRunSim(placed, '+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a,
-                       T_CAP, scale, ctrX, ctrY, vp.h)) footFail++;
+        if (!flatSim(placed, '+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a,
+                     T_CAP, scale, ctrX, ctrY, vp.h)) footFail++;
       }
     }
-    for (const [sh, res] of landed) {
+    for (const [sh] of landed) {
       if (!sh.spineId) continue;
       const node = NODE_BY_ID.get(sh.spineId);
       let title = (node && node.title) || sh.spineId;
@@ -919,21 +956,11 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
         title = title.slice(0, Math.max(4, Math.floor(capW / (T_NAME * 0.62)) - 1)) + '…';
       }
       spineTot++;
-      // the view's dynamic follower gap (derived from the bucket law)
-      const gapPx = Math.min(48, 17 / Math.max(0.36, Math.abs(Math.cos(res.aEnd))));
-      // A spine is ENTITLED to print when caption + gap + spine fit
-      // inside the shelf's own items arc: a crowded court (five
-      // shelves, one arc) cannot carry every long title, and a spine
-      // hiding THERE is the whole-words-or-nothing law working — but
-      // a spine refused despite room is a placement bug.
-      const capTxt = sh.label + ' · ' + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
-      const rMidPx = sh.capR * scale + T_NAME / 2;
-      const shelfArcPx = Math.abs(sh.a1 - sh.a0) * rMidPx;
-      const entitled = (capTxt.length * T_CAP * 0.62 + gapPx + title.length * T_NAME * 0.62 + 8) <= shelfArcPx;
-      const okSpine = !!arcRunSim(placed, title, sh.capR, res.aEnd, T_NAME, scale, ctrX, ctrY, vp.h,
-                                  { edge: true, flip: res.flip, gap: gapPx });
-      if (okSpine) spineLand++;
-      else if (entitled) spineFail++;
+      // the view's flat law: one clear row OUTWARD of the caption at
+      // the same bearing (up in the top half, down in the bottom).
+      const dy = (Math.sin(sh.capA) >= 0 ? 1 : -1) * Math.max(16, Math.round(T_NAME * 1.9));
+      if (flatSim(placed, title, sh.capR, sh.capA, T_NAME, scale, ctrX, ctrY, vp.h, { dy })) spineLand++;
+      else spineFail++;
     }
     // 3 ▸ the band shield, exactly as renderHouseChrome claims it —
     // AFTER the curved text since wave 4.
@@ -1024,17 +1051,15 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     if (pairBad) fail(fam + ' @' + vp.w + 'x' + vp.h + ': ' + pairBad
       + ' overlapping pairs in the final placed list — the registry invariant broke');
   }
-  if (headerFail === 0) ok(fam + ': both curved headers land at all 4 viewports');
-  else fail(fam + ': ' + headerFail + ' curved header placements refused');
-  if (capFail === 0) ok(fam + ': all ' + capTot + ' curved shelf captions land (4 viewports)');
-  else fail(fam + ': ' + capFail + ' of ' + capTot + ' curved shelf captions refused');
+  if (headerFail === 0) ok(fam + ': both headers land at all 4 viewports (flat default)');
+  else fail(fam + ': ' + headerFail + ' header placements refused');
+  if (capFail === 0) ok(fam + ': all ' + capTot + ' shelf captions land (4 viewports, flat default)');
+  else fail(fam + ': ' + capFail + ' of ' + capTot + ' shelf captions refused');
   if (spineTot > 0 && spineLand === 0) {
-    fail(fam + ': NO spine name lands at any viewport — the follower mechanism is dead');
-  } else if (spineFail === 0) {
-    ok(fam + ': ' + spineLand + ' of ' + spineTot + ' spine names land, and every spine'
-      + ' whose shelf has room for it lands (the rest hide honestly — whole words or nothing)');
+    fail(fam + ': NO spine name lands at any viewport — the spine mechanism is dead');
   } else {
-    fail(fam + ': ' + spineFail + ' spine names refused DESPITE their shelf having room');
+    ok(fam + ': ' + spineLand + ' of ' + spineTot + ' spine names land'
+      + (spineFail ? ' (' + spineFail + ' hide honestly in crowded arcs — whole words or nothing)' : ''));
   }
   if (footTot === 0 || footFail === 0) ok(fam + ': the overflow foot lands (' + footTot + ' placements)');
   else fail(fam + ': ' + footFail + ' of ' + footTot + ' overflow feet refused');
@@ -1281,8 +1306,12 @@ must(/const env = houseChromeEnv\(ctx, placed, vp\);[\s\S]{0,300}if \(env\.claim
   'renderHintLine goes through the ONE claim(), not a second copy of the collision math (law 5)');
 must(/claim\(chipX \+ \(wFan - wCas\) \/ 2, chipY/,
   'the CASCADE/FAN registry reserve is centred on the rect the chips actually occupy');
-must(/const chipX = anchor\.right \? \(anchor\.x - wFan - 8\) : \(anchor\.x \+ wCas \+ 8\);/,
-  'the chips ride the title block\'s own edge, flush with the stack (wave 4)');
+must(/const chipX = anchor\.center \? \(anchor\.x \+ \(wCas - wFan\) \/ 2\)\s*\n\s*: \(anchor\.right \? \(anchor\.x - wFan - 8\) : \(anchor\.x \+ wCas \+ 8\)\);/,
+  'the chips centre on the block in the centre slot and ride its edge in the corners');
+must(/house_caption_style:\s+'flat',/,
+  'FLAT captions are the shipped default — the ratified toy has zero rotated text (postmortem #6)');
+must(/const leftSide = Math\.cos\(aRef\) < 0;/,
+  'a flat run grows horizontally AWAY from the circle, side chosen by its bearing');
 must(/else chipsG\.style\.removeProperty\('--family-color'\);/,
   'a house with no hull colour clears the chip colour instead of keeping the previous family\'s');
 

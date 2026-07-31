@@ -683,8 +683,10 @@ console.log('');
   const missing = keys.filter(k => !(k in PD));
   if (!missing.length) ok('all ' + keys.length + ' house_* params the panel drives exist in PARAM_DEFAULTS');
   else fail('dials for params that do not exist: ' + missing.join(', '));
-  if (hRows === 39) ok('39 controls — every house dial in the app, in one panel');
-  else fail('the panel renders ' + hRows + ' controls (expected 39 — a dial was dropped or double-placed)');
+  // 39 → 41 on 2026-07-31: +God size (postmortem #5, the direct dial
+  // asked for by name) and +Captions flat|curved (postmortem #6).
+  if (hRows === 41) ok('41 controls — every house dial in the app, in one panel');
+  else fail('the panel renders ' + hRows + ' controls (expected 41 — a dial was dropped or double-placed)');
   // house_geometry (CASCADE/FAN) is CANONICAL and lives on the crown.
   if (!H.secs.some(s => s.rows.some(r => r.opts && r.opts.includes('cascade'))))
     ok('Cascade | Fan is NOT here — it is canonical and stays on the VIEW panel');
@@ -720,7 +722,8 @@ function fires(label, expected) {
 }
 // The three refreshes that have silently swallowed a dial before:
 fires('House names', 'relabel');   // the label SET is compared BY IDENTITY
-fires('Title corner', 'relabel');
+fires('Title spot', 'relabel');    // renamed from "Title corner" when center shipped
+fires('God size', 'houseSnap');    // the postmortem-#5 dial must re-solve the layout
 fires('Band radius', 'houseSnap'); // a size dial must re-solve the layout
 fires('Distribution', 'houseMorph');
 fires('Bone strength', 'refocus');

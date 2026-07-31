@@ -48,6 +48,28 @@
       return;
     }
 
+    // ONE-TIME MIGRATION (2026-07-31): 'left' was never John's choice —
+    // wave 4 parked the title in the corner on the agent's own
+    // reasoning, and the postmortem ratified CENTER. A stored 'left'
+    // from that era would silently veto the ratified default forever
+    // (the exact returning-user trap that shipped three invisible
+    // controls), so it migrates once — in the panel's own blob AND the
+    // LAB donor blob the one-time import reads. A 'left' John picks
+    // from the dial AFTER this ships sticks: the marker survives.
+    try {
+      for (const k of ['forge.housePanel.v1', 'forge.labRecipe.v1']) {
+        const raw = localStorage.getItem(k);
+        if (!raw) continue;
+        const obj = JSON.parse(raw);
+        if (obj && typeof obj === 'object'
+            && obj.house_title_slot === 'left' && !obj.__titleCenterMigr) {
+          obj.house_title_slot = 'center';
+          obj.__titleCenterMigr = 1;
+          localStorage.setItem(k, JSON.stringify(obj));
+        }
+      }
+    } catch (_) { /* storage unavailable — the default already says center */ }
+
     // [param, label, min, max, step, unit, mode] — mode names the
     // refresh deep enough for the change to appear: 'house' re-solves
     // the isolate layout, 'refocus' rebuilds per-node state, 'relabel'
@@ -55,6 +77,10 @@
     // default is a plain redraw.
     const SLIDERS = [
       // ── the tree ──
+      // GOD SIZE — the direct control, named as such (postmortem #5:
+      // he asked for it BY NAME and was given adjacent P-side terms).
+      // Multiplies node radius only; not one position moves.
+      ['house_god_size',      'God size',      0.5,  2.0,  0.02,  '×',  'house'],
       ['house_spread',        'Tree spread',   0.85, 1.5,  0.01,  '×',  'house'],
       ['house_tree_r',        'Tree zone',     0.50, 1.00, 0.005, '×',  'house'],
       // THE THREE PITCH TERMS — what decides how big a god is. Chord +
@@ -143,17 +169,19 @@
       // as it did on 07-30.
       ['house_rails',        'Show the band', ['on', 'off']],
       ['house_rank_caption', 'Rank caption', ['date', 'gen', 'off'], 'redraw'],
+      // FLAT is the ratified default (the toy has zero rotated text);
+      // 'curved' stays so John can compare the two with one click.
+      ['house_caption_style', 'Captions',    ['flat', 'curved'], 'redraw'],
       // The isolate drags ~4,400 wires between two OTHER families into
       // the house (plus ~2,000 zero-length ones that draw as solid
       // radial spikes off every port). 'off' is the shipped default: a
       // wire between two families neither of which is this house says
       // nothing about this house. Hover still lights a deity's own.
       ['house_rest_wires',   'Rest wires',   ['full', 'stubs', 'off'], 'redraw'],
-      // THE TITLE BLOCK IS A LOCKED SCREEN FIXTURE. John: "just find
-      // locked spots for these, the nodes should not be influenced by
-      // this title block." Default 'left' because the DEV drawer is
-      // pinned top right. Never the bottom — the bottom bar owns it.
-      ['house_title_slot',   'Title corner', ['left', 'right'], 'relabel'],
+      // THE TITLE SLOT (re-ratified 2026-07-31): 'center' is the toy's
+      // law — over the house, above the 12 o'clock gap, paint-only so
+      // it can never push a god. The wave-4 corners stay as dials.
+      ['house_title_slot',   'Title spot',   ['center', 'left', 'right'], 'relabel'],
     ];
 
     // ── THE SECTIONS — his eye, outside in. ALL OPEN. ───────────
@@ -164,6 +192,7 @@
           { k: 'radio',  key: 'house_pack' },
           { k: 'radio',  key: 'house_ranks' },
           { k: 'radio',  key: 'house_orphans' },
+          { k: 'slider', key: 'house_god_size' },
           { k: 'slider', key: 'house_spread' },
           { k: 'slider', key: 'house_tree_r' },
           { k: 'slider', key: 'house_bed_chord' },
@@ -205,6 +234,7 @@
           { k: 'slider', key: 'house_name_max' },
           { k: 'slider', key: 'house_type_scale' },
           { k: 'radio',  key: 'house_rank_caption' },
+          { k: 'radio',  key: 'house_caption_style' },
           { k: 'slider', key: 'house_rank_cap_off' },
           { k: 'radio',  key: 'house_title_slot' },
           { k: 'slider', key: 'house_hint_line' },
@@ -237,7 +267,8 @@
         + ' pack=' + (p.house_pack === 'toy' ? 'toy' : 'bed')
         + ' ranks=' + (p.house_ranks === 'era' ? 'era' : 'lineage+era')
         + ' unparented=' + (p.house_orphans || 'domain')
-        + ' · TREE spread ' + num(p.house_spread, 1.1).toFixed(2)
+        + ' · TREE god ×' + num(p.house_god_size, 1).toFixed(2)
+        + ' spread ' + num(p.house_spread, 1.1).toFixed(2)
         + ' zone ' + num(p.house_tree_r, 0.86).toFixed(2)
         + ' bed ' + num(p.house_bed_chord, 0.74).toFixed(2)
         + '/' + num(p.house_bed_fill, 0.86).toFixed(2)
@@ -262,8 +293,10 @@
         + ' · WORDS names ' + Math.round(num(p.house_name_max, 120))
         + ' type x' + num(p.house_type_scale, 1).toFixed(2)
         + ' caption ' + (p.house_rank_caption || 'date')
+        + ' style ' + (p.house_caption_style === 'curved' ? 'curved' : 'flat')
         + ' date off ' + Math.round(num(p.house_rank_cap_off, 14)) + 'px'
-        + ' title ' + (p.house_title_slot === 'right' ? 'right' : 'left')
+        + ' title ' + (p.house_title_slot === 'left' || p.house_title_slot === 'right'
+                        ? p.house_title_slot : 'center')
         + ' hint ' + Math.round(num(p.house_hint_line, 1))
         + ' · BONES ' + num(p.house_bones, 0).toFixed(2)
         + '/2nd ' + num(p.house_bone_secondary, 0).toFixed(2)
