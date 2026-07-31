@@ -66,7 +66,7 @@ must(/let parked\s*=\s*step\(2\.5, in\.ext_class\) \* v\.layout_mix\.x;/,
 must(/let ext\s*=\s*max\(parked,/, 'the parked hide is OR-ed onto the chip hide', gpuSrc);
 must(/if \(parkedIds\.has\(e\.source\) \|\| parkedIds\.has\(e\.target\)\) extern\[ei\] = 3;/,
   'buildHouse bakes class 3 for wires touching the rail overflow', forgeSrc);
-must(/parkedIds: parked,/, '(layout) buildRail returns the ids it parked', treeSrc);
+must(/parkedIds, shelves: \[\] \};/, '(layout) placeRail returns the ids it parked', treeSrc);
 must(/arrayStride:\s*24,\s*stepMode:\s*'instance'/, 'edgePosB stride is 24 (6 floats)', gpuSrc);
 must(/frame\.edgePosB,\s*0,\s*edgeCount \* 6/, 'edgePosB uploads 6 floats per instance', gpuSrc);
 must(/const out = new Float32Array\(E \* 6\);/, 'bakeEdgePosB emits 6 floats per instance', forgeSrc);

@@ -62,11 +62,74 @@
   // first rank for the crown's four-row caption stack; that block is a
   // locked SCREEN fixture now and reserves nothing in world space, so
   // the vertical offset is SOLVED per family instead (see §6).
+  // THE TWO PITCH TERMS. Both are design/family-tree.html's ratified
+  // values and both SHIP UNCHANGED — wave 5 only made them dials.
+  // They were the terms most likely to have to move: the tree's lane
+  // is a hard boundary now, and a hard boundary usually costs size.
+  // Measured, it costs −0.1% across the ten gate families, because
+  // the lane is enforced on the tree's MEASURED EXTENT rather than on
+  // its zone (see THE LANE IS A HARD BOUNDARY) and most families
+  // never reach it. So nothing is bought back, because nothing was
+  // spent. Pushing them is now John's call, not a baked constant:
+  // chord 0.76 / fill 0.88 is +1.2% with no family losing centring;
+  // past ~0.78 / 0.90 Greek's circle fit starts to bind and its
+  // cascade leaves the house centre.
   const CASCADE_CHORD  =  0.74;  // coarse chord factor for the P solve
+  const BED_FILL       =  0.86;  // how much of a bed's own chord the bed may fill
+  // The third term: the ceiling on P as a fraction of the tree lane.
+  // It is what stops a 12-god family becoming twelve balloons, and it
+  // is the term that BINDS on small families (Christian, Celtic,
+  // Baltic) — so it is a dial too, and it is the one to reach for
+  // when a small house looks under-scaled.
+  const BED_P_CAP      =  0.16;
   const BED_GG         =  0.55;  // extra air (in P) at group boundaries
   const BED_SUBDY      =  0.78;  // sub-row spacing (in P)
   const BED_GAP        =  1.5;   // inter-band gap (in P) — arc room
   const NODE_R_FRAC    =  0.34;  // node radius = P * this * tier mult
+  // ── THE TWO PACKINGS (2026-07-31 wave 5) ─────────────────────
+  // John: "Im not sure what was your logic in your node
+  // distribution, but if its different keep it add a toggle to use
+  // it then i can pick." So both laws ship and `pack` picks.
+  //
+  // THE MEASURED DIFF (app HEAD vs design/family-tree.html, the
+  // ratified toy). The BED itself is NOT the difference — the toy
+  // took the same 07-30 SCALE+BUNDLES pass, so column-major slots,
+  // the hex half-pitch stagger, BED_GG group air, C_MAX and the tier
+  // radii are character-identical in both files. What actually
+  // drifted is WHERE THE STACK STANDS and WHAT IT SOLVES AGAINST:
+  //
+  //   1 ▸ VERTICAL ANCHOR.  toy: a fixed bias — the stack's centre is
+  //       pinned 0.10·R below the house centre (it was reserving a
+  //       column for the crown's caption stack).  app: the offset is
+  //       SOLVED (96-step scan for the offset that maximises the
+  //       worst bed's circle fit, tie-broken to the smallest |offset|
+  //       so an unbound house centres).  This is the wave-4 change
+  //       John asked for ("the title is taking TOO MUCH space").
+  //   2 ▸ VERTICAL SPAN.  toy: −0.58 … +0.84 of R, always.  app:
+  //       −0.64 … +0.92 of the TREE ZONE Rt whenever a band stands
+  //       (wider span, smaller radius).
+  //   3 ▸ POLE CHORD FLOOR.  toy floors the half-chord at sqrt(0.12)
+  //       ≈ 0.35 wu (i.e. effectively nothing).  app floors it at
+  //       0.12·Rt ≈ 50 wu, so a bed pushed near a pole shrinks the
+  //       whole house far less violently.
+  //   4 ▸ SHRINK FLOOR.  toy: P *= shrink, unbounded.  app: P *=
+  //       max(0.5, shrink) — one pass can never more than halve P.
+  //   5 ▸ FAN, EMPTY RANK.  toy advances the ring radius by half a
+  //       ring pitch for a rank with no members; the app leaves the
+  //       radius where it was.  (The only fan-side difference; it
+  //       shows up wherever era-ranking leaves a rank empty.)
+  //   6 ▸ NODE RADIUS FLOOR.  toy 2.6 wu, app 3 wu.
+  //   7 ▸ CROWN CLEARANCE.  toy: min(P·1.5, 68) above the first bed's
+  //       TOP.  app: min(P·0.9, 60) above the first bed's CENTRE.
+  //
+  // `pack:'bed'` (default) is the app's law, `pack:'toy'` the toy's,
+  // applied to the same solved tree lane Rt — the three-zone budget
+  // below is orthogonal to the packing law and binds both.
+  const TOY_BIAS       =  0.10;  // toy pack: stack centre sits 0.10·Rt below cy
+  const TOY_TOP        = -0.58;  // toy pack: vertical span, fractions of Rt
+  const TOY_BOT        =  0.84;
+  const TOY_NODE_R_MIN =  2.6;   // toy pack: node radius floor (wu)
+  const BED_NODE_R_MIN =  3;     // bed pack: node radius floor (wu)
   const TIER_MULTS     =  [1.30, 1.02, 0.82];   // hub / mid / small
   const FAN_SPAN       =  Math.PI * 1.10;  // per-ring window cap (±99°)
   const FAN_R_IN_U     =  2.3;   // innermost ring radius (in P)
@@ -168,8 +231,65 @@
   const BAND_CAP_WU    =  9.2;   // caption arc allowance per character (wu)
   const BAND_CAP_ARC_MAX = 120;  // allowance ceiling per shelf (wu)
   const RAIL_R_FRAC    =  0.40;  // glyph radius = pitch * this
-  const RAIL_R_MAX     =  9;     // hard ceiling (wu); the 0.49·minDist law below is
-                                 // what actually guarantees glyphs can never touch
+  const RAIL_R_MAX     =  9;     // hard ceiling (wu)
+  const RAIL_R_MIN     =  1.6;   // glyph radius floor (wu) — below this a court slot
+                                 // stops being an object and the margin has to give
+                                 // instead (reported as rail.squeeze.glyph)
+  // ════════════════════════════════════════════════════════════
+  // ZERO-TOLERANCE MARGINS (2026-07-31 wave 5)
+  // ════════════════════════════════════════════════════════════
+  // John, verbatim: "we keep the other work done with the increased
+  // 0 TOLERANCE bands margins between nodes NEVER getting close
+  // between bands."
+  //
+  // MEASURED BEFORE THIS PASS, on the real vault at the shipped
+  // dials (probe over all 30 families, both geometries):
+  //   · tree extent → band inner edge:  4.0 wu  (Greek/Vedic/Celtic/
+  //     Mesoamerican/Buddhist in FAN — the literal hard-coded `+4` in
+  //     the old rC line), 9.8 wu (Mesopotamian, cascade)
+  //   · outermost caption tier → ports ring:  9.6 wu, before the text
+  //     itself is counted at all
+  //   · sub-row → sub-row (edge to edge):  1.15 wu
+  //   · glyph → glyph along an arc:  2.00 wu (the old law reserved
+  //     2% of the slot pitch and nothing else)
+  //
+  // Those four numbers ARE his complaint. They were emergent — the
+  // band was placed at a dialled radius and the tree hoped to stay
+  // out of it. They are CONSTRUCTED now: the radial budget is solved
+  // outside-in, once, before anything is placed —
+  //
+  //   portR
+  //     − M_BAND_PORT − caption text − caption tier − capClear
+  //                                            = the band's outer ceiling
+  //   band centreline rC = min(bandR, ceiling − thickness/2)
+  //   band inner edge    = rC − thickness/2
+  //     − M_TREE_BAND                          = the tree's lane RtMax
+  //   Rt = min(dialled tree zone, RtMax)
+  //
+  // so the tree can no longer reach the band and the band can no
+  // longer reach the ports. Inside the band, M_SUB_ROW and M_GLYPH
+  // bound the glyph radius and the sub-row spacing directly.
+  //
+  // WHERE THE GROUND IS GIVEN, when a family cannot have everything:
+  //   1 ▸ the TREE ZONE yields first (Rt shrinks; gods get smaller).
+  //       It is the only one of the four that can yield without two
+  //       things touching, and it is reported as house.margins.rtCost.
+  //   2 ▸ then the band THINS — glyph radius down to RAIL_R_MIN.
+  //   3 ▸ only then does M_BAND_PORT yield, and the shortfall is
+  //       named in rails.<side>.squeeze (never silently absorbed).
+  // M_TREE_BAND, M_SUB_ROW and M_GLYPH never yield: they are the
+  // "nodes NEVER getting close" half of the sentence.
+  const M_TREE_BAND    =  16;    // tree's measured extent → band inner edge (wu)
+  const M_BAND_PORT    =  12;    // outermost caption tier's outer edge → ports ring (wu)
+  const M_SUB_ROW      =  3;     // sub-row → sub-row, glyph edge to glyph edge (wu)
+  const M_GLYPH        =  3;     // glyph → glyph along the arc, edge to edge (wu)
+  // The caption ring is TEXT, and text has height the layout cannot
+  // measure headlessly (it is CSS px on a camera that has not been
+  // built yet). This is its outer half-height in world units at the
+  // isolate's own fit scale: TYPE.cap 9.5px × type scale 1.6 (the
+  // LAB's ceiling) ÷ 0.82 (the measured fit scale at the gate
+  // viewports) ≈ 18.5 px ≈ 9.3 wu — rounded up, once, here.
+  const BAND_CAP_TEXT  =  10;    // caption outer half-height reserve (wu)
   // DISPLAY cap per rail. 'Other' holds 2,336 non-deity members; a
   // 2,336-slot column is neither drawable nor readable. Capping is a
   // display decision, never a claim: `count` stays the family's TRUE
@@ -210,6 +330,22 @@
   //   ranks:      'lineage' | 'era'      default 'lineage'
   //   orphans:    'domain' | 'degree'    default 'domain'
   //   spread:     0.85..1.5              default 1.10
+  //   pack:       'bed' | 'toy'          default 'bed'  — WHICH packing
+  //               law places the ranks (see THE TWO PACKINGS above for
+  //               the measured, itemised difference). 'bed' is the
+  //               app's shipped law; 'toy' is design/family-tree.html's.
+  //   chord:      0.5..1   default 0.74  — the coarse chord factor in
+  //               the pitch solve (bigger = wider beds allowed = a
+  //               bigger P before the circle fit claws it back)
+  //   bedFill:    0.5..1   default 0.86  — how much of a bed's OWN
+  //               chord the bed may fill. These two are the terms
+  //               that decide god size, and they are dials because
+  //               the tree lane below is now a hard boundary.
+  //   ── the four zero-tolerance minimums, world units ──
+  //   marginTree: default 16  tree's measured extent → band inner edge
+  //   marginPort: default 12  outermost caption tier → ports ring
+  //   marginSub:  default 3   sub-row → sub-row, edge to edge
+  //   marginGlyph:default 3   glyph → glyph along an arc, edge to edge
   //   consorts:   bool                   default true  (adjacency ordering)
   //   aspectsOn:  bool                   default true  (placement-parents)
   //   treeKindOf: n => 'tree'|'doc'|'court'  default: deity→tree,
@@ -260,6 +396,17 @@
     const ranksMode = (o.ranks === 'era') ? 'era' : 'lineage';
     const orphanMode = (o.orphans === 'degree') ? 'degree' : 'domain';
     const spread = Math.max(0.6, Math.min(2, num(o.spread, 1.10)));
+    // WAVE 5 — the packing law (see THE TWO PACKINGS above) and the
+    // two pitch terms that decide god size, both dials now.
+    const pack = (o.pack === 'toy') ? 'toy' : 'bed';
+    const chordF  = Math.max(0.5, Math.min(1, num(o.chord, CASCADE_CHORD)));
+    const bedFill = Math.max(0.5, Math.min(1, num(o.bedFill, BED_FILL)));
+    const bedCap  = Math.max(0.08, Math.min(0.32, num(o.bedCap, BED_P_CAP)));
+    // The four zero-tolerance minimums (world units).
+    const mTreeBand = Math.max(0, Math.min(120, num(o.marginTree,  M_TREE_BAND)));
+    const mBandPort = Math.max(0, Math.min(120, num(o.marginPort,  M_BAND_PORT)));
+    const mSubRow   = Math.max(0, Math.min(40,  num(o.marginSub,   M_SUB_ROW)));
+    const mGlyph    = Math.max(0, Math.min(40,  num(o.marginGlyph, M_GLYPH)));
     const useConsorts = o.consorts !== false;
     const useAspects  = o.aspectsOn !== false;
     const dateOf = (typeof o.dateOf === 'function') ? o.dateOf
@@ -301,12 +448,67 @@
     // tree keeps the FULL house radius — byte-identical to the
     // pre-ring output (honest zero: rails off ⇒ the 07-30 house).
     const hasBand = (docs.length + court.length) > 0;
+    const portR = Rh * Math.max(0.7, Math.min(1.25, num(o.portInset, 1)));
+    // The band's own dials, hoisted out of buildRail (wave 5): the
+    // RADIAL BUDGET below needs them before anything is placed.
+    const bandR   = Rh * Math.max(0.5, Math.min(1.02, num(o.bandR, BAND_R_FRAC)));
+    const gapRad  = Math.max(4, Math.min(60, num(o.bandGap, BAND_GAP_DEG))) * Math.PI / 180;
+    const gapBot  = Math.max(2, Math.min(60, num(o.bandGapBot, BAND_GAP_BOT_DEG))) * Math.PI / 180;
+    const rowsMax = Math.max(1, Math.min(4, Math.round(num(o.bandRows, BAND_ROWS_MAX))));
+    const pitchTgt = Math.max(4, Math.min(BAND_PITCH_MAX, num(o.bandPitch, BAND_PITCH_TGT)));
+    const capClear = Math.max(0, Math.min(60, num(o.capClear, BAND_CAP_CLEAR)));
+    const railCap  = Math.max(1, Math.round(num(o.railMax, RAIL_MAX)));
+    const railFrac = Math.max(0.05, Math.min(1, num(o.railGlyph, RAIL_R_FRAC)));
+    const bandSpan = Math.max(0.26, Math.PI - gapRad - gapBot);
+    // Shelf-label formatters — hoisted out of §7 with the band dials
+    // (wave 5): docShelves runs before the tree now, so these have to
+    // be initialised before the budget calls it.
+    const fmtDate = (d) => d == null ? 'UNDATED' : (d < 0 ? (-d) + ' BCE' : d + ' CE');
+    const fmtRange = (a, b) => {
+      if (a == null || b == null || a === b) return fmtDate(a == null ? b : a);
+      if (a < 0 && b < 0) return (-a) + '–' + (-b) + ' BCE';
+      if (a >= 0 && b >= 0) return a + '–' + b + ' CE';
+      return (-a) + ' BCE–' + b + ' CE';
+    };
+    // ── THE RADIAL BUDGET, SOLVED OUTSIDE-IN (wave 5) ────────────
+    // The band is solved BEFORE the tree, because the band's arc and
+    // thickness depend on nothing the tree knows, while the tree's
+    // lane depends entirely on where the band's inner edge lands.
+    // Solving in this order is what turns all four clearances from
+    // emergent into constructed. (Before this pass the order was the
+    // other way round and the band chased the tree outward with a
+    // hard-coded +4 wu of air — the measured 4.0 wu John saw.)
+    const railSolves = hasBand
+      ? { left: solveRail(docShelves(docs), -1), right: solveRail(kindShelves(court), +1) }
+      : { left: null, right: null };
+    // THE TREE'S LANE — the innermost band edge, less the tree margin.
+    // This is a HARD CEILING ON THE MEASURED EXTENT, not on the zone
+    // the cascade solves in, and the difference is 4% of every god in
+    // half the vault. Most families do not fill their zone (Greek's
+    // cascade reaches 382 of 464; Christian's 362), so clamping the
+    // ZONE would tax nine families for a problem two of them have.
+    // The zone stays where the dial puts it, the extent is MEASURED
+    // after placement, and a tree that reaches past its lane is
+    // scaled into it exactly (see THE LANE IS A HARD BOUNDARY). The
+    // clearance is identical either way — it just costs less.
+    let RtLane = Infinity;
+    for (const rs of [railSolves.left, railSolves.right]) {
+      if (rs) RtLane = Math.min(RtLane, rs.rC - rs.thick / 2 - mTreeBand);
+    }
+    // A pathological dial set (huge margins on a small house) must
+    // still draw a house — the floor is 0.25·Rh, and any shortfall is
+    // reported in house.margins, never silently swallowed.
+    if (hasBand) RtLane = Math.max(Rh * 0.25, RtLane);
     const Rt = hasBand
       ? Rh * Math.max(0.35, Math.min(1, num(o.treeR, BAND_TREE_R)))
       : Rh;
+    // The vertical span stayed at the wave-4 constants on purpose:
+    // measured, widening it to -0.68…0.94 does re-centre Greek and
+    // buys Norse/Vedic/Mesopotamian 2-4%, but it costs GREEK 15% (its
+    // beds get pushed toward the poles, where the chord is short).
+    // Greek is the family with the most bones on screen; it wins.
     const treeTop = hasBand ? BAND_TREE_TOP : CASCADE_TOP;
     const treeBot = hasBand ? BAND_TREE_BOT : CASCADE_BOTTOM;
-    const portR = Rh * Math.max(0.7, Math.min(1.25, num(o.portInset, 1)));
     // CANONICAL HONESTY (2026-07-31 wave 2, CR-1 / crown-noun-*) — the
     // CROWN counts this `tree` array, so the crown's NOUN has to name
     // what is in it. Only this file knows: treeKindOf routes by vault
@@ -667,7 +869,9 @@
     };
     const radii = new Map();
     let P = 0;
-    const nodeR = (i) => Math.max(3, P * NODE_R_FRAC * tierMult(i));
+    // Pack diff #6 — the node-radius floor (toy 2.6 wu, app 3).
+    const nodeRMin = (pack === 'toy') ? TOY_NODE_R_MIN : BED_NODE_R_MIN;
+    const nodeR = (i) => Math.max(nodeRMin, P * NODE_R_FRAC * tierMult(i));
     const groupKeyOf = (i) => (parents[i].length
       ? ('0c' + comp[i])
       : ('1' + (orphanMode === 'domain' ? (dom0(i) || '~') : '~')));
@@ -706,12 +910,20 @@
       // 2026-07-31 wave 3 — the cascade solves against the TREE ZONE
       // radius Rt (the innermost of the three zones), not Rh. With no
       // band Rt === Rh and every number below is the pre-ring value.
-      const usable = Rt * (treeBot - treeTop);
+      // Pack diff #2 — the vertical span. 'bed' uses the wave-3 zone
+      // span; 'toy' uses design/family-tree.html's -0.58 … +0.84.
+      const spanTop = (pack === 'toy') ? TOY_TOP : treeTop;
+      const spanBot = (pack === 'toy') ? TOY_BOT : treeBot;
+      const usable = Rt * (spanBot - spanTop);
       // P fills the vertical band OR the chord, capped; the spread
       // dial stretches but the vertical band ALWAYS re-clamps —
       // otherwise the bottom bed slides to the rim, its chord goes
       // to zero and the overflow guard nukes P (the toy's Greek bug).
-      P = Math.min(usable / Math.max(1, totalU), (2 * Rt * CASCADE_CHORD) / Math.max(1, maxWU), Rt * 0.16);
+      // chordF / bedFill are wave-5 dials: with the tree lane now a
+      // HARD boundary (the band can no longer be reached), the
+      // cascade is allowed to fill more of it than the old
+      // place-then-hope constants dared.
+      P = Math.min(usable / Math.max(1, totalU), (2 * Rt * chordF) / Math.max(1, maxWU), Rt * bedCap);
       P = Math.min(P * spread, usable / Math.max(1, totalU));
       // ── THE CROWN'S RESERVED SPAN, GIVEN BACK (2026-07-31 wave 4) ──
       // John: "the title is taking TOO MUCH space and central that
@@ -752,11 +964,16 @@
           u += b.bedU + BED_GAP;
         }
       }
+      // Pack diff #3 — the pole chord floor. 'bed' floors the
+      // half-chord at 0.12·Rt so a bed near a pole cannot nuke P;
+      // 'toy' floors it at sqrt(0.12) wu, i.e. effectively not at all.
+      const halfFloorSq = (pack === 'toy') ? 0.12 : Rt * Rt * 0.0144;
+      const halfChord = (dy) => Math.sqrt(Math.max(halfFloorSq, Rt * Rt - dy * dy));
       const V_STEPS = 96;
       const solveVOffset = (P0) => {
         const contentH = totalU * P0;
-        const lo = Rt * treeTop + contentH / 2;
-        const hi = Rt * treeBot - contentH / 2;
+        const lo = Rt * spanTop + contentH / 2;
+        const hi = Rt * spanBot - contentH / 2;
         if (!(hi > lo)) return (lo + hi) / 2;   // content taller than the zone
         const fitAt = (off) => {
           let s = 1;                            // clamped: "already fits" is the ceiling
@@ -764,8 +981,7 @@
             const b = beds[r];
             if (!b) continue;
             const dy = off - contentH / 2 + bedCentreU[r] * P0;
-            const half = Math.sqrt(Math.max(Rt * Rt * 0.0144, Rt * Rt - dy * dy));
-            s = Math.min(s, (half * 2 * 0.86) / Math.max(1e-6, b.wU * P0));
+            s = Math.min(s, (halfChord(dy) * 2 * bedFill) / Math.max(1e-6, b.wU * P0));
           }
           return s;
         };
@@ -780,13 +996,19 @@
         }
         return (bestOff === null) ? Math.max(lo, Math.min(0, hi)) : bestOff;
       };
+      let firstBandTop = null;
       for (let attempt = 0; attempt < 2; attempt++) {
         const contentH = totalU * P;
-        let y = Math.max(cy + Rt * treeTop,
-          Math.min(cy + solveVOffset(P) - contentH / 2, cy + Rt * treeBot - contentH));
+        // Pack diff #1 — the vertical ANCHOR. 'toy' pins the stack's
+        // centre TOY_BIAS·Rt below the house centre (its caption
+        // reserve); 'bed' solves the offset that maximises the worst
+        // bed's circle fit and ties to the smallest |offset|.
+        const vOff = (pack === 'toy') ? (Rt * TOY_BIAS) : solveVOffset(P);
+        let y = Math.max(cy + Rt * spanTop,
+          Math.min(cy + vOff - contentH / 2, cy + Rt * spanBot - contentH));
         let shrink = 1;
         rowMeta = [];
-        let firstBandTop = null;
+        firstBandTop = null;
         rows.forEach((row, r) => {
           const b = beds[r];
           if (!b) {
@@ -795,9 +1017,8 @@
             return;
           }
           const bandY = y + (b.bedU * P) / 2;
-          const dy = bandY - cy;
-          const half = Math.sqrt(Math.max(Rt * Rt * 0.0144, Rt * Rt - dy * dy));
-          const fitR = (half * 2 * 0.86) / Math.max(1e-6, b.wU * P);
+          const half = halfChord(bandY - cy);
+          const fitR = (half * 2 * bedFill) / Math.max(1e-6, b.wU * P);
           if (fitR < 1) shrink = Math.min(shrink, fitR);
           if (firstBandTop == null) firstBandTop = y;
           for (const sl of b.slots) {
@@ -814,9 +1035,18 @@
           y += b.bedU * P + BED_GAP * P;
         });
         if (shrink >= 0.999 || attempt === 1) break;   // never shrink after the last placement
-        P *= Math.max(0.5, shrink);   // deterministic second pass
+        // Pack diff #4 — the shrink floor. 'bed' never lets one pass
+        // more than halve P; 'toy' applies the ratio raw.
+        P *= (pack === 'toy') ? shrink : Math.max(0.5, shrink);
       }
-      const topY = (rowMeta.find(m => m.y != null) || { y: cy + Rt * treeTop }).y;
+      const firstMeta = rowMeta.find(m => m.y != null);
+      // Pack diff #7 — the crown's clearance. 'bed' hangs it
+      // min(P·0.9, 60) above the first bed's CENTRE; 'toy'
+      // min(P·1.5, 68) above the first bed's TOP row.
+      const crownAnchor = (pack === 'toy')
+        ? ((firstBandTop != null) ? firstBandTop : (cy + Rt * spanTop))
+        : (firstMeta ? firstMeta.y : (cy + Rt * spanTop));
+      const crownLift = (pack === 'toy') ? Math.min(P * 1.5, 68) : Math.min(P * 0.9, 60);
       // THE CROWN IS NO LONGER A TEXT ANCHOR (2026-07-31 wave 4).
       // It used to reserve clearance for a four-row caption stack —
       // 96-170 world units under the wave-3 type scale — because the
@@ -827,7 +1057,7 @@
       // remainder, which stands at radius 0 and never draws. One
       // modest clearance above the first rank does both; the
       // `cy - Rh * 0.84` ceiling is untouched.
-      crown = { x: cx, y: Math.max(cy - Rh * 0.84, topY - Math.min(P * 0.9, 60)) };
+      crown = { x: cx, y: Math.max(cy - Rh * 0.84, crownAnchor - crownLift) };
     } else {
       // FAN — the crown is the TRUNK: origin below center so the
       // crest of rings fills the house instead of hugging the rim.
@@ -839,7 +1069,18 @@
       let prevRad = 0;
       rows.forEach((row, r) => {
         const g = rings[r];
-        if (!g) { radU.push(prevRad || FAN_R_IN_U); braidOn.push(false); prevRad = radU[r]; return; }
+        if (!g) {
+          // Pack diff #5 — the EMPTY rank. The toy advances the ring
+          // radius by half a ring pitch (an empty era still costs
+          // radial room, so the rings that follow sit further out);
+          // the app leaves the radius where it was (an empty era
+          // costs nothing and the next ring takes its place). This is
+          // the only place the two fans differ.
+          radU.push((pack === 'toy')
+            ? (prevRad ? prevRad + FAN_RING_U * 0.5 : FAN_R_IN_U)
+            : (prevRad || FAN_R_IN_U));
+          braidOn.push(false); prevRad = radU[r]; return;
+        }
         const base = prevRad ? prevRad + FAN_RING_U : FAN_R_IN_U;
         const needFlat = (g.wU + 1) / FAN_SPAN;
         const needBraid = (g.wU * FAN_COMP / 2 + 1) / FAN_SPAN;
@@ -849,7 +1090,7 @@
         prevRad = radU[r];
       });
       const outerU = radU.length ? radU[radU.length - 1] + 0.6 : FAN_R_IN_U;
-      P = Math.min((Rt + fanDy * 0.82) / outerU, Rt * 0.15);
+      P = Math.min((Rt + fanDy * 0.82) / outerU, Rt * bedCap * 0.9375);
       P = Math.min(P * spread, (Rt + fanDy * 0.92) / outerU);
       for (let attempt = 0; attempt < 2; attempt++) {
         rowMeta = [];
@@ -890,13 +1131,6 @@
     // (gap-split, ≤5 + UNDATED); the court (everything else) on the
     // RIGHT arc, grouped by vault type (top 4 kinds with ≥2 members
     // + MORE). Both arcs leave the 12 and 6 o'clock gaps clear.
-    const fmtDate = (d) => d == null ? 'UNDATED' : (d < 0 ? (-d) + ' BCE' : d + ' CE');
-    const fmtRange = (a, b) => {
-      if (a == null || b == null || a === b) return fmtDate(a == null ? b : a);
-      if (a < 0 && b < 0) return (-a) + '–' + (-b) + ' BCE';
-      if (a >= 0 && b >= 0) return a + '–' + b + ' CE';
-      return (-a) + ' BCE–' + b + ' CE';
-    };
     function docShelves(list) {
       const dated = list.filter(n => dateOf(n) != null)
         .sort((a, b) => (dateOf(a) - dateOf(b)) || (a.id < b.id ? -1 : 1));
@@ -998,25 +1232,35 @@
       }
       return take;
     }
-    // THE BAND BUILDER (2026-07-31 wave 3) — one side's arc of the
-    // inner ring. `side` keeps its old meaning (-1 Scriptorium /
-    // +1 Court) and everything the old vertical rail CLAIMED is
-    // preserved: count is the family's true mass, shown + overflow
-    // add up to it, every shelf reports shown vs count, the parked
-    // remainder goes to the crown at radius zero. Only the GEOMETRY
-    // changed: slots stand on nSub concentric sub-rows along the
-    // side's arc, captions anchor OUTBOARD of the band (between band
-    // and ports) on alternating radial tiers, and the header / foot
-    // anchor at the arc's two ends.
-    function buildRail(groups, side) {
+    // ════════════════════════════════════════════════════════════
+    // THE BAND: SOLVE (before the tree) → PLACE (after it)
+    // ════════════════════════════════════════════════════════════
+    // wave 3 built this as one `buildRail` that ran AFTER the tree and
+    // read the tree's measured extent, pushing the band outward with a
+    // hard-coded +4 wu of air. That is the "place then hope" John's
+    // "0 TOLERANCE" note is about: 4 wu is not a margin, it is a
+    // rounding error, and it is what the probe measured in five
+    // families' fan.
+    //
+    // Wave 5 splits it. `solveRail` needs NOTHING from the tree — the
+    // shelves, the cap spend, the arc budget and the band's thickness
+    // all fall out of the band's own dials — so it runs first and the
+    // TREE gets the lane that is left over (§ THE RADIAL BUDGET).
+    // `placeRail` then does the placement, once the crown exists for
+    // the parked remainder to stand on.
+    //
+    // `side` keeps its old meaning (-1 Scriptorium / +1 Court) and
+    // every claim the wave-3 rail made is preserved verbatim: count is
+    // the family's true mass, shown + overflow add up to it, every
+    // shelf reports shown vs count, the parked remainder goes to the
+    // crown at radius zero.
+    function solveRail(groups, side) {
       let T = 0;
       for (const g of groups) T += g.items.length;
       if (!T) return null;
-      const cap   = Math.max(1, Math.round(num(o.railMax, RAIL_MAX)));
-      const rFrac = Math.max(0.05, Math.min(1, num(o.railGlyph, RAIL_R_FRAC)));
       // Within a shelf the head is still the head of an order the
       // reader can name (docs oldest-first, court highest-degree-first).
-      const takes = spendCap(groups.map(g => g.items.length), cap);
+      const takes = spendCap(groups.map(g => g.items.length), railCap);
       const shown = [];
       const parked = [];
       for (let gi = 0; gi < groups.length; gi++) {
@@ -1025,41 +1269,11 @@
         if (take > 0) {
           shown.push({ label: g.label, count: g.items.length, items: g.items.slice(0, take) });
         }
-        for (let k = take; k < g.items.length; k++) {
-          // PARKED — on the crown, at ZERO radius. "No radius entry"
-          // was NOT zero: the view's bake fell back to the WHEEL
-          // radius, so a rail item that was also a MODE member stacked
-          // a full-size, hit-testable disc on the family name (wave 2,
-          // GUEST-2). An explicit 0 is the promise this file's header
-          // already makes.
-          positions.set(g.items[k].id, { x: crown.x, y: crown.y });
-          radii.set(g.items[k].id, 0);
-          parked.push(g.items[k].id);
-        }
+        for (let k = take; k < g.items.length; k++) parked.push(g.items[k]);
       }
       let S = 0;
       for (const g of shown) S += g.items.length;
       const G = shown.length;
-      // ── the arc ────────────────────────────────────────────
-      const bandR  = Rh * Math.max(0.5, Math.min(1.02, num(o.bandR, BAND_R_FRAC)));
-      const gapRad = Math.max(4, Math.min(60, num(o.bandGap, BAND_GAP_DEG))) * Math.PI / 180;
-      const gapBot = Math.max(2, Math.min(60, num(o.bandGapBot, BAND_GAP_BOT_DEG))) * Math.PI / 180;
-      const rowsMax = Math.max(1, Math.min(4, Math.round(num(o.bandRows, BAND_ROWS_MAX))));
-      const pitchTgt = Math.max(4, Math.min(BAND_PITCH_MAX, num(o.bandPitch, BAND_PITCH_TGT)));
-      const capClear = Math.max(0, Math.min(60, num(o.capClear, BAND_CAP_CLEAR)));
-      // radians per side arc — asymmetric since wave 4: the top gap
-      // shields the crown column, the bottom gap only clears the
-      // cascade's foot, and both are dials.
-      const span = Math.max(0.26, Math.PI - gapRad - gapBot);
-      const L = bandR * span;                  // arc budget (wu, centreline)
-      const headArc = Math.max(0, Math.min(0.45 * L, num(o.bandHead, BAND_HEAD_ARC)));
-      // arcU (wu along the centreline, 0 = TOP end) → world angle.
-      // Right side runs -90°+gapTop → +90°-gapBot through 0
-      // (3 o'clock); left side mirrors through 180°. Screen y grows
-      // downward, so sin(-π/2) is the top of the ring.
-      const angAt = (u) => (side > 0)
-        ? (-Math.PI / 2 + gapRad + (u / L) * span)
-        : (-Math.PI / 2 - gapRad - (u / L) * span);
       // The caption arc allowance per shelf — the SAME string the
       // view prints (CR-5: "label · shown OF count"), measured in
       // wu-per-char. Format drift between here and renderBandCaptions
@@ -1069,64 +1283,145 @@
           + ((g.items.length < g.count) ? (g.items.length + ' OF ' + g.count) : g.count);
         return Math.min(BAND_CAP_ARC_MAX, txt.length * BAND_CAP_WU);
       });
+      // ── the arc, at a candidate centreline radius ──────────────
       // Sub-rows: the FEWEST that reach a readable pitch (so a small
       // court stays a single clean row and a 150-slot one thickens
       // instead of atomising). The half-pitch stagger overhang of an
       // odd sub-row is budgeted per shelf, and so is the caption
       // spill (a shelf whose caption outruns its items is dealt the
       // difference — fixed-point over pitch, monotone, 6 passes).
-      const fixed = headArc + BAND_END_PAD + Math.max(0, G - 1) * BAND_SHELF_GAP;
-      const itemsArcOf = (c, p) => Math.max(0, c - 1) * p + (nSub > 1 ? p / 2 : 0);
-      let nSub = 1, cols = [], pitch = 0, spills = [];
-      for (;; nSub++) {
-        cols = shown.map(g => Math.ceil(g.items.length / nSub));
-        let steps = 0;
-        for (const c of cols) steps += Math.max(0, c - 1);
-        const div = Math.max(1, steps + (nSub > 1 ? 0.5 * G : 0));
-        let raw = (L - fixed) / div;
-        for (let it = 0; it < 6; it++) {
-          const p = Math.max(0.4, Math.min(BAND_PITCH_MAX, raw));
-          let spill = 0;
-          for (let gi = 0; gi < G; gi++) spill += Math.max(0, capNeed[gi] - itemsArcOf(cols[gi], p));
-          raw = (L - fixed - spill) / div;
+      const solveAt = (rCin) => {
+        const L = rCin * bandSpan;             // arc budget (wu, centreline)
+        const headArc = Math.max(0, Math.min(0.45 * L, num(o.bandHead, BAND_HEAD_ARC)));
+        const fixed = headArc + BAND_END_PAD + Math.max(0, G - 1) * BAND_SHELF_GAP;
+        const itemsArcOf = (c, p, ns) => Math.max(0, c - 1) * p + (ns > 1 ? p / 2 : 0);
+        let nSub = 1, cols = [], pitch = 0, spills = [];
+        for (;; nSub++) {
+          cols = shown.map(g => Math.ceil(g.items.length / nSub));
+          let steps = 0;
+          for (const c of cols) steps += Math.max(0, c - 1);
+          const div = Math.max(1, steps + (nSub > 1 ? 0.5 * G : 0));
+          let raw = (L - fixed) / div;
+          for (let it = 0; it < 6; it++) {
+            const p = Math.max(0.4, Math.min(BAND_PITCH_MAX, raw));
+            let spill = 0;
+            for (let gi = 0; gi < G; gi++) spill += Math.max(0, capNeed[gi] - itemsArcOf(cols[gi], p, nSub));
+            raw = (L - fixed - spill) / div;
+          }
+          pitch = Math.max(0.4, Math.min(BAND_PITCH_MAX, raw));
+          spills = cols.map((c, gi) => Math.max(0, capNeed[gi] - itemsArcOf(c, pitch, nSub)));
+          if (nSub >= rowsMax || raw >= pitchTgt) break;
         }
-        pitch = Math.max(0.4, Math.min(BAND_PITCH_MAX, raw));
-        spills = cols.map((c, gi) => Math.max(0, capNeed[gi] - itemsArcOf(c, pitch)));
-        if (nSub >= rowsMax || raw >= pitchTgt) break;
+        // ── M_SUB_ROW and M_GLYPH, enforced by construction ───────
+        // The closest two slots can stand: arc neighbours on one
+        // sub-row are `pitch` apart ALONG THE CENTRELINE — but an
+        // inner sub-row rides a smaller circle, so its chord shrinks
+        // by rInner/rC. Staggered diagonal neighbours are
+        // hypot(shrunk pitch/2, dr).
+        //
+        // wave 3 turned that worst distance into a glyph radius with
+        // a flat 0.49 factor — 2% of the pitch, i.e. the measured
+        // 2.00 wu of air John is looking at. It is a SUBTRACTION now:
+        // the glyph gets whatever is left after mGlyph is taken out,
+        // so the clearance is the dial and the glyph size is what
+        // yields. Same for the sub-rows: dr is at least two glyphs
+        // plus mSubRow, and the cosmetic BAND_SUB_DR_MAX ceiling
+        // never wins over the margin.
+        //
+        // dr and glyphR each depend on the other, so this is a small
+        // fixed point — monotone (both are bounded above by
+        // RAIL_R_MAX / BAND_SHELF_GAP) and deterministic at 6 passes.
+        let dr = Math.min(pitch * BAND_SUB_DR, BAND_SUB_DR_MAX);
+        let glyphR = Math.min(RAIL_R_MAX, pitch * railFrac);
+        let minDist = pitch;
+        for (let it = 0; it < 6; it++) {
+          const rInner = rCin - ((nSub - 1) / 2) * dr;
+          const shrinkF = Math.max(0.5, Math.min(1, rInner / Math.max(1e-6, rCin)));
+          minDist = Math.min(BAND_SHELF_GAP,
+            (nSub > 1) ? Math.min(pitch * shrinkF, Math.hypot((pitch / 2) * shrinkF, dr)) : pitch);
+          // THE ORDER OF THESE FOUR MATTERS. `0.49 * minDist` is the
+          // wave-3 NO-TOUCH backstop and it is still the last word:
+          // two glyphs may never intersect, whatever the dials say.
+          // On top of it, the glyph gives up (minDist − mGlyph)/2 of
+          // itself so the CLEARANCE is what the dial buys — but only
+          // down to RAIL_R_MIN, because a court of invisible dots is
+          // not a court. Where that floor wins, the margin is short
+          // and `glyphSqueeze` says by how much.
+          glyphR = Math.min(RAIL_R_MAX, pitch * railFrac, 0.49 * minDist,
+                            Math.max((minDist - mGlyph) / 2, RAIL_R_MIN));
+          dr = Math.max(Math.min(pitch * BAND_SUB_DR, BAND_SUB_DR_MAX), 2 * glyphR + mSubRow);
+        }
+        // >0 only where RAIL_R_MIN (or the no-touch backstop) beat the
+        // margin — a court so crowded that honouring mGlyph in full
+        // would erase it.
+        const glyphSqueeze = Math.max(0, mGlyph - (minDist - 2 * glyphR));
+        const thick = (nSub - 1) * dr + 2 * glyphR;
+        return { L, headArc, nSub, cols, pitch, spills, dr, glyphR, thick, glyphSqueeze };
+      };
+      // ── the band's radial slot in the budget ───────────────────
+      // Everything outboard of the band's outer edge is TEXT: the
+      // caption clearance, the alternating tier (the header always
+      // rides tier 1 — renderBandCaptions), and the text's own
+      // half-height. mBandPort is what must still be free between
+      // that and the ports ring.
+      const rOutCeil = portR - mBandPort - BAND_CAP_TEXT - BAND_CAP_TIER - capClear;
+      // THE SOLVE AND THE PLACEMENT MUST SHARE A RADIUS. Slot
+      // spacing is arc length mapped onto the centreline, so solving
+      // the pitch at one radius and placing at a smaller one silently
+      // multiplies every gap by rPlaced/rSolved — that is a
+      // no-touch law that holds on paper and fails on screen.
+      // So: walk rC DOWN (never up) until it stops moving, re-solving
+      // at each step, and place at the radius of the LAST solve.
+      // Monotone ⇒ it terminates; fixed step count ⇒ deterministic.
+      let rC = bandR;
+      let sol = solveAt(rC);
+      for (let it = 0; it < 6; it++) {
+        const next = Math.max(Rh * 0.25, Math.min(rC, rOutCeil - sol.thick / 2));
+        if (!(next < rC - 1e-9)) break;
+        rC = next;
+        sol = solveAt(rC);
       }
-      // dr is capped independently of the pitch: a wide-open arc can
-      // solve to pitch 26+, and (nSub-1)·0.9·26 + glyphs would spend
-      // the entire band→ports annulus on air between sub-rows.
-      const dr = Math.min(pitch * BAND_SUB_DR, BAND_SUB_DR_MAX);
-      // The closest two slots can stand: arc neighbours on one sub-row
-      // are `pitch` apart ALONG THE CENTRELINE — but an inner sub-row
-      // rides a smaller circle, so its chord shrinks by rInner/bandR
-      // (measured: 4 sub-rows at a tight pitch overlapped by exactly
-      // that factor). Staggered diagonal neighbours are
-      // hypot(shrunk pitch/2, dr). Glyphs cap at 0.49 of the worst of
-      // these, so NO dial position can make two glyphs touch — the
-      // invariant the old clamp pair only held at its defaults.
-      const rInner = bandR - ((nSub - 1) / 2) * dr;
-      const shrink = Math.max(0.5, Math.min(1, rInner / bandR));
-      const minDist = Math.min(BAND_SHELF_GAP,
-        (nSub > 1) ? Math.min(pitch * shrink, Math.hypot((pitch / 2) * shrink, dr)) : pitch);
-      const glyphR = Math.min(RAIL_R_MAX, Math.max(0.8, pitch * rFrac), 0.49 * minDist);
-      const thick = (nSub - 1) * dr + 2 * glyphR;
-      // THE CASCADE OWNS ITS AIR (wave 4) — a multi-sub-row band is a
-      // thick annulus, and growing it INWARD from the centreline
-      // would push rIn under the tree's measured extent (the gate
-      // asserts cascade < rIn per family). The layout has already
-      // placed the tree by the time the rails build, so the band's
-      // centreline yields OUTWARD exactly as far as the measured
-      // extent demands and no further. Angles still map arc-length on
-      // the dialled centreline; placing them on a slightly larger
-      // circle only ever INCREASES slot spacing (the no-touch law is
-      // safe in that direction).
-      const rC = Math.max(bandR, treeExt + 4 + thick / 2);
+      // GIVE GROUND, NAMED: if the 0.25·Rh floor is what stopped the
+      // band moving in far enough, the PORT margin is the one that
+      // yields (the tree's never does — see the give-ground order at
+      // the constants), and the shortfall is stated in world units.
+      const portSqueeze = Math.max(0, (rC + sol.thick / 2) - rOutCeil);
+      return { side, groups: shown, parked, count: T, shown: S, G,
+               capNeed, rC, rOutCeil,
+               squeeze: { port: portSqueeze, glyph: sol.glyphSqueeze },
+               L: sol.L, headArc: sol.headArc, nSub: sol.nSub, cols: sol.cols,
+               pitch: sol.pitch, spills: sol.spills, dr: sol.dr,
+               glyphR: sol.glyphR, thick: sol.thick };
+    }
+    // PLACE — the solved band, now that the crown exists. Nothing
+    // here re-decides a size; it only walks the arc.
+    function placeRail(sol) {
+      if (!sol) return null;
+      const { side, groups: shown, cols, spills, pitch, nSub, dr, glyphR, thick, L, headArc } = sol;
+      const rC = sol.rC;
+      // PARKED — on the crown, at ZERO radius. "No radius entry" was
+      // NOT zero: the view's bake fell back to the WHEEL radius, so a
+      // rail item that was also a MODE member stacked a full-size,
+      // hit-testable disc on the family name (wave 2, GUEST-2). An
+      // explicit 0 is the promise this file's header already makes.
+      const parkedIds = [];
+      for (const n of sol.parked) {
+        positions.set(n.id, { x: crown.x, y: crown.y });
+        radii.set(n.id, 0);
+        parkedIds.push(n.id);
+      }
+      // arcU (wu along the centreline, 0 = TOP end) → world angle.
+      // Right side runs -90°+gapTop → +90°-gapBot through 0
+      // (3 o'clock); left side mirrors through 180°. Screen y grows
+      // downward, so sin(-π/2) is the top of the ring.
+      const angAt = (u) => (side > 0)
+        ? (-Math.PI / 2 + gapRad + (u / L) * bandSpan)
+        : (-Math.PI / 2 - gapRad - (u / L) * bandSpan);
       // Centre the run in the USABLE arc — after the header reserve,
       // before the foot pad (a tiny court reads as a held object at
       // 3 / 9 o'clock, not a smear from crown to foot). The run
       // includes every shelf's caption spill.
+      const G = shown.length;
       let run = Math.max(0, G - 1) * BAND_SHELF_GAP;
       cols.forEach((c, gi) => {
         run += Math.max(0, c - 1) * pitch + (nSub > 1 ? pitch / 2 : 0) + spills[gi];
@@ -1146,13 +1441,17 @@
       // hugging the run's start so a centred small court keeps its
       // title attached). The header rides tier 1 so it can never
       // claim() against the tier-0 first shelf caption.
-      const rail = { side, count: T, shown: S, overflow: T - S, pitch, glyphR,
+      const rail = { side, count: sol.count, shown: sol.shown, overflow: sol.count - sol.shown,
+                     pitch, glyphR,
                      nSub, dr, r: rC, rIn: rC - thick / 2, rOut: rC + thick / 2,
                      a0: angAt(0), a1: angAt(L), gapRad, gapBotRad: gapBot,
                      capR: rC + thick / 2 + capClear, capTier: BAND_CAP_TIER,
                      headA: angAt(Math.max(headArc / 2, u - headArc / 2)),
                      foot: null,
-                     parkedIds: parked, shelves: [] };
+                     // The band's own honesty record (wave 5): what it
+                     // was given, and whether any of it had to yield.
+                     squeeze: sol.squeeze, rOutCeil: sol.rOutCeil,
+                     parkedIds, shelves: [] };
       const runStart = u;
       shown.forEach((g, gi) => {
         const shelf = { label: g.label, count: g.count, shown: g.items.length,
@@ -1199,19 +1498,68 @@
       rail.runA1 = angAt(Math.max(0, Math.min(L, u - BAND_SHELF_GAP)));
       return rail;
     }
-    // The tree's measured extent (position + house radius) — the
-    // rails read it so a thick band can yield outward instead of
-    // growing an annulus over the cascade's outermost gods.
+    // ── THE LANE IS A HARD BOUNDARY (wave 5) ────────────────────
+    // THE one enforcement point for marginTree. Neither geometry can
+    // promise its own extent: the cascade's circle fit is a two-pass
+    // approximation, and the fan's origin offset (cy + Rt·FAN_DY)
+    // does not scale with P at all, so shrinking P does not shrink
+    // the distance to the house centre proportionally (measured:
+    // Mesoamerican's fan reached 464.8 inside a 464.0 zone). A
+    // margin that is only usually true is exactly what this pass
+    // exists to delete.
+    //
+    // So the extent is MEASURED, and if it reaches past the lane the
+    // band left it, the whole tree is scaled about the house centre
+    // by precisely the ratio it is over — positions, radii, rowMeta
+    // anchors, crown and pitch together, so the picture is identical
+    // and only smaller. Uniform, deterministic, and it makes
+    // `rIn − treeExt >= marginTree` a fact rather than a hope, which
+    // is what lets the gate ASSERT the clearance instead of sampling
+    // it. Families that never reach their lane pay nothing.
     let treeExt = 0;
-    for (const n of tree) {
-      const p = positions.get(n.id);
-      if (!p) continue;
-      const e = Math.hypot(p.x - cx, p.y - cy) + (radii.get(n.id) || 0);
-      if (e > treeExt) treeExt = e;
+    const treeExtOf = () => {
+      let e0 = 0;
+      for (const n of tree) {
+        const p = positions.get(n.id);
+        if (!p) continue;
+        const e = Math.hypot(p.x - cx, p.y - cy) + (radii.get(n.id) || 0);
+        if (e > e0) e0 = e;
+      }
+      return e0;
+    };
+    treeExt = treeExtOf();
+    // HONEST ZERO: with no band there is nothing for the tree to be
+    // clear OF, so the clamp has no job and must not run — a no-band
+    // house (rails off, a deity-only family, the degrade branch) has
+    // to come out byte-identical to the pre-wave-5 layout, and the
+    // fan can legally reach a hair past Rh there exactly as it did.
+    const laneCap = hasBand ? Math.min(Rt, RtLane) : Infinity;
+    let rtCost = 0;
+    if (treeExt > laneCap && treeExt > 0) {
+      const k = laneCap / treeExt;
+      rtCost = treeExt - laneCap;
+      for (const n of tree) {
+        const p = positions.get(n.id);
+        if (!p) continue;
+        positions.set(n.id, { x: cx + (p.x - cx) * k, y: cy + (p.y - cy) * k });
+        const r = radii.get(n.id);
+        if (r != null) radii.set(n.id, r * k);
+      }
+      // rowMeta carries the geometry the chrome anchors on (the rank
+      // gutter's left edge, the ring crests) — it rides the same k or
+      // the captions detach from the rows they name.
+      for (const m of rowMeta) {
+        if (m.y != null) { m.y = cy + (m.y - cy) * k; m.half *= k; m.w *= k; m.lineY = cy + (m.lineY - cy) * k; }
+        if (m.rad != null) m.rad *= k;
+      }
+      if (crown) crown = { x: cx + (crown.x - cx) * k, y: cy + (crown.y - cy) * k };
+      fanDy *= k;
+      P *= k;
+      treeExt = treeExtOf();
     }
     const rails = {
-      left:  buildRail(docShelves(docs), -1),
-      right: buildRail(kindShelves(court), +1),
+      left:  placeRail(railSolves.left),
+      right: placeRail(railSolves.right),
     };
 
     // ── 8. Horizon ports — every other group at its true bearing ──
@@ -1290,7 +1638,7 @@
       // Non-members keep their wheel radii (the port piles stay quiet).
       radii,
       house: {
-        groupKey, geometry, RK,
+        groupKey, geometry, RK, pack,
         center: { x: cx, y: cy },
         radius: Rh,
         // THE THREE ZONES (wave 3) — what the view and the probes
@@ -1300,6 +1648,41 @@
         treeR: Rt,
         portR,
         hasBand,
+        // ── THE MARGIN RECORD (wave 5) ────────────────────────────
+        // What was DECLARED (`min`), what was ACHIEVED (`treeBand` /
+        // `bandPort`, the two the budget constructs), and what it
+        // cost. A dial the reader cannot audit is a decoration:
+        // check-familytree.mjs asserts every achieved value against
+        // its declared minimum, per family, in both packs, both
+        // geometries, at the dial extremes.
+        //   rtCost   world units of tree EXTENT given back so the
+        //            clearance could hold (0 = this family never
+        //            reached its lane and paid nothing)
+        //   treeExt  the cascade/fan's own measured outer extent
+        margins: {
+          min: { treeBand: mTreeBand, bandPort: mBandPort,
+                 subRow: mSubRow, glyph: mGlyph },
+          treeExt,
+          treeBand: (() => {
+            let rIn = Infinity;
+            for (const rl of [rails.left, rails.right]) if (rl) rIn = Math.min(rIn, rl.rIn);
+            return (rIn === Infinity) ? null : (rIn - treeExt);
+          })(),
+          bandPort: (() => {
+            let outer = -Infinity;
+            for (const rl of [rails.left, rails.right]) {
+              if (rl) outer = Math.max(outer, rl.capR + rl.capTier + BAND_CAP_TEXT);
+            }
+            return (outer === -Infinity) ? null : (portR - outer);
+          })(),
+          rtCost,
+          squeeze: {
+            port: Math.max(rails.left ? rails.left.squeeze.port : 0,
+                           rails.right ? rails.right.squeeze.port : 0),
+            glyph: Math.max(rails.left ? rails.left.squeeze.glyph : 0,
+                            rails.right ? rails.right.squeeze.glyph : 0),
+          },
+        },
         pitch: P,
         fanDy,
         crown,
