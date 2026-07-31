@@ -430,6 +430,7 @@ checkUnion('Other', 'cascade', (r, h) => {
 // quietly measuring a fiction.
 const forgeSrc = readFileSync(join(root, 'src/js/views/forge.js'), 'utf8');
 const treeSrc  = readFileSync(join(root, 'src/js/engine/layout/familytree.js'), 'utf8');
+const LAB_SRC  = readFileSync(join(root, 'src/js/forge/lab-panel.js'), 'utf8');
 const must = (re, what, src) => {
   if (re.test(src || forgeSrc)) ok('source still says: ' + what);
   else fail('SOURCE DRIFT — the code no longer says: ' + what);
@@ -653,12 +654,46 @@ must(/renderBandCaptions\(ctx, placed, claim, W2S, TYPE, font, house, vp\);[\s\S
   'the band text claims BEFORE the band shield (canonical counts outrank their own shield)');
 must(/const step = Math\.max\(rBub \+ 32, bandPx - ul \+ 32\);/,
   'a rail slot\'s reach name steps RADIALLY outboard, 32px off the glyph OR the band centreline, whichever is farther');
-must(/const glyphR = Math\.min\(RAIL_R_MAX, Math\.max\(0\.8, pitch \* rFrac\), 0\.49 \* minDist\);/,
-  '(layout) glyphs cap at 0.49·minDist — no dial position can make two slots touch', treeSrc);
+// WAVE 5 — the glyph law grew a term. 0.49·minDist is still the
+// no-touch backstop (it must stay, or a dial extreme can make two
+// slots intersect); on top of it the glyph now gives up
+// (minDist − mGlyph)/2 so the CLEARANCE is what the dial buys.
+must(/glyphR = Math\.min\(RAIL_R_MAX, pitch \* railFrac, 0\.49 \* minDist,\s*\n?\s*Math\.max\(\(minDist - mGlyph\) \/ 2, RAIL_R_MIN\)\);/,
+  '(layout) glyphs still cap at 0.49·minDist AND surrender (minDist−mGlyph)/2 to the margin', treeSrc);
 must(/const hasBand = \(docs\.length \+ court\.length\) > 0;/,
   '(layout) no docs + no court ⇒ no band ⇒ pre-ring geometry, byte-identical (honest zero)', treeSrc);
-must(/const minDist = Math\.min\(BAND_SHELF_GAP,/,
+must(/minDist = Math\.min\(BAND_SHELF_GAP,/,
   '(layout) the shelf gap bounds the glyph too, or max-size glyphs touch across shelf borders', treeSrc);
+must(/dr = Math\.max\(Math\.min\(pitch \* BAND_SUB_DR, BAND_SUB_DR_MAX\), 2 \* glyphR \+ mSubRow\);/,
+  '(layout) the sub-row margin beats the cosmetic dr ceiling — sub-rows can never crowd', treeSrc);
+must(/const railSolves = hasBand[\s\S]{0,200}solveRail\(docShelves\(docs\), -1\)/,
+  '(layout) the band is SOLVED BEFORE the tree — the tree gets the lane that is left', treeSrc);
+must(/const laneCap = hasBand \? Math\.min\(Rt, RtLane\) : Infinity;[\s\S]{0,160}const k = laneCap \/ treeExt;/,
+  '(layout) the tree is SCALED into the lane the band left it (marginTree is constructed, not sampled)', treeSrc);
+must(/RtLane = Math\.min\(RtLane, rs\.rC - rs\.thick \/ 2 - mTreeBand\);/,
+  '(layout) the lane IS the band\'s inner edge less marginTree', treeSrc);
+// HONEST ZERO — the clamp must not run at all without a band, or a
+// deity-only family (rails off, the degrade branch) stops being
+// byte-identical to the 07-30 house. Proven separately against
+// HEAD's familytree.js: 72 no-band houses, zero differing positions.
+must(/const laneCap = hasBand \? Math\.min\(Rt, RtLane\) : Infinity;/,
+  '(layout) with no band the lane clamp is disabled (honest zero)', treeSrc);
+{
+  let touched = 0, checked = 0;
+  for (const fam of ['Baltic', 'Greek', 'Norse']) {
+    for (const geom of ['cascade', 'fan']) {
+      // deity-only node set ⇒ no docs, no court ⇒ no band
+      const lay = houseFor(fam, geom);
+      if (lay.house.hasBand) continue;
+      checked++;
+      if (lay.house.treeR !== lay.house.radius) touched++;
+      if ((lay.house.margins.rtCost || 0) > 0) touched++;
+    }
+  }
+  if (!touched) ok('the no-band house keeps the FULL radius and pays no lane cost ('
+    + checked + ' houses)');
+  else fail(touched + ' no-band houses were touched by the band budget');
+}
 // the four wave-4 dials exist with the shipped defaults (the union
 // runs below exercise the layout's own constants, so the two files
 // must agree or this gate measures a fiction)
@@ -1332,6 +1367,330 @@ must(/if \(rankTreeIds && !rankTreeIds\.has\(id\)\) continue;/,
 }
 
 // ════════════════════════════════════════════════════════════════
+// W5 ▸ ZERO-TOLERANCE MARGINS — MEASURED, NOT DECLARED
+// ════════════════════════════════════════════════════════════════
+// John: "we keep the other work done with the increased 0 TOLERANCE
+// bands margins between nodes NEVER getting close between bands."
+//
+// This block is the deliverable for that sentence — not the numbers
+// themselves, which are dials. It re-derives all four clearances from
+// the RAW OUTPUT (positions, radii, rail radii, port radius) rather
+// than from house.margins, so it catches the layout mis-reporting its
+// own geometry as readily as it catches a real collision:
+//
+//   1 ▸ gods' outer extent  → band inner edge      (marginTree)
+//   2 ▸ outermost caption   → ports ring           (marginPort)
+//   3 ▸ band sub-row        → band sub-row         (marginSub)
+//   4 ▸ band glyph          → band glyph, any pair (marginGlyph)
+//
+// across every family below × both PACKS × both GEOMETRIES × the
+// dial extremes. MEASURED ON THE SAME FAMILIES BEFORE THIS WAVE, at
+// the shipped dials: 4.0 wu / 9.6 wu / 1.15 wu / 2.00 wu — which is
+// the picture John is describing.
+console.log('\n── W5 · the four clearances, measured on the raw output ──');
+// The caption annulus outboard of the band is TEXT, and the layout
+// reserves a fixed world allowance for its outer half-height. Pinned
+// here: if the layout's reserve moves, this gate's arithmetic is
+// wrong and the pin fails first.
+must(/const BAND_CAP_TEXT\s*=\s*10;/, '(layout) the caption text reserve is 10 wu', treeSrc);
+must(/const BAND_CAP_TIER\s*=\s*30;/, '(layout) the caption tier step is 30 wu', treeSrc);
+must(/const M_TREE_BAND\s*=\s*16;/, '(layout) marginTree ships at 16 wu', treeSrc);
+must(/const M_BAND_PORT\s*=\s*12;/, '(layout) marginPort ships at 12 wu', treeSrc);
+must(/const M_SUB_ROW\s*=\s*3;/, '(layout) marginSub ships at 3 wu', treeSrc);
+must(/const M_GLYPH\s*=\s*3;/, '(layout) marginGlyph ships at 3 wu', treeSrc);
+must(/house_m_tree:\s*16,/, 'the LAB ships marginTree at 16 wu');
+must(/house_m_port:\s*12,/, 'the LAB ships marginPort at 12 wu');
+must(/house_m_sub:\s*3,/, 'the LAB ships marginSub at 3 wu');
+must(/house_m_glyph:\s*3,/, 'the LAB ships marginGlyph at 3 wu');
+must(/marginTree:\s*\(typeof p\.house_m_tree/, 'the view routes house_m_tree into the layout', forgeSrc);
+must(/pack:\s*\(p\.house_pack === 'toy'\) \? 'toy' : 'bed',/,
+  'the view routes house_pack into the layout', forgeSrc);
+const CAP_TEXT_WU = 10, CAP_TIER_WU = 30;
+
+// Re-derive the four clearances from raw output only.
+function measureMargins(lay) {
+  const h = lay.house;
+  const rails = [h.rails.left, h.rails.right].filter(Boolean);
+  if (!rails.length) return null;
+  // 1 ▸ the gods' true outer extent against the innermost band edge
+  let ext = 0;
+  for (const row of h.rows) for (const id of row) {
+    const p = lay.positions.get(id);
+    ext = Math.max(ext, Math.hypot(p.x - h.center.x, p.y - h.center.y) + (lay.radii.get(id) || 0));
+  }
+  const rIn = Math.min(...rails.map(r => r.rIn));
+  // 2 ▸ the outermost text the band puts on screen, against the ports.
+  //     The header always rides tier 1 (renderBandCaptions), so the
+  //     outer edge of the caption annulus is capR + capTier + text.
+  const capOuter = Math.max(...rails.map(r => r.capR + r.capTier + CAP_TEXT_WU));
+  // 3 + 4 ▸ inside the band. Sub-row separation is radial (dr less
+  //     two glyphs); the glyph clearance is the true minimum over
+  //     EVERY pair of slots on a rail, whatever their sub-row — which
+  //     is what "never getting close" has to mean.
+  let sub = Infinity, glyph = Infinity;
+  for (const r of rails) {
+    if (r.nSub > 1) sub = Math.min(sub, r.dr - 2 * r.glyphR);
+    const pts = [];
+    for (const sh of r.shelves) for (const it of sh.items) pts.push(it);
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+      const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y) - 2 * r.glyphR;
+      if (d < glyph) glyph = d;
+    }
+  }
+  return {
+    tree: rIn - ext,
+    port: h.portR - capOuter,
+    sub, glyph,
+    // What the layout ADMITS it could not give (see the give-ground
+    // order in familytree.js): a declared shortfall is honest, an
+    // undeclared one is the bug this gate exists to catch.
+    squeezeGlyph: Math.max(...rails.map(r => r.squeeze.glyph)),
+    squeezePort:  Math.max(...rails.map(r => r.squeeze.port)),
+  };
+}
+
+{
+  const FAMS = ['Greek', 'Norse', 'Vedic', 'Christian', 'Chinese', 'Egyptian',
+    'Mesopotamian', 'Celtic', 'Mesoamerican', 'Other', 'Islamic', 'Buddhist'];
+  // The dial extremes the margins have to survive — the same hostile
+  // corners W3-HOSTILE uses, plus the margins themselves cranked.
+  const DIALS = [
+    ['defaults', {}],
+    ['margins ×3', { marginTree: 48, marginPort: 36, marginSub: 9, marginGlyph: 9 }],
+    ['fat band',  { railMax: 400, bandRows: 4, bandPitch: 30, bandGap: 8, bandGapBot: 2, railGlyph: 0.7 }],
+    ['thin arc',  { railMax: 400, bandRows: 4, bandGap: 45, bandGapBot: 45, bandHead: 400, railGlyph: 0.2, capClear: 0 }],
+    ['wide beds', { chord: 1.0, bedFill: 1.0, bedCap: 0.32, spread: 1.5 }],
+    ['band in',   { bandR: 0.60, treeR: 1.0, portInset: 0.85 }],
+  ];
+  let runs = 0, bad = 0;
+  const worst = { tree: Infinity, port: Infinity, sub: Infinity, glyph: Infinity };
+  const worstAt = {};
+  for (const [dialName, extra] of DIALS) {
+    for (const pack of ['bed', 'toy']) {
+      for (const geom of ['cascade', 'fan']) {
+        for (const fam of FAMS) {
+          const opts = Object.assign({ pack }, extra);
+          const lay = houseUnion(fam, geom, opts);
+          const m = measureMargins(lay);
+          if (!m) continue;
+          runs++;
+          const want = {
+            tree:  (extra.marginTree  != null) ? extra.marginTree  : 16,
+            port:  (extra.marginPort  != null) ? extra.marginPort  : 12,
+            sub:   (extra.marginSub   != null) ? extra.marginSub   : 3,
+            glyph: (extra.marginGlyph != null) ? extra.marginGlyph : 3,
+          };
+          // A DECLARED shortfall is subtracted from what we demand —
+          // the layout said so, in world units, and the report says
+          // so too. An UNDECLARED one is a failure.
+          const need = {
+            tree: want.tree,
+            port: want.port - m.squeezePort,
+            sub: want.sub,
+            glyph: want.glyph - m.squeezeGlyph,
+          };
+          const tag = fam + '/' + geom + '/' + pack + ' [' + dialName + ']';
+          for (const k of ['tree', 'port', 'sub', 'glyph']) {
+            if (m[k] === Infinity) continue;           // no sub-rows on this band
+            if (m[k] < worst[k]) { worst[k] = m[k]; worstAt[k] = tag; }
+            if (m[k] < need[k] - 0.01) {
+              bad++;
+              fail(tag + ': ' + k + ' clearance ' + m[k].toFixed(2)
+                + ' wu is INSIDE the declared minimum ' + need[k].toFixed(2));
+            }
+          }
+        }
+      }
+    }
+  }
+  console.log('    tightest measured, over ' + runs + ' layouts:');
+  console.log('      gods → band   ' + worst.tree.toFixed(2) + ' wu  (' + worstAt.tree + ')');
+  console.log('      band → ports  ' + worst.port.toFixed(2) + ' wu  (' + worstAt.port + ')');
+  console.log('      sub-row gap   ' + (worst.sub === Infinity ? '—' : worst.sub.toFixed(2) + ' wu  (' + worstAt.sub + ')'));
+  console.log('      glyph gap     ' + worst.glyph.toFixed(2) + ' wu  (' + worstAt.glyph + ')');
+  if (!bad) {
+    ok('all four clearances hold in every one of the ' + runs
+      + ' layouts (' + FAMS.length + ' families × 2 packs × 2 geometries × '
+      + DIALS.length + ' dial sets) — before this wave the same probe measured'
+      + ' 4.0 / 9.6 / 1.15 / 2.00 wu');
+  } else {
+    fail(bad + ' clearance violations across ' + runs + ' layouts');
+  }
+}
+
+// ── W5-PACK ▸ BOTH DISTRIBUTIONS EXIST, AND BOTH ARE REAL ──────
+// A toggle that moves nothing is the defect John has named four
+// times. So: the flip must actually move gods, both packs must keep
+// every invariant, and where a pack CANNOT differ the gate says so
+// in numbers instead of implying a difference that is not there.
+console.log('\n── W5-PACK · the two distributions, and what each one moves ──');
+{
+  const FAMS = ['Greek', 'Norse', 'Vedic', 'Christian', 'Chinese', 'Egyptian',
+    'Mesopotamian', 'Celtic', 'Mesoamerican', 'Baltic'];
+  let movedFams = 0, minDelta = Infinity;
+  const line = [];
+  for (const fam of FAMS) {
+    const A = houseUnion(fam, 'cascade', { pack: 'bed' });
+    const B = houseUnion(fam, 'cascade', { pack: 'toy' });
+    const ids = [];
+    for (const row of A.house.rows) for (const id of row) ids.push(id);
+    let maxd = 0;
+    for (const id of ids) {
+      const a = A.positions.get(id), b = B.positions.get(id);
+      maxd = Math.max(maxd, Math.hypot(a.x - b.x, a.y - b.y));
+    }
+    if (maxd > 1) movedFams++;
+    minDelta = Math.min(minDelta, maxd);
+    line.push(fam.slice(0, 4) + ' ' + maxd.toFixed(0));
+  }
+  if (movedFams === FAMS.length) {
+    ok('CASCADE: the pack flip moves every one of the ' + FAMS.length
+      + ' families (smallest max displacement ' + minDelta.toFixed(0)
+      + ' wu) — ' + line.join(' · '));
+  } else {
+    fail('CASCADE: the pack flip is a dead dial in ' + (FAMS.length - movedFams) + ' families');
+  }
+  // FAN — stated, not implied. The two files' fans differ in exactly
+  // one place: an EMPTY rank advances the ring radius by half a ring
+  // pitch under 'toy' and by nothing under 'bed'. So the honest law
+  // has two halves, and both are asserted:
+  //   · with no empty rank BETWEEN two populated ones, the two fans
+  //     must be byte-identical (a dial that moves something here
+  //     would mean the diff above is incomplete);
+  //   · with one, they MAY differ — the toy's extra radius is
+  //     swallowed whenever the next ring is capacity-bound and sets
+  //     its own radius anyway (measured: Vedic under ranks='era',
+  //     ranks 1-2 empty, rank 3 holds 52 and dictates the radius) —
+  //     and where they do differ, the toy's ring never sits TIGHTER
+  //     than the bed's, because half a pitch can only push outward.
+  let wrong = 0, canMove = 0, mustMatch = 0, didMove = 0;
+  for (const fam of FAMS) {
+    for (const ranks of ['lineage', 'era']) {
+      const A = houseUnion(fam, 'fan', { pack: 'bed', ranks });
+      const B = houseUnion(fam, 'fan', { pack: 'toy', ranks });
+      const ids = [];
+      for (const row of A.house.rows) for (const id of row) ids.push(id);
+      let maxd = 0;
+      for (const id of ids) {
+        const a = A.positions.get(id), b = B.positions.get(id);
+        maxd = Math.max(maxd, Math.hypot(a.x - b.x, a.y - b.y));
+      }
+      const meta = A.house.rowMeta;
+      const effective = meta.some((m, i) => !m.n
+        && meta.slice(0, i).some(x => x.n) && meta.slice(i + 1).some(x => x.n));
+      if (!effective) {
+        mustMatch++;
+        if (maxd > 1e-9) { wrong++; fail('FAN ' + fam + '/' + ranks
+          + ': the packs differ with no empty rank between two populated ones — the diff is incomplete'); }
+      } else {
+        canMove++;
+        if (maxd > 1) {
+          didMove++;
+          // Compare the ring stack in UNITS (rad / P), not in world
+          // units: the toy's extra half-pitch makes the stack taller
+          // in units, which the pitch solve then pays for by
+          // SHRINKING P — so the world radius can legitimately come
+          // out smaller (Greek under ranks='era': 372.6 → 371.0). The
+          // unit stack is the thing the empty-rank rule touches.
+          const uA = Math.max(...A.house.rowMeta.map(m => (m.rad || 0) / A.house.pitch));
+          const uB = Math.max(...B.house.rowMeta.map(m => (m.rad || 0) / B.house.pitch));
+          if (uB < uA - 1e-6) { wrong++; fail('FAN ' + fam + '/' + ranks
+            + ': the toy pack pulled the outer ring IN (' + uB.toFixed(2)
+            + ' < ' + uA.toFixed(2) + ' units) — half a ring pitch can only push out'); }
+        }
+      }
+    }
+  }
+  if (!wrong) {
+    ok('FAN: byte-identical in all ' + mustMatch + ' cases with no empty rank between two'
+      + ' populated ones; of the ' + canMove + ' cases that CAN differ, ' + didMove
+      + ' do, and none pulls its ring stack inward — the empty-rank rule is the only fan difference');
+  }
+  // Both packs keep the invariants that matter: determinism and no
+  // two gods on top of each other.
+  for (const pack of ['bed', 'toy']) {
+    for (const geom of ['cascade', 'fan']) {
+      let overlaps = 0, worstGap = Infinity;
+      for (const fam of ['Greek', 'Vedic', 'Mesopotamian']) {
+        const a = houseUnion(fam, geom, { pack });
+        const b = houseUnion(fam, geom, { pack });
+        if (snapshot(a) !== snapshot(b)) fail(pack + '/' + geom + '/' + fam + ': NON-DETERMINISTIC');
+        const pts = [];
+        for (const row of a.house.rows) for (const id of row) {
+          const p = a.positions.get(id);
+          pts.push({ x: p.x, y: p.y, r: a.radii.get(id) || 0 });
+        }
+        for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+          const g = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y) - pts[i].r - pts[j].r;
+          if (g < worstGap) worstGap = g;
+          if (g < -0.01) overlaps++;
+        }
+      }
+      if (!overlaps) ok(pack + '/' + geom + ': zero god overlaps, deterministic (worst gap '
+        + worstGap.toFixed(2) + ' wu)');
+      else fail(pack + '/' + geom + ': ' + overlaps + ' god overlaps');
+    }
+  }
+}
+
+// ── W5-DATE ▸ THE RANK DATES SURVIVE BOTH DISTRIBUTIONS ────────
+// The gutter anchors on `house.center.x − rowMeta.w / 2` — the row's
+// own left edge. The toy pack puts that edge somewhere else (its
+// stack sits 0.10·Rt lower, so a different bed is the widest), so the
+// assertion is that rowMeta stays a TRUE description of the row under
+// both packs: the anchor really is the leftmost god's edge, and the
+// date really is the row's own span.
+console.log('\n── W5-DATE · the rank gutter follows both distributions ──');
+must(/const capOff = \(typeof local\.params\.house_rank_cap_off === 'number'\)/,
+  'the rank date\'s stand-off is a dial, not a baked 14px', forgeSrc);
+must(/house_rank_cap_off:\s*14,/, 'house_rank_cap_off ships at 14px');
+must(/\{ k: 'slider', key: 'house_rank_cap_off' \}/, 'LAB row: Date offset', LAB_SRC);
+must(/\{ k: 'radio',\s*key: 'house_pack' \}/, 'LAB row: Distribution', LAB_SRC);
+must(/id: 'housepack', title: 'Distribution \+ margins', open: true/,
+  'the Distribution + margins section opens by DEFAULT', LAB_SRC);
+{
+  let bad = 0, rows = 0;
+  const NODE_BY_ID2 = new Map(NODES.map(n => [n.id, n]));
+  for (const pack of ['bed', 'toy']) {
+    for (const fam of ['Greek', 'Norse', 'Vedic', 'Egyptian', 'Mesopotamian', 'Chinese']) {
+      const lay = houseUnion(fam, 'cascade', { pack });
+      const h = lay.house;
+      for (let ri = 0; ri < h.rowMeta.length; ri++) {
+        const rm = h.rowMeta[ri];
+        if (rm.y == null || !h.rows[ri].length) continue;
+        rows++;
+        // (a) the gutter anchor is the row's real left edge
+        let lo = Infinity, dlo = Infinity, dhi = -Infinity;
+        for (const id of h.rows[ri]) {
+          const p = lay.positions.get(id), r = lay.radii.get(id) || 0;
+          lo = Math.min(lo, p.x - r);
+          const d = NODE_BY_ID2.get(id) && NODE_BY_ID2.get(id).date_earliest;
+          if (typeof d === 'number' && isFinite(d)) { dlo = Math.min(dlo, d); dhi = Math.max(dhi, d); }
+        }
+        const anchor = h.center.x - rm.w / 2;
+        // the anchor is the BED's left edge; every god sits inside it
+        // by at most one node radius (the bed's own half-slot)
+        if (anchor - lo > 40 || lo - anchor > 1e-6) {
+          bad++;
+          if (bad < 4) fail(pack + '/' + fam + ' row ' + ri + ': gutter anchor ' + anchor.toFixed(1)
+            + ' does not sit on the row\'s left edge ' + lo.toFixed(1));
+        }
+        // (b) the date printed is the row's own true span
+        const want = (dlo > dhi) ? null : dlo;
+        if ((rm.dmin == null) !== (want == null) || (want != null && rm.dmin !== want)) {
+          bad++;
+          if (bad < 4) fail(pack + '/' + fam + ' row ' + ri + ': rowMeta.dmin ' + rm.dmin
+            + ' is not the row\'s true earliest date ' + want);
+        }
+      }
+    }
+  }
+  if (!bad) ok('the gutter anchor and the date span are true for all ' + rows
+    + ' rows, in BOTH packings (6 families × 2 packs)');
+  else fail(bad + ' rows carry a wrong gutter anchor or a wrong date span');
+}
+
+// ════════════════════════════════════════════════════════════════
 // W4-SPAN ▸ THE CROWN'S RESERVED WORLD SPAN, GIVEN BACK
 // ════════════════════════════════════════════════════════════════
 // CASCADE_BIAS pushed the whole cascade 0.10·Rt BELOW the house
@@ -1350,9 +1709,19 @@ if (!/const\s+CASCADE_BIAS\s*=/.test(treeSrc)) ok('(layout) CASCADE_BIAS is gone
 else fail('(layout) CASCADE_BIAS still exists: the tree is still being pushed aside by a title');
 {
   // Measured 2026-07-31 wave 4 on the real vault, floored at 99%.
+  //
+  // WAVE 5 KEPT THEM. The four band clearances became CONSTRUCTED
+  // this wave (the band solves first, the tree's measured extent is
+  // scaled into the lane the band leaves it), and the reason that
+  // cost nothing is that the lane binds on the EXTENT, not on the
+  // zone: Greek's cascade reaches 382 wu of its 464 wu zone,
+  // Christian's 362 — nine of ten families never touch their lane and
+  // pay nothing for the guarantee. Measured delta across all ten:
+  // −0.1% median god radius, worst case Mesopotamian −0.9% (the one
+  // cascade that did reach its lane, in the fan geometry).
   const FLOOR = {
     Greek: 19.0, Norse: 20.8, Vedic: 16.8, Christian: 28.0, Chinese: 22.8,
-    Egyptian: 16.6, Mesopotamian: 16.5, Celtic: 24.0, Mesoamerican: 20.0, Baltic: 32.6,
+    Egyptian: 16.6, Mesopotamian: 16.4, Celtic: 24.0, Mesoamerican: 20.0, Baltic: 32.6,
   };
   let low = 0;
   const line = [];

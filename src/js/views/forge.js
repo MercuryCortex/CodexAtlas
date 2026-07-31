@@ -802,6 +802,49 @@
     house_band_head:       230,     // arc reserved for the curved rail header (wu)
     house_cap_clear:       10,      // caption air off the band's outer edge (wu)
     house_tree_r:          0.86,    // cascade/fan zone radius (× Rh) while the band stands
+    // ── THE DISTRIBUTION + THE MARGINS (2026-07-31 wave 5) ──────
+    // John: "Im not sure what was your logic in your node
+    // distribution, but if its different keep it add a toggle to use
+    // it then i can pick. / we keep the other work done with the
+    // increased 0 TOLERANCE bands margins between nodes NEVER getting
+    // close between bands. / and add on the dev panel the controls to
+    // adjust."
+    //
+    // WHICH PACKING LAW places the ranks. 'bed' is the app's shipped
+    // law and stays the default (his words: "if its different keep
+    // it"); 'toy' is design/family-tree.html's, itemised at THE TWO
+    // PACKINGS in familytree.js. In CASCADE the flip moves every god
+    // in every family (measured 33-76 wu). In FAN the two laws differ
+    // only where a RANK IS EMPTY — 2 of 36 families under
+    // ranks=lineage, 11 of 36 under ranks=era — because that is the
+    // only place the two files' fans actually disagree.
+    house_pack:            'bed',   // 'bed' | 'toy'
+    // THE FOUR ZERO-TOLERANCE MINIMUMS (world units). Each is a
+    // guaranteed clearance, constructed rather than hoped for:
+    // familytree.js solves the radial budget outside-in before it
+    // places anything, and check-familytree.mjs measures the REAL
+    // minimum separation per family, in both packs, both geometries,
+    // at the dial extremes, and fails if any pair comes inside.
+    // MEASURED BEFORE this pass, at these same dials: 4.0 / 9.6 /
+    // 1.15 / 2.00 wu respectively.
+    house_m_tree:          16,      // gods' outer extent → band inner edge
+    house_m_port:          12,      // band's outermost caption → ports ring
+    house_m_sub:           3,       // band sub-row → sub-row, edge to edge
+    house_m_glyph:         3,       // band glyph → glyph along the arc
+    // THE THREE PITCH TERMS that decide god size. All three ship at
+    // design/family-tree.html's ratified values and all three are
+    // dials now — chord and fill widen the beds (past ~0.78 / 0.90
+    // Greek's circle fit binds and its cascade leaves the house
+    // centre), cap is the ceiling on P that binds on SMALL families
+    // (Christian, Celtic, Baltic) and is the one to reach for when a
+    // small house looks under-scaled.
+    house_bed_chord:       0.74,    // chord factor in the pitch solve
+    house_bed_fill:        0.86,    // fraction of its own chord a bed may fill
+    house_bed_cap:         0.16,    // ceiling on the pitch P (× the tree zone)
+    // The rank date's own stand-off: how far the caption sits off the
+    // cascade's left gutter (CSS px). The fan's ring-crest caption
+    // rides the same dial, scaled by its own 8/14 ratio.
+    house_rank_cap_off:    14,
     // THE TYPE SCALE — multiplies the house chrome's named steps
     // (HEAD 11 / NAME 10 / CAP 9.5 CSS px; houseChromeEnv derives
     // each step's halo and row pitch from its own size). 1.0 IS the
@@ -6949,6 +6992,16 @@
       font('500', TYPE.cap);
       ctx.fillStyle = _labelsTextColor;
       let lastCap = null;
+      // WAVE 5 — the gutter's own stand-off is a dial. It has to be:
+      // the two packings put a row's left edge in DIFFERENT places
+      // (the toy pins the stack 0.10·Rt below centre, the bed solves
+      // the offset), so the one number that decides whether the date
+      // reads as an axis or as a stray is the one number that was
+      // baked. The ANCHOR needs no dial — `house.center.x − rm.w/2`
+      // is the row's true left edge under both packs, because rm.w is
+      // the bed's own solved width.
+      const capOff = (typeof local.params.house_rank_cap_off === 'number')
+        ? local.params.house_rank_cap_off : 14;
       if (house.geometry === 'cascade') {
         ctx.textAlign = 'right';
         for (let ri = 0; ri < house.rowMeta.length; ri++) {
@@ -6958,7 +7011,7 @@
           if (txt == null || txt === lastCap) continue;
           const w = ctx.measureText(txt).width;
           const es = W2S(house.center.x - rm.w / 2, rm.y);
-          const ex = es.x - 14, ey = es.y;
+          const ex = es.x - capOff, ey = es.y;
           if (ex - w < 4) continue;
           if (!claim(ex - w / 2, ey, w + 4)) continue;
           ctx.globalAlpha = 0.7;
@@ -6976,7 +7029,7 @@
           if (txt == null || txt === lastCap) continue;
           const w = ctx.measureText(txt).width;
           const es = W2S(house.center.x, fanY - rm.rad);
-          const ey = es.y - 8;
+          const ey = es.y - capOff * (8 / 14);   // same dial, the crest's own ratio
           if (!claim(es.x, ey, w + 4)) continue;
           ctx.globalAlpha = 0.7;
           halo(txt, es.x, ey);
@@ -7596,6 +7649,18 @@
         bandHead:  (typeof p.house_band_head === 'number') ? p.house_band_head : 230,
         capClear:  (typeof p.house_cap_clear === 'number') ? p.house_cap_clear : 10,
         treeR:     (typeof p.house_tree_r === 'number') ? p.house_tree_r : 0.86,
+        // WAVE 5 — the packing law, the four zero-tolerance margins
+        // and the three pitch terms. Every one of them is a LAB dial
+        // (SECTIONS ▸ 'housepack'), routed through api.houseSnap so
+        // it moves a standing house the moment it is dragged.
+        pack:      (p.house_pack === 'toy') ? 'toy' : 'bed',
+        marginTree:  (typeof p.house_m_tree  === 'number') ? p.house_m_tree  : 16,
+        marginPort:  (typeof p.house_m_port  === 'number') ? p.house_m_port  : 12,
+        marginSub:   (typeof p.house_m_sub   === 'number') ? p.house_m_sub   : 3,
+        marginGlyph: (typeof p.house_m_glyph === 'number') ? p.house_m_glyph : 3,
+        chord:     (typeof p.house_bed_chord === 'number') ? p.house_bed_chord : 0.74,
+        bedFill:   (typeof p.house_bed_fill  === 'number') ? p.house_bed_fill  : 0.86,
+        bedCap:    (typeof p.house_bed_cap   === 'number') ? p.house_bed_cap   : 0.16,
       };
     }
 
