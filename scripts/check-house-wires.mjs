@@ -450,6 +450,59 @@ for (const [fam, modeType] of [['Christian', 'deity'], ['Other', 'deity'],
   }
 }
 
+// ── 7. bakeEdgePosB SIZES ITSELF, NOT THE STALE PACK ────────
+// rebakeNodes bakes position-B and only THEN calls rebakeEdges, which
+// re-packs m.edgePacked. Sizing the bake from m.edgePacked.instanceCount
+// therefore measured the PREVIOUS family's pack on every path that
+// grows the edge set while a house stands, and drawFrame then uploaded
+// the new, larger edgeCount out of the short array:
+// `writeBuffer: Number of bytes to write is too large`.
+console.log('\n── 7. the edge-B array is sized by the edges, not by a stale pack ──');
+must(/let E = 0;[\s\S]{0,400}if \(wheelPos\.has\(e\.source\) && wheelPos\.has\(e\.target\)\) E\+\+;/,
+  'bakeEdgePosB counts renderable edges itself', forgeSrc);
+must(/frame\.edgePosB\.length >= edgeCount \* 6/, 'the renderer skips a short edgePosB upload', gpuSrc);
+must(/frame\.nodePosB\.length >= nodeCount \* 4/, 'the renderer skips a short nodePosB upload', gpuSrc);
+{
+  // packEdges' own renderable law, and the count the bake now derives.
+  const renderable = (es, pos) => {
+    let n = 0;
+    for (const e of es) if (pos.has(e.source) && pos.has(e.target)) n++;
+    return n;
+  };
+  const deities = NODES.filter(n => n && n.type === 'deity');
+  const dIds = new Set(deities.map(n => n.id));
+  const basePos = new Map(deities.map(n => [n.id, { x: 0, y: 0 }]));
+  const baseEdges = EDGES.filter(e => dIds.has(e.source) && dIds.has(e.target));
+  const base = renderable(baseEdges, basePos);
+  const counts = {};
+  for (const fam of ['Norse', 'Greek', 'Vedic', 'Christian', 'Other']) {
+    const guests = NODES.filter(n => n && n.id && !dIds.has(n.id) && (n.family || 'Other') === fam);
+    const gIds = new Set(guests.map(n => n.id));
+    const memberIds = new Set(deities.concat(guests)
+      .filter(n => (n.family || 'Other') === fam).map(n => n.id));
+    const pos = new Map(basePos);
+    for (const n of guests) pos.set(n.id, { x: 0, y: 0 });
+    const extra = EDGES.filter(e => (gIds.has(e.source) || gIds.has(e.target))
+      && memberIds.has(e.source) && memberIds.has(e.target));
+    counts[fam] = renderable(baseEdges.concat(extra), pos);
+  }
+  console.log('  renderable wires — wheel ' + base + ' · '
+    + Object.entries(counts).map(([f, c]) => f + ' ' + c).join(' · '));
+  // The crash window, stated as a number: standing in the smaller
+  // house, the OLD sizing baked the smaller family's count while the
+  // very next rebakeEdges re-packed to the larger one.
+  const bad = [];
+  for (const [a, b] of [['Norse', 'Greek'], ['Greek', 'Vedic'], ['Vedic', 'Christian'], ['Christian', 'Other']]) {
+    if (counts[b] > counts[a]) bad.push(a + '→' + b + ' (+' + (counts[b] - counts[a]) + ')');
+  }
+  if (bad.length) {
+    ok('travels that used to upload past the end of the array: ' + bad.join(', ')
+      + ' — now impossible, the bake counts its own edges');
+  } else {
+    fail('expected at least one growing travel in the vault — the fixture has drifted');
+  }
+}
+
 console.log('');
 if (failures) { console.error(failures + ' FAILURE(S)'); process.exit(1); }
 console.log('ALL HOUSE-WIRE CHECKS PASS');

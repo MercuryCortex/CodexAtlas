@@ -14,7 +14,19 @@
     const suggest = document.getElementById('forge-search-suggest');
     if (!inp || !suggest) return;
 
+    // THE SEARCH CORPUS IS THE WHEEL'S, NOT THE HOUSE'S (2026-07-31
+    // wave 2, mode-nodes-mutation-leaks-into-search). Entering a house
+    // folds that family's documents and court into local.mode.nodes so
+    // the engine can pack them; this list is a different contract — the
+    // set the user can search and lock. Left unguarded, searching
+    // 'derveni' in Deities mode found nothing on the wheel and then
+    // found it inside the Greek house, where picking it locks either a
+    // ~4-world-unit rail glyph or a radius-0 node parked on the crown
+    // and flies the camera to nothing. Same fix the timeline scrubber
+    // already carries (timeline-scrubber.js:72).
     function modeNodes() {
+      const snap = local._houseModeSnapshot;
+      if (snap && snap.mode === local.mode && snap.nodes) return snap.nodes;
       return (local.mode && local.mode.nodes) || [];
     }
     function escapeHtml(s) {

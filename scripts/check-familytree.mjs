@@ -725,6 +725,27 @@ for (const fam of ['Vedic', 'Norse']) {
   else fail(fam + ': ' + (spans - bounded) + ' rows have no dmax to caption with');
 }
 
+// ── W2-F ▸ THE STATE FIXES ──────────────────────────────────
+// These four are lifecycle, not geometry — nothing here can measure
+// them without a browser, so they are pinned as source mirrors so a
+// revert cannot pass the gate silently. Each names the defect it
+// closes; the live probes the main thread should run are listed in the
+// wave-2 handoff.
+console.log('\n── W2-F · the lifecycle fixes (source-pinned; not measurable headless) ──');
+must(/if \(cur\.fam !== next\.fam\s*\n\s*\|\| cur\.nodePosB\.length/,
+  'startHouseTravel lerps only a SAME-FAMILY morph (EDGE-3: two 11-guest families both gave 1023*4 floats and lerped mismatched instances)');
+must(/function leaveHouseState\(\)[\s\S]{0,1400}restoreModeSnapshot\(\);[\s\S]{0,120}_houseRepackPending = false;/,
+  'leaveHouseState puts the guests back and clears the pending repack (GUEST-4)');
+must(/const snap = local\._houseModeSnapshot;[\s\S]{0,160}return snap\.nodes;/,
+  'the search corpus reads the UN-augmented wheel (mode-nodes-mutation-leaks-into-search)',
+  readFileSync(join(root, 'src/js/forge/search-autocomplete.js'), 'utf8'));
+must(/const env = houseChromeEnv\(ctx, placed, vp\);[\s\S]{0,300}if \(env\.claim\(vp\.w \/ 2, hy, w\)\)/,
+  'renderHintLine goes through the ONE claim(), not a second copy of the collision math (law 5)');
+must(/claim\(cs\.x \+ \(wFan - wCas\) \/ 2, chipY/,
+  'the CASCADE/FAN registry reserve is centred on the rect the chips actually occupy');
+must(/else chipsG\.style\.removeProperty\('--family-color'\);/,
+  'a house with no hull colour clears the chip colour instead of keeping the previous family\'s');
+
 console.log('');
 if (failures) { console.error(failures + ' FAILURE(S)'); process.exit(1); }
 console.log('ALL CHECKS PASS');

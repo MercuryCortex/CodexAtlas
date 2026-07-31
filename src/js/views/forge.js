@@ -2029,6 +2029,20 @@
       local._houseTravel = null;
       local._housePosBDirty = false;
       local._housePortCounts = null;   // filter-aware port-count cache
+      // THE GUESTS COME HOME TOO (2026-07-31 wave 2, GUEST-4). This is
+      // the ONE documented exit from house state, and it used to clear
+      // the five house fields and none of the four guest fields —
+      // leaving local.mode AUGMENTED and _houseModeSnapshot pinning the
+      // whole previous nodes/edges/positions/adjacency set (2,336 node
+      // objects after 'Other'). It survived only because rebuildForMode
+      // happens to replace local.mode wholesale ~800 lines later; the
+      // moment any relayout mutates local.mode in place instead, the
+      // wheel would be rebuilt from an augmented node list and the
+      // guests would become permanent residents. restoreModeSnapshot
+      // nulls the snapshot first, so it cannot double-restore against
+      // settleHouse's own call.
+      try { restoreModeSnapshot(); } catch (_) { /* ignore */ }
+      local._houseRepackPending = false;
       try { if (window._forgeGround) window._forgeGround.setTint(null, 1); } catch (_) { /* ignore */ }
       try { document.body.classList.remove('fv-isolated', 'fv-house-flight'); } catch (_) { /* ignore */ }
     }
@@ -2223,9 +2237,12 @@
         const h = local._house;
         if (!h || !h.bones) return null;
         const b = h.bones;
-        let ext = 0;
+        let ext = 0, parked = 0;
         const minC = houseRestMinClass();
-        for (let i = 0; i < b.extern.length; i++) if (b.extern[i] >= minC) ext++;
+        for (let i = 0; i < b.extern.length; i++) {
+          if (b.extern[i] >= minC) ext++;
+          if (b.extern[i] >= 3) parked++;      // wave 2: no visible terminus
+        }
         const idx = Array.from(b.arc.keys()).slice(0, 8);
         return {
           arcs:      h.lay.house.stats.kinArcs,
@@ -2236,10 +2253,33 @@
           lateral:   b.lat.size,
           restWires: local.params.house_rest_wires,
           externals: ext,
+          parkedWires: parked,
           lift:      local.params.house_bones,
           sample: idx.map(i => [i, +(b.arc.get(i)).toFixed(2),
             local.edgeTargets ? +(+local.edgeTargets[i]).toFixed(3) : null]),
         };
+      },
+      // THE RAILS — verification surface (2026-07-31 wave 2). Every
+      // number the two rails put on screen, so a live check can hold
+      // the caption against the ladder it labels without counting
+      // pixels: `count` is the family's true mass (the header), `shown`
+      // is what is drawn, `overflow` is the remainder the foot line
+      // announces, and each shelf reports shown/count (the caption's
+      // "N OF M"). A shelf with shown 0 means a kind the header counts
+      // is off screen with no caption — the CR-3 defect.
+      houseRails: () => {
+        const h = local._house;
+        if (!h) return null;
+        const out = {};
+        const rails = h.lay.house.rails || {};
+        for (const [side, rl] of [['left', rails.left], ['right', rails.right]]) {
+          out[side] = rl ? {
+            count: rl.count, shown: rl.shown, overflow: rl.overflow,
+            parked: rl.parkedIds ? rl.parkedIds.length : null,
+            shelves: rl.shelves.map(s => [s.label, s.shown, s.count]),
+          } : null;
+        }
+        return out;
       },
       // SCALE-pass acceptance surface: the DISPLAYED radius of a node
       // (hit-world world-units — wheel radii at wheel rest, house
@@ -6264,18 +6304,35 @@
       if (chipsG) {
         syncHouseChipState();
         const hd0 = m.hullData || {};
+        // WAVE 2 (chip-family-colour-goes-stale) — resolve the colour
+        // into a local and then ALWAYS write the decision. Both guards
+        // used to be silent no-ops, so a house whose group is absent
+        // from hullData (a grouping whose key space differs from the
+        // hull key space) or whose hull carries no colour left the
+        // PREVIOUS family's inline --family-color on the group, and the
+        // CSS fallback could not help because the property was already
+        // set. A wrong colour on this crown reads as "you are still in
+        // the old house"; neutral reads as "no colour".
+        let famColor = null;
         for (const h of (hd0.hulls || [])) {
-          if (h.family === house.groupKey) {
-            if (h.color) chipsG.style.setProperty('--family-color', h.color);
-            break;
-          }
+          if (h.family === house.groupKey) { famColor = h.color || null; break; }
         }
+        if (famColor) chipsG.style.setProperty('--family-color', famColor);
+        else chipsG.style.removeProperty('--family-color');
         const chipY = cs.y + CROWN_ROW * 3;
         ctx.font = '600 9px ' + HOUSE_MONO;
         // +12 ≈ the CSS letter-spacing the canvas measure can't see.
         const wCas = ctx.measureText('CASCADE').width + 12;
         const wFan = ctx.measureText('FAN').width + 12;
-        claim(cs.x, chipY, wCas + wFan + 22);   // best-effort reserve; the control shows regardless
+        // WAVE 2 (chip-reserve-miscentred) — reserve the rect the chips
+        // actually occupy. CASCADE is text-anchor:end at cs.x-8 and FAN
+        // is text-anchor:start at cs.x+8, so the pair's real box runs
+        // [cs.x-8-wCas, cs.x+8+wFan] — centred (wFan-wCas)/2 from the
+        // crown, ~17px LEFT of it. Reserving a box centred on cs.x left
+        // ~7px of CASCADE's first glyph unprotected (a name or a rank
+        // caption placed later in the same pass could legally land on
+        // painted text) while reserving ~21px of nothing to its right.
+        claim(cs.x + (wFan - wCas) / 2, chipY, wCas + wFan + 22);   // best-effort reserve; the control shows regardless
         const chips = chipsG.querySelectorAll('.forge-house-chip');
         for (let ci = 0; ci < chips.length; ci++) {
           const isCas = chips[ci].getAttribute('data-house') === 'cascade';
@@ -6570,7 +6627,6 @@
     // NOT gated. Painted after everything: the hint yields to every
     // name and every caption.
     function renderHintLine(ctx, placed, vp) {
-      const KEEPOUT_BOTTOM = 58;
       let txt = null;
       if (houseAtRest()) {
         txt = 'CLICK EMPTY SPACE OR ESC — THE WHEEL · CLICK A PORT — TRAVEL';
@@ -6586,30 +6642,25 @@
         txt = 'CLICK A FAMILY TITLE — THE HOUSE';
       }
       if (!txt) return;
-      const saved = {
-        font: ctx.font, align: ctx.textAlign, base: ctx.textBaseline,
-        lw: ctx.lineWidth, fill: ctx.fillStyle, alpha: ctx.globalAlpha,
-      };
+      // LAW 5 — ONE definition of "does this rect collide" (wave 2,
+      // hint-line-second-collision-implementation). This used to
+      // open-code claim()'s 15px rule, so there were two copies of the
+      // collision math and only one would be updated when the rule or
+      // the keep-out bands changed — the crown pitch fix earlier in
+      // this very batch was exactly that kind of edit. houseChromeEnv
+      // is a pure ctx/placed helper (it reads no house state), so the
+      // WHEEL hint rides the same registry as the house's own chrome.
+      const env = houseChromeEnv(ctx, placed, vp);
       ctx.font = '500 9px ' + HOUSE_MONO;
       ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.lineWidth = 3;
       const w = ctx.measureText(txt).width + 8;
-      const hy = vp.h - KEEPOUT_BOTTOM - 10;
-      let ok = true;
-      for (let k = 0; k < placed.length; k++) {
-        const P = placed[k];
-        if (Math.abs(vp.w / 2 - P[0]) < (w + P[2]) / 2 && Math.abs(hy - P[1]) < 15) { ok = false; break; }
-      }
-      if (ok) {
-        placed.push([vp.w / 2, hy, w]);
+      const hy = vp.h - env.KEEPOUT_BOTTOM - 10;
+      if (env.claim(vp.w / 2, hy, w)) {
         ctx.fillStyle = _labelsTextColor;
         ctx.globalAlpha = 0.45;
-        ctx.strokeText(txt, vp.w / 2, hy);
-        ctx.fillText(txt, vp.w / 2, hy);
+        env.halo(txt, vp.w / 2, hy);
       }
-      ctx.font = saved.font; ctx.textAlign = saved.align; ctx.textBaseline = saved.base;
-      ctx.lineWidth = saved.lw; ctx.fillStyle = saved.fill; ctx.globalAlpha = saved.alpha;
+      env.restore();
     }
 
     // ══ CASCADE / FAN — the geometry control ON THE CROWN ════════
@@ -7618,7 +7669,22 @@
       // Different sizes ⇒ take the new house whole. The layout_mix ramp
       // still carries the eye across; only the per-instance lerp is
       // skipped, which could not have been correct anyway.
-      if (cur.nodePosB.length !== next.nodePosB.length
+      //
+      // WAVE 2 (EDGE-3) — the test is now IDENTITY, not size. The
+      // reasoning above is identity-based, but "equal length" is not
+      // the same predicate: Rabbinic and Mystery each carry 11 guests
+      // and 7 guest edges, so both give nodePosB 1023*4 and edgePosB
+      // 4749*6 floats while appending completely different ids. The
+      // guard passed and the per-instance lerp ran across the
+      // mismatch — dragging each guest between two unrelated nodes,
+      // bowing an arc that is primary on one side and absent on the
+      // other through flat, and walking the external-class lane
+      // through fractional values that `step(v.layout_mix.w,
+      // in.ext_class)` reads as real thresholds. Only a SAME-FAMILY
+      // dial morph (a geometry flip) has a stable instance→id mapping,
+      // and that is the only case that may lerp.
+      if (cur.fam !== next.fam
+          || cur.nodePosB.length !== next.nodePosB.length
           || cur.edgePosB.length !== next.edgePosB.length) {
         local._house = next;
         local._houseTravel = null;
