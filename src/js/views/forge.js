@@ -1496,6 +1496,12 @@
         '<div class="forge-devdrawer" id="forge-devdrawer" aria-hidden="true">' +
           '<div class="forge-devdrawer-cap">DEV — THE WORKSHOP<span>one editor at a time</span></div>' +
           '<button class="forge-devdrawer-row" id="forge-labpanel-btn" type="button" data-dev-panel="lab" aria-expanded="false"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">Node Lab</span><span class="forge-devdrawer-hint">the recipe dials — nodes, light, wires, film</span></button>' +
+          // THE SIXTH DOOR (2026-07-31) — the house's own panel. Its
+          // dials had grown into four sections of the Node Lab and
+          // John could not find them: "IN TH ENODE LAB?!?!?!?! ... is
+          // SUPER CLUTTED / I ASKED TO DO ITS OWN CLEAN SIMPLE TO
+          // ACESS ONE OPANEL FOR HTIS". Module: forge/house-panel.js.
+          '<button class="forge-devdrawer-row" id="forge-housepanel-btn" type="button" data-dev-panel="house" aria-expanded="false"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">House</span><span class="forge-devdrawer-hint">the family tree — tree, band, ports, words</span></button>' +
           '<button class="forge-devdrawer-row" id="forge-fxpanel-btn" type="button" data-dev-panel="fx" aria-expanded="false"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">FX</span><span class="forge-devdrawer-hint">floor-zoom effects &amp; pulse</span></button>' +
           '<button class="forge-devdrawer-row" id="forge-stylepanel-btn" type="button" data-dev-panel="style" aria-expanded="false"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">Style</span><span class="forge-devdrawer-hint">ring / separator / timeline strokes</span></button>' +
           '<button class="forge-devdrawer-row" id="forge-debug-btn" type="button" data-dev-panel="stats" aria-expanded="false" aria-controls="forge-debug-panel"><span class="forge-devdrawer-dot"></span><span class="forge-devdrawer-name">Stats</span><span class="forge-devdrawer-hint">engine HUD — read-only, pins beside an editor</span></button>' +
@@ -3075,6 +3081,10 @@
       wireViewSettings();
       wireFXPanel();
       wireLabPanel();
+      // THE SIXTH DEV DOOR (2026-07-31) — the house's own panel. Must
+      // wire BEFORE wireDevDrawer() like the others, so the launcher's
+      // first dot-sync reads its settled state (`?house` boot).
+      wireHousePanel();
       wireStylePanel();
       // ONE DEV DOOR (2026-07-30) — launcher orchestration (single-
       // open, dots, Esc cascade). Must wire AFTER the four dev
@@ -9978,59 +9988,86 @@
     //  live (drawFrame reads params every frame — no drift surface:
     //  the recipe IS the single source of truth). Dress cast changes
     //  rebuild dressBase + retarget states via recomputeFocus.
+    // THE REFRESH SURFACE both dial panels drive. ONE object, because
+    // a dial that does not visibly move something has shipped twice
+    // this week and two copies of this map is how the third happens.
+    function devPanelApi() {
+      return {
+        redraw() { startAnimLoop(); drawFrame(); },
+        refreshDress() {
+          if (local.mode && local.mode.hitNodes) {
+            local.dressBase = buildDressBase(local.mode.hitNodes);
+          }
+          recomputeFocus();
+        },
+        // AUDIT P2-9/P2-10 dials need deeper refreshes:
+        refocus() { recomputeFocus(); startAnimLoop(); drawFrame(); },
+        rebake()  { try { rebakeNodes(); } catch (_) {} startAnimLoop(); drawFrame(); },
+        // THE HOUSE (2026-07-30) — geometry/rank dials TWEEN (a
+        // morph of one house, John's law); the spread scrub snaps.
+        houseMorph() { try { refreshHouse(true); } catch (_) { /* ignore */ } },
+        houseSnap()  { try { refreshHouse(false); } catch (_) { /* ignore */ } },
+        // WAVE 4 — A CONTROL YOU CAN'T SEE WORK IS UNSHIPPED. The
+        // label VISIBILITY set is computed in syncLabels, not in
+        // the paint, and renderLabelsCanvas's idle-skip compares
+        // that Set BY IDENTITY. So a dial that changes which names
+        // are eligible (house_name_max) or where the locked title
+        // block stands (house_title_slot) must rebuild the set —
+        // a plain redraw hits the idle cache and the dial reads as
+        // dead until the next pan. syncLabels allocates a fresh
+        // Set every call, which is exactly what busts it.
+        relabel() { try { syncLabels(); } catch (_) { /* ignore */ } startAnimLoop(); drawFrame(); },
+      };
+    }
+
+    // A dev panel that lives in the shared top-right slot: it always
+    // EXISTS (John kept losing the `?lab` URL), starts hidden unless
+    // its boot flag is in the URL, and its launcher row toggles it.
+    // The panel is looked up at CLICK time — its own Reset button
+    // rebuilds the element, so a captured reference would go stale.
+    function wireDevPanelToggle(panelId, btnId, bootRe) {
+      const panel = document.getElementById(panelId);
+      const showAtBoot = bootRe.test(window.location.search);
+      if (panel && !showAtBoot) panel.style.display = 'none';
+      const btn = document.getElementById(btnId);
+      if (!btn || !panel) return;
+      btn.setAttribute('aria-expanded', showAtBoot ? 'true' : 'false');
+      btn.addEventListener('click', () => {
+        const p = document.getElementById(panelId);
+        if (!p) return;
+        const hidden = p.style.display === 'none';
+        p.style.display = hidden ? '' : 'none';
+        btn.setAttribute('aria-expanded', hidden ? 'true' : 'false');
+      });
+    }
+
     function wireLabPanel() {
       if (!(window._forgeLabPanel && typeof window._forgeLabPanel.attach === 'function')) return;
       try {
-        window._forgeLabPanel.attach({
-          local,
-          api: {
-            redraw() { startAnimLoop(); drawFrame(); },
-            refreshDress() {
-              if (local.mode && local.mode.hitNodes) {
-                local.dressBase = buildDressBase(local.mode.hitNodes);
-              }
-              recomputeFocus();
-            },
-            // AUDIT P2-9/P2-10 dials need deeper refreshes:
-            refocus() { recomputeFocus(); startAnimLoop(); drawFrame(); },
-            rebake()  { try { rebakeNodes(); } catch (_) {} startAnimLoop(); drawFrame(); },
-            // THE HOUSE (2026-07-30) — geometry/rank dials TWEEN (a
-            // morph of one house, John's law); the spread scrub snaps.
-            houseMorph() { try { refreshHouse(true); } catch (_) { /* ignore */ } },
-            houseSnap()  { try { refreshHouse(false); } catch (_) { /* ignore */ } },
-            // WAVE 4 — A CONTROL YOU CAN'T SEE WORK IS UNSHIPPED. The
-            // label VISIBILITY set is computed in syncLabels, not in
-            // the paint, and renderLabelsCanvas's idle-skip compares
-            // that Set BY IDENTITY. So a dial that changes which names
-            // are eligible (house_name_max) or where the locked title
-            // block stands (house_title_slot) must rebuild the set —
-            // a plain redraw hits the idle cache and the dial reads as
-            // dead until the next pan. syncLabels allocates a fresh
-            // Set every call, which is exactly what busts it.
-            relabel() { try { syncLabels(); } catch (_) { /* ignore */ } startAnimLoop(); drawFrame(); },
-          },
-        });
-        // The panel always exists now (John kept losing the ?lab URL);
-        // it starts hidden unless ?lab is present, and the LAB button
-        // in the bottom bar toggles it any time.
-        const panel = document.getElementById('forge-lab-panel');
-        const showAtBoot = /[?&]lab(=|&|$)/.test(window.location.search);
-        if (panel && !showAtBoot) panel.style.display = 'none';
-        const btn = document.getElementById('forge-labpanel-btn');
-        if (btn && panel) {
-          btn.setAttribute('aria-expanded', showAtBoot ? 'true' : 'false');
-          // Look the panel up at click time — the panel's Reset
-          // button rebuilds the element, so a captured reference
-          // would go stale.
-          btn.addEventListener('click', () => {
-            const p = document.getElementById('forge-lab-panel');
-            if (!p) return;
-            const hidden = p.style.display === 'none';
-            p.style.display = hidden ? '' : 'none';
-            btn.setAttribute('aria-expanded', hidden ? 'true' : 'false');
-          });
-        }
+        window._forgeLabPanel.attach({ local, api: devPanelApi() });
+        wireDevPanelToggle('forge-lab-panel', 'forge-labpanel-btn', /[?&]lab(=|&|$)/);
       } catch (e) { /* panel is a lab tool — never break the map for it */ }
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  wireHousePanel()  —  THE SIXTH DEV DOOR (2026-07-31)
+    // ════════════════════════════════════════════════════════════
+    //  John asked for a panel JUST DEDICATED to the house's sizes and
+    //  got a section inside the Node Lab instead — twice. Every house
+    //  dial now lives in src/js/forge/house-panel.js behind its own
+    //  launcher row, and the LAB is back to its eight recipe
+    //  sections. `?house` force-opens it at boot, like `?lab`.
+    function wireHousePanel() {
+      if (!(window._forgeHousePanel && typeof window._forgeHousePanel.attach === 'function')) {
+        if (typeof console !== 'undefined' && console.warn) {
+          console.warn('[forge] window._forgeHousePanel not loaded — house panel inert.');
+        }
+        return;
+      }
+      try {
+        window._forgeHousePanel.attach({ local, api: devPanelApi() });
+        wireDevPanelToggle('forge-house-panel', 'forge-housepanel-btn', /[?&]house(=|&|$)/);
+      } catch (e) { /* a dev panel never breaks the map */ }
     }
 
     //  wireFXPanel()  —  Phase 21AB (2026-05-22)

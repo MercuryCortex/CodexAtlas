@@ -449,6 +449,340 @@ console.log('\n── LAW 3 · the probe: what a carried lock lands on ──');
     + [...guestTypes].sort((a, b) => b[1] - a[1]).map(([t, n]) => t + ' ' + n).join(' · '));
 }
 
+// ════════════════════════════════════════════════════════════
+// §D  THE HOUSE HAS ITS OWN DOOR (2026-07-31)
+// ════════════════════════════════════════════════════════════
+// John asked for "a panel just dedicated to" the house's sizes and
+// got a SECTION of the Node Lab instead — twice:
+//   "??????? IN TH ENODE LAB?!?!?!?! WHY>?>???? is SUPER CLUTTED
+//    I ASKED TO DO ITS OWN CLEAN SIMPLE TO ACESS ONE OPANEL"
+// A control he cannot find is unshipped, and that had happened four
+// times in three days. So this section does NOT settle for grepping
+// the source: it MOUNTS both dev panels in a DOM shim and reads back
+// what John would read — the sections, the row labels, whether they
+// are open, and whether each dial actually calls a refresh.
+console.log('\n── §D · the house panel: the sixth dev door ──');
+
+const kitSrc    = readFileSync(join(root, 'src/js/forge/panel-kit.js'), 'utf8');
+const houseSrc  = readFileSync(join(root, 'src/js/forge/house-panel.js'), 'utf8');
+const labSrc    = readFileSync(join(root, 'src/js/forge/lab-panel.js'), 'utf8');
+const drawerSrc = readFileSync(join(root, 'src/js/forge/dev-drawer.js'), 'utf8');
+const bundleSrc = readFileSync(join(root, 'scripts/build-forge-bundle.sh'), 'utf8');
+
+// ── D.1  the launcher row exists and the drawer OWNS it ──────
+must(/data-dev-panel="house"/, 'the DEV launcher has a sixth row, data-dev-panel="house"', forgeSrc);
+must(/id="forge-housepanel-btn"/, 'that row carries its own trigger id', forgeSrc);
+must(/house: \{\s*\n\s*isOpen\(\) \{ const p = housePanel\(\);/,
+  'dev-drawer registers HOUSE as an EDITOR (so one-editor-at-a-time covers it)', drawerSrc);
+must(/const EDITOR_KEYS = \['lab', 'house', 'fx', 'style'\];/,
+  'HOUSE is in EDITOR_KEYS — opening it closes the LAB, and vice versa', drawerSrc);
+must(/for \(const k of EDITOR_KEYS\) open\[k\] = EDITORS\[k\]\.isOpen\(\);/,
+  'the row dots are derived from EDITOR_KEYS, so the sixth dot lights without a second list', drawerSrc);
+must(/'forge-lab-panel', 'forge-house-panel'\]/,
+  'Esc inside the house panel is treated as dev chrome, like the LAB', drawerSrc);
+must(/wireHousePanel\(\);/, 'forge.js wires the house panel before the dev drawer', forgeSrc);
+// The modules are shipped as ONE concatenated bundle — a new file that
+// is not in this list is a panel that never loads in the real app.
+must(/src\/js\/forge\/panel-kit\.js/, 'the bundle list carries panel-kit.js', bundleSrc);
+must(/src\/js\/forge\/house-panel\.js/, 'the bundle list carries house-panel.js', bundleSrc);
+
+// ── D.2  DELETE, DON'T HIDE — no house residue in the LAB ────
+mustNot(/house_/, 'a house_* dial anywhere in the Node Lab', labSrc);
+mustNot(/HOUSE_RADIOS/, 'the house radio table in the Node Lab', labSrc);
+{
+  const secs = [...labSrc.matchAll(/\{ id: '([a-z]+)', title: '/g)].map(m => m[1]);
+  if (secs.length === 8 && !secs.some(s => s.startsWith('house')))
+    ok('the Node Lab is back to its original EIGHT sections: ' + secs.join(' · '));
+  else fail('the Node Lab has ' + secs.length + ' sections: ' + secs.join(' · '));
+}
+
+// ── D.3  ONE dial machine, not two ──────────────────────────
+{
+  const files = ['src/js/forge/panel-kit.js', 'src/js/forge/lab-panel.js',
+    'src/js/forge/house-panel.js', 'src/js/forge/fx-panel.js',
+    'src/js/forge/style-panel.js', 'src/js/views/forge.js'];
+  let impls = 0;
+  for (const f of files) {
+    impls += (readFileSync(join(root, f), 'utf8').match(/function addSlider\b/g) || []).length;
+  }
+  if (impls === 1) ok('there is exactly ONE addSlider implementation in the tree (panel-kit.js)');
+  else fail('found ' + impls + ' addSlider implementations — the machine has been copy-pasted');
+  must(/window\._forgePanelKit\.mount\(\{/, 'the house panel drives the shared kit', houseSrc);
+  must(/window\._forgePanelKit\.mount\(\{/, 'the Node Lab drives the same shared kit', labSrc);
+}
+
+// ── D.4  A DOM SHIM — enough to MOUNT a panel and read it back ──
+function makeEnv() {
+  const store = new Map();
+  const byId = new Map();
+  class ClassList {
+    constructor(el) { this.el = el; }
+    _set() { return new Set(String(this.el._cls || '').split(/\s+/).filter(Boolean)); }
+    _write(s) { this.el._cls = [...s].join(' '); }
+    add(c) { const s = this._set(); s.add(c); this._write(s); }
+    remove(c) { const s = this._set(); s.delete(c); this._write(s); }
+    contains(c) { return this._set().has(c); }
+    toggle(c, on) {
+      const s = this._set();
+      if (on === undefined) { s.has(c) ? s.delete(c) : s.add(c); }
+      else if (on) s.add(c); else s.delete(c);
+      this._write(s);
+    }
+  }
+  class El {
+    constructor(tag) {
+      this.tagName = String(tag).toUpperCase();
+      this.children = []; this.style = {}; this.dataset = {};
+      this._cls = ''; this._html = ''; this._ev = {}; this._q = {}; this._attr = {};
+      this.textContent = ''; this.id = '';
+      this.classList = new ClassList(this);
+    }
+    get className() { return this._cls; }
+    set className(v) { this._cls = v; }
+    get innerHTML() { return this._html; }
+    set innerHTML(v) { this._html = v; }
+    appendChild(c) { this.children.push(c); c._parent = this; if (c.id) byId.set(c.id, c); return c; }
+    addEventListener(t, f) { (this._ev[t] = this._ev[t] || []).push(f); }
+    setAttribute(k, v) { this._attr[k] = v; }
+    getAttribute(k) { return Object.prototype.hasOwnProperty.call(this._attr, k) ? this._attr[k] : null; }
+    querySelector(sel) { if (!this._q[sel]) this._q[sel] = new El('span'); return this._q[sel]; }
+    remove() {
+      if (this.id) byId.delete(this.id);
+      if (this._parent) {
+        const i = this._parent.children.indexOf(this);
+        if (i >= 0) this._parent.children.splice(i, 1);
+      }
+    }
+    fire(t) { for (const f of (this._ev[t] || []).slice()) f({ target: this, stopPropagation() {}, preventDefault() {} }); }
+  }
+  const body = new El('body'), head = new El('head');
+  return {
+    store,
+    document: {
+      createElement: (t) => new El(t),
+      getElementById: (id) => byId.get(id) || null,
+      body, head, addEventListener() {},
+    },
+    localStorage: {
+      getItem: (k) => (store.has(k) ? store.get(k) : null),
+      setItem: (k, v) => store.set(k, String(v)),
+      removeItem: (k) => store.delete(k),
+    },
+  };
+}
+
+// PARAM_DEFAULTS is the single source of truth for every dial's value;
+// a panel that declares a key that is NOT in it is a dead dial.
+function parseParamDefaults(src) {
+  const start = src.indexOf('const PARAM_DEFAULTS = Object.freeze({');
+  const out = {};
+  if (start < 0) return out;
+  const body = src.slice(start).split(/\n  \}\);/)[0];
+  for (const line of body.split('\n')) {
+    const m = /^\s{4}(\w+):\s*(-?\d+(?:\.\d+)?|'[^']*'|"[^"]*"|true|false)\s*,/.exec(line);
+    if (!m) continue;
+    let v = m[2];
+    if (/^-?\d/.test(v)) v = parseFloat(v);
+    else if (v === 'true') v = true;
+    else if (v === 'false') v = false;
+    else v = v.slice(1, -1);
+    out[m[1]] = v;
+  }
+  return out;
+}
+const PD = parseParamDefaults(forgeSrc);
+
+// Read a mounted panel back the way John reads it: group headings,
+// row labels, and whether the group is open.
+function readPanel(rootEl) {
+  const secs = [];
+  let cur = null;
+  for (const ch of rootEl.children) {
+    if (ch.classList.contains('lp-sec')) {
+      const m = /<span>([^<]+)<\/span>/.exec(ch.innerHTML);
+      cur = { title: m ? m[1] : '?', open: ch.classList.contains('open'), rows: [] };
+      secs.push(cur);
+    } else if (ch.classList.contains('lp-secbody') && cur) {
+      cur.bodyOpen = ch.classList.contains('open');
+      let cap = null, last = null;
+      for (const c of ch.children) {
+        if (c.classList.contains('lp-hint')) cur.hint = c.textContent;
+        else if (c.classList.contains('lp-row')) {
+          const lm = /<span>([^<]*)<\/span>/.exec(c.innerHTML);
+          last = { kind: 'slider', label: lm ? lm[1] : '?', input: null, val: c._q['b'] };
+          cur.rows.push(last);
+        } else if (c.tagName === 'INPUT') { if (last) last.input = c; }
+        else if (c.classList.contains('lp-cast')) cap = c.textContent;
+        else if (c.classList.contains('lp-chips')) {
+          cur.rows.push({
+            kind: cap ? 'radio' : 'toggles', label: cap || '(toggles)',
+            opts: c.children.map((b) => b.textContent), chips: c.children,
+          });
+          cap = null;
+        }
+      }
+    }
+  }
+  return secs;
+}
+
+function mountPanel(which, seed) {
+  const env = makeEnv();
+  if (seed) for (const [k, v] of Object.entries(seed)) env.store.set(k, v);
+  globalThis.document = env.document;
+  globalThis.localStorage = env.localStorage;
+  new Function(kitSrc)();
+  new Function(which === 'house' ? houseSrc : labSrc)();
+  const touched = new Set();
+  const raw = { ...PD };
+  const params = new Proxy(raw, {
+    get(t, k) { if (typeof k === 'string') touched.add(k); return t[k]; },
+    set(t, k, v) { if (typeof k === 'string') touched.add(k); t[k] = v; return true; },
+  });
+  const calls = [];
+  const api = {};
+  for (const k of ['redraw', 'refreshDress', 'refocus', 'rebake', 'houseMorph', 'houseSnap', 'relabel']) {
+    api[k] = () => calls.push(k);
+  }
+  const local = { params, mode: null };
+  const warns = [];
+  const realWarn = console.warn;
+  console.warn = (...a) => warns.push(a.join(' '));
+  try {
+    (which === 'house' ? globalThis.window._forgeHousePanel : globalThis.window._forgeLabPanel)
+      .attach({ local, api });
+  } finally { console.warn = realWarn; }
+  const el = env.document.getElementById(which === 'house' ? 'forge-house-panel' : 'forge-lab-panel');
+  return { env, el, secs: el ? readPanel(el) : [], touched, raw, calls, api, warns, local };
+}
+
+// ── D.5  the house panel, as John will read it ──────────────
+const H = mountPanel('house');
+if (H.el) ok('the house panel mounts and puts #forge-house-panel on the page');
+else fail('the house panel did not mount');
+if (!H.warns.length) ok('every dial the panel declares is placed in a section (no builder warnings)');
+else fail('unplaced controls: ' + H.warns.join(' | '));
+{
+  const closed = H.secs.filter(s => !s.open || !s.bodyOpen);
+  if (H.secs.length >= 6 && !closed.length)
+    ok('all ' + H.secs.length + ' groups render OPEN on a first visit — nothing to hunt for');
+  else fail(closed.length + ' group(s) render COLLAPSED: ' + closed.map(s => s.title).join(', '));
+}
+console.log('\n  THE PANEL, AS HE READS IT:');
+let hRows = 0;
+for (const s of H.secs) {
+  console.log('    ' + s.title.toUpperCase() + '  — ' + (s.hint || ''));
+  for (const r of s.rows) {
+    hRows++;
+    console.log('      · ' + r.label + (r.kind === 'radio' ? '  [' + r.opts.join(' | ') + ']' : ''));
+  }
+}
+console.log('');
+{
+  const keys = [...H.touched].filter(k => k.startsWith('house_'));
+  const missing = keys.filter(k => !(k in PD));
+  if (!missing.length) ok('all ' + keys.length + ' house_* params the panel drives exist in PARAM_DEFAULTS');
+  else fail('dials for params that do not exist: ' + missing.join(', '));
+  if (hRows === 39) ok('39 controls — every house dial in the app, in one panel');
+  else fail('the panel renders ' + hRows + ' controls (expected 39 — a dial was dropped or double-placed)');
+  // house_geometry (CASCADE/FAN) is CANONICAL and lives on the crown.
+  if (!H.secs.some(s => s.rows.some(r => r.opts && r.opts.includes('cascade'))))
+    ok('Cascade | Fan is NOT here — it is canonical and stays on the VIEW panel');
+  else fail('the canonical house_geometry control leaked into the dev panel');
+}
+
+// ── D.6  EFFECTS MUST FIRE — no dial reads as dead ──────────
+{
+  let dead = [];
+  for (const s of H.secs) {
+    for (const r of s.rows) {
+      const before = H.calls.length;
+      if (r.kind === 'slider' && r.input) { r.input.value = String(r.input.min); r.input.fire('input'); }
+      else if (r.chips && r.chips.length > 1) { r.chips[1].fire('click'); }
+      if (H.calls.length === before) dead.push(r.label);
+    }
+  }
+  if (!dead.length) ok('every one of the ' + hRows + ' controls calls a refresh when moved — none is inert');
+  else fail('controls that fire NOTHING: ' + dead.join(', '));
+}
+function fires(label, expected) {
+  for (const s of H.secs) for (const r of s.rows) {
+    if (r.label !== label) continue;
+    const before = H.calls.length;
+    if (r.kind === 'slider' && r.input) { r.input.value = String(r.input.max); r.input.fire('input'); }
+    else if (r.chips) r.chips[r.chips.length - 1].fire('click');
+    const got = H.calls.slice(before);
+    if (got.includes(expected)) ok('"' + label + '" routes through ' + expected + '()');
+    else fail('"' + label + '" fired [' + got.join(',') + '] — expected ' + expected + '()');
+    return;
+  }
+  fail('no row labelled "' + label + '" — the panel has drifted');
+}
+// The three refreshes that have silently swallowed a dial before:
+fires('House names', 'relabel');   // the label SET is compared BY IDENTITY
+fires('Title corner', 'relabel');
+fires('Band radius', 'houseSnap'); // a size dial must re-solve the layout
+fires('Distribution', 'houseMorph');
+fires('Bone strength', 'refocus');
+
+// ── D.7  THE OPEN-STATE LAW, tested with a PLANTED LEGACY STATE ──
+// This is the structural cause of three unfindable controls in two
+// days: defaults were seeded only when the WHOLE key was missing, so
+// any section added later was `undefined` ⇒ falsy ⇒ collapsed.
+{
+  const legacy = mountPanel('house', { 'forge.housePanel.open.v1': JSON.stringify({ tree: false }) });
+  const byTitle = Object.fromEntries(legacy.secs.map(s => [s.title, s.open]));
+  const treeTitle = legacy.secs[0].title;
+  if (byTitle[treeTitle] === false) ok('a group John COLLAPSED stays collapsed for him ("' + treeTitle + '")');
+  else fail('his own collapse choice was overwritten');
+  const rest = legacy.secs.slice(1);
+  if (rest.every(s => s.open))
+    ok('the ' + rest.length + ' groups his stored state has never seen still open by DECLARATION '
+      + '(the bug that shipped three invisible controls cannot recur here)');
+  else fail('groups absent from a legacy state shipped COLLAPSED: '
+    + rest.filter(s => !s.open).map(s => s.title).join(', '));
+}
+
+// ── D.8  the dials he already tuned come WITH the panel ──────
+{
+  const donor = JSON.stringify({ house_band_r: 0.77, house_name_max: 55, recipe_glow: 0.9 });
+  const m = mountPanel('house', { 'forge.labRecipe.v1': donor });
+  if (m.raw.house_band_r === 0.77 && m.raw.house_name_max === 55)
+    ok('house dials tuned while they lived in the LAB carry into the new panel');
+  else fail('the one-time import dropped his tuning: band_r=' + m.raw.house_band_r);
+  const own = JSON.parse(m.env.store.get('forge.housePanel.v1') || '{}');
+  if (own.house_band_r === 0.77) ok('and are written to the panel\'s OWN key, so the LAB may forget them');
+  else fail('the imported values were not persisted under forge.housePanel.v1');
+  if (!('recipe_glow' in own)) ok('nothing that is not a house dial came across');
+  else fail('the house panel claimed a LAB key');
+  // …and RESET must beat the import: the donor blob still holds the
+  // old values, so a naive rebuild re-applies them on the spot and
+  // again on the next reload.
+  const btns = m.el.children.find(c => c.classList && c.classList.contains('lp-btns'));
+  const resetBtn = btns && btns.children[1];
+  if (resetBtn) resetBtn.fire('click');
+  if (resetBtn && m.raw.house_band_r === PD.house_band_r)
+    ok('Reset puts a dial back to its PARAM_DEFAULTS value (' + PD.house_band_r + ')');
+  else fail('Reset left house_band_r at ' + m.raw.house_band_r);
+  const after = JSON.parse(m.env.store.get('forge.housePanel.v1') || '{}');
+  if (after.house_band_r === PD.house_band_r)
+    ok('and writes the defaults back, so the import cannot undo the reset on the next reload');
+  else fail('after Reset the stored blob says house_band_r=' + after.house_band_r);
+}
+
+// ── D.9  the Node Lab still works, and is house-free ─────────
+{
+  const L = mountPanel('lab');
+  if (L.el) ok('the Node Lab still mounts on the shared kit');
+  else fail('the Node Lab no longer mounts');
+  if (!L.warns.length) ok('every LAB dial is still placed in a section');
+  else fail('LAB unplaced controls: ' + L.warns.join(' | '));
+  const houseKeys = [...L.touched].filter(k => k.startsWith('house_'));
+  if (!houseKeys.length) ok('the Node Lab reads NO house param at all — the move is a deletion, not a hide');
+  else fail('the Node Lab still touches: ' + houseKeys.join(', '));
+  console.log('  the LAB now reads: ' + L.secs.map(s => s.title).join(' · '));
+}
+
 console.log('');
 if (failures) { console.error(failures + ' FAILURE(S)'); process.exit(1); }
 console.log('ALL HOUSE-INTERACTION CHECKS PASS');
