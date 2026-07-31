@@ -853,9 +853,10 @@ const titleAnchor = (vp, slot, h, W2S) => {
     y: Math.max(TITLE_TOP, Math.min(vp.h - 160, p.y - stackH)),
   };
 };
-// The family name is SVG (11px mono, letter-spacing .24em, uppercase);
-// 0.85em per glyph is the conservative advance for a collision test.
-const titleW = (fam) => String(fam).length * 11 * 0.85 + 12;
+// The family name paints in the CROWN FACE while isolated (21px
+// serif, app.css .is-isolated, 2026-08-01) — 0.68em per glyph is the
+// conservative advance for a collision test.
+const titleW = (fam) => String(fam).length * 21 * 0.68 + 24;
 let titleBlockFail = 0, titleBlockTot = 0;
 // The deity names paint in the SANS face at label_size (14 CSS px);
 // 0.52em is the conservative average advance for Inter at that size.
@@ -908,14 +909,19 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     // in the order the view actually paints, not either side alone.
     const tw = titleW(fam);
     const w1 = mw(line1, T_HEAD), w2b = mw(line2, T_CAP);
-    // Row 0 is syncHulls' published title rect, seeded into `placed`
-    // before the canvas pass — same as local._titleRects.
+    // THE BLOCK IS A KEEPOUT (2026-08-01): every row claims the full
+    // block width + one row of air above and below, mirroring the
+    // view. Row 0 is syncHulls' published title rect, seeded into
+    // `placed` before the canvas pass — same as local._titleRects.
+    const BW = Math.max(w1 + 8, w2b + 8, tw, 156) + 28;
+    claimSim(placed, cenX(BW), cs.y - CROWN_ROW, BW, vp.h);   // air above
     const rows4 = [
-      claimSim(placed, cenX(tw), cs.y, tw, vp.h),
-      claimSim(placed, cenX(w1), cs.y + CROWN_ROW, w1, vp.h),
-      claimSim(placed, cenX(w2b), cs.y + CROWN_ROW * 2, w2b, vp.h),
-      claimSim(placed, cenX(110), cs.y + CROWN_ROW * 3, 110, vp.h),   // CASCADE/FAN chip reserve
+      claimSim(placed, cenX(Math.max(tw, 400)), cs.y, Math.max(tw, 400), vp.h),
+      claimSim(placed, cenX(BW), cs.y + CROWN_ROW, BW, vp.h),
+      claimSim(placed, cenX(BW), cs.y + CROWN_ROW * 2, BW, vp.h),
+      claimSim(placed, cenX(BW), cs.y + CROWN_ROW * 3, BW, vp.h),   // CASCADE/FAN chip row
     ];
+    claimSim(placed, cenX(BW), cs.y + CROWN_ROW * 4, BW, vp.h);   // air below
     for (const r of rows4) { titleBlockTot++; if (!r) titleBlockFail++; }
     // 2 ▸ the band's curved text, in the view's real order: headers,
     // then shelf captions, then the overflow feet (pass 1 — the
@@ -1304,8 +1310,10 @@ must(/const snap = local\._houseModeSnapshot;[\s\S]{0,160}return snap\.nodes;/,
   readFileSync(join(root, 'src/js/forge/search-autocomplete.js'), 'utf8'));
 must(/const env = houseChromeEnv\(ctx, placed, vp\);[\s\S]{0,300}if \(env\.claim\(vp\.w \/ 2, hy, w\)\)/,
   'renderHintLine goes through the ONE claim(), not a second copy of the collision math (law 5)');
-must(/claim\(chipX \+ \(wFan - wCas\) \/ 2, chipY/,
-  'the CASCADE/FAN registry reserve is centred on the rect the chips actually occupy');
+must(/claim\(cenX\(BW\), chipY, BW\);/,
+  'the CASCADE/FAN row reserves the full BLOCK width (the keepout law, 2026-08-01)');
+must(/claim\(cenX\(BW\), cs\.y - CROWN_ROW, BW\);/,
+  'one row of air is claimed ABOVE the name — nothing may brush the block');
 must(/const chipX = anchor\.center \? \(anchor\.x \+ \(wCas - wFan\) \/ 2\)\s*\n\s*: \(anchor\.right \? \(anchor\.x - wFan - 8\) : \(anchor\.x \+ wCas \+ 8\)\);/,
   'the chips centre on the block in the centre slot and ride its edge in the corners');
 must(/house_caption_style:\s+'flat',/,
@@ -1724,8 +1732,8 @@ must(/let maxHalfW = 0;[\s\S]{0,900}const es = W2S\(house\.center\.x - maxHalfW,
   'every cascade date right-aligns to ONE axis at the widest bed\'s left edge (postmortem #2)', forgeSrc);
 must(/const ly = \(rm\.lineY != null\) \? rm\.lineY : rm\.y;/,
   'the stratum line consumes the layout\'s lineY — computed since wave 5, finally drawn', forgeSrc);
-must(/house_stratum:\s+0\.07,/,
-  'the stratum dial ships at 0.07 — visible, faint, and 0 turns it off', forgeSrc);
+must(/house_stratum:\s+0\.16,/,
+  'the stratum dial ships at 0.16 — VISIBLE (0.07 was invisible in John\'s own screenshot); 0 turns it off', forgeSrc);
 must(/const capOff = \(typeof local\.params\.house_rank_cap_off === 'number'\)/,
   'the rank date\'s stand-off is a dial, not a baked 14px', forgeSrc);
 must(/house_rank_cap_off:\s*14,/, 'house_rank_cap_off ships at 14px');

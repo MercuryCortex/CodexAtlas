@@ -7957,11 +7957,19 @@ aside.detail { overflow-x: hidden; }
 .forge-hull-label:hover {
   fill-opacity: 1;
 }
-/* The isolated family's title stays lit — it is also the way out. */
+/* The isolated family's title stays lit — it is also the way out.
+   THE CROWN FACE (2026-08-01, John: "the top title is over and
+   cluttered"): the ratified toy sets the family name at serif 21px;
+   at the wheel's 11px mono it drowned among the port labels it now
+   stands beside. Bigger + the design face = it reads as the room's
+   NAME. (--serif resolves to Inter under the Obsidian preset by the
+   architecture-§6 exception — deliberate.) */
 .forge-hull-label.is-isolated {
   fill-opacity: 1;
-  font-weight: 600;
-  letter-spacing: 0.24em;
+  font-weight: 500;
+  font-family: var(--serif, Georgia, serif);
+  font-size: 21px;
+  letter-spacing: 0.06em;
 }
 /* THE HOUSE (2026-07-30) — the tree REPLACES the wedge while
    isolated: wedge fills, dividers and guide rings retire; the other

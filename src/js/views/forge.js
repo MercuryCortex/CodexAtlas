@@ -739,7 +739,9 @@
     house_caption_style:   'flat',      // 'flat' | 'curved'
     // THE STRATUM LINES (2026-07-31, postmortem #2): the faint shelf
     // under each rank the ratified design specifies. 0 = off.
-    house_stratum:         0.07,
+    // 0.07 → 0.16 on 2026-08-01: at 0.07 John could not SEE them in
+    // his own screenshot — a line shipped invisible is not shipped.
+    house_stratum:         0.16,
     house_orphans:         'domain',    // 'domain'  | 'degree'
     // THE BONES (2026-07-30) — resting edge-state lift for the
     // house's own kinship wires (0 = old invisible idle, 1 = full
@@ -5608,7 +5610,15 @@
           if (labelEl._lastVis !== '') { labelEl.style.opacity = ''; labelEl._lastVis = ''; }
           const w = (labelEl._w || 80);
           titlePlaced.length = 0;
-          titlePlaced.push([a.center ? a.x : (a.right ? a.x - w / 2 : a.x + w / 2), a.y, w / 2 + 6]);
+          // Centre slot publishes a FLOOR-width reserve (2026-08-01,
+          // John's Shinto capture): the crown-face width alone still
+          // let port labels stand beside the name — and when the
+          // title clamps to the very top, the canvas block's
+          // air-above row falls inside the keep-out band and cannot
+          // claim, so THIS rect is the only thing guarding the name
+          // row. 400px spans the whole block for every family name.
+          titlePlaced.push([a.center ? a.x : (a.right ? a.x - w / 2 : a.x + w / 2), a.y,
+                            a.center ? Math.max(w * 1.4 + 24, 400) : w / 2 + 6]);
           break;
         }
       }
@@ -6795,8 +6805,25 @@
       // (wave 3): one clear row per line at the crown face, always
       // over the 15px collision rule by construction.
       const CROWN_ROW = row(TYPE.head);
+      // ── THE BLOCK IS A KEEPOUT (2026-08-01, John: "the top title
+      // is over and cluttered") ────────────────────────────────────
+      // The horizon PORT labels clamp into the same top strip the
+      // centre slot clamps into, and a 15px-legal neighbour still
+      // READS as clutter. So the stack claims the full BLOCK width on
+      // every row, plus one empty row of air above and below. The
+      // title rows claim FIRST in the paint, so widening them can
+      // never hide them — it only pushes everyone else off the block.
+      const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
+      font('500', TYPE.cap);
+      const w2 = ctx.measureText(line2).width;
+      font('500', TYPE.head);
       const w1 = ctx.measureText(line1).width;
-      if (claim(cenX(w1 + 8), cs.y + CROWN_ROW, w1 + 8)) {
+      // The SVG name paints in the crown face (21px serif, app.css
+      // .is-isolated); estimate its width for the shield.
+      const nameW = String(house.groupKey || '').length * 21 * 0.68 + 24;
+      const BW = Math.max(w1 + 8, w2 + 8, nameW, 156) + 28;
+      claim(cenX(BW), cs.y - CROWN_ROW, BW);   // air above the name
+      if (claim(cenX(BW), cs.y + CROWN_ROW, BW)) {
         ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.92;
         halo(line1, cs.x, cs.y + CROWN_ROW);
       }
@@ -6809,11 +6836,9 @@
       // the answer, and on an investigation vault it is the useful one:
       // an empty scriptorium is a coverage gap worth seeing, not a
       // blank to hide.
-      const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
       font('500', TYPE.cap);
       ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
-      const w2 = ctx.measureText(line2).width;
-      if (claim(cenX(w2 + 8), cs.y + CROWN_ROW * 2, w2 + 8)) {
+      if (claim(cenX(BW), cs.y + CROWN_ROW * 2, BW)) {
         ctx.fillStyle = _labelsTextColor;
         // A zero room is stated, not shouted — one step quieter than a
         // populated one, still legible. (Wave 3 floors: nothing in the
@@ -6872,7 +6897,8 @@
         // last glyph ends on its right edge.
         const chipX = anchor.center ? (anchor.x + (wCas - wFan) / 2)
           : (anchor.right ? (anchor.x - wFan - 8) : (anchor.x + wCas + 8));
-        claim(chipX + (wFan - wCas) / 2, chipY, wCas + wFan + 22);   // best-effort reserve; the control shows regardless
+        claim(cenX(BW), chipY, BW);              // best-effort reserve at the BLOCK width
+        claim(cenX(BW), chipY + CROWN_ROW, BW);  // air below the stack
         const chips = chipsG.querySelectorAll('.forge-house-chip');
         for (let ci = 0; ci < chips.length; ci++) {
           const isCas = chips[ci].getAttribute('data-house') === 'cascade';
@@ -7117,7 +7143,7 @@
           const ex = es.x - capOff, ey = es.y;
           if (ex - w < 4) continue;
           if (!claim(ex - w / 2, ey, w + 4)) continue;
-          ctx.globalAlpha = 0.7;
+          ctx.globalAlpha = 0.85;
           halo(txt, ex, ey);
           lastCap = txt;
         }
@@ -7134,7 +7160,7 @@
           const es = W2S(house.center.x, fanY - rm.rad);
           const ey = es.y - capOff * (8 / 14);   // same dial, the crest's own ratio
           if (!claim(es.x, ey, w + 4)) continue;
-          ctx.globalAlpha = 0.7;
+          ctx.globalAlpha = 0.85;
           halo(txt, es.x, ey);
           lastCap = txt;
         }
