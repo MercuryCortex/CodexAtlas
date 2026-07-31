@@ -4,7 +4,7 @@
 
 ## Surviving findings
 
-### [blocker] `crown-noun-counts-a-different-population` — /Users/redacted-user/Desktop/PRODUCT DEVELOPMENT/Codex Atlas/src/js/views/forge.js:6176
+### [blocker] `crown-noun-counts-a-different-population` — src/js/views/forge.js:6176
 **The crown's first line pairs the MODE's noun with the TREE's count — two different populations in 29 of 30 modes**
 
 **Evidence.** const modeEntry = (modemod.MODES || []).find((x) => x.value === m.id);
@@ -238,7 +238,7 @@ The commit's own reasoning is identity-based — "index i is a different node on
 
 **Fix.** Compare identity, not size: keep the wheel's instance signature on the house object (e.g. the guest signature `local._houseGuestSig` already computed in augmentModeForHouse, or `next.fam === cur.fam`) and lerp only when the pack is genuinely the same instance→id mapping — in practice, only for a same-family dial morph. Any family change should take the new house whole, which is what the layout_mix ramp is for.
 
-### [minor] `court-spine-names-can-never-print` — /Users/redacted-user/Desktop/PRODUCT DEVELOPMENT/Codex Atlas/src/js/views/forge.js:6398
+### [minor] `court-spine-names-can-never-print` — src/js/views/forge.js:6398
 **Every COURT shelf's spine name is refused by the shelf caption the same function placed 7px earlier**
 
 **Evidence.** // captions, first loop:
@@ -259,7 +259,7 @@ So 'one spine name per shelf (its highest-degree member, whole title)' — the c
 
 **Fix.** Use the same remedy the main thread already applied twice in this batch - a SCREEN-space row pitch, not world geometry (precedents: `const CROWN_ROW = 17` at forge.js:6186 and `const hy = top.y - 22` at forge.js:6262). The spine name has no leader line and does not point at its glyph, so it does not need to sit at the item's world y. Two options at that altitude: (i) fold the spine into the caption string the loop already draws - `PERSONS · 57 · ZEUS` - one claim, one row, zero new collision surface; or (ii) keep two rows and anchor the spine at `cp.y + 17` (the caption's own screen y plus one clear row) instead of `W2S(rl.x, it.y).y`, which clears the 15px band by construction at every zoom and every viewport. While in there, widen the spine's x offset from 9 to at least 11 so its clearance from the obstacle column (forge.js:6244, `claim(top.x, y, 14)`) stops being an exact tie decided by float rounding - `9 + w/2` vs threshold `w/2 + 9` - and comment both that constant and the caption's 10. Then add the assertion to scripts/check-familytree.mjs: for every shelf on both rails, at the house fit scale `min(vp)/(2*(Rh+70))`, the caption->spine screen gap must exceed 15px.
 
-### [minor] `rail-obstacle-column-blocks-the-rails-own-names` — /Users/redacted-user/Desktop/PRODUCT DEVELOPMENT/Codex Atlas/src/js/views/forge.js:6248
+### [minor] `rail-obstacle-column-blocks-the-rails-own-names` — src/js/views/forge.js:6248
 **The rail obstacle column blocks the REACH/wake name of every rail item — 0 of 463 slots can ever show a title**
 
 **Evidence.** for (let y = oy0; y <= oy1; y += 22) claim(top.x, y, 14);
@@ -323,7 +323,7 @@ The timeline scrubber was already hardened against exactly this (timeline-scrubb
 
 **Fix.** Give the guests their own lane instead of mutating the shared mode object — keep m.nodes canonical and hand the union only to packModeNodes / buildHouse — or, cheapest for now, make search-autocomplete read the un-augmented set via the snapshot (`local._houseModeSnapshot ? local._houseModeSnapshot.nodes : local.mode.nodes`), the same way the scrubber was fixed.
 
-### [polish] `chip-reserve-miscentred` — /Users/redacted-user/Desktop/PRODUCT DEVELOPMENT/Codex Atlas/src/js/views/forge.js:6224
+### [polish] `chip-reserve-miscentred` — src/js/views/forge.js:6224
 **The CASCADE/FAN registry reserve is centred on the crown but the chips are not, so the left ~7px of CASCADE is unprotected**
 
 **Evidence.** const wCas = ctx.measureText('CASCADE').width + 12;
@@ -338,7 +338,7 @@ CASCADE is text-anchor:end at cs.x-8, FAN is text-anchor:start at cs.x+8, so the
 
 **Fix.** Reserve the rect the chips actually occupy: centre at cs.x + (wFan - wCas) / 2 with width wCas + wFan + 16 + pad. Better still, measure once against the chips' own CSS font (or read getComputedTextLength off the SVG text nodes after the first paint and cache it) instead of approximating the tracking with a +12 constant.
 
-### [polish] `chip-family-colour-goes-stale` — /Users/redacted-user/Desktop/PRODUCT DEVELOPMENT/Codex Atlas/src/js/views/forge.js:6215
+### [polish] `chip-family-colour-goes-stale` — src/js/views/forge.js:6215
 **The crown chips keep the previous family's colour when the new house's hull has no colour**
 
 **Evidence.** for (const h of (hd0.hulls || [])) {
@@ -435,7 +435,7 @@ CLEAN, verified by reading and by measuring against the real data.js:
 Scratch scripts used (read-only, in the session scratchpad, nothing written to the repo): spine.mjs, mode.mjs, reach.mjs — each loads the real data.js + familytree.js and replays the placement arithmetic.
 
 ### canonical-honesty
-Probes (read-only, over the real 47MB data.js, mirroring forge.js's houseGuestsOf/augmentModeForHouse/buildHouse exactly): /private/tmp/claude-501/-Users-redacted-user-Desktop-PRODUCT-DEVELOPMENT-Codex-Atlas/f9d10bcf-51bf-4d55-934f-699d1ffb5d8a/scratchpad/canon-probe-lensC.mjs, canon-probe2-lensC.mjs, canon-probe3-lensC.mjs.
+Probes (read-only, over the real 47MB data.js, mirroring forge.js's houseGuestsOf/augmentModeForHouse/buildHouse exactly): the session scratchpad's canon-probe-lensC.mjs, canon-probe2-lensC.mjs, canon-probe3-lensC.mjs.
 
 CLEAN — verified equal to the vault:
 · Crown line 2. `st.docs`/`st.court` = the family's true document / non-deity-non-document member counts. Greek 24/137, Christian 125/330, Norse 2/25, Vedic 48/168, Other 19/2317, Chinese 24/66. Query: NODES.filter(family===F && type==='document'|else). Matches on every family tested.

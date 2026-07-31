@@ -42,7 +42,9 @@ LANE_B="$(printf '%s\n' "$STAGED_ALL" | grep -E '^(src/|index\.html$|build_[^/]+
 # Lane A owns: numbered content folders + the auto-regenerated meta files.
 # Regex widened 2026-05-19 from `^(0[1-9]_|1[0-7]_)` (16 lenses) to cover
 # all 29 lenses (post ontology lock pass 3): 01-09, 10-19, 20-29.
-LANE_A="$(printf '%s\n' "$STAGED_ALL" | grep -E '^(0[1-9]_|1[0-9]_|2[0-9]_)' || true)"
+# Widened again 2026-07-31 (great-cleanup Phase 0): 3[0-9]_ — the
+# 31_consciousness lens had silently fallen outside every content gate.
+LANE_A="$(printf '%s\n' "$STAGED_ALL" | grep -E '^(0[1-9]_|1[0-9]_|2[0-9]_|3[0-9]_)' || true)"
 
 if [ -n "$LANE_B" ] && [ -n "$LANE_A" ]; then
   echo "" >&2
@@ -63,6 +65,27 @@ if [ -n "$LANE_B" ] && [ -n "$LANE_A" ]; then
   echo "  Override (only if John explicitly authorised it):" >&2
   echo "    git commit --no-verify" >&2
   exit 1
+fi
+
+# ---------- 3b. Identity fast-gate (2026-07-31, great-cleanup Phase 0) ----------
+# Cheap grep of staged ADDITIONS against the founder kit's HARD identity
+# pattern, for feedback at commit time instead of push time (the 07-17
+# leak sat local for 11 days). The authoritative gate stays pre-push →
+# audit.sh. The pattern is READ from the kit at run time so no identity
+# string ever lives in this tracked file.
+KIT_AUDIT="$HOME/Desktop/PRODUCT DEVELOPMENT/_FOUNDER-PROTOCOL/audit.sh"
+if [ -f "$KIT_AUDIT" ]; then
+  IDPAT="$(sed -n 's/^REAL_ID_REGEX="\([^"]*\)".*/\1/p' "$KIT_AUDIT" | head -1)"
+  if [ -n "$IDPAT" ]; then
+    IDHITS="$(git diff --cached -U0 | grep -ciE "^\+.*($IDPAT)" || true)"
+    if [ "$IDHITS" != "0" ]; then
+      echo "" >&2
+      echo "✗ pre-commit: identity gate — $IDHITS staged added line(s) match the" >&2
+      echo "  founder-kit HARD identity pattern. Redact before committing." >&2
+      echo "  (Patterns live in _FOUNDER-PROTOCOL/audit.sh, not in this repo.)" >&2
+      exit 1
+    fi
+  fi
 fi
 
 # Find any staged .js files under src/js/.

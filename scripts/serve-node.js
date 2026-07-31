@@ -42,8 +42,9 @@ http.createServer((req, res) => {
   if (pathname === '/' || pathname === '') pathname = '/index.html';
   const filepath = path.join(ROOT, decodeURIComponent(pathname));
 
-  // Security: stay inside ROOT
-  if (!filepath.startsWith(ROOT)) {
+  // Security: stay inside ROOT. The trailing-separator check matters —
+  // a bare prefix test would also admit sibling dirs like "Codex Atlas2".
+  if (filepath !== ROOT && !filepath.startsWith(ROOT + path.sep)) {
     res.writeHead(403); res.end('Forbidden'); return;
   }
 
@@ -91,6 +92,8 @@ http.createServer((req, res) => {
       fs.createReadStream(filepath).pipe(res);
     }
   });
-}).listen(PORT, () => {
-  console.log(`serve-node.js listening on http://localhost:${PORT}  (root=${ROOT})`);
+// 2026-07-31 security lock: loopback ONLY — a bare .listen(PORT) bound all
+// interfaces and served the whole vault to anyone on the same network.
+}).listen(PORT, '127.0.0.1', () => {
+  console.log(`serve-node.js listening on http://localhost:${PORT}  (loopback only, root=${ROOT})`);
 });

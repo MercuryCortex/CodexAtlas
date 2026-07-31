@@ -73,6 +73,12 @@ class RangeRequestHandler(http.server.SimpleHTTPRequestHandler):
     def send_head_with_range(self):
         path = self.translate_path(self.path)
         if os.path.isdir(path):
+            # 2026-07-31 security lock: NO directory listings — the served
+            # root is the whole vault (private notes, audits). A dir only
+            # answers if it has its own index.html; everything else 404s.
+            if not os.path.isfile(os.path.join(path, "index.html")):
+                self.send_error(404, "File not found")
+                return None
             return super().send_head()
         try:
             f = open(path, "rb")
@@ -150,8 +156,10 @@ class ReuseAddrTCPServer(socketserver.TCPServer):
 
 if __name__ == "__main__":
     os.chdir(ROOT)
-    with ReuseAddrTCPServer(("", PORT), RangeRequestHandler) as httpd:
-        print(f"serve.py listening on http://localhost:{PORT}  (root={ROOT})")
+    # 2026-07-31 security lock: loopback ONLY. Binding "" exposed the whole
+    # vault (incl. the identity-mapping file) to anyone on the same network.
+    with ReuseAddrTCPServer(("127.0.0.1", PORT), RangeRequestHandler) as httpd:
+        print(f"serve.py listening on http://localhost:{PORT}  (loopback only, root={ROOT})")
         try:
             httpd.serve_forever()
         except KeyboardInterrupt:

@@ -38,6 +38,19 @@ for f in ('bg-x1-hd.mov', 'bg-x2-hd.mov'):
 # ── split data.js into <25MB chunks ─────────────────────────────────────
 raw = open(rel('data.js'), 'r', encoding='utf-8').read()
 obj = json.loads(re.match(r'\s*window\.VAULT_DATA\s*=\s*(.*);\s*$', raw, re.S).group(1))
+
+# ── SFW gate (CODEX §IX) ────────────────────────────────────────────────
+# This build reads MAGNUM data.js directly; the doctrine says the public
+# deploy ships data-sfw.js. Today zero nodes are flagged so the outputs
+# are identical — but the moment ANY node carries political_risk_flag,
+# this build must refuse rather than publish it. (2026-07-31, Phase 0.)
+flagged = [n.get('id', '?') for n in obj['nodes'] if n.get('political_risk_flag')]
+if flagged:
+    print(f'❌ SFW GATE: {len(flagged)} node(s) carry political_risk_flag but this '
+          f'build ships MAGNUM directly. Wire scripts/build_sfw.py into the deploy '
+          f'before shipping. First: {flagged[:5]}')
+    sys.exit(1)
+
 nodes = obj.pop('nodes')
 base = 'window.VAULT_DATA=' + json.dumps(obj, separators=(',', ':'), ensure_ascii=False) + ';window.VAULT_DATA.nodes=[];'
 open(os.path.join(DIST, 'data-base.js'), 'w', encoding='utf-8').write(base)
