@@ -791,6 +791,31 @@
     // is the measured root cause of "the fonts still very blurry
     // and tiny": 15-17 device px at half opacity on retina.
     house_type_scale:      1.0,
+    // ── THE GODS GET THEIR NAMES BACK (2026-07-31 wave 4) ────────
+    // John: "the DEities nodes are the most important and NEVER
+    // appear, i need to OVER to see the names.... even at 100%
+    // scale!" MEASURED before the fix: at camScale 1.0 the Norse
+    // house named 5 of its 50 gods (3 at the isolate's own fit
+    // scale), while every one of the 50 was drawn at the identical
+    // radius. Cause: the idle ladder gates each tier on zoom, and
+    // tier is a degree percentile taken across the WHOLE wheel — a
+    // question the house does not ask, because the house re-sizes
+    // every member onto its own radius lane. See label.js's OPEN SET.
+    //
+    // This is the CEILING on how many cascade members may be named
+    // at once, ordered by degree; `claim()` still decides who
+    // actually prints. 120 clears every family in the vault
+    // (Vedic is the largest cascade at 97). 0 is the honest zero —
+    // the ladder alone, i.e. the pre-wave-4 picture.
+    house_name_max:        120,
+    // THE TITLE BLOCK IS A LOCKED SCREEN FIXTURE (2026-07-31 wave 4).
+    // John: "the title is taking TOO MUCH space and central that
+    // forces the nodes to be around it… theres no reason for that,
+    // just find locked spots for these, the nodes should not be
+    // influenced by this title block." Which top corner it locks to —
+    // 'left' (default: the DEV/LAB drawer lives top-RIGHT) or
+    // 'right'. Never the bottom: the bottom bar owns that edge.
+    house_title_slot:      'left',   // 'left' | 'right'
     // THE HINT LINE (2026-07-31) — the wheel-state hint in the same
     // slot the house's exit line uses ('CLICK A FAMILY TITLE — THE
     // HOUSE'). Ship-a-dial law: on by default, 0 = the wheel paints
@@ -4889,6 +4914,28 @@
         let labelPool = local.mode.hitNodes;
         if (houseAtRest() && local._house.memberIds) {
           labelPool = labelPool.filter(hn => local._house.memberIds.has(hn.id));
+          // THE GODS GET THEIR NAMES BACK (wave 4) — the cascade's
+          // members are admitted to the idle set WITHOUT the tier
+          // zoom gate, in degree order, up to the house_name_max
+          // ceiling. Argument in label.js's OPEN SET header; the
+          // short version is that the ladder gates on a WHEEL degree
+          // percentile while the house re-sizes every member onto its
+          // own radius lane, so 47 of Norse's 50 equally-large discs
+          // were mute. Band/court members are NOT in this set — they
+          // already have the reach/wake name path, and a rank pass
+          // would carpet a 150-slot ring.
+          const treeIds = houseTreeIdSet();
+          const nameMax = (typeof local.params.house_name_max === 'number')
+            ? Math.max(0, Math.round(local.params.house_name_max)) : 120;
+          if (treeIds && treeIds.size && nameMax > 0) {
+            opts.openIds  = treeIds;
+            opts.openMax  = nameMax;
+            opts.openRank = houseDegreeMap();
+            // The wheel's own idle cap must not strangle the house's
+            // ceiling — inside a house the ladder holds only band
+            // mass, which the rank pass skips anyway.
+            opts.maxLabels = Math.max(opts.maxLabels || 0, nameMax);
+          }
         }
         const idleSet = graph.computeIdleLabelVisibility(labelPool, camScale, opts);
         // Phase 11C (2026-05-21) — filter out HIDDEN nodes. Labels
@@ -5175,11 +5222,18 @@
       const _hcy = camera.state.centerY;
       const _hbc = document.body.className;
       const _hdm = local._dividerMode || 'short';
+      // WAVE 4 — the isolated title is a LOCKED SCREEN FIXTURE, and
+      // its corner is a dial. The camera does not move when that dial
+      // flips, so without it in the key the title (and the CASCADE/FAN
+      // chips that follow it) stay where they were and the control
+      // reads as dead. Cheap: one string compare.
+      const _hts = local.params.house_title_slot || 'left';
       if (local._hullsIdleCamS === _hcs
           && local._hullsIdleCamCx === _hcx
           && local._hullsIdleCamCy === _hcy
           && local._hullsIdleBody === _hbc
           && local._hullsIdleDivM === _hdm
+          && local._hullsIdleTitle === _hts
           && local._hullsIdleData === data
           && local._hullsIdleW === vp.w
           && local._hullsIdleH === vp.h) {
@@ -5190,6 +5244,7 @@
       local._hullsIdleCamCy = _hcy;
       local._hullsIdleBody = _hbc;
       local._hullsIdleDivM = _hdm;
+      local._hullsIdleTitle = _hts;
       local._hullsIdleData = data;
       local._hullsIdleW = vp.w;
       local._hullsIdleH = vp.h;
@@ -5440,26 +5495,47 @@
         if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
       }
       // ── THE HOUSE (2026-07-30) — the family's own hull label RIDES
-      // to become the crown. While isolated at rest, the isolated
-      // title is re-anchored onto the house's crown point (the same
-      // element John clicks to leave — entry/exit unchanged), the
-      // other titles yield to the canvas port labels (CSS hides
-      // them), and the published rect list shrinks to the crown so
-      // node names don't dodge invisible titles.
+      // to become the title. While isolated at rest, the isolated
+      // title is re-anchored (the same element John clicks to leave —
+      // entry/exit unchanged), the other titles yield to the canvas
+      // port labels (CSS hides them), and the published rect list
+      // shrinks to this one so node names don't dodge invisible titles.
+      //
+      // WAVE 4 (2026-07-31) — the anchor is the LOCKED SCREEN FIXTURE,
+      // not the layout's world `crown` point. Same helper the canvas
+      // rows use (houseTitleAnchor), so the name and the two stat lines
+      // and the chips are one column that cannot drift apart, and the
+      // tree no longer arranges itself around a caption. text-anchor
+      // flips with the slot; it is restored to 'middle' the moment the
+      // wheel comes back (below), or every family title on the wheel
+      // would stay edge-aligned.
+      let isolatedTitleEl = null;
       if (houseAtRest() && local._isolateFamily) {
         for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
           if (data.hulls[i].family !== local._isolateFamily) continue;
           const labelEl = labelGroups[i].firstChild;
-          const crown = local._house.lay.house.crown;
-          const s = camera.worldToScreen(crown.x, crown.y, vp);
-          const lxStr = s.x.toFixed(1), lyStr = s.y.toFixed(1);
+          isolatedTitleEl = labelEl;
+          const a = houseTitleAnchor(vp);
+          const lxStr = a.x.toFixed(1), lyStr = a.y.toFixed(1);
+          const anch = a.right ? 'end' : 'start';
+          if (labelEl._lastAnchor !== anch) {
+            labelEl.setAttribute('text-anchor', anch); labelEl._lastAnchor = anch;
+          }
           if (labelEl._lastX !== lxStr) { labelEl.setAttribute('x', lxStr); labelEl._lastX = lxStr; }
           if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
           if (labelEl._lastVis !== '') { labelEl.style.opacity = ''; labelEl._lastVis = ''; }
-          const halfW = ((labelEl._w || 80) / 2) + 6;
+          const w = (labelEl._w || 80);
           titlePlaced.length = 0;
-          titlePlaced.push([s.x, s.y, halfW]);
+          titlePlaced.push([a.right ? a.x - w / 2 : a.x + w / 2, a.y, w / 2 + 6]);
           break;
+        }
+      }
+      // Any title NOT currently the isolated one is centred, always.
+      for (let i = 0; i < labelGroups.length; i++) {
+        const el2 = labelGroups[i].firstChild;
+        if (!el2 || el2 === isolatedTitleEl) continue;
+        if (el2._lastAnchor !== undefined && el2._lastAnchor !== 'middle') {
+          el2.setAttribute('text-anchor', 'middle'); el2._lastAnchor = 'middle';
         }
       }
       // Publish the title boxes so the NODE labels can avoid them.
@@ -6023,20 +6099,25 @@
       const byId = new Map();
       const dressOnL = (local.params.recipe_hover_zoom || 0) >= 1;
       const revealOn = dressOnL && (local.params.recipe_label || 0) >= 1;
-      // THE RAILS (2026-07-31) — a rail guest never competes for a RANK
-      // label. A high-degree scripture would otherwise displace a deity
-      // name in the middle of the tree, and the rails are a column of
-      // 24-150 slots at ~4 world units of pitch — a rank pass would
-      // carpet them. Guests stay fully in the REACH/wake path below
-      // (they are house members, so the houseMembers guard admits
-      // them), which IS the toy's promise: titles arrive when the
-      // pointer approaches the rail.
-      // WAVE 2 — the skip is the RAIL set, not the guest set. In
-      // person/theme/tradition/event modes the court rail is made of
-      // MODE MEMBERS, and a rank pass would carpet those columns for
-      // exactly the reason it would carpet a guest's.
+      // THE RANK PASS NAMES THE CASCADE AND NOTHING ELSE (wave 4).
+      // The band is a ring of 24-150 slots at a few world units of
+      // pitch — a rank pass would carpet it — and the parked remainder
+      // is a pile of radius-0 nodes on one point, so a rank name for
+      // one of those lands on the crown pointing at nothing. Both stay
+      // fully in the REACH/wake path below, which IS the toy's promise:
+      // titles arrive when the pointer approaches the ring.
+      //
+      // This ONE test replaces the wave-2 pair (skip guests, skip rail
+      // slots). In DEITIES mode it admits exactly the same population
+      // — rail slots are a subset of the guests and the tree is the
+      // rest. In person/theme/tradition/event modes it is strictly
+      // better twice over: the tree there is made of GUESTS, so the
+      // old guest-skip muted every god in the house, and the parked
+      // remainder was in neither skip set and could pile names on the
+      // crown.
       const atHouseNow = houseAtRest();
       const railSide = atHouseNow ? houseRailSideMap() : null;
+      const rankTreeIds = atHouseNow ? houseTreeIdSet() : null;
       // WAVE 3 — the rails are an ARC now, so "outboard" is RADIAL:
       // a rail name steps away from the house centre along its own
       // bearing, not horizontally. Centre computed once per paint.
@@ -6044,12 +6125,10 @@
         ? camera.worldToScreen(local._house.lay.house.center.x,
                                local._house.lay.house.center.y, vp)
         : null;
-      const rankSkip = atHouseNow ? houseGuestIdSet() : null;
       if (visible && visible.size) for (const id of visible) {
         const n = hitById ? hitById.get(id) : null;
         if (!n) continue;
-        if (rankSkip && rankSkip.has(id)) continue;
-        if (railSide && railSide.has(id)) continue;
+        if (rankTreeIds && !rankTreeIds.has(id)) continue;
         // Rank priority follows the tier ladder: a hub outranks a
         // long-tail name, exactly as label.js already decided.
         const c = { id, n, pri: 1000 - (n.tier | 0) * 10, target: 1, reach: 0, rv: 1 };
@@ -6180,10 +6259,38 @@
         // the bottom bar. Skipping (rather than nudging) is deliberate —
         // a nudged name would point at the wrong node.
         if (ly < KEEPOUT_TOP || ly > vp.h - KEEPOUT_BOTTOM) continue;
-        let ok = true;
-        for (let k = 0; k < placed.length; k++) {
-          const P = placed[k];
-          if (Math.abs(lx - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
+        const freeAt = (x, y) => {
+          for (let k = 0; k < placed.length; k++) {
+            const P = placed[k];
+            if (Math.abs(x - P[0]) < (wpx + P[2]) / 2 && Math.abs(y - P[1]) < 15) return false;
+          }
+          return true;
+        };
+        let ok = freeAt(lx, ly);
+        // A HOUSE NAME GETS A SECOND ROW (2026-07-31 wave 4). The
+        // cascade lays its members out in BEDS — same-rank gods share a
+        // y — so the single above-the-disc slot means every other name
+        // in a row loses to its neighbour on the 15px rule. Measured
+        // over 4 viewports: Greek 41/80 → 54/80, Mesopotamian 36 → 50,
+        // Norse 40 → 46, Christian 4/12 → 9/12 (its gods are the vault's
+        // largest discs, so its names are the widest).
+        //
+        // This is NOT a second label system and NOT a nudge: it is one
+        // ALTERNATIVE ROW through the same claim() list, mirrored about
+        // the disc, so a printed name still points unambiguously at its
+        // own node. textBaseline is 'bottom', so +rBub+16 puts the
+        // glyph body just under the disc, and the two candidate rows
+        // are 2·rBub+22 apart — over the 15px rule by construction, so
+        // one node can never claim both.
+        //
+        // HOUSE ONLY (law 3, honest zeros): rankTreeIds is null off the
+        // house, so the wheel's label picture is byte-identical. Rail
+        // names are excluded — they already step RADIALLY outboard.
+        if (!ok && rankTreeIds && rankTreeIds.has(c.id) && !rs) {
+          const ly2 = s.y + rBub + 16 + dy;
+          if (ly2 >= KEEPOUT_TOP && ly2 <= vp.h - KEEPOUT_BOTTOM && freeAt(lx, ly2)) {
+            ly = ly2; ok = true;
+          }
         }
         if (!ok) continue;
         placed.push([lx, ly, wpx]);
@@ -6228,10 +6335,23 @@
           ly = s.y - n.r * camScale - 6;
         }
         if (ly < KEEPOUT_TOP || ly > vp.h - KEEPOUT_BOTTOM) { fade.delete(id); continue; }
-        let ok = true;
-        for (let k = 0; k < placed.length; k++) {
-          const P = placed[k];
-          if (Math.abs(lx - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { ok = false; break; }
+        const freeAt2 = (x, y) => {
+          for (let k = 0; k < placed.length; k++) {
+            const P = placed[k];
+            if (Math.abs(x - P[0]) < (wpx + P[2]) / 2 && Math.abs(y - P[1]) < 15) return false;
+          }
+          return true;
+        };
+        let ok = freeAt2(lx, ly);
+        // The leaving name gets the SAME alternative row as the
+        // arriving one (wave 4) — otherwise a house name that printed
+        // below its disc would jump above it the instant it starts to
+        // fade, which reads as a flicker, not a crossfade.
+        if (!ok && rankTreeIds && rankTreeIds.has(id) && !rs) {
+          const ly2 = s.y + n.r * camScale + 16;
+          if (ly2 >= KEEPOUT_TOP && ly2 <= vp.h - KEEPOUT_BOTTOM && freeAt2(lx, ly2)) {
+            ly = ly2; ok = true;
+          }
         }
         if (!ok) continue;   // an arriving name owns the spot — this one just goes
         placed.push([lx, ly, wpx]);
@@ -6298,6 +6418,45 @@
     // Whole words or nothing; losers hide; the chrome keep-outs are
     // the same bands the node names respect.
     const HOUSE_MONO = 'ui-monospace,"SF Mono",Menlo,monospace';
+    // ══ THE TITLE BLOCK IS A LOCKED SCREEN FIXTURE (wave 4) ══════
+    // John: "the title is taking TOO MUCH space and central that
+    // forces the nodes to be around it… theres no reason for that,
+    // just find locked spots for these, the nodes should not be
+    // influenced by this title block."
+    //
+    // It used to be a WORLD anchor — the layout's `crown` point — so
+    // (a) it landed somewhere different in every family and in the FAN
+    // it landed at cy + 0.34·Rt, i.e. INSIDE the rings, which is the
+    // bottom-of-screen block in his Norse capture; and (b) the cascade
+    // reserved vertical world span for it (familytree.js §6), so the
+    // gods really were arranged around a caption.
+    //
+    // WHY THIS SLOT. The forge stage's chrome owns three edges and one
+    // corner: the app pill + user menu run along the TOP at y 14..50;
+    // the bottom bar (search · zoom · LEGEND · calendar) spans the
+    // BOTTOM at vp.h-14 upward; the DEV / LAB drawer is pinned TOP
+    // RIGHT at top:64 right:12. The band is a ring centred on the
+    // house — its topmost point sits ~24° off 12 o'clock (the gap the
+    // layout keeps), so it never reaches the upper corners. That
+    // leaves the TOP-LEFT: one constant place, clear of everything,
+    // in every family, every geometry, every zoom. 'right' is a dial
+    // for when the LAB drawer is closed and his eye wants it there.
+    //
+    // The stack pitch is still DERIVED from the type step (row()), so
+    // every row clears claim()'s 15px rule by construction; the block
+    // claims its rects FIRST in the paint, so nothing lands under it.
+    const HOUSE_TITLE_PAD = 24;   // screen px in from the stage edge
+    const HOUSE_TITLE_TOP = 66;   // KEEPOUT_TOP (52) + the title's own body
+    function houseTitleAnchor(vp) {
+      const right = (local.params.house_title_slot === 'right');
+      const w = (vp && vp.w) || 0;
+      return {
+        right,
+        // Never let the pad invert on a hostile viewport.
+        x: right ? Math.max(HOUSE_TITLE_PAD, w - HOUSE_TITLE_PAD) : HOUSE_TITLE_PAD,
+        y: HOUSE_TITLE_TOP,
+      };
+    }
     // Shared per-half ctx setup + the ONE claim() (byte-identical
     // collision math to the caller's name pass). Each half calls
     // env.restore() on its single exit.
@@ -6440,13 +6599,22 @@
       const { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, claim, halo, TYPE, row, font } = env;
       const fmtD = (d) => (d < 0 ? (-d) + ' BCE' : d + ' CE');
 
-      // 1 ▸ CROWN stats — the crown NAME is the family's own SVG hull
-      // label (repositioned by syncHulls, already seeded into `placed`
-      // via local._titleRects). Two honest mono lines beneath it.
+      // 1 ▸ THE TITLE BLOCK — a LOCKED SCREEN FIXTURE since wave 4
+      // (see houseTitleAnchor for the slot argument). Row 0 is the
+      // family's own SVG hull label, which syncHulls parks on the same
+      // anchor and which is already seeded into `placed` via
+      // local._titleRects; rows 1-3 are the two honest mono lines and
+      // the CASCADE / FAN chips. Nothing here reads the camera, so the
+      // block is in the same place in every family, every geometry and
+      // at every zoom — and the tree no longer has to make room for it.
       const st = house.stats || {};
-      const cs = W2S(house.crown.x, house.crown.y);
+      const anchor = houseTitleAnchor(vp);
+      const cs = { x: anchor.x, y: anchor.y };
       font('500', TYPE.head);
-      ctx.textAlign = 'center';
+      ctx.textAlign = anchor.right ? 'right' : 'left';
+      // claim() takes a rect CENTRE; the block is edge-aligned, so a
+      // line of width w centres half its width inboard of the anchor.
+      const cenX = (w) => anchor.right ? (anchor.x - w / 2) : (anchor.x + w / 2);
       // CANONICAL HONESTY (2026-07-31 wave 2 — CR-1, crown-noun-counts-
       // a-different-population, crown-noun-vs-tree-population).
       //
@@ -6486,7 +6654,7 @@
       // over the 15px collision rule by construction.
       const CROWN_ROW = row(TYPE.head);
       const w1 = ctx.measureText(line1).width;
-      if (claim(cs.x, cs.y + CROWN_ROW, w1 + 8)) {
+      if (claim(cenX(w1 + 8), cs.y + CROWN_ROW, w1 + 8)) {
         ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.92;
         halo(line1, cs.x, cs.y + CROWN_ROW);
       }
@@ -6501,8 +6669,9 @@
       // blank to hide.
       const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
       font('500', TYPE.cap);
+      ctx.textAlign = anchor.right ? 'right' : 'left';
       const w2 = ctx.measureText(line2).width;
-      if (claim(cs.x, cs.y + CROWN_ROW * 2, w2 + 8)) {
+      if (claim(cenX(w2 + 8), cs.y + CROWN_ROW * 2, w2 + 8)) {
         ctx.fillStyle = _labelsTextColor;
         // A zero room is stated, not shouted — one step quieter than a
         // populated one, still legible. (Wave 3 floors: nothing in the
@@ -6512,12 +6681,15 @@
         halo(line2, cs.x, cs.y + CROWN_ROW * 2);
       }
       ctx.globalAlpha = 1;
-      // 1b ▸ CASCADE / FAN chips — the geometry control, ON the crown
-      // where his eye already is (ratified 2026-07-31; the VIEW-panel
-      // radios were fv-wheel-only, i.e. never visible inside the
-      // house they control). SVG in the existing hulls overlay —
+      // 1b ▸ CASCADE / FAN chips — the geometry control, ON the title
+      // block where his eye already is (ratified 2026-07-31; the
+      // VIEW-panel radios were fv-wheel-only, i.e. never visible inside
+      // the house they control). SVG in the existing hulls overlay —
       // positioned here, claiming a registry rect so no canvas name
-      // lands beneath them.
+      // lands beneath them. WAVE 4: they follow the block into the
+      // screen fixture, still clickable, still the last row of the
+      // stack — the chips were positioned off the crown and would
+      // otherwise have been left behind over the tree.
       const chipsG = ensureHouseChips();
       if (chipsG) {
         syncHouseChipState();
@@ -6543,18 +6715,25 @@
         const wCas = ctx.measureText('CASCADE').width + 12;
         const wFan = ctx.measureText('FAN').width + 12;
         // WAVE 2 (chip-reserve-miscentred) — reserve the rect the chips
-        // actually occupy. CASCADE is text-anchor:end at cs.x-8 and FAN
-        // is text-anchor:start at cs.x+8, so the pair's real box runs
-        // [cs.x-8-wCas, cs.x+8+wFan] — centred (wFan-wCas)/2 from the
-        // crown, ~17px LEFT of it. Reserving a box centred on cs.x left
-        // ~7px of CASCADE's first glyph unprotected (a name or a rank
-        // caption placed later in the same pass could legally land on
-        // painted text) while reserving ~21px of nothing to its right.
-        claim(cs.x + (wFan - wCas) / 2, chipY, wCas + wFan + 22);   // best-effort reserve; the control shows regardless
+        // actually occupy. CASCADE is text-anchor:end at chipX-8 and
+        // FAN is text-anchor:start at chipX+8, so the pair's real box
+        // runs [chipX-8-wCas, chipX+8+wFan] — centred (wFan-wCas)/2
+        // from the pivot. Reserving a box centred on the pivot itself
+        // left ~7px of CASCADE's first glyph unprotected (a name or a
+        // rank caption placed later in the same pass could legally land
+        // on painted text) while reserving ~21px of nothing right of it.
+        //
+        // WAVE 4 — the pivot is SOLVED from the block's edge, not taken
+        // from the anchor, so the PAIR is flush with the rest of the
+        // stack instead of straddling it: left slot ⇒ CASCADE's first
+        // glyph starts on the block's left edge; right slot ⇒ FAN's
+        // last glyph ends on its right edge.
+        const chipX = anchor.right ? (anchor.x - wFan - 8) : (anchor.x + wCas + 8);
+        claim(chipX + (wFan - wCas) / 2, chipY, wCas + wFan + 22);   // best-effort reserve; the control shows regardless
         const chips = chipsG.querySelectorAll('.forge-house-chip');
         for (let ci = 0; ci < chips.length; ci++) {
           const isCas = chips[ci].getAttribute('data-house') === 'cascade';
-          chips[ci].setAttribute('x', (isCas ? cs.x - 8 : cs.x + 8).toFixed(1));
+          chips[ci].setAttribute('x', (isCas ? chipX - 8 : chipX + 8).toFixed(1));
           chips[ci].setAttribute('y', chipY.toFixed(1));
         }
       }
@@ -7286,11 +7465,12 @@
       }
       return s;
     }
-    // The resident guest ids, or null when the house holds none. One
-    // accessor so no caller reads a snapshot that belongs to a dead mode.
-    function houseGuestIdSet() {
-      return houseGuestState() ? local._houseGuestIds : null;
-    }
+    // (2026-07-31 wave 4) `houseGuestIdSet()` lived here. Its one
+    // caller was the RANK-label guest skip, and that test is gone:
+    // "is this a guest" was never the question the label pass was
+    // asking — "is this in the cascade" is (see rankTreeIds in
+    // renderLabelsCanvas). Deleted rather than left inert; the
+    // snapshot accessor `houseGuestState()` above is the real one.
     // id → rail side (-1 left / +1 right) for every DISPLAYED rail slot.
     // A rail item is NOT the same population as a guest: treeKindOf
     // routes by vault TYPE, so in person/theme/tradition/event modes
@@ -7310,6 +7490,39 @@
       }
       hs._railSide = map;
       return map;
+    }
+    // THE CASCADE'S OWN MEMBERSHIP (2026-07-31 wave 4) — the ids the
+    // layout actually put in the tree, read off `house.rows` (the
+    // layout is the only thing that knows: treeKindOf routes by vault
+    // TYPE and the degrade branch can hand the cascade the whole
+    // family). This is the population that gets house NAMES and the
+    // population the RANK pass admits — everything else in a house is
+    // band mass or parked remainder, and both have their own paths.
+    // Cached on the house object; the rows only move when a new house
+    // is built.
+    function houseTreeIdSet() {
+      const hs = local._house;
+      if (!hs || !hs.lay || !hs.lay.house) return null;
+      if (hs._treeIds) return hs._treeIds;
+      const set = new Set();
+      for (const row of (hs.lay.house.rows || [])) for (const id of row) set.add(id);
+      hs._treeIds = set;
+      return set;
+    }
+    // Degree over the mode AS THE HOUSE SEES IT — the order the house
+    // names compete in. Cached on the HOUSE, not on the mode: the mode
+    // object survives enter → exit → enter while its node/edge arrays
+    // are augmented and restored underneath it, so a mode-scoped cache
+    // would hand the next house a degree map built over a different
+    // graph. `local._house` is replaced wholesale on every build.
+    function houseDegreeMap() {
+      const hs = local._house;
+      const m = local.mode;
+      if (!hs || !m || !m.nodes || !m.edges) return null;
+      if (hs._degree) return hs._degree;
+      hs._degree = (typeof layout.computeDegree === 'function')
+        ? layout.computeDegree(m.nodes, m.edges) : new Map();
+      return hs._degree;
     }
 
     // Every vault node of this family that the current mode filtered
@@ -9532,6 +9745,16 @@
             // morph of one house, John's law); the spread scrub snaps.
             houseMorph() { try { refreshHouse(true); } catch (_) { /* ignore */ } },
             houseSnap()  { try { refreshHouse(false); } catch (_) { /* ignore */ } },
+            // WAVE 4 — A CONTROL YOU CAN'T SEE WORK IS UNSHIPPED. The
+            // label VISIBILITY set is computed in syncLabels, not in
+            // the paint, and renderLabelsCanvas's idle-skip compares
+            // that Set BY IDENTITY. So a dial that changes which names
+            // are eligible (house_name_max) or where the locked title
+            // block stands (house_title_slot) must rebuild the set —
+            // a plain redraw hits the idle cache and the dial reads as
+            // dead until the next pan. syncLabels allocates a fresh
+            // Set every call, which is exactly what busts it.
+            relabel() { try { syncLabels(); } catch (_) { /* ignore */ } startAnimLoop(); drawFrame(); },
           },
         });
         // The panel always exists now (John kept losing the ?lab URL);

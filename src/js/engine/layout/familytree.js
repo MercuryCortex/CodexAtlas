@@ -57,7 +57,11 @@
   // house re-presents the family CLOSE, not merely re-arranged.
   const CASCADE_TOP    = -0.58;  // yTop  = cy + Rh * CASCADE_TOP
   const CASCADE_BOTTOM =  0.84;  // yBot  = cy + Rh * CASCADE_BOTTOM
-  const CASCADE_BIAS   =  0.10;  // stack centre sits below cy
+  // CASCADE_BIAS (0.10 — "stack centre sits below cy") was here until
+  // 2026-07-31 wave 4. It existed to keep a column clear above the
+  // first rank for the crown's four-row caption stack; that block is a
+  // locked SCREEN fixture now and reserves nothing in world space, so
+  // the vertical offset is SOLVED per family instead (see §6).
   const CASCADE_CHORD  =  0.74;  // coarse chord factor for the P solve
   const BED_GG         =  0.55;  // extra air (in P) at group boundaries
   const BED_SUBDY      =  0.78;  // sub-row spacing (in P)
@@ -663,10 +667,77 @@
       // to zero and the overflow guard nukes P (the toy's Greek bug).
       P = Math.min(usable / Math.max(1, totalU), (2 * Rt * CASCADE_CHORD) / Math.max(1, maxWU), Rt * 0.16);
       P = Math.min(P * spread, usable / Math.max(1, totalU));
+      // ── THE CROWN'S RESERVED SPAN, GIVEN BACK (2026-07-31 wave 4) ──
+      // John: "the title is taking TOO MUCH space and central that
+      // forces the nodes to be around it… theres no reason for that."
+      // He is right, and CASCADE_BIAS was the mechanism: the stack's
+      // centre was pushed 0.10·Rt (≈46 world units) BELOW the house
+      // centre purely so the family name, two stat lines and the
+      // geometry chips had a clear column above the first rank. The
+      // block is a LOCKED SCREEN FIXTURE since wave 4 (forge.js
+      // houseTitleAnchor) and reserves nothing in world space, so the
+      // cascade may sit wherever it reads best.
+      //
+      // "Wherever it reads best" is not a new constant — it is SOLVED.
+      // The second pass below shrinks P by the worst bed's circle fit
+      // (a bed near a pole has a short chord), and where the block's
+      // centre lands is exactly what decides which bed is worst. So
+      // scan the legal offsets and take the one that maximises the
+      // worst fit; the objective is clamped at 1 (a bed that already
+      // fits cannot "fit more"), so when nothing is shrinking every
+      // offset ties and the tie-break picks the SMALLEST |offset| —
+      // i.e. the tree centres on the house, which is what the caption
+      // was stopping it doing. Deterministic: fixed grid, fixed pass
+      // order, no float compared for equality.
+      //
+      // MEASURED against the pre-wave-4 layout, median god radius per
+      // family (world units): Norse 18.7→21.1 (+12.7%), Mesoamerican
+      // 19.1→20.3 (+6.4%), Egyptian 15.9→16.8 (+5.8%), Vedic
+      // 16.4→17.0 (+3.5%), Chinese 22.7→23.1 (+1.9%), Celtic +0.3%,
+      // Greek / Christian / Mesopotamian / Baltic / Other unchanged.
+      // ZERO families lose. (Widening treeTop as well was tried and
+      // rejected: it costs Mesopotamian ~10%.)
+      const bedCentreU = [];
+      {
+        let u = 0;
+        for (const b of beds) {
+          if (!b) { bedCentreU.push(null); continue; }
+          bedCentreU.push(u + b.bedU / 2);
+          u += b.bedU + BED_GAP;
+        }
+      }
+      const V_STEPS = 96;
+      const solveVOffset = (P0) => {
+        const contentH = totalU * P0;
+        const lo = Rt * treeTop + contentH / 2;
+        const hi = Rt * treeBot - contentH / 2;
+        if (!(hi > lo)) return (lo + hi) / 2;   // content taller than the zone
+        const fitAt = (off) => {
+          let s = 1;                            // clamped: "already fits" is the ceiling
+          for (let r = 0; r < beds.length; r++) {
+            const b = beds[r];
+            if (!b) continue;
+            const dy = off - contentH / 2 + bedCentreU[r] * P0;
+            const half = Math.sqrt(Math.max(Rt * Rt * 0.0144, Rt * Rt - dy * dy));
+            s = Math.min(s, (half * 2 * 0.86) / Math.max(1e-6, b.wU * P0));
+          }
+          return s;
+        };
+        let best = -1;
+        for (let k = 0; k <= V_STEPS; k++) best = Math.max(best, fitAt(lo + ((hi - lo) * k) / V_STEPS));
+        const want = best * 0.995;              // within half a percent counts as tied
+        let bestOff = null;
+        for (let k = 0; k <= V_STEPS; k++) {
+          const off = lo + ((hi - lo) * k) / V_STEPS;
+          if (fitAt(off) < want) continue;
+          if (bestOff === null || Math.abs(off) < Math.abs(bestOff) - 1e-9) bestOff = off;
+        }
+        return (bestOff === null) ? Math.max(lo, Math.min(0, hi)) : bestOff;
+      };
       for (let attempt = 0; attempt < 2; attempt++) {
         const contentH = totalU * P;
         let y = Math.max(cy + Rt * treeTop,
-          Math.min(cy + Rt * CASCADE_BIAS - contentH / 2, cy + Rt * treeBot - contentH));
+          Math.min(cy + solveVOffset(P) - contentH / 2, cy + Rt * treeBot - contentH));
         let shrink = 1;
         rowMeta = [];
         let firstBandTop = null;
@@ -700,24 +771,17 @@
         P *= Math.max(0.5, shrink);   // deterministic second pass
       }
       const topY = (rowMeta.find(m => m.y != null) || { y: cy + Rt * treeTop }).y;
-      // CROWN CLEARANCE — the crown is not a point, it is a stack: the
-      // family name, the arc/orphan line, the SCRIPTORIUM/COURT line,
-      // and the CASCADE/FAN chips. That is four rows, ~68 screen px at
-      // the fit scale the isolate flies to. The old 88-world-unit gap
-      // reserved room for one and a half of them, so the chips landed
-      // on top of the first rank's discs the moment the rails gave the
-      // crown a second line. 132 clears the whole stack and still sits
-      // inside the `cy - Rh * 0.84` ceiling below, which is untouched.
-      // WAVE 3 — with the band standing, the crown stack is TALLER
-      // (the type scale lifted every chrome row from 17 to 21 screen
-      // px), and the tree zone is smaller, so the same P buys less
-      // world clearance. The band case therefore floors the gap at 96
-      // world units (~66 screen px at the isolate fit — three type
-      // rows plus the title) and lets big-P houses take up to 170.
-      // The no-band branch is byte-identical to the pre-ring formula.
-      crown = { x: cx, y: Math.max(cy - Rh * 0.84, topY - (hasBand
-        ? Math.max(96, Math.min(P * 2.2, 170))
-        : Math.min(P * 1.9, 132))) };
+      // THE CROWN IS NO LONGER A TEXT ANCHOR (2026-07-31 wave 4).
+      // It used to reserve clearance for a four-row caption stack —
+      // 96-170 world units under the wave-3 type scale — because the
+      // family name, both stat lines and the CASCADE/FAN chips hung
+      // off it. All four are a LOCKED SCREEN FIXTURE now (forge.js
+      // houseTitleAnchor), so the only jobs left are (a) the apex of
+      // the room and (b) the park point for the band's overflow
+      // remainder, which stands at radius 0 and never draws. One
+      // modest clearance above the first rank does both; the
+      // `cy - Rh * 0.84` ceiling is untouched.
+      crown = { x: cx, y: Math.max(cy - Rh * 0.84, topY - Math.min(P * 0.9, 60)) };
     } else {
       // FAN — the crown is the TRUNK: origin below center so the
       // crest of rings fills the house instead of hugging the rim.
