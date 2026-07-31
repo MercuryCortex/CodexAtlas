@@ -212,6 +212,23 @@
     'manifestation-of':                    'kinship',       // honji-suijaku / avatara / incarnation
     'avatara-of':                          'kinship',       // legacy — subsumed by manifestation-of via notes variant
     'constituent-of':                      'kinship',
+    // 2026-07-31 — the `syncretic-` prefixed twins of the identity
+    // relations above were never routed, so 295 edges fell through to
+    // the 'association' default and painted as ambient context. That
+    // is wrong on the wheel (a constituent-of relation is an identity
+    // claim, not a shared milieu) and it split THE HOUSE's aspect bars
+    // across two hues. Counts are live at 2026-07-31 over data.js.
+    // NOTE deliberately NOT moved: `syncretic-aspect-of` stays in
+    // FUSION per ONTOLOGY.md §3 (equivalents[] → syncretic → Fusion);
+    // 2 edges, both Vedic. Reversing that is an ontology decision, not
+    // a rendering one.
+    'syncretic-constituent-of':            'kinship',       // 266
+    'syncretic-manifestation-of':          'kinship',       // 19
+    'syncretic-avatara-of':                'kinship',       // 8
+    'syncretic-emanation-of':              'kinship',       // 1
+    'emanation-of':                        'kinship',       // 0 today — the bare twin
+    'syncretic-phenomenological-aspect-of': 'kinship',      // 1
+    'phenomenological-aspect-of':          'kinship',       // 0 today — the bare twin
 
     // ── PROTOCOL §3.1 — POLEMIC (red): 5 types ────────────────
     // 'polemic-against' + 'polemic-inversion' already mapped above
