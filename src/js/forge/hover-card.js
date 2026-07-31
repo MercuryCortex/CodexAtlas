@@ -249,10 +249,84 @@
 
     window.addEventListener('resize', hide);
 
+    // ── THE PORT CARD (2026-07-31 wave 3, LAW 2) ────────────────
+    // A horizon port is not a node: it is the point every node of one
+    // family collapses onto while another family's house stands. The
+    // node card would have to pick one of them and name it, which is
+    // a lie about what the pointer is on — so the port gets its own
+    // card, and every number on it is counted from the live mode by
+    // the view (housePortCardInfo), never estimated here.
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function metaRow(k, v) {
+      return '<div class="forge-hover-card-meta-row">'
+           + '<span class="forge-hover-card-meta-k">' + esc(k) + '</span>'
+           + '<span class="forge-hover-card-meta-v">' + esc(v) + '</span></div>';
+    }
+    function showPort(info) {
+      if (!info || !info.group) return;
+      const one = (n, s, p) => n + ' ' + (n === 1 ? s : (p || (s + 's')));
+      nameEl.textContent = info.group;
+      tradEl.textContent = 'HORIZON PORT';
+      tradEl.style.display = '';
+      const nm = info.members || 0;
+      descEl.textContent = one(nm, 'node') + ' of this family '
+        + (nm === 1 ? 'stands' : 'stand') + ' at this point — click to travel.';
+      descEl.style.display = '';
+      const pills = [];
+      const counts = info.buckets || {};
+      for (const b of BUCKET_ORDER) {
+        const n = counts[b] || 0;
+        if (!n) continue;
+        pills.push(
+          '<span class="forge-hover-card-wire" style="color:' + bucketHex(b) + '">'
+          +   '<span class="forge-hover-card-wire-dot" style="background:' + bucketHex(b) + '"></span>'
+          +   n
+          + '</span>'
+        );
+      }
+      wiresEl.innerHTML = pills.join('');
+      wiresEl.style.display = pills.length ? '' : 'none';
+      const rows = [];
+      if (info.wires) {
+        rows.push(metaRow('Lit', one(info.wires, 'wire') + ' to ' + (info.house || 'this house')));
+        rows.push(metaRow('Lands on', info.touches + ' of ' + info.houseMembers + ' in the house'));
+      } else {
+        rows.push(metaRow('Lit', 'no wire reaches this house'));
+      }
+      // Honest remainder: wires whose house end is a rail item parked
+      // off-stage have no terminus to draw to, so they are counted but
+      // never lit. Saying so is cheaper than a line that goes nowhere.
+      if (info.parked) rows.push(metaRow('Off-stage', one(info.parked, 'wire') + ' to parked nodes'));
+      metaEl.innerHTML = rows.join('');
+      metaEl.style.display = rows.length ? '' : 'none';
+      img.style.display = 'none';
+      img.removeAttribute('src');
+      card.classList.add('is-shown');
+      measure();
+      pickAnchor();
+      applyTransform();
+    }
+
     local._onHoverChange = function (id) {
+      // The port card and the node card share one element and one
+      // timer. The view sets the port FIRST and then clears the node
+      // hover, so an unguarded clearTimeout here would cancel the
+      // port card's own scheduled show before it ever painted.
+      // A cleared node hover with a port standing is not "nothing
+      // hovered" — it is "the port owns this slot".
+      if (!id && local._portHoverGroup) return;
       if (showId) { clearTimeout(showId); showId = 0; }
       if (!id) { hide(); return; }
       showId = setTimeout(() => { showId = 0; showFor(id); }, 150);
+    };
+    local._onPortHoverChange = function (info) {
+      if (showId) { clearTimeout(showId); showId = 0; }
+      if (!info) { hide(); return; }
+      showId = setTimeout(() => { showId = 0; showPort(info); }, 150);
     };
     canvas.addEventListener('mouseleave', hide);
   }

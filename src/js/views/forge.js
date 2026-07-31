@@ -778,6 +778,26 @@
     // byte-identical to before the hint existed (the house's own
     // exit/travel line is NOT gated — it predates this dial).
     house_hint_line:       1,
+    // ── THE THREE INTERACTION LAWS (2026-07-31 wave 3) ──────────
+    // John: "Empty click should only work Outside the circle - not
+    // inside the circle." Inside a house the tree is mostly empty
+    // space between discs, so a click aimed at nothing in particular
+    // (or a slightly-missed disc) threw him out of the room he was
+    // reading. The exit gesture now requires the pointer to be
+    // OUTSIDE the house circle. This dial is that boundary as a
+    // fraction of the house radius Rh — the horizon ports sit at
+    // exactly 1.0, the rails at 0.885, so 1.0 means "past the
+    // horizon". 0 restores the pre-wave-3 gesture (any empty click
+    // exits) and is therefore the honest zero of this law.
+    // Escape is unaffected — it is the keyboard way out at any
+    // pointer position.
+    house_exit_r:          1.0,
+    // Slack (screen px) added to a horizon port's DRAWN radius for
+    // hover AND click. The port is now the ONLY way to reach a
+    // collapsed family: the nodes piled on it are no longer
+    // individually hoverable or clickable, so the target the reader
+    // aims at is the one they can see. 10 = the pre-wave-3 constant.
+    house_port_hit:        10,
   });
 
   function render(rootEl) {
@@ -1894,6 +1914,14 @@
       hoverId:     null,
       lockedSet:   new Set(),    // Phase 4b: sticky focus from clickNode
       focusedSet:  null,
+      // WAVE 3, LAW 2 (2026-07-31) — the WIRES' focus set. Identical
+      // to focusedSet except while a horizon port is hovered, when
+      // focusedSet additionally carries the port-relevant house
+      // members so they read bright without their whole neighbourhood
+      // lighting up. See recomputeFocus.
+      focusedEdgeSet: null,
+      // The family whose horizon port is under the pointer, or null.
+      _portHoverGroup: null,
       // Phase TL-2 Step 1 (2026-05-24) — layout selector. Default
       // 'wheel' = radialWedgeLayout (the existing radial deity wheel).
       // 'timeline' = timelineLayout (TL-1 module). Flipped by
@@ -2219,6 +2247,68 @@
           };
         })() : null,
       }),
+      // ── WAVE 3 (2026-07-31) — THE THREE INTERACTION LAWS ──
+      // Same reason as enterHouse above: synthetic pointer events do
+      // not reach the canvas under WebDriver, so every live probe for
+      // laws 1-3 drives the REAL functions through these. None of
+      // them is a second implementation.
+      //
+      // LAW 1 — where the circle is on screen right now, so a probe
+      // can aim inside and outside it without guessing.
+      houseCircle: () => {
+        const hs = local._house;
+        if (!hs || !hs.lay || !hs.lay.house) return null;
+        const H = hs.lay.house;
+        const vp = local.lastSize;
+        const c  = camera.worldToScreen(H.center.x, H.center.y, vp);
+        const e  = camera.worldToScreen(H.center.x + H.radius, H.center.y, vp);
+        return {
+          world:  { x: H.center.x, y: H.center.y, r: H.radius },
+          screen: { x: +c.x.toFixed(1), y: +c.y.toFixed(1), r: +Math.abs(e.x - c.x).toFixed(1) },
+          exitR:  (typeof local.params.house_exit_r === 'number') ? local.params.house_exit_r : 1,
+          viewport: { w: vp.w, h: vp.h },
+        };
+      },
+      // LAW 1 + LAW 3 — the gesture itself. Returns what it decided:
+      //   'inside-ignored' | 'left-house' | 'left-house-lock-kept'
+      //   | 'lock-cleared'  | 'noop'
+      emptyClickAt: (x, y) => emptyClickAt(x, y),
+      exitZoneAt:   (x, y) => houseExitZoneAt(x, y),
+      // LAW 2 — hover a horizon port by name and read back exactly
+      // what lit. `litTargets` counts the live edge-target array, so
+      // it is the renderer's own answer, not a re-derivation.
+      portHover: (g) => {
+        setPortHover(g || null);
+        try { recomputeFocus(); } catch (_) { /* ignore */ }
+        const rec = housePortFocusRec();
+        let lit = 0;
+        const t = local.edgeTargets;
+        if (t) for (let i = 0; i < t.length; i++) if (t[i] >= 1 && t[i] < 1.5) lit++;
+        return {
+          port:       local._portHoverGroup,
+          hoverId:    local.hoverId,
+          wires:      rec ? rec.edges.length : 0,
+          lands:      rec ? rec.members.size : 0,
+          parked:     rec ? rec.parked : 0,
+          litTargets: lit,
+          nodeFocus:  local.focusedSet ? local.focusedSet.size : 0,
+          edgeFocus:  local.focusedEdgeSet ? local.focusedEdgeSet.size : 0,
+          card:       local._portHoverGroup
+            ? housePortCardInfo(local._portHoverGroup, rec) : null,
+        };
+      },
+      // The ports as drawn, biggest first — the names portHover takes.
+      portList: () => {
+        const hs = local._house;
+        if (!hs || !hs.lay || !hs.lay.ports) return [];
+        const vp = local.lastSize;
+        return hs.lay.ports.map(p => {
+          const s = camera.worldToScreen(p.x, p.y, vp);
+          return { group: p.group, nodes: p.members, weight: p.count,
+                   worldR: +p.r.toFixed(2),
+                   screen: { x: +s.x.toFixed(1), y: +s.y.toFixed(1) } };
+        });
+      },
       // 4 floats/instance since the SCALE pass: [x, y, houseRadius].
       housePosBAt:  (i) => (local._house
         ? [local._house.nodePosB[i * 4], local._house.nodePosB[i * 4 + 1], local._house.nodePosB[i * 4 + 2]]
@@ -3950,6 +4040,8 @@
       local.hoverId    = null;
       local.lockedSet  = new Set();
       local.focusedSet = null;
+      local.focusedEdgeSet = null;
+      local._portHoverGroup = null;
       if (preserveLocks && savedLocks && savedLocks.length) {
         for (const id of savedLocks) {
           if (typeof id === 'string' && adj && adj.has(id)) {
@@ -7613,6 +7705,35 @@
       }
       return alive;
     }
+    // WAVE 3, LAW 3 — drop any locked / hovered id the CURRENT mode
+    // cannot show, and re-derive the focus over the mode that is
+    // actually resident. Called from settleHouse's restore branch,
+    // i.e. exactly once per exit that evicted guests. Honest zeros:
+    // an empty lock and an absent hover make this a no-op, so an exit
+    // with no selection carried is byte-identical to before.
+    function pruneLockToMode() {
+      const byId = local.mode && local.mode.nodesById;
+      if (!byId || !byId.has) return;
+      if (local.hoverId != null && !byId.has(local.hoverId)) local.hoverId = null;
+      if (!local.lockedSet.size) return;
+      const gone = [];
+      for (const id of local.lockedSet) if (!byId.has(id)) gone.push(id);
+      for (const id of gone) {
+        local.lockedSet.delete(id);
+        if (typeof local._onLockChange === 'function') {
+          try { local._onLockChange(id, 'remove'); } catch (_) { /* ignore */ }
+        }
+      }
+      if (gone.length) {
+        const lEl = document.getElementById('forge-status-lock');
+        if (lEl) lEl.textContent = local.lockedSet.size > 0 ? String(local.lockedSet.size) : '—';
+        saveRuntimeState();
+      }
+      // The carried lock's neighbourhood was resolved against the
+      // AUGMENTED adjacency; the wheel's own is a different graph.
+      try { recomputeFocus(); } catch (_) { /* ignore */ }
+    }
+
     // Ramp end — the world is at rest again: rebuild the CPU world
     // (hit grid, label + hull idle caches), free exit state.
     function settleHouse() {
@@ -7636,6 +7757,17 @@
         // If the camera is still flying home this pack was made at a
         // mid-flight scale — tickLayoutMix re-packs once it lands.
         local._houseRepackPending = camera.isAnimating();
+        // WAVE 3, LAW 3 — the lock now SURVIVES the exit, so the
+        // wheel it lands on has to be able to hold it. A GUEST (a
+        // document, a person, a rite — anything the mode filtered
+        // out) exists only while its house stands; restoreModeSnapshot
+        // has just evicted it, so a lock on one would be a tab and a
+        // count pointing at a node that is not on screen and cannot be
+        // reached. Drop exactly those, tell the tab strip, and leave
+        // every lock the wheel can actually show. A deity locked in a
+        // deities-mode house is never a guest and always survives —
+        // which is the case John described.
+        pruneLockToMode();
       }
       rebakeHitPositions();
       local._labelsIdleCamS = null;   // bust the idle-skip caches so
@@ -7776,14 +7908,28 @@
       drawFrame();
     }
     // Port hit-test in world space — checked BEFORE the node test on
-    // click, because the ported nodes pile exactly on the port point.
+    // BOTH hover and click, because the ported nodes pile exactly on
+    // the port point.
+    //
+    // WAVE 3 (2026-07-31), LAW 2 — the hit target is the port's DRAWN
+    // radius plus house_port_hit screen px of slack, and nothing else.
+    // It used to be the drawn radius for CLICK only; hover fell
+    // through to hitTestAt, which resolved against whichever of the
+    // family's piled nodes happened to own the biggest wheel disc at
+    // that point. John: "a lot of bugs on the families circular band
+    // outside - they reveal deities in this state and should not".
+    // Aiming at a thing the reader can see is the whole contract of a
+    // hit target; see houseHoverResolve for the other half (the piled
+    // nodes are no longer individually reachable at all).
     function housePortAt(cssX, cssY) {
       if (!local._house || !local._house.lay.ports) return null;
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return null;
       const world = camera.screenToWorld(cssX, cssY, vp);
       const sc = (camera.state && camera.state.scale) || 1;
-      const slackWu = 10 / sc;
+      const slackPx = (typeof local.params.house_port_hit === 'number')
+        ? Math.max(0, local.params.house_port_hit) : 10;
+      const slackWu = slackPx / sc;
       let best = null, bd = Infinity;
       for (const pt of local._house.lay.ports) {
         const dx = world.x - pt.x, dy = world.y - pt.y;
@@ -7791,6 +7937,257 @@
         if (d <= pt.r + slackWu && d < bd) { bd = d; best = pt; }
       }
       return best;
+    }
+
+    // ════════════════════════════════════════════════════════════
+    // THE THREE INTERACTION LAWS  (2026-07-31 wave 3)
+    // ════════════════════════════════════════════════════════════
+    // John used the house and sent three rules about what a click or
+    // a hover MEANS while it stands. All three are implemented in
+    // this block plus toggleLock / recomputeFocus / the pointer
+    // handlers; each is pinned by a source assertion in
+    // scripts/check-house-interaction.mjs so an edit that undoes one
+    // goes red instead of quietly regressing back onto his screen.
+    //
+    //   LAW 1  an empty click only exits from OUTSIDE the circle
+    //   LAW 2  a port hover lights only THIS house's transmission
+    //   LAW 3  leaving carries the locked node's connections home
+    //
+    // HONEST ZEROS: every helper below returns null / false the
+    // moment there is no house, so the wheel's behaviour is exactly
+    // what it was.
+
+    // LAW 1 — is this screen point outside the house's own circle?
+    // Answered in WORLD space (the circle's centre and radius are
+    // fixed by the layout), so it is correct mid-flight too, while
+    // the camera is still easing onto the house.
+    // house_exit_r is a fraction of Rh: 0 restores the old gesture
+    // (anywhere exits), 1.0 puts the boundary on the horizon ports.
+    //
+    // Rh IS THE BOUNDARY, not the rails' inner band. lay.house
+    // exposes center + radius + rails.{left,right}.x (the rail
+    // COLUMN, at ±0.885·Rh) and no band radius of its own; if the
+    // sibling's inner band ever publishes one, this is the single
+    // place that reads it.
+    function houseExitZoneAt(cssX, cssY) {
+      const h = local._house;
+      if (!h || !h.lay || !h.lay.house) return true;   // no house ⇒ no gate
+      const frac = (typeof local.params.house_exit_r === 'number')
+        ? local.params.house_exit_r : 1.0;
+      if (frac <= 0) return true;                      // dialled off
+      const vp = local.lastSize;
+      if (!vp.w || !vp.h) return true;
+      const c = h.lay.house.center || { x: 0, y: 0 };
+      const Rh = h.lay.house.radius;
+      if (!(Rh > 0)) return true;
+      const world = camera.screenToWorld(cssX, cssY, vp);
+      const dx = world.x - c.x, dy = world.y - c.y;
+      const lim = Rh * frac;
+      if ((dx * dx + dy * dy) > (lim * lim)) return true;
+      // THE TRAP DOOR — a gate that cannot be satisfied is not a rule,
+      // it is a locked room. Zoom in far enough (or shrink the pane)
+      // and the circle covers every pixel, so there is no "outside" to
+      // click and the only ways out would be Escape and a family title
+      // that is itself off-screen. When no corner of the viewport is
+      // outside the circle, the gesture has no target and the old
+      // meaning stands. Four corners, one empty click — free.
+      const outsideCorner = (sx, sy) => {
+        const w = camera.screenToWorld(sx, sy, vp);
+        const ax = w.x - c.x, ay = w.y - c.y;
+        return (ax * ax + ay * ay) > (lim * lim);
+      };
+      if (!outsideCorner(0, 0) && !outsideCorner(vp.w, 0)
+          && !outsideCorner(0, vp.h) && !outsideCorner(vp.w, vp.h)) return true;
+      return false;
+    }
+
+    // Is this id one of the nodes COLLAPSED ONTO A HORIZON PORT?
+    // Members are laid out in the tree; rail items (including the
+    // parked remainder, at radius 0) all carry a layout radius. A
+    // non-member with no radius entry is, by construction, a node
+    // sitting on its family's port — one of a pile that shares a
+    // single point and cannot be aimed at individually.
+    function houseIsPortedId(id) {
+      const h = local._house;
+      if (!h || !h.lay || id == null) return false;
+      if (h.memberIds && h.memberIds.has(id)) return false;
+      const r = h.lay.radii;
+      return !(r && r.has && r.has(id));
+    }
+
+    // LAW 2 — the transmission a port stands for.
+    // Built ONCE per house, lazily: group name → the wires that
+    // connect THAT family to THIS house's members, the members they
+    // land on, and the bucket census for the card. Nothing else.
+    //
+    //   extern[ei] === 1  exactly one endpoint is a member (buildHouse)
+    //   extern[ei] === 3  the wire touches a PARKED node — it has no
+    //                     terminus and the shader hides it at every
+    //                     chip position, so lighting it would be a
+    //                     claim of a line the reader will never see.
+    //                     Counted separately and reported as such.
+    // Class 2 (port↔port) can never enter: it is not class 1. That is
+    // the guard against resurrecting the mesh the rest-wires chip
+    // exists to hide.
+    function housePortFocusMap() {
+      const h = local._house;
+      const m = local.mode;
+      if (!h || !h.bones || !m || !m.edges || !m.nodesById) return null;
+      if (h._portFocus) return h._portFocus;
+      const extern = h.bones.extern;
+      if (!extern || extern.length !== m.edges.length) return null;
+      const EB = window.EDGE_BUCKET || {};
+      const out = new Map();
+      const rec = (g) => {
+        let r = out.get(g);
+        if (!r) {
+          r = { group: g, edges: [], members: new Set(), others: new Set(),
+                buckets: Object.create(null), parked: 0 };
+          out.set(g, r);
+        }
+        return r;
+      };
+      for (let ei = 0; ei < m.edges.length; ei++) {
+        const cls = extern[ei];
+        if (cls !== 1 && cls !== 3) continue;
+        const e = m.edges[ei];
+        const sIn = h.memberIds.has(e.source);
+        const tIn = h.memberIds.has(e.target);
+        if (sIn === tIn) continue;            // class 3 also covers member↔member
+        const other = m.nodesById.get(sIn ? e.target : e.source);
+        if (!other) continue;
+        const g = isolateGroupOf(other);
+        const r = rec(g);
+        if (cls === 3) { r.parked++; continue; }
+        r.edges.push(ei);
+        r.members.add(sIn ? e.source : e.target);
+        r.others.add(other.id);
+        const b = EB[e.type] || 'association';
+        r.buckets[b] = (r.buckets[b] || 0) + 1;
+      }
+      h._portFocus = out;
+      return out;
+    }
+    // The record for the port currently under the pointer, or null.
+    // Gated on a standing house so every consumer is an honest zero.
+    function housePortFocusRec() {
+      if (!local._isolateFamily || !local._house || !local._portHoverGroup) return null;
+      const map = housePortFocusMap();
+      return map ? (map.get(local._portHoverGroup) || null) : null;
+    }
+    // Set / clear the hovered port. Returns true when it changed.
+    // Rides setHoverId's rAF coalescing budget so a sweep across the
+    // horizon costs one recompute per frame, not one per pointermove.
+    function setPortHover(group) {
+      const g = group || null;
+      if ((local._portHoverGroup || null) === g) return false;
+      local._portHoverGroup = g;
+      // The hover card + the status readout follow the port, not a
+      // node: a port stands for N collapsed nodes, so a single node's
+      // name would be a lie about what the pointer is on.
+      const rec = housePortFocusRec();
+      const hEl = document.getElementById('forge-status-hover');
+      if (hEl && g) {
+        hEl.textContent = g + ' — ' + (rec ? rec.edges.length : 0) + ' wires here';
+      } else if (hEl && !g && local.hoverId == null) {
+        hEl.textContent = '—';
+      }
+      if (typeof local._onPortHoverChange === 'function') {
+        try { local._onPortHoverChange(g ? housePortCardInfo(g, rec) : null); }
+        catch (_) { /* ignore — a card-side error never breaks hover */ }
+      }
+      if (!local.hoverRafId) {
+        local.hoverRafId = requestAnimationFrame(() => {
+          local.hoverRafId = 0;
+          local.hoverPendingId = undefined;
+          if (local.destroyed) return;
+          recomputeFocus();
+        });
+      }
+      return true;
+    }
+    // What the port's card says. Every number is counted from the
+    // live mode + the house's own external classes — no estimate.
+    function housePortCardInfo(group, rec) {
+      const h = local._house;
+      const pts = (h && h.lay && h.lay.ports) || [];
+      let port = null;
+      for (const p of pts) if (p.group === group) { port = p; break; }
+      return {
+        group,
+        house:   local._isolateFamily,
+        color:   port ? port.color : null,
+        members: port ? port.members : 0,          // nodes collapsed here
+        wires:   rec ? rec.edges.length : 0,       // wires that actually light
+        touches: rec ? rec.members.size : 0,       // house members they land on
+        parked:  rec ? rec.parked : 0,             // reach a parked node: no terminus
+        houseMembers: (h && h.memberIds) ? h.memberIds.size : 0,
+        buckets: rec ? rec.buckets : null,
+      };
+    }
+    // LAW 2, the edge half — force exactly the port's own wires HOT.
+    // Applied at BOTH edge-target sites, BEFORE applyEdgeHiddenFilters
+    // so a tier-filtered or political-risk wire still loses (hidden
+    // wins), and before the bones so a bone that is also a port wire
+    // reads at the higher of the two.
+    function applyPortHoverOverride(targets) {
+      const rec = housePortFocusRec();
+      if (!rec) return;
+      const eis = rec.edges;
+      for (let i = 0; i < eis.length; i++) {
+        const ei = eis[i];
+        if (ei >= targets.length) continue;
+        if (targets[ei] < 1) targets[ei] = 1.0;
+      }
+    }
+    // LAW 1 — THE EMPTY-CLICK GESTURE, as one function.
+    // John: "Empty click should only work Outside the circle - not
+    // inside the circle." A house is mostly empty space between the
+    // discs, so the dismiss gesture was firing on every near-miss and
+    // throwing him out of the room he was reading. Inside the circle
+    // an empty click now does NOTHING AT ALL — it does not clear the
+    // lock either, because a miss is not an instruction.
+    //
+    // It lives here rather than inline in endPan for one reason: the
+    // live verification surface (_forgeDebug.emptyClickAt) has to
+    // drive the code the pointer drives, not a second copy of it —
+    // synthetic pointer events never reach the canvas under WebDriver.
+    //
+    // Honest zeros: with no house standing the gate is skipped and
+    // this is exactly the wheel's old "click empty to dismiss".
+    // Escape is untouched — it is the way out from any pointer
+    // position, and it goes through the same setIsolateFamily(null).
+    function emptyClickAt(cssX, cssY) {
+      local._lastClickId = null;
+      local._lastClickT  = 0;
+      if (local._isolateFamily && local._house
+          && !houseExitZoneAt(cssX, cssY)) return 'inside-ignored';
+      const wasHouse = !!local._isolateFamily;
+      const hadLock  = local.lockedSet.size > 0;
+      toggleLock(null);
+      // LAW 3 names the two steps: leaving is step one even with a
+      // lock standing; the lock only clears on the next empty click.
+      return wasHouse ? (hadLock ? 'left-house-lock-kept' : 'left-house')
+                      : (hadLock ? 'lock-cleared' : 'noop');
+    }
+
+    // The one hover resolver for the canvas. Returns the node id under
+    // the pointer, or null — and owns the port-hover state as it goes.
+    // While a house stands at rest the horizon is PORTS, never the
+    // nodes piled behind them.
+    function houseHoverResolve(cssX, cssY) {
+      if (!local._isolateFamily || !local._house || houseInFlight()) {
+        setPortHover(null);
+        return hitTestAt(cssX, cssY);
+      }
+      const pt = housePortAt(cssX, cssY);
+      if (pt && pt.group !== local._isolateFamily) {
+        setPortHover(pt.group);
+        return null;
+      }
+      setPortHover(null);
+      const hit = hitTestAt(cssX, cssY);
+      return houseIsPortedId(hit) ? null : hit;
     }
 
     // Dims every node outside the isolated group (state 1 = the SAME
@@ -7815,6 +8212,11 @@
     function setIsolateFamily(fam) {
       const hulls = (local.mode && local.mode.hullData && local.mode.hullData.hulls) || null;
       const wasIsolated = !!local._isolateFamily;
+      // WAVE 3, LAW 2 — the hovered port belongs to the house being
+      // left or replaced; its focus record is cached on that house
+      // object, so carrying the group name across would light wires
+      // resolved against a house that no longer stands.
+      local._portHoverGroup = null;
       const vp = local.lastSize;
       const flySec = Math.max(0.2, (local.params.house_tween_ms || 450) / 1000);
       if (fam) {
@@ -7945,7 +8347,25 @@
       // on-screen HUD to make hover lag visible.
       const _rfT0 = performance.now();
       const idx       = local.mode.nodePacked.idIndex;
-      local.focusedSet  = graph.focusedSetFor(local.hoverId, local.lockedSet, local.mode.adjacency);
+      // WAVE 3, LAW 2 — the focus splits in two while a horizon port
+      // is hovered, and ONLY then:
+      //   focusedEdgeSet  hover + lock, exactly as before. The WIRES
+      //                   answer to this, so a port hover can never
+      //                   drag a pile's whole 1-hop neighbourhood in.
+      //   focusedSet      the same set PLUS the house members the
+      //                   port's own wires land on, so those deities
+      //                   read bright and everything else recedes.
+      // With no port hovered the two are the same object and every
+      // downstream consumer sees exactly the pre-wave-3 value.
+      const baseFocus = graph.focusedSetFor(local.hoverId, local.lockedSet, local.mode.adjacency);
+      const portRec   = housePortFocusRec();
+      let nodeFocus   = baseFocus;
+      if (portRec && portRec.members.size) {
+        nodeFocus = new Set(baseFocus || []);
+        for (const id of portRec.members) nodeFocus.add(id);
+      }
+      local.focusedEdgeSet = baseFocus;
+      local.focusedSet  = nodeFocus;
       local.selectedSet = computeSelectedSet(local.hoverId, local.lockedSet);
       // Phase 22-AI (2026-05-25) — palette upload, UNTHROTTLED.
       // The Phase 22-AH `_hoverBoostActive` mirror flag desynced
@@ -8048,7 +8468,7 @@
       // first run (or after rebuildForMode) sizes may mismatch;
       // resize and pre-fill targets without touching states so
       // the GPU sees a coherent buffer immediately.
-      const newTargets = graph.computeEdgeStates(local.mode.edges, local.focusedSet);
+      const newTargets = graph.computeEdgeStates(local.mode.edges, local.focusedEdgeSet);
       // Phase 21AS (2026-05-23) — source-tier filter. Per CODEX §VII
       // the user can hide entire tiers (T1-T5) via view-settings.
       // Any edge whose source_tier is NOT in the active set is
@@ -8066,6 +8486,9 @@
       // edge-target site (rebakeEdges) gets the identical treatment;
       // it did not, and a >15% zoom inside a house resurrected every
       // tier-filtered and political-risk wire.
+      // WAVE 3, LAW 2 — the hovered port's own transmission, lifted
+      // before the filters so HIDDEN still wins over it.
+      applyPortHoverOverride(newTargets);
       applyEdgeHiddenFilters(newTargets);
       // THE HOUSE (2026-07-30) — the bones lift, after the filters
       // (hidden wins) and before the snap logic (a wire leaving
@@ -9232,9 +9655,25 @@
         // "click to dismiss" path, so isolate leaves by the same
         // gesture as everything else. Escape stays as a keyboard
         // alternative; it is no longer the only way.
+        // WAVE 3, LAW 3 (2026-07-31) — LEAVING A HOUSE KEEPS THE
+        // SELECTION. John: "clicking outside empty … makes the chart
+        // go back to the original mode, but we must keep the
+        // connections of the node selected so we can carry the
+        // transmissions from one mode to the other before the next
+        // click will remove the connections."
+        // So the gesture is TWO steps whenever a node is locked:
+        //   click 1  leave the house, KEEP the lock and its lit wires
+        //   click 2  (now on the wheel) clear the lock
+        // The old code fell through and cleared the lock in the SAME
+        // click, which is exactly the carry he is asking for and the
+        // one thing it could not do. The return is unconditional —
+        // with no lock, "exit and stop" is what it already did.
+        // settleHouse's restore branch prunes any GUEST id out of the
+        // carried lock when the wheel comes back, so this can never
+        // leave a lock pointing at a node that is not there.
         if (local._isolateFamily) {
           setIsolateFamily(null);
-          if (local.lockedSet.size === 0) return;
+          return;
         }
         if (local.lockedSet.size === 0) return;
         local.lockedSet.clear();
@@ -9314,9 +9753,15 @@
           if (local.panSamples.length > 6) local.panSamples.shift();
           return;
         }
-        // Hover hit-test in idle state.
-        const hit = hitTestAt(cssX, cssY);
+        // Hover hit-test in idle state. WAVE 3, LAW 2 — inside a
+        // house this resolves the HORIZON PORTS first and refuses the
+        // nodes piled behind them; on the wheel it is hitTestAt and
+        // nothing else.
+        const hit = houseHoverResolve(cssX, cssY);
         setHoverId(hit);
+        // A port is clickable (it travels), so it must still read as
+        // clickable — setHoverId(null) has just cleared the cue.
+        if (local._portHoverGroup) canvas.classList.add('is-hover-node');
         // ROUND-7 DRESS — stash the cursor in WORLD coords for the
         // wake pass, and make sure frames are flowing while the
         // hand is on the field (the loop self-terminates once the
@@ -9335,6 +9780,7 @@
       });
       canvas.addEventListener('pointerleave', () => {
         if (local.destroyed) return;
+        setPortHover(null);
         setHoverId(null);
         // ROUND-7 DRESS — hand off the field: let the wake decay.
         // ROUND-7c — EXCEPT while the lab panel is VISIBLE: the hand
@@ -9400,7 +9846,15 @@
               return;
             }
           }
-          const hit = hitTestAt(cssX, cssY);
+          // WAVE 3, LAW 2 — a node collapsed onto a horizon port is
+          // not individually clickable either. The pile shares one
+          // point, so "which one did you mean" has no answer; the
+          // port above owns that point and TRAVELS. Anything else
+          // there reads as empty space — and empty space at the
+          // horizon is inside the circle, so by LAW 1 it does nothing.
+          let hit = hitTestAt(cssX, cssY);
+          if (hit != null && local._isolateFamily && local._house
+              && houseIsPortedId(hit)) hit = null;
           // Phase 21AG (2026-05-22) — INSTANT click. Post-hoc
           // double-click detection — no defer, ever. The 21AF
           // deferral introduced a 280 ms visual lag between click
@@ -9426,9 +9880,7 @@
           const DBL_WINDOW_MS = 280;
           const now = (performance && performance.now) ? performance.now() : Date.now();
           if (hit == null) {
-            local._lastClickId = null;
-            local._lastClickT  = 0;
-            toggleLock(null);
+            emptyClickAt(cssX, cssY);
             return;
           }
           const sameAsLast   = local._lastClickId === hit;
@@ -9520,9 +9972,10 @@
         camera.nudgeZoomTarget(factor, cssX, cssY, { w: local.lastSize.w, h: local.lastSize.h });
         if (camera.isAnimating()) startAnimLoop();
         // Hover may now point to a different node — re-test at the
-        // same screen position.
-        const hit = hitTestAt(cssX, cssY);
+        // same screen position (LAW 2: ports first inside a house).
+        const hit = houseHoverResolve(cssX, cssY);
         setHoverId(hit);
+        if (local._portHoverGroup) canvas.classList.add('is-hover-node');
       }, { passive: false });
 
       // Keep canvasRect fresh when the viewport changes.
@@ -9993,12 +10446,20 @@
       // binary array and kill the animation. Update TARGETS
       // (which the next animTick will fade toward) and only
       // resize the live states buffer if the edge count changed.
-      const newTargets = graph.computeEdgeStates(m.edges, local.focusedSet);
+      // WAVE 3, LAW 2 — wires answer to the HOVER+LOCK focus, which
+      // is what focusedEdgeSet is; local.focusedSet may additionally
+      // carry the port-relevant members (a NODE-side highlight only).
+      // Falls back to focusedSet so a call before the first
+      // recomputeFocus behaves exactly as it did.
+      const edgeFocus = (local.focusedEdgeSet !== undefined)
+        ? local.focusedEdgeSet : local.focusedSet;
+      const newTargets = graph.computeEdgeStates(m.edges, edgeFocus);
       // 2026-07-31 — the tier / political-risk filter must land here
       // too. Without it a >15% zoom (which trips the re-pack) silently
       // un-hid every wire the user had filtered off, with the VIEW
       // panel still showing those tiers as off. Order matches
       // recomputeFocus: hidden wins, then the bones lift.
+      applyPortHoverOverride(newTargets);
       applyEdgeHiddenFilters(newTargets);
       // THE HOUSE (2026-07-30) — the bones lift survives a zoom
       // rebake too (mirror of the recomputeFocus callsite).
