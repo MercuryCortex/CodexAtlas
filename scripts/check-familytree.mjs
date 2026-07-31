@@ -535,6 +535,10 @@ for (const [fam, modeType] of [['Christian', 'deity'], ['Other', 'deity'], ['Oth
   let parked = 0, badR = 0, offCrown = 0;
   for (const rl of [h.rails.left, h.rails.right]) {
     if (!rl) continue;
+    if (!Array.isArray(rl.parkedIds)) {
+      fail(fam + '/' + modeType + ': the rail reports no parkedIds — the view cannot bake an honest class for the overflow');
+      continue;
+    }
     if (rl.parkedIds.length !== rl.overflow) {
       fail(fam + '/' + modeType + ': parkedIds ' + rl.parkedIds.length + ' != overflow ' + rl.overflow);
     }
@@ -617,6 +621,53 @@ for (const fam of ['Greek', 'Norse', 'Egyptian', 'Mesopotamian', 'Christian']) {
   else fail(fam + ': ' + spineBad + ' of ' + spineTot + ' spine names are still refused');
   if (nameBlocked === 0) ok(fam + ': 0 of ' + nameTot + ' rail slots are blocked by the obstacle column (4 viewports)');
   else fail(fam + ': ' + nameBlocked + ' of ' + nameTot + ' rail names still cannot print');
+}
+// …and the rules these replaced really were unsatisfiable, at every
+// zoom — not merely unlucky. Both are pure geometry, so this is a
+// standing tripwire against reintroducing a world-space row pitch.
+{
+  const h = houseUnion('Greek', 'cascade').house;
+  let oldSpineRefused = 0, oldSpineTot = 0, oldNameBlocked = 0, oldNameTot = 0;
+  for (const vp of [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }]) {
+    const camScale = Math.min(vp.w / (2 * (540 + 70)), vp.h / (2 * (540 + 70)));
+    const W2S = (x, y) => ({ x: vp.w / 2 + x * camScale, y: vp.h / 2 + y * camScale });
+    for (const rl of [h.rails.left, h.rails.right]) {
+      if (!rl || !rl.shelves.length) continue;
+      const top = W2S(rl.x, rl.shelves[0].capY - 10);
+      const bot = W2S(rl.x, rl.shelves[rl.shelves.length - 1].y1 + 8);
+      const obst = [];
+      for (let y = Math.max(top.y, KEEPOUT_TOP); y <= Math.min(bot.y, vp.h - KEEPOUT_BOTTOM); y += OBST_PITCH) obst.push(y);
+      // The COURT is the sharp case: kindShelves sorts each kind by
+      // DEGREE, so its spine is always items[0] — 10.5 world units
+      // under its own caption, always. (A Scriptorium shelf is sorted
+      // by DATE, so its spine sometimes lands further down the ladder
+      // and cleared by luck — which is why this went unnoticed.)
+      if (rl.side < 0) continue;
+      for (const sh of rl.shelves) {
+        if (!sh.spineId) continue;
+        oldSpineTot++;
+        const it = sh.items.find(x => x.id === sh.spineId) || sh.items[0];
+        // OLD: the spine sat at the ITEM's world y.
+        if (Math.abs((it.y - sh.capY) * camScale) < 15) oldSpineRefused++;
+      }
+      for (const sh of rl.shelves) for (const it of sh.items) {
+        oldNameTot++;
+        // OLD: the name sat ABOVE the glyph, on the rail's own screen x,
+        // which is exactly where the obstacle column is claimed.
+        const s = W2S(rl.x, it.y);
+        const ly = s.y - 5 * camScale - 6;
+        for (const oy of obst) if (Math.abs(ly - oy) < 15) { oldNameBlocked++; break; }
+      }
+    }
+  }
+  if (oldSpineRefused === oldSpineTot)
+    ok('tripwire: the OLD world-space COURT spine anchor was refused ' + oldSpineRefused + '/' + oldSpineTot
+      + ' at every viewport — 10.5 world units is 6.9-8.6 screen px against a 15px rule');
+  else fail('tripwire drifted: expected every old spine anchor refused, got ' + oldSpineRefused + '/' + oldSpineTot);
+  if (oldNameBlocked === oldNameTot)
+    ok('tripwire: the OLD above-the-glyph rail name was blocked ' + oldNameBlocked + '/' + oldNameTot
+      + ' — the obstacle column sits at the rail\'s own screen x');
+  else fail('tripwire drifted: expected every old rail name blocked, got ' + oldNameBlocked + '/' + oldNameTot);
 }
 
 // ── W2-E ▸ A ROW NUMERAL IS A GENERATION OR NOTHING ─────────
