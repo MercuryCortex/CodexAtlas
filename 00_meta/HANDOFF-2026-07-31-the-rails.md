@@ -1,5 +1,11 @@
 # HANDOFF — THE RAILS (2026-07-31)
 
+> ⛔ **SESSION TERMINATED BY JOHN, 2026-07-31.** Read
+> `00_meta/POSTMORTEM-2026-07-31-terminated.md` FIRST — it carries his four
+> reasons, which of them are true (three of four), the open worklist in his
+> priority order, and the pattern that caused it. This handoff is still
+> accurate on the engine; it is NOT a statement that the work is finished.
+
 > Self-contained pickup. Everything below is **committed on `main`** and
 > **DEPLOYED 2026-07-31** — `codexatlas.org` serves `?v=20260731-housepanel` (THE RING + the type scale + the three interaction laws), verified in real Safari against the live domain. Read this,
 > then `00_meta/HOW-WE-WORK.md`.
