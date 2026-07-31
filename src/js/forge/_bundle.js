@@ -2836,11 +2836,19 @@
 //   rebuildForMode, rebuildHullElements, recomputeFocus, syncHulls,
 //   refreshHouse }
 // (13 deps — biggest dependency surface in the series. refreshHouse
-//  added 2026-07-30 for the House-layout radio: Cascade/Fan are
-//  CANONICAL view controls now, per John — the choice of view is
-//  canonical, the tuning numbers stay in the LAB.)
+//  added 2026-07-30 for the House-layout choice: Cascade/Fan are
+//  CANONICAL, per John — the choice of view is canonical, the
+//  tuning numbers stay in the LAB. 2026-07-31: the VIEW-panel
+//  radios are GONE — John couldn't find them (they were
+//  fv-wheel-only, never visible inside the house they control).
+//  The control is now the CASCADE/FAN chips on the house crown
+//  (src/js/views/forge.js, ensureHouseChips), which call
+//  setHouseGeometry below. This module stays the ONE owner of the
+//  persisted key.)
 // BOUNDARY CONTRACT:
 //   window._forgeViewSettings.attach({ ...all 13 deps... })
+//   window._forgeViewSettings.setHouseGeometry('cascade'|'fan')
+//     — available after attach; persists + tweens a standing house.
 // ============================================================
 (function () {
   function attach({ COLOR_THEMES, DEFAULT_UX_MODE, DISTRIBUTION_THEMES, ORDER_THEMES,
@@ -2864,7 +2872,7 @@
         hulls: true, familyTitles: true,
         dividers: true, dividersConverging: false,
         guideRings: false,
-        wires: true, sfx: true, map: false,
+        wires: true, sfx: true,
         reverseAge: false,
         // Phase 22-I (2026-05-24) — timeline layer toggles.
         tlBands: true, tlBandLabels: true,
@@ -2901,7 +2909,9 @@
       const noDividers = !state.dividers && !state.dividersConverging;
       document.body.classList.toggle('fv-hide-dividers',      noDividers);
       document.body.classList.toggle('fv-hide-wires',         !state.wires);
-      document.body.classList.toggle('fv-hide-map',           !state.map);
+      // 2026-07-31 — fv-hide-map DELETED with the 'Show map (coming
+      // soon)' placeholder row (no CSS consumer existed; dead chrome
+      // leaves the live tree, markup + callsites together).
       document.body.classList.toggle('fv-hide-guide-rings',   !state.guideRings);
       // Phase 22-I — timeline-only layer toggles via body classes.
       // CSS in app.css hides .forge-timeline-bands and
@@ -2988,10 +2998,8 @@
       panel.querySelectorAll('.forge-viewset-row[data-distribution]').forEach(row => {
         row.classList.toggle('is-on', row.dataset.distribution === (ux.distributionMode || 'organic'));
       });
-      // THE HOUSE — House-layout radio highlight.
-      panel.querySelectorAll('.forge-viewset-row[data-house]').forEach(row => {
-        row.classList.toggle('is-on', row.dataset.house === (state.houseGeometry || 'cascade'));
-      });
+      // THE HOUSE — the geometry control lives on the crown now
+      // (2026-07-31); no panel radio to highlight.
       // Phase 21AS (2026-05-23) — when the source-tier set changes,
       // re-run recomputeFocus so edgeTargets pick up the tier-filter
       // (edges whose source_tier ∉ activeTiers get HIDDEN). Skip if
@@ -3079,24 +3087,26 @@
         applyUxMode();
         return;
       }
-      // THE HOUSE (2026-07-30) — House-layout radio (Cascade | Fan).
-      // Canonical per John ("we need the toggles to change the view
-      // like we had"). If a house is standing, the flip TWEENS it
-      // (refreshHouse(true) — geometry flips morph, never snap);
-      // otherwise the choice simply waits for the next isolate.
-      if (row.dataset.house) {
-        const v = row.dataset.house;
-        if (v !== 'cascade' && v !== 'fan') return;
-        if (state.houseGeometry === v) return;
-        state.houseGeometry = v;
-        local.params.house_geometry = v;
-        applyState();
-        if (typeof refreshHouse === 'function') {
-          try { refreshHouse(true); } catch (_) { /* no house standing — fine */ }
-        }
-        return;
-      }
     });
+
+    // THE HOUSE (2026-07-31) — the geometry setter, called by the
+    // CASCADE/FAN crown chips (forge.js ensureHouseChips). This
+    // module stays the single owner of the forge.viewSettings.v7
+    // key: state is updated + persisted here, the live param is
+    // written, and a standing house TWEENS (refreshHouse(true) —
+    // geometry flips morph, never snap; no house standing → the
+    // choice simply waits for the next isolate).
+    function setHouseGeometry(v) {
+      if (v !== 'cascade' && v !== 'fan') return;
+      if (state.houseGeometry === v) return;
+      state.houseGeometry = v;
+      local.params.house_geometry = v;
+      try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (_) {}
+      if (typeof refreshHouse === 'function') {
+        try { refreshHouse(true); } catch (_) { /* no house standing — fine */ }
+      }
+    }
+    window._forgeViewSettings.setHouseGeometry = setHouseGeometry;
     document.addEventListener('click', (ev) => {
       if (!panel.classList.contains('is-open')) return;
       if (panel.contains(ev.target) || btn.contains(ev.target)) return;
@@ -5333,6 +5343,14 @@
       // AUDIT P2-9 — the wire laws (deep-zoom calm + hot-web whisper)
       ['recipe_wire_calm',   'Wire calm',    0,    1,    0.01, '',  'redraw'],
       ['recipe_hot_wire',    'Hot wires',    0.2,  1,    0.01, '',  'refocus'],
+      // 2026-07-31 — the wire WIDTH band. min/max were hard-coded and
+      // exposed nowhere; with only those two the band is FLAT below
+      // ~1.5× fit and idle / boned / hot all clamp to one hairline.
+      // Hot px is the width a fully-hot wire is guaranteed to reach;
+      // 0 restores the old flat clamp exactly.
+      ['wire_min_screen_px', 'Wire min',     0.5,  3,    0.1,  'px', 'redraw'],
+      ['wire_max_screen_px', 'Wire max',     1,    6,    0.1,  'px', 'redraw'],
+      ['wire_hot_screen_px', 'Wire hot',     0,    6,    0.1,  'px', 'redraw'],
       // AUDIT P2-10 — tier-aware max size: hubs stay hubs at deep zoom
       ['node_max_screen_px_hub',   'Hub max size',   24, 48, 1, 'px', 'rebake'],
       ['node_max_screen_px_mid',   'Mid max size',   16, 36, 1, 'px', 'rebake'],
@@ -5350,8 +5368,27 @@
       // (0 = the old invisible slate idle, 1 = full hover-hot).
       ['house_spread',   'House spread', 0.85, 1.5, 0.01, '×', 'house'],
       ['house_bones',    'House bones',  0,    1,   0.01, '',  'refocus'],
+      // THE BONE READS AS AN ARC (2026-07-31). Secondary = how loud a
+      // non-primary parent arc is against the spine (1 = the old flat
+      // lift). Sag = how far a bone bows off its own chord. Bone px =
+      // the primary arc's width floor on screen.
+      ['house_bone_secondary', 'Bone secondary', 0, 1,  0.01, '',  'refocus'],
+      ['house_arc_sag',  'Arc sag',      0,    0.5, 0.01, '',  'redraw'],
+      ['house_bone_px',  'Bone width',   0,    6,   0.1,  'px', 'redraw'],
       ['house_veil',     'House veil',   0,    1,   0.01, ''],
       ['house_tween_ms', 'House tween',  200,  800, 10,   'ms'],
+      // THE RAILS (2026-07-31) — the Scriptorium + the Court are real
+      // mass now, so their three numbers are dials, not baked constants.
+      // Cap = how many slots a rail may DISPLAY (the family's true count
+      // is what the header and the crown claim either way).
+      ['house_rail_cap',   'Rail cap',   20,   400, 10,   '',  'house'],
+      ['house_rail_glyph', 'Rail glyph', 0.2,  0.7, 0.02, '×', 'house'],
+      ['house_rail_hit',   'Rail hit',   0,    12,  0.5,  'wu', 'house'],
+      // The wheel-state "CLICK A FAMILY TITLE — THE HOUSE" line. 0 =
+      // the wheel paints byte-identical to before the hint existed.
+      // (Agent C shipped the dial; its LAB row could not be added from
+      // that worktree because this file was sibling-owned.)
+      ['house_hint_line',  'Way-in hint', 0,   1,   1,    '',   'redraw'],
     ];
     // THE HOUSE — layout radios. GEOMETRY GRADUATED (2026-07-30):
     // Cascade | Fan is a CANONICAL view control now — it lives in the
@@ -5359,9 +5396,22 @@
     // settings, per John's toggles-change-the-view ruling. The LAB
     // keeps only the tuning radios; flipping one while isolated
     // TWEENS the house (api.houseMorph), never snaps.
+    // [param, caption, options, apiAfter] — apiAfter defaults to the
+    // house morph (a layout dial). REST WIRES is not a layout dial:
+    // it moves one uniform, so a plain redraw is the whole update.
     const HOUSE_RADIOS = [
-      ['house_ranks',    'Ranks',      ['lineage', 'era']],
-      ['house_orphans',  'Unparented', ['domain', 'degree']],
+      ['house_ranks',      'Ranks',      ['lineage', 'era']],
+      ['house_orphans',    'Unparented', ['domain', 'degree']],
+      // THE RAILS (2026-07-31) — 'off' is the honest zero: the house
+      // holds deities only, exactly as it did on 07-30.
+      ['house_rails',      'Rails',      ['on', 'off']],
+      // 2026-07-31 — the isolate drags ~4,400 wires between two OTHER
+      // families into the house (plus ~2,000 zero-length ones that
+      // draw as solid radial spikes off every port), covering half the
+      // tree's own pixels. 'off' is the shipped default: a wire
+      // between two families neither of which is this house says
+      // nothing about this house. Hover still lights a deity's own.
+      ['house_rest_wires', 'Rest wires', ['full', 'stubs', 'off'], 'redraw'],
     ];
     const TOGGLES = [
       ['recipe_irid',   'Iridescence'],
@@ -5422,6 +5472,9 @@
       { id: 'wires', title: 'Wires', open: false, items: [
         { k: 'slider', key: 'recipe_wire_calm' },
         { k: 'slider', key: 'recipe_hot_wire' },
+        { k: 'slider', key: 'wire_min_screen_px' },
+        { k: 'slider', key: 'wire_max_screen_px' },
+        { k: 'slider', key: 'wire_hot_screen_px' },
       ] },
       { id: 'sizes', title: 'Sizes', open: false, items: [
         { k: 'slider', key: 'node_max_screen_px_hub' },
@@ -5441,8 +5494,15 @@
         { k: 'house' },
         { k: 'slider', key: 'house_spread' },
         { k: 'slider', key: 'house_bones' },
+        { k: 'slider', key: 'house_bone_secondary' },
+        { k: 'slider', key: 'house_arc_sag' },
+        { k: 'slider', key: 'house_bone_px' },
         { k: 'slider', key: 'house_veil' },
         { k: 'slider', key: 'house_tween_ms' },
+        { k: 'slider', key: 'house_rail_cap' },
+        { k: 'slider', key: 'house_rail_glyph' },
+        { k: 'slider', key: 'house_rail_hit' },
+        { k: 'slider', key: 'house_hint_line' },
       ] },
     ];
 
@@ -5565,7 +5625,15 @@
         + ' ranks=' + (p.house_ranks === 'era' ? 'era' : 'lineage+era')
         + ' unparented=' + (p.house_orphans || 'domain')
         + ' spread=' + (+p.house_spread || 1.1).toFixed(2)
-        + ' tween=' + Math.round(p.house_tween_ms || 450);
+        + ' tween=' + Math.round(p.house_tween_ms || 450)
+        + ' · BONES ' + (+p.house_bones || 0).toFixed(2)
+        + '/2nd ' + (+p.house_bone_secondary || 0).toFixed(2)
+        + ' sag ' + (+p.house_arc_sag || 0).toFixed(2)
+        + ' ' + (+p.house_bone_px || 0).toFixed(1) + 'px'
+        + ' · rest-wires ' + (p.house_rest_wires || 'off')
+        + ' · WIRE px ' + (+p.wire_min_screen_px || 0).toFixed(1)
+        + '/' + (+p.wire_max_screen_px || 0).toFixed(1)
+        + ' hot ' + (+p.wire_hot_screen_px || 0).toFixed(1);
     }
     function syncRecipe() { recipeEl.textContent = recipeStr(); }
 
@@ -5670,8 +5738,8 @@
         } else if (it.k === 'voices') {
           for (const [key, label, opts] of VOICES) addRadioRow(body, key, label, opts);
         } else if (it.k === 'house') {
-          for (const [key, label, opts] of HOUSE_RADIOS) {
-            addRadioRow(body, key, label, opts, api.houseMorph);
+          for (const [key, label, opts, apiAfter] of HOUSE_RADIOS) {
+            addRadioRow(body, key, label, opts, api[apiAfter || 'houseMorph']);
           }
         }
       }

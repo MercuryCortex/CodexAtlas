@@ -106,6 +106,11 @@
       ['house_rail_cap',   'Rail cap',   20,   400, 10,   '',  'house'],
       ['house_rail_glyph', 'Rail glyph', 0.2,  0.7, 0.02, '×', 'house'],
       ['house_rail_hit',   'Rail hit',   0,    12,  0.5,  'wu', 'house'],
+      // The wheel-state "CLICK A FAMILY TITLE — THE HOUSE" line. 0 =
+      // the wheel paints byte-identical to before the hint existed.
+      // (Agent C shipped the dial; its LAB row could not be added from
+      // that worktree because this file was sibling-owned.)
+      ['house_hint_line',  'Way-in hint', 0,   1,   1,    '',   'redraw'],
     ];
     // THE HOUSE — layout radios. GEOMETRY GRADUATED (2026-07-30):
     // Cascade | Fan is a CANONICAL view control now — it lives in the
@@ -219,6 +224,7 @@
         { k: 'slider', key: 'house_rail_cap' },
         { k: 'slider', key: 'house_rail_glyph' },
         { k: 'slider', key: 'house_rail_hit' },
+        { k: 'slider', key: 'house_hint_line' },
       ] },
     ];
 

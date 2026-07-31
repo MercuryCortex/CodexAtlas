@@ -549,7 +549,15 @@
         P *= Math.max(0.5, shrink);   // deterministic second pass
       }
       const topY = (rowMeta.find(m => m.y != null) || { y: cy + Rh * CASCADE_TOP }).y;
-      crown = { x: cx, y: Math.max(cy - Rh * 0.84, topY - Math.min(P * 1.9, 88)) };
+      // CROWN CLEARANCE — the crown is not a point, it is a stack: the
+      // family name, the arc/orphan line, the SCRIPTORIUM/COURT line,
+      // and the CASCADE/FAN chips. That is four rows, ~68 screen px at
+      // the fit scale the isolate flies to. The old 88-world-unit gap
+      // reserved room for one and a half of them, so the chips landed
+      // on top of the first rank's discs the moment the rails gave the
+      // crown a second line. 132 clears the whole stack and still sits
+      // inside the `cy - Rh * 0.84` ceiling below, which is untouched.
+      crown = { x: cx, y: Math.max(cy - Rh * 0.84, topY - Math.min(P * 1.9, 132)) };
     } else {
       // FAN — the crown is the TRUNK: origin below center so the
       // crest of rings fills the house instead of hugging the rim.

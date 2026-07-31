@@ -2266,9 +2266,20 @@
         }
         if (local._layoutMix) local._layoutMix.value = local._layoutMix.target;
         settleHouse();
+        // 2026-07-31 — ALSO land the camera. setIsolateFamily flies the
+        // camera onto the house's own extent, and that fly rides the
+        // same frozen rAF: every headless screenshot of the house was
+        // therefore framed at the WHEEL's scale, with the crown (and
+        // its SCRIPTORIUM/COURT line) sitting above the viewport. Two
+        // sessions read that as a layout bug. tick(t >= duration)
+        // clamps the ease to 1 and clears the anim, which is exactly
+        // where the fly would have landed on a live screen.
+        try { if (camera.isAnimating()) camera.tick(1e3); } catch (_) { /* ignore */ }
+        drawFrame();
         return {
           isolate: local._isolateFamily,
           mix: local._layoutMix ? local._layoutMix.value : 0,
+          cam: camera.state,
         };
       },
       lastSize:     () => ({ w: local.lastSize.w, h: local.lastSize.h }),
@@ -6164,19 +6175,28 @@
       const nodeWord = String((modeEntry && modeEntry.label) || m.id || 'NODES').toUpperCase();
       const line1 = st.tree + ' ' + nodeWord + ' · ' + st.kinArcs + ' LINEAGE ARCS · '
         + st.orphanCount + ' STAND ON THEIR ERA';
+      // THE CROWN STACK PITCH (2026-07-31) — `claim` rejects anything
+      // whose centre sits within 15px of a rect already placed, and
+      // the stack used to be 18 / 31 / 46: line2 sat 13px under line1
+      // and was ALWAYS refused. Nobody saw it because st.docs and
+      // st.court were 0 by construction until the rails landed, so
+      // the line John was promised could never have appeared even
+      // after its data arrived. Pitch is now 17px — one clear row per
+      // line at the 8.5px crown face.
+      const CROWN_ROW = 17;
       const w1 = ctx.measureText(line1).width;
-      if (claim(cs.x, cs.y + 18, w1 + 8)) {
+      if (claim(cs.x, cs.y + CROWN_ROW, w1 + 8)) {
         ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.8;
-        halo(line1, cs.x, cs.y + 18);
+        halo(line1, cs.x, cs.y + CROWN_ROW);
       }
       if (st.docs || st.court) {
         const line2 = (st.docs ? st.docs + ' IN THE SCRIPTORIUM' : '')
           + (st.docs && st.court ? ' · ' : '')
           + (st.court ? st.court + ' IN THE COURT' : '');
         const w2 = ctx.measureText(line2).width;
-        if (claim(cs.x, cs.y + 31, w2 + 8)) {
-          ctx.globalAlpha = 0.55;
-          halo(line2, cs.x, cs.y + 31);
+        if (claim(cs.x, cs.y + CROWN_ROW * 2, w2 + 8)) {
+          ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.55;
+          halo(line2, cs.x, cs.y + CROWN_ROW * 2);
         }
       }
       ctx.globalAlpha = 1;
@@ -6196,7 +6216,7 @@
             break;
           }
         }
-        const chipY = cs.y + 46;
+        const chipY = cs.y + CROWN_ROW * 3;
         ctx.font = '600 9px ' + HOUSE_MONO;
         // +12 ≈ the CSS letter-spacing the canvas measure can't see.
         const wCas = ctx.measureText('CASCADE').width + 12;
@@ -6232,7 +6252,13 @@
           : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
         ctx.font = '600 8px ' + HOUSE_MONO;
         const hw = ctx.measureText(header).width;
-        const hy = top.y - 14;
+        // 2026-07-31 — was `top.y - 14`, which sat 14px above the FIRST
+        // obstacle rect this loop just claimed, and claim() refuses
+        // anything within 15px of a placed rect. So the header could
+        // never print, on either rail. Invisible until the rails had
+        // contents, and then it was the promised string that went
+        // missing. One obstacle pitch (22px) clears it by construction.
+        const hy = top.y - 22;
         const hx = left ? Math.max(top.x, 6 + hw) : Math.min(top.x, vp.w - 6 - hw);
         const hcx = left ? hx - hw / 2 : hx + hw / 2;
         if (claim(hcx, hy, hw + 6)) {
