@@ -35,6 +35,7 @@ const EDGE_BUCKET = globalThis.EDGE_BUCKET;
 
 const forgeSrc = readFileSync(join(root, 'src/js/views/forge.js'), 'utf8');
 const gpuSrc   = readFileSync(join(root, 'src/js/engine/renderer/webgpu.js'), 'utf8');
+const treeSrc  = readFileSync(join(root, 'src/js/engine/layout/familytree.js'), 'utf8');
 
 let failures = 0;
 const fail = (m) => { failures++; console.error('  ✗ ' + m); };
@@ -58,8 +59,14 @@ must(/let bone_p1\s*=\s*mid \+ perp_u \* \(v\.glyph_params\.w \* 2\.0 \* clen \*
   'the bone bows perpendicular to its own chord', gpuSrc);
 must(/let p1\s*=\s*mix\(origin_p1, bone_p1, is_bone \* hx\);/,
   'the bow multiplies away at layout_mix 0 (honest zeros)', gpuSrc);
-must(/let ext\s*=\s*step\(v\.layout_mix\.w, in\.ext_class\) \* v\.layout_mix\.x/,
+must(/step\(v\.layout_mix\.w, in\.ext_class\) \* v\.layout_mix\.x/,
   'rest-wires hides by baked external class × the layout mix', gpuSrc);
+must(/let parked\s*=\s*step\(2\.5, in\.ext_class\) \* v\.layout_mix\.x;/,
+  'class 3 (parked, no terminus) hides at every chip position and is not exempted by hover', gpuSrc);
+must(/let ext\s*=\s*max\(parked,/, 'the parked hide is OR-ed onto the chip hide', gpuSrc);
+must(/if \(parkedIds\.has\(e\.source\) \|\| parkedIds\.has\(e\.target\)\) extern\[ei\] = 3;/,
+  'buildHouse bakes class 3 for wires touching the rail overflow', forgeSrc);
+must(/parkedIds: parked,/, '(layout) buildRail returns the ids it parked', treeSrc);
 must(/arrayStride:\s*24,\s*stepMode:\s*'instance'/, 'edgePosB stride is 24 (6 floats)', gpuSrc);
 must(/frame\.edgePosB,\s*0,\s*edgeCount \* 6/, 'edgePosB uploads 6 floats per instance', gpuSrc);
 must(/const out = new Float32Array\(E \* 6\);/, 'bakeEdgePosB emits 6 floats per instance', forgeSrc);
@@ -332,6 +339,115 @@ console.log('\n── 5. the bow ──');
   if (P.sag >= 0.15) ok('shipped sag clears the ≥0.15 bow/chord acceptance bar');
   else fail('shipped house_arc_sag ' + P.sag + ' bows less than the 0.15 bar');
   if (med < 0.15) ok('the old origin-pull did NOT (median ' + med.toFixed(3) + ')');
+}
+
+// ── 6. THE UNION WORLD — WHERE THE STARBURST LIVED ──────────
+// Sections 1-5 build their world from `NODES.filter(type === 'deity')`
+// — the PRE-RAILS node set. So the class-census above is measured over
+// exactly the configuration THE RAILS replaced, and it could not see
+// the wave-1 defect: past the 150-slot display cap the rail's
+// remainder is parked ON THE CROWN, both endpoints of its wires are
+// house members, so those wires were class 0 — the one class no chip
+// threshold can ever reach — and ~180-195 of them converged on the
+// family name as a starburst with no node under it.
+console.log('\n── 6. the union world: the parked remainder has no wire ──');
+function houseUnionW(fam, modeType) {
+  const inModeArr = NODES.filter(n => n && n.type === modeType);
+  const inMode = new Set(inModeArr.map(n => n.id));
+  const guests = NODES
+    .filter(n => n && n.id && !inMode.has(n.id) && (n.family || 'Other') === fam)
+    .sort((a, b) => (a.id < b.id ? -1 : 1));
+  const uNodes = inModeArr.concat(guests);
+  const uIds = new Set(uNodes.map(n => n.id));
+  const guestIds = new Set(guests.map(n => n.id));
+  const memberIds = new Set(uNodes.filter(n => (n.family || 'Other') === fam).map(n => n.id));
+  const uEdges = EDGES.filter(e => {
+    if (!uIds.has(e.source) || !uIds.has(e.target)) return false;
+    if (!guestIds.has(e.source) && !guestIds.has(e.target)) return true;
+    return memberIds.has(e.source) && memberIds.has(e.target);
+  });
+  const uFam = new Map(uNodes.map(n => [n.id, n.family || 'Other']));
+  const deg = new Map();
+  for (const e of uEdges) { deg.set(e.source, (deg.get(e.source) || 0) + 1); deg.set(e.target, (deg.get(e.target) || 0) + 1); }
+  const arcs = [], laterals = [], aspects = [], portWeights = {};
+  const extern = new Uint8Array(uEdges.length);
+  for (let ei = 0; ei < uEdges.length; ei++) {
+    const e = uEdges[ei];
+    const sIn = memberIds.has(e.source), tIn = memberIds.has(e.target);
+    if (sIn !== tIn) {
+      extern[ei] = 1;
+      const g = uFam.get(sIn ? e.target : e.source);
+      portWeights[g] = (portWeights[g] || 0) + 1;
+      continue;
+    }
+    if (!sIn) { extern[ei] = 2; continue; }
+    if (e.type === 'parent-of') arcs.push([e.source, e.target]);
+    else if (e.type === 'child-of') arcs.push([e.target, e.source]);
+    else if (e.type === 'consort') laterals.push([e.source, e.target]);
+    else if (ASPECT_RE.test(e.type || '')) aspects.push([e.source, e.target]);
+  }
+  const bearings = {}; let i = 0;
+  for (const f of new Set(uFam.values())) bearings[f] = (i++) * 0.21;
+  const lay = layoutFn(uNodes, {
+    groupBy: n => n.family || 'Other', groupKey: fam,
+    arcs, laterals, aspects, degree: deg, bearings, portWeights,
+    center: { x: 0, y: 0 }, radius: 540, geometry: 'cascade',
+    spread: P.spread, ranks: 'lineage', orphans: 'domain',
+  });
+  // buildHouse's own post-layout pass: class 3 for anything touching a
+  // parked id, written LAST so it wins over 0/1/2.
+  const parkedIds = new Set();
+  for (const rl of [lay.house.rails.left, lay.house.rails.right]) {
+    if (rl && rl.parkedIds) for (const id of rl.parkedIds) parkedIds.add(id);
+  }
+  if (parkedIds.size) {
+    for (let ei = 0; ei < uEdges.length; ei++) {
+      const e = uEdges[ei];
+      if (parkedIds.has(e.source) || parkedIds.has(e.target)) extern[ei] = 3;
+    }
+  }
+  return { lay, uEdges, extern, parkedIds, memberIds };
+}
+for (const [fam, modeType] of [['Christian', 'deity'], ['Other', 'deity'],
+                               ['Christian', 'person'], ['Other', 'person'], ['Greek', 'deity']]) {
+  const u = houseUnionW(fam, modeType);
+  const crown = u.lay.house.crown;
+  const cls = [0, 0, 0, 0];
+  for (let i = 0; i < u.extern.length; i++) cls[u.extern[i]]++;
+  // every wire that LANDS ON THE CROWN with no node there
+  let onCrown = 0, onCrownHidden = 0;
+  for (let ei = 0; ei < u.uEdges.length; ei++) {
+    const e = u.uEdges[ei];
+    const sp = u.lay.positions.get(e.source), tp = u.lay.positions.get(e.target);
+    if (!sp || !tp) continue;
+    const sOn = (sp.x === crown.x && sp.y === crown.y);
+    const tOn = (tp.x === crown.x && tp.y === crown.y);
+    if (!sOn && !tOn) continue;
+    onCrown++;
+    if (u.extern[ei] >= 3) onCrownHidden++;    // the unconditional parked hide
+  }
+  console.log('  ' + fam + '/' + modeType + ': ' + u.parkedIds.size + ' parked · classes '
+    + '{0:' + cls[0] + ' 1:' + cls[1] + ' 2:' + cls[2] + ' 3:' + cls[3] + '}'
+    + ' · wires landing on the crown ' + onCrown);
+  if (!u.parkedIds.size) { ok(fam + '/' + modeType + ': nothing overflows the cap — no crown wires possible'); continue; }
+  if (onCrown === onCrownHidden) {
+    ok(fam + '/' + modeType + ': all ' + onCrown + ' crown-landing wires are class 3 — hidden at rest-wires full/stubs/off alike');
+  } else {
+    fail(fam + '/' + modeType + ': ' + (onCrown - onCrownHidden)
+      + ' wires terminate on the family name and no chip position can hide them');
+  }
+  // and the chip must still be able to reach classes 1 and 2
+  for (const [mode, minC] of [['full', 3], ['stubs', 2], ['off', 1]]) {
+    let drawn = 0;
+    for (let ei = 0; ei < u.extern.length; ei++) {
+      if (u.extern[ei] >= 3) continue;             // parked: hidden unconditionally
+      if (u.extern[ei] >= minC) continue;          // hidden by the chip
+      const e = u.uEdges[ei];
+      const sp = u.lay.positions.get(e.source), tp = u.lay.positions.get(e.target);
+      if (sp && tp && sp.x === crown.x && sp.y === crown.y) drawn++;
+    }
+    if (drawn) fail(fam + '/' + modeType + ": rest-wires='" + mode + "' still draws " + drawn + ' crown wires');
+  }
 }
 
 console.log('');

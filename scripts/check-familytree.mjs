@@ -371,6 +371,309 @@ checkUnion('Other', 'cascade', (r, h) => {
   else fail('Other: ' + bad + ' non-finite positions');
 });
 
+// ════════════════════════════════════════════════════════════
+// WAVE 2 (2026-07-31) — THE CLAIMS THE CHROME PRINTS
+// ════════════════════════════════════════════════════════════
+// The wave-1 review found four defects that a headless probe could
+// have caught and did not, because nothing here ever looked at what
+// the VIEW does with the layout's return. These sections mirror the
+// view's own laws and CROSS-CHECK EACH MIRROR against the real
+// forge.js source (the pattern check-house-wires.mjs established), so
+// editing the view without editing this file goes RED instead of
+// quietly measuring a fiction.
+const forgeSrc = readFileSync(join(root, 'src/js/views/forge.js'), 'utf8');
+const treeSrc  = readFileSync(join(root, 'src/js/engine/layout/familytree.js'), 'utf8');
+const must = (re, what, src) => {
+  if (re.test(src || forgeSrc)) ok('source still says: ' + what);
+  else fail('SOURCE DRIFT — the code no longer says: ' + what);
+};
+const MODE_LABEL = {   // the wheel-mode nouns the crown used to print
+  deity: 'DEITIES', document: 'DOCUMENTS', person: 'AUTHORS',
+  symbol: 'SYMBOLS', ritual: 'RITUALS', place: 'PLACES', theme: 'THEMES',
+};
+
+// A union house for an ARBITRARY wheel mode (houseUnion above is
+// deities-only, which is exactly why no harness case could ever see
+// the crown-noun defect: in deities mode the noun happened to be true).
+function houseUnionMode(fam, modeType, extra) {
+  const inModeArr = NODES.filter(n => n && n.type === modeType);
+  const inMode = new Set(inModeArr.map(n => n.id));
+  const guests = NODES
+    .filter(n => n && n.id && !inMode.has(n.id) && (n.family || 'Other') === fam)
+    .sort((a, b) => (a.id < b.id ? -1 : 1));
+  const nodes = inModeArr.concat(guests);
+  const ids = new Set(nodes.map(n => n.id));
+  const guestIds = new Set(guests.map(n => n.id));
+  const memberIds = new Set(nodes.filter(n => (n.family || 'Other') === fam).map(n => n.id));
+  const edges = EDGES.filter(e => {
+    if (!ids.has(e.source) || !ids.has(e.target)) return false;
+    if (!guestIds.has(e.source) && !guestIds.has(e.target)) return true;
+    return memberIds.has(e.source) && memberIds.has(e.target);
+  });
+  const arcs = [], laterals = [], aspects = [], portWeights = {};
+  const famOf = new Map(nodes.map(n => [n.id, n.family || 'Other']));
+  for (const e of edges) {
+    const sIn = memberIds.has(e.source), tIn = memberIds.has(e.target);
+    if (sIn !== tIn) { const g = famOf.get(sIn ? e.target : e.source); portWeights[g] = (portWeights[g] || 0) + 1; continue; }
+    if (!sIn) continue;
+    if (e.type === 'parent-of') arcs.push([e.source, e.target]);
+    else if (e.type === 'child-of') arcs.push([e.target, e.source]);
+    else if (e.type === 'consort') laterals.push([e.source, e.target]);
+    else if (ASPECT_RE.test(e.type || '')) aspects.push([e.source, e.target]);
+  }
+  const bearings = {}; let i = 0;
+  for (const f of new Set(famOf.values())) bearings[f] = (i++) * 0.21;
+  const lay = layoutFn(nodes, Object.assign({
+    groupBy: n => n.family || 'Other', groupKey: fam,
+    arcs, laterals, aspects, degree: degreeMap(nodes, edges),
+    bearings, portWeights, center: { x: 0, y: 0 }, radius: 540,
+  }, extra || {}));
+  lay._memberIds = memberIds;
+  return lay;
+}
+
+const NODE_BY_ID = new Map(NODES.map(n => [n.id, n]));
+
+// ── W2-A ▸ THE CROWN NOUN NAMES THE POPULATION IT COUNTS ────
+// Crown line 1 is `stats.tree + ' ' + noun`. Before wave 2 the noun
+// came from the WHEEL MODE, so 28 of 30 modes printed a word for a
+// population the cascade does not hold — Greek/Documents said
+// "80 DOCUMENTS" over 80 gods, 12px above a rail header reading
+// "THE SCRIPTORIUM — 24 DOCS".
+console.log('\n── W2-A · the crown noun vs the cascade\'s real composition ──');
+must(/const nodeWord = st\.treeKind[\s\S]{0,120}'MEMBERS';/,
+  'the crown noun comes from stats.treeKind, not the mode registry');
+must(/const line1 = st\.tree \+ ' ' \+ nodeWord/, 'crown line 1 counts stats.tree with that noun');
+// the view's law, mirrored verbatim (kindShelves' pluralisation)
+const crownNoun = (treeKind) => treeKind
+  ? (String(treeKind) + 's').replace(/ys$/, 'ies').toUpperCase()
+  : 'MEMBERS';
+for (const [fam, modeType] of [['Greek', 'document'], ['Greek', 'symbol'], ['Greek', 'person'],
+                               ['Greek', 'deity'], ['Egyptian', 'ritual'], ['Norse', 'symbol'],
+                               ['Christian', 'document'], ['Other', 'theme']]) {
+  const lay = houseUnionMode(fam, modeType);
+  const h = lay.house, st = h.stats;
+  // what the cascade ACTUALLY holds, counted from the rows the layout
+  // returned — independent of stats.treeKind, so this can catch the
+  // layout lying to the view as well as the view lying to the reader.
+  const seenTypes = new Map();
+  for (const row of h.rows) for (const id of row) {
+    const t = String((NODE_BY_ID.get(id) || {}).type || '?');
+    seenTypes.set(t, (seenTypes.get(t) || 0) + 1);
+  }
+  const kinds = [...seenTypes.keys()];
+  const noun = crownNoun(st.treeKind);
+  const label = fam + '/' + modeType;
+  let counted = 0;
+  for (const v of seenTypes.values()) counted += v;
+  if (counted !== st.tree) { fail(label + ': stats.tree ' + st.tree + ' != ' + counted + ' rowed members'); continue; }
+  if (kinds.length === 1) {
+    if (st.treeKind === kinds[0] && noun === crownNoun(kinds[0])) {
+      ok(label + ': crown prints "' + st.tree + ' ' + noun + '" over ' + st.tree + ' ' + kinds[0] + ' nodes');
+    } else {
+      fail(label + ': cascade is all ' + kinds[0] + ' but treeKind=' + JSON.stringify(st.treeKind));
+    }
+    // the old rule, kept as a regression tripwire
+    const oldWord = MODE_LABEL[modeType];
+    if (oldWord && oldWord !== noun && kinds[0] !== modeType) {
+      const real = NODES.filter(n => (n.family || 'Other') === fam && n.type === modeType).length;
+      ok('   …and NOT the old "' + st.tree + ' ' + oldWord + '" (the vault holds ' + real + ' ' + modeType + ')');
+    }
+  } else {
+    if (st.treeKind === null && noun === 'MEMBERS') {
+      ok(label + ': mixed cascade (' + kinds.join('+') + ') prints the neutral "' + st.tree + ' MEMBERS"');
+    } else {
+      fail(label + ': cascade holds ' + kinds.join('+') + ' but treeKind=' + JSON.stringify(st.treeKind));
+    }
+  }
+}
+
+// ── W2-B ▸ THE CAP MAY SHORTEN A SHELF, NEVER DELETE ONE ────
+// The cap used to be spent greedily in shelf order over a
+// biggest-kind-first list, so the largest kind ate all 150 slots and
+// four of Christian's five court kinds vanished with nothing on screen
+// saying so — under a header reading "THE COURT — 330 OF ALL KINDS".
+// The law-free test: the shelves' own counts must still add up to the
+// rail's true mass. A deleted shelf takes its count with it.
+console.log('\n── W2-B · every kind survives the display cap ──');
+must(/const takes = spendCap\(groups\.map/, '(layout) the cap is spent by spendCap, not greedily', treeSrc);
+for (const fam of ['Christian', 'Other', 'Vedic', 'Greek', 'Norse']) {
+  const h = houseUnion(fam, 'cascade').house;
+  for (const rl of [h.rails.left, h.rails.right]) {
+    if (!rl) continue;
+    const side = rl.side < 0 ? 'SCRIPTORIUM' : 'COURT';
+    let sum = 0, starved = 0;
+    for (const sh of rl.shelves) { sum += sh.count; if (sh.shown < 1) starved++; }
+    if (sum === rl.count && starved === 0) {
+      ok(fam + ' ' + side + ': all ' + rl.shelves.length + ' shelves on stage, counts sum to '
+        + rl.count + ' (' + rl.shelves.map(s => s.label + ' ' + s.shown + '/' + s.count).join(' · ') + ')');
+    } else {
+      fail(fam + ' ' + side + ': shelves account for ' + sum + ' of ' + rl.count
+        + ' (' + starved + ' shelves with zero slots) — a kind the header counts is off screen with no caption');
+    }
+  }
+}
+// and the caption above a truncated column must say so
+must(/sh\.label \+ ' · '\s*\+ \(\(sh\.shown < sh\.count\) \? \(sh\.shown \+ ' OF ' \+ sh\.count\) : sh\.count\)/,
+  'a truncated shelf caption prints "N OF M", not the vault total');
+must(/'\+' \+ rl\.overflow \+ ' NOT SHOWN'/, 'the rail remainder is rendered, not just computed');
+
+// ── W2-C ▸ PARKED OVERFLOW IS RADIUS ZERO ───────────────────
+// "No radius entry" was not "radius zero": bakeNodePosB fell back to
+// the WHEEL radius, which is only harmless for guests (whose buffer-A
+// radius is explicitly zeroed). In person/theme/tradition/event modes
+// rail items are MODE MEMBERS with a full tier radius, so hundreds of
+// hit-testable discs stacked on the family name.
+console.log('\n── W2-C · the parked remainder has no mass and no hit ──');
+must(/out\[i \* 4 \+ 2\] = \(typeof hr === 'number'\) \? hr : wheelR;/,
+  'bakeNodePosB lets an explicit radius 0 survive');
+must(/hn\.r = \(laid \|\| pz > 0\) \? pz : np\.data\[i \* NODE_FLOATS \+ 2\];/,
+  'rebakeHitPositions reads the z lane instead of `|| wheelR`');
+for (const [fam, modeType] of [['Christian', 'deity'], ['Other', 'deity'], ['Other', 'person'], ['Christian', 'person']]) {
+  const lay = houseUnionMode(fam, modeType);
+  const h = lay.house;
+  let parked = 0, badR = 0, offCrown = 0;
+  for (const rl of [h.rails.left, h.rails.right]) {
+    if (!rl) continue;
+    if (rl.parkedIds.length !== rl.overflow) {
+      fail(fam + '/' + modeType + ': parkedIds ' + rl.parkedIds.length + ' != overflow ' + rl.overflow);
+    }
+    for (const id of rl.parkedIds) {
+      parked++;
+      const r = lay.radii.get(id);
+      if (r !== 0) badR++;                       // undefined would bake the WHEEL radius
+      const p = lay.positions.get(id);
+      if (!p || p.x !== h.crown.x || p.y !== h.crown.y) offCrown++;
+    }
+  }
+  if (!parked) { ok(fam + '/' + modeType + ': nothing overflows the cap'); continue; }
+  if (badR === 0 && offCrown === 0) {
+    ok(fam + '/' + modeType + ': all ' + parked + ' parked items are radius 0 on the crown (baked z = 0 ⇒ no draw, no hit)');
+  } else {
+    fail(fam + '/' + modeType + ': ' + badR + ' parked items lack an explicit radius 0, ' + offCrown + ' are off the crown');
+  }
+}
+
+// ── W2-D ▸ EVERY PROMISED STRING CAN ACTUALLY LAND ──────────
+// claim() refuses a rect whose centre is within 15px of one already
+// placed. Two rail strings were geometrically unable to clear it at
+// any viewport: the shelf spine name (10.5 WORLD units under its own
+// caption = 6.9-8.6 screen px) and every rail item's REACH name (the
+// obstacle column sits at the rail's own screen x).
+console.log('\n── W2-D · the rails\' own names can land (the 15px rule) ──');
+must(/const RAIL_ROW = 17;/, 'the rail row pitch is SCREEN px, not world geometry');
+must(/const RAIL_CAP_DX = 10, RAIL_NAME_DX = 11;/, 'the outboard x offsets clear the 14-wide obstacle');
+must(/lx = s\.x \+ rs \* \(rBub \+ 9 \+ wpx \/ 2\);/, 'a rail item\'s name is placed OUTBOARD of the rail');
+const RAIL_ROW = 17, RAIL_CAP_DX = 10, RAIL_NAME_DX = 11;
+const OBST_W = 14, OBST_PITCH = 22, KEEPOUT_TOP = 52, KEEPOUT_BOTTOM = 58;
+for (const fam of ['Greek', 'Norse', 'Egyptian', 'Mesopotamian', 'Christian']) {
+  const h = houseUnion(fam, 'cascade').house;
+  let spineBad = 0, spineTot = 0, nameBlocked = 0, nameTot = 0;
+  for (const vp of [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }, { w: 900, h: 1600 }]) {
+    const camScale = Math.min(vp.w / (2 * (540 + 70)), vp.h / (2 * (540 + 70)));
+    const W2S = (x, y) => ({ x: vp.w / 2 + x * camScale, y: vp.h / 2 + y * camScale });
+    for (const rl of [h.rails.left, h.rails.right]) {
+      if (!rl || !rl.shelves.length) continue;
+      // the obstacle column, exactly as renderHouseChrome claims it
+      const top = W2S(rl.x, rl.shelves[0].capY - 10);
+      const bot = W2S(rl.x, rl.shelves[rl.shelves.length - 1].y1 + 8);
+      const obst = [];
+      for (let y = Math.max(top.y, KEEPOUT_TOP); y <= Math.min(bot.y, vp.h - KEEPOUT_BOTTOM); y += OBST_PITCH) {
+        obst.push([top.x, y, OBST_W]);
+      }
+      // 1 ▸ the spine name vs its OWN caption (the measured defect)
+      for (const sh of rl.shelves) {
+        if (!sh.spineId) continue;
+        spineTot++;
+        const cp = W2S(rl.x, sh.capY);
+        const w = 70;                       // representative title width
+        const capCx = rl.side < 0 ? cp.x - RAIL_CAP_DX - w / 2 : cp.x + RAIL_CAP_DX + w / 2;
+        const spCx  = rl.side < 0 ? cp.x - RAIL_NAME_DX - w / 2 : cp.x + RAIL_NAME_DX + w / 2;
+        const sy = cp.y + RAIL_ROW;
+        if (Math.abs(spCx - capCx) < (w + w + 4) / 2 && Math.abs(sy - cp.y) < 15) spineBad++;
+        for (const P of obst) {
+          if (Math.abs(spCx - P[0]) < (w + P[2]) / 2 && Math.abs(sy - P[1]) < 15) { spineBad++; break; }
+        }
+      }
+      // 2 ▸ every rail item's REACH name, placed outboard. A name that
+      //     does not FIT beside the rail (a narrow viewport puts the
+      //     rail ~100px from the edge) is a geometric loss, not this
+      //     defect — the defect was that a name which fits was blocked
+      //     by the column anyway, 463 of 463 slots at 1440x900.
+      for (const sh of rl.shelves) for (const it of sh.items) {
+        const s = W2S(rl.x, it.y);
+        const wpx = 90, rBub = 5 * camScale;      // house_rail_hit floor
+        const want = s.x + rl.side * (rBub + 9 + wpx / 2);
+        if (want - wpx / 2 < 6 || want + wpx / 2 > vp.w - 6) continue;   // off-viewport
+        nameTot++;
+        const ly = s.y + 4;
+        for (const P of obst) {
+          if (Math.abs(want - P[0]) < (wpx + P[2]) / 2 && Math.abs(ly - P[1]) < 15) { nameBlocked++; break; }
+        }
+      }
+    }
+  }
+  if (spineBad === 0) ok(fam + ': all ' + spineTot + ' shelf spine names clear their caption AND the obstacle column (4 viewports)');
+  else fail(fam + ': ' + spineBad + ' of ' + spineTot + ' spine names are still refused');
+  if (nameBlocked === 0) ok(fam + ': 0 of ' + nameTot + ' rail slots are blocked by the obstacle column (4 viewports)');
+  else fail(fam + ': ' + nameBlocked + ' of ' + nameTot + ' rail names still cannot print');
+}
+
+// ── W2-E ▸ A ROW NUMERAL IS A GENERATION OR NOTHING ─────────
+// The row index absorbs component era offsets, cycle breaks and bed
+// packing, so it is a LAYOUT rank. Measured before wave 2: 15
+// parentless Greek deities, 30 Norse and 62 Vedic printed under GEN II
+// or lower; `adonis` carries zero lineage edges and was captioned a
+// second-generation descendant.
+console.log('\n── W2-E · GEN numerals only where the row IS one generation ──');
+must(/if \(rm\.offLineage !== 0\) return null;/, 'a row holding a member who is not there by lineage carries no numeral');
+must(/if \(rm\.layerMin == null \|\| rm\.layerMin !== rm\.layerMax\) return null;/,
+  'a row spanning two lineage depths carries no numeral');
+must(/return 'GEN ' \+ romanNum\(rm\.layerMin \+ 1\);/, 'the numeral is the row\'s own depth, not its index');
+must(/if \(!rm\.n \|\| !hasBones\) return null;/, 'a house with zero lineage arcs numbers nothing');
+must(/return \(rm\.dmin == null\) \? null : fmtRangeD\(rm\.dmin, rm\.dmax\);/,
+  'the era caption prints the row\'s RANGE, not its minimum');
+for (const fam of ['Greek', 'Norse', 'Vedic', 'Christian', 'Chinese']) {
+  const lay = houseUnion(fam, 'cascade');
+  const h = lay.house;
+  const hasBones = (h.stats.kinArcs || 0) > 0;
+  const parentOf = new Map();
+  for (const a of h.arcs) parentOf.set(a.child, true);
+  let printed = 0, wrong = 0, parentlessUnderNumeral = 0;
+  for (let ri = 0; ri < h.rowMeta.length; ri++) {
+    const rm = h.rowMeta[ri];
+    if (!rm || !rm.n || !hasBones) continue;
+    if (rm.offLineage !== 0) continue;
+    if (rm.layerMin == null || rm.layerMin !== rm.layerMax) continue;
+    printed++;
+    // cross-check against the vault, not against rowMeta: every member
+    // of a row captioned GEN N must genuinely sit at depth N-1, and a
+    // member with no parent at all can only ever be GEN I.
+    for (const id of h.rows[ri]) {
+      if (!parentOf.has(id)) { parentlessUnderNumeral++; if (rm.layerMin > 0) wrong++; }
+    }
+  }
+  if (wrong === 0) {
+    ok(fam + ': ' + printed + ' of ' + h.rowMeta.filter(r => r && r.n).length
+      + ' rows carry a numeral, and no parentless member sits under GEN II or lower'
+      + (parentlessUnderNumeral ? ' (' + parentlessUnderNumeral + ' parentless members, all under GEN I)' : ''));
+  } else {
+    fail(fam + ': ' + wrong + ' parentless members print under GEN II or lower');
+  }
+}
+// the era caption really does carry both bounds where they differ
+for (const fam of ['Vedic', 'Norse']) {
+  const h = houseUnion(fam, 'cascade', { ranks: 'era' }).house;
+  let spans = 0, bounded = 0;
+  for (const rm of h.rowMeta) {
+    if (!rm || !rm.n || rm.dmin == null || rm.dmin === rm.dmax) continue;
+    spans++;
+    if (rm.dmax != null) bounded++;
+  }
+  if (spans === bounded) ok(fam + ' (ranks=era): all ' + spans + ' multi-year rows carry BOTH bounds for the caption');
+  else fail(fam + ': ' + (spans - bounded) + ' rows have no dmax to caption with');
+}
+
 console.log('');
 if (failures) { console.error(failures + ' FAILURE(S)'); process.exit(1); }
 console.log('ALL CHECKS PASS');

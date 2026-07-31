@@ -397,31 +397,56 @@
     // A ROW IS A LAYOUT RANK, NOT A GENERATION (2026-07-31 wave 2,
     // CR-4). §4 above builds a row index out of THREE different
     // things: a component's era offset, its lineage depth, and — for
-    // anything unconnected — a pure era bucket. Only a row whose
-    // members all share ONE lineage depth and NONE of whom were
-    // placed by date is a generation; measured on the vault, 15 of
-    // Greek's parentless deities and 30 of Norse's print under GEN II
-    // or lower today. So the layout reports the provenance of every
-    // row and the view prints a numeral only where it is true.
-    const eraPlacedAt = (i) => (ranksMode === 'era')
-      || (parents[i].length === 0 && children[i].length === 0);
+    // anything unconnected — a pure era bucket. Measured on the vault
+    // before this pass, 15 of Greek's parentless deities, 30 of
+    // Norse's and 62 of Vedic's printed under GEN II or lower. So the
+    // layout reports the PROVENANCE of every row and the view prints a
+    // numeral only where the row really is one generation.
+    //
+    // Two things `layer` above cannot be used for here:
+    //   · it is a longest path over `parents`, which §2 deliberately
+    //     salts with ASPECT arcs as placement-parents. An avatar is
+    //     not its hub's child, so a row it lands in is not a
+    //     generation — that is where Vedic's remaining 13 false
+    //     numerals came from.
+    //   · it says nothing about who was dropped in by DATE.
+    // genDepth walks the surviving LINEAGE arcs only, and offLineage
+    // counts the members of a row whose place there is not a lineage
+    // fact at all (unconnected, aspect-placed, or ranks='era').
+    const lineParents = [], lineChildren = [];
+    for (let i = 0; i < N; i++) { lineParents.push([]); lineChildren.push([]); }
+    for (const a of arcs) { lineParents[a.c].push(a.p); lineChildren[a.p].push(a.c); }
+    const genDepth = new Array(N).fill(0);
+    for (let iter = 0; iter < N; iter++) {
+      let changed = false;
+      for (let c = 0; c < N; c++) {
+        let best = 0;
+        for (const p of lineParents[c]) if (genDepth[p] + 1 > best) best = genDepth[p] + 1;
+        if (best > genDepth[c] && best < N) { genDepth[c] = best; changed = true; }
+      }
+      if (!changed) break;
+    }
+    const offLineageAt = (i) => (ranksMode === 'era')
+      || (lineParents[i].length === 0 && lineChildren[i].length === 0);
     // dates + lineage provenance for one row, shared by both geometries.
     const rowStats = (row) => {
       let dlo = Infinity, dhi = -Infinity;
-      let lmin = Infinity, lmax = -Infinity, ep = 0;
+      let lmin = Infinity, lmax = -Infinity, off = 0;
       for (const n of row) {
         const d = dateOf(tree[n]);
         if (d != null) { if (d < dlo) dlo = d; if (d > dhi) dhi = d; }
-        if (layer[n] < lmin) lmin = layer[n];
-        if (layer[n] > lmax) lmax = layer[n];
-        if (eraPlacedAt(n)) ep++;
+        if (genDepth[n] < lmin) lmin = genDepth[n];
+        if (genDepth[n] > lmax) lmax = genDepth[n];
+        if (offLineageAt(n)) off++;
       }
       return {
         dmin: dlo > dhi ? null : dlo,
         dmax: dlo > dhi ? null : dhi,
+        // The lineage depths this row spans (0-based), and how many of
+        // its members are not there because of lineage at all.
         layerMin: row.length ? lmin : null,
         layerMax: row.length ? lmax : null,
-        eraPlaced: ep,
+        offLineage: off,
       };
     };
 
@@ -574,7 +599,7 @@
           const b = beds[r];
           if (!b) {
             rowMeta.push({ y: null, n: 0, dmin: null, dmax: null,
-                           layerMin: null, layerMax: null, eraPlaced: 0 });
+                           layerMin: null, layerMax: null, offLineage: 0 });
             return;
           }
           const bandY = y + (b.bedU * P) / 2;
@@ -639,7 +664,7 @@
           const g = rings[r];
           if (!g) {
             rowMeta.push({ rad: radU[r] * P, n: 0, dmin: null, dmax: null,
-                           layerMin: null, layerMax: null, eraPlaced: 0 });
+                           layerMin: null, layerMax: null, offLineage: 0 });
             return;
           }
           const compK = braidOn[r] ? FAN_COMP : 1;

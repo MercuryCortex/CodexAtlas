@@ -6373,10 +6373,11 @@
       //    under GEN II or lower — `adonis` carries zero lineage edges
       //    and was captioned a second-generation descendant. The
       //    layout now reports each row's provenance (layerMin/layerMax
-      //    = the true generation depths it spans, eraPlaced = how many
-      //    of its members were placed by DATE rather than by lineage),
-      //    and the numeral prints ONLY where the row is one generation
-      //    and nothing in it was placed by date. A mixed row carries
+      //    = the LINEAGE-ONLY generation depths it spans, offLineage =
+      //    how many of its members are there for some reason other
+      //    than lineage — a date bucket, or an aspect hub, since an
+      //    avatar is not its hub's child), and the numeral prints ONLY
+      //    where the row is one generation of real kin. A mixed row carries
       //    no numeral — an empty gutter is honest, a wrong one is not.
       //    The numeral also uses the row's OWN depth, not its index.
       //    And a house with no bones has no generations to number at
@@ -6399,7 +6400,7 @@
       const capFor = (rm) => {
         if (ranksEra) return (rm.dmin == null) ? null : fmtRangeD(rm.dmin, rm.dmax);
         if (!rm.n || !hasBones) return null;
-        if (rm.eraPlaced !== 0) return null;              // someone here stands on a date
+        if (rm.offLineage !== 0) return null;   // someone here is not here by lineage
         if (rm.layerMin == null || rm.layerMin !== rm.layerMax) return null;   // spans depths
         return 'GEN ' + romanNum(rm.layerMin + 1);
       };
