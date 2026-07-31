@@ -6171,7 +6171,38 @@
         placed.push([cx0, y, w]);
         return true;
       };
-      const halo = (t, x, y) => { ctx.strokeText(t, x, y); ctx.fillText(t, x, y); };
+      // ── SHARP MONO CHROME (2026-07-31, John: "the fonts when focus
+      // some are really blurry not sharp") ────────────────────────────
+      // Two separate causes, both fixed here so every caller gets it:
+      //
+      // 1. THE HALO WAS EATING THE LETTERS. lineWidth was a flat 3 CSS
+      //    px, inherited from the deity-name pass where the type is
+      //    14-20px. The house chrome is 7.5-9px mono, whose stems are
+      //    about 1px — and strokeText centres the stroke on the glyph
+      //    path, so 3px bleeds 1.5px INWARD and floods the counters
+      //    before fillText paints over them. The result reads as soft,
+      //    muddy, low-contrast type. The halo now scales with the face
+      //    (~0.26em, clamped) and joins round so thin stems keep their
+      //    corners.
+      // 2. FRACTIONAL DEVICE PIXELS. Every anchor here comes from
+      //    worldToScreen, so the baseline lands on a half device pixel
+      //    at dpr 2 and the rasteriser antialiases the whole line
+      //    vertically. Snapping y (and the centre x) to the device grid
+      //    is what actually makes it crisp.
+      const dprNow = (labelsCanvas.width && vp.w) ? (labelsCanvas.width / vp.w) : 1;
+      const snap = (v) => Math.round(v * dprNow) / dprNow;
+      const faceOf = () => {
+        const m2 = /(\d+(?:\.\d+)?)px/.exec(ctx.font || '');
+        return m2 ? parseFloat(m2[1]) : 8.5;
+      };
+      const halo = (t, x, y) => {
+        const sx = snap(x), sy = snap(y);
+        ctx.lineJoin = 'round';
+        ctx.miterLimit = 2;
+        ctx.lineWidth = Math.max(1.4, Math.min(2.2, faceOf() * 0.26));
+        ctx.strokeText(t, sx, sy);
+        ctx.fillText(t, sx, sy);
+      };
       const restore = () => {
         ctx.font = saved.font; ctx.textAlign = saved.align; ctx.textBaseline = saved.base;
         ctx.lineWidth = saved.lw; ctx.fillStyle = saved.fill; ctx.globalAlpha = saved.alpha;
@@ -6267,8 +6298,10 @@
       const nodeWord = st.treeKind
         ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase()
         : 'MEMBERS';
-      const line1 = st.tree + ' ' + nodeWord + ' · ' + st.kinArcs + ' LINEAGE ARCS · '
-        + st.orphanCount + ' STAND ON THEIR ERA';
+      const line1 = st.tree + ' ' + nodeWord
+        + ' · ' + st.kinArcs + ' LINEAGE ARC' + (st.kinArcs === 1 ? '' : 'S')
+        + ' · ' + st.orphanCount + ' STAND'
+        + (st.orphanCount === 1 ? 'S' : '') + ' ON THEIR ERA';
       // THE CROWN STACK PITCH (2026-07-31) — `claim` rejects anything
       // whose centre sits within 15px of a rect already placed, and
       // the stack used to be 18 / 31 / 46: line2 sat 13px under line1
@@ -6283,15 +6316,23 @@
         ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.8;
         halo(line1, cs.x, cs.y + CROWN_ROW);
       }
-      if (st.docs || st.court) {
-        const line2 = (st.docs ? st.docs + ' IN THE SCRIPTORIUM' : '')
-          + (st.docs && st.court ? ' · ' : '')
-          + (st.court ? st.court + ' IN THE COURT' : '');
-        const w2 = ctx.measureText(line2).width;
-        if (claim(cs.x, cs.y + CROWN_ROW * 2, w2 + 8)) {
-          ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.55;
-          halo(line2, cs.x, cs.y + CROWN_ROW * 2);
-        }
+      // LINE 2 ALWAYS PRINTS (2026-07-31, John: "i dont see th courts?").
+      // It was guarded on `st.docs || st.court`, so a family the vault
+      // holds nothing but gods for — Baltic is 10 nodes, 10 deities,
+      // 0 documents, 0 court; Armenian 7/7/0/0; Celtic has 0 documents —
+      // opened with the line simply absent, and there is no way to read
+      // "the room is empty" apart from "the feature is broken". Zero IS
+      // the answer, and on an investigation vault it is the useful one:
+      // an empty scriptorium is a coverage gap worth seeing, not a
+      // blank to hide.
+      const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
+      const w2 = ctx.measureText(line2).width;
+      if (claim(cs.x, cs.y + CROWN_ROW * 2, w2 + 8)) {
+        ctx.fillStyle = _labelsTextColor;
+        // A zero room is stated, not shouted — one step quieter than a
+        // populated one, still legible.
+        ctx.globalAlpha = (st.docs || st.court) ? 0.55 : 0.4;
+        halo(line2, cs.x, cs.y + CROWN_ROW * 2);
       }
       ctx.globalAlpha = 1;
       // 1b ▸ CASCADE / FAN chips — the geometry control, ON the crown
