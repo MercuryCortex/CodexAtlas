@@ -101,7 +101,14 @@
   // glyph radius that rides it — multiplies by the sub-row count
   // instead of splitting one arc into 150 atomic slots.
   const BAND_R_FRAC    =  0.86;  // band centreline radius (× Rh)
-  const BAND_GAP_DEG   =  24;    // arc gap at 12 & 6 o'clock (deg, each side of the axis)
+  const BAND_GAP_DEG   =  24;    // arc gap at 12 o'clock (deg, each side of the axis)
+  // WAVE 4 (2026-07-31, John: "push the limit of the rows on the
+  // bottom opening space to fill") — the two gaps split. The TOP gap
+  // protects the crown column and keeps its 24°; the BOTTOM gap only
+  // has to clear the cascade's foot, which is a RADIAL fact (the
+  // gate asserts max member extent < band rIn), so the band may run
+  // much closer to 6 o'clock and the arc grows by ~12° a side.
+  const BAND_GAP_BOT_DEG = 12;   // arc gap at 6 o'clock (deg, each side of the axis)
   const BAND_ROWS_MAX  =  3;     // sub-row cap (auto-solves 1..this)
   const BAND_TREE_R    =  0.86;  // cascade/fan zone radius (× Rh) while the band stands.
                                  // Same as the band centreline on purpose: the cascade's
@@ -116,18 +123,50 @@
   // size the smaller tree radius would otherwise cost.
   const BAND_TREE_TOP  = -0.64;
   const BAND_TREE_BOT  =  0.92;
-  const BAND_PITCH_TGT =  9;     // add a sub-row until the pitch reaches this (wu)
+  // WAVE 4 (John: "theres SO much space we can utilize to make it 3
+  // rows of docs") — the target pitch is what decides how many
+  // sub-rows a crowded shelf earns, so it went from 9 (stop as soon
+  // as the arc merely fits) to 16 (keep thickening until the slots
+  // are OBJECTS). Measured: Christian's 125 documents solve to 3
+  // sub-rows at 16, and the gate pins that.
+  const BAND_PITCH_TGT =  16;    // add a sub-row until the pitch reaches this (wu)
   const BAND_PITCH_MAX =  30;    // a tiny court is centred, not smeared over the arc
   const BAND_SHELF_GAP =  20;    // arc air between shelves (wu) — must beat 2·RAIL_R_MAX
                                  // or two max-size glyphs touch across a shelf boundary
-  const BAND_END_PAD   =  26;    // arc reserved at each end (header/foot air)
+  const BAND_END_PAD   =  26;    // arc reserved at the FOOT end (overflow-line air)
+  const BAND_HEAD_ARC  =  230;   // arc reserved at the TOP end for the curved rail
+                                 // header (wu): "THE SCRIPTORIUM — 24 DOCS" at the
+                                 // HEAD face is ~160 CSS px, which is 195-244 wu at
+                                 // the gate viewports' fit scales — the reserve keeps
+                                 // the first shelf's caption out of the header's arc
   const BAND_SUB_DR    =  0.90;  // sub-row radial spacing (× pitch)
-  const BAND_CAP_CLEAR =  26;    // caption clearance off the band's outer edge (wu):
-                                 // ≥ 17 screen px at the smallest gate viewport, which
-                                 // beats sqrt(7² + 15²) — the exact radius at which NO
-                                 // bearing can fail both halves of the claim() test
-  const BAND_CAP_TIER  =  22;    // alternating caption radial tier (wu) so two short
-                                 // neighbouring shelves can never claim() each other off
+  const BAND_SUB_DR_MAX = 20;    // dr ceiling (wu) — a 3-sub-row band at pitch 26
+                                 // would otherwise be 65 wu thick and eat the whole
+                                 // caption annulus between band and ports
+  const BAND_CAP_CLEAR =  10;    // caption clearance off the band's outer edge (wu).
+                                 // WAVE 4: captions ride ALONG the arc now and claim
+                                 // BEFORE the band shield, so the old sqrt(7²+15²)
+                                 // stand-off argument is gone — this is visual air
+                                 // between the outermost glyph row and the text
+  const BAND_CAP_TIER  =  30;    // alternating caption radial tier (wu) so two short
+                                 // neighbouring shelves can never claim() each other
+                                 // off: ≥ 19.6 screen px at the smallest gate scale,
+                                 // which clears the 15px rule at every bearing the
+                                 // replay measures (and the header rides tier 1, so
+                                 // it is radially clear of the tier-0 first caption)
+  // THE CAPTION IS PART OF THE ARC BUDGET (wave 4). A shelf caption
+  // is constant-px text riding the shelf's own arc, so a shelf must
+  // be dealt enough arc to CARRY its caption or two same-tier
+  // captions abut and claim() hides one (measured: Christian's
+  // "RITUALS · 5 OF 11" lost to "SYMBOLS · 12 OF 25" at 1000x1000 —
+  // a kind the header counts, captionless). 9.2 wu/char covers the
+  // CAP face's mono advance at the smallest gate fit scale
+  // (9.5px × 0.62 / 0.6557); the allowance is capped so one long
+  // caption over a two-item shelf cannot crush every other shelf's
+  // pitch — past the cap it spills ±~18px into the NEIGHBOUR tier's
+  // region, which the alternating tiers absorb by construction.
+  const BAND_CAP_WU    =  9.2;   // caption arc allowance per character (wu)
+  const BAND_CAP_ARC_MAX = 120;  // allowance ceiling per shelf (wu)
   const RAIL_R_FRAC    =  0.40;  // glyph radius = pitch * this
   const RAIL_R_MAX     =  9;     // hard ceiling (wu); the 0.49·minDist law below is
                                  // what actually guarantees glyphs can never touch
@@ -193,8 +232,15 @@
   //   ── the three zones (2026-07-31 wave 3, all × Rh unless noted) ──
   //   portInset:  number  default 1.0    horizon ports ring radius
   //   bandR:      number  default 0.86   inner band centreline radius
-  //   bandGap:    number  default 24     band arc gap at 12 & 6 o'clock (DEGREES)
+  //   bandGap:    number  default 24     band arc gap at 12 o'clock (DEGREES, per side)
+  //   bandGapBot: number  default 12     band arc gap at 6 o'clock (DEGREES, per side)
   //   bandRows:   number  default 3     max concentric sub-rows for the band
+  //   bandPitch:  number  default 16     target slot pitch (wu) — sub-rows are added
+  //               until the pitch reaches this, so it is the dial that
+  //               decides how THICK a crowded shelf grows
+  //   bandHead:   number  default 230    arc reserved at the top end for the
+  //               curved rail header (wu)
+  //   capClear:   number  default 10     caption air off the band's outer edge (wu)
   //   treeR:      number  default 0.80   cascade/fan zone radius while the
   //               band stands. HONEST ZERO: when the house holds no
   //               docs and no court (rails off, deity-only family,
@@ -997,31 +1043,61 @@
       // ── the arc ────────────────────────────────────────────
       const bandR  = Rh * Math.max(0.5, Math.min(1.02, num(o.bandR, BAND_R_FRAC)));
       const gapRad = Math.max(4, Math.min(60, num(o.bandGap, BAND_GAP_DEG))) * Math.PI / 180;
+      const gapBot = Math.max(2, Math.min(60, num(o.bandGapBot, BAND_GAP_BOT_DEG))) * Math.PI / 180;
       const rowsMax = Math.max(1, Math.min(4, Math.round(num(o.bandRows, BAND_ROWS_MAX))));
-      const span = Math.PI - 2 * gapRad;       // radians per side arc
+      const pitchTgt = Math.max(4, Math.min(BAND_PITCH_MAX, num(o.bandPitch, BAND_PITCH_TGT)));
+      const capClear = Math.max(0, Math.min(60, num(o.capClear, BAND_CAP_CLEAR)));
+      // radians per side arc — asymmetric since wave 4: the top gap
+      // shields the crown column, the bottom gap only clears the
+      // cascade's foot, and both are dials.
+      const span = Math.max(0.26, Math.PI - gapRad - gapBot);
       const L = bandR * span;                  // arc budget (wu, centreline)
+      const headArc = Math.max(0, Math.min(0.45 * L, num(o.bandHead, BAND_HEAD_ARC)));
       // arcU (wu along the centreline, 0 = TOP end) → world angle.
-      // Right side runs -90°+gap → +90°-gap through 0 (3 o'clock);
-      // left side mirrors through 180°. Screen y grows downward, so
-      // sin(-π/2) is the top of the ring.
+      // Right side runs -90°+gapTop → +90°-gapBot through 0
+      // (3 o'clock); left side mirrors through 180°. Screen y grows
+      // downward, so sin(-π/2) is the top of the ring.
       const angAt = (u) => (side > 0)
         ? (-Math.PI / 2 + gapRad + (u / L) * span)
         : (-Math.PI / 2 - gapRad - (u / L) * span);
+      // The caption arc allowance per shelf — the SAME string the
+      // view prints (CR-5: "label · shown OF count"), measured in
+      // wu-per-char. Format drift between here and renderBandCaptions
+      // is pinned by check-familytree.mjs.
+      const capNeed = shown.map(g => {
+        const txt = g.label + ' · '
+          + ((g.items.length < g.count) ? (g.items.length + ' OF ' + g.count) : g.count);
+        return Math.min(BAND_CAP_ARC_MAX, txt.length * BAND_CAP_WU);
+      });
       // Sub-rows: the FEWEST that reach a readable pitch (so a small
       // court stays a single clean row and a 150-slot one thickens
       // instead of atomising). The half-pitch stagger overhang of an
-      // odd sub-row is budgeted per shelf.
-      const fixed = 2 * BAND_END_PAD + Math.max(0, G - 1) * BAND_SHELF_GAP;
-      let nSub = 1, cols = [], pitch = 0;
+      // odd sub-row is budgeted per shelf, and so is the caption
+      // spill (a shelf whose caption outruns its items is dealt the
+      // difference — fixed-point over pitch, monotone, 6 passes).
+      const fixed = headArc + BAND_END_PAD + Math.max(0, G - 1) * BAND_SHELF_GAP;
+      const itemsArcOf = (c, p) => Math.max(0, c - 1) * p + (nSub > 1 ? p / 2 : 0);
+      let nSub = 1, cols = [], pitch = 0, spills = [];
       for (;; nSub++) {
         cols = shown.map(g => Math.ceil(g.items.length / nSub));
         let steps = 0;
         for (const c of cols) steps += Math.max(0, c - 1);
-        const raw = (L - fixed) / Math.max(1, steps + (nSub > 1 ? 0.5 * G : 0));
+        const div = Math.max(1, steps + (nSub > 1 ? 0.5 * G : 0));
+        let raw = (L - fixed) / div;
+        for (let it = 0; it < 6; it++) {
+          const p = Math.max(0.4, Math.min(BAND_PITCH_MAX, raw));
+          let spill = 0;
+          for (let gi = 0; gi < G; gi++) spill += Math.max(0, capNeed[gi] - itemsArcOf(cols[gi], p));
+          raw = (L - fixed - spill) / div;
+        }
         pitch = Math.max(0.4, Math.min(BAND_PITCH_MAX, raw));
-        if (nSub >= rowsMax || raw >= BAND_PITCH_TGT) break;
+        spills = cols.map((c, gi) => Math.max(0, capNeed[gi] - itemsArcOf(c, pitch)));
+        if (nSub >= rowsMax || raw >= pitchTgt) break;
       }
-      const dr = pitch * BAND_SUB_DR;
+      // dr is capped independently of the pitch: a wide-open arc can
+      // solve to pitch 26+, and (nSub-1)·0.9·26 + glyphs would spend
+      // the entire band→ports annulus on air between sub-rows.
+      const dr = Math.min(pitch * BAND_SUB_DR, BAND_SUB_DR_MAX);
       // The closest two slots can stand: arc neighbours on one sub-row
       // are `pitch` apart ALONG THE CENTRELINE — but an inner sub-row
       // rides a smaller circle, so its chord shrinks by rInner/bandR
@@ -1036,36 +1112,60 @@
         (nSub > 1) ? Math.min(pitch * shrink, Math.hypot((pitch / 2) * shrink, dr)) : pitch);
       const glyphR = Math.min(RAIL_R_MAX, Math.max(0.8, pitch * rFrac), 0.49 * minDist);
       const thick = (nSub - 1) * dr + 2 * glyphR;
-      // Centre the run in the arc (a tiny court reads as a held
-      // object at 3 / 9 o'clock, not a smear from crown to foot).
+      // THE CASCADE OWNS ITS AIR (wave 4) — a multi-sub-row band is a
+      // thick annulus, and growing it INWARD from the centreline
+      // would push rIn under the tree's measured extent (the gate
+      // asserts cascade < rIn per family). The layout has already
+      // placed the tree by the time the rails build, so the band's
+      // centreline yields OUTWARD exactly as far as the measured
+      // extent demands and no further. Angles still map arc-length on
+      // the dialled centreline; placing them on a slightly larger
+      // circle only ever INCREASES slot spacing (the no-touch law is
+      // safe in that direction).
+      const rC = Math.max(bandR, treeExt + 4 + thick / 2);
+      // Centre the run in the USABLE arc — after the header reserve,
+      // before the foot pad (a tiny court reads as a held object at
+      // 3 / 9 o'clock, not a smear from crown to foot). The run
+      // includes every shelf's caption spill.
       let run = Math.max(0, G - 1) * BAND_SHELF_GAP;
-      cols.forEach((c) => { run += Math.max(0, c - 1) * pitch + (nSub > 1 ? pitch / 2 : 0); });
-      let u = Math.max(BAND_END_PAD, (L - run) / 2);
-      const anchor = (uu, rad) => {
-        const a = angAt(Math.max(0, Math.min(L, uu)));
-        return { x: cx + Math.cos(a) * rad, y: cy + Math.sin(a) * rad,
-                 ux: Math.cos(a), uy: Math.sin(a), a };
-      };
+      cols.forEach((c, gi) => {
+        run += Math.max(0, c - 1) * pitch + (nSub > 1 ? pitch / 2 : 0) + spills[gi];
+      });
+      let u = headArc + Math.max(0, (L - headArc - BAND_END_PAD - run) / 2);
       // `parkedIds` is the remainder's id list — the view needs it to
       // bake an honest external class for the wires that land on the
       // crown (wave 2, EDGE-2), and re-deriving it in the view would
       // be a second source of truth.
+      //
+      // WAVE 4 — THE TEXT RIDES THE ARC. The view writes the header,
+      // the shelf captions and the spine names glyph-by-glyph ALONG
+      // the curve, so the anchors are now BEARINGS + RADII, not
+      // points: capR is the tier-0 caption ring (band outer edge +
+      // capClear), capTier the alternating radial step, headA the
+      // header's centre bearing (the middle of the reserved top arc,
+      // hugging the run's start so a centred small court keeps its
+      // title attached). The header rides tier 1 so it can never
+      // claim() against the tier-0 first shelf caption.
       const rail = { side, count: T, shown: S, overflow: T - S, pitch, glyphR,
-                     nSub, dr, r: bandR, rIn: bandR - thick / 2, rOut: bandR + thick / 2,
-                     a0: angAt(0), a1: angAt(L), gapRad,
-                     head: anchor(0, bandR), foot: null,
+                     nSub, dr, r: rC, rIn: rC - thick / 2, rOut: rC + thick / 2,
+                     a0: angAt(0), a1: angAt(L), gapRad, gapBotRad: gapBot,
+                     capR: rC + thick / 2 + capClear, capTier: BAND_CAP_TIER,
+                     headA: angAt(Math.max(headArc / 2, u - headArc / 2)),
+                     foot: null,
                      parkedIds: parked, shelves: [] };
-      const capBase = bandR + thick / 2 + BAND_CAP_CLEAR;
       const runStart = u;
       shown.forEach((g, gi) => {
         const shelf = { label: g.label, count: g.count, shown: g.items.length,
                         spineId: null, items: [] };
+        // The caption spill pads the shelf on BOTH sides, so the
+        // items stay centred under their own caption.
+        const uItems = u + spills[gi] / 2;
         let bd = -1;
         g.items.forEach((n, k) => {
           const col = Math.floor(k / nSub), sub = k % nSub;
           const stag = (nSub > 1 && (sub % 2) === 1) ? pitch / 2 : 0;
-          const a = angAt(u + col * pitch + stag);
-          const rad = bandR + (sub - (nSub - 1) / 2) * dr;
+          const a = angAt(uItems + col * pitch + stag);
+          const rad = rC + (sub - (nSub - 1) / 2) * dr;
           const x = cx + Math.cos(a) * rad, y = cy + Math.sin(a) * rad;
           positions.set(n.id, { x, y });
           radii.set(n.id, glyphR);
@@ -1073,27 +1173,41 @@
           const d = degOf(n.id);
           if (d > bd) { bd = d; shelf.spineId = n.id; }
         });
-        const uEnd = u + Math.max(0, cols[gi] - 1) * pitch + (nSub > 1 ? pitch / 2 : 0);
-        shelf.a0 = angAt(u);
+        const uEnd = uItems + Math.max(0, cols[gi] - 1) * pitch + (nSub > 1 ? pitch / 2 : 0);
+        shelf.a0 = angAt(uItems);
         shelf.a1 = angAt(uEnd);
-        // Caption anchor: the shelf's mid-bearing, OUTBOARD of the
-        // band. Alternating radial tiers keep two short neighbouring
-        // shelves' captions out of each other's 15px claim band even
-        // where the arc runs nearly horizontal (its top and bottom).
-        const capA = angAt((u + uEnd) / 2);
-        const capR = capBase + (gi % 2) * BAND_CAP_TIER;
-        shelf.capX = cx + Math.cos(capA) * capR;
-        shelf.capY = cy + Math.sin(capA) * capR;
-        shelf.ux = Math.cos(capA);
-        shelf.uy = Math.sin(capA);
-        shelf.capA = capA;
+        // Caption anchor: the shelf's mid-bearing on its own tier of
+        // the caption ring. Alternating radial tiers keep two short
+        // neighbouring shelves' captions out of each other's 15px
+        // claim band even where captions run longer than their shelf.
+        shelf.capA = angAt((uItems + uEnd) / 2);
+        shelf.tier = gi % 2;
+        shelf.capR = rail.capR + shelf.tier * BAND_CAP_TIER;
         rail.shelves.push(shelf);
-        u = uEnd + BAND_SHELF_GAP;
+        u = uEnd + spills[gi] / 2 + BAND_SHELF_GAP;
       });
-      rail.foot = anchor(u - BAND_SHELF_GAP + BAND_END_PAD, bandR);
+      // THE FOOT SITS IN THE BOTTOM OPENING (wave 4) — the overflow
+      // line used to anchor at the run's own end, which the curved
+      // caption ring now owns; half a bottom-gap past the arc end is
+      // the one bearing on this side that no shelf, caption or
+      // header can ever occupy ("the bottom opening space", his
+      // words — the remainder is stated exactly where the space is).
+      const aFoot = angAt(L) + (side > 0 ? 1 : -1) * (gapBot / 2);
+      rail.foot = { x: cx + Math.cos(aFoot) * rC, y: cy + Math.sin(aFoot) * rC,
+                    ux: Math.cos(aFoot), uy: Math.sin(aFoot), a: aFoot };
       rail.runA0 = angAt(runStart);
       rail.runA1 = angAt(Math.max(0, Math.min(L, u - BAND_SHELF_GAP)));
       return rail;
+    }
+    // The tree's measured extent (position + house radius) — the
+    // rails read it so a thick band can yield outward instead of
+    // growing an annulus over the cascade's outermost gods.
+    let treeExt = 0;
+    for (const n of tree) {
+      const p = positions.get(n.id);
+      if (!p) continue;
+      const e = Math.hypot(p.x - cx, p.y - cy) + (radii.get(n.id) || 0);
+      if (e > treeExt) treeExt = e;
     }
     const rails = {
       left:  buildRail(docShelves(docs), -1),

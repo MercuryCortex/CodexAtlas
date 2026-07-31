@@ -223,9 +223,12 @@ function checkUnion(fam, geometry, expect) {
         const rr2 = Math.hypot(it.x, it.y);
         if (rr2 + rail.glyphR > rail.rOut + 0.01 || rr2 - rail.glyphR < rail.rIn - 0.01) annBad++;
         if (Math.sign(it.x) !== Math.sign(rail.side)) sideBad++;
-        // bearing distance from the vertical axis must beat the gap
+        // bearing distance from the vertical axis must beat the gap —
+        // the TOP gap above the horizontal axis, the (wave-4, smaller)
+        // BOTTOM gap below it
         const fromVert = Math.abs(Math.abs(Math.atan2(it.y, it.x)) - Math.PI / 2);
-        if (fromVert < rail.gapRad - 1e-6) gapBad++;
+        const gapHere = (it.y < 0) ? rail.gapRad : rail.gapBotRad;
+        if (fromVert < gapHere - 1e-6) gapBad++;
       }
     }
     if (annBad === 0) ok('every band slot inside its annulus [rIn, rOut]');
@@ -602,21 +605,22 @@ for (const [fam, modeType] of [['Christian', 'deity'], ['Other', 'deity'], ['Oth
   }
 }
 
-// ── W3 ▸ THE RING — every promised string can land, and the probe ──
-// (2026-07-31 wave 3 — supersedes W2-D and its vertical-rail
-// tripwires: the rails are ONE RING now, sectioned by arc, docs
-// left / court right, with the band as an arc-shaped obstacle
-// shield. See familytree.js §7 for the ratified design argument.)
+// ── W4 ▸ THE RING WRITES ON ITS OWN CURVE — every promised string
+// can land (2026-07-31 wave 4 — supersedes the W3 horizontal-anchor
+// replay: the header, every shelf caption and every spine name are
+// now written glyph-by-glyph ALONG the arc, and they claim BEFORE
+// the band's obstacle shield, so a canonical count can never lose
+// its spot to its own shield).
 //
-// claim() refuses a rect whose centre is within 15px vertically AND
-// (w+P.w)/2 horizontally of one already placed. Every string the
-// ring promises — both headers, every shelf caption, every spine
-// name, the overflow foot, and every slot's radially-outboard REACH
-// name — is replayed here through the exact placement arithmetic at
-// four viewports, in the view's real paint order (crown stack →
-// band shield → headers, then the LOW half). PROVE A PROMISED
-// STRING ACTUALLY PRINTS — the standing law that bit three times.
-console.log('\n── W3 · THE RING — every promised string can land (the 15px rule) ──');
+// HOW A CURVED RUN CLAIMS (mirrored from renderBandCaptions, pinned
+// below): every glyph centre is bucketed into 16px screen y-bands
+// (16 = the smallest integer pitch that clears claim()'s 15px rule,
+// so two buckets of the SAME run can never refuse each other), each
+// bucket becomes one [cx, y=bucket·16, w] rect, and all of a run's
+// rects claim atomically — any refusal rolls the run back and the
+// whole string hides. PROVE A PROMISED STRING ACTUALLY PRINTS — the
+// standing law that bit four times.
+console.log('\n── W4 · THE RING\'S CURVED TEXT — every promised string can land ──');
 // the view's laws, pinned so this mirror cannot drift silently
 must(/const TYPE = \{ head: 11 \* ts, name: 10 \* ts, cap: 9\.5 \* ts \};/,
   'the type scale steps are HEAD 11 / NAME 10 / CAP 9.5 CSS px');
@@ -627,22 +631,45 @@ must(/const anchor = houseTitleAnchor\(vp\);\n\s+const cs = \{ x: anchor\.x, y: 
   'the title block anchors on the SCREEN fixture, never on the world crown (wave 4)');
 must(/const aStep = 22 \/ Math\.max\(1e-6, rl\.r \* camS\);/,
   'the band obstacle shield follows the ARC at 22px screen pitch');
-must(/let hx = hp\.x \+ rl\.head\.ux \* 26;/,
-  'the header steps 26px outward along its arc-end bearing');
-must(/const cx0 = outR \? lx \+ w \/ 2 : lx - w \/ 2;/,
-  'a shelf caption extends AWAY from the band (the √(7²+15²) argument)');
-must(/spineY = ly \+ \(sh\.uy < -0\.35 \? -row\(TYPE\.cap\) : row\(TYPE\.cap\)\);/,
-  'the spine sits one DERIVED type row off its caption, away from the band');
-must(/lx = s\.x \+ ux \* \(rBub \+ 32 \+ wpx \/ 2\);/,
-  'a rail slot\'s reach name goes RADIALLY outboard, 32px off the glyph');
-must(/renderBandCaptions\(ctx, claim, halo, W2S, TYPE, row, font, house, vp\);/,
-  'shelf captions + spines claim in the HIGH half, BEFORE the ports (canonical beats wayfinding)');
+must(/const bi = Math\.round\(gy \/ 16\);/,
+  'curved-run glyphs bucket into 16px y-bands (the 15px rule, derived not hand-picked)');
+must(/placed\.length = mark;\s*\n\s*return null;/,
+  'a curved run claims ATOMICALLY — any refusal rolls the whole run back');
+must(/const flip = \(o\.flip != null\) \? o\.flip : Math\.sin\(aRef\) > 0;/,
+  'a lower-half run flips to stay upright (and a follower can inherit its leader\'s flip)');
+must(/arcRun\(header, rl\.capR \+ rl\.capTier, rl\.headA, TYPE\.head/,
+  'the header rides tier 1 of the caption ring over the reserved top arc');
+must(/arcRun\(txt, sh\.capR, sh\.capA, TYPE\.cap/,
+  'a shelf caption rides its own shelf\'s arc segment at its layout tier');
+must(/arcRun\(title, sh\.capR, res\.aEnd, TYPE\.name/,
+  'the spine name FOLLOWS its caption along the arc, on the same tier');
+must(/\{ edge: true, flip: res\.flip, gap: gapPx \}/,
+  'the spine inherits its caption\'s flip so the pair cannot fold at 3/9 o\'clock');
+must(/const gapPx = Math\.min\(48, 17 \/ Math\.max\(0\.36, Math\.abs\(Math\.cos\(res\.aEnd\)\)\)\);/,
+  'the follower gap DERIVES from the bucket law (a vertical-arc spine must clear a full y-band)');
+must(/const txt = g\.label \+ ' · '\s*\n?\s*\+ \(\(g\.items\.length < g\.count\) \? \(g\.items\.length \+ ' OF ' \+ g\.count\) : g\.count\);/,
+  '(layout) the caption arc allowance measures the SAME string the view prints', treeSrc);
+must(/renderBandCaptions\(ctx, placed, claim, W2S, TYPE, font, house, vp\);[\s\S]{0,2600}const aStep = 22/,
+  'the band text claims BEFORE the band shield (canonical counts outrank their own shield)');
+must(/const step = Math\.max\(rBub \+ 32, bandPx - ul \+ 32\);/,
+  'a rail slot\'s reach name steps RADIALLY outboard, 32px off the glyph OR the band centreline, whichever is farther');
 must(/const glyphR = Math\.min\(RAIL_R_MAX, Math\.max\(0\.8, pitch \* rFrac\), 0\.49 \* minDist\);/,
   '(layout) glyphs cap at 0.49·minDist — no dial position can make two slots touch', treeSrc);
 must(/const hasBand = \(docs\.length \+ court\.length\) > 0;/,
   '(layout) no docs + no court ⇒ no band ⇒ pre-ring geometry, byte-identical (honest zero)', treeSrc);
 must(/const minDist = Math\.min\(BAND_SHELF_GAP,/,
   '(layout) the shelf gap bounds the glyph too, or max-size glyphs touch across shelf borders', treeSrc);
+// the four wave-4 dials exist with the shipped defaults (the union
+// runs below exercise the layout's own constants, so the two files
+// must agree or this gate measures a fiction)
+must(/house_band_gap_bot:\s*12,/, 'house_band_gap_bot ships at 12°');
+must(/house_band_pitch:\s*16,/, 'house_band_pitch ships at 16 wu');
+must(/house_band_head:\s*230,/, 'house_band_head ships at 230 wu');
+must(/house_cap_clear:\s*10,/, 'house_cap_clear ships at 10 wu');
+must(/const BAND_GAP_BOT_DEG = 12;/, '(layout) BAND_GAP_BOT_DEG default matches the dial', treeSrc);
+must(/const BAND_PITCH_TGT =  16;/, '(layout) BAND_PITCH_TGT default matches the dial', treeSrc);
+must(/const BAND_HEAD_ARC  =  230;/, '(layout) BAND_HEAD_ARC default matches the dial', treeSrc);
+must(/const BAND_CAP_CLEAR =  10;/, '(layout) BAND_CAP_CLEAR default matches the dial', treeSrc);
 
 // The mirror. Mono advance ≈ 0.6em; 0.62 is the conservative bound.
 const T_HEAD = 11, T_NAME = 10, T_CAP = 9.5;
@@ -656,6 +683,44 @@ function claimSim(placed, cx0, y, w, vpH) {
   }
   placed.push([cx0, y, w]);
   return true;
+}
+// renderBandCaptions' curved-run writer, mirrored: same bucket law,
+// same atomic rollback, mono advance 0.62·size per glyph.
+function arcRunSim(placed, text, rWu, aRef, sizePx, scale, ctrX, ctrY, vpH, opts) {
+  const o = opts || {};
+  const rMid = rWu * scale + sizePx / 2;
+  if (!(rMid > 40) || !text) return null;
+  const chars = [...String(text)];
+  const gw = sizePx * 0.62;
+  const total = chars.length * gw;
+  if (!(total > 0)) return null;
+  const flip = (o.flip != null) ? o.flip : Math.sin(aRef) > 0;
+  const dir = flip ? -1 : 1;
+  const a0 = o.edge ? (aRef + dir * (o.gap || 8) / rMid) : (aRef - dir * (total / 2) / rMid);
+  const buckets = new Map();
+  let adv = 0;
+  for (let i = 0; i < chars.length; i++) {
+    const a = a0 + dir * (adv + gw / 2) / rMid;
+    adv += gw;
+    const gx = ctrX + Math.cos(a) * rMid;
+    const gy = ctrY + Math.sin(a) * rMid;
+    // the glyph's honest x-extent for its rotation (view law)
+    const half = (gw * Math.abs(Math.sin(a)) + sizePx * Math.abs(Math.cos(a))) / 2 + 1;
+    const bi = Math.round(gy / 16);
+    const b = buckets.get(bi);
+    if (b) {
+      if (gx - half < b[0]) b[0] = gx - half;
+      if (gx + half > b[1]) b[1] = gx + half;
+    } else buckets.set(bi, [gx - half, gx + half]);
+  }
+  const mark = placed.length;
+  for (const [bi, b] of buckets) {
+    if (!claimSim(placed, (b[0] + b[1]) / 2, bi * 16, b[1] - b[0], vpH)) {
+      placed.length = mark;
+      return null;
+    }
+  }
+  return { dir, flip, aEnd: a0 + dir * total / rMid };
 }
 const RING_VPS = [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }, { w: 900, h: 1600 }];
 // THE LOCKED SCREEN FIXTURE (2026-07-31 wave 4) — mirrors forge.js's
@@ -691,7 +756,7 @@ const w4TierOf = (id) => {
 for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'Other']) {
   const lay = houseUnion(fam, 'cascade');
   const h = lay.house;
-  let headerFail = 0, capFail = 0, capTot = 0, spineFail = 0, spineTot = 0;
+  let headerFail = 0, capFail = 0, capTot = 0, spineFail = 0, spineTot = 0, spineLand = 0;
   let footFail = 0, footTot = 0, nameBlocked = 0, nameTot = 0, clampSkip = 0;
   let godTot = 0, godPrinted = 0, godClamped = 0;
   // The rank pass's own order: tier asc, then degree desc, then id.
@@ -702,6 +767,7 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
   for (const vp of RING_VPS) {
     const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
     const W2S = (x, y) => ({ x: vp.w / 2 + x * scale, y: vp.h / 2 + y * scale });
+    const ctrX = vp.w / 2, ctrY = vp.h / 2;
     const placed = [];
     // 1 ▸ THE TITLE BLOCK (HIGH half, first of all) — the family name,
     // both stat lines and the CASCADE/FAN chips, on the locked screen
@@ -714,6 +780,10 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
     const line1 = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' LINEAGE ARCS · ' + st.orphanCount + ' STAND ON THEIR ERA';
     const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
+    // MERGED (wave 4) — the REAL paint order is: locked title block →
+    // band curved text → band shield → ports → god names → low half.
+    // The two agents each rewrote part of this replay; this is the union
+    // in the order the view actually paints, not either side alone.
     const tw = titleW(fam);
     const w1 = mw(line1, T_HEAD), w2b = mw(line2, T_CAP);
     // Row 0 is syncHulls' published title rect, seeded into `placed`
@@ -725,7 +795,63 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
       claimSim(placed, cenX(110), cs.y + CROWN_ROW * 3, 110, vp.h),   // CASCADE/FAN chip reserve
     ];
     for (const r of rows4) { titleBlockTot++; if (!r) titleBlockFail++; }
-    // 2 ▸ the band shield, exactly as renderHouseChrome claims it
+    // 2 ▸ the band's curved text, in the view's real order: headers,
+    // then shelf captions, then the overflow feet (pass 1 — the
+    // canonical counts, ALL of which MUST land), then spine names
+    // (pass 2 — they follow, and only ever yield). All BEFORE the
+    // shield, exactly as the view claims them since wave 4.
+    const landed = [];
+    for (const rl of [h.rails.left, h.rails.right]) {
+      if (!rl || !rl.shelves.length) continue;
+      const header = rl.side < 0
+        ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
+        : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
+      if (!arcRunSim(placed, header, rl.capR + rl.capTier, rl.headA, T_HEAD,
+                     scale, ctrX, ctrY, vp.h)) headerFail++;
+      for (const sh of rl.shelves) {
+        const txt = sh.label + ' · ' + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
+        capTot++;
+        const res = arcRunSim(placed, txt, sh.capR, sh.capA, T_CAP, scale, ctrX, ctrY, vp.h);
+        if (!res) { capFail++; continue; }
+        landed.push([sh, res]);
+      }
+      // the overflow foot rides the curve at the foot bearing — a
+      // canonical count, claimed before any spine (wave 4)
+      if (rl.overflow > 0 && rl.foot) {
+        footTot++;
+        if (!arcRunSim(placed, '+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a,
+                       T_CAP, scale, ctrX, ctrY, vp.h)) footFail++;
+      }
+    }
+    for (const [sh, res] of landed) {
+      if (!sh.spineId) continue;
+      const node = NODE_BY_ID.get(sh.spineId);
+      let title = (node && node.title) || sh.spineId;
+      // the view's ellipsis cap (min of quarter-viewport and 170px),
+      // in mono-advance terms
+      const capW = Math.min(vp.w * 0.25, 170);
+      if (title.length * T_NAME * 0.62 > capW) {
+        title = title.slice(0, Math.max(4, Math.floor(capW / (T_NAME * 0.62)) - 1)) + '…';
+      }
+      spineTot++;
+      // the view's dynamic follower gap (derived from the bucket law)
+      const gapPx = Math.min(48, 17 / Math.max(0.36, Math.abs(Math.cos(res.aEnd))));
+      // A spine is ENTITLED to print when caption + gap + spine fit
+      // inside the shelf's own items arc: a crowded court (five
+      // shelves, one arc) cannot carry every long title, and a spine
+      // hiding THERE is the whole-words-or-nothing law working — but
+      // a spine refused despite room is a placement bug.
+      const capTxt = sh.label + ' · ' + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
+      const rMidPx = sh.capR * scale + T_NAME / 2;
+      const shelfArcPx = Math.abs(sh.a1 - sh.a0) * rMidPx;
+      const entitled = (capTxt.length * T_CAP * 0.62 + gapPx + title.length * T_NAME * 0.62 + 8) <= shelfArcPx;
+      const okSpine = !!arcRunSim(placed, title, sh.capR, res.aEnd, T_NAME, scale, ctrX, ctrY, vp.h,
+                                  { edge: true, flip: res.flip, gap: gapPx });
+      if (okSpine) spineLand++;
+      else if (entitled) spineFail++;
+    }
+    // 3 ▸ the band shield, exactly as renderHouseChrome claims it —
+    // AFTER the curved text since wave 4.
     for (const rl of [h.rails.left, h.rails.right]) {
       if (!rl || !rl.shelves.length) continue;
       const aStep = 22 / Math.max(1e-6, rl.r * scale);
@@ -736,52 +862,7 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
         claimSim(placed, p.x, p.y, 14, vp.h);
       }
     }
-    // 3 ▸ the two headers — MUST land (they are the canonical counts)
-    for (const rl of [h.rails.left, h.rails.right]) {
-      if (!rl || !rl.shelves.length) continue;
-      const header = rl.side < 0
-        ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
-        : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
-      const hw = mw(header, T_HEAD);
-      const hp = W2S(rl.head.x, rl.head.y);
-      let hx = hp.x + rl.head.ux * 26;
-      const hy = hp.y + rl.head.uy * 26;
-      hx = Math.max(6 + hw / 2, Math.min(vp.w - 6 - hw / 2, hx));
-      if (!claimSim(placed, hx, hy, hw + 6, vp.h)) headerFail++;
-    }
-    // 4 ▸ shelf captions + spine names — HIGH half, BEFORE the ports
-    // (wave 3 priority: canonical counts beat wayfinding). All MUST
-    // land wherever the unclamped rect fits in the viewport.
-    for (const rl of [h.rails.left, h.rails.right]) {
-      if (!rl) continue;
-      for (const sh of rl.shelves) {
-        const cp = W2S(sh.capX, sh.capY);
-        const outR = sh.ux >= 0;
-        const txt = sh.label + ' · ' + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
-        const w = mw(txt, T_CAP);
-        let lx = cp.x + sh.ux * 5;
-        const ly = cp.y + sh.uy * 5;
-        const fits = outR ? (lx + w <= vp.w - 6) : (lx - w >= 6);
-        lx = outR ? Math.min(lx, vp.w - 6 - w) : Math.max(lx, 6 + w);
-        const cx0 = outR ? lx + w / 2 : lx - w / 2;
-        if (!fits) { clampSkip++; continue; }
-        capTot++;
-        const capOK = claimSim(placed, cx0, ly, w + 4, vp.h);
-        if (!capOK) { capFail++; continue; }
-        if (!sh.spineId) continue;
-        const node = NODE_BY_ID.get(sh.spineId);
-        const title = (node && node.title) || sh.spineId;
-        const sw = mw(title, T_NAME);
-        const spineY = ly + (sh.uy < -0.35 ? -rowOf(T_CAP) : rowOf(T_CAP));
-        let sx = lx + sh.ux * 2;
-        const sFits = outR ? (sx + sw <= vp.w - 6) : (sx - sw >= 6);
-        sx = outR ? Math.min(sx, vp.w - 6 - sw) : Math.max(sx, 6 + sw);
-        if (!sFits) { clampSkip++; continue; }
-        spineTot++;
-        if (!claimSim(placed, outR ? sx + sw / 2 : sx - sw / 2, spineY, sw + 4, vp.h)) spineFail++;
-      }
-    }
-    // 5 ▸ the port labels claim between the captions and the names
+    // 4 ▸ the port labels claim between the captions and the names
     // in the real paint — replayed so nothing passes here and loses
     // to a port in the app.
     for (const pt of lay.ports) {
@@ -821,6 +902,7 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
       if (claimSim(placed, s.x, ly2, wpx, vp.h)) godPrinted++;
     }
     // 6 ▸ every slot's radially-outboard REACH name vs the shield
+    // 6 ▸ every slot's radially-outboard REACH name vs the shield
     // (the wave-2 standard: a name that FITS beside the band must not
     // be blocked by the shield; a name clamped by the viewport edge
     // is a geometric loss, not this defect).
@@ -830,9 +912,13 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
         const s = W2S(it.x, it.y);
         const wpx = 90, rBub = 5 * scale;
         let ux = it.x - h.center.x, uy = it.y - h.center.y;
-        const ul = Math.hypot(ux, uy) || 1; ux /= ul; uy /= ul;
-        const lx = s.x + ux * (rBub + 32 + wpx / 2);
-        const ly = s.y + uy * (rBub + 32);
+        const ulWu = Math.hypot(ux, uy) || 1; ux /= ulWu; uy /= ulWu;
+        // the view's wave-4 step law: off the glyph OR the band
+        // centreline, whichever is farther (screen px)
+        const ulPx = ulWu * scale;
+        const step = Math.max(rBub + 32, rl.r * scale - ulPx + 32);
+        const lx = s.x + ux * (step + wpx / 2);
+        const ly = s.y + uy * step;
         if (lx - wpx / 2 < 6 || lx + wpx / 2 > vp.w - 6) { clampSkip++; continue; }
         if (ly < KO_TOP || ly > vp.h - KO_BOT) { clampSkip++; continue; }
         nameTot++;
@@ -842,31 +928,33 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
         }
       }
     }
-    // 7 ▸ the LOW half: the overflow foot.
-    for (const rl of [h.rails.left, h.rails.right]) {
-      if (!rl) continue;
-      if (rl.overflow > 0 && rl.foot) {
-        const fp = W2S(rl.foot.x, rl.foot.y);
-        const ftxt = '+' + rl.overflow + ' NOT SHOWN';
-        const w = mw(ftxt, T_CAP);
-        let fx = fp.x + rl.foot.ux * 26;
-        const fy = fp.y + rl.foot.uy * 26;
-        fx = Math.max(6 + w / 2, Math.min(vp.w - 6 - w / 2, fx));
-        footTot++;
-        if (!claimSim(placed, fx, fy, w + 4, vp.h)) footFail++;
-      }
+    // 6 ▸ the zero-overlapping-pairs invariant of the final list —
+    // the curved runs push their rects by hand after the atomic
+    // test, so prove no pair violates the claim() metric.
+    let pairBad = 0;
+    for (let i = 0; i < placed.length; i++) for (let j = i + 1; j < placed.length; j++) {
+      const A = placed[i], B = placed[j];
+      if (Math.abs(A[0] - B[0]) < (A[2] + B[2]) / 2 && Math.abs(A[1] - B[1]) < 15) pairBad++;
     }
+    if (pairBad) fail(fam + ' @' + vp.w + 'x' + vp.h + ': ' + pairBad
+      + ' overlapping pairs in the final placed list — the registry invariant broke');
   }
-  if (headerFail === 0) ok(fam + ': both headers land at all 4 viewports');
-  else fail(fam + ': ' + headerFail + ' header placements refused');
-  if (capFail === 0) ok(fam + ': all ' + capTot + ' shelf captions land (4 viewports'
-    + (clampSkip ? '; ' + clampSkip + ' viewport-clamped placements excluded' : '') + ')');
-  else fail(fam + ': ' + capFail + ' of ' + capTot + ' shelf captions refused');
-  if (spineFail === 0) ok(fam + ': all ' + spineTot + ' spine names land');
-  else fail(fam + ': ' + spineFail + ' of ' + spineTot + ' spine names refused');
+  if (headerFail === 0) ok(fam + ': both curved headers land at all 4 viewports');
+  else fail(fam + ': ' + headerFail + ' curved header placements refused');
+  if (capFail === 0) ok(fam + ': all ' + capTot + ' curved shelf captions land (4 viewports)');
+  else fail(fam + ': ' + capFail + ' of ' + capTot + ' curved shelf captions refused');
+  if (spineTot > 0 && spineLand === 0) {
+    fail(fam + ': NO spine name lands at any viewport — the follower mechanism is dead');
+  } else if (spineFail === 0) {
+    ok(fam + ': ' + spineLand + ' of ' + spineTot + ' spine names land, and every spine'
+      + ' whose shelf has room for it lands (the rest hide honestly — whole words or nothing)');
+  } else {
+    fail(fam + ': ' + spineFail + ' spine names refused DESPITE their shelf having room');
+  }
   if (footTot === 0 || footFail === 0) ok(fam + ': the overflow foot lands (' + footTot + ' placements)');
   else fail(fam + ': ' + footFail + ' of ' + footTot + ' overflow feet refused');
-  if (nameBlocked === 0) ok(fam + ': 0 of ' + nameTot + ' slot reach-names blocked by the band shield');
+  if (nameBlocked === 0) ok(fam + ': 0 of ' + nameTot + ' slot reach-names blocked by the band shield'
+    + (clampSkip ? ' (' + clampSkip + ' viewport-clamped placements excluded)' : ''));
   else fail(fam + ': ' + nameBlocked + ' of ' + nameTot + ' slot reach-names blocked by the shield');
   // WAVE 4 — the gods' names, actually printed through the registry.
   // The floor is deliberately a FRACTION, not a count: a name that
@@ -936,6 +1024,14 @@ else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused')
   if (onBand === 0) ok('the title block never overlaps the band ring — the 12 o\'clock gap keeps the corners free');
   else fail(onBand + ' title-block rows sit on the band');
 }
+// John's wave-4 ask, pinned: "3 rows of docs" — Christian's 125
+// documents must thicken to 3 sub-rows at the shipped defaults.
+{
+  const h = houseUnion('Christian', 'cascade').house;
+  const rl = h.rails.left;
+  if (rl && rl.nSub === 3) ok('Christian SCRIPTORIUM runs 3 sub-rows at the defaults (125 docs use the room)');
+  else fail('Christian SCRIPTORIUM nSub=' + (rl && rl.nSub) + ', expected 3 — the band is not using its space');
+}
 
 // ── W3-HOSTILE ▸ the dial extremes can never make slots touch ──
 // The overlap that survived first contact: 4 sub-rows at a tight
@@ -948,6 +1044,11 @@ for (const [fam, extra] of [
   ['Christian', { railMax: 400, bandRows: 4, bandGap: 8, railGlyph: 0.7 }],
   ['Other',     { railMax: 400, bandRows: 1, bandGap: 45, railGlyph: 0.7, bandR: 1.0, treeR: 0.5 }],
   ['Other',     { railMax: 20,  bandRows: 4, bandGap: 45, railGlyph: 0.2, bandR: 0.6, treeR: 0.95 }],
+  // wave-4 dials at their extremes: widest arc + fattest pitch +
+  // no header reserve, then narrowest arc + max reserve + max rows
+  ['Christian', { railMax: 400, bandRows: 4, bandGap: 8, bandGapBot: 2, bandPitch: 30, bandHead: 0, railGlyph: 0.7 }],
+  ['Other',     { railMax: 400, bandRows: 4, bandGap: 45, bandGapBot: 45, bandPitch: 30, bandHead: 400, railGlyph: 0.7 }],
+  ['Greek',     { railMax: 400, bandRows: 4, bandGap: 8,  bandGapBot: 60, bandPitch: 6,  bandHead: 400, railGlyph: 0.2, capClear: 0 }],
 ]) {
   const lay = houseUnion(fam, 'cascade', extra);
   const h = lay.house;
@@ -1000,7 +1101,8 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Other']) {
     console.log('    ' + nm + ': r=' + rl.r.toFixed(0) + ' [' + rl.rIn.toFixed(0) + ',' + rl.rOut.toFixed(0)
       + '] nSub=' + rl.nSub + ' pitch=' + rl.pitch.toFixed(1) + 'wu glyphR=' + rl.glyphR.toFixed(2)
       + 'wu = ' + (rl.glyphR * fit).toFixed(2) + 'px r (' + (2 * rl.glyphR * fit).toFixed(1)
-      + 'px dia) worstGap=' + (worst === Infinity ? '—' : worst.toFixed(2) + 'wu'));
+      + 'px dia) capR=' + rl.capR.toFixed(0) + '+' + rl.capTier
+      + ' worstGap=' + (worst === Infinity ? '—' : worst.toFixed(2) + 'wu'));
     const dg = (a) => (a * 180 / Math.PI).toFixed(0) + '°';
     console.log('      ' + rl.shelves.map(s => s.label + ' ' + s.shown + '/' + s.count
       + ' [' + dg(s.a0) + '→' + dg(s.a1) + ']').join(' · '));

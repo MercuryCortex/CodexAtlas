@@ -781,8 +781,21 @@
     // house, outside in — all LAB ▸ House sizes dials:
     house_port_inset:      1.0,     // horizon ports ring radius (× the wheel's outer radius)
     house_band_r:          0.86,    // inner band centreline (× Rh)
-    house_band_gap:        24,      // band arc gap at 12 & 6 o'clock (degrees each side)
+    house_band_gap:        24,      // band arc gap at 12 o'clock (degrees each side)
+    // WAVE 4 (John: "push the limit of the rows on the bottom opening
+    // space to fill") — the 6-o'clock gap is its own, smaller dial:
+    // the top gap protects the crown column, the bottom one only has
+    // to clear the cascade's foot, so the band earns ~24° more arc.
+    house_band_gap_bot:    12,      // band arc gap at 6 o'clock (degrees each side)
     house_band_rows:       3,       // max concentric sub-rows the band may thicken to
+    // WAVE 4 ("SO much space we can utilize to make it 3 rows of
+    // docs") — the target slot pitch. Sub-rows are added until the
+    // pitch reaches it, so this dial is what decides how THICK a
+    // crowded shelf grows: 16 gives Christian's 125 documents three
+    // sub-rows (gate-pinned); 9 restores the wave-3 thin band.
+    house_band_pitch:      16,      // target band slot pitch (world units)
+    house_band_head:       230,     // arc reserved for the curved rail header (wu)
+    house_cap_clear:       10,      // caption air off the band's outer edge (wu)
     house_tree_r:          0.86,    // cascade/fan zone radius (× Rh) while the band stands
     // THE TYPE SCALE — multiplies the house chrome's named steps
     // (HEAD 11 / NAME 10 / CAP 9.5 CSS px; houseChromeEnv derives
@@ -6125,6 +6138,18 @@
         ? camera.worldToScreen(local._house.lay.house.center.x,
                                local._house.lay.house.center.y, vp)
         : null;
+      // WAVE 4 — the band has real thickness now (up to 4 sub-rows),
+      // so a slot can sit well INSIDE the shield's centreline arc and
+      // "32px off the glyph" no longer implies "32px off the shield".
+      // The reach step below therefore measures from whichever is
+      // farther: the glyph's own bubble, or the rail's centreline.
+      const houseRails = houseCtrS ? (local._house.lay.house.rails || {}) : null;
+      // MERGE NOTE (wave 4) — the sibling's `rankSkip = houseGuestIdSet()`
+      // is deliberately NOT carried over. That skip listed who must NOT
+      // be named; the names work replaced it with `rankTreeIds`, which
+      // names the cascade and nothing else. Keeping both would restore
+      // the very bug the names pass fixed, because in every non-deity
+      // mode the tree IS the guest set.
       if (visible && visible.size) for (const id of visible) {
         const n = hitById ? hitById.get(id) : null;
         if (!n) continue;
@@ -6249,8 +6274,15 @@
           let ux = s.x - houseCtrS.x, uy = s.y - houseCtrS.y;
           const ul = Math.hypot(ux, uy) || 1;
           ux /= ul; uy /= ul;
-          lx = s.x + ux * (rBub + 32 + wpx / 2);
-          ly = s.y + uy * (rBub + 32) + dy;
+          // Wave 4: step from the band CENTRELINE when the slot sits
+          // on an inner sub-row (see houseRails note above) — the 32
+          // is the solved wave-2 clearance and is now measured off
+          // the arc the shield actually rides.
+          const hrl = houseRails ? ((rs < 0) ? houseRails.left : houseRails.right) : null;
+          const bandPx = hrl ? hrl.r * camScale : 0;
+          const step = Math.max(rBub + 32, bandPx - ul + 32);
+          lx = s.x + ux * (step + wpx / 2);
+          ly = s.y + uy * step + dy;
           lx = Math.max(wpx / 2 + 6, Math.min(vp.w - wpx / 2 - 6, lx));
         } else {
           ly = s.y - rBub - 6 + dy;
@@ -6328,9 +6360,14 @@
           const ul = Math.hypot(ux, uy) || 1;
           ux /= ul; uy /= ul;
           const rr = n.r * camScale;
+          // Same wave-4 band-centreline step as the arriving path —
+          // a leaving rail name must leave from where it stood.
+          const hrl = houseRails ? ((rs < 0) ? houseRails.left : houseRails.right) : null;
+          const bandPx = hrl ? hrl.r * camScale : 0;
+          const step = Math.max(rr + 32, bandPx - ul + 32);
           lx = Math.max(wpx / 2 + 6, Math.min(vp.w - wpx / 2 - 6,
-            s.x + ux * (rr + 32 + wpx / 2)));
-          ly = s.y + uy * (rr + 32);
+            s.x + ux * (step + wpx / 2)));
+          ly = s.y + uy * step;
         } else {
           ly = s.y - n.r * camScale - 6;
         }
@@ -6407,13 +6444,15 @@
     // audit house-chrome-priority-order-inverted — a caption must
     // never outrank a god's name). Actual paint order:
     //   HIGH (renderHouseChrome, BEFORE the names): crown stats +
-    //     CASCADE/FAN chips → band shield + headers → shelf captions
-    //     + spine names (wave 3 — canonical counts outrank the
-    //     wayfinding ports; see renderBandCaptions) → ports →
+    //     CASCADE/FAN chips → the band's curved text (headers →
+    //     shelf captions → spine names, all riding the arc — wave 4,
+    //     renderBandCaptions; canonical counts outrank the wayfinding
+    //     ports AND their own shield) → band shield → ports →
     //     era/generation captions
     //   (deity names — hovered > locked > woken > rank — the caller)
-    //   LOW (renderHouseChromeLow, AFTER the names): the overflow
-    //     foot → orphan domain captions
+    //   LOW (renderHouseChromeLow, AFTER the names): orphan domain
+    //     captions (the overflow foot rides the band's curved-text
+    //     pass since wave 4 — it is a canonical count)
     //   (leaving-name crossfades, then the hint line — the caller)
     // Whole words or nothing; losers hide; the chrome keep-outs are
     // the same bands the node names respect.
@@ -6738,9 +6777,25 @@
         }
       }
 
-      // 2 ▸ THE BAND as an obstacle arc + the two headers (wave 3 —
-      // the rails are one ring now, sectioned by arc: Scriptorium
-      // left, Court right; see familytree.js §7).
+      // 2 ▸ THE BAND'S TEXT RIDES ITS OWN CURVE (wave 4, John:
+      // "WRITE THEM to over the curved path that aligns with the
+      // flow of these nodes on each side"). Headers, shelf captions
+      // and spine names are written glyph-by-glyph along the arc by
+      // renderBandCaptions, and they claim BEFORE the band's
+      // obstacle shield: a canonical count must never lose its spot
+      // to its own shield. The shield's job is to keep OTHER strings
+      // off the band's glyphs, and a shield rect refused inside a
+      // caption's claim band is exactly the area the caption itself
+      // now protects — the same no-usable-holes argument as below.
+      // Priority within the half is unchanged from wave 3: captions
+      // are canonical counts and outrank the wayfinding ports; they
+      // live in the caption annulus OUTSIDE the tree zone, so they
+      // cannot take a deity name's spot.
+      renderBandCaptions(ctx, placed, claim, W2S, TYPE, font, house, vp);
+
+      // 2b ▸ THE BAND as an obstacle arc (wave 3 — the rails are one
+      // ring, sectioned by arc: Scriptorium left, Court right; see
+      // familytree.js §7).
       const rails = house.rails || {};
       const camS = camera.state.scale || 1;
       for (const rl of [rails.left, rails.right]) {
@@ -6768,43 +6823,8 @@
               || p.y < KEEPOUT_TOP - 20 || p.y > vp.h - KEEPOUT_BOTTOM + 20) continue;
           claim(p.x, p.y, 14);
         }
-        const left = rl.side < 0;
-        const header = left
-          ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
-          : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
-        font('600', TYPE.head);
-        const hw = ctx.measureText(header).width;
-        // The header anchors at the arc's TOP END (rl.head, on the
-        // centreline beside the 12-o'clock gap) and steps 26 screen px
-        // OUTWARD along its own bearing — that clears the band shield
-        // in both claim() axes at any zoom, and the crown's column is
-        // ~90 screen px away vertically (measured; asserted in
-        // check-familytree.mjs §RING).
-        const hp = W2S(rl.head.x, rl.head.y);
-        let hx = hp.x + rl.head.ux * 26;
-        let hy = hp.y + rl.head.uy * 26;
-        hx = Math.max(6 + hw / 2, Math.min(vp.w - 6 - hw / 2, hx));
-        if (claim(hx, hy, hw + 6)) {
-          ctx.textAlign = 'center';
-          ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.85;
-          halo(header, hx, hy);
-        }
       }
       ctx.globalAlpha = 1;
-
-      // 2b ▸ SHELF CAPTIONS + SPINE NAMES — HIGH half since wave 3,
-      // claimed BEFORE the ports. Priority argument: a shelf caption
-      // is a CANONICAL count ("PERSONS · 90 OF 199" — the claim the
-      // reader checks against the column) and the spine is the
-      // shelf's named head; a port label is a wayfinding aid whose
-      // family also has a coloured disk sigil. Measured at 1440x900,
-      // ports outranked and silently hid 4 of Greek's 8 band
-      // captions — the wrong string lost. The captions live in the
-      // caption annulus OUTSIDE the tree zone, so they cannot take a
-      // deity name's spot (names live inside the band; the documented
-      // "a caption never outranks a god's name" order is preserved in
-      // the only region where both compete).
-      renderBandCaptions(ctx, claim, halo, W2S, TYPE, row, font, house, vp);
 
       // 3 ▸ PORTS — the piled family disks are the sigil; the label
       // carries the real aggregate. Biggest flow first (list is
@@ -6927,92 +6947,241 @@
       env.restore();
     }
 
-    // THE BAND'S OWN TEXT (wave 3) — shelf captions (gold, canonical
-    // "shown OF count") and one spine name per shelf, anchored at the
-    // layout's outboard caption anchors (capX/capY: the band edge +
-    // CAP_CLEAR + the alternating radial tier — familytree.js §7).
-    // Screen-space work here: extend the rect AWAY from the band
-    // (rect centre = anchor + w/2 along the caption's own bearing)
-    // and derive the spine's offset from the type row — screen px,
-    // never world units (the wave-2 law).
+    // THE BAND'S OWN TEXT (wave 4) — the header, the shelf captions
+    // (gold, canonical "shown OF count") and one spine name per shelf
+    // are WRITTEN ALONG THE ARC, glyph by glyph, on the caption
+    // annulus the layout reserves outboard of the band (rl.capR +
+    // alternating tier — familytree.js §7). John, verbatim: "the
+    // scriptorium and court are really loose there - WRITE THEM to
+    // over the curved path that aligns with the flow of these nodes
+    // on each side … so we have space for the scriptorium titles and
+    // court on top of the path." A caption that visibly rides the
+    // run of slots beneath it is the ring's equivalent of the old
+    // vertical rail's tidy column ("REVISE the original draw it was
+    // good inside the well").
     //
-    // WHY THE RECT EXTENDS OUTWARD, precisely: claim() refuses a rect
-    // within (w+14)/2 horizontally AND 15px vertically of a shield
-    // rect. With the centre pushed w/2 along the bearing, the tests
-    // reduce to `R·|cos| ≥ 7 OR R·|sin| ≥ 15` where R is the
-    // anchor's screen offset off the band — and no bearing can fail
-    // both once R ≥ √(7²+15²) ≈ 16.6px, which the layout's CAP_CLEAR
-    // guarantees at every gate viewport.
-    function renderBandCaptions(ctx, claim, halo, W2S, TYPE, row, font, house, vp) {
+    // HOW A CURVED RUN CLAIMS (law 5 — ONE registry, no second copy
+    // of the collision math): every glyph's centre is bucketed into
+    // 16px screen bands (16 = the smallest integer pitch that clears
+    // claim()'s 15px rule, so two buckets of the SAME run can never
+    // refuse each other), each bucket becomes one [cx, y, w] rect
+    // spanning its glyphs, and ALL of a run's rects go through the
+    // one claim() atomically — any refusal rolls the run's own rects
+    // back (placed.length = mark; claim() only ever pushes) and the
+    // whole string hides. Whole words or nothing, same as every
+    // other label. y is bucket-quantised, so consecutive rects sit
+    // exactly 16px apart: the zero-overlapping-pairs invariant of
+    // _forgeDebug.lastPlacedRects holds by construction, and the
+    // curved replay in check-familytree.mjs asserts it.
+    function renderBandCaptions(ctx, placed, claim, W2S, TYPE, font, house, vp) {
       const rails = house.rails || {};
       const nodesById = local.mode.nodesById;
       const gold = _labelsGoldColor || '#d3b877';
+      const ctr = W2S(house.center.x, house.center.y);
+      const camS = camera.state.scale || 1;
+      // Per-glyph advance cache — mono, so this is tiny (one entry
+      // per glyph per face), but measureText per glyph per frame is
+      // not free during a pan.
+      const wcache = local._arcGlyphW || (local._arcGlyphW = new Map());
+      const glyphW = (ch) => {
+        const k = ctx.font + '|' + ch;
+        let w = wcache.get(k);
+        if (w == null) { w = ctx.measureText(ch).width; wcache.set(k, w); }
+        return w;
+      };
+      // ── the curved-run writer ─────────────────────────────────
+      // rWu   the INNER edge of the text's annulus (world units)
+      // aRef  centre bearing — or, with opts.edge, the leading edge
+      //       the run starts after (how a spine "follows" its caption)
+      // Returns { dir, flip, aEnd } on success, null when the run
+      // could not claim its rects (it then drew nothing).
+      // FLIP: a run whose midpoint is in the LOWER half of the ring
+      // flips (up = radially inward, advance reversed) so it still
+      // reads left-to-right upright — standard ring-text law. Runs
+      // never cross the vertical axis (the 12/6 gaps see to it), so
+      // y is monotone along a run and the buckets stay clean.
+      const arcRun = (text, rWu, aRef, sizePx, color, alpha, opts) => {
+        const o = opts || {};
+        const rMid = rWu * camS + sizePx / 2;    // radius through the glyph middles
+        if (!(rMid > 40) || !text) return null;
+        const glyphs = [];
+        let total = 0;
+        for (const ch of text) { const w = glyphW(ch); glyphs.push([ch, w]); total += w; }
+        if (!glyphs.length || !(total > 0)) return null;
+        const flip = (o.flip != null) ? o.flip : Math.sin(aRef) > 0;
+        const dir = flip ? -1 : 1;
+        const a0 = o.edge ? (aRef + dir * (o.gap || 8) / rMid) : (aRef - dir * (total / 2) / rMid);
+        // 1 ▸ bucket the glyph centres into 16px y-bands
+        const buckets = new Map();
+        const pos = [];
+        let adv = 0;
+        for (const [ch, w] of glyphs) {
+          const a = a0 + dir * (adv + w / 2) / rMid;
+          adv += w;
+          const gx = ctr.x + Math.cos(a) * rMid;
+          const gy = ctr.y + Math.sin(a) * rMid;
+          pos.push([ch, a]);
+          // The glyph's HONEST x-extent for its rotation (advance
+          // along the tangent, body along the radial): an
+          // orientation-blind max(w, size) pad here over-claims by
+          // ~8px per run end, which is exactly the arc gap between a
+          // caption and the spine that follows it — measured, that
+          // refused 3 of 4 spines for no visual reason.
+          const half = (w * Math.abs(Math.sin(a)) + sizePx * Math.abs(Math.cos(a))) / 2 + 1;
+          const bi = Math.round(gy / 16);
+          const b = buckets.get(bi);
+          if (b) {
+            if (gx - half < b[0]) b[0] = gx - half;
+            if (gx + half > b[1]) b[1] = gx + half;
+          } else buckets.set(bi, [gx - half, gx + half]);
+        }
+        // 2 ▸ claim every bucket rect through the ONE claim(), atomically
+        const mark = placed.length;
+        for (const [bi, b] of buckets) {
+          if (!claim((b[0] + b[1]) / 2, bi * 16, b[1] - b[0])) {
+            placed.length = mark;
+            return null;
+          }
+        }
+        // 3 ▸ write the glyphs on the curve. The halo law is the
+        // env's (~0.26em, round joins); the device-grid snap is not —
+        // a rotated glyph cannot sit on the pixel grid, which is the
+        // price of riding the path.
+        ctx.fillStyle = color;
+        ctx.globalAlpha = alpha;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.lineJoin = 'round';
+        ctx.miterLimit = 2;
+        ctx.lineWidth = Math.max(1.4, Math.min(3.2, sizePx * 0.26));
+        const rot = flip ? -Math.PI / 2 : Math.PI / 2;
+        for (const [ch, a] of pos) {
+          const gx = ctr.x + Math.cos(a) * rMid;
+          const gy = ctr.y + Math.sin(a) * rMid;
+          ctx.save();
+          ctx.translate(gx, gy);
+          ctx.rotate(a + rot);
+          ctx.strokeText(ch, 0, 0);
+          ctx.fillText(ch, 0, 0);
+          ctx.restore();
+        }
+        return { dir, flip, aEnd: a0 + dir * total / rMid };
+      };
+      // THE TIE — a hairline arc restating the shelf's own run just
+      // outside its glyphs, drawn only under a caption that landed.
+      // This is the "lines" half of John's "ZERO LOGIC or lines"
+      // note: the caption and its run are now joined by ink, not by
+      // proximity. (A stroke is not a string — the registry governs
+      // text; the tie can never occlude one.)
+      const tie = (rl, sh) => {
+        const ss = ctx.strokeStyle;
+        // pad by one glyph radius so a one-item shelf still shows a
+        // visible tick instead of a zero-length arc
+        const pad = (rl.glyphR + 2) / Math.max(1, rl.rOut + 3);
+        const d = (sh.a1 >= sh.a0) ? 1 : -1;
+        ctx.beginPath();
+        ctx.arc(ctr.x, ctr.y, (rl.rOut + 3) * camS,
+                sh.a0 - d * pad, sh.a1 + d * pad, d < 0);
+        ctx.strokeStyle = gold;
+        ctx.globalAlpha = 0.3;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.strokeStyle = ss;
+      };
+      // PASS 1 — headers, then shelf captions: the canonical counts,
+      // in priority order (a spine may lose to a caption, never the
+      // reverse — hence the two passes).
+      const landed = [];
       for (const rl of [rails.left, rails.right]) {
-        if (!rl || !rl.shelves) continue;
+        if (!rl || !rl.shelves || !rl.shelves.length) continue;
+        const header = (rl.side < 0)
+          ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
+          : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
+        font('600', TYPE.head);
+        // Tier 1, over the reserved top arc (rl.headA) — radially
+        // clear of the tier-0 first caption by construction.
+        arcRun(header, rl.capR + rl.capTier, rl.headA, TYPE.head, _labelsTextColor, 0.85);
         for (const sh of rl.shelves) {
-          const cp = W2S(sh.capX, sh.capY);
-          const outR = sh.ux >= 0;               // text runs away from the band
-          ctx.textAlign = outR ? 'left' : 'right';
-          // CR-5 — the caption labels the COLUMN it sits above, not the
-          // vault. "PERSONS · 199" over exactly 150 dots was the one
-          // number a reader can check by eye. The rail HEADER still
-          // carries the family's true mass; this one says how much of
-          // it is on stage.
+          // WHAT AN ERA CAPTION IS (John: the "clunky dates … with
+          // ZERO function"): a Scriptorium shelf's caption. The docs
+          // rail groups the family's documents into ERA SHELVES, so
+          // these dates label THIS run of documents — which is why
+          // they correctly do NOT move with the cascade/fan geometry
+          // dial (that dial reshapes the deity tree, not the
+          // library). What made them read as functionless was that
+          // they were horizontal strays in the same annulus as the
+          // family port labels; riding their own run's curve with a
+          // tie is the fix, not wiring them to a dial they do not
+          // describe.
+          //
+          // CR-5 — the caption labels the COLUMN it sits above, not
+          // the vault. "PERSONS · 199" over exactly 150 dots was the
+          // one number a reader can check by eye. The rail HEADER
+          // still carries the family's true mass; this one says how
+          // much of it is on stage.
           const txt = sh.label + ' · '
             + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
           font('600', TYPE.cap);
-          const w = ctx.measureText(txt).width;
-          let lx = cp.x + sh.ux * 5;
-          const ly = cp.y + sh.uy * 5;
-          lx = outR ? Math.min(lx, vp.w - 6 - w) : Math.max(lx, 6 + w);
-          const cx0 = outR ? lx + w / 2 : lx - w / 2;
-          let spineY = null, spineLx = null;
-          if (claim(cx0, ly, w + 4)) {
-            ctx.fillStyle = gold; ctx.globalAlpha = 0.85;
-            halo(txt, lx, ly);
-            // The spine rides its caption: one type row further from
-            // the band (below when the caption hangs beside/under the
-            // arc, above when the caption sits over the arc's top) —
-            // derived, so no type size can push it into the 15px band.
-            spineY = ly + (sh.uy < -0.35 ? -row(TYPE.cap) : row(TYPE.cap));
-            spineLx = lx + sh.ux * 2;
+          const res = arcRun(txt, sh.capR, sh.capA, TYPE.cap, gold, 0.85);
+          if (res) {
+            tie(rl, sh);
+            landed.push([rl, sh, res]);
           }
-          if (spineY != null && sh.spineId) {
-            const node = nodesById && nodesById.get ? nodesById.get(sh.spineId) : null;
-            const full = (node && node.title) || sh.spineId;
-            font('500', TYPE.name);
-            // A SPINE NAME IS A LABEL, NOT THE RECORD (2026-07-31 wave 3).
-            // The vault's titles run long — "Kitāb al-Shifā' (The Book of
-            // Healing — Avicenna's encyclopedic philosophical *summa*)",
-            // "Gregorian Modes — The Medieval Church Modes and Sacred
-            // Tonal Architecture". At the new legible type those cross
-            // half the viewport and clamp against the frame edge, which
-            // reads as a bug and buys nothing: the full record is one
-            // hover away in the card. Cap at a quarter of the width and
-            // ellipsize on a word boundary where one is available.
-            const CAP_W = vp.w * 0.25;
-            let title = full;
-            if (ctx.measureText(title).width > CAP_W) {
-              while (title.length > 4 && ctx.measureText(title + '…').width > CAP_W) {
-                const cut = title.lastIndexOf(' ');
-                title = (cut > 6) ? title.slice(0, cut) : title.slice(0, -1);
-              }
-              title = title.replace(/[\s—–-]+$/, '') + '…';
-            }
-            const sw = ctx.measureText(title).width;
-            const sx = outR ? Math.min(spineLx, vp.w - 6 - sw) : Math.max(spineLx, 6 + sw);
-            const scx = outR ? sx + sw / 2 : sx - sw / 2;
-            if (claim(scx, spineY, sw + 4)) {
-              ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.9;
-              halo(title, sx, spineY);
-              // This node is now named. The reach pass must not name it
-              // a second time in the big face — see the ONE NAME PER
-              // NODE note there. Recorded only on a successful claim:
-              // a spine that lost its rect was never drawn, so it is
-              // still free for the reach pass to pick up.
-              if (local._bandSpineIds) local._bandSpineIds.add(sh.spineId);
-            }
+        }
+        // THE REMAINDER GETS A VOICE (CR-3/GUEST-3), moved up from
+        // the LOW half in wave 4: "+N NOT SHOWN" is a CANONICAL
+        // count, so it claims with the band's own text — after the
+        // captions, before the spines — and rides the curve at the
+        // foot bearing, half a bottom-gap past the arc's end ("the
+        // bottom opening space", where no shelf can ever stand).
+        if (rl.overflow > 0 && rl.foot) {
+          font('600', TYPE.cap);
+          arcRun('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, gold, 0.65);
+        }
+      }
+      // PASS 2 — the spine names follow their captions along the
+      // arc, in the reading direction, on the same tier. They yield
+      // to every caption and both feet (all passes claim through the
+      // same list).
+      for (const [, sh, res] of landed) {
+        if (!sh.spineId) continue;
+        const node = nodesById && nodesById.get ? nodesById.get(sh.spineId) : null;
+        const full = (node && node.title) || sh.spineId;
+        font('500', TYPE.name);
+        // A SPINE NAME IS A LABEL, NOT THE RECORD (wave 3 law): the
+        // vault's titles run long; cap and ellipsize on a word
+        // boundary where one is available — the full record is one
+        // hover away in the card. Wave 4 tightens the cap to 170px:
+        // on the ring, a 300px name is 40°+ of arc that inevitably
+        // sweeps two neighbouring shelves' captions off.
+        const CAP_W = Math.min(vp.w * 0.25, 170);
+        let title = full;
+        if (ctx.measureText(title).width > CAP_W) {
+          while (title.length > 4 && ctx.measureText(title + '…').width > CAP_W) {
+            const cut = title.lastIndexOf(' ');
+            title = (cut > 6) ? title.slice(0, cut) : title.slice(0, -1);
           }
+          title = title.replace(/[\s—–-]+$/, '') + '…';
+        }
+        // The spine inherits its caption's flip: a run straddling the
+        // 3/9 o'clock line must not flip halfway through the pair and
+        // write itself backwards over the caption it follows. The GAP
+        // is dynamic, derived FROM the bucket law: where the arc runs
+        // vertically the follower must advance a full 16px y-band or
+        // its first bucket shares its own caption's last one (Δcx≈0
+        // there, so claim() refuses — measured, that hid "Plato" and
+        // every other vertical-arc spine); where the arc runs
+        // horizontally the x-halves separate any positive gap.
+        const gapPx = Math.min(48, 17 / Math.max(0.36, Math.abs(Math.cos(res.aEnd))));
+        const sr = arcRun(title, sh.capR, res.aEnd, TYPE.name, _labelsTextColor, 0.9,
+                          { edge: true, flip: res.flip, gap: gapPx });
+        if (sr && local._bandSpineIds) {
+          // This node is now named. The reach pass must not name it
+          // a second time in the big face — see the ONE NAME PER
+          // NODE note there. Recorded only on a successful claim: a
+          // spine that lost its rects was never drawn, so it is
+          // still free for the reach pass to pick up.
+          local._bandSpineIds.add(sh.spineId);
         }
       }
       ctx.globalAlpha = 1;
@@ -7024,38 +7193,14 @@
       const hs = local._house;
       if (!hs || !hs.lay || !hs.lay.house) return;
       const house = hs.lay.house;
-      const gold = _labelsGoldColor || '#d3b877';
       const env = houseChromeEnv(ctx, placed, vp);
-      const { W2S, claim, halo, TYPE, row, font } = env;
-      const rails = house.rails || {};
+      const { W2S, claim, halo, TYPE, font } = env;
 
-      // (The shelf captions + spine names moved to the HIGH half in
-      // wave 3 — renderBandCaptions, claimed before the ports; see
-      // the priority argument there. This half keeps only the two
-      // lowest strings: the overflow foot and the orphan captions.)
-      for (const rl of [rails.left, rails.right]) {
-        if (!rl || !rl.shelves) continue;
-        // 5b ▸ THE REMAINDER GETS A VOICE (CR-3 / GUEST-3). The layout
-        // has always returned `overflow` — the honest count of what the
-        // display cap left off-stage. Lowest-priority line of all, at
-        // the arc's FOOT end (rl.foot, beside the 6-o'clock gap),
-        // stepped outward along its own bearing like the header.
-        if (rl.overflow > 0 && rl.foot) {
-          const fp = W2S(rl.foot.x, rl.foot.y);
-          const ftxt = '+' + rl.overflow + ' NOT SHOWN';
-          font('600', TYPE.cap);
-          const w = ctx.measureText(ftxt).width;
-          let fx = fp.x + rl.foot.ux * 26;
-          const fy = fp.y + rl.foot.uy * 26;
-          fx = Math.max(6 + w / 2, Math.min(vp.w - 6 - w / 2, fx));
-          if (claim(fx, fy, w + 4)) {
-            ctx.textAlign = 'center';
-            ctx.fillStyle = gold; ctx.globalAlpha = 0.65;
-            halo(ftxt, fx, fy);
-          }
-        }
-      }
-      ctx.globalAlpha = 1;
+      // (Wave 4 — the overflow foot moved UP into the band's own
+      // curved-text pass in renderBandCaptions: "+N NOT SHOWN" is a
+      // canonical count, and as the lowest string of the LOW half it
+      // kept losing its spot to a landed spine sweeping the bottom
+      // gap. This half keeps only the orphan captions.)
 
       // 6 ▸ ORPHAN DOMAIN CAPTIONS — last in line, yield to everything.
       font('500', TYPE.cap);
@@ -7406,7 +7551,11 @@
         portInset: (typeof p.house_port_inset === 'number') ? p.house_port_inset : 1.0,
         bandR:     (typeof p.house_band_r === 'number') ? p.house_band_r : 0.86,
         bandGap:   (typeof p.house_band_gap === 'number') ? p.house_band_gap : 24,
+        bandGapBot: (typeof p.house_band_gap_bot === 'number') ? p.house_band_gap_bot : 12,
         bandRows:  (typeof p.house_band_rows === 'number') ? p.house_band_rows : 3,
+        bandPitch: (typeof p.house_band_pitch === 'number') ? p.house_band_pitch : 16,
+        bandHead:  (typeof p.house_band_head === 'number') ? p.house_band_head : 230,
+        capClear:  (typeof p.house_cap_clear === 'number') ? p.house_cap_clear : 10,
         treeR:     (typeof p.house_tree_r === 'number') ? p.house_tree_r : 0.86,
       };
     }

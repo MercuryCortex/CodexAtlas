@@ -122,7 +122,18 @@
       // house (they re-run the layout via houseSnap).
       ['house_port_inset', 'Ports ring',  0.85, 1.15, 0.005, '×', 'house'],
       ['house_band_r',     'Band radius', 0.60, 1.00, 0.005, '×', 'house'],
-      ['house_band_gap',   'Band gap',    8,    45,   1,     '°', 'house'],
+      ['house_band_gap',   'Band gap top', 8,   45,   1,     '°', 'house'],
+      // WAVE 4 — the band writes on its own curve and uses the space
+      // it has. Gap low = the 6-o'clock opening (smaller = more arc,
+      // John's "push the limit of the rows on the bottom"); row pitch
+      // = how thick a crowded shelf grows (16 → Christian's docs run
+      // 3 sub-rows, 9 → the old thin band); header arc = the top-end
+      // reserve the curved SCRIPTORIUM/COURT titles ride; caption
+      // clear = air between the band's glyphs and its curved text.
+      ['house_band_gap_bot', 'Band gap low', 2, 45,   1,     '°', 'house'],
+      ['house_band_pitch', 'Band row pitch', 6, 30,   1,     'wu', 'house'],
+      ['house_band_head',  'Header arc',  80,   400,  10,    'wu', 'house'],
+      ['house_cap_clear',  'Caption clear', 0,  40,   1,     'wu', 'house'],
       ['house_band_rows',  'Band rows',   1,    4,    1,     '',  'house'],
       ['house_tree_r',     'Tree zone',   0.50, 1.00, 0.005, '×', 'house'],
       ['house_type_scale', 'Type scale',  0.8,  1.6,  0.05,  '×', 'house'],
@@ -230,6 +241,10 @@
         { k: 'slider', key: 'house_port_inset' },
         { k: 'slider', key: 'house_band_r' },
         { k: 'slider', key: 'house_band_gap' },
+        { k: 'slider', key: 'house_band_gap_bot' },
+        { k: 'slider', key: 'house_band_pitch' },
+        { k: 'slider', key: 'house_band_head' },
+        { k: 'slider', key: 'house_cap_clear' },
         { k: 'slider', key: 'house_band_rows' },
         { k: 'slider', key: 'house_rail_glyph' },
         { k: 'slider', key: 'house_tree_r' },
@@ -396,6 +411,8 @@
       if (k === 'recipe_wake_cap' || k === 'recipe_gate_px' || k === 'recipe_wake_radius_px'
           || k === 'film_full_pct' || k === 'film_fade_pct'
           || k === 'house_tween_ms' || k === 'house_band_gap'
+          || k === 'house_band_gap_bot' || k === 'house_band_pitch'
+          || k === 'house_band_head' || k === 'house_cap_clear'
           || k === 'house_band_rows' || k === 'house_rail_cap'
           || k === 'house_name_max') return String(Math.round(v));
       return (+v).toFixed(2);
@@ -432,6 +449,10 @@
         + ' · ZONES port ' + (+p.house_port_inset || 1).toFixed(2)
         + ' band ' + (+p.house_band_r || 0.86).toFixed(2)
         + ' gap ' + Math.round(p.house_band_gap || 24)
+        + '/' + Math.round((typeof p.house_band_gap_bot === 'number') ? p.house_band_gap_bot : 12)
+        + ' pitch ' + Math.round(p.house_band_pitch || 16)
+        + ' head ' + Math.round(p.house_band_head || 230)
+        + ' capcl ' + Math.round((typeof p.house_cap_clear === 'number') ? p.house_cap_clear : 10)
         + ' rows ' + Math.round(p.house_band_rows || 3)
         + ' tree ' + (+p.house_tree_r || 0.86).toFixed(2)
         + ' type x' + (+p.house_type_scale || 1).toFixed(2)
