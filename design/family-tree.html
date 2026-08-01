@@ -112,12 +112,12 @@
     <button class="fchip" data-k="layout" data-v="fan">Fan</button>
   </div>
   <div class="grp"><span class="lbl">Title</span>
-    <button class="fchip on" data-k="title" data-v="crown">Crown</button>
-    <button class="fchip" data-k="title" data-v="spine">Spine</button>
-    <button class="fchip" data-k="title" data-v="rim">Rim</button>
-    <button class="fchip" data-k="title" data-v="mark">Mark</button>
-    <button class="fchip" data-k="title" data-v="corner">Corner</button>
+    <button class="fchip on" data-k="title" data-v="above">Above</button>
+    <button class="fchip" data-k="title" data-v="below">Below</button>
+    <button class="fchip" data-k="title" data-v="off">Off</button>
+    <span class="lbl" id="titleWhere"></span>
   </div>
+  <div class="ctl"><label>Title size <b id="v-tsize"></b></label><input type="range" id="r-tsize" min="10" max="30" step="0.5" value="16"></div>
   <div class="grp"><span class="lbl">Stage</span>
     <button class="fchip" id="bleedChip">Full bleed</button>
   </div>
@@ -194,7 +194,8 @@ var BUCKET_NAME = ['fusion','parallel','transmission','attestation'];
 
 /* ---------------- recipe / dials ---------------- */
 var R = { fam:'Norse', layout:'cascade', ranks:'lineage', orphans:'domain',
-          court:'on', labels:'many', restwires:'stubs', title:'crown',
+          court:'on', labels:'many', restwires:'stubs',
+          title:'above', tsize:16,
           consorts:true, aspects:true, spread:1.1, tween:450 };
 
 /* ---------------- canvas ---------------- */
@@ -826,95 +827,66 @@ function drawWheelTitles(){
   ctx.fillText('THE WHEEL — a sketch · bright titles hold a real pack', wheel.cx, H-18);
 }
 
-// Where the name stands. CASCADE keeps the geometry crown (above the
-// first band). FAN's crown is the TRUNK — the origin the rings grow
-// from, which sits LOW — so the fan's title takes the arc gap above
-// the ring crest instead, never the trunk.
+// The vertical extent of the family as DRAWN — read off the sprites
+// themselves, so it is true for the cascade and the fan alike without
+// either layout having to declare anything.
+function contentBounds(){
+  var mn=1e9, mx=-1e9;
+  // THIS house's members only. The sprite dictionary carries every
+  // family in the vault (parked at alpha 0 off-stage), so walking it
+  // measures the whole wheel and lands the title on the rim.
+  var ds=scene.house.pack.deities;
+  for(var i=0;i<ds.length;i++){
+    var s=scene.sprites['d:'+ds[i][0]];
+    if(!s || s.a<0.05) continue;
+    if(s.y-s.r<mn) mn=s.y-s.r;
+    if(s.y+s.r>mx) mx=s.y+s.r;
+  }
+  if(mn>mx) return { min:scene.cy-scene.Rh*0.5, max:scene.cy+scene.Rh*0.5 };
+  return { min:mn, max:mx };
+}
+
+// Where the name stands: centred in the EMPTY BAND — the air between
+// the neatline and the family's own first (or last) rank. It never
+// enters the node field, and it stops short of the rim so the horizon
+// ports keep the rim to themselves.
 function titleAnchor(){
-  if(R.layout==='cascade') return { x:scene.crown.x, y:scene.crown.y };
-  var fy=scene.cy+(scene.fanDy||0), maxRad=0;
-  (scene.rowMeta||[]).forEach(function(m){ if(m.rad>maxRad) maxRad=m.rad; });
-  var crest=maxRad ? fy-maxRad : scene.cy-scene.Rh*0.6;
-  return { x:scene.cx, y:Math.max(scene.cy-scene.Rh+30, crest-20) };
+  if(!scene.house) return null;
+  var top=scene.cy-scene.Rh, bot=scene.cy+scene.Rh, b=contentBounds();
+  var need=R.tsize*1.78+10;                       // name + counts + a little air
+  // Both bands, measured. The 26px inset keeps the title off the
+  // neatline, where the horizon ports live.
+  var band={ above:{lo:top+26, hi:b.min-10}, below:{lo:b.max+10, hi:bot-26} };
+  var want=(R.title==='below') ? 'below' : 'above';
+  var alt =(want==='above')    ? 'below' : 'above';
+  var use=band[want];
+  scene._titleSide=want; scene._titleCrowded=false;
+  // The CASCADE leaves air top and bottom; the FAN's crest runs all the
+  // way to the rim, so its only empty band is underneath. Rather than
+  // print the name over the crest, take the side that can hold it and
+  // say so in the recipe.
+  if((use.hi-use.lo) < need && (band[alt].hi-band[alt].lo) > (use.hi-use.lo)){
+    use=band[alt]; scene._titleSide=alt;
+  }
+  if((use.hi-use.lo) < need) scene._titleCrowded=true;
+  return { x:scene.cx, y:(use.lo+use.hi)/2 + R.tsize*0.11 - 2 };   // block-centred on the band
 }
 
 function drawTreeChrome(al){
   var cx=scene.cx, cy=scene.cy, Rh=scene.Rh;
   ctx.globalAlpha=al;
-
-  // MARK treatment — the territory name goes down FIRST, under every
-  // arc, node and wire. A watermark that draws on top is a sticker;
-  // one that draws underneath is cartography.
-  if(R.title==='mark' && scene.house){
-    var fs=Math.min(Rh*0.40, 128);
-    ctx.save();
-    ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.font='500 '+fs.toFixed(0)+'px '+SERIF;
-    ctx.fillStyle=rgba(scene.house.pack.color, 0.13);
-    fillSpaced(scene.fam.toUpperCase(), cx, cy, fs*0.20);
-    ctx.restore();
-  }
-
   ctx.strokeStyle='rgba(211,184,119,.16)'; ctx.lineWidth=1;
-  if(R.title==='rim' && scene.house){
-    // RIM treatment — the neatline OPENS for the family's name.
-    var hw=rimGapHalf();
-    ctx.beginPath(); ctx.arc(cx,cy,Rh,-Math.PI/2+hw, -Math.PI/2-hw+Math.PI*2); ctx.stroke();
-  } else {
-    ctx.beginPath(); ctx.arc(cx,cy,Rh,0,7); ctx.stroke();
-  }
+  ctx.beginPath(); ctx.arc(cx,cy,Rh,0,7); ctx.stroke();
   ctx.globalAlpha=1;
 }
 
-// The RIM treatment's gap in the neatline, as a half-angle. The gap is
-// RESERVED: any horizon port whose bearing falls inside it steps out
-// along its own bearing (§3 of drawTreeFront) rather than sitting on
-// the family's name. The bearing is the truth and is preserved; only
-// the distance moves.
-// Where a horizon port actually draws. Identical to its computed seat
-// except under RIM, where a port standing in the title's reserved gap
-// steps OUTWARD along its own bearing until it is clear of the name.
-function portPos(pt){
-  if(R.title!=='rim' || !scene.house) return { x:pt.x, y:pt.y };
-  var a=Math.atan2(pt.y-scene.cy, pt.x-scene.cx);
-  var d=Math.atan2(Math.sin(a+Math.PI/2), Math.cos(a+Math.PI/2)); // signed Δ from 12 o'clock
-  if(Math.abs(d)>rimGapHalf()) return { x:pt.x, y:pt.y };
-  var len=Math.hypot(pt.x-scene.cx, pt.y-scene.cy) || 1;
-  var out=(len+34)/len;
-  return { x:scene.cx+(pt.x-scene.cx)*out, y:scene.cy+(pt.y-scene.cy)*out };
-}
-
-function rimGapHalf(){
-  ctx.save();
-  ctx.font='500 17px '+SERIF;
-  var gw=ctx.measureText(scene.fam).width;
-  ctx.font='500 8px '+MONO;
-  gw=Math.max(gw, ctx.measureText(statOneText()).width);   // the WHOLE block owns the gap
-  ctx.restore();
-  return Math.min(Math.PI*0.42, (gw/2+24)/scene.Rh);
-}
-
-// The counts as ONE line — used by every single-baseline treatment and
-// by the rim gap that has to be wide enough to hold it.
+// The counts as ONE line, at the chart's own label size.
 function statOneText(){
   var hs=scene.house; if(!hs) return '';
   return (hs.N+' DEITIES · '+hs.kin.length+' ARCS · '+hs.orphanCount+' ON THEIR ERA'+
     ((R.court==='on' && scene.rails && scene.rails.left)
       ? (' · '+scene.rails.left.items.length+' SCRIPTORIUM · '+scene.rails.right.items.length+' COURT')
       : ' · COURT HIDDEN')).toUpperCase();
-}
-
-// Centred fill with manual letter-spacing — ctx.letterSpacing is not
-// dependable across the browsers this has to look right in (Safari is
-// the truth here), so the glyphs are stepped by hand.
-function fillSpaced(t,x,y,sp){
-  var total=0, i, w;
-  for(i=0;i<t.length;i++) total+=ctx.measureText(t[i]).width+sp;
-  total-=sp;
-  var pen=x-total/2, prev=ctx.textAlign;
-  ctx.textAlign='left';
-  for(i=0;i<t.length;i++){ w=ctx.measureText(t[i]).width; ctx.fillText(t[i], pen, y); pen+=w+sp; }
-  ctx.textAlign=prev;
 }
 function drawTreeEdges(){
   var hs=scene.house, pack=hs.pack, ds=pack.deities;
@@ -1022,11 +994,10 @@ function extWire(e, alpha){
   var pt=null;
   for(var i=0;i<scene.ports.length;i++) if(scene.ports[i].fam===FAMS[e[1]].name){ pt=scene.ports[i]; break; }
   if(!dp||!pt) return;
-  var pe=portPos(pt);                 // land on the port where it DRAWS
   ctx.strokeStyle=rgba(BUCKET_COL[e[2]],alpha); ctx.lineWidth=alpha>0.3?1.2:1;
   ctx.beginPath(); ctx.moveTo(dp.x,dp.y);
-  var mx=(dp.x+pe.x)/2, my=(dp.y+pe.y)/2;
-  ctx.quadraticCurveTo(mx+(mx-scene.cx)*0.14, my+(my-scene.cy)*0.14, pe.x, pe.y);
+  var mx=(dp.x+pt.x)/2, my=(dp.y+pt.y)/2;
+  ctx.quadraticCurveTo(mx+(mx-scene.cx)*0.14, my+(my-scene.cy)*0.14, pt.x, pt.y);
   ctx.stroke();
 }
 function primaryParent(i){
@@ -1069,106 +1040,43 @@ function drawTreeFront(){
     ctx.fillStyle=fill; ctx.fillText(t,x,y);
   }
 
-  // 1 ▸ TITLE — structural seed: the family's name and its honest
-  //     counts. FIVE TREATMENTS on one dial (2026-08-01).
+  // 1 ▸ TITLE — just a title (2026-08-01).
   //
-  //     Why a dial and not one answer: the version that shipped as a
-  //     filled, bordered CARD blocked ~30% of the ring and read as a
-  //     dialog sitting ON the map. It had to be a box because it
-  //     HOSTED THE CASCADE/FAN BUTTONS — buttons need a hit area,
-  //     a hit area needs padding, padding needs an edge, and an edge
-  //     is a box. Cascade/Fan is a view control and already lives in
-  //     the chrome bar here; with nothing to click, the title is free
-  //     to be pure type on the chart. These five differ only in how
-  //     much of the chart the name is allowed to cost.
-  var extra=Math.max(0, pack.courtTotal-pack.court.length);
-  var stat1=(hs.N+' DEITIES · '+hs.kin.length+' LINEAGE ARCS · '+hs.orphanCount+' STAND ON THEIR ERA').toUpperCase();
-  var stat2=(R.court==='on' && scene.rails.left)
-    ? (scene.rails.left.items.length+' IN THE SCRIPTORIUM · '+scene.rails.right.items.length+' IN THE COURT'+(extra?' · +'+extra+' BEYOND THE PACK':''))
-    : ('COURT HIDDEN — '+pack.court.length+' HELD'+(extra?' · +'+extra+' BEYOND THE PACK':''));
-  // one-line form for the treatments that spend a single baseline
-  var statOne=statOneText();
+  //     The version that shipped was a filled, bordered CARD parked in
+  //     the ring, and it had to be a box because it HOSTED THE
+  //     CASCADE/FAN BUTTONS — a hit area needs padding, padding needs
+  //     an edge, an edge is a box, and the box blocked the chart.
+  //     Cascade/Fan is a view control and belongs in the chrome bar
+  //     (where it already sits here). With nothing to click, the title
+  //     is only type, so all that is left to decide is SIZE and WHICH
+  //     PIECE OF EMPTY AIR — and the house always has a band of empty
+  //     air between the neatline and the first rank. It goes there.
+  //
+  //     Size is a slider, not an opinion: John sets the number.
+  var extra=Math.max(0, pack.courtTotal-pack.court.length);   // used by the rail's honesty chip below
   var TA=titleAnchor();
-
-  if(R.title==='crown'){
-    // CROWN — the shipped treatment. Serif name, colour keyline,
-    // two stat lines. Three baselines tall.
+  // say out loud where it actually landed — the bar is the only thing
+  // still on screen in full bleed
+  var wEl=document.getElementById('titleWhere');
+  if(wEl) wEl.textContent = (R.title==='off') ? ''
+    : (scene._titleCrowded ? '⚠ no room either side'
+      : (scene._titleSide!==R.title ? '→ no band '+R.title+', sat '+scene._titleSide : ''));
+  if(R.title!=='off' && TA){
+    var nameSize=R.tsize;
     ctx.textAlign='center'; ctx.textBaseline='alphabetic';
-    ctx.font='500 21px '+SERIF;
-    var cw=ctx.measureText(scene.fam).width;
+    ctx.font='500 '+nameSize+'px '+SERIF;
+    var tw=ctx.measureText(scene.fam).width;
     halo(scene.fam, TA.x, TA.y, 'rgba(233,229,244,.96)', 4);
-    ctx.strokeStyle=rgba(pack.color,0.9); ctx.lineWidth=1;
-    ctx.beginPath(); ctx.moveTo(TA.x-cw/2, TA.y+7); ctx.lineTo(TA.x+cw/2, TA.y+7); ctx.stroke();
-    block(TA.x-cw/2-6, TA.y-20, TA.x+cw/2+6, TA.y+10);
+    block(TA.x-tw/2-8, TA.y-nameSize, TA.x+tw/2+8, TA.y+4);
+    // the counts stay at the chart's OWN label size — that is what
+    // "integrates" means: the meta line is a chart label, not a
+    // second headline.
     ctx.font='500 8.5px '+MONO;
-    var sw1=ctx.measureText(stat1).width;
-    halo(stat1, TA.x, TA.y+22, 'rgba(145,138,180,.85)');
-    block(TA.x-sw1/2-4, TA.y+13, TA.x+sw1/2+4, TA.y+25);
-    var sw2=ctx.measureText(stat2).width;
-    halo(stat2, TA.x, TA.y+34, 'rgba(94,88,133,.9)');
-    block(TA.x-sw2/2-4, TA.y+26, TA.x+sw2/2+4, TA.y+38);
-
-  } else if(R.title==='spine'){
-    // SPINE — everything on ONE baseline. Name in serif, counts in
-    // mono at the family's colour, a hair of space between. One line
-    // of type is the smallest footprint a title can have and still
-    // be read first.
-    ctx.textBaseline='alphabetic'; ctx.textAlign='left';
-    ctx.font='500 19px '+SERIF; var wN=ctx.measureText(scene.fam).width;
-    ctx.font='500 8.5px '+MONO;  var wM=ctx.measureText(statOne).width;
-    var gap=16, tot=wN+gap+wM, x0=TA.x-tot/2;
-    ctx.font='500 19px '+SERIF;
-    halo(scene.fam, x0, TA.y, 'rgba(233,229,244,.96)', 4);
-    ctx.strokeStyle=rgba(pack.color,0.55); ctx.lineWidth=1;
-    ctx.beginPath(); ctx.moveTo(x0+wN+gap*0.42, TA.y-11); ctx.lineTo(x0+wN+gap*0.42, TA.y+2); ctx.stroke();
-    ctx.font='500 8.5px '+MONO;
-    halo(statOne, x0+wN+gap, TA.y-5, rgba(pack.color,0.85));
-    block(x0-8, TA.y-19, x0+tot+8, TA.y+8);
-
-  } else if(R.title==='rim'){
-    // RIM — the name is not ON the map, it is part of the FRAME.
-    // The house circle opens at 12 o'clock and the family stands in
-    // its own gap, the way a cartouche breaks a map's neatline.
-    // Costs no interior space at all. (Gap cut in drawTreeChrome.)
-    var ry=scene.cy-scene.Rh;
-    ctx.textAlign='center'; ctx.textBaseline='alphabetic';
-    ctx.font='500 17px '+SERIF;
-    var rw=ctx.measureText(scene.fam).width;
-    halo(scene.fam, scene.cx, ry+6, 'rgba(233,229,244,.96)', 4);
-    block(scene.cx-rw/2-8, ry-14, scene.cx+rw/2+8, ry+10);
-    ctx.font='500 8px '+MONO;
-    var rm=ctx.measureText(statOne).width;
-    halo(statOne, scene.cx, ry+22, rgba(pack.color,0.80));
-    block(scene.cx-rm/2-4, ry+13, scene.cx+rm/2+4, ry+26);
-
-  } else if(R.title==='mark'){
-    // MARK — the territory name, the way an atlas prints a country
-    // across its own land: enormous, faint, UNDER the drawing (the
-    // glyphs are painted in drawTreeChrome, before a single node).
-    // Nothing is displaced; nothing can be clicked wrong. Only the
-    // counts come forward, as one quiet line at the top.
-    ctx.textAlign='center'; ctx.textBaseline='alphabetic';
-    ctx.font='500 8.5px '+MONO;
-    var mw=ctx.measureText(statOne).width;
-    halo(statOne, TA.x, TA.y, 'rgba(145,138,180,.80)');
-    block(TA.x-mw/2-4, TA.y-9, TA.x+mw/2+4, TA.y+4);
-
-  } else if(R.title==='corner'){
-    // CORNER — the map cartouche. Off the chart entirely, in the
-    // stage's top-left, where a chart's caption has lived for four
-    // hundred years. Zero interior cost and the name can be big.
-    ctx.textAlign='left'; ctx.textBaseline='alphabetic';
-    var kx=26, ky=46;
-    ctx.font='500 27px '+SERIF;
-    var kw=ctx.measureText(scene.fam).width;
-    halo(scene.fam, kx, ky, 'rgba(233,229,244,.96)', 4);
-    ctx.strokeStyle=rgba(pack.color,0.9); ctx.lineWidth=1;
-    ctx.beginPath(); ctx.moveTo(kx, ky+10); ctx.lineTo(kx+Math.max(kw,168), ky+10); ctx.stroke();
-    ctx.font='500 8.5px '+MONO;
-    halo(stat1, kx, ky+27, 'rgba(145,138,180,.85)');
-    halo(stat2, kx, ky+39, 'rgba(94,88,133,.9)');
-    var kwid=Math.max(kw, ctx.measureText(stat1).width, ctx.measureText(stat2).width, 168);
-    block(kx-8, ky-24, kx+kwid+8, ky+44);
+    var statOne=statOneText();
+    var sw=ctx.measureText(statOne).width;
+    var sy=TA.y+Math.round(nameSize*0.78);
+    halo(statOne, TA.x, sy, 'rgba(145,138,180,.82)');
+    block(TA.x-sw/2-4, sy-9, TA.x+sw/2+4, sy+4);
   }
 
   // 2 ▸ RAIL COLUMNS + HEADERS — the glyph columns become obstacles
@@ -1196,12 +1104,11 @@ function drawTreeFront(){
   // 3 ▸ PORTS — dots, then labels biggest-flow-first (hover always first)
   ctx.textBaseline='middle';
   scene.ports.forEach(function(pt){
-    var pp=portPos(pt);
     ctx.fillStyle=rgba(pt.col, pt.count?0.95:0.35);
-    ctx.beginPath(); ctx.arc(pp.x,pp.y,pt.r,0,7); ctx.fill();
+    ctx.beginPath(); ctx.arc(pt.x,pt.y,pt.r,0,7); ctx.fill();
     if(pt.pack){ ctx.strokeStyle=rgba(pt.col,0.8); ctx.lineWidth=1;
-      ctx.beginPath(); ctx.arc(pp.x,pp.y,pt.r+2.5,0,7); ctx.stroke(); }
-    block(pp.x-pt.r-2, pp.y-pt.r-2, pp.x+pt.r+2, pp.y+pt.r+2);
+      ctx.beginPath(); ctx.arc(pt.x,pt.y,pt.r+2.5,0,7); ctx.stroke(); }
+    block(pt.x-pt.r-2, pt.y-pt.r-2, pt.x+pt.r+2, pt.y+pt.r+2);
   });
   var pOrder=scene.ports.slice().sort(function(a,b){
     var ha=(hover&&hover.kind==='port'&&hover.fam===a.fam)?1:0;
@@ -1217,8 +1124,7 @@ function drawTreeFront(){
     ctx.textAlign=left?'right':'left';
     var ptxt=pt.fam.toUpperCase()+(pt.count?' · '+pt.count:'');
     var pw=ctx.measureText(ptxt).width;
-    var pp2=portPos(pt);
-    var lx=pp2.x+Math.cos(pt.ang)*10, ly=pp2.y+Math.sin(pt.ang)*10;
+    var lx=pt.x+Math.cos(pt.ang)*10, ly=pt.y+Math.sin(pt.ang)*10;
     lx=left?Math.max(lx,4+pw):Math.min(lx,W-4-pw);        // clamped — never clipped
     var x0=left?lx-pw:lx, x1=left?lx:lx+pw;
     if(isH){ block(x0-2,ly-6,x1+2,ly+6); halo(ptxt,lx,ly,rgba(pt.col,1)); }
@@ -1559,12 +1465,21 @@ document.querySelectorAll('.fchip[data-k]').forEach(function(b){
 var rS=document.getElementById('r-spread'), rT=document.getElementById('r-tween');
 rS.addEventListener('input', function(){ R.spread=+rS.value; syncRecipe(); if(scene.mode==='tree') rebuildTree(); });
 rT.addEventListener('input', function(){ R.tween=+rT.value; syncRecipe(); });
+var rTS=document.getElementById('r-tsize');
+rTS.addEventListener('input', function(){
+  R.tsize=+rTS.value; syncRecipe();
+  if(scene.mode==='tree') draw();          // draw-time only — no relayout
+});
 function syncRecipe(){
   document.getElementById('v-spread').textContent=R.spread.toFixed(2);
   document.getElementById('v-tween').textContent=R.tween+'ms';
+  document.getElementById('v-tsize').textContent=R.tsize+'px';
   var s='FAMILY-TREE · fam='+(scene.mode==='tree'?scene.fam:'—')+
     ' · layout='+R.layout+' · ranks='+(R.ranks==='lineage'?'lineage+era':'era')+
-    ' · title='+R.title+
+    ' · title='+R.title+'@'+R.tsize+'px'+
+    ((scene.mode==='tree' && scene._titleSide && scene._titleSide!==R.title)
+      ? ' (no band '+R.title+' — sat '+scene._titleSide+')' : '')+
+    ((scene.mode==='tree' && scene._titleCrowded) ? ' (CROWDED)' : '')+
     ' · unparented='+R.orphans+' · court='+R.court+' · labels='+R.labels+
     ' · rest-wires='+R.restwires+(R.consorts?' · consorts':'')+(R.aspects?' · aspects':'')+
     ' · spread='+R.spread.toFixed(2)+' · tween='+R.tween;
