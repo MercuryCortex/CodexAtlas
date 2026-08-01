@@ -64,10 +64,11 @@
   <button class="fchip on" data-mode="cascade">Cascade</button>
   <button class="fchip" data-mode="fan">Fan</button>
   <div class="ctl"><label>Lines <b id="v-lines"></b></label><input type="range" id="r-lines" min="2" max="8" step="1" value="4"></div>
-  <div class="ctl"><label>Span <b id="v-span"></b></label><input type="range" id="r-span" min="0.60" max="1.00" step="0.01" value="0.94"></div>
-  <div class="ctl"><label>Bearing <b id="v-bear"></b></label><input type="range" id="r-bear" min="-180" max="-95" step="1" value="-140"></div>
+  <div class="ctl"><label>Arc <b id="v-arc"></b></label><input type="range" id="r-arc" min="30" max="180" step="1" value="180"></div>
+  <div class="ctl"><label>Innermost <b id="v-r1"></b></label><input type="range" id="r-r1" min="0.10" max="0.70" step="0.01" value="0.30"></div>
+  <div class="ctl"><label>Outermost <b id="v-r2"></b></label><input type="range" id="r-r2" min="0.50" max="1.00" step="0.01" value="0.92"></div>
+  <div class="ctl"><label>Bearing <b id="v-bear"></b></label><input type="range" id="r-bear" min="-260" max="80" step="1" value="-140"></div>
   <div class="ctl"><label>Inset <b id="v-inset"></b></label><input type="range" id="r-inset" min="0" max="60" step="1" value="14"></div>
-  <div class="ctl"><label>Fan origin <b id="v-fdy"></b></label><input type="range" id="r-fdy" min="0" max="0.60" step="0.01" value="0.28"></div>
   <button class="fchip on" id="axisChip">Axis</button>
   <button class="fchip on" id="linesChip">Show lines</button>
 </div>
@@ -110,7 +111,7 @@ var M_BAND_PORT = 12, CAP_TEXT = 10, CAP_TIER = 30, CAP_CLEAR = 10, M_TREE_BAND 
 
 var R = { port:1.00, band:0.86, rows:3, pitch:16, gapTop:24, gapBot:12, tree:0.74,
           notes:true, caps:false,
-          mode:'cascade', lines:4, span:0.94, bear:-140, inset:14, fdy:0.28,
+          mode:'cascade', lines:4, arc:180, r1:0.30, r2:0.92, bear:-140, inset:14,
           axis:true, showLines:true };
 
 /* The demo strata. Four, because four is what he asked to design for,
@@ -276,79 +277,60 @@ function draw(){
 ═══════════════════════════════════════════════════════════════════ */
 function drawDateLines(cx, cy, P, b){
   var Rt = P(b.Rt), n = R.lines, inset = P(R.inset);
-  ctx.font='500 9px '+MONO;
-  ctx.textBaseline='middle';                 // CENTRED ON THE PERIMETER
 
-  if(R.mode === 'cascade'){
-    // Rows spread over the circle's own vertical span, evenly.
-    var ys = [], halves = [];
-    for(var i=0;i<n;i++){
-      var u = (n===1) ? 0 : (-0.62 + i*(1.24/(n-1)));
-      var dy = u*Rt;
-      ys.push(cy + dy);
-      halves.push(Math.sqrt(Math.max(0, Rt*Rt - dy*dy)) * R.span);
-    }
-    // the gutter: the NARROWEST row's left end, so it is on every row
-    var gut = cx - Math.min.apply(null, halves) + inset;
+  // THE STRATA ARE CONCENTRIC RINGS, ON THE DIAGRAM'S ONE CENTRE.
+  // Evenly stepped between an innermost and an outermost fraction of
+  // the inner circle. Both modes. No second origin anywhere.
+  var rs = [];
+  for(var i=0;i<n;i++){
+    var t = (n===1) ? 1 : i/(n-1);
+    rs.push(Rt * (R.r1 + t*(R.r2 - R.r1)));
+  }
 
-    if(R.showLines){
-      ctx.strokeStyle='rgba(233,229,244,.20)'; ctx.lineWidth=1;
-      for(var j=0;j<n;j++){
-        ctx.beginPath();
-        ctx.moveTo(cx - halves[j], ys[j]); ctx.lineTo(cx + halves[j], ys[j]);
-        ctx.stroke();
-      }
-    }
-    if(R.axis){
-      ctx.setLineDash([2,4]); ctx.strokeStyle='rgba(211,184,119,.28)';
-      ctx.beginPath(); ctx.moveTo(gut, ys[0]-14); ctx.lineTo(gut, ys[n-1]+14); ctx.stroke();
-      ctx.setLineDash([]);
-    }
-    ctx.textAlign='left'; ctx.fillStyle='rgba(211,184,119,.90)';
-    for(var k=0;k<n;k++) ctx.fillText(DEMO[k % DEMO.length], gut, ys[k]);
+  var HW = R.arc*Math.PI/180;                  // half-span from 12 o'clock
+  var full = HW >= Math.PI - 1e-6;
+  var br = R.bear*Math.PI/180;
+  if(!full){                                   // the bearing has to be ON the arc
+    var lo = -Math.PI/2 - HW + 0.06, hi = -Math.PI/2 + HW - 0.06;
+    var bw = Math.atan2(Math.sin(br + Math.PI/2), Math.cos(br + Math.PI/2)); // delta from 12
+    bw = Math.max(-HW + 0.06, Math.min(HW - 0.06, bw));
+    br = -Math.PI/2 + bw;
+  }
 
-  } else {
-    // FAN — the strata are ARCS about an origin below the centre, so
-    // their crest fills the circle. Radii step evenly; the date rides
-    // one bearing, which is what turns the staircase into an axis.
-    var oy = cy + R.fdy*Rt;                       // the fan's origin
-    var rMax = (oy - (cy - Rt));                  // crest just touches the circle
-    var HW = Math.PI*0.60;                        // the app's own arc half-span
-    var br = R.bear*Math.PI/180;
-    // keep the bearing inside every arc's span
-    var lo = -Math.PI/2 - HW, hi = -Math.PI/2 + HW;
-    br = Math.max(lo+0.06, Math.min(hi-0.06, br));
-
-    var rs = [];
-    for(var m=0;m<n;m++) rs.push(rMax * (0.34 + m*(0.66/Math.max(1,n-1))));
-
-    if(R.showLines){
-      ctx.strokeStyle='rgba(233,229,244,.20)'; ctx.lineWidth=1;
-      rs.forEach(function(r){
-        ctx.beginPath(); ctx.arc(cx, oy, r, -Math.PI/2-HW, -Math.PI/2+HW); ctx.stroke();
-      });
-    }
-    if(R.axis){
-      ctx.setLineDash([2,4]); ctx.strokeStyle='rgba(211,184,119,.28)';
+  if(R.showLines){
+    ctx.strokeStyle='rgba(233,229,244,.20)'; ctx.lineWidth=1;
+    rs.forEach(function(r){
       ctx.beginPath();
-      ctx.moveTo(cx + Math.cos(br)*(rs[0]-16), oy + Math.sin(br)*(rs[0]-16));
-      ctx.lineTo(cx + Math.cos(br)*(rs[n-1]+16), oy + Math.sin(br)*(rs[n-1]+16));
-      ctx.stroke(); ctx.setLineDash([]);
-    }
-    // INSIDE the arc, running inward — the same "inside its own end"
-    // law the cascade uses, expressed on a curve.
-    var west = Math.cos(br) < 0;
-    ctx.textAlign = west ? 'left' : 'right';
-    ctx.fillStyle='rgba(211,184,119,.90)';
-    rs.forEach(function(r, idx){
-      var rr = r - R.inset*0;                    // ON the arc; inset runs along it
-      var px = cx + Math.cos(br)*rr, py = oy + Math.sin(br)*rr;
-      // step INWARD along the arc's tangent so the string starts on the
-      // line rather than hanging off its end
-      var tx = -Math.sin(br)*(west ? 1 : -1), ty = Math.cos(br)*(west ? 1 : -1);
-      ctx.fillText(DEMO[idx % DEMO.length], px + tx*inset, py + ty*inset);
+      if(full) ctx.arc(cx, cy, r, 0, Math.PI*2);
+      else     ctx.arc(cx, cy, r, -Math.PI/2-HW, -Math.PI/2+HW);
+      ctx.stroke();
     });
   }
+
+  // THE AXIS is a true radial from the same centre, so the four dates
+  // read down a straight line instead of walking.
+  if(R.axis){
+    ctx.setLineDash([2,4]); ctx.strokeStyle='rgba(211,184,119,.28)';
+    ctx.beginPath();
+    ctx.moveTo(cx + Math.cos(br)*(rs[0]-18), cy + Math.sin(br)*(rs[0]-18));
+    ctx.lineTo(cx + Math.cos(br)*(rs[n-1]+18), cy + Math.sin(br)*(rs[n-1]+18));
+    ctx.stroke(); ctx.setLineDash([]);
+  }
+
+  // ON the ring, centred across its stroke, running along it from the
+  // axis — "INSIDE and centred on their PERIMETER", his words, and the
+  // perimeter they are centred on is the diagram's own.
+  ctx.font='500 9px '+MONO;
+  ctx.textBaseline='middle';
+  var west = Math.cos(br) < 0;
+  ctx.textAlign = west ? 'right' : 'left';
+  ctx.fillStyle='rgba(211,184,119,.90)';
+  rs.forEach(function(r, idx){
+    var px = cx + Math.cos(br)*r, py = cy + Math.sin(br)*r;
+    var tx = -Math.sin(br), ty = Math.cos(br);          // the ring's tangent
+    if(!west){ tx = -tx; ty = -ty; }
+    ctx.fillText(DEMO[idx % DEMO.length], px + tx*inset, py + ty*inset);
+  });
 }
 
 function syncRecipe(){
@@ -361,10 +343,11 @@ function syncRecipe(){
   document.getElementById('v-gb').textContent    = R.gapBot+'°';
   document.getElementById('v-tree').textContent  = R.tree.toFixed(3)+'×';
   document.getElementById('v-lines').textContent = R.lines;
-  document.getElementById('v-span').textContent  = R.span.toFixed(2)+'×';
+  document.getElementById('v-arc').textContent   = (R.arc>=180?'full':R.arc+'°');
+  document.getElementById('v-r1').textContent    = R.r1.toFixed(2)+'×';
+  document.getElementById('v-r2').textContent    = R.r2.toFixed(2)+'×';
   document.getElementById('v-bear').textContent  = R.bear+'°';
   document.getElementById('v-inset').textContent = R.inset+'wu';
-  document.getElementById('v-fdy').textContent   = R.fdy.toFixed(2)+'×';
   document.getElementById('recipeTxt').innerHTML =
       '<b>BUDGET</b> Rh ' + RH + 'wu · ports ' + Math.round(b.portR) + ' · ceiling ' + Math.round(b.ceiling)
     + ' = ports −' + M_BAND_PORT + ' −' + CAP_TEXT + ' −' + CAP_TIER + ' −' + CAP_CLEAR
@@ -383,13 +366,18 @@ function syncRecipe(){
   var el = document.getElementById('r-'+p[0]);
   el.addEventListener('input', function(){ R[p[1]] = +el.value; syncRecipe(); draw(); });
 });
-['lines','span','bear','inset','fdy'].forEach(function(k){
+['lines','arc','r1','r2','bear','inset'].forEach(function(k){
   var el = document.getElementById('r-'+k);
   el.addEventListener('input', function(){ R[k] = +el.value; syncRecipe(); draw(); });
 });
 document.querySelectorAll('.fchip[data-mode]').forEach(function(bn){
   bn.addEventListener('click', function(){
     R.mode = bn.getAttribute('data-mode');
+    // The only thing the mode changes is HOW MUCH of each ring is
+    // drawn. The rings themselves, and their centre, are the same in
+    // both — that is what makes it one template and not two.
+    R.arc = (R.mode === 'fan') ? 108 : 180;
+    document.getElementById('r-arc').value = R.arc;
     document.querySelectorAll('.fchip[data-mode]').forEach(function(x){ x.classList.toggle('on', x===bn); });
     syncRecipe(); draw();
   });
