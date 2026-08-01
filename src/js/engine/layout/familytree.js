@@ -1099,7 +1099,14 @@
       // crest of rings fills the house instead of hugging the rim.
       // Ring capacity in units is P-free (each member needs 1 unit
       // of arc → capacity = span×radU); overfull rings BRAID.
-      fanDy = Rt * FAN_DY;   // wave 3: the fan lives in the tree zone
+      // THE FAN'S ORIGIN IS A DIAL NOW (2026-08-01, additive — the
+      // default IS FAN_DY, so every existing call is byte-identical).
+      // John, on his own capture: "the inner circle is not central."
+      // It is not: the rings are struck 0.34*Rt BELOW the house centre
+      // so their crest fills the house instead of hugging the top rim.
+      // That is a real trade and it is his to judge, so it stops being
+      // a constant he cannot reach.
+      fanDy = Rt * Math.max(0, Math.min(0.60, num(o.fanDy, FAN_DY)));
       const rings = rows.map(row => (row.length ? bedLayout(row, Infinity) : null));
       const radU = [], braidOn = [];
       let prevRad = 0;

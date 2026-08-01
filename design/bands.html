@@ -82,6 +82,7 @@
   <button class="fchip on" id="godsChip">Gods</button>
   <button class="fchip on" id="bandGlyphChip">Band items</button>
   <button class="fchip on" id="realDatesChip">Real eras</button>
+  <div class="ctl"><label>Fan origin <b id="v-fdy"></b></label><input type="range" id="r-fdy" min="0" max="0.60" step="0.01" value="0.34"></div>
   <button class="fchip on" id="engineChip">Real engine</button>
 </div>
 </div>
@@ -129,7 +130,7 @@ var M_BAND_PORT = 12, CAP_TEXT = 10, CAP_TIER = 30, CAP_CLEAR = 10, M_TREE_BAND 
 var R = { port:1.00, band:0.86, rows:3, pitch:16, gapTop:24, gapBot:12, tree:0.74,
           notes:true, caps:false,
           mode:'cascade', lines:4, span:0.94, arc:108, r1:0.30, r2:0.92, bear:-140, inset:14,
-          follow:0, reach:0.62, dens:0, margins:true, engine:true, fam:'Norse', gods:true, bandGlyphs:true, realDates:true,
+          follow:0, reach:0.62, dens:0, margins:true, engine:true, fdy:0.34, fam:'Norse', gods:true, bandGlyphs:true, realDates:true,
           axis:true, showLines:true };
 
 /* The demo strata. Four, because four is what he asked to design for,
@@ -437,7 +438,7 @@ function engineLayout(pack, geometry){
       arcs: arcs, laterals: laterals, aspects: aspects, degree: degree,
       center: { x:0, y:0 }, radius: RH, geometry: geometry,
       portInset: R.port, bandR: R.band, bandGap: R.gapTop, bandGapBot: R.gapBot,
-      bandRows: R.rows, bandPitch: R.pitch, treeR: R.tree,
+      bandRows: R.rows, bandPitch: R.pitch, treeR: R.tree, fanDy: R.fdy,
     });
   } catch(e){ try{ console.warn('[bands] engine layout failed', e); }catch(_){ } return null; }
 }
@@ -582,8 +583,8 @@ function drawDateLines(cx, cy, P, b, pack, lay){
       // own even split beside them would be two answers on one chart.
       lay.house.rowMeta.forEach(function(rm){
         if(rm.y == null || !rm.n) return;
-        ys.push(cy + (rm.lineY != null ? rm.lineY : rm.y) * (Rt/(RH*R.tree)));
-        halves.push(rm.half * (Rt/(RH*R.tree)) * R.span);
+        ys.push(cy + P(rm.lineY != null ? rm.lineY : rm.y));
+        halves.push(P(rm.half) * R.span);
       });
       n = ys.length;
     }
@@ -640,11 +641,17 @@ function drawDateLines(cx, cy, P, b, pack, lay){
   }
 
   // ── FAN — the same two rules, spent in RADIUS.
-  var rs = [];
+  // THE RINGS BELONG TO THE ENGINE, AND SO DOES THEIR CENTRE.
+  // The fan is struck from an origin BELOW the house centre (fanDy);
+  // drawing my rings about the centre instead put them a whole fanDy
+  // away from the nodes riding them — John: "the nodes are not flowin
+  // respecting your lines". They were my lines, in the wrong place.
+  var oy = cy, rs = [];
   if(lay && lay.house && lay.house.rowMeta && lay.house.rowMeta.length){
+    oy = cy + P(lay.house.fanDy || 0);
     lay.house.rowMeta.forEach(function(rm){
       if(!rm.n || !(rm.rad > 0)) return;
-      rs.push(rm.rad * (Rt/(RH*R.tree)));
+      rs.push(P(rm.rad));
     });
     n = rs.length;
   }
@@ -656,27 +663,35 @@ function drawDateLines(cx, cy, P, b, pack, lay){
   }
 
   var HW = R.arc*Math.PI/180;
+  // the engine's own fan span (familytree.js: +-0.60pi), so the guide
+  // ends exactly where the ring of gods ends
+  var HWU = lay ? Math.PI*0.60 : HW;
   var full = HW >= Math.PI - 1e-6;
   var br = R.bear*Math.PI/180;
   if(!full){
     var bw = Math.atan2(Math.sin(br + Math.PI/2), Math.cos(br + Math.PI/2));
-    bw = Math.max(-HW + 0.06, Math.min(HW - 0.06, bw));
+    bw = Math.max(-HWU + 0.06, Math.min(HWU - 0.06, bw));
     br = -Math.PI/2 + bw;
+  }
+  if(lay){                                   // engine spans are never "full"
+    var bw2 = Math.atan2(Math.sin(br + Math.PI/2), Math.cos(br + Math.PI/2));
+    bw2 = Math.max(-HWU + 0.06, Math.min(HWU - 0.06, bw2));
+    br = -Math.PI/2 + bw2;
   }
   if(R.showLines){
     ctx.strokeStyle='rgba(233,229,244,.20)'; ctx.lineWidth=1;
     rs.forEach(function(r){
       ctx.beginPath();
-      if(full) ctx.arc(cx, cy, r, 0, Math.PI*2);
-      else     ctx.arc(cx, cy, r, -Math.PI/2-HW, -Math.PI/2+HW);
+      if(full && !lay) ctx.arc(cx, oy, r, 0, Math.PI*2);
+      else             ctx.arc(cx, oy, r, -Math.PI/2-HWU, -Math.PI/2+HWU);
       ctx.stroke();
     });
   }
   if(R.axis){
     ctx.setLineDash([2,4]); ctx.strokeStyle='rgba(211,184,119,.28)';
     ctx.beginPath();
-    ctx.moveTo(cx + Math.cos(br)*(rs[0]-18), cy + Math.sin(br)*(rs[0]-18));
-    ctx.lineTo(cx + Math.cos(br)*(rs[n-1]+18), cy + Math.sin(br)*(rs[n-1]+18));
+    ctx.moveTo(cx + Math.cos(br)*(rs[0]-18), oy + Math.sin(br)*(rs[0]-18));
+    ctx.lineTo(cx + Math.cos(br)*(rs[n-1]+18), oy + Math.sin(br)*(rs[n-1]+18));
     ctx.stroke(); ctx.setLineDash([]);
   }
   var west = Math.cos(br) < 0;
@@ -684,7 +699,7 @@ function drawDateLines(cx, cy, P, b, pack, lay){
   ctx.fillStyle='rgba(211,184,119,.90)';
   var labA = [];
   rs.forEach(function(r, idx){
-    var px = cx + Math.cos(br)*r, py = cy + Math.sin(br)*r;
+    var px = cx + Math.cos(br)*r, py = oy + Math.sin(br)*r;
     var tx2 = -Math.sin(br), ty2 = Math.cos(br);
     if(!west){ tx2 = -tx2; ty2 = -ty2; }
     var t3 = lab(idx);
@@ -697,7 +712,7 @@ function drawDateLines(cx, cy, P, b, pack, lay){
       var lo2, hi2;
       if(full){ lo2 = br + labA[idx]; hi2 = br + Math.PI*2 - 0.12; }
       else {
-        var s0 = -Math.PI/2 - HW, s1 = -Math.PI/2 + HW;
+        var s0 = -Math.PI/2 - HWU, s1 = -Math.PI/2 + HWU;
         if(west){ lo2 = br + labA[idx]; hi2 = s1 - 0.04; }
         else    { lo2 = s0 + 0.04;      hi2 = br - labA[idx]; }
       }
@@ -730,6 +745,7 @@ function syncRecipe(){
   document.getElementById('v-arc').textContent   = (R.arc>=180?'full':R.arc+'°');
   document.getElementById('v-follow').textContent = R.follow.toFixed(2);
   document.getElementById('v-reach').textContent  = R.reach.toFixed(2)+'×';
+  document.getElementById('v-fdy').textContent    = R.fdy.toFixed(2)+'×'+(R.fdy===0?' centred':'');
   document.getElementById('v-r1').textContent    = R.r1.toFixed(2)+'×';
   document.getElementById('v-r2').textContent    = R.r2.toFixed(2)+'×';
   document.getElementById('v-bear').textContent  = R.bear+'°';
@@ -755,7 +771,7 @@ function syncRecipe(){
   var el = document.getElementById('r-'+p[0]);
   el.addEventListener('input', function(){ R[p[1]] = +el.value; syncRecipe(); draw(); });
 });
-['lines','span','arc','r1','r2','bear','inset','follow','reach'].forEach(function(k){
+['lines','span','arc','r1','r2','bear','inset','follow','reach','fdy'].forEach(function(k){
   var el = document.getElementById('r-'+k);
   el.addEventListener('input', function(){ R[k] = +el.value; syncRecipe(); draw(); });
 });
