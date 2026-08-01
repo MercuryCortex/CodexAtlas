@@ -682,8 +682,14 @@ must(/const anchor = houseTitleAnchor\(vp\);\n\s+const cs = \{ x: anchor\.x, y: 
   'the title block rides houseTitleAnchor — CENTER (the ratified toy law) by default, corners as dials');
 must(/house_title_slot:\s+'center',/,
   'the DEFAULT slot is center — the postmortem worklist #1, re-ratified 2026-07-31');
-must(/const p = camera\.worldToScreen\(house\.center\.x, topWorldY, vp\);/,
-  'the centre slot projects the house top through the camera — paint-only, it reserves no world space');
+must(/const c = camera\.worldToScreen\(house\.center\.x, house\.center\.y, vp\);/,
+  'the centre slot projects the house through the camera — paint-only, it reserves no world space');
+must(/const res = houseTitleGap\(hs, vp, x, halfW, pxPerWorld,/,
+  'the title takes the widest HOLE in its own column, not a fixed side (2026-08-01)');
+must(/if \(x1 < colL \|\| x0 > colR\) return;\s+\/\/ not in the title's column/,
+  'occupancy is tested only inside the block\'s column — the rails leave a gap at 12 o\'clock by construction');
+must(/if \(!best \|\| \(g\.hi - g\.lo\) > \(best\.hi - best\.lo\) \* 1\.25\) best = g;/,
+  'reading order favours the top — only a CLEARLY bigger hole (1.25x) moves the title down the page');
 must(/const aStep = 22 \/ Math\.max\(1e-6, rl\.r \* camS\);/,
   'the band obstacle shield follows the ARC at 22px screen pitch');
 must(/const bi = Math\.round\(gy \/ 16\);/,
@@ -833,24 +839,100 @@ const RING_VPS = [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }
 // through the camera but PAINT-ONLY (no world reservation). The
 // wave-4 corners remain as dials and keep their no-camera claim.
 const TITLE_PAD = 24, TITLE_TOP = 66;
-const titleAnchor = (vp, slot, h, W2S) => {
+// ── THE TITLE TAKES THE EMPTY AIR (2026-08-01) ─────────────────────
+// Mirrors forge.js houseTitleGap + houseTitleAnchor. The old replica
+// here mirrored the old law (project the house top, hang the stack
+// above it) and kept passing after the view stopped doing that — a
+// gate testing its own fiction. This one walks the same interval list
+// the view walks, so a family whose column has no room fails HERE
+// instead of in a screenshot.
+const TITLE_RIM = 30, TITLE_GAP = 14;
+const titleGapOf = (vp, h, W2S, lay, cxPx, halfW, pxPerWorld, topPx, botPx, needH) => {
+  const colL = cxPx - halfW, colR = cxPx + halfW;
+  const lo0 = topPx + TITLE_RIM, hi0 = botPx - TITLE_RIM;
+  const iv = [];
+  const box = (x0, x1, y0, y1) => {
+    if (x1 < colL || x0 > colR) return;
+    iv.push([y0 - TITLE_GAP, y1 + TITLE_GAP]);
+  };
+  const disc = (wx, wy, wr) => {
+    const s = W2S(wx, wy); const rp = (wr || 0) * pxPerWorld;
+    box(s.x - rp, s.x + rp, s.y - rp, s.y + rp);
+  };
+  const pos = lay.positions, rad = lay.radii;
+  for (const row of (h.rows || [])) {
+    for (const id of row) { const p = pos && pos.get(id); if (p) disc(p.x, p.y, (rad && rad.get(id)) || 0); }
+  }
+  const rails = h.rails || {};
+  for (const rl of [rails.left, rails.right]) {
+    if (!rl || !rl.shelves) continue;
+    for (const sh of rl.shelves) for (const it of (sh.items || [])) disc(it.x, it.y, rl.glyphR || 0);
+  }
+  for (const pt of (lay.ports || [])) disc(pt.x, pt.y, pt.r || 0);
+  // the era captions are content and place AFTER the title — same law
+  const CAP_W = 112, CAP_H = 7, capOff = 14;
+  for (const rm of (h.rowMeta || [])) {
+    let a = null;
+    if (h.geometry === 'cascade') {
+      if (rm.y != null && rm.n) {
+        const s = W2S(h.center.x - rm.half * 0.94, (rm.lineY != null) ? rm.lineY : rm.y);
+        a = { x: s.x + capOff, y: s.y };
+      }
+    } else if (rm.n && rm.rad > 0) {
+      const aW = -Math.PI / 2 - Math.PI * 0.60;
+      const s = W2S(h.center.x + Math.cos(aW) * rm.rad,
+                    h.center.y + (h.fanDy || 0) + Math.sin(aW) * rm.rad);
+      a = { x: s.x + capOff * (8 / 14) + 4, y: s.y };
+    }
+    if (a) box(a.x, a.x + CAP_W, a.y - CAP_H, a.y + CAP_H);
+  }
+  iv.sort((a, b) => a[0] - b[0]);
+  const holes = [];
+  let cur = lo0;
+  for (const s of iv) {
+    if (s[0] > cur && cur < hi0) holes.push({ lo: cur, hi: Math.min(s[0], hi0) });
+    if (s[1] > cur) cur = s[1];
+    if (cur >= hi0) break;
+  }
+  if (cur < hi0) holes.push({ lo: cur, hi: hi0 });
+  let best = null;
+  for (const g of holes) {
+    if (g.hi - g.lo <= 0) continue;
+    if (!best || (g.hi - g.lo) > (best.hi - best.lo) * 1.25) best = g;
+  }
+  const fits = !!best && (best.hi - best.lo) >= needH;
+  if (!fits) { for (const g of holes) { if (g.hi - g.lo > 0) { best = g; break; } } }
+  if (!best) best = { lo: lo0, hi: hi0 };
+  return { gap: best, fits, holes };
+};
+const titleAnchor = (vp, slot, h, W2S, lay) => {
   if (slot === 'left' || slot === 'right') {
     return {
-      right: slot === 'right', center: false,
+      right: slot === 'right', center: false, compact: false,
       x: (slot === 'right') ? Math.max(TITLE_PAD, vp.w - TITLE_PAD) : TITLE_PAD,
       y: TITLE_TOP,
     };
   }
-  const stackH = rowOf(T_HEAD) * 3 + 10;
-  const rl = h.rails && (h.rails.left || h.rails.right);
-  const topWorldY = rl ? (h.center.y - rl.r)
-    : (h.geometry === 'fan' ? (h.center.y - h.treeR)
-      : (h.crown ? h.crown.y : h.center.y - h.treeR));
-  const p = W2S(h.center.x, topWorldY);
+  const rowH = rowOf(T_HEAD), NAME_RISE = 16;
+  const blockH = rowH * 3 + NAME_RISE + 8;
+  const blockHC = rowH * 2 + NAME_RISE + 8;
+  const c = W2S(h.center.x, h.center.y);
+  const e = W2S(h.center.x + h.radius, h.center.y);
+  const pxPerWorld = Math.abs(e.x - c.x) / Math.max(1e-6, h.radius);
+  const rPx = h.radius * pxPerWorld;
+  const x = Math.max(170, Math.min(Math.max(170, vp.w - 170), c.x));
+  const halfW = 200;
+  const res = lay
+    ? titleGapOf(vp, h, W2S, lay, x, halfW, pxPerWorld, c.y - rPx, c.y + rPx, blockHC)
+    : { gap: { lo: c.y - rPx + TITLE_RIM, hi: c.y - rPx + TITLE_RIM + blockH }, fits: true, holes: [] };
+  const use = res.gap, room = use.hi - use.lo;
+  const compact = room < blockH;
+  const bh = compact ? blockHC : blockH;
+  const yMax = Math.max(TITLE_TOP, vp.h - 58 - rowH * (compact ? 2 : 3) - 10);
   return {
-    right: false, center: true,
-    x: Math.max(170, Math.min(vp.w - 170, p.x)),
-    y: Math.max(TITLE_TOP, Math.min(vp.h - 160, p.y - stackH)),
+    right: false, center: true, compact, fits: res.fits, room, need: bh,
+    x,
+    y: Math.max(TITLE_TOP, Math.min(yMax, (use.lo + use.hi) / 2 - bh / 2 + NAME_RISE)),
   };
 };
 // The family name paints in the CROWN FACE while isolated (21px
@@ -898,7 +980,7 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     // both stat lines and the CASCADE/FAN chips, on the locked screen
     // fixture. Width from the real strings this family prints.
     const st = h.stats;
-    const anch = titleAnchor(vp, 'center', h, W2S);
+    const anch = titleAnchor(vp, 'center', h, W2S, lay);
     const cs = { x: anch.x, y: anch.y };
     const cenX = (w) => anch.center ? anch.x
       : (anch.right ? (anch.x - w / 2) : (anch.x + w / 2));
@@ -911,20 +993,25 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     // The two agents each rewrote part of this replay; this is the union
     // in the order the view actually paints, not either side alone.
     const tw = titleW(fam);
-    const w1 = mw(line1, T_HEAD), w2b = mw(line2, T_CAP);
+    // THE COMPACT STACK — when the column's roomiest hole cannot take
+    // four rows, the two stat lines collapse into one (forge.js
+    // `lineC`). Three rows, not four; every number still stated.
+    const lineC = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' ARCS · '
+      + st.orphanCount + ' ON THEIR ERA · ' + st.docs + ' SCRIPTORIUM · ' + st.court + ' COURT';
+    const w1 = anch.compact ? 0 : mw(line1, T_HEAD);
+    const w2b = mw(anch.compact ? lineC : line2, T_CAP);
     // THE BLOCK IS A KEEPOUT (2026-08-01): every row claims the full
     // block width + one row of air above and below, mirroring the
     // view. Row 0 is syncHulls' published title rect, seeded into
     // `placed` before the canvas pass — same as local._titleRects.
     const BW = Math.max(w1 + 8, w2b + 8, tw, 156) + 28;
     claimSim(placed, cenX(BW), cs.y - CROWN_ROW, BW, vp.h);   // air above
-    const rows4 = [
-      claimSim(placed, cenX(Math.max(tw, 400)), cs.y, Math.max(tw, 400), vp.h),
-      claimSim(placed, cenX(BW), cs.y + CROWN_ROW, BW, vp.h),
-      claimSim(placed, cenX(BW), cs.y + CROWN_ROW * 2, BW, vp.h),
-      claimSim(placed, cenX(BW), cs.y + CROWN_ROW * 3, BW, vp.h),   // CASCADE/FAN chip row
-    ];
-    claimSim(placed, cenX(BW), cs.y + CROWN_ROW * 4, BW, vp.h);   // air below
+    const nRow = anch.compact ? 2 : 3;      // stat rows + chips under the name
+    const rows4 = [claimSim(placed, cenX(Math.max(tw, 400)), cs.y, Math.max(tw, 400), vp.h)];
+    for (let r = 1; r <= nRow; r++) {
+      rows4.push(claimSim(placed, cenX(BW), cs.y + CROWN_ROW * r, BW, vp.h));
+    }
+    claimSim(placed, cenX(BW), cs.y + CROWN_ROW * (nRow + 1), BW, vp.h);   // air below
     for (const r of rows4) { titleBlockTot++; if (!r) titleBlockFail++; }
     // 2 ▸ the band's curved text, in the view's real order: headers,
     // then shelf captions, then the overflow feet (pass 1 — the
@@ -1089,9 +1176,74 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     fail(fam + ': only ' + godPrinted + ' of ' + godTot + ' god names print (' + godPct.toFixed(0) + '%)');
   }
 }
-if (titleBlockFail === 0) ok('the title block prints all four rows, 6 families × 4 viewports ('
+if (titleBlockFail === 0) ok('the title block prints every row, 6 families × 4 viewports ('
   + titleBlockTot + ' placements)');
 else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused');
+
+// ── THE TITLE FINDS AIR IN EVERY HOUSE ──────────────────────────────
+// The one invariant behind the 2026-08-01 pass: whatever the family and
+// whatever the geometry, the block goes in a hole that can HOLD it. It
+// was three Safari screenshots that caught Egyptian, Vedic and
+// Mesopotamian having no four-row hole once their fan opens; that is a
+// number, so it belongs here and not in a screenshot.
+{
+  const FAMS = ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian',
+                'Vedic', 'Chinese', 'Celtic', 'Baltic', 'Other'];
+  // WIDE is John's seat and is ENFORCED. The laptop sizes are RECORDED,
+  // not enforced, and the reason is a real product limit rather than a
+  // defect in this pass: the block's type does not scale with the
+  // house, so at 1280-1440 the house fills its own column and there is
+  // no hole for ANY form of the block — the same was true of the fixed
+  // top slot this replaced, it just could not be seen. Closing it means
+  // either scaling the block with the house radius or shrinking the
+  // tree zone to reserve the band. Both change ratified type/layout, so
+  // both are John's call; until he makes it the number is printed here
+  // every run instead of waiting in a screenshot.
+  // ENFORCED: John's own window, measured in real Safari 2026-08-01
+  // (2000x1098 with the chrome, 2000x1150 in the pane).
+  const SEAT = [{ w: 2000, h: 1150 }, { w: 2000, h: 1098 }];
+  const run = (vps) => {
+    let noRoom = 0, cases = 0, compacted = 0; const worst = [];
+    for (const fam of FAMS) {
+      for (const geo of ['cascade', 'fan']) {
+        const lay = houseUnion(fam, geo);
+        const h = lay.house;
+        for (const vp of vps) {
+          const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
+          const W2S = (x, y) => ({ x: vp.w / 2 + x * scale, y: vp.h / 2 + y * scale });
+          const a = titleAnchor(vp, 'center', h, W2S, lay);
+          cases++;
+          if (a.compact) compacted++;
+          if (!a.fits) { noRoom++; worst.push(fam + '/' + geo + ' ' + vp.w + 'x' + vp.h); }
+        }
+      }
+    }
+    return { noRoom, cases, compacted, worst };
+  };
+  const seat = run(SEAT);
+  if (seat.noRoom === 0) {
+    ok('the title lands in a hole that HOLDS it at John\'s own window — ' + seat.cases
+      + ' cases (10 families × 2 geometries × 2000×1150 and 2000×1098); '
+      + seat.compacted + ' took the compact stack');
+  } else {
+    fail(seat.noRoom + ' of ' + seat.cases + ' title placements had no hole big enough AT HIS SEAT — '
+      + seat.worst.slice(0, 6).join(' · '));
+  }
+  // THE HEADROOM NUMBER — printed, not asserted, and re-derived every
+  // run so it cannot go stale. It is the shortest window in which EVERY
+  // family finds air. Shrink the fan's tree zone or scale the block
+  // with the house and this number falls on its own.
+  let floor = null;
+  for (let hgt = 900; hgt <= 1300; hgt += 2) {
+    if (run([{ w: 2000, h: hgt }]).noRoom === 0) { floor = hgt; break; }
+  }
+  console.log('    headroom: every family finds air at window height >= '
+    + (floor == null ? '>1300' : floor)
+    + 'px; below it the biggest FANS (Vedic · Egyptian · Mesopotamian) have no hole and the'
+    + ' block falls back to the top slot. Closing that means scaling the block with the house'
+    + ' radius or reserving the band in the layout — both change ratified type/layout, so both'
+    + ' are John\'s call.');
+}
 // BOTH SLOTS, and the block never touches the band. The 'right' slot
 // is a dial John can reach, so it gets the same proof as the default:
 // every row inside the viewport and clear of the keep-outs, and no row
@@ -1731,8 +1883,17 @@ console.log('\n── W5-PACK · the two distributions, and what each one moves 
 // a lying rm.w moves the whole axis): the per-row assertions below
 // keep that honest, and the stratum line now consumes rm.lineY.
 console.log('\n── W5-DATE · the rank gutter follows both distributions ──');
-must(/const es = W2S\(house\.center\.x - rm\.half \* 0\.94, ly0\);/,
+must(/const es = camera\.worldToScreen\(house\.center\.x - rm\.half \* 0\.94, ly0, vp\);/,
   'every cascade date sits ON its stratum line\'s left terminus, at the line\'s own y (2026-08-01)', forgeSrc);
+// ONE anchor law, two readers. The caption pass prints the date; the
+// title's gap search has to know where it will land, because the title
+// claims FIRST — a title parked on a date's anchor does not overlap the
+// date, it deletes it silently. Two copies of the formula is how that
+// regression ships unnoticed, so both callsites are pinned.
+must(/const ca = houseRankCapAnchor\(house, rm, vp, capOff\);/,
+  'the era caption reads its anchor from the ONE shared law', forgeSrc);
+must(/const a = houseRankCapAnchor\(house, rm, vp, capOff\);\s*\n\s+if \(a\) box\(/,
+  'the title\'s gap search counts every era caption as occupied', forgeSrc);
 must(/if \(txt == null && capMode === 'date'\) txt = 'UNDATED';/,
   'an undated rank SAYS so — UNDATED prints instead of a silent gap', forgeSrc);
 must(/const aW = -Math\.PI \/ 2 - Math\.PI \* 0\.60;/,

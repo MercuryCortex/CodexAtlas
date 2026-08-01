@@ -2350,6 +2350,11 @@
       enterHouse:   (fam) => setIsolateFamily(fam || null),
       houseState:   () => ({
         isolate: local._isolateFamily,
+        // which empty band the title took, and whether it fitted
+        titleSide: local._houseTitleSide || null,
+        titleFits: local._houseTitleFits !== false,
+        titleCompact: !!local._houseTitleCompact,
+        titleGap: local._houseTitleGap || null,
         mix: local._layoutMix
           ? { value: +local._layoutMix.value.toFixed(4), target: local._layoutMix.target }
           : null,
@@ -6627,19 +6632,177 @@
       if (house && house.center) {
         const ts = Math.max(0.7, Math.min(2,
           (typeof local.params.house_type_scale === 'number') ? local.params.house_type_scale : 1));
-        // name + two stat lines + chips = 3 row steps below the anchor,
-        // plus visual air — the whole stack ends where the circle begins.
-        const stackH = Math.max(16, Math.round(11 * ts * 1.9)) * 3 + 10;
-        const rl = house.rails && (house.rails.left || house.rails.right);
-        const topWorldY = rl ? (house.center.y - rl.r)
-          : (house.geometry === 'fan'
-            ? (house.center.y - house.treeR)
-            : (house.crown ? house.crown.y : house.center.y - house.treeR));
-        const p = camera.worldToScreen(house.center.x, topWorldY, vp);
-        x = Math.max(170, Math.min(Math.max(170, w - 170), p.x));
-        y = Math.max(HOUSE_TITLE_TOP, Math.min(Math.max(HOUSE_TITLE_TOP, h - 160), p.y - stackH));
+        const rowH = Math.max(16, Math.round(11 * ts * 1.9));
+        // The block is the NAME plus three row steps under it (line 1,
+        // line 2, the chips), plus the name's own rise above its
+        // baseline — the crown face is 21px serif in app.css.
+        const NAME_RISE = 16;
+        const blockH = rowH * 3 + NAME_RISE + 8;    // name + 2 stat lines + chips
+        // THE COMPACT STACK — the same block with the two stat lines
+        // collapsed into the toy's one-line form. Three of the twelve
+        // families (Egyptian, Vedic, Mesopotamian) have NO four-row
+        // hole anywhere in this column once the fan opens; without a
+        // shorter form the block falls back onto the crest, which is
+        // the clutter this whole pass exists to remove.
+        const blockHC = rowH * 2 + NAME_RISE + 8;   // name + ONE stat line + chips
+        const c = camera.worldToScreen(house.center.x, house.center.y, vp);
+        const e = camera.worldToScreen(house.center.x + house.radius, house.center.y, vp);
+        const pxPerWorld = Math.abs(e.x - c.x) / Math.max(1e-6, house.radius);
+        const rPx = house.radius * pxPerWorld;
+        x = Math.max(170, Math.min(Math.max(170, w - 170), c.x));
+        // Half the block's width, from the same strings the rows print
+        // (there is no ctx here) — it only has to answer "is anything
+        // drawn where the title wants to stand", so an estimate is the
+        // right tool and a generous one is the safe one.
+        const halfW = Math.max(200, 200 * ts);
+        // The search is told the SMALLEST viable stack, so "fits" means
+        // "some honest form of the block goes here" — not "the tallest
+        // one does".
+        const res = houseTitleGap(hs, vp, x, halfW, pxPerWorld,
+                                  c.y - rPx, c.y + rPx, blockHC);
+        const use = res.gap;
+        const room = use.hi - use.lo;
+        const compact = room < blockH;
+        const bh = compact ? blockHC : blockH;
+        local._houseTitleCompact = compact;
+        local._houseTitleSide = ((use.lo + use.hi) / 2 < c.y) ? 'above' : 'below';
+        local._houseTitleFits = res.fits;
+        // ONE source of truth for the probe: the numbers the anchor
+        // actually decided on, not a re-derivation of them.
+        local._houseTitleGap = {
+          lo: use.lo, hi: use.hi, h: room,
+          blockH: bh, blockFull: blockH, compact, holes: res.holes, fits: res.fits,
+          holeList: res.holeList.map((g) => [Math.round(g.lo), Math.round(g.hi)]),
+          topPx: c.y - rPx, botPx: c.y + rPx, side: local._houseTitleSide,
+        };
+        // The whole stack is centred on the hole, so the air reads even
+        // above the name and below the chips.
+        y = (use.lo + use.hi) / 2 - bh / 2 + NAME_RISE;
+        // The chips are the last row: keep them off the bottom chrome.
+        const yMax = Math.max(HOUSE_TITLE_TOP, h - 58 - rowH * (compact ? 2 : 3) - 10);
+        y = Math.max(HOUSE_TITLE_TOP, Math.min(yMax, y));
       }
       return { right: false, center: true, x, y };
+    }
+    // ── THE TITLE TAKES THE EMPTY AIR (2026-08-01) ───────────────────
+    // John, on a fan capture with the name pinned to the top edge:
+    // "why not moving the title below when we move the chart??? there's
+    // so much empty space???" He is right, and the reason a fixed side
+    // was wrong about half the time is that the house MOVES: the
+    // cascade hangs from the top and leaves its air there, while the
+    // fan's crest climbs to the rim and empties the bottom half.
+    //
+    // So the two bands are MEASURED. Everything the house actually
+    // draws is projected through the camera and sorted into what
+    // bounds a band and what bounds the rim:
+    //
+    //   THE DRAWING (cascade/fan members, rail shelf glyphs) sets the
+    //     INNER edge of each band — the title stops short of it.
+    //   THE RIM FURNITURE (horizon ports) sets the OUTER edge, and only
+    //     on its own side of centre. A port at 12 o'clock must push the
+    //     top of the upper band down; it must not be allowed to claim
+    //     the whole gap between the neatline and the first rank.
+    //
+    // Occupancy is tested ONLY inside the block's own column. The rails
+    // are an arc that leaves a gap at 12 o'clock by construction and the
+    // ports ring the rim, so a whole-circle test would report "no room"
+    // in exactly the place there is most of it.
+    //
+    // And it walks the HOLES, not the envelope. A first cut took the
+    // span from the topmost thing drawn to the bottommost and called
+    // everything between it occupied — which on Vedic's fan declared
+    // the 170px of clear air between the crest and the court arc to be
+    // solid, and pinned the title back on the top edge. The column is
+    // an interval list; the title wants its widest hole.
+    function houseTitleGap(hs, vp, cxPx, halfW, pxPerWorld, topPx, botPx, blockH) {
+      const RIM = 30;   // screen px clear of the neatline
+      const GAP = 14;   // screen px clear of whatever is drawn
+      const colL = cxPx - halfW, colR = cxPx + halfW;
+      const lo0 = topPx + RIM, hi0 = botPx - RIM;
+      const iv = [];
+      const box = (x0, x1, y0, y1) => {
+        if (x1 < colL || x0 > colR) return;        // not in the title's column
+        iv.push([y0 - GAP, y1 + GAP]);
+      };
+      const disc = (wx, wy, wr) => {
+        const s = camera.worldToScreen(wx, wy, vp);
+        const rp = (wr || 0) * pxPerWorld;
+        box(s.x - rp, s.x + rp, s.y - rp, s.y + rp);
+      };
+      const lay = hs && hs.lay, house = lay && lay.house;
+      if (house) {
+        const pos = lay.positions, rad = lay.radii;
+        for (const row of (house.rows || [])) {
+          for (const id of row) {
+            const p = pos && pos.get(id);
+            if (p) disc(p.x, p.y, (rad && rad.get(id)) || 0);
+          }
+        }
+        const rails = house.rails || {};
+        for (const rl of [rails.left, rails.right]) {
+          if (!rl || !rl.shelves) continue;
+          for (const sh of rl.shelves) {
+            for (const it of (sh.items || [])) disc(it.x, it.y, rl.glyphR || 0);
+          }
+        }
+        for (const pt of (lay.ports || [])) disc(pt.x, pt.y, pt.r || 0);
+        // THE DATES ARE CONTENT, NOT DECORATION. Every era caption
+        // places through claim(), and the title claims FIRST — so a
+        // title parked on a date's anchor does not overlap it, it
+        // DELETES it, without a mark on screen to say so. They are
+        // occupancy like anything else.
+        const capOff = (typeof local.params.house_rank_cap_off === 'number')
+          ? local.params.house_rank_cap_off : 14;
+        const CAP_W = 112, CAP_H = 7;   // the widest era string, and its half-height
+        for (const rm of (house.rowMeta || [])) {
+          const a = houseRankCapAnchor(house, rm, vp, capOff);
+          if (a) box(a.x, a.x + CAP_W, a.y - CAP_H, a.y + CAP_H);
+        }
+      }
+      iv.sort((a, b) => a[0] - b[0]);
+      const holes = [];
+      let cur = lo0;
+      for (const s of iv) {
+        if (s[0] > cur && cur < hi0) holes.push({ lo: cur, hi: Math.min(s[0], hi0) });
+        if (s[1] > cur) cur = s[1];
+        if (cur >= hi0) break;
+      }
+      if (cur < hi0) holes.push({ lo: cur, hi: hi0 });
+      let best = null;
+      for (const g of holes) {
+        if (g.hi - g.lo <= 0) continue;
+        // `holes` runs top-to-bottom and reading order favours the top,
+        // so only a CLEARLY bigger hole (1.25x) moves the title down —
+        // the same margin that stops it flipping on a near-tie.
+        if (!best || (g.hi - g.lo) > (best.hi - best.lo) * 1.25) best = g;
+      }
+      const fits = !!best && (best.hi - best.lo) >= blockH;
+      // NOTHING FITS: take the TOP hole, which is the slot the block
+      // has always had. A title that overflows is bad; a title that
+      // overflows in the middle of the drawing is worse.
+      if (!fits) {
+        for (const g of holes) { if (g.hi - g.lo > 0) { best = g; break; } }
+      }
+      if (!best) best = { lo: lo0, hi: hi0 };
+      return { gap: best, fits, holes: holes.length, holeList: holes };
+    }
+    // ONE anchor law for the rank/era caption, shared by the pass that
+    // PRINTS it and the pass that has to keep the title off it. Two
+    // copies of this formula is exactly how a date that was promised
+    // quietly stops printing.
+    function houseRankCapAnchor(house, rm, vp, capOff) {
+      if (house.geometry === 'cascade') {
+        if (rm.y == null || !rm.n) return null;
+        const ly0 = (rm.lineY != null) ? rm.lineY : rm.y;
+        const es = camera.worldToScreen(house.center.x - rm.half * 0.94, ly0, vp);
+        return { x: es.x + capOff, y: es.y };
+      }
+      if (!rm.n || !(rm.rad > 0)) return null;
+      const fanY = house.center.y + (house.fanDy || 0);
+      const aW = -Math.PI / 2 - Math.PI * 0.60;    // the stratum arc's west end
+      const es = camera.worldToScreen(house.center.x + Math.cos(aW) * rm.rad,
+                                      fanY + Math.sin(aW) * rm.rad, vp);
+      return { x: es.x + capOff * (8 / 14) + 4, y: es.y };
     }
     // Shared per-half ctx setup + the ONE claim() (byte-identical
     // collision math to the caller's name pass). Each half calls
@@ -6848,16 +7011,29 @@
       // title rows claim FIRST in the paint, so widening them can
       // never hide them — it only pushes everyone else off the block.
       const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
+      // ── THE COMPACT STACK (2026-08-01) ───────────────────────────
+      // houseTitleAnchor decides; this obeys. When the roomiest hole in
+      // the title's column cannot take four rows, the two stat lines
+      // collapse into ONE — the toy's own line, which John judged and
+      // kept. Every number still gets stated (an unstated court is the
+      // 2026-07-31 "i dont see th courts?" defect); the block just
+      // stops being taller than the air it has to live in.
+      const compact = !!local._houseTitleCompact;
+      const lineC = st.tree + ' ' + nodeWord
+        + ' · ' + st.kinArcs + ' ARC' + (st.kinArcs === 1 ? '' : 'S')
+        + ' · ' + st.orphanCount + ' ON THEIR ERA'
+        + ' · ' + st.docs + ' SCRIPTORIUM · ' + st.court + ' COURT';
+      const statLine = compact ? lineC : line2;
       font('500', TYPE.cap);
-      const w2 = ctx.measureText(line2).width;
+      const w2 = ctx.measureText(statLine).width;
       font('500', TYPE.head);
-      const w1 = ctx.measureText(line1).width;
+      const w1 = compact ? 0 : ctx.measureText(line1).width;
       // The SVG name paints in the crown face (21px serif, app.css
       // .is-isolated); estimate its width for the shield.
       const nameW = String(house.groupKey || '').length * 21 * 0.68 + 24;
       const BW = Math.max(w1 + 8, w2 + 8, nameW, 156) + 28;
       claim(cenX(BW), cs.y - CROWN_ROW, BW);   // air above the name
-      if (claim(cenX(BW), cs.y + CROWN_ROW, BW)) {
+      if (!compact && claim(cenX(BW), cs.y + CROWN_ROW, BW)) {
         ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.92;
         halo(line1, cs.x, cs.y + CROWN_ROW);
       }
@@ -6872,14 +7048,15 @@
       // blank to hide.
       font('500', TYPE.cap);
       ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
-      if (claim(cenX(BW), cs.y + CROWN_ROW * 2, BW)) {
+      const statRow = compact ? 1 : 2;
+      if (claim(cenX(BW), cs.y + CROWN_ROW * statRow, BW)) {
         ctx.fillStyle = _labelsTextColor;
         // A zero room is stated, not shouted — one step quieter than a
         // populated one, still legible. (Wave 3 floors: nothing in the
         // chrome may sit under alpha 0.55 — faint plus tiny is the
         // exact combination John reads as "blurry".)
         ctx.globalAlpha = (st.docs || st.court) ? 0.72 : 0.55;
-        halo(line2, cs.x, cs.y + CROWN_ROW * 2);
+        halo(statLine, cs.x, cs.y + CROWN_ROW * statRow);
       }
       ctx.globalAlpha = 1;
       // 1b ▸ CASCADE / FAN chips — the geometry control, ON the title
@@ -6910,7 +7087,7 @@
         }
         if (famColor) chipsG.style.setProperty('--family-color', famColor);
         else chipsG.style.removeProperty('--family-color');
-        const chipY = cs.y + CROWN_ROW * 3;
+        const chipY = cs.y + CROWN_ROW * (compact ? 2 : 3);
         ctx.font = '600 9px ' + HOUSE_MONO;
         // +12 ≈ the CSS letter-spacing the canvas measure can't see.
         const wCas = ctx.measureText('CASCADE').width + 12;
@@ -7172,15 +7349,16 @@
           if (txt == null && capMode === 'date') txt = 'UNDATED';
           if (txt == null) continue;
           const w = ctx.measureText(txt).width;
-          const ly0 = (rm.lineY != null) ? rm.lineY : rm.y;
-          const es = W2S(house.center.x - rm.half * 0.94, ly0);
           // ON the line, INSIDE its left end. The terminus itself
           // stands against the band ring, whose shield legally
           // refuses anything that close — so the text runs INWARD
           // over the empty margin between the circle edge and the
           // beds (the toy's own gutter position). capOff is the
-          // inset dial.
-          const ex = es.x + capOff, ey = es.y;
+          // inset dial. The anchor law lives in houseRankCapAnchor
+          // because the title's gap search has to honour it too.
+          const ca = houseRankCapAnchor(house, rm, vp, capOff);
+          if (!ca) continue;
+          const ex = ca.x, ey = ca.y;
           if (!claim(ex + w / 2, ey, w + 4)) continue;
           ctx.globalAlpha = (txt === 'UNDATED') ? 0.55 : 0.85;
           halo(txt, ex, ey);
@@ -7202,11 +7380,12 @@
           if (txt == null && capMode === 'date') txt = 'UNDATED';
           if (txt == null) continue;
           const w = ctx.measureText(txt).width;
-          const es = W2S(house.center.x + Math.cos(aW) * rm.rad,
-                         fanY + Math.sin(aW) * rm.rad);
           // Same inward law as the cascade: ON the arc's end, text
           // running INTO the wheel, clear of whatever stands outside.
-          const ex = es.x + capOff * (8 / 14) + 4, ey = es.y;
+          // Shared with the title's gap search — see houseRankCapAnchor.
+          const ca = houseRankCapAnchor(house, rm, vp, capOff);
+          if (!ca) continue;
+          const ex = ca.x, ey = ca.y;
           if (!claim(ex + w / 2, ey, w + 4)) continue;
           ctx.globalAlpha = (txt === 'UNDATED') ? 0.55 : 0.85;
           halo(txt, ex, ey);

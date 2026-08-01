@@ -8010,7 +8010,10 @@ body.fv-isolated .forge-house-chips {
   pointer-events: auto;
   cursor: pointer;
   fill: var(--family-color, #888);
-  opacity: 0.45;
+  /* The wave-3 chrome floor is 0.55 — "faint plus tiny is the exact
+     combination John reads as blurry". The idle chip sat at 0.45 and
+     read as decoration rather than a control you can press. */
+  opacity: 0.62;
   font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
   font-size: 9px;
   font-weight: 500;

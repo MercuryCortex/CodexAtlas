@@ -76,7 +76,12 @@ def fps(ms=2500):
 
 
 try:
-    rq('POST', f'/session/{sid}/window/rect', {'width': 1440, 'height': 900, 'x': 0, 'y': 0})
+    # 1440x900 is a laptop; John's window is far wider, and the 2026-08-01
+    # termination turned on a defect that only showed at HIS width. Override
+    # with SAFARI_CHECK_W / SAFARI_CHECK_H so a pass can be run from his seat.
+    _w = int(os.environ.get('SAFARI_CHECK_W', '1440'))
+    _h = int(os.environ.get('SAFARI_CHECK_H', '900'))
+    rq('POST', f'/session/{sid}/window/rect', {'width': _w, 'height': _h, 'x': 0, 'y': 0})
     rq('POST', f'/session/{sid}/url', {'url': URL})
     time.sleep(9)
     js("try{window._threshold.close()}catch(e){}; return 1")   # the splash eats synthetic clicks
