@@ -72,7 +72,7 @@
   <div class="ctl"><label>Inset <b id="v-inset"></b></label><input type="range" id="r-inset" min="0" max="60" step="1" value="14"></div>
   <div class="ctl"><label>Follow <b id="v-follow"></b></label><input type="range" id="r-follow" min="0" max="1" step="0.01" value="0"></div>
   <div class="ctl"><label>Reach <b id="v-reach"></b></label><input type="range" id="r-reach" min="0.40" max="0.96" step="0.01" value="0.62"></div>
-  <div class="ctl"><label>Density <b id="v-dens"></b></label><input type="range" id="r-dens" min="0" max="1" step="0.05" value="0.85"></div>
+  <button class="fchip on" id="marginsChip">Margins</button>
   <button class="fchip on" id="axisChip">Axis</button>
   <button class="fchip on" id="linesChip">Show lines</button>
 </div>
@@ -124,7 +124,7 @@ var M_BAND_PORT = 12, CAP_TEXT = 10, CAP_TIER = 30, CAP_CLEAR = 10, M_TREE_BAND 
 var R = { port:1.00, band:0.86, rows:3, pitch:16, gapTop:24, gapBot:12, tree:0.74,
           notes:true, caps:false,
           mode:'cascade', lines:4, span:0.94, arc:108, r1:0.30, r2:0.92, bear:-140, inset:14,
-          follow:0, reach:0.62, dens:0.85, fam:'Norse', gods:true, bandGlyphs:true, realDates:true,
+          follow:0, reach:0.62, dens:0, margins:true, fam:'Norse', gods:true, bandGlyphs:true, realDates:true,
           axis:true, showLines:true };
 
 /* The demo strata. Four, because four is what he asked to design for,
@@ -227,6 +227,7 @@ function draw(){
   ctx.beginPath(); ctx.arc(cx, cy, 1.5, 0, Math.PI*2); ctx.fill();
 
   var pack = famPack();
+  drawMargins(cx, cy, P, b);
   drawBandGlyphs(cx, cy, P, b, pack);
   drawDateLines(cx, cy, P, b, pack);
 
@@ -379,73 +380,85 @@ function drawBandGlyphs(cx, cy, P, b, pack){
    arc's span. A date can then never be off its line, and never off
    the axis, at the same time.
 ═══════════════════════════════════════════════════════════════════ */
-/* ══ SLOTS BY DENSITY, NODES THAT FLOW ══════════════════════════════
-   John: "the lines of the dates dont need to split in perfect splits —
-   they should distribute according to the density of nodes or values so
-   we are not creating empty spaces because theres a line date with 2
-   nodes, that should be compressed"  and  "the nodes can NEVER clutter,
-   they should flow nicely, NO NEED TO BE accute to the line, is all a
-   guide, big concentrations of nodes will naturally spread."
+/* ══ THE MARGINS AND THE LIMITS ═════════════════════════════════════
+   The four zero-tolerance minimums the engine already enforces, DRAWN.
+   They are the answer to "nodes NEVER getting close between bands", and
+   until now they have only ever existed as numbers in a solver:
 
-   Two rules, and they are the same rule twice:
+     mTreeBand  16wu   the tree's measured extent → the band's inner edge
+     mBandPort  12wu   the outermost caption tier → the ports ring
+     capText    10wu   the caption's own half-height reserve
+     capTier    30wu   the alternating caption tier step
+     capClear   10wu   caption air off the band's outer edge
 
-   1 ▸ A RANK'S SLOT IS PAID FOR BY ITS POPULATION. Space is shared out
-       by count^density, not evenly. density 0 = the old even split;
-       1 = strictly proportional (a 60-god rank gets 30× a 2-god rank,
-       which over-corrects); 0.62 is the middle where a crowd gets room
-       and a pair gets a hairline instead of a quarter of the circle.
-
-   2 ▸ THE LINE IS A GUIDE, NOT A RAIL. A rank takes as many sub-rows
-       as it needs to keep its gods off each other, spread through the
-       slot its population just bought. Nodes are never forced onto the
-       line, and they can never collide, because the row count is
-       DERIVED from how many will fit — not fixed at two.
-
-   Both modes, one function: cascade spends the slot in Y, fan spends it
-   in radius. That is the only difference between them.
+   Each is shown as a HATCHED lane between the two things it holds
+   apart, with its number on it. This is the frame's real design: not
+   where anything sits, but how much room nothing else may enter.
 ═══════════════════════════════════════════════════════════════════ */
-function slotsFor(rows, total, runPx, rPx, minPx){
-  // A SLOT IS ITS CONTENT, NOT A SHARE OF THE BAND.
-  //
-  // First cut weighted by raw count and only MOVED the empty space.
-  // Second cut weighted by rows-needed but still spent the WHOLE band,
-  // so a rank holding one god was handed a fifth of the circle and left
-  // it blank — John, correctly: "all the same".
-  //
-  // A rank's natural height is the rows it needs plus room for its own
-  // date, and nothing more. The stack is then as tall as its contents
-  // and sits CENTRED, so the band is a ceiling rather than a target and
-  // a sparse rank is genuinely compressed. The dial blends from the old
-  // even split (0) to that natural height (1); it only ever scales DOWN
-  // to fit, never up, because scaling up is how the air comes back.
-  var per   = Math.max(1, Math.floor(runPx / (rPx*2.5)));
-  var pitch = rPx*2.4;
-  var even  = total / Math.max(1, rows.length);
-  var h = rows.map(function(r){
-    var need = Math.max(1, Math.ceil(Math.max(1, r.length) / per));
-    var nat  = Math.max(minPx || 0, need*pitch + (minPx || 0));
-    return even + (nat - even) * R.dens;
+function drawMargins(cx, cy, P, b){
+  if(!R.margins) return;
+  var lanes = [
+    { r0: b.Rt,   r1: b.rIn,          t:'mTreeBand '  + M_TREE_BAND + 'wu', c:'rgba(233,229,244,.34)' },
+    { r0: b.rOut, r1: b.rOut+CAP_CLEAR, t:'capClear '  + CAP_CLEAR  + 'wu', c:'rgba(211,184,119,.30)' },
+    { r0: b.rOut+CAP_CLEAR, r1: b.rOut+CAP_CLEAR+CAP_TIER, t:'capTier ' + CAP_TIER + 'wu', c:'rgba(211,184,119,.22)' },
+    { r0: b.rOut+CAP_CLEAR+CAP_TIER, r1: b.rOut+CAP_CLEAR+CAP_TIER+CAP_TEXT, t:'capText ' + CAP_TEXT + 'wu', c:'rgba(211,184,119,.22)' },
+    { r0: b.rOut+CAP_CLEAR+CAP_TIER+CAP_TEXT, r1: b.portR, t:'mBandPort ' + M_BAND_PORT + 'wu', c:'rgba(233,229,244,.34)' },
+  ];
+  // hatched on the EAST flank, where the band is drawn and nothing else
+  // needs the room; the numbers hang off the same side.
+  var A0 = -Math.PI*0.42, A1 = -Math.PI*0.08;
+  var MARGIN_X = Math.min(W - 150, cx + P(b.portR) + 26), MARGIN_LAST = -1e9;
+  ctx.save();
+  lanes.forEach(function(L){
+    var ra = P(L.r0), rb = P(L.r1);
+    if(rb - ra < 0.6) return;
+    ctx.strokeStyle = L.c; ctx.lineWidth = 1;
+    ctx.setLineDash([1,3]);
+    ctx.beginPath(); ctx.arc(cx, cy, ra, A0, A1); ctx.stroke();
+    ctx.beginPath(); ctx.arc(cx, cy, rb, A0, A1); ctx.stroke();
+    ctx.setLineDash([]);
+    // the hatch itself — the lane is a KEEP-OUT, and hatching is how a
+    // drawing says so without a word
+    var step = (A1-A0)/16;
+    for(var a=A0; a<=A1+1e-6; a+=step){
+      ctx.beginPath();
+      ctx.moveTo(cx+Math.cos(a)*ra, cy+Math.sin(a)*ra);
+      ctx.lineTo(cx+Math.cos(a+step*0.55)*rb, cy+Math.sin(a+step*0.55)*rb);
+      ctx.stroke();
+    }
+    // the number, on the lane's own mid-radius at the run's end
+    var rm = (ra+rb)/2, am = A1 + 0.045;
+    var px = cx+Math.cos(am)*rm, py = cy+Math.sin(am)*rm;
+    var ly = Math.max(py, MARGIN_LAST + 12); MARGIN_LAST = ly;
+    ctx.font='500 8px '+MONO; ctx.textAlign='left'; ctx.textBaseline='middle';
+    ctx.strokeStyle = L.c; ctx.setLineDash([1,3]); ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(MARGIN_X-5, ly); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = L.c;
+    ctx.fillText(L.t, MARGIN_X, ly);
   });
-  var sum = h.reduce(function(a2,b2){ return a2+b2; }, 0) || 1;
-  if(sum > total){ var k = total/sum; h = h.map(function(v){ return v*k; }); sum = total; }
-  var out = [], acc = (total - sum)/2;          // centred in the band
-  for(var i=0;i<h.length;i++){
-    out.push({ lo:acc, hi:acc+h[i], mid:acc+h[i]/2, h:h[i] });
-    acc += h[i];
-  }
-  out.total = sum;
-  return out;
+  ctx.restore();
 }
-/* How many sub-rows this rank needs so nothing touches, and the pitch
-   between them. Derived from the room it has and the room it needs. */
-function bedRows(count, runPx, slotPx, rPx){
-  if(count <= 1) return { rows:1, pitch:0 };
-  var per = Math.max(1, Math.floor(runPx / (rPx*2.5)));
-  var rows = Math.max(1, Math.ceil(count / per));
-  var maxRows = Math.max(1, Math.floor(slotPx / (rPx*2.2)));
-  rows = Math.min(rows, Math.max(1, maxRows));
-  var pitch = (rows > 1) ? Math.min(rPx*2.4, slotPx/rows) : 0;
-  return { rows:rows, pitch:pitch };
+
+/* ══ THE LINES ARE A FRAME, NOT A LAYOUT ════════════════════════════
+   John: "whatever im asking, ITS already built in our codex… i WANT
+   ZERO changes of what is currently built either ways, what i want is
+   the MARGINS and the limits designs frames."
+
+   Right, and I had drifted. Three passes went into inventing a second
+   way to distribute nodes — density slots, bed re-packing — while the
+   engine already owns that and owns it better. A toy that ships a rival
+   layout is not a design study, it is a fork.
+
+   So the distribution is GONE from here. What remains is the frame: the
+   lines as guides, evenly spaced, and the nodes strung along them as a
+   plain WEIGHT so the frame can be judged with something in it. Nothing
+   below is a proposal about where a god should stand.
+═══════════════════════════════════════════════════════════════════ */
+function slotsFor(rows, total){
+  var out = [], h = total / Math.max(1, rows.length);
+  for(var i=0;i<rows.length;i++) out.push({ lo:i*h, hi:(i+1)*h, mid:i*h+h/2, h:h });
+  return out;
 }
 
 function drawDateLines(cx, cy, P, b, pack){
@@ -500,16 +513,11 @@ function drawDateLines(cx, cy, P, b, pack){
     }
     if(rows && R.gods){
       for(var g=0; g<n; g++){
-        var row = bedOrder(rows[g]); if(!row.length) continue;
+        var row = rows[g]; if(!row.length) continue;
         var x0 = labW[g] + 14, x1 = cx + halves[g] - 8, run = Math.max(10, x1-x0);
-        var rAvg = row.reduce(function(a3,d3){ return a3 + godR(d3[3]); }, 0)/row.length;
-        var bd = bedRows(row.length, run, sl[g].h, rAvg);
-        var per = Math.ceil(row.length / bd.rows);
         for(var qq=0; qq<row.length; qq++){
-          var sub = qq % bd.rows, cIdx = Math.floor(qq / bd.rows);
-          var u = (per<=1) ? 0.5 : cIdx/(per-1);
-          var yy = ys[g] + (sub - (bd.rows-1)/2) * bd.pitch;
-          drawGod(x0 + run*u, yy, godR(row[qq][3]), col);
+          var u = (row.length<=1) ? 0.5 : qq/(row.length-1);
+          drawGod(x0 + run*u, ys[g], godR(row[qq][3]), col);
         }
       }
     }
@@ -561,7 +569,7 @@ function drawDateLines(cx, cy, P, b, pack){
   });
   if(rows && R.gods){
     rs.forEach(function(r, idx){
-      var row2 = bedOrder(rows[idx]); if(!row2.length) return;
+      var row2 = rows[idx]; if(!row2.length) return;
       var lo2, hi2;
       if(full){ lo2 = br + labA[idx]; hi2 = br + Math.PI*2 - 0.12; }
       else {
@@ -570,7 +578,6 @@ function drawDateLines(cx, cy, P, b, pack){
         else    { lo2 = s0 + 0.04;      hi2 = br - labA[idx]; }
       }
       if(hi2 <= lo2) return;
-      var runA = (hi2-lo2)*r;
       var rAvg2 = row2.reduce(function(a4,d4){ return a4 + godR(d4[3]); }, 0)/row2.length;
       var bd2 = bedRows(row2.length, runA, slF[idx].h, rAvg2);
       var per2 = Math.ceil(row2.length / bd2.rows);
@@ -599,7 +606,6 @@ function syncRecipe(){
   document.getElementById('v-arc').textContent   = (R.arc>=180?'full':R.arc+'°');
   document.getElementById('v-follow').textContent = R.follow.toFixed(2);
   document.getElementById('v-reach').textContent  = R.reach.toFixed(2)+'×';
-  document.getElementById('v-dens').textContent   = R.dens.toFixed(2);
   document.getElementById('v-r1').textContent    = R.r1.toFixed(2)+'×';
   document.getElementById('v-r2').textContent    = R.r2.toFixed(2)+'×';
   document.getElementById('v-bear').textContent  = R.bear+'°';
@@ -625,7 +631,7 @@ function syncRecipe(){
   var el = document.getElementById('r-'+p[0]);
   el.addEventListener('input', function(){ R[p[1]] = +el.value; syncRecipe(); draw(); });
 });
-['lines','span','arc','r1','r2','bear','inset','follow','reach','dens'].forEach(function(k){
+['lines','span','arc','r1','r2','bear','inset','follow','reach'].forEach(function(k){
   var el = document.getElementById('r-'+k);
   el.addEventListener('input', function(){ R[k] = +el.value; syncRecipe(); draw(); });
 });
@@ -655,7 +661,7 @@ document.querySelectorAll('.fchip[data-mode]').forEach(function(bn){
     host.appendChild(bn);
   });
 })();
-[['notesChip','notes'],['capsChip','caps'],['axisChip','axis'],['linesChip','showLines'],
+[['notesChip','notes'],['capsChip','caps'],['axisChip','axis'],['linesChip','showLines'],['marginsChip','margins'],
  ['godsChip','gods'],['bandGlyphChip','bandGlyphs'],
  ['realDatesChip','realDates']].forEach(function(p){
   var bn = document.getElementById(p[0]);
