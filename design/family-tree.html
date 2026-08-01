@@ -112,7 +112,8 @@
     <button class="fchip" data-k="layout" data-v="fan">Fan</button>
   </div>
   <div class="grp"><span class="lbl">Title</span>
-    <button class="fchip on" data-k="title" data-v="above">Above</button>
+    <button class="fchip on" data-k="title" data-v="auto">Auto</button>
+    <button class="fchip" data-k="title" data-v="above">Above</button>
     <button class="fchip" data-k="title" data-v="below">Below</button>
     <button class="fchip" data-k="title" data-v="off">Off</button>
     <span class="lbl" id="titleWhere"></span>
@@ -195,7 +196,7 @@ var BUCKET_NAME = ['fusion','parallel','transmission','attestation'];
 /* ---------------- recipe / dials ---------------- */
 var R = { fam:'Norse', layout:'cascade', ranks:'lineage', orphans:'domain',
           court:'on', labels:'many', restwires:'stubs',
-          title:'above', tsize:16,
+          title:'auto', tsize:16,
           consorts:true, aspects:true, spread:1.1, tween:450 };
 
 /* ---------------- canvas ---------------- */
@@ -857,14 +858,24 @@ function titleAnchor(){
   // Both bands, measured. The 26px inset keeps the title off the
   // neatline, where the horizon ports live.
   var band={ above:{lo:top+26, hi:b.min-10}, below:{lo:b.max+10, hi:bot-26} };
-  var want=(R.title==='below') ? 'below' : 'above';
-  var alt =(want==='above')    ? 'below' : 'above';
+  var hA=band.above.hi-band.above.lo, hB=band.below.hi-band.below.lo;
+  var want;
+  if(R.title==='auto'){
+    // AUTO — the title goes where the air is. The house moves a LOT
+    // between geometries: the cascade hangs from the top, while the
+    // fan's crest climbs to the rim and empties the bottom half. A
+    // fixed side is therefore wrong about half the time. Reading order
+    // still favours the top, so BELOW has to be clearly roomier —
+    // 1.25x — to take it, which stops it flickering on a near-tie.
+    want=(hB > hA*1.25) ? 'below' : 'above';
+  } else {
+    want=(R.title==='below') ? 'below' : 'above';
+  }
+  var alt=(want==='above') ? 'below' : 'above';
   var use=band[want];
   scene._titleSide=want; scene._titleCrowded=false;
-  // The CASCADE leaves air top and bottom; the FAN's crest runs all the
-  // way to the rim, so its only empty band is underneath. Rather than
-  // print the name over the crest, take the side that can hold it and
-  // say so in the recipe.
+  // A PINNED side that cannot hold the block still yields rather than
+  // printing the name over the chart.
   if((use.hi-use.lo) < need && (band[alt].hi-band[alt].lo) > (use.hi-use.lo)){
     use=band[alt]; scene._titleSide=alt;
   }
@@ -1058,9 +1069,12 @@ function drawTreeFront(){
   // say out loud where it actually landed — the bar is the only thing
   // still on screen in full bleed
   var wEl=document.getElementById('titleWhere');
-  if(wEl) wEl.textContent = (R.title==='off') ? ''
-    : (scene._titleCrowded ? '⚠ no room either side'
-      : (scene._titleSide!==R.title ? '→ no band '+R.title+', sat '+scene._titleSide : ''));
+  if(wEl) wEl.textContent =
+      (R.title==='off')       ? ''
+    : scene._titleCrowded     ? '⚠ no room either side'
+    : (R.title==='auto')      ? '→ '+scene._titleSide
+    : (scene._titleSide!==R.title) ? '→ no band '+R.title+', sat '+scene._titleSide
+    : '';
   if(R.title!=='off' && TA){
     var nameSize=R.tsize;
     ctx.textAlign='center'; ctx.textBaseline='alphabetic';
@@ -1477,8 +1491,9 @@ function syncRecipe(){
   var s='FAMILY-TREE · fam='+(scene.mode==='tree'?scene.fam:'—')+
     ' · layout='+R.layout+' · ranks='+(R.ranks==='lineage'?'lineage+era':'era')+
     ' · title='+R.title+'@'+R.tsize+'px'+
-    ((scene.mode==='tree' && scene._titleSide && scene._titleSide!==R.title)
-      ? ' (no band '+R.title+' — sat '+scene._titleSide+')' : '')+
+    ((scene.mode==='tree' && scene._titleSide && scene._titleSide!==R.title && R.title!=='off')
+      ? (R.title==='auto' ? '→'+scene._titleSide
+                          : ' (no band '+R.title+' — sat '+scene._titleSide+')') : '')+
     ((scene.mode==='tree' && scene._titleCrowded) ? ' (CROWDED)' : '')+
     ' · unparented='+R.orphans+' · court='+R.court+' · labels='+R.labels+
     ' · rest-wires='+R.restwires+(R.consorts?' · consorts':'')+(R.aspects?' · aspects':'')+
