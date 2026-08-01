@@ -74,11 +74,19 @@
   <button class="fchip on" id="axisChip">Axis</button>
   <button class="fchip on" id="linesChip">Show lines</button>
 </div>
+<div class="bar">
+  <span class="lbl">Live family</span>
+  <span id="famChips"></span>
+  <button class="fchip on" id="godsChip">Gods</button>
+  <button class="fchip on" id="bandGlyphChip">Band items</button>
+  <button class="fchip on" id="realDatesChip">Real eras</button>
+</div>
 </div>
 
 <div class="stage"><canvas id="cv"></canvas></div>
 <div class="recipe" id="recipeTxt"></div>
 
+<script src="_ft-data.js"></script>
 <script>
 (function(){
 /* ══ THE TWO BANDS AND THE CIRCLE (2026-08-01) ══════════════════════
@@ -114,7 +122,7 @@ var M_BAND_PORT = 12, CAP_TEXT = 10, CAP_TIER = 30, CAP_CLEAR = 10, M_TREE_BAND 
 var R = { port:1.00, band:0.86, rows:3, pitch:16, gapTop:24, gapBot:12, tree:0.74,
           notes:true, caps:false,
           mode:'cascade', lines:4, span:0.94, arc:108, r1:0.30, r2:0.92, bear:-140, inset:14,
-          gutter:true,
+          gutter:true, fam:'Norse', gods:true, bandGlyphs:true, realDates:true,
           axis:true, showLines:true };
 
 /* The demo strata. Four, because four is what he asked to design for,
@@ -216,7 +224,9 @@ function draw(){
   ctx.fillStyle='rgba(145,138,180,.35)';
   ctx.beginPath(); ctx.arc(cx, cy, 1.5, 0, Math.PI*2); ctx.fill();
 
-  drawDateLines(cx, cy, P, b);
+  var pack = famPack();
+  drawBandGlyphs(cx, cy, P, b, pack);
+  drawDateLines(cx, cy, P, b, pack);
 
   // ── NOTES — the four numbers that are constructed, not dialled.
   if(R.notes){
@@ -254,6 +264,80 @@ function draw(){
   }
 }
 
+/* ══ THE LIVE FAMILY ════════════════════════════════════════════════
+   Real packs, shared with design/family-tree.html through _ft-data.js —
+   one copy of the data, so the two toys can never disagree about what
+   Norse is. A deity is [id, name, date, degree, domain]; a band item is
+   [id, name, date, kind, degree].
+
+   The ranking is deliberately the SIMPLEST honest one — era, split
+   evenly across the lines, undated to the last — because the point of
+   this toy is the FRAME. The real engine's packing is not being
+   re-implemented here and must not be mistaken for it.
+═══════════════════════════════════════════════════════════════════ */
+function famPack(){
+  return (R.fam && window.FT_DATA && window.FT_DATA.packs[R.fam]) || null;
+}
+function fmtY(v){ return v < 0 ? (-v) + ' BCE' : v + ' CE'; }
+function rankRows(pack, n){
+  var ds = pack.deities, dmin = 1e9, dmax = -1e9;
+  ds.forEach(function(d){ if(d[2]!=null){ if(d[2]<dmin) dmin=d[2]; if(d[2]>dmax) dmax=d[2]; } });
+  var rows = []; for(var i=0;i<n;i++) rows.push([]);
+  ds.forEach(function(d){
+    var r = (d[2]==null) ? n-1
+          : Math.round((d[2]-dmin)/Math.max(1, dmax-dmin)*(n-1));
+    rows[Math.max(0, Math.min(n-1, r))].push(d);
+  });
+  return rows;
+}
+function eraOf(row){
+  var a=null, b=null;
+  row.forEach(function(d){ if(d[2]==null) return;
+    if(a==null||d[2]<a) a=d[2]; if(b==null||d[2]>b) b=d[2]; });
+  if(a==null) return 'UNDATED';
+  if(a===b) return fmtY(a);
+  // same era on both ends ⇒ say the unit once: "700–300 BCE", not
+  // "700 BCE–300 BCE". The app's own caption law.
+  if(a<0 && b<0) return (-a) + '–' + (-b) + ' BCE';
+  if(a>=0 && b>=0) return a + '–' + b + ' CE';
+  return (-a) + ' BCE–' + b + ' CE';
+}
+function godR(deg){ return 2.6 + Math.min(9, Math.sqrt(Math.max(0,deg)) * 0.85); }
+function drawGod(x, y, r, col){
+  ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+  ctx.fillStyle = 'rgba(233,229,244,.80)'; ctx.fill();
+  ctx.strokeStyle = col; ctx.lineWidth = 1.2;
+  ctx.beginPath(); ctx.arc(x, y, r+2.2, 0, Math.PI*2); ctx.stroke();
+}
+
+/* THE BAND, LIVE — documents take the left flank (the Scriptorium),
+   everything else the right (the Court), laid along the sub-rows the
+   band already declares. This is what the band's thickness is FOR. */
+function drawBandGlyphs(cx, cy, P, b, pack){
+  if(!pack || !R.bandGlyphs) return;
+  var gt = R.gapTop*Math.PI/180, gb = R.gapBot*Math.PI/180;
+  var docs = [], court = [];
+  (pack.court||[]).forEach(function(c){ (c[3]==='doc' ? docs : court).push(c); });
+  var sides = [
+    { items: docs,  a0:  Math.PI/2 + gb, a1: 1.5*Math.PI - gt },   // left, down->up
+    { items: court, a0: -Math.PI/2 + gt, a1: Math.PI/2 - gb },     // right, up->down
+  ];
+  var glyphR = Math.max(1.4, P(R.pitch) * 0.24);
+  sides.forEach(function(sd){
+    var m = sd.items.length; if(!m) return;
+    var perRow = Math.ceil(m / R.rows);
+    sd.items.forEach(function(it, k){
+      var sub = k % R.rows, col = Math.floor(k / R.rows);
+      var t = (perRow<=1) ? 0.5 : (col + 0.5)/perRow;
+      var a = sd.a0 + (sd.a1 - sd.a0)*t;
+      var rr = P(b.rIn) + P(R.pitch)*(sub + 0.5);
+      ctx.beginPath();
+      ctx.arc(cx + Math.cos(a)*rr, cy + Math.sin(a)*rr, glyphR, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(211,184,119,.80)'; ctx.fill();
+    });
+  });
+}
+
 /* ══ THE DATE LINES — one template, two modes ═══════════════════════
    John: "the lines of dates GOES off the center of their spot, they
    should be circular that is INSIDE and centred on their PERIMETER."
@@ -278,8 +362,13 @@ function draw(){
    arc's span. A date can then never be off its line, and never off
    the axis, at the same time.
 ═══════════════════════════════════════════════════════════════════ */
-function drawDateLines(cx, cy, P, b){
+function drawDateLines(cx, cy, P, b, pack){
   var Rt = P(b.Rt), n = R.lines, inset = P(R.inset);
+  var rows = (pack && R.realDates) ? rankRows(pack, n) : null;
+  var col  = (pack && pack.color) || '#d3b877';
+  var lab  = function(i){
+    return rows ? eraOf(rows[i]) : DEMO[i % DEMO.length];
+  };
   ctx.font='500 9px '+MONO;
   ctx.textBaseline='middle';                 // centred across the stroke, both modes
 
@@ -325,9 +414,23 @@ function drawDateLines(cx, cy, P, b){
       ctx.stroke(); ctx.setLineDash([]);
     }
     ctx.textAlign='left'; ctx.fillStyle='rgba(211,184,119,.90)';
+    var labW = [];
     for(var k=0;k<n;k++){
       var x = R.gutter ? gut : (cx - halves[k] + inset);
-      ctx.fillText(DEMO[k % DEMO.length], x, ys[k]);
+      var t = lab(k);
+      labW.push(x + ctx.measureText(t).width);
+      ctx.fillText(t, x, ys[k]);
+    }
+    // THE GODS STAND ON THEIR OWN LINE — after the date, never under it.
+    if(rows && R.gods){
+      for(var g=0; g<n; g++){
+        var row = rows[g]; if(!row.length) continue;
+        var x0 = labW[g] + 14, x1 = cx + halves[g] - 8;
+        for(var q=0; q<row.length; q++){
+          var u = (row.length===1) ? 0.5 : q/(row.length-1);
+          drawGod(x0 + (x1-x0)*u, ys[g], godR(row[q][3]), col);
+        }
+      }
     }
     return;
   }
@@ -367,12 +470,35 @@ function drawDateLines(cx, cy, P, b){
   var west = Math.cos(br) < 0;
   ctx.textAlign = west ? 'right' : 'left';
   ctx.fillStyle='rgba(211,184,119,.90)';
+  var labA = [];
   rs.forEach(function(r, idx){
     var px = cx + Math.cos(br)*r, py = cy + Math.sin(br)*r;
     var tx = -Math.sin(br), ty = Math.cos(br);          // along the ring
     if(!west){ tx = -tx; ty = -ty; }
-    ctx.fillText(DEMO[idx % DEMO.length], px + tx*inset, py + ty*inset);
+    var t = lab(idx);
+    ctx.fillText(t, px + tx*inset, py + ty*inset);
+    // how much arc the label ate, so the gods start clear of it
+    labA.push((inset + ctx.measureText(t).width + 10) / Math.max(1, r));
   });
+  // THE GODS RIDE THEIR OWN RING, starting past the date.
+  if(rows && R.gods){
+    rs.forEach(function(r, idx){
+      var row = rows[idx]; if(!row.length) return;
+      var lo2, hi2;
+      if(full){ lo2 = br + labA[idx]; hi2 = br + Math.PI*2 - 0.12; }
+      else {
+        var s0 = -Math.PI/2 - HW, s1 = -Math.PI/2 + HW;
+        if(west){ lo2 = br + labA[idx]; hi2 = s1 - 0.04; }
+        else    { lo2 = s0 + 0.04;      hi2 = br - labA[idx]; }
+      }
+      if(hi2 <= lo2) return;
+      for(var q=0; q<row.length; q++){
+        var u = (row.length===1) ? 0.5 : q/(row.length-1);
+        var a = lo2 + (hi2-lo2)*u;
+        drawGod(cx + Math.cos(a)*r, cy + Math.sin(a)*r, godR(row[q][3]), col);
+      }
+    });
+  }
 }
 
 function syncRecipe(){
@@ -392,8 +518,11 @@ function syncRecipe(){
   document.getElementById('v-r2').textContent    = R.r2.toFixed(2)+'×';
   document.getElementById('v-bear').textContent  = R.bear+'°';
   document.getElementById('v-inset').textContent = R.inset+'wu';
+  var pk = famPack();
   document.getElementById('recipeTxt').innerHTML =
-      '<b>BUDGET</b> Rh ' + RH + 'wu · ports ' + Math.round(b.portR) + ' · ceiling ' + Math.round(b.ceiling)
+      (pk ? '<b>' + R.fam.toUpperCase() + '</b> ' + pk.deities.length + ' gods · '
+            + (pk.court||[]).length + ' band items · ' + pk.kin.length + ' arcs<br>' : '')
+    + '<b>BUDGET</b> Rh ' + RH + 'wu · ports ' + Math.round(b.portR) + ' · ceiling ' + Math.round(b.ceiling)
     + ' = ports −' + M_BAND_PORT + ' −' + CAP_TEXT + ' −' + CAP_TIER + ' −' + CAP_CLEAR
     + ' · band asked ' + Math.round(b.wanted) + ' → <b>got ' + Math.round(b.rC) + '</b>'
     + (b.bound ? ' (ceiling binds)' : ' (dial holds)')
@@ -424,7 +553,25 @@ document.querySelectorAll('.fchip[data-mode]').forEach(function(bn){
     syncRecipe(); draw();
   });
 });
-[['notesChip','notes'],['capsChip','caps'],['axisChip','axis'],['linesChip','showLines'],['anchorChip','gutter']].forEach(function(p){
+// the family chips, built from the shared pack list
+(function(){
+  var host = document.getElementById('famChips');
+  var names = Object.keys((window.FT_DATA && window.FT_DATA.packs) || {});
+  ['—'].concat(names).forEach(function(nm){
+    var bn = document.createElement('button');
+    bn.className = 'fchip' + ((nm===R.fam || (nm==='—' && !R.fam)) ? ' on' : '');
+    bn.textContent = nm;
+    bn.addEventListener('click', function(){
+      R.fam = (nm === '—') ? null : nm;
+      host.querySelectorAll('.fchip').forEach(function(x){ x.classList.toggle('on', x===bn); });
+      syncRecipe(); draw();
+    });
+    host.appendChild(bn);
+  });
+})();
+[['notesChip','notes'],['capsChip','caps'],['axisChip','axis'],['linesChip','showLines'],
+ ['anchorChip','gutter'],['godsChip','gods'],['bandGlyphChip','bandGlyphs'],
+ ['realDatesChip','realDates']].forEach(function(p){
   var bn = document.getElementById(p[0]);
   bn.addEventListener('click', function(){
     R[p[1]] = !R[p[1]]; bn.classList.toggle('on', R[p[1]]); draw();
