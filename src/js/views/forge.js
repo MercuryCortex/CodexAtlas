@@ -6210,6 +6210,31 @@
       const atHouseNow = houseAtRest();
       const railSide = atHouseNow ? houseRailSideMap() : null;
       const rankTreeIds = atHouseNow ? houseTreeIdSet() : null;
+      // ══ THE HOUSE TYPE LAW (2026-08-01 — John: "why is the Type
+      // completely cluttered and over a pixel of the wheel") ════════
+      // The ratified toy names gods at '600 10.5px' (hubs) / '500 9px'
+      // (everyone else). The app painted every house name at the
+      // WHEEL's 14px face — screen-locked while the wheel shrinks to
+      // fit, so each name was physically bigger than the disc it
+      // labels and the type buried the picture. In the house, names
+      // drop to the toy's scale (nudged +0.5px per the wave-3 blur
+      // floor), keep the tier hierarchy, ride house_type_scale, and
+      // derive their halo from their own face instead of inheriting
+      // the wheel's 4px stroke.
+      const _hts2 = Math.max(0.7, Math.min(2,
+        (typeof local.params.house_type_scale === 'number') ? local.params.house_type_scale : 1));
+      const houseFace = atHouseNow ? {
+        hub:    '600 ' + (11 * _hts2).toFixed(1) + 'px ' + fam,
+        rest:   '500 ' + (9.5 * _hts2).toFixed(1) + 'px ' + fam,
+        hubLw:  Math.max(1.8, Math.min(3.2, 11 * _hts2 * 0.26)),
+        restLw: Math.max(1.6, Math.min(3.2, 9.5 * _hts2 * 0.26)),
+      } : null;
+      const setNameFont = (tier) => {
+        if (!houseFace) return;
+        const isHub = (tier | 0) <= 1;
+        ctx.font = isHub ? houseFace.hub : houseFace.rest;
+        ctx.lineWidth = isHub ? houseFace.hubLw : houseFace.restLw;
+      };
       // WAVE 3 — the rails are an ARC now, so "outboard" is RADIAL:
       // a rail name steps away from the house centre along its own
       // bearing, not horizontally. Centre computed once per paint.
@@ -6329,6 +6354,8 @@
             || s.y < -vMargin || s.y > vp.h + vMargin) continue;
         const node = nodesById ? nodesById.get(c.id) : null;
         const title = (node && node.title) || c.id;
+        // House: measure in the name's OWN face (the toy's type law).
+        setNameFont(c.n.tier);
         // Lab law: collision is measured UNTRACKED; tracking is a draw-time affair.
         const wpx = ctx.measureText(title).width + 10;
         // ONE position for every name — above the node, clearing the
@@ -6406,7 +6433,9 @@
         if (!ok) continue;
         placed.push([lx, ly, wpx]);
         seen.add(c.id);
-        draws.push({ c, title, x: lx, y: ly, wpx });
+        draws.push({ c, title, x: lx, y: ly, wpx,
+                     f: houseFace ? ctx.font : null,
+                     flw: houseFace ? ctx.lineWidth : 0 });
       }
       // THE HOUSE (2026-07-31) — LOW-priority chrome lands here: the
       // names above have claimed their rects, so shelf captions,
@@ -6429,6 +6458,7 @@
             || s.y < -vMargin || s.y > vp.h + vMargin) { fade.delete(id); continue; }
         const node = nodesById ? nodesById.get(id) : null;
         const title = (node && node.title) || id;
+        setNameFont(n.tier);   // a leaving house name keeps its own face
         const wpx = ctx.measureText(title).width + 10;
         // A leaving rail name must leave from where it stood (radially
         // outboard), or the crossfade would teleport it onto the band.
@@ -6471,13 +6501,17 @@
         }
         if (!ok) continue;   // an arriving name owns the spot — this one just goes
         placed.push([lx, ly, wpx]);
-        draws.push({ c: { id, target: 0, reach: 0, rv: 0 }, title, x: lx, y: ly, wpx });
+        draws.push({ c: { id, target: 0, reach: 0, rv: 0 }, title, x: lx, y: ly, wpx,
+                     f: houseFace ? ctx.font : null,
+                     flw: houseFace ? ctx.lineWidth : 0 });
       }
 
       // 3 ▸ DRAW — one alpha tween per name (John: "flow nice").
       let fadeAlive = false;
       for (let d = 0; d < draws.length; d++) {
         const it = draws[d];
+        // House names paint in the face they were measured in.
+        if (it.f) { ctx.font = it.f; ctx.lineWidth = it.flw; }
         const cur = fade.get(it.c.id) || 0;
         const tgt = it.c.target;
         let nv = cur + (tgt - cur) * 0.18;
@@ -7111,7 +7145,6 @@
       };
       font('500', TYPE.cap);
       ctx.fillStyle = _labelsTextColor;
-      let lastCap = null;
       // WAVE 5 — the gutter's own stand-off is a dial. It has to be:
       // the two packings put a row's left edge in DIFFERENT places
       // (the toy pins the stack 0.10·Rt below centre, the bed solves
@@ -7123,46 +7156,60 @@
       const capOff = (typeof local.params.house_rank_cap_off === 'number')
         ? local.params.house_rank_cap_off : 14;
       if (house.geometry === 'cascade') {
-        ctx.textAlign = 'right';
-        // THE GUTTER IS ONE AXIS (2026-07-31, postmortem #2). Every
-        // date right-aligns to a single column at the WIDEST bed's
-        // left edge — outside the whole node field — instead of
-        // riding each row's own width, which floated narrow rows'
-        // dates mid-canvas beside gods. One x, many ys: an axis.
-        let maxHalfW = 0;
-        for (const rm of house.rowMeta) {
-          if (rm.y != null && rm.w / 2 > maxHalfW) maxHalfW = rm.w / 2;
-        }
+        ctx.textAlign = 'left';
+        // EVERY LINE CARRIES ITS DATE AT ITS LEFT END (2026-08-01,
+        // John: "theres NO dates on the lines like the original agent
+        // design"). Three silences removed in one law: the
+        // repeat-span dedupe (Chinese shares one era across most
+        // rows, so most lines printed NOTHING), the undated-row
+        // silence (now an honest UNDATED), and the anchor moves to
+        // the stratum line's OWN left terminus at the line's own y —
+        // the date sits ON the line it describes, every line, always.
         for (let ri = 0; ri < house.rowMeta.length; ri++) {
           const rm = house.rowMeta[ri];
-          if (rm.y == null) continue;
-          const txt = capFor(rm);
-          if (txt == null || txt === lastCap) continue;
+          if (rm.y == null || !rm.n) continue;
+          let txt = capFor(rm);
+          if (txt == null && capMode === 'date') txt = 'UNDATED';
+          if (txt == null) continue;
           const w = ctx.measureText(txt).width;
-          const es = W2S(house.center.x - maxHalfW, rm.y);
-          const ex = es.x - capOff, ey = es.y;
-          if (ex - w < 4) continue;
-          if (!claim(ex - w / 2, ey, w + 4)) continue;
-          ctx.globalAlpha = 0.85;
+          const ly0 = (rm.lineY != null) ? rm.lineY : rm.y;
+          const es = W2S(house.center.x - rm.half * 0.94, ly0);
+          // ON the line, INSIDE its left end. The terminus itself
+          // stands against the band ring, whose shield legally
+          // refuses anything that close — so the text runs INWARD
+          // over the empty margin between the circle edge and the
+          // beds (the toy's own gutter position). capOff is the
+          // inset dial.
+          const ex = es.x + capOff, ey = es.y;
+          if (!claim(ex + w / 2, ey, w + 4)) continue;
+          ctx.globalAlpha = (txt === 'UNDATED') ? 0.55 : 0.85;
           halo(txt, ex, ey);
-          lastCap = txt;
         }
       } else {
-        // FAN (2026-07-30) — rings orbit the TRUNK (center.y + fanDy),
-        // so rank captions anchor on each ring's crest above it.
-        ctx.textAlign = 'center';
+        // FAN (2026-08-01) — the date rides each ring's WEST terminus
+        // (the left end of its stratum arc), right-aligned outside
+        // it: the same left-axis law as the cascade, following the
+        // rings down the left side. The old crest anchor floated
+        // dates mid-canvas among the gods — exactly what John
+        // rejected. No dedupe, UNDATED spoken, every ring.
+        ctx.textAlign = 'left';
         const fanY = house.center.y + (house.fanDy || 0);
+        const aW = -Math.PI / 2 - Math.PI * 0.60;   // the stratum arc's west end
         for (let ri = 0; ri < house.rowMeta.length; ri++) {
           const rm = house.rowMeta[ri];
-          const txt = capFor(rm);
-          if (txt == null || txt === lastCap) continue;
+          if (!rm.n || !(rm.rad > 0)) continue;
+          let txt = capFor(rm);
+          if (txt == null && capMode === 'date') txt = 'UNDATED';
+          if (txt == null) continue;
           const w = ctx.measureText(txt).width;
-          const es = W2S(house.center.x, fanY - rm.rad);
-          const ey = es.y - capOff * (8 / 14);   // same dial, the crest's own ratio
-          if (!claim(es.x, ey, w + 4)) continue;
-          ctx.globalAlpha = 0.85;
-          halo(txt, es.x, ey);
-          lastCap = txt;
+          const es = W2S(house.center.x + Math.cos(aW) * rm.rad,
+                         fanY + Math.sin(aW) * rm.rad);
+          // Same inward law as the cascade: ON the arc's end, text
+          // running INTO the wheel, clear of whatever stands outside.
+          const ex = es.x + capOff * (8 / 14) + 4, ey = es.y;
+          if (!claim(ex + w / 2, ey, w + 4)) continue;
+          ctx.globalAlpha = (txt === 'UNDATED') ? 0.55 : 0.85;
+          halo(txt, ex, ey);
         }
       }
       env.restore();

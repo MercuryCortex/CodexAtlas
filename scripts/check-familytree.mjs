@@ -860,7 +860,10 @@ const titleW = (fam) => String(fam).length * 21 * 0.68 + 24;
 let titleBlockFail = 0, titleBlockTot = 0;
 // The deity names paint in the SANS face at label_size (14 CSS px);
 // 0.52em is the conservative average advance for Inter at that size.
-const sansW = (str) => String(str).length * 14 * 0.52;
+// THE HOUSE TYPE LAW (2026-08-01): house names paint at the toy's
+// scale — hubs (tier ≤1) '600 11px', everyone else '500 9.5px' —
+// not the wheel's 14px. 0.52em stays the conservative sans advance.
+const sansW = (str, px) => String(str).length * (px || 14) * 0.52;
 // The wheel's tier percentiles over the DEITIES block, mirroring
 // engine/graph/node.js — the rank pass walks names in tier order, and
 // label.js's open set feeds it in DEGREE order inside a tier.
@@ -1010,7 +1013,7 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
       if (s.x < -100 || s.x > vp.w + 100 || s.y < -100 || s.y > vp.h + 100) continue;
       const node = NODE_BY_ID.get(id);
       const title = (node && node.title) || id;
-      const wpx = sansW(title) + 10;
+      const wpx = sansW(title, w4TierOf(id) <= 1 ? 11 : 9.5) + 10;
       const rBub = (lay.radii.get(id) || 0) * scale;
       const ly = s.y - rBub - 6;
       if (ly < KO_TOP || ly > vp.h - KO_BOT) { godClamped++; continue; }
@@ -1728,8 +1731,14 @@ console.log('\n── W5-PACK · the two distributions, and what each one moves 
 // a lying rm.w moves the whole axis): the per-row assertions below
 // keep that honest, and the stratum line now consumes rm.lineY.
 console.log('\n── W5-DATE · the rank gutter follows both distributions ──');
-must(/let maxHalfW = 0;[\s\S]{0,900}const es = W2S\(house\.center\.x - maxHalfW, rm\.y\);/,
-  'every cascade date right-aligns to ONE axis at the widest bed\'s left edge (postmortem #2)', forgeSrc);
+must(/const es = W2S\(house\.center\.x - rm\.half \* 0\.94, ly0\);/,
+  'every cascade date sits ON its stratum line\'s left terminus, at the line\'s own y (2026-08-01)', forgeSrc);
+must(/if \(txt == null && capMode === 'date'\) txt = 'UNDATED';/,
+  'an undated rank SAYS so — UNDATED prints instead of a silent gap', forgeSrc);
+must(/const aW = -Math\.PI \/ 2 - Math\.PI \* 0\.60;/,
+  'the fan date rides each ring\'s WEST terminus — the left axis follows the rings, never the crest', forgeSrc);
+must(/houseFace = atHouseNow \? \{\s*\n\s*hub:\s+'600 ' \+ \(11 \* _hts2\)/,
+  'house names paint at the TOY\'s type law — hub 11px / rest 9.5px — never the wheel\'s 14px', forgeSrc);
 must(/const ly = \(rm\.lineY != null\) \? rm\.lineY : rm\.y;/,
   'the stratum line consumes the layout\'s lineY — computed since wave 5, finally drawn', forgeSrc);
 must(/house_stratum:\s+0\.16,/,
