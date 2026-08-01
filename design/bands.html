@@ -303,6 +303,21 @@ function eraOf(row){
   return (-a) + ' BCE–' + b + ' CE';
 }
 function godR(deg){ return 2.6 + Math.min(9, Math.sqrt(Math.max(0,deg)) * 0.85); }
+/* ORGANIC, NOT RIGID (John: "the disposition of the gods needs to be
+   the SAME as before meaning organic, not rigid on the lines").
+   A rank is a BED, not a queue: its members alternate between sub-rows
+   either side of the line and the biggest sit toward the middle, which
+   is what stops a row of 31 reading as a ruler. Deterministic — the
+   same family always draws the same way. This is a STAND-IN for the
+   real bed solver, not a second copy of it. */
+function bedOrder(row){
+  var by = row.slice().sort(function(a,b){ return (b[3]||0)-(a[3]||0); });
+  var out = [], L = [], Rr = [];
+  by.forEach(function(d,i){ (i%2 ? L : Rr).push(d); });
+  out = L.reverse().concat(Rr);                 // biggest in the middle
+  return out;
+}
+function subOf(i){ return (i % 2) ? 1 : -1; }   // which side of the line
 function drawGod(x, y, r, col){
   ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
   ctx.fillStyle = 'rgba(233,229,244,.80)'; ctx.fill();
@@ -426,9 +441,11 @@ function drawDateLines(cx, cy, P, b, pack){
       for(var g=0; g<n; g++){
         var row = rows[g]; if(!row.length) continue;
         var x0 = labW[g] + 14, x1 = cx + halves[g] - 8;
-        for(var q=0; q<row.length; q++){
-          var u = (row.length===1) ? 0.5 : q/(row.length-1);
-          drawGod(x0 + (x1-x0)*u, ys[g], godR(row[q][3]), col);
+        var ord = bedOrder(row), off = P(R.pitch)*0.62;
+        for(var q=0; q<ord.length; q++){
+          var u = (ord.length===1) ? 0.5 : q/(ord.length-1);
+          var yy = ys[g] + (ord.length>3 ? subOf(q)*off : 0);
+          drawGod(x0 + (x1-x0)*u, yy, godR(ord[q][3]), col);
         }
       }
     }
@@ -492,10 +509,12 @@ function drawDateLines(cx, cy, P, b, pack){
         else    { lo2 = s0 + 0.04;      hi2 = br - labA[idx]; }
       }
       if(hi2 <= lo2) return;
-      for(var q=0; q<row.length; q++){
-        var u = (row.length===1) ? 0.5 : q/(row.length-1);
+      var ord2 = bedOrder(row), dr = P(R.pitch)*0.62;
+      for(var q=0; q<ord2.length; q++){
+        var u = (ord2.length===1) ? 0.5 : q/(ord2.length-1);
         var a = lo2 + (hi2-lo2)*u;
-        drawGod(cx + Math.cos(a)*r, cy + Math.sin(a)*r, godR(row[q][3]), col);
+        var rr2 = r + (ord2.length>3 ? subOf(q)*dr : 0);
+        drawGod(cx + Math.cos(a)*rr2, cy + Math.sin(a)*rr2, godR(ord2[q][3]), col);
       }
     });
   }
