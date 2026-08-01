@@ -5578,54 +5578,36 @@
         if (labelEl._lastX !== lxStr) { labelEl.setAttribute('x', lxStr); labelEl._lastX = lxStr; }
         if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
       }
-      // ── THE HOUSE (2026-07-30) — the family's own hull label RIDES
-      // to become the title. While isolated at rest, the isolated
-      // title is re-anchored (the same element John clicks to leave —
-      // entry/exit unchanged), the other titles yield to the canvas
-      // port labels (CSS hides them), and the published rect list
-      // shrinks to this one so node names don't dodge invisible titles.
-      //
-      // WAVE 4 (2026-07-31) — the anchor is the LOCKED SCREEN FIXTURE,
-      // not the layout's world `crown` point. Same helper the canvas
-      // rows use (houseTitleAnchor), so the name and the two stat lines
-      // and the chips are one column that cannot drift apart, and the
-      // tree no longer arranges itself around a caption. text-anchor
-      // flips with the slot; it is restored to 'middle' the moment the
-      // wheel comes back (below), or every family title on the wheel
-      // would stay edge-aligned.
-      let isolatedTitleEl = null;
-      if (houseAtRest() && local._isolateFamily) {
-        for (let i = 0; i < data.hulls.length && i < labelGroups.length; i++) {
-          if (data.hulls[i].family !== local._isolateFamily) continue;
-          const labelEl = labelGroups[i].firstChild;
-          isolatedTitleEl = labelEl;
-          const a = houseTitleAnchor(vp);
-          const lxStr = a.x.toFixed(1), lyStr = a.y.toFixed(1);
-          const anch = a.center ? 'middle' : (a.right ? 'end' : 'start');
-          if (labelEl._lastAnchor !== anch) {
-            labelEl.setAttribute('text-anchor', anch); labelEl._lastAnchor = anch;
-          }
-          if (labelEl._lastX !== lxStr) { labelEl.setAttribute('x', lxStr); labelEl._lastX = lxStr; }
-          if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
-          if (labelEl._lastVis !== '') { labelEl.style.opacity = ''; labelEl._lastVis = ''; }
-          const w = (labelEl._w || 80);
-          titlePlaced.length = 0;
-          // Centre slot publishes a FLOOR-width reserve (2026-08-01,
-          // John's Shinto capture): the crown-face width alone still
-          // let port labels stand beside the name — and when the
-          // title clamps to the very top, the canvas block's
-          // air-above row falls inside the keep-out band and cannot
-          // claim, so THIS rect is the only thing guarding the name
-          // row. 400px spans the whole block for every family name.
-          titlePlaced.push([a.center ? a.x : (a.right ? a.x - w / 2 : a.x + w / 2), a.y,
-                            a.center ? Math.max(w * 1.4 + 24, 400) : w / 2 + 6]);
-          break;
+      // ── THE HOUSE (2026-08-01) — the DOM HEADER owns the name.
+      // Every SVG hull label hides under body.fv-isolated (app.css),
+      // so the wheel-title rects EMPTY (no canvas name dodges a
+      // ghost) and the header's LIVE rect takes their place in the
+      // registry: rows at 24px pitch spanning the glass, so claim()'s
+      // ±15px rule shields every stripe of it — and a string BESIDE
+      // the strip still prints, which a full-width keep-out band
+      // would have refused (the scriptorium header rides the ring's
+      // top arc at some viewports). GPU port discs stay free to pass
+      // UNDER the glass — that is what the scrim is for.
+      // Exit is unchanged — Esc, or a click outside the circle.
+      const houseShield = houseAtRest() && local._isolateFamily;
+      if (houseShield) {
+        titlePlaced.length = 0;
+        const hd = local._houseHeaderEl;
+        if (hd && hd.offsetHeight) {
+          try {
+            const r = hd.getBoundingClientRect();
+            const s = stage.getBoundingClientRect();
+            const cx = (r.left + r.right) / 2 - s.left;
+            const halfW = r.width / 2 + 8;
+            const y0 = r.top - s.top, y1 = r.bottom - s.top;
+            for (let y = y0 + 4; y < y1 + 12; y += 24) titlePlaced.push([cx, y, halfW]);
+          } catch (_) { /* ignore */ }
         }
       }
-      // Any title NOT currently the isolated one is centred, always.
+      // Every title stays centred (the wheel's own law).
       for (let i = 0; i < labelGroups.length; i++) {
         const el2 = labelGroups[i].firstChild;
-        if (!el2 || el2 === isolatedTitleEl) continue;
+        if (!el2) continue;
         if (el2._lastAnchor !== undefined && el2._lastAnchor !== 'middle') {
           el2.setAttribute('text-anchor', 'middle'); el2._lastAnchor = 'middle';
         }
@@ -5639,7 +5621,10 @@
       // the convention renderLabelsCanvas's `placed` array uses.
       const titlesOn = !document.body.classList.contains('fv-hide-family-titles')
                     && !document.body.classList.contains('fv-hide-hulls');
-      local._titleRects = titlesOn
+      // The house header's shield rows publish even when the wheel's
+      // family titles are toggled off — the header is house chrome,
+      // not a wheel title, and it is visible either way.
+      local._titleRects = (titlesOn || houseShield)
         ? titlePlaced.map((P) => [P[0], P[1], P[2] * 2])
         : null;
 
@@ -6597,53 +6582,29 @@
     // The stack pitch is still DERIVED from the type step (row()), so
     // every row clears claim()'s 15px rule by construction; the block
     // claims its rects FIRST in the paint, so nothing lands under it.
-    const HOUSE_TITLE_PAD = 24;   // screen px in from the stage edge
-    const HOUSE_TITLE_TOP = 66;   // KEEPOUT_TOP (52) + the title's own body
-    // ══ 'center' IS THE RATIFIED SLOT (2026-07-31, postmortem
-    // worklist #1). John, twice: "PLACE it NICELY where it was BUT on
-    // a nicer spot ie on top of the inner circle central where doesnt
-    // distub." The corner slots stay as dials; the DEFAULT is the
-    // toy's own law — the title centred over the house, hanging ABOVE
-    // the ring's 12 o'clock gap (or the crown when no band stands).
-    // PAINT-ONLY: it projects the layout through the camera but
-    // reserves no world space and claims screen rects like any other
-    // chrome, so it cannot push a single god — his one condition.
-    // The screen clamps keep it on-stage at any pan/zoom.
-    function houseTitleAnchor(vp) {
-      const slot = local.params.house_title_slot;
-      const w = (vp && vp.w) || 0, h = (vp && vp.h) || 0;
-      if (slot === 'left' || slot === 'right') {
-        const right = (slot === 'right');
-        return {
-          right, center: false,
-          // Never let the pad invert on a hostile viewport.
-          x: right ? Math.max(HOUSE_TITLE_PAD, w - HOUSE_TITLE_PAD) : HOUSE_TITLE_PAD,
-          y: HOUSE_TITLE_TOP,
-        };
+    // ══ THE HEADER'S BAND (2026-08-01) ═══════════════════════════
+    // Stage px from the top edge to just under the DOM header —
+    // what the house camera fit must stay OUT of. Measured live
+    // when the strip exists; on the very FIRST entry it does not
+    // yet (renderHouseChrome builds it at the settle), so the
+    // fallback mirrors the gate's model: top 62 + 127 tall + 10 air.
+    function houseHeaderBand() {
+      const el = local._houseHeaderEl;
+      if (el && el.offsetHeight) {
+        try {
+          const s = stage.getBoundingClientRect();
+          return Math.max(0, Math.round(el.getBoundingClientRect().bottom - s.top)) + 10;
+        } catch (_) { /* fall through */ }
       }
-      const hs = local._house;
-      const house = hs && hs.lay && hs.lay.house;
-      let x = w / 2, y = HOUSE_TITLE_TOP;
-      if (house && house.center) {
-        const ts = Math.max(0.7, Math.min(2,
-          (typeof local.params.house_type_scale === 'number') ? local.params.house_type_scale : 1));
-        // name + two stat lines + chips = 3 row steps below the anchor,
-        // plus visual air — the whole stack ends where the circle begins.
-        const stackH = Math.max(16, Math.round(11 * ts * 1.9)) * 3 + 10;
-        const rl = house.rails && (house.rails.left || house.rails.right);
-        const topWorldY = rl ? (house.center.y - rl.r)
-          : (house.geometry === 'fan'
-            ? (house.center.y - house.treeR)
-            : (house.crown ? house.crown.y : house.center.y - house.treeR));
-        const p = camera.worldToScreen(house.center.x, topWorldY, vp);
-        x = Math.max(170, Math.min(Math.max(170, w - 170), p.x));
-        y = Math.max(HOUSE_TITLE_TOP, Math.min(Math.max(HOUSE_TITLE_TOP, h - 160), p.y - stackH));
-      }
-      return { right: false, center: true, x, y };
+      return 199;
     }
     // Shared per-half ctx setup + the ONE claim() (byte-identical
     // collision math to the caller's name pass). Each half calls
     // env.restore() on its single exit.
+    // (The DOM header needs no keep-out band: its LIVE rect is
+    // published into local._titleRects by syncHulls, so every
+    // claim() dodges exactly the glass — and a band header riding
+    // the ring's top arc BESIDE the strip still prints.)
     function houseChromeEnv(ctx, placed, vp) {
       const KEEPOUT_TOP = 52, KEEPOUT_BOTTOM = 58;
       const saved = {
@@ -6783,163 +6744,19 @@
       const { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, claim, halo, TYPE, row, font } = env;
       const fmtD = (d) => (d < 0 ? (-d) + ' BCE' : d + ' CE');
 
-      // 1 ▸ THE TITLE BLOCK — a LOCKED SCREEN FIXTURE since wave 4
-      // (see houseTitleAnchor for the slot argument). Row 0 is the
-      // family's own SVG hull label, which syncHulls parks on the same
-      // anchor and which is already seeded into `placed` via
-      // local._titleRects; rows 1-3 are the two honest mono lines and
-      // the CASCADE / FAN chips. Nothing here reads the camera, so the
-      // block is in the same place in every family, every geometry and
-      // at every zoom — and the tree no longer has to make room for it.
+      // 1 ▸ THE TITLE IS UI CHROME, NOT MAP INK (2026-08-01, John:
+      // "how hard is it to place an element that is isolated from
+      // any other objects"). The name, both stat lines and the
+      // CASCADE/FAN chips live in ONE fixed DOM header on its own
+      // layer with its own backdrop (app.css .forge-house-header) —
+      // the map passes UNDER its scrim, canvas text dodges its LIVE
+      // rect (syncHulls publishes it as the only _titleRects rows,
+      // which seed `placed` before any claim), and nothing can ever
+      // stand ON it. Three generations of canvas fixture (world
+      // crown → corner fixture → centre keepout) all lost the same
+      // war for the busiest airspace on the screen. UI belongs in UI.
       const st = house.stats || {};
-      const anchor = houseTitleAnchor(vp);
-      const cs = { x: anchor.x, y: anchor.y };
-      font('500', TYPE.head);
-      ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
-      // claim() takes a rect CENTRE; the corner slots are edge-aligned,
-      // so a line of width w centres half its width inboard — the
-      // centre slot is already the centre.
-      const cenX = (w) => anchor.center ? anchor.x
-        : (anchor.right ? (anchor.x - w / 2) : (anchor.x + w / 2));
-      // CANONICAL HONESTY (2026-07-31 wave 2 — CR-1, crown-noun-counts-
-      // a-different-population, crown-noun-vs-tree-population).
-      //
-      // Line 1 counts `st.tree`: the CASCADE. So its noun must name
-      // the cascade, and nothing else. The previous rule took the noun
-      // from the WHEEL MODE, which was true only while the house held
-      // the mode's own single-type nodes. THE RAILS ended that: a
-      // house now resolves its own membership, treeKindOf sorts the
-      // family's DEITIES into the cascade whatever mode you entered
-      // from, and the crown printed "80 DOCUMENTS" twelve pixels above
-      // a rail header correctly reading "THE SCRIPTORIUM — 24 DOCS".
-      //
-      // The layout is the only thing that knows what it put in the
-      // cascade, so it now says: stats.treeKind is the single vault
-      // type when the cascade is pure, null when it is mixed (which
-      // only the degrade branch can produce — a family with no
-      // tree-kind members, e.g. a corpus-section house). A MIXED tree
-      // gets the neutral 'MEMBERS': naming any one type would be the
-      // same lie in a smaller font. The pluralisation is byte-for-byte
-      // kindShelves' own law, so the crown and the court shelf that
-      // holds the same kind print the same word.
-      const nodeWord = st.treeKind
-        ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase()
-        : 'MEMBERS';
-      const line1 = st.tree + ' ' + nodeWord
-        + ' · ' + st.kinArcs + ' LINEAGE ARC' + (st.kinArcs === 1 ? '' : 'S')
-        + ' · ' + st.orphanCount + ' STAND'
-        + (st.orphanCount === 1 ? 'S' : '') + ' ON THEIR ERA';
-      // THE CROWN STACK PITCH (2026-07-31) — `claim` rejects anything
-      // whose centre sits within 15px of a rect already placed, and
-      // the stack used to be 18 / 31 / 46: line2 sat 13px under line1
-      // and was ALWAYS refused. Nobody saw it because st.docs and
-      // st.court were 0 by construction until the rails landed, so
-      // the line John was promised could never have appeared even
-      // after its data arrived. Pitch is DERIVED from the type step
-      // (wave 3): one clear row per line at the crown face, always
-      // over the 15px collision rule by construction.
-      const CROWN_ROW = row(TYPE.head);
-      // ── THE BLOCK IS A KEEPOUT (2026-08-01, John: "the top title
-      // is over and cluttered") ────────────────────────────────────
-      // The horizon PORT labels clamp into the same top strip the
-      // centre slot clamps into, and a 15px-legal neighbour still
-      // READS as clutter. So the stack claims the full BLOCK width on
-      // every row, plus one empty row of air above and below. The
-      // title rows claim FIRST in the paint, so widening them can
-      // never hide them — it only pushes everyone else off the block.
-      const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
-      font('500', TYPE.cap);
-      const w2 = ctx.measureText(line2).width;
-      font('500', TYPE.head);
-      const w1 = ctx.measureText(line1).width;
-      // The SVG name paints in the crown face (21px serif, app.css
-      // .is-isolated); estimate its width for the shield.
-      const nameW = String(house.groupKey || '').length * 21 * 0.68 + 24;
-      const BW = Math.max(w1 + 8, w2 + 8, nameW, 156) + 28;
-      claim(cenX(BW), cs.y - CROWN_ROW, BW);   // air above the name
-      if (claim(cenX(BW), cs.y + CROWN_ROW, BW)) {
-        ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.92;
-        halo(line1, cs.x, cs.y + CROWN_ROW);
-      }
-      // LINE 2 ALWAYS PRINTS (2026-07-31, John: "i dont see th courts?").
-      // It was guarded on `st.docs || st.court`, so a family the vault
-      // holds nothing but gods for — Baltic is 10 nodes, 10 deities,
-      // 0 documents, 0 court; Armenian 7/7/0/0; Celtic has 0 documents —
-      // opened with the line simply absent, and there is no way to read
-      // "the room is empty" apart from "the feature is broken". Zero IS
-      // the answer, and on an investigation vault it is the useful one:
-      // an empty scriptorium is a coverage gap worth seeing, not a
-      // blank to hide.
-      font('500', TYPE.cap);
-      ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
-      if (claim(cenX(BW), cs.y + CROWN_ROW * 2, BW)) {
-        ctx.fillStyle = _labelsTextColor;
-        // A zero room is stated, not shouted — one step quieter than a
-        // populated one, still legible. (Wave 3 floors: nothing in the
-        // chrome may sit under alpha 0.55 — faint plus tiny is the
-        // exact combination John reads as "blurry".)
-        ctx.globalAlpha = (st.docs || st.court) ? 0.72 : 0.55;
-        halo(line2, cs.x, cs.y + CROWN_ROW * 2);
-      }
-      ctx.globalAlpha = 1;
-      // 1b ▸ CASCADE / FAN chips — the geometry control, ON the title
-      // block where his eye already is (ratified 2026-07-31; the
-      // VIEW-panel radios were fv-wheel-only, i.e. never visible inside
-      // the house they control). SVG in the existing hulls overlay —
-      // positioned here, claiming a registry rect so no canvas name
-      // lands beneath them. WAVE 4: they follow the block into the
-      // screen fixture, still clickable, still the last row of the
-      // stack — the chips were positioned off the crown and would
-      // otherwise have been left behind over the tree.
-      const chipsG = ensureHouseChips();
-      if (chipsG) {
-        syncHouseChipState();
-        const hd0 = m.hullData || {};
-        // WAVE 2 (chip-family-colour-goes-stale) — resolve the colour
-        // into a local and then ALWAYS write the decision. Both guards
-        // used to be silent no-ops, so a house whose group is absent
-        // from hullData (a grouping whose key space differs from the
-        // hull key space) or whose hull carries no colour left the
-        // PREVIOUS family's inline --family-color on the group, and the
-        // CSS fallback could not help because the property was already
-        // set. A wrong colour on this crown reads as "you are still in
-        // the old house"; neutral reads as "no colour".
-        let famColor = null;
-        for (const h of (hd0.hulls || [])) {
-          if (h.family === house.groupKey) { famColor = h.color || null; break; }
-        }
-        if (famColor) chipsG.style.setProperty('--family-color', famColor);
-        else chipsG.style.removeProperty('--family-color');
-        const chipY = cs.y + CROWN_ROW * 3;
-        ctx.font = '600 9px ' + HOUSE_MONO;
-        // +12 ≈ the CSS letter-spacing the canvas measure can't see.
-        const wCas = ctx.measureText('CASCADE').width + 12;
-        const wFan = ctx.measureText('FAN').width + 12;
-        // WAVE 2 (chip-reserve-miscentred) — reserve the rect the chips
-        // actually occupy. CASCADE is text-anchor:end at chipX-8 and
-        // FAN is text-anchor:start at chipX+8, so the pair's real box
-        // runs [chipX-8-wCas, chipX+8+wFan] — centred (wFan-wCas)/2
-        // from the pivot. Reserving a box centred on the pivot itself
-        // left ~7px of CASCADE's first glyph unprotected (a name or a
-        // rank caption placed later in the same pass could legally land
-        // on painted text) while reserving ~21px of nothing right of it.
-        //
-        // WAVE 4 — the pivot is SOLVED from the block's edge, not taken
-        // from the anchor, so the PAIR is flush with the rest of the
-        // stack instead of straddling it: left slot ⇒ CASCADE's first
-        // glyph starts on the block's left edge; right slot ⇒ FAN's
-        // last glyph ends on its right edge.
-        const chipX = anchor.center ? (anchor.x + (wCas - wFan) / 2)
-          : (anchor.right ? (anchor.x - wFan - 8) : (anchor.x + wCas + 8));
-        claim(cenX(BW), chipY, BW);              // best-effort reserve at the BLOCK width
-        claim(cenX(BW), chipY + CROWN_ROW, BW);  // air below the stack
-        const chips = chipsG.querySelectorAll('.forge-house-chip');
-        for (let ci = 0; ci < chips.length; ci++) {
-          const isCas = chips[ci].getAttribute('data-house') === 'cascade';
-          chips[ci].setAttribute('x', (isCas ? chipX - 8 : chipX + 8).toFixed(1));
-          chips[ci].setAttribute('y', chipY.toFixed(1));
-        }
-      }
+      syncHouseHeader(house, st);
 
       // 2 ▸ THE BAND'S TEXT RIDES ITS OWN CURVE (wave 4, John:
       // "WRITE THEM to over the curved path that aligns with the
@@ -7590,60 +7407,100 @@
       env.restore();
     }
 
-    // ══ CASCADE / FAN — the geometry control ON THE CROWN ════════
-    // (2026-07-31 ratified.) DOM choice, one line of why: the chips
-    // must be CLICKABLE, and canvas text would need a second hit-
-    // test surface — so they are SVG text in the EXISTING hulls/
-    // title overlay (no new layer; law 1 governs vault-node graphs,
-    // and a control chip is chrome). The overlay already dies to
-    // opacity 0 mid-flight (body.fv-house-flight, app.css), and the
-    // chips exist only under body.fv-isolated (CSS) — never an inert
-    // control. The CHOICE is canonical + persistent: clicks route
-    // through _forgeViewSettings.setHouseGeometry, the single owner
-    // of the forge.viewSettings.v7 key. Tuning stays in LAB.
-    function ensureHouseChips() {
-      if (local._houseChipsG && local._houseChipsG.parentNode) return local._houseChipsG;
-      if (!hullLabelsG) return null;
-      const g = document.createElementNS(SVG_NS, 'g');
-      g.setAttribute('id', 'forge-house-chips');
-      g.setAttribute('class', 'forge-house-chips');
-      for (const geo of ['cascade', 'fan']) {
-        const t = document.createElementNS(SVG_NS, 'text');
-        t.setAttribute('class', 'forge-house-chip');
-        t.setAttribute('data-house', geo);
-        t.setAttribute('text-anchor', geo === 'cascade' ? 'end' : 'start');
-        t.textContent = geo.toUpperCase();
-        g.appendChild(t);
+    // ══ THE HOUSE HEADER — real UI chrome (2026-08-01) ══════════
+    // John: "how hard is it to place a element in a html that is
+    // isolated from any other objects?" It is trivial — once the
+    // title stops being map ink. One fixed DOM strip on its own
+    // layer with its own scrim; shown only under body.fv-isolated;
+    // holds its breath mid-flight (CSS). The CASCADE/FAN choice is
+    // canonical + persistent: clicks route through
+    // _forgeViewSettings.setHouseGeometry, the single owner of the
+    // forge.viewSettings.v7 key — same law as the old crown chips.
+    function ensureHouseHeader() {
+      let el = local._houseHeaderEl;
+      if (el && el.parentNode) return el;
+      // Scoped to the STAGE, not document.body: the header dies with
+      // the view (no cross-mount listener driving a dead closure —
+      // the Escape lesson of 2026-07-31), and its rect shares the
+      // stage's coordinate space with every canvas claim.
+      el = stage.querySelector('#forge-house-header');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = 'forge-house-header';
+        el.className = 'forge-house-header';
+        el.innerHTML = '<div class="fh-name"></div>'
+          + '<div class="fh-keyline"></div>'
+          + '<div class="fh-line1"></div>'
+          + '<div class="fh-line2"></div>'
+          + '<div class="fh-chips">'
+          + '<button type="button" class="fh-chip" data-house="cascade">CASCADE</button>'
+          + '<button type="button" class="fh-chip" data-house="fan">FAN</button>'
+          + '</div>';
+        el.addEventListener('click', (ev) => {
+          const t = ev.target && ev.target.closest
+            ? ev.target.closest('.fh-chip') : null;
+          const v = t && t.getAttribute('data-house');
+          if (!v) return;
+          ev.stopPropagation();
+          const cur = (local.params.house_geometry === 'fan') ? 'fan' : 'cascade';
+          if (v === cur) return;             // clicking the active chip is a no-op
+          const vs = window._forgeViewSettings;
+          if (vs && typeof vs.setHouseGeometry === 'function') {
+            // persists (forge.viewSettings.v7) + tweens the standing
+            // house (refreshHouse(true)) — one owner for the key.
+            vs.setHouseGeometry(v);
+          } else {
+            // defensive fallback — same behavior minus persistence
+            local.params.house_geometry = v;
+            try { refreshHouse(true); } catch (_) { /* ignore */ }
+          }
+          syncHouseHeader(null, null);
+        });
+        stage.appendChild(el);
       }
-      g.addEventListener('click', (ev) => {
-        const t = ev.target && ev.target.closest
-          ? ev.target.closest('.forge-house-chip') : null;
-        const v = t && t.getAttribute('data-house');
-        if (!v) return;
-        ev.stopPropagation();
-        const cur = (local.params.house_geometry === 'fan') ? 'fan' : 'cascade';
-        if (v === cur) return;               // clicking the active chip is a no-op
-        const vs = window._forgeViewSettings;
-        if (vs && typeof vs.setHouseGeometry === 'function') {
-          // persists (forge.viewSettings.v7) + tweens the standing
-          // house (refreshHouse(true)) — one owner for the key.
-          vs.setHouseGeometry(v);
-        } else {
-          // defensive fallback — same behavior minus persistence
-          local.params.house_geometry = v;
-          try { refreshHouse(true); } catch (_) { /* ignore */ }
-        }
-        syncHouseChipState();
-      });
-      hullLabelsG.appendChild(g);
-      local._houseChipsG = g;
-      return g;
+      local._houseHeaderEl = el;
+      return el;
     }
-    function syncHouseChipState() {
-      const g = local._houseChipsG;
-      if (!g) return;
+    // Fills the strip. Cheap per paint: every write is guarded on
+    // change, so an idle frame touches nothing.
+    function syncHouseHeader(house, st) {
+      const el = ensureHouseHeader();
+      if (!el) return;
+      const hs = local._house;
+      const h2 = house || (hs && hs.lay && hs.lay.house) || null;
+      const s2 = st || (h2 && h2.stats) || null;
+      if (!h2 || !s2) return;
+      const slot = local.params.house_title_slot;
+      el.classList.toggle('fh--left', slot === 'left');
+      el.classList.toggle('fh--right', slot === 'right');
+      const nodeWord = s2.treeKind
+        ? (String(s2.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase()
+        : 'MEMBERS';
+      const name = String(h2.groupKey || '').toUpperCase();
+      const line1 = s2.tree + ' ' + nodeWord
+        + ' · ' + s2.kinArcs + ' LINEAGE ARC' + (s2.kinArcs === 1 ? '' : 'S')
+        + ' · ' + s2.orphanCount + ' STAND'
+        + (s2.orphanCount === 1 ? 'S' : '') + ' ON THEIR ERA';
+      const line2 = s2.docs + ' IN THE SCRIPTORIUM · ' + s2.court + ' IN THE COURT';
+      const set = (sel, txt) => {
+        const n = el.querySelector(sel);
+        if (n && n.textContent !== txt) n.textContent = txt;
+      };
+      set('.fh-name', name);
+      set('.fh-line1', line1);
+      set('.fh-line2', line2);
+      // family colour — resolve and ALWAYS write the decision (the
+      // wave-2 chip-colour lesson: a stale inline var reads as "you
+      // are still in the old house").
+      let famColor = null;
+      const hd0 = (local.mode && local.mode.hullData) || {};
+      for (const h of (hd0.hulls || [])) {
+        if (h.family === h2.groupKey) { famColor = h.color || null; break; }
+      }
+      if (famColor) el.style.setProperty('--family-color', famColor);
+      else el.style.removeProperty('--family-color');
       const cur = (local.params.house_geometry === 'fan') ? 'fan' : 'cascade';
-      const chips = g.querySelectorAll('.forge-house-chip');
+      const chips = el.querySelectorAll('.fh-chip');
       for (let i = 0; i < chips.length; i++) {
         chips[i].classList.toggle('is-on', chips[i].getAttribute('data-house') === cur);
       }
@@ -9131,12 +8988,28 @@
           setLayoutMixTarget(1);
         }
         // 1 ▸ camera — fly onto the house circle (its own extent).
+        // THE CARD MUST NOT COVER THE HOUSE (2026-08-01, John:
+        // "a CARD THAT BLOCKS the VIEW of the functional graph").
+        // The DOM header owns the stage's top band, so the house
+        // fits into the space BELOW it: the fit height loses the
+        // band (and the bottom keep-out), and the circle's centre
+        // aims at the centre of what remains — functionality first,
+        // the glass never stands over a working node at rest.
         if (vp && vp.w && vp.h) {
           const ext = next.lay.worldExtent;
           const w = ext.x1 - ext.x0, h = ext.y1 - ext.y0;
           if (w > 0 && h > 0) {
-            const s = Math.min(vp.w / w, vp.h / h);
-            camera.flyTo({ centerX: (ext.x0 + ext.x1) / 2, centerY: (ext.y0 + ext.y1) / 2, scale: s }, flySec);
+            // Top inset only — the bottom keep-out is a TEXT rule, and
+            // the circle always rode the bottom edge; keeping that
+            // recovers scale the dense families' god names need.
+            const insetTop = houseHeaderBand();
+            const availH = Math.max(120, vp.h - insetTop);
+            const s = Math.min(vp.w / w, availH / h);
+            camera.flyTo({
+              centerX: (ext.x0 + ext.x1) / 2,
+              centerY: (ext.y0 + ext.y1) / 2 - insetTop / (2 * s),
+              scale: s,
+            }, flySec);
           }
         }
       } else {

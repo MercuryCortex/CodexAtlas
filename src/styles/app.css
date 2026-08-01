@@ -7957,26 +7957,13 @@ aside.detail { overflow-x: hidden; }
 .forge-hull-label:hover {
   fill-opacity: 1;
 }
-/* The isolated family's title stays lit — it is also the way out.
-   THE CROWN FACE (2026-08-01, John: "the top title is over and
-   cluttered"): the ratified toy sets the family name at serif 21px;
-   at the wheel's 11px mono it drowned among the port labels it now
-   stands beside. Bigger + the design face = it reads as the room's
-   NAME. (--serif resolves to Inter under the Obsidian preset by the
-   architecture-§6 exception — deliberate.) */
-.forge-hull-label.is-isolated {
-  fill-opacity: 1;
-  font-weight: 500;
-  font-family: var(--serif, Georgia, serif);
-  font-size: 21px;
-  letter-spacing: 0.06em;
-}
-/* THE HOUSE (2026-07-30) — the tree REPLACES the wedge while
-   isolated: wedge fills, dividers and guide rings retire; the other
-   families' titles yield entirely (their names now live on the
-   canvas port labels, with real wire counts); the family's own
-   title rides to the crown (repositioned by syncHulls). */
-body.fv-isolated .forge-hull-label:not(.is-isolated) {
+/* THE HOUSE (2026-07-30 → 2026-08-01) — the tree REPLACES the wedge
+   while isolated: wedge fills, dividers and guide rings retire, and
+   EVERY hull label yields — including the isolated family's own.
+   Its name now lives in the DOM header (below), not in map ink; the
+   canvas port labels carry the other families' names. Exit is Esc
+   or a click outside the circle, so no label needs to stay lit. */
+body.fv-isolated .forge-hull-label {
   /* opacity, not fill-opacity — the label's black stroke halo
      (paint-order: stroke fill) kept painting at fill-opacity 0,
      ghosting every family name behind the canvas port labels. */
@@ -7994,39 +7981,120 @@ body.fv-isolated #forge-hull-guide-rings {
 body.fv-house-flight .forge-hulls-overlay {
   opacity: 0 !important;
 }
-/* THE HOUSE (2026-07-31) — CASCADE / FAN geometry chips on the
-   crown. They exist ONLY while isolated (the control's own house)
-   and ride the hulls overlay, so fv-house-flight above hides them
-   mid-flight for free. Positioned per paint by renderHouseChrome;
-   colour is the family's own token (set inline on the group).
-   Active chip full var(--family-color); inactive at 45%. */
-.forge-house-chips {
+/* ══ THE HOUSE HEADER (2026-08-01) — the name is UI chrome ═══════
+   John: "how hard is it to place a element in a html that is
+   isolated from any other objects?" This strip is that element: one
+   DOM layer over the stage with its own glass, so map ink — GPU
+   port discs, port labels, canvas names — passes UNDER it, and
+   canvas text additionally keeps out of its whole band
+   (houseKeepoutTop in forge.js feeds every claim). It exists only
+   while a house stands (body.fv-isolated) and holds its breath
+   mid-flight, like all house chrome. Docked below the top pill row
+   (36px row at top:14 ⇒ clear from 62), roughly where the old
+   canvas title lived (y 66), so the eye finds it where it always
+   was — now unreachable by anything on the map. */
+.forge-house-header {
+  position: absolute;
+  top: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;                      /* over the labels overlay (5) */
   display: none;
-}
-body.fv-isolated .forge-house-chips {
-  display: initial;
-}
-.forge-house-chip {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: min(680px, calc(100% - 48px));
+  padding: 11px 28px 10px;
+  border-radius: 10px;             /* the app-pill chrome primitive */
+  border: 1px solid color-mix(in srgb, var(--family-color, var(--gold)) 28%, var(--border));
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--family-color, var(--gold)) 7%, rgba(10, 13, 21, 0.88)),
+    rgba(7, 9, 15, 0.84));
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+  backdrop-filter: blur(14px) saturate(1.15);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.38);
+  /* A real object: clicks on the glass stay on the glass — they
+     neither pick a node under it nor count as the exit gesture. */
   pointer-events: auto;
-  cursor: pointer;
-  fill: var(--family-color, #888);
-  opacity: 0.45;
+  transition: opacity 0.18s ease-out;
+}
+body.fv-isolated .forge-house-header { display: flex; }
+body.fv-house-flight .forge-house-header { opacity: 0; }
+/* The corner dials (house_title_slot) keep working: the strip docks. */
+.forge-house-header.fh--left  { left: 14px; right: auto; transform: none; align-items: flex-start; text-align: left; }
+.forge-house-header.fh--right { left: auto; right: 14px; transform: none; align-items: flex-end; text-align: right; }
+.fh-name {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--family-color, var(--gold)) 55%, var(--text-0));
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fh-keyline {
+  width: 64px;
+  height: 1px;
+  margin: 5px 0 6px;
+  background: linear-gradient(90deg, transparent,
+    color-mix(in srgb, var(--family-color, var(--gold)) 75%, transparent),
+    transparent);
+}
+.forge-house-header.fh--left  .fh-keyline { background: linear-gradient(90deg, color-mix(in srgb, var(--family-color, var(--gold)) 75%, transparent), transparent); }
+.forge-house-header.fh--right .fh-keyline { background: linear-gradient(270deg, color-mix(in srgb, var(--family-color, var(--gold)) 75%, transparent), transparent); }
+.fh-line1,
+.fh-line2 {
+  font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.65;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fh-line1 { color: var(--text-1); }
+.fh-line2 { color: var(--text-2); }
+.fh-chips {
+  display: flex;
+  gap: 10px;
+  margin-top: 7px;
+}
+.fh-chip {
+  appearance: none;
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--family-color, var(--gold)) 30%, var(--border));
+  border-radius: 7px;
+  padding: 4px 12px 3px;
   font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.18em;
-  paint-order: stroke fill;
-  stroke: rgba(0, 0, 0, 0.7);
-  stroke-width: 3px;
-  stroke-linejoin: round;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color 0.12s ease-out, border-color 0.12s ease-out,
+              background-color 0.12s ease-out;
 }
-.forge-house-chip:hover {
-  opacity: 0.8;
+.fh-chip:hover {
+  color: var(--text-1);
+  border-color: color-mix(in srgb, var(--family-color, var(--gold)) 50%, var(--border));
 }
-.forge-house-chip.is-on {
-  opacity: 1;
+.fh-chip.is-on {
+  color: color-mix(in srgb, var(--family-color, var(--gold)) 60%, var(--text-0));
+  background: color-mix(in srgb, var(--family-color, var(--gold)) 14%, transparent);
+  border-color: color-mix(in srgb, var(--family-color, var(--gold)) 55%, var(--border));
   font-weight: 600;
   cursor: default;   /* clicking the active chip is a no-op */
+}
+/* Small stages: the strip tightens instead of eating the map. */
+@media (max-width: 900px) {
+  .forge-house-header { padding: 10px 20px 9px; max-width: calc(100% - 32px); }
+  .fh-name { font-size: 22px; }
 }
 .forge-hull-label {
   fill: var(--family-color, #888);
