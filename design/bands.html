@@ -405,28 +405,35 @@ function drawBandGlyphs(cx, cy, P, b, pack){
    in radius. That is the only difference between them.
 ═══════════════════════════════════════════════════════════════════ */
 function slotsFor(rows, total, runPx, rPx, minPx){
-  // A SLOT IS PAID FOR BY THE ROWS IT ACTUALLY NEEDS — not by its raw
-  // count. Weighting by count alone just moves the empty space: a rank
-  // of 60 that fits in two rows was being handed half the circle and
-  // then leaving most of it blank. Rows needed = count / how many fit
-  // across the run, which is the honest measure of how much height a
-  // rank consumes. The dial blends from an even split (0) to strictly
-  // rows-proportional (1).
-  var per = Math.max(1, Math.floor(runPx / (rPx*2.5)));
-  var w = rows.map(function(r){
+  // A SLOT IS ITS CONTENT, NOT A SHARE OF THE BAND.
+  //
+  // First cut weighted by raw count and only MOVED the empty space.
+  // Second cut weighted by rows-needed but still spent the WHOLE band,
+  // so a rank holding one god was handed a fifth of the circle and left
+  // it blank — John, correctly: "all the same".
+  //
+  // A rank's natural height is the rows it needs plus room for its own
+  // date, and nothing more. The stack is then as tall as its contents
+  // and sits CENTRED, so the band is a ceiling rather than a target and
+  // a sparse rank is genuinely compressed. The dial blends from the old
+  // even split (0) to that natural height (1); it only ever scales DOWN
+  // to fit, never up, because scaling up is how the air comes back.
+  var per   = Math.max(1, Math.floor(runPx / (rPx*2.5)));
+  var pitch = rPx*2.4;
+  var even  = total / Math.max(1, rows.length);
+  var h = rows.map(function(r){
     var need = Math.max(1, Math.ceil(Math.max(1, r.length) / per));
-    return 1 + (need - 1) * R.dens;
+    var nat  = Math.max(minPx || 0, need*pitch + (minPx || 0));
+    return even + (nat - even) * R.dens;
   });
-  var tot = w.reduce(function(a2,b2){ return a2+b2; }, 0) || 1;
-  // every rank keeps enough height for its own date, whatever it holds
-  var floorPx = Math.min(minPx || 0, total / Math.max(1, rows.length));
-  var slack = Math.max(0, total - floorPx*rows.length);
-  var out = [], acc = 0;
-  for(var i=0;i<w.length;i++){
-    var h = floorPx + slack * w[i]/tot;
-    out.push({ lo:acc, hi:acc+h, mid:acc+h/2, h:h });
-    acc += h;
+  var sum = h.reduce(function(a2,b2){ return a2+b2; }, 0) || 1;
+  if(sum > total){ var k = total/sum; h = h.map(function(v){ return v*k; }); sum = total; }
+  var out = [], acc = (total - sum)/2;          // centred in the band
+  for(var i=0;i<h.length;i++){
+    out.push({ lo:acc, hi:acc+h[i], mid:acc+h[i]/2, h:h[i] });
+    acc += h[i];
   }
+  out.total = sum;
   return out;
 }
 /* How many sub-rows this rank needs so nothing touches, and the pitch
