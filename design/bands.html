@@ -1,0 +1,283 @@
+<meta charset="utf-8">
+<title>Codex Atlas — The Two Bands and the Circle (frame study)</title>
+<style>
+  :root{
+    --void:#0d0a1c;
+    --panel:#151130;
+    --ink:#e9e5f4;
+    --dim:#918ab4;
+    --faint:#5e5885;
+    --gold:#d3b877;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  html{background:var(--void)}
+  body{
+    background:
+      radial-gradient(1200px 700px at 70% -10%, rgba(90,70,150,.14), transparent 60%),
+      var(--void);
+    color:var(--ink); font-family:var(--serif); margin:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  .bar{
+    position:sticky; top:0; z-index:40;
+    display:flex; flex-wrap:wrap; align-items:center; gap:9px 18px;
+    padding:11px 16px;
+    background:rgba(13,10,28,.86); backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(211,184,119,.14);
+  }
+  .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;color:var(--faint);text-transform:uppercase}
+  .ctl{display:flex;align-items:center;gap:7px}
+  .ctl label{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
+  .ctl label b{color:var(--gold);font-weight:600;letter-spacing:0}
+  .ctl input[type=range]{width:84px;accent-color:var(--gold);height:16px;background:transparent}
+  .fchip{
+    font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    padding:5px 9px;border-radius:2px;cursor:pointer;
+    background:transparent;color:var(--dim);border:1px solid rgba(145,138,180,.35);
+  }
+  .fchip.on{color:#231b08;background:var(--gold);border-color:var(--gold)}
+  .stage{position:relative;background:var(--void)}
+  .stage canvas{display:block;width:100%;cursor:default}
+  .recipe{
+    font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--dim);
+    margin:0;padding:9px 16px;border-top:1px solid rgba(211,184,119,.14);line-height:1.7;
+  }
+  .recipe b{color:var(--gold);font-weight:600;letter-spacing:.18em}
+</style>
+
+<div class="bar">
+  <span class="lbl">The frame</span>
+  <div class="ctl"><label>Ports <b id="v-port"></b></label><input type="range" id="r-port" min="0.70" max="1.25" step="0.01" value="1.00"></div>
+  <div class="ctl"><label>Band <b id="v-band"></b></label><input type="range" id="r-band" min="0.50" max="1.02" step="0.005" value="0.86"></div>
+  <div class="ctl"><label>Rows <b id="v-rows"></b></label><input type="range" id="r-rows" min="1" max="6" step="1" value="3"></div>
+  <div class="ctl"><label>Pitch <b id="v-pitch"></b></label><input type="range" id="r-pitch" min="6" max="40" step="1" value="16"></div>
+  <div class="ctl"><label>Gap top <b id="v-gt"></b></label><input type="range" id="r-gt" min="0" max="60" step="1" value="24"></div>
+  <div class="ctl"><label>Gap bot <b id="v-gb"></b></label><input type="range" id="r-gb" min="0" max="60" step="1" value="12"></div>
+  <div class="ctl"><label>Tree zone <b id="v-tree"></b></label><input type="range" id="r-tree" min="0.35" max="1.00" step="0.005" value="0.86"></div>
+  <button class="fchip on" id="notesChip">Notes</button>
+  <button class="fchip" id="capsChip">Caption ring</button>
+  <button class="fchip" id="datesChip">Dates on band</button>
+</div>
+
+<div class="stage"><canvas id="cv"></canvas></div>
+<div class="recipe" id="recipeTxt"></div>
+
+<script>
+(function(){
+/* ══ THE TWO BANDS AND THE CIRCLE (2026-08-01) ══════════════════════
+   John: "i want the 2 bands we using right? and the central circle
+   proportions where all the elements we have currently have."
+
+   So this is not a sketch of a frame — it is THE frame, drawn from the
+   layout's own radial budget (familytree.js §"WHERE THE GROUND IS
+   GIVEN"). Every number is lifted, and the ones that are SOLVED are
+   solved here the same way they are solved there:
+
+     portR   = Rh x portInset                        (house_port_inset 1.00)
+     ceiling = portR - mBandPort(12) - capText(10)
+                     - capTier(30) - capClear(10)
+     rC      = min(bandR x Rh, ceiling - thick/2)    (house_band_r 0.86)
+     thick   = rows x pitch                          (3 x 16 = 48 wu)
+     RtMax   = rC - thick/2 - mTreeBand(16)
+     Rt      = min(treeR x Rh, RtMax)                (house_tree_r 0.86)
+
+   Which is why the band does NOT sit at 0.86 even though the dial says
+   0.86: the ceiling binds first. The dial is a request; the budget is
+   the answer. That gap is the thing worth looking at here.
+
+   BAND 1 is the ports ring — the other families, the horizon.
+   BAND 2 is the Scriptorium (left) + Court (right), gapped at 12 and 6.
+   THE CIRCLE inside them is the tree zone, where the cascade and the
+   fan live. Nothing here reads vault data.
+═══════════════════════════════════════════════════════════════════ */
+
+var RH = 540;                       // the house radius, world units
+var M_BAND_PORT = 12, CAP_TEXT = 10, CAP_TIER = 30, CAP_CLEAR = 10, M_TREE_BAND = 16;
+
+var R = { port:1.00, band:0.86, rows:3, pitch:16, gapTop:24, gapBot:12, tree:0.86,
+          notes:true, caps:false, dates:false };
+
+var cv = document.getElementById('cv');
+var ctx = cv.getContext('2d');
+var dpr = Math.min(2, window.devicePixelRatio||1);
+var W=0, H=0;
+var MONO='ui-monospace,"SF Mono",Menlo,Consolas,monospace';
+var SERIF='"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif';
+
+function fit(){
+  var barH = document.querySelector('.bar').getBoundingClientRect().height;
+  var recH = document.querySelector('.recipe').getBoundingClientRect().height;
+  cv.style.height = Math.max(320, Math.round(window.innerHeight - barH - recH)) + 'px';
+  var w=cv.clientWidth, h=cv.clientHeight;
+  if(cv.width!==w*dpr || cv.height!==h*dpr){ cv.width=w*dpr; cv.height=h*dpr; }
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  W=w; H=h;
+}
+
+/* THE RADIAL BUDGET, solved outside-in — one function, so the drawing
+   and the readout can never disagree about where anything is. */
+function budget(){
+  var portR   = RH * R.port;
+  var thick   = R.rows * R.pitch;
+  var ceiling = portR - M_BAND_PORT - CAP_TEXT - CAP_TIER - CAP_CLEAR;
+  var wanted  = RH * R.band;
+  var rC      = Math.min(wanted, ceiling - thick/2);
+  var rIn     = rC - thick/2, rOut = rC + thick/2;
+  var RtMax   = rIn - M_TREE_BAND;
+  var Rt      = Math.min(RH * R.tree, RtMax);
+  return { portR:portR, thick:thick, ceiling:ceiling, wanted:wanted, rC:rC,
+           rIn:rIn, rOut:rOut, RtMax:RtMax, Rt:Rt,
+           bound:(wanted > ceiling - thick/2), treeBound:(RH*R.tree > RtMax) };
+}
+
+/* A band is an annulus BROKEN at 12 and 6 o'clock, the way the house
+   breaks its own: the top gap protects the title column, the bottom
+   only has to clear the cascade's foot, so it is the smaller. */
+function bandArcs(gt, gb){
+  var TOP=-Math.PI/2, BOT=Math.PI/2;
+  return [[TOP+gt, BOT-gb], [BOT+gb, TOP-gt+Math.PI*2]];
+}
+function arcPath(cx, cy, r, a){ ctx.beginPath(); ctx.arc(cx,cy,r,a[0],a[1]); ctx.stroke(); }
+
+function draw(){
+  fit();
+  ctx.clearRect(0,0,W,H);
+  var b = budget();
+  var cx = W/2, cy = H/2;
+  var s  = (Math.min(W,H)/2 - 30) / Math.max(b.portR, RH);   // wu -> px
+  var gt = R.gapTop*Math.PI/180, gb = R.gapBot*Math.PI/180;
+  var arcs = bandArcs(gt, gb);
+  var P = function(wu){ return wu * s; };
+
+  // ── BAND 1 · THE PORTS RING — the other families, the horizon.
+  // A closed circle: the horizon has no gap, you can leave in any
+  // direction.
+  ctx.strokeStyle='rgba(211,184,119,.34)'; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.arc(cx, cy, P(b.portR), 0, Math.PI*2); ctx.stroke();
+  ctx.fillStyle='rgba(211,184,119,.55)';
+  for(var k=0;k<36;k++){                       // the ports themselves, rhythm only
+    var a = -Math.PI/2 + k*Math.PI*2/36;
+    ctx.beginPath(); ctx.arc(cx+Math.cos(a)*P(b.portR), cy+Math.sin(a)*P(b.portR), 1.6, 0, 7); ctx.fill();
+  }
+
+  // the caption annulus the band reserves outboard of itself
+  if(R.caps){
+    ctx.setLineDash([2,5]); ctx.strokeStyle='rgba(145,138,180,.30)';
+    arcs.forEach(function(a){ arcPath(cx,cy,P(b.rOut+CAP_CLEAR),a); });
+    arcs.forEach(function(a){ arcPath(cx,cy,P(b.rOut+CAP_CLEAR+CAP_TIER),a); });
+    ctx.setLineDash([]);
+  }
+
+  // ── BAND 2 · SCRIPTORIUM + COURT — gapped at 12 and 6.
+  arcs.forEach(function(a){
+    ctx.beginPath();
+    ctx.arc(cx, cy, P(b.rOut), a[0], a[1]);
+    ctx.arc(cx, cy, P(b.rIn),  a[1], a[0], true);
+    ctx.closePath();
+    ctx.fillStyle='rgba(211,184,119,.055)'; ctx.fill();
+    ctx.strokeStyle='rgba(211,184,119,.40)'; ctx.lineWidth=1; ctx.stroke();
+  });
+  // its sub-rows — what "3 rows of docs" actually means on the ring
+  ctx.strokeStyle='rgba(211,184,119,.18)';
+  for(var i=0;i<R.rows;i++){
+    var rr = b.rIn + R.pitch*(i+0.5);
+    arcs.forEach(function(a){ arcPath(cx,cy,P(rr),a); });
+  }
+
+  // ── THE CIRCLE · THE TREE ZONE — cascade and fan live in here.
+  ctx.strokeStyle='rgba(233,229,244,.28)'; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.arc(cx, cy, P(b.Rt), 0, Math.PI*2); ctx.stroke();
+
+  ctx.fillStyle='rgba(145,138,180,.35)';
+  ctx.beginPath(); ctx.arc(cx, cy, 1.5, 0, Math.PI*2); ctx.fill();
+
+  // ── DATES ON THE BAND — John: "the lines of dates GOES off the
+  // center of their spot, they should be circular that is INSIDE and
+  // centred on their PERIMETER." So: on the ring, inside it, centred
+  // on the ring's own circumference. Shown here as the idea only.
+  if(R.dates){
+    ctx.font='500 9px '+MONO; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillStyle='rgba(211,184,119,.85)';
+    var demo = ['700–300 BCE','700 BCE–712 CE','700–903 CE'];
+    for(var d=0; d<Math.min(3, R.rows); d++){
+      var rd = b.rIn + R.pitch*(d+0.5);
+      ctx.fillText(demo[d], cx, cy - P(rd));          // in the top gap, ON its own ring
+    }
+  }
+
+  // ── NOTES — the four numbers that are constructed, not dialled.
+  if(R.notes){
+    ctx.font='500 8.5px '+MONO; ctx.textAlign='left'; ctx.textBaseline='middle';
+    // Callouts leave the ring on ONE bearing — up and to the right, at
+    // 32°, which is inside the band's own arc and clear of both gaps —
+    // and land in a single gutter. A leader that crosses the drawing to
+    // reach a label is a leader that has become the drawing.
+    var BEAR = -32 * Math.PI/180;
+    var gutX = Math.min(W - 210, cx + P(b.portR) + 26);
+    // The tree zone sits 16wu inside the band, which is ~8px on this
+    // bearing — closer than the type is tall. The dot stays on the ring
+    // where it belongs; only the LABEL steps down to stay readable, and
+    // the leader bends to show it did.
+    var lastY = -1e9, PITCH = 13;
+    var mark = function(r, txt, col){
+      var px = cx + Math.cos(BEAR)*P(r), py = cy + Math.sin(BEAR)*P(r);
+      var ly = Math.max(py, lastY + PITCH); lastY = ly;
+      ctx.strokeStyle='rgba(145,138,180,.28)'; ctx.lineWidth=1;
+      ctx.setLineDash([1,3]);
+      ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(gutX - 6, ly); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle='rgba(145,138,180,.55)';
+      ctx.beginPath(); ctx.arc(px, py, 1.6, 0, 7); ctx.fill();
+      ctx.fillStyle = col;
+      ctx.fillText(txt, gutX, ly);
+    };
+    mark(b.portR, 'PORTS  ' + Math.round(b.portR) + 'wu', 'rgba(211,184,119,.85)');
+    mark(b.rOut,  'band outer  ' + Math.round(b.rOut) + 'wu', 'rgba(211,184,119,.60)');
+    mark(b.rC,    'BAND  ' + Math.round(b.rC) + 'wu  (' + (b.rC/RH).toFixed(3) + '×)'
+                  + (b.bound ? '  ← ceiling binds' : ''), 'rgba(211,184,119,.85)');
+    mark(b.rIn,   'band inner  ' + Math.round(b.rIn) + 'wu', 'rgba(211,184,119,.60)');
+    mark(b.Rt,    'TREE ZONE  ' + Math.round(b.Rt) + 'wu  (' + (b.Rt/RH).toFixed(3) + '×)'
+                  + (b.treeBound ? '  ← lane binds' : ''), 'rgba(233,229,244,.80)');
+  }
+}
+
+function syncRecipe(){
+  var b = budget();
+  document.getElementById('v-port').textContent  = R.port.toFixed(2)+'×';
+  document.getElementById('v-band').textContent  = R.band.toFixed(3)+'×';
+  document.getElementById('v-rows').textContent  = R.rows;
+  document.getElementById('v-pitch').textContent = R.pitch+'wu';
+  document.getElementById('v-gt').textContent    = R.gapTop+'°';
+  document.getElementById('v-gb').textContent    = R.gapBot+'°';
+  document.getElementById('v-tree').textContent  = R.tree.toFixed(3)+'×';
+  document.getElementById('recipeTxt').innerHTML =
+      '<b>BUDGET</b> Rh ' + RH + 'wu · ports ' + Math.round(b.portR) + ' · ceiling ' + Math.round(b.ceiling)
+    + ' = ports −' + M_BAND_PORT + ' −' + CAP_TEXT + ' −' + CAP_TIER + ' −' + CAP_CLEAR
+    + ' · band asked ' + Math.round(b.wanted) + ' → <b>got ' + Math.round(b.rC) + '</b>'
+    + (b.bound ? ' (ceiling binds)' : ' (dial holds)')
+    + ' · thickness ' + b.thick + ' (' + R.rows + '×' + R.pitch + ')'
+    + ' · band inner ' + Math.round(b.rIn) + ' −' + M_TREE_BAND + ' = lane ' + Math.round(b.RtMax)
+    + ' · tree asked ' + Math.round(RH*R.tree) + ' → <b>got ' + Math.round(b.Rt) + '</b>'
+    + (b.treeBound ? ' (lane binds)' : ' (dial holds)')
+    + '<br><b>GAPS</b> ' + R.gapTop + '° a side at 12 o\'clock · ' + R.gapBot + '° a side at 6'
+    + ' — the top gap protects the title column, the bottom only clears the cascade\'s foot';
+}
+
+[['port','port'],['band','band'],['rows','rows'],['pitch','pitch'],
+ ['gt','gapTop'],['gb','gapBot'],['tree','tree']].forEach(function(p){
+  var el = document.getElementById('r-'+p[0]);
+  el.addEventListener('input', function(){ R[p[1]] = +el.value; syncRecipe(); draw(); });
+});
+[['notesChip','notes'],['capsChip','caps'],['datesChip','dates']].forEach(function(p){
+  var bn = document.getElementById(p[0]);
+  bn.addEventListener('click', function(){
+    R[p[1]] = !R[p[1]]; bn.classList.toggle('on', R[p[1]]); draw();
+  });
+});
+window.addEventListener('resize', function(){ syncRecipe(); draw(); });
+
+syncRecipe(); draw();
+window._bandsDebug = { get R(){ return R; }, budget: budget, redraw: draw };
+})();
+</script>
