@@ -384,67 +384,73 @@ function drawBandGlyphs(cx, cy, P, b, pack){
    the axis, at the same time.
 ═══════════════════════════════════════════════════════════════════ */
 /* ══ THE MARGINS AND THE LIMITS ═════════════════════════════════════
-   The four zero-tolerance minimums the engine already enforces, DRAWN.
-   They are the answer to "nodes NEVER getting close between bands", and
-   until now they have only ever existed as numbers in a solver:
+   Five declared minimums the engine enforces, drawn as DIMENSIONS —
+   a tick at each end and the number between, the way a drawing states
+   a clearance. Nothing else.
 
-     mTreeBand  16wu   the tree's measured extent → the band's inner edge
-     mBandPort  12wu   the outermost caption tier → the ports ring
-     capText    10wu   the caption's own half-height reserve
-     capTier    30wu   the alternating caption tier step
-     capClear   10wu   caption air off the band's outer edge
+   The first cut of this drew hatched sectors and it told a LIE: the
+   band/ports lane was drawn from the caption ring all the way out to
+   the ports, so whenever the budget had SLACK (band dial holds instead
+   of the ceiling binding) it ballooned to 107wu while still captioned
+   "mBandPort 12wu". John, reasonably: "IM LOST WHAT IS THIS THUNG".
 
-   Each is shown as a HATCHED lane between the two things it holds
-   apart, with its number on it. This is the frame's real design: not
-   where anything sits, but how much room nothing else may enter.
+   A margin is a MINIMUM, so each one is now drawn at its declared size
+   ANCHORED TO THE THING IT PROTECTS — 12wu inboard of the ports ring,
+   16wu inboard of the band's inner edge, and so on. Whatever room is
+   left over is SLACK, and slack is drawn as slack: one plain line, no
+   hatch, named for what it is.
 ═══════════════════════════════════════════════════════════════════ */
 function drawMargins(cx, cy, P, b){
   if(!R.margins) return;
+  // BELOW the horizontal, because the NOTES callouts already own the
+  // east-north-east gutter and two label stacks in one lane is how the
+  // last version became unreadable.
+  var A = Math.PI*0.13;
+  var ux = Math.cos(A), uy = Math.sin(A);
   var lanes = [
-    { r0: b.Rt,   r1: b.rIn,          t:'mTreeBand '  + M_TREE_BAND + 'wu', c:'#e9e5f4' },
-    { r0: b.rOut, r1: b.rOut+CAP_CLEAR, t:'capClear '  + CAP_CLEAR  + 'wu', c:'#d3b877' },
-    { r0: b.rOut+CAP_CLEAR, r1: b.rOut+CAP_CLEAR+CAP_TIER, t:'capTier ' + CAP_TIER + 'wu', c:'#c39a5a' },
-    { r0: b.rOut+CAP_CLEAR+CAP_TIER, r1: b.rOut+CAP_CLEAR+CAP_TIER+CAP_TEXT, t:'capText ' + CAP_TEXT + 'wu', c:'#d3b877' },
-    { r0: b.rOut+CAP_CLEAR+CAP_TIER+CAP_TEXT, r1: b.portR, t:'mBandPort ' + M_BAND_PORT + 'wu', c:'#e9e5f4' },
+    { a:b.rIn - M_TREE_BAND, z:b.rIn,   t:'mTreeBand '+M_TREE_BAND+'wu', c:'#e9e5f4' },
+    { a:b.rOut, z:b.rOut+CAP_CLEAR,     t:'capClear '+CAP_CLEAR+'wu',    c:'#d3b877' },
+    { a:b.rOut+CAP_CLEAR, z:b.rOut+CAP_CLEAR+CAP_TIER, t:'capTier '+CAP_TIER+'wu', c:'#c39a5a' },
+    { a:b.rOut+CAP_CLEAR+CAP_TIER, z:b.rOut+CAP_CLEAR+CAP_TIER+CAP_TEXT, t:'capText '+CAP_TEXT+'wu', c:'#d3b877' },
+    { a:b.portR - M_BAND_PORT, z:b.portR, t:'mBandPort '+M_BAND_PORT+'wu', c:'#e9e5f4' },
   ];
-  // hatched on the EAST flank, where the band is drawn and nothing else
-  // needs the room; the numbers hang off the same side.
-  var A0 = -Math.PI*0.46, A1 = Math.PI*0.02;
-  var MARGIN_X = Math.min(W - 150, cx + P(b.portR) + 26), MARGIN_LAST = -1e9;
+  // whatever the budget did NOT spend, named honestly
+  var used = b.rOut + CAP_CLEAR + CAP_TIER + CAP_TEXT;
+  var slack = (b.portR - M_BAND_PORT) - used;
+  if(slack > 1) lanes.push({ a:used, z:used+slack, t:'slack '+Math.round(slack)+'wu',
+                             c:'#5e5885', slack:true });
+  var treeSlack = (b.rIn - M_TREE_BAND) - b.Rt;
+  if(treeSlack > 1) lanes.push({ a:b.Rt, z:b.Rt+treeSlack, t:'slack '+Math.round(treeSlack)+'wu',
+                                 c:'#5e5885', slack:true });
+
   ctx.save();
+  ctx.font='600 9px '+MONO; ctx.textBaseline='middle';
+  lanes.sort(function(p1,p2){ return p1.a - p2.a; });
+  var lastY = -1e9, gutX = Math.min(W-150, cx + P(b.portR) + 30);
   lanes.forEach(function(L){
-    var ra = P(L.r0), rb = P(L.r1);
-    if(rb - ra < 0.6) return;
-    // the lane, filled so it reads as a ZONE before anything is measured
-    ctx.beginPath();
-    ctx.arc(cx, cy, rb, A0, A1);
-    ctx.arc(cx, cy, ra, A1, A0, true);
-    ctx.closePath();
-    ctx.fillStyle = rgba(L.c, 0.13); ctx.fill();
-    ctx.strokeStyle = rgba(L.c, 0.85); ctx.lineWidth = 1.2;
-    ctx.beginPath(); ctx.arc(cx, cy, ra, A0, A1); ctx.stroke();
-    ctx.beginPath(); ctx.arc(cx, cy, rb, A0, A1); ctx.stroke();
-    // the hatch itself — the lane is a KEEP-OUT, and hatching is how a
-    // drawing says so without a word
-    ctx.strokeStyle = rgba(L.c, 0.45); ctx.lineWidth = 1;
-    var step = (A1-A0)/34;
-    for(var a=A0; a<=A1+1e-6; a+=step){
+    var ra = P(L.a), rb = P(L.z);
+    var x0 = cx+ux*ra, y0 = cy+uy*ra, x1 = cx+ux*rb, y1 = cy+uy*rb;
+    var tick = L.slack ? 4 : 7;                // slack gets a quieter mark
+    // the two end ticks, perpendicular to the radial
+    ctx.strokeStyle = rgba(L.c, L.slack ? 0.45 : 0.9); ctx.lineWidth = 1;
+    [[x0,y0],[x1,y1]].forEach(function(pt){
       ctx.beginPath();
-      ctx.moveTo(cx+Math.cos(a)*ra, cy+Math.sin(a)*ra);
-      ctx.lineTo(cx+Math.cos(a+step*0.9)*rb, cy+Math.sin(a+step*0.9)*rb);
+      ctx.moveTo(pt[0] + uy*tick, pt[1] - ux*tick);
+      ctx.lineTo(pt[0] - uy*tick, pt[1] + ux*tick);
       ctx.stroke();
-    }
-    // the number, on the lane's own mid-radius at the run's end
-    var rm = (ra+rb)/2, am = A1 + 0.045;
-    var px = cx+Math.cos(am)*rm, py = cy+Math.sin(am)*rm;
-    var ly = Math.max(py, MARGIN_LAST + 14); MARGIN_LAST = ly;
-    ctx.font='500 8px '+MONO; ctx.textAlign='left'; ctx.textBaseline='middle';
-    ctx.strokeStyle = rgba(L.c, 0.55); ctx.setLineDash([1,3]); ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(MARGIN_X-5, ly); ctx.stroke();
+    });
+    // the dimension itself
+    ctx.setLineDash(L.slack ? [1,3] : []);
+    ctx.beginPath(); ctx.moveTo(x0,y0); ctx.lineTo(x1,y1); ctx.stroke();
     ctx.setLineDash([]);
-    ctx.fillStyle = rgba(L.c, 0.95);
-    ctx.font='600 9px '+MONO;
-    ctx.fillText(L.t, MARGIN_X, ly);
+    // leader out to a gutter, staggered so nothing stacks
+    var my = (y0+y1)/2, mx = (x0+x1)/2;
+    var ly = Math.max(my, lastY + 13); lastY = ly;
+    ctx.strokeStyle = rgba(L.c, 0.35); ctx.setLineDash([1,3]);
+    ctx.beginPath(); ctx.moveTo(mx, my); ctx.lineTo(gutX-5, ly); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.textAlign='left'; ctx.fillStyle = rgba(L.c, L.slack ? 0.7 : 0.95);
+    ctx.fillText(L.t, gutX, ly);
   });
   ctx.restore();
 }
