@@ -539,12 +539,9 @@ const NODE_BY_ID = new Map(NODES.map(n => [n.id, n]));
 // "80 DOCUMENTS" over 80 gods, 12px above a rail header reading
 // "THE SCRIPTORIUM — 24 DOCS".
 console.log('\n── W2-A · the crown noun vs the cascade\'s real composition ──');
-// (2026-08-01 — the crown moved into the DOM header; the honesty
-// law moved with it: syncHouseHeader derives the noun from the
-// layout's own stats, exactly as the canvas crown did.)
-must(/const nodeWord = s2\.treeKind[\s\S]{0,120}'MEMBERS';/,
+must(/const nodeWord = st\.treeKind[\s\S]{0,120}'MEMBERS';/,
   'the crown noun comes from stats.treeKind, not the mode registry');
-must(/const line1 = s2\.tree \+ ' ' \+ nodeWord/, 'crown line 1 counts stats.tree with that noun');
+must(/const line1 = st\.tree \+ ' ' \+ nodeWord/, 'crown line 1 counts stats.tree with that noun');
 // the view's law, mirrored verbatim (kindShelves' pluralisation)
 const crownNoun = (treeKind) => treeKind
   ? (String(treeKind) + 's').replace(/ys$/, 'ies').toUpperCase()
@@ -680,43 +677,13 @@ must(/const TYPE = \{ head: 11 \* ts, name: 10 \* ts, cap: 9\.5 \* ts \};/,
   'the type scale steps are HEAD 11 / NAME 10 / CAP 9.5 CSS px');
 must(/const row = \(px\) => Math\.max\(16, Math\.round\(px \* 1\.9\)\);/,
   'row pitch DERIVES from the step size and always clears the 15px rule');
-// ══ THE DOM HEADER (2026-08-01, John: "how hard is it to place a
-// element in a html that is isolated from any other objects?") —
-// the title left the canvas. Three generations of canvas fixture
-// (world crown → corner fixture → centre keepout) lost the same
-// war; the name, stat lines and CASCADE/FAN chips are now ONE DOM
-// strip (.forge-house-header) that map ink cannot touch. These
-// mirrors pin the new law so a revert cannot pass silently.
-must(/function ensureHouseHeader\(\)/,
-  'the house title is a DOM header, not map ink (2026-08-01)');
-must(/stage\.appendChild\(el\);/,
-  'the header is scoped to the STAGE — it dies with the view, no listener survives into a dead closure (the Escape lesson)');
-must(/syncHouseHeader\(house, st\);/,
-  'renderHouseChrome fills the header each paint (writes guarded on change)');
-must(/if \(houseShield\) \{\s*\n\s*titlePlaced\.length = 0;/,
-  'while a house stands the wheel-title rects EMPTY — no canvas name dodges a ghost title');
-must(/for \(let y = y0 \+ 4; y < y1 \+ 12; y \+= 24\) titlePlaced\.push\(\[cx, y, halfW\]\);/,
-  'the header\'s LIVE rect publishes as shield rows at 24px pitch — claim()\'s ±15px rule covers every stripe of the glass');
-must(/local\._titleRects = \(titlesOn \|\| houseShield\)/,
-  'the header shield publishes even when the wheel\'s family titles are toggled off');
-must(/vs\.setHouseGeometry\(v\);/,
-  'the header chips route through the ONE owner of forge.viewSettings.v7');
-must(/else el\.style\.removeProperty\('--family-color'\);/,
-  'a house with no hull colour clears the header colour instead of keeping the previous family\'s');
+must(/const CROWN_ROW = row\(TYPE\.head\);/, 'the crown stack pitch derives from the HEAD step');
+must(/const anchor = houseTitleAnchor\(vp\);\n\s+const cs = \{ x: anchor\.x, y: anchor\.y \};/,
+  'the title block rides houseTitleAnchor — CENTER (the ratified toy law) by default, corners as dials');
 must(/house_title_slot:\s+'center',/,
   'the DEFAULT slot is center — the postmortem worklist #1, re-ratified 2026-07-31');
-{
-  const css = readFileSync(join(root, 'src/styles/app.css'), 'utf8');
-  const mustCss = (re, why) => must(re, why, css);
-  mustCss(/body\.fv-isolated \.forge-house-header \{ display: flex; \}/,
-    'the header exists only while a house stands (body.fv-isolated)');
-  mustCss(/body\.fv-house-flight \.forge-house-header \{ opacity: 0; \}/,
-    'the header holds its breath mid-flight, like all house chrome');
-  mustCss(/body\.fv-isolated \.forge-hull-label \{/,
-    'EVERY SVG hull label yields while isolated — the DOM header owns the name');
-  mustCss(/\.forge-house-header \{[\s\S]{0,1200}backdrop-filter/,
-    'the header has its own glass — GPU port discs pass UNDER it, never over');
-}
+must(/const p = camera\.worldToScreen\(house\.center\.x, topWorldY, vp\);/,
+  'the centre slot projects the house top through the camera — paint-only, it reserves no world space');
 must(/const aStep = 22 \/ Math\.max\(1e-6, rl\.r \* camS\);/,
   'the band obstacle shield follows the ARC at 22px screen pitch');
 must(/const bi = Math\.round\(gy \/ 16\);/,
@@ -859,26 +826,38 @@ function flatSim(placed, text, rWu, aRef, sizePx, scale, ctrX, ctrY, vpH, opts) 
     ? { x: gx, y: gy, leftSide } : null;
 }
 const RING_VPS = [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }, { w: 900, h: 1600 }];
-// THE DOM HEADER'S SHIELD (2026-08-01) — the title is UI chrome
-// now; nothing about it can fail to print, so the sim only MODELS
-// its footprint: the strip is centred at top:62 and its live rect
-// publishes as _titleRects rows at 24px pitch (syncHulls). Headless
-// there is no DOM to measure, so width/height mirror app.css:
-// serif 26px name (0.62em/glyph + 0.10em tracking), two mono 10px
-// lines (0.62em/glyph + 0.14em tracking), 32px side padding.
-// MEASURED against the real strip 2026-08-01 (Shinto: 442.8×127.4
-// at top 62; model gives 449×127) — update alongside
-// .forge-house-header or the sim shields the wrong glass.
-const HDR_TOP = 62, HDR_H = 127;
-const hdrW = (fam, line1, line2) => Math.min(680, Math.max(
-  String(fam).length * 26 * 0.72,
-  String(line1).length * 10 * 0.76,
-  String(line2).length * 10 * 0.76, 156) + 64);
-const seedHeaderShield = (placed, vp, w) => {
-  for (let y = HDR_TOP + 4; y < HDR_TOP + HDR_H + 12; y += 24) {
-    claimSim(placed, vp.w / 2, y, w + 16, vp.h);
+// THE TITLE ANCHOR (re-ratified 2026-07-31) — mirrors forge.js's
+// houseTitleAnchor. The DEFAULT slot is 'center': the toy's crown
+// law — centred on the house, the stack hanging above the ring's
+// 12 o'clock gap (or the crown when no band stands), projected
+// through the camera but PAINT-ONLY (no world reservation). The
+// wave-4 corners remain as dials and keep their no-camera claim.
+const TITLE_PAD = 24, TITLE_TOP = 66;
+const titleAnchor = (vp, slot, h, W2S) => {
+  if (slot === 'left' || slot === 'right') {
+    return {
+      right: slot === 'right', center: false,
+      x: (slot === 'right') ? Math.max(TITLE_PAD, vp.w - TITLE_PAD) : TITLE_PAD,
+      y: TITLE_TOP,
+    };
   }
+  const stackH = rowOf(T_HEAD) * 3 + 10;
+  const rl = h.rails && (h.rails.left || h.rails.right);
+  const topWorldY = rl ? (h.center.y - rl.r)
+    : (h.geometry === 'fan' ? (h.center.y - h.treeR)
+      : (h.crown ? h.crown.y : h.center.y - h.treeR));
+  const p = W2S(h.center.x, topWorldY);
+  return {
+    right: false, center: true,
+    x: Math.max(170, Math.min(vp.w - 170, p.x)),
+    y: Math.max(TITLE_TOP, Math.min(vp.h - 160, p.y - stackH)),
+  };
 };
+// The family name paints in the CROWN FACE while isolated (21px
+// serif, app.css .is-isolated, 2026-08-01) — 0.68em per glyph is the
+// conservative advance for a collision test.
+const titleW = (fam) => String(fam).length * 21 * 0.68 + 24;
+let titleBlockFail = 0, titleBlockTot = 0;
 // The deity names paint in the SANS face at label_size (14 CSS px);
 // 0.52em is the conservative average advance for Inter at that size.
 // THE HOUSE TYPE LAW (2026-08-01): house names paint at the toy's
@@ -911,26 +890,42 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
   nameOrder.sort((a, b) => (w4TierOf(a) - w4TierOf(b))
     || ((W4_DEG.get(b) || 0) - (W4_DEG.get(a) || 0)) || (a < b ? -1 : 1));
   for (const vp of RING_VPS) {
-    // THE CARD MUST NOT COVER THE HOUSE (2026-08-01) — the view
-    // fits the circle into the space BELOW the header band and
-    // ABOVE the bottom keep-out, and centres it there. Mirror it.
-    const availH = Math.max(120, vp.h - (HDR_TOP + HDR_H + 10) - 58);
-    const scale = Math.min(vp.w, availH) / (2 * (540 + 70));
-    const ctrX = vp.w / 2, ctrY = (HDR_TOP + HDR_H + 10) + availH / 2;
-    const W2S = (x, y) => ({ x: ctrX + x * scale, y: ctrY + y * scale });
+    const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
+    const W2S = (x, y) => ({ x: vp.w / 2 + x * scale, y: vp.h / 2 + y * scale });
+    const ctrX = vp.w / 2, ctrY = vp.h / 2;
     const placed = [];
-    // 1 ▸ THE HEADER'S SHIELD (HIGH half, first of all) — the title
-    // is a DOM strip since 2026-08-01; it cannot fail to print, and
-    // its live rect seeds `placed` before any canvas claim (same as
-    // local._titleRects in the view). Width from the real strings
-    // this family shows.
+    // 1 ▸ THE TITLE BLOCK (HIGH half, first of all) — the family name,
+    // both stat lines and the CASCADE/FAN chips, on the locked screen
+    // fixture. Width from the real strings this family prints.
     const st = h.stats;
+    const anch = titleAnchor(vp, 'center', h, W2S);
+    const cs = { x: anch.x, y: anch.y };
+    const cenX = (w) => anch.center ? anch.x
+      : (anch.right ? (anch.x - w / 2) : (anch.x + w / 2));
+    const CROWN_ROW = rowOf(T_HEAD);
     const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
     const line1 = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' LINEAGE ARCS · ' + st.orphanCount + ' STAND ON THEIR ERA';
     const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
-    // MERGED (wave 4) — the REAL paint order is: header shield →
+    // MERGED (wave 4) — the REAL paint order is: locked title block →
     // band curved text → band shield → ports → god names → low half.
-    seedHeaderShield(placed, vp, hdrW(fam, line1, line2));
+    // The two agents each rewrote part of this replay; this is the union
+    // in the order the view actually paints, not either side alone.
+    const tw = titleW(fam);
+    const w1 = mw(line1, T_HEAD), w2b = mw(line2, T_CAP);
+    // THE BLOCK IS A KEEPOUT (2026-08-01): every row claims the full
+    // block width + one row of air above and below, mirroring the
+    // view. Row 0 is syncHulls' published title rect, seeded into
+    // `placed` before the canvas pass — same as local._titleRects.
+    const BW = Math.max(w1 + 8, w2b + 8, tw, 156) + 28;
+    claimSim(placed, cenX(BW), cs.y - CROWN_ROW, BW, vp.h);   // air above
+    const rows4 = [
+      claimSim(placed, cenX(Math.max(tw, 400)), cs.y, Math.max(tw, 400), vp.h),
+      claimSim(placed, cenX(BW), cs.y + CROWN_ROW, BW, vp.h),
+      claimSim(placed, cenX(BW), cs.y + CROWN_ROW * 2, BW, vp.h),
+      claimSim(placed, cenX(BW), cs.y + CROWN_ROW * 3, BW, vp.h),   // CASCADE/FAN chip row
+    ];
+    claimSim(placed, cenX(BW), cs.y + CROWN_ROW * 4, BW, vp.h);   // air below
+    for (const r of rows4) { titleBlockTot++; if (!r) titleBlockFail++; }
     // 2 ▸ the band's curved text, in the view's real order: headers,
     // then shelf captions, then the overflow feet (pass 1 — the
     // canonical counts, ALL of which MUST land), then spine names
@@ -1094,12 +1089,60 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     fail(fam + ': only ' + godPrinted + ' of ' + godTot + ' god names print (' + godPct.toFixed(0) + '%)');
   }
 }
-// (The title-block print proof and the corner-slot geometry proof
-// retired 2026-08-01 with the canvas title: the DOM header cannot
-// fail to print and cannot be touched by map ink — its glass covers
-// whatever passes beneath, and the shield above keeps canvas text
-// out of its rect. The corner dials are pure CSS docking now.)
-ok('the title is a DOM header — nothing on the map can refuse or crowd it (2026-08-01)');
+if (titleBlockFail === 0) ok('the title block prints all four rows, 6 families × 4 viewports ('
+  + titleBlockTot + ' placements)');
+else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused');
+// BOTH SLOTS, and the block never touches the band. The 'right' slot
+// is a dial John can reach, so it gets the same proof as the default:
+// every row inside the viewport and clear of the keep-outs, and no row
+// overlapping the band's on-screen ring at any gate viewport.
+{
+  let offScreen = 0, onBand = 0, koBad = 0, cases = 0;
+  for (const fam of ['Greek', 'Christian', 'Vedic', 'Other']) {
+    const lay = houseUnion(fam, 'cascade');
+    const h = lay.house;
+    const st = h.stats;
+    const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
+    const rowsTxt = [
+      titleW(fam),
+      mw(st.tree + ' ' + noun + ' · ' + st.kinArcs + ' LINEAGE ARCS · ' + st.orphanCount + ' STAND ON THEIR ERA', T_HEAD),
+      mw(st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT', T_CAP),
+      110,
+    ];
+    for (const slot of ['left', 'right']) {
+      for (const vp of RING_VPS) {
+        const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
+        const a = titleAnchor(vp, slot);
+        const CR = rowOf(T_HEAD);
+        for (let r = 0; r < 4; r++) {
+          cases++;
+          const w = rowsTxt[r];
+          const y = a.y + CR * r;
+          const x0 = a.right ? a.x - w : a.x, x1 = a.right ? a.x : a.x + w;
+          if (y < KO_TOP || y > vp.h - KO_BOT) koBad++;
+          if (x0 < 0 || x1 > vp.w) offScreen++;
+          // the band's on-screen ring, sampled: does any point of it
+          // fall inside this row's box?
+          for (const rl of [h.rails.left, h.rails.right]) {
+            if (!rl || !rl.shelves.length) continue;
+            for (let k = 0; k <= 720; k++) {
+              const ang = rl.a0 + ((rl.a1 - rl.a0) * k) / 720;
+              const px = vp.w / 2 + Math.cos(ang) * rl.rOut * scale;
+              const py = vp.h / 2 + Math.sin(ang) * rl.rOut * scale;
+              if (px >= x0 && px <= x1 && Math.abs(py - y) <= 11) { onBand++; k = 721; }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (koBad === 0) ok('both title slots clear the top/bottom keep-outs at every gate viewport (' + cases + ' rows)');
+  else fail(koBad + ' title-block rows land in a chrome keep-out');
+  if (offScreen === 0) ok('both title slots keep every row inside the viewport');
+  else fail(offScreen + ' title-block rows run off the viewport');
+  if (onBand === 0) ok('the title block never overlaps the band ring — the 12 o\'clock gap keeps the corners free');
+  else fail(onBand + ' title-block rows sit on the band');
+}
 // John's wave-4 ask, pinned: "3 rows of docs" — Christian's 125
 // documents must thicken to 3 sub-rows at the shipped defaults.
 {
@@ -1270,13 +1313,18 @@ must(/const snap = local\._houseModeSnapshot;[\s\S]{0,160}return snap\.nodes;/,
   readFileSync(join(root, 'src/js/forge/search-autocomplete.js'), 'utf8'));
 must(/const env = houseChromeEnv\(ctx, placed, vp\);[\s\S]{0,300}if \(env\.claim\(vp\.w \/ 2, hy, w\)\)/,
   'renderHintLine goes through the ONE claim(), not a second copy of the collision math (law 5)');
+must(/claim\(cenX\(BW\), chipY, BW\);/,
+  'the CASCADE/FAN row reserves the full BLOCK width (the keepout law, 2026-08-01)');
+must(/claim\(cenX\(BW\), cs\.y - CROWN_ROW, BW\);/,
+  'one row of air is claimed ABOVE the name — nothing may brush the block');
+must(/const chipX = anchor\.center \? \(anchor\.x \+ \(wCas - wFan\) \/ 2\)\s*\n\s*: \(anchor\.right \? \(anchor\.x - wFan - 8\) : \(anchor\.x \+ wCas \+ 8\)\);/,
+  'the chips centre on the block in the centre slot and ride its edge in the corners');
 must(/house_caption_style:\s+'flat',/,
   'FLAT captions are the shipped default — the ratified toy has zero rotated text (postmortem #6)');
 must(/const leftSide = Math\.cos\(aRef\) < 0;/,
   'a flat run grows horizontally AWAY from the circle, side chosen by its bearing');
-// (The 2026-07-31 chip-claim musts retired with the canvas title —
-// the chips are DOM buttons in the header now; see the DOM-header
-// mirrors in W4 above.)
+must(/else chipsG\.style\.removeProperty\('--family-color'\);/,
+  'a house with no hull colour clears the chip colour instead of keeping the previous family\'s');
 
 // ════════════════════════════════════════════════════════════════
 // W4 ▸ THE GODS GET THEIR NAMES BACK

@@ -190,13 +190,8 @@
         // floor.
         if (zoomAnim) zoomAnim.targetScale = clampScale(zoomAnim.targetScale);
         if (flyToAnim) flyToAnim.toScale  = clampScale(flyToAnim.toScale);
-        // Object.is, not !== — with a NaN scale, `NaN !== NaN` is
-        // true on every pass, and since the view's onChange calls
-        // setScaleBounds back, the emit recursed to stack overflow.
-        // Object.is(NaN, NaN) is true, so a poisoned scale fails
-        // quiet instead of freezing the view (2026-08-01).
         const clamped = clampScale(state.scale);
-        if (!Object.is(state.scale, clamped)) {
+        if (state.scale !== clamped) {
           state.scale = clamped;
           _emit();
         }
@@ -341,11 +336,7 @@
       tick(dt) {
         if (!panAnim && !zoomAnim && !flyToAnim) return false;
         let changed = false;
-        // `!(dt > 0)` — not `dt <= 0` — so undefined/NaN fall to the
-        // default too. A NaN dt poisons every tween term and the
-        // camera never recovers (2026-08-01, found via the debug
-        // tickAnim(dt) hook called bare).
-        if (!(dt > 0)) dt = 1 / 60;
+        if (dt <= 0) dt = 1 / 60;
 
         if (flyToAnim) {
           flyToAnim.elapsed += dt;
