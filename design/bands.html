@@ -82,12 +82,14 @@
   <button class="fchip on" id="godsChip">Gods</button>
   <button class="fchip on" id="bandGlyphChip">Band items</button>
   <button class="fchip on" id="realDatesChip">Real eras</button>
+  <button class="fchip on" id="engineChip">Real engine</button>
 </div>
 </div>
 
 <div class="stage"><canvas id="cv"></canvas></div>
 <div class="recipe" id="recipeTxt"></div>
 
+<script src="../src/js/engine/layout/familytree.js"></script>
 <script src="_ft-data.js"></script>
 <script>
 (function(){
@@ -127,7 +129,7 @@ var M_BAND_PORT = 12, CAP_TEXT = 10, CAP_TIER = 30, CAP_CLEAR = 10, M_TREE_BAND 
 var R = { port:1.00, band:0.86, rows:3, pitch:16, gapTop:24, gapBot:12, tree:0.74,
           notes:true, caps:false,
           mode:'cascade', lines:4, span:0.94, arc:108, r1:0.30, r2:0.92, bear:-140, inset:14,
-          follow:0, reach:0.62, dens:0, margins:true, fam:'Norse', gods:true, bandGlyphs:true, realDates:true,
+          follow:0, reach:0.62, dens:0, margins:true, engine:true, fam:'Norse', gods:true, bandGlyphs:true, realDates:true,
           axis:true, showLines:true };
 
 /* The demo strata. Four, because four is what he asked to design for,
@@ -231,8 +233,14 @@ function draw(){
 
   var pack = famPack();
   drawMargins(cx, cy, P, b);
-  drawBandGlyphs(cx, cy, P, b, pack);
-  drawDateLines(cx, cy, P, b, pack);
+  var lay = (pack && R.engine) ? engineLayout(pack, R.mode) : null;
+  if(lay){
+    drawEngine(cx, cy, s, lay, pack);
+    drawDateLines(cx, cy, P, b, pack, lay);
+  } else {
+    drawBandGlyphs(cx, cy, P, b, pack);
+    drawDateLines(cx, cy, P, b, pack, null);
+  }
 
   // ── NOTES — the four numbers that are constructed, not dialled.
   if(R.notes){
@@ -383,6 +391,74 @@ function drawBandGlyphs(cx, cy, P, b, pack){
    arc's span. A date can then never be off its line, and never off
    the axis, at the same time.
 ═══════════════════════════════════════════════════════════════════ */
+/* ══ THE REAL ENGINE, CALLED ═══════════════════════════════════════
+   John: "im asking FOR applying the nodes LIKE we have online AND YOU
+   REFUSE TO DO."
+
+   He was right that it read as a refusal. What I would not do is write
+   a SECOND packer — and I still won't, because two packers is how the
+   toy and the app start disagreeing. But there was never a reason to
+   refuse the nodes themselves: familytree.js publishes
+   window.AtlasEngineLayout.familyTreeLayout as a plain global, so the
+   toy can call THE ENGINE and draw exactly what the live site draws.
+
+   Not a mirror of it. It.
+
+   The pack is adapted into the shape the engine already expects —
+   deities as `deity` nodes, band items as `document`/court, kin pairs
+   as arcs, degree as the degree map — and every frame dial in this toy
+   is passed straight through as the engine's own option. What comes
+   back is lay.positions / lay.radii / lay.house, the real thing.
+═══════════════════════════════════════════════════════════════════ */
+function engineLayout(pack, geometry){
+  var EL = window.AtlasEngineLayout;
+  if(!EL || !EL.familyTreeLayout || !pack) return null;
+  var fam = R.fam, nodes = [], degree = new Map();
+  pack.deities.forEach(function(d){
+    nodes.push({ id:d[0], title:d[1], type:'deity', family:fam,
+                 date_earliest:(d[2]==null?undefined:d[2]), domains:d[4] || '~' });
+    degree.set(d[0], d[3] || 0);
+  });
+  (pack.court || []).forEach(function(c){
+    nodes.push({ id:c[0], title:c[1], type:(c[3]==='doc' ? 'document' : 'person'),
+                 family:fam, date_earliest:(c[2]==null?undefined:c[2]) });
+    degree.set(c[0], c[4] || 0);
+  });
+  var idOf = function(i){ return pack.deities[i] && pack.deities[i][0]; };
+  var arcs = (pack.kin || []).map(function(k){ return [idOf(k[0]), idOf(k[1])]; })
+                             .filter(function(a){ return a[0] && a[1]; });
+  var laterals = (pack.consorts || []).map(function(k){ return [idOf(k[0]), idOf(k[1])]; })
+                                      .filter(function(a){ return a[0] && a[1]; });
+  var aspects  = (pack.aspects || []).map(function(k){ return [idOf(k[0]), idOf(k[1])]; })
+                                     .filter(function(a){ return a[0] && a[1]; });
+  try {
+    return EL.familyTreeLayout(nodes, {
+      groupBy: function(n){ return n.family; }, groupKey: fam,
+      arcs: arcs, laterals: laterals, aspects: aspects, degree: degree,
+      center: { x:0, y:0 }, radius: RH, geometry: geometry,
+      portInset: R.port, bandR: R.band, bandGap: R.gapTop, bandGapBot: R.gapBot,
+      bandRows: R.rows, bandPitch: R.pitch, treeR: R.tree,
+    });
+  } catch(e){ try{ console.warn('[bands] engine layout failed', e); }catch(_){ } return null; }
+}
+/* Draw what the engine placed, at the toy's scale. Members only — the
+   engine also positions non-members, and they are not this house. */
+function drawEngine(cx, cy, s, lay, pack){
+  if(!lay || !lay.positions) return;
+  var col = (pack && pack.color) || '#d3b877';
+  var ids = [];
+  pack.deities.forEach(function(d){ ids.push([d[0], 'god']); });
+  (pack.court || []).forEach(function(c){ ids.push([c[0], 'band']); });
+  ids.forEach(function(pair){
+    var pt = lay.positions.get(pair[0]); if(!pt) return;
+    var rw = (lay.radii && lay.radii.get(pair[0])) || 0;
+    var x = cx + pt.x*s, y = cy + pt.y*s, r = Math.max(1.2, rw*s);
+    if(pair[1] === 'god'){ drawGod(x, y, r, col); }
+    else { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+           ctx.fillStyle='rgba(211,184,119,.80)'; ctx.fill(); }
+  });
+}
+
 /* ══ THE MARGINS AND THE LIMITS ═════════════════════════════════════
    Five declared minimums the engine enforces, drawn as DIMENSIONS —
    a tick at each end and the number between, the way a drawing states
@@ -476,11 +552,21 @@ function slotsFor(rows, total){
   return out;
 }
 
-function drawDateLines(cx, cy, P, b, pack){
+function drawDateLines(cx, cy, P, b, pack, lay){
   var Rt = P(b.Rt), n = R.lines, inset = P(R.inset);
   var rows = (pack && R.realDates) ? rankRows(pack, n) : null;
+  var engEras = (lay && lay.house && lay.house.rowMeta)
+    ? lay.house.rowMeta.filter(function(rm){ return rm.n; }).map(function(rm){
+        if(rm.dmin == null) return 'UNDATED';
+        if(rm.dmin === rm.dmax) return fmtY(rm.dmin);
+        if(rm.dmin<0 && rm.dmax<0) return (-rm.dmin)+'–'+(-rm.dmax)+' BCE';
+        if(rm.dmin>=0 && rm.dmax>=0) return rm.dmin+'–'+rm.dmax+' CE';
+        return (-rm.dmin)+' BCE–'+rm.dmax+' CE';
+      })
+    : null;
   var col  = (pack && pack.color) || '#d3b877';
-  var lab  = function(i){ return rows ? eraOf(rows[i]) : DEMO[i % DEMO.length]; };
+  var lab  = function(i){ return engEras ? (engEras[i] || 'UNDATED')
+                        : rows ? eraOf(rows[i]) : DEMO[i % DEMO.length]; };
   var counts = rows ? rows.map(function(r){ return r.length; })
                     : new Array(n).fill(1);
   ctx.font='500 9px '+MONO;
@@ -488,15 +574,29 @@ function drawDateLines(cx, cy, P, b, pack){
 
   if(R.mode === 'cascade'){
     // the stack spends a band of height 2·reach·Rt, shared by density
-    var H = 2*R.reach*Rt, top = cy - R.reach*Rt;
-    var sl = slotsFor(rows || counts.map(function(c){ return {length:c}; }), H,
-                      2*Rt*R.span, P(9), 20);
     var ys = [], halves = [];
-    for(var i=0;i<n;i++){
-      var y = top + sl[i].mid;
-      ys.push(y);
-      var dy = y - cy;
-      halves.push(Math.sqrt(Math.max(0, Rt*Rt - dy*dy)) * R.span);
+    if(lay && lay.house && lay.house.rowMeta && lay.house.rowMeta.length){
+      // THE ENGINE'S OWN ROWS. When the real layout is running, the
+      // strata are ITS strata — rowMeta.y is where the rank actually
+      // sits and rowMeta.half is how wide it actually is. Drawing my
+      // own even split beside them would be two answers on one chart.
+      lay.house.rowMeta.forEach(function(rm){
+        if(rm.y == null || !rm.n) return;
+        ys.push(cy + (rm.lineY != null ? rm.lineY : rm.y) * (Rt/(RH*R.tree)));
+        halves.push(rm.half * (Rt/(RH*R.tree)) * R.span);
+      });
+      n = ys.length;
+    }
+    if(!ys.length){
+      var H = 2*R.reach*Rt, top = cy - R.reach*Rt;
+      var sl = slotsFor(rows || counts.map(function(c){ return {length:c}; }), H,
+                        2*Rt*R.span, P(9), 20);
+      for(var i=0;i<n;i++){
+        var y = top + sl[i].mid;
+        ys.push(y);
+        var dy = y - cy;
+        halves.push(Math.sqrt(Math.max(0, Rt*Rt - dy*dy)) * R.span);
+      }
     }
     if(R.showLines){
       ctx.strokeStyle='rgba(233,229,244,.20)'; ctx.lineWidth=1;
@@ -526,7 +626,7 @@ function drawDateLines(cx, cy, P, b, pack){
       labW.push(xs[k] + ctx.measureText(tx).width);
       ctx.fillText(tx, xs[k], ys[k]);
     }
-    if(rows && R.gods){
+    if(rows && R.gods && !lay){
       for(var g=0; g<n; g++){
         var row = rows[g]; if(!row.length) continue;
         var x0 = labW[g] + 14, x1 = cx + halves[g] - 8, run = Math.max(10, x1-x0);
@@ -540,11 +640,20 @@ function drawDateLines(cx, cy, P, b, pack){
   }
 
   // ── FAN — the same two rules, spent in RADIUS.
-  var band = Rt*(R.r2 - R.r1), r0 = Rt*R.r1;
-  var slF = slotsFor(rows || counts.map(function(c){ return {length:c}; }), band,
-                     Rt*(R.arc*Math.PI/180)*1.4, P(9), 20);
   var rs = [];
-  for(var m=0;m<n;m++) rs.push(r0 + slF[m].mid);
+  if(lay && lay.house && lay.house.rowMeta && lay.house.rowMeta.length){
+    lay.house.rowMeta.forEach(function(rm){
+      if(!rm.n || !(rm.rad > 0)) return;
+      rs.push(rm.rad * (Rt/(RH*R.tree)));
+    });
+    n = rs.length;
+  }
+  if(!rs.length){
+    var band = Rt*(R.r2 - R.r1), r0 = Rt*R.r1;
+    var slF = slotsFor(rows || counts.map(function(c){ return {length:c}; }), band,
+                       Rt*(R.arc*Math.PI/180)*1.4, P(9), 20);
+    for(var m=0;m<n;m++) rs.push(r0 + slF[m].mid);
+  }
 
   var HW = R.arc*Math.PI/180;
   var full = HW >= Math.PI - 1e-6;
@@ -582,7 +691,7 @@ function drawDateLines(cx, cy, P, b, pack){
     ctx.fillText(t3, px + tx2*inset, py + ty2*inset);
     labA.push((inset + ctx.measureText(t3).width + 10) / Math.max(1, r));
   });
-  if(rows && R.gods){
+  if(rows && R.gods && !lay){
     rs.forEach(function(r, idx){
       var row2 = rows[idx]; if(!row2.length) return;
       var lo2, hi2;
@@ -678,7 +787,7 @@ document.querySelectorAll('.fchip[data-mode]').forEach(function(bn){
 })();
 [['notesChip','notes'],['capsChip','caps'],['axisChip','axis'],['linesChip','showLines'],['marginsChip','margins'],
  ['godsChip','gods'],['bandGlyphChip','bandGlyphs'],
- ['realDatesChip','realDates']].forEach(function(p){
+ ['realDatesChip','realDates'],['engineChip','engine']].forEach(function(p){
   var bn = document.getElementById(p[0]);
   bn.addEventListener('click', function(){
     R[p[1]] = !R[p[1]]; bn.classList.toggle('on', R[p[1]]); draw();
