@@ -6672,7 +6672,11 @@
         local._houseTitleGap = {
           lo: use.lo, hi: use.hi, h: room,
           blockH: bh, blockFull: blockH, compact, holes: res.holes, fits: res.fits,
+          prefer: res.prefer, treeMid: res.treeMid, cMid: res.cMid,
           holeList: res.holeList.map((g) => [Math.round(g.lo), Math.round(g.hi)]),
+          // what actually stands in the column, by source — the answer
+          // to "there is empty space there, why not use it"
+          occupancy: res.iv.map((s) => [Math.round(s[0]), Math.round(s[1]), s[2]]),
           topPx: c.y - rPx, botPx: c.y + rPx, side: local._houseTitleSide,
         };
         // The whole stack is centred on the hole, so the air reads even
@@ -6720,9 +6724,11 @@
       const colL = cxPx - halfW, colR = cxPx + halfW;
       const lo0 = topPx + RIM, hi0 = botPx - RIM;
       const iv = [];
+      let treeMin = Infinity, treeMax = -Infinity;
+      let tag = '?';
       const box = (x0, x1, y0, y1) => {
         if (x1 < colL || x0 > colR) return;        // not in the title's column
-        iv.push([y0 - GAP, y1 + GAP]);
+        iv.push([y0 - GAP, y1 + GAP, tag]);
       };
       const disc = (wx, wy, wr) => {
         const s = camera.worldToScreen(wx, wy, vp);
@@ -6732,20 +6738,33 @@
       const lay = hs && hs.lay, house = lay && lay.house;
       if (house) {
         const pos = lay.positions, rad = lay.radii;
+        tag = 'tree';
         for (const row of (house.rows || [])) {
           for (const id of row) {
             const p = pos && pos.get(id);
             if (p) disc(p.x, p.y, (rad && rad.get(id)) || 0);
           }
         }
+        // Where the DRAWING's mass actually sits. The cascade hangs
+        // about the centre; the fan's rings crest upward from an origin
+        // below it and leave the bottom half of the circle empty. That
+        // is the difference the title has to answer to.
+        for (const s of iv) {
+          if (s[2] !== 'tree') continue;
+          if (s[0] < treeMin) treeMin = s[0];
+          if (s[1] > treeMax) treeMax = s[1];
+        }
         const rails = house.rails || {};
+        tag = 'rail';
         for (const rl of [rails.left, rails.right]) {
           if (!rl || !rl.shelves) continue;
           for (const sh of rl.shelves) {
             for (const it of (sh.items || [])) disc(it.x, it.y, rl.glyphR || 0);
           }
         }
+        tag = 'port';
         for (const pt of (lay.ports || [])) disc(pt.x, pt.y, pt.r || 0);
+        tag = 'date';
         // THE DATES ARE CONTENT, NOT DECORATION. Every era caption
         // places through claim(), and the title claims FIRST — so a
         // title parked on a date's anchor does not overlap it, it
@@ -6768,14 +6787,42 @@
         if (cur >= hi0) break;
       }
       if (cur < hi0) holes.push({ lo: cur, hi: hi0 });
-      let best = null;
-      for (const g of holes) {
-        if (g.hi - g.lo <= 0) continue;
-        // `holes` runs top-to-bottom and reading order favours the top,
-        // so only a CLEARLY bigger hole (1.25x) moves the title down —
-        // the same margin that stops it flipping on a near-tie.
-        if (!best || (g.hi - g.lo) > (best.hi - best.lo) * 1.25) best = g;
-      }
+      // ── THE TITLE GOES WHERE THE CHART ISN'T (2026-08-01) ──────────
+      // John, twice: "theres super empty space below, i dont understand
+      // why not move the title in those situations to below on the
+      // empty area hole". A plain "biggest hole wins" does not answer
+      // him — on Christian's fan the biggest hole IS the top one, and
+      // the bottom void he is pointing at is split in two by the era
+      // dates that sit in it. What answers him is which side the
+      // DRAWING has vacated:
+      //
+      //   cascade — mass about the centre, air top and bottom → TOP,
+      //             which is where reading order wants the name anyway
+      //   fan     — mass crests high, the bottom half is empty → BELOW
+      //
+      // So the side is decided by the tree's own mid-point, and only
+      // then does size choose between the holes on that side. A 40px
+      // dead-band keeps a centred drawing off the boundary.
+      const cMid = (topPx + botPx) / 2;
+      const treeMid = (treeMin <= treeMax) ? (treeMin + treeMax) / 2 : cMid;
+      const prefer = (treeMid < cMid - 40) ? 'below' : 'above';
+      const sideOf = (g) => (((g.lo + g.hi) / 2) < cMid ? 'above' : 'below');
+      const pickIn = (side, needH) => {
+        let b = null;
+        for (const g of holes) {
+          if (g.hi - g.lo <= 0) continue;
+          if (side && sideOf(g) !== side) continue;
+          if (needH != null && (g.hi - g.lo) < needH) continue;
+          if (!b || (g.hi - g.lo) > (b.hi - b.lo)) b = g;
+        }
+        return b;
+      };
+      // the preferred side first, and only a hole that can HOLD the
+      // block counts as a candidate there
+      let best = pickIn(prefer, blockH)
+              || pickIn(prefer === 'below' ? 'above' : 'below', blockH)
+              || pickIn(prefer, null)
+              || pickIn(null, null);
       const fits = !!best && (best.hi - best.lo) >= blockH;
       // NOTHING FITS: take the TOP hole, which is the slot the block
       // has always had. A title that overflows is bad; a title that
@@ -6784,7 +6831,8 @@
         for (const g of holes) { if (g.hi - g.lo > 0) { best = g; break; } }
       }
       if (!best) best = { lo: lo0, hi: hi0 };
-      return { gap: best, fits, holes: holes.length, holeList: holes };
+      return { gap: best, fits, holes: holes.length, holeList: holes, iv, prefer,
+               treeMid: Math.round(treeMid), cMid: Math.round(cMid) };
     }
     // ONE anchor law for the rank/era caption, shared by the pass that
     // PRINTS it and the pass that has to keep the title off it. Two

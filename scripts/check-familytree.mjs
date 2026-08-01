@@ -688,8 +688,16 @@ must(/const res = houseTitleGap\(hs, vp, x, halfW, pxPerWorld,/,
   'the title takes the widest HOLE in its own column, not a fixed side (2026-08-01)');
 must(/if \(x1 < colL \|\| x0 > colR\) return;\s+\/\/ not in the title's column/,
   'occupancy is tested only inside the block\'s column — the rails leave a gap at 12 o\'clock by construction');
-must(/if \(!best \|\| \(g\.hi - g\.lo\) > \(best\.hi - best\.lo\) \* 1\.25\) best = g;/,
-  'reading order favours the top — only a CLEARLY bigger hole (1.25x) moves the title down the page');
+// THE SIDE IS THE DRAWING'S TO GIVE (2026-08-01). "Biggest hole wins"
+// is NOT the law and must not creep back: on Christian's fan the
+// biggest hole is the top one, and the empty bottom John was pointing
+// at is split in two by the era dates standing in it. The side comes
+// from where the tree's own mass sits; size only picks between the
+// holes on that side.
+must(/const prefer = \(treeMid < cMid - 40\) \? 'below' : 'above';/,
+  'the title takes the side the DRAWING has vacated — cascade centred ⇒ top, fan crests high ⇒ the empty bottom');
+must(/let best = pickIn\(prefer, blockH\)\s*\n\s*\|\| pickIn\(prefer === 'below' \? 'above' : 'below', blockH\)/,
+  'the preferred side is tried FIRST, and only a hole that can hold the block counts there');
 must(/const aStep = 22 \/ Math\.max\(1e-6, rl\.r \* camS\);/,
   'the band obstacle shield follows the ARC at 22px screen pitch');
 must(/const bi = Math\.round\(gy \/ 16\);/,
@@ -851,18 +859,26 @@ const titleGapOf = (vp, h, W2S, lay, cxPx, halfW, pxPerWorld, topPx, botPx, need
   const colL = cxPx - halfW, colR = cxPx + halfW;
   const lo0 = topPx + TITLE_RIM, hi0 = botPx - TITLE_RIM;
   const iv = [];
+  let treeMin = Infinity, treeMax = -Infinity, tag = '?';
   const box = (x0, x1, y0, y1) => {
     if (x1 < colL || x0 > colR) return;
-    iv.push([y0 - TITLE_GAP, y1 + TITLE_GAP]);
+    iv.push([y0 - TITLE_GAP, y1 + TITLE_GAP, tag]);
   };
   const disc = (wx, wy, wr) => {
     const s = W2S(wx, wy); const rp = (wr || 0) * pxPerWorld;
     box(s.x - rp, s.x + rp, s.y - rp, s.y + rp);
   };
   const pos = lay.positions, rad = lay.radii;
+  tag = 'tree';
   for (const row of (h.rows || [])) {
     for (const id of row) { const p = pos && pos.get(id); if (p) disc(p.x, p.y, (rad && rad.get(id)) || 0); }
   }
+  for (const s of iv) {
+    if (s[2] !== 'tree') continue;
+    if (s[0] < treeMin) treeMin = s[0];
+    if (s[1] > treeMax) treeMax = s[1];
+  }
+  tag = 'other';
   const rails = h.rails || {};
   for (const rl of [rails.left, rails.right]) {
     if (!rl || !rl.shelves) continue;
@@ -895,11 +911,28 @@ const titleGapOf = (vp, h, W2S, lay, cxPx, halfW, pxPerWorld, topPx, botPx, need
     if (cur >= hi0) break;
   }
   if (cur < hi0) holes.push({ lo: cur, hi: hi0 });
-  let best = null;
-  for (const g of holes) {
-    if (g.hi - g.lo <= 0) continue;
-    if (!best || (g.hi - g.lo) > (best.hi - best.lo) * 1.25) best = g;
-  }
+  // THE TITLE GOES WHERE THE CHART ISN'T — mirrors forge.js. The side
+  // is decided by where the tree's own mass sits (cascade: centred →
+  // top; fan: crests high → the empty bottom), and only then does size
+  // choose between the holes on that side.
+  const cMid = (topPx + botPx) / 2;
+  const treeMid = (treeMin <= treeMax) ? (treeMin + treeMax) / 2 : cMid;
+  const prefer = (treeMid < cMid - 40) ? 'below' : 'above';
+  const sideOf = (g) => (((g.lo + g.hi) / 2) < cMid ? 'above' : 'below');
+  const pickIn = (side, need) => {
+    let b = null;
+    for (const g of holes) {
+      if (g.hi - g.lo <= 0) continue;
+      if (side && sideOf(g) !== side) continue;
+      if (need != null && (g.hi - g.lo) < need) continue;
+      if (!b || (g.hi - g.lo) > (b.hi - b.lo)) b = g;
+    }
+    return b;
+  };
+  let best = pickIn(prefer, needH)
+          || pickIn(prefer === 'below' ? 'above' : 'below', needH)
+          || pickIn(prefer, null)
+          || pickIn(null, null);
   const fits = !!best && (best.hi - best.lo) >= needH;
   if (!fits) { for (const g of holes) { if (g.hi - g.lo > 0) { best = g; break; } } }
   if (!best) best = { lo: lo0, hi: hi0 };
