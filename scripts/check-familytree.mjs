@@ -541,7 +541,14 @@ const NODE_BY_ID = new Map(NODES.map(n => [n.id, n]));
 console.log('\n── W2-A · the crown noun vs the cascade\'s real composition ──');
 must(/const nodeWord = st\.treeKind[\s\S]{0,120}'MEMBERS';/,
   'the crown noun comes from stats.treeKind, not the mode registry');
-must(/const line1 = st\.tree \+ ' ' \+ nodeWord/, 'crown line 1 counts stats.tree with that noun');
+// ONE TITLE, ONE SUBTITLE (2026-08-01). The two-stat-line stack is
+// gone — it was three headlines pretending to be a title block. The
+// subtitle still counts stats.tree with the treeKind noun AND still
+// states the scriptorium and the court, which is the honesty the old
+// line2 existed for; it just says all of it on one line.
+must(/const lineC = st\.tree \+ ' ' \+ nodeWord/, 'the subtitle counts stats.tree with that noun');
+must(/st\.docs \+ ' SCRIPTORIUM · ' \+ st\.court \+ ' COURT'/,
+  'the subtitle still states the scriptorium and the court — zero is stated, never hidden');
 // the view's law, mirrored verbatim (kindShelves' pluralisation)
 const crownNoun = (treeKind) => treeKind
   ? (String(treeKind) + 's').replace(/ys$/, 'ies').toUpperCase()

@@ -815,6 +815,12 @@
     house_band_head:       230,     // arc reserved for the curved rail header (wu)
     house_cap_clear:       10,      // caption air off the band's outer edge (wu)
     house_tree_r:          0.86,    // cascade/fan zone radius (× Rh) while the band stands
+    // 0 = the fan's origin sits ON the house's X axis, so the rings
+    // crest through the top half and the bottom half stays free for
+    // the title (2026-08-01, John's call). 0.34 restores the old
+    // below-centre origin that filled the house and pushed the title
+    // out. It is a dial because it is a composition decision.
+    house_fan_dy:          0,
     // ── THE DISTRIBUTION + THE MARGINS (2026-07-31 wave 5) ──────
     // John: "Im not sure what was your logic in your node
     // distribution, but if its different keep it add a toggle to use
@@ -6637,14 +6643,16 @@
         // line 2, the chips), plus the name's own rise above its
         // baseline — the crown face is 21px serif in app.css.
         const NAME_RISE = 16;
-        const blockH = rowH * 3 + NAME_RISE + 8;    // name + 2 stat lines + chips
-        // THE COMPACT STACK — the same block with the two stat lines
-        // collapsed into the toy's one-line form. Three of the twelve
-        // families (Egyptian, Vedic, Mesopotamian) have NO four-row
-        // hole anywhere in this column once the fan opens; without a
-        // shorter form the block falls back onto the crest, which is
-        // the clutter this whole pass exists to remove.
-        const blockHC = rowH * 2 + NAME_RISE + 8;   // name + ONE stat line + chips
+        // ── TITLE + SUBTITLE, AND NOTHING ELSE (2026-08-01) ────────
+        // John: "try to incorporate first our title and subtitle
+        // properly in the current build." One title, ONE subtitle, and
+        // the geometry control under them. The two-stat-line stack is
+        // gone: it was three headlines pretending to be a title block,
+        // it cost a whole row of the chart, and on three families it
+        // had no hole to stand in at all. Every number it carried is
+        // still stated — the subtitle says all of them on one line.
+        const blockH = rowH * 2 + NAME_RISE + 8;    // name + subtitle + chips
+        const blockHC = blockH;
         const c = camera.worldToScreen(house.center.x, house.center.y, vp);
         const e = camera.worldToScreen(house.center.x + house.radius, house.center.y, vp);
         const pxPerWorld = Math.abs(e.x - c.x) / Math.max(1e-6, house.radius);
@@ -6662,8 +6670,8 @@
                                   c.y - rPx, c.y + rPx, blockHC);
         const use = res.gap;
         const room = use.hi - use.lo;
-        const compact = room < blockH;
-        const bh = compact ? blockHC : blockH;
+        const compact = true;                        // one subtitle, always
+        const bh = blockH;
         local._houseTitleCompact = compact;
         local._houseTitleSide = ((use.lo + use.hi) / 2 < c.y) ? 'above' : 'below';
         local._houseTitleFits = res.fits;
@@ -6683,7 +6691,7 @@
         // above the name and below the chips.
         y = (use.lo + use.hi) / 2 - bh / 2 + NAME_RISE;
         // The chips are the last row: keep them off the bottom chrome.
-        const yMax = Math.max(HOUSE_TITLE_TOP, h - 58 - rowH * (compact ? 2 : 3) - 10);
+        const yMax = Math.max(HOUSE_TITLE_TOP, h - 58 - rowH * 2 - 10);
         y = Math.max(HOUSE_TITLE_TOP, Math.min(yMax, y));
       }
       return { right: false, center: true, x, y };
@@ -7036,10 +7044,6 @@
       const nodeWord = st.treeKind
         ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase()
         : 'MEMBERS';
-      const line1 = st.tree + ' ' + nodeWord
-        + ' · ' + st.kinArcs + ' LINEAGE ARC' + (st.kinArcs === 1 ? '' : 'S')
-        + ' · ' + st.orphanCount + ' STAND'
-        + (st.orphanCount === 1 ? 'S' : '') + ' ON THEIR ERA';
       // THE CROWN STACK PITCH (2026-07-31) — `claim` rejects anything
       // whose centre sits within 15px of a rect already placed, and
       // the stack used to be 18 / 31 / 46: line2 sat 13px under line1
@@ -7058,7 +7062,6 @@
       // every row, plus one empty row of air above and below. The
       // title rows claim FIRST in the paint, so widening them can
       // never hide them — it only pushes everyone else off the block.
-      const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
       // ── THE COMPACT STACK (2026-08-01) ───────────────────────────
       // houseTitleAnchor decides; this obeys. When the roomiest hole in
       // the title's column cannot take four rows, the two stat lines
@@ -7066,25 +7069,19 @@
       // kept. Every number still gets stated (an unstated court is the
       // 2026-07-31 "i dont see th courts?" defect); the block just
       // stops being taller than the air it has to live in.
-      const compact = !!local._houseTitleCompact;
       const lineC = st.tree + ' ' + nodeWord
         + ' · ' + st.kinArcs + ' ARC' + (st.kinArcs === 1 ? '' : 'S')
         + ' · ' + st.orphanCount + ' ON THEIR ERA'
         + ' · ' + st.docs + ' SCRIPTORIUM · ' + st.court + ' COURT';
-      const statLine = compact ? lineC : line2;
+      const statLine = lineC;
       font('500', TYPE.cap);
       const w2 = ctx.measureText(statLine).width;
-      font('500', TYPE.head);
-      const w1 = compact ? 0 : ctx.measureText(line1).width;
+      const w1 = 0;
       // The SVG name paints in the crown face (21px serif, app.css
       // .is-isolated); estimate its width for the shield.
       const nameW = String(house.groupKey || '').length * 21 * 0.68 + 24;
       const BW = Math.max(w1 + 8, w2 + 8, nameW, 156) + 28;
       claim(cenX(BW), cs.y - CROWN_ROW, BW);   // air above the name
-      if (!compact && claim(cenX(BW), cs.y + CROWN_ROW, BW)) {
-        ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.92;
-        halo(line1, cs.x, cs.y + CROWN_ROW);
-      }
       // LINE 2 ALWAYS PRINTS (2026-07-31, John: "i dont see th courts?").
       // It was guarded on `st.docs || st.court`, so a family the vault
       // holds nothing but gods for — Baltic is 10 nodes, 10 deities,
@@ -7096,7 +7093,7 @@
       // blank to hide.
       font('500', TYPE.cap);
       ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
-      const statRow = compact ? 1 : 2;
+      const statRow = 1;
       if (claim(cenX(BW), cs.y + CROWN_ROW * statRow, BW)) {
         ctx.fillStyle = _labelsTextColor;
         // A zero room is stated, not shouted — one step quieter than a
@@ -7135,7 +7132,7 @@
         }
         if (famColor) chipsG.style.setProperty('--family-color', famColor);
         else chipsG.style.removeProperty('--family-color');
-        const chipY = cs.y + CROWN_ROW * (compact ? 2 : 3);
+        const chipY = cs.y + CROWN_ROW * 2;
         ctx.font = '600 9px ' + HOUSE_MONO;
         // +12 ≈ the CSS letter-spacing the canvas measure can't see.
         const wCas = ctx.measureText('CASCADE').width + 12;
@@ -8104,6 +8101,15 @@
         bandHead:  (typeof p.house_band_head === 'number') ? p.house_band_head : 230,
         capClear:  (typeof p.house_cap_clear === 'number') ? p.house_cap_clear : 10,
         treeR:     (typeof p.house_tree_r === 'number') ? p.house_tree_r : 0.86,
+        // THE FAN SITS ON THE X AXIS (2026-08-01). John: "try that the
+        // fan is always centered on the X axis to the whole circle
+        // (meaning theres space on bottom usually for the titles)."
+        // The origin used to be pushed 0.34xRt BELOW centre so the
+        // crest filled the house; that is what made the inner circle
+        // read as off-centre and what made the date axis a diagonal.
+        // On the axis the crest fills the TOP half and the bottom half
+        // is reliably free — which is where the title now lives.
+        fanDy:     (typeof p.house_fan_dy === 'number') ? p.house_fan_dy : 0,
         // WAVE 5 — the packing law, the four zero-tolerance margins
         // and the three pitch terms. Every one of them is a LAB dial
         // (SECTIONS ▸ 'housepack'), routed through api.houseSnap so
