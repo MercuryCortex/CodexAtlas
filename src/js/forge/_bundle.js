@@ -1569,16 +1569,25 @@
       const safe = (s) => String(s || '').replace(/[&<>"']/g, c => (
         { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
       ));
+      // 2026-08-02 EDITORIAL — labeled bookmark: family dot + node-name
+      // label (ellipsized by CSS). The chevron span is DELETED; active
+      // state is carried by color + the --fam-color inset bar, not a
+      // glyph. Cross-type tabs (reader clicks) resolve their title from
+      // the full vault so the label never falls back to a raw slug.
       const html = local.deityTabs.map(id => {
-        const n = nodesById.get ? nodesById.get(id) : null;
+        let n = nodesById.get ? nodesById.get(id) : null;
+        if (!n && local._vaultNodesById && local._vaultNodesById.get) {
+          n = local._vaultNodesById.get(id) || null;
+        }
         const color = (n && (n.family_color || n.tradition_color)) || '#999';
         const title = (n && n.title) || id;
         const isActive = (id === local.openTabId);
         return '<button class="forge-deity-tab' + (isActive ? ' is-active' : '') + '"'
              + ' data-id="' + safe(id) + '"'
+             + ' style="--fam-color:' + safe(color) + '"'
              + ' title="' + safe(title) + '">'
-             +   '<span class="forge-deity-tab-chevron">' + (isActive ? '›' : '‹') + '</span>'
              +   '<span class="forge-deity-tab-dot" style="background:' + safe(color) + '"></span>'
+             +   '<span class="forge-deity-tab-lbl">' + safe(title) + '</span>'
              + '</button>';
       }).join('');
       tabsEl.innerHTML = html;
@@ -2127,9 +2136,13 @@
             slug = String(slug).trim();
             const display = label || (slug.indexOf('/') >= 0 ? slug.split('/').pop() : slug);
             const text = safe(display);
-            // Conservative inert span — wiring an in-panel jump is a Step-2
-            // improvement; the link is correct text-wise either way.
-            return '<a class="forge-side-panel-body-link" data-codex-jump="' + safeAttr(slug) + '">' + text + '</a>';
+            // 2026-08-02 (F2) — live jump for real vault nodes (handler in
+            // the delegated click listener below); dead slugs render as an
+            // inert .is-dead span, mirroring inspector.js.
+            if (vaultNodesById.has(slug)) {
+              return '<a class="forge-side-panel-body-link" data-codex-jump="' + safeAttr(slug) + '">' + text + '</a>';
+            }
+            return '<span class="forge-side-panel-body-link is-dead">' + text + '</span>';
           }
         );
         if (window.marked && typeof window.marked.parse === 'function') {
@@ -2234,35 +2247,70 @@
       };
       const provenanceHtml = renderProvenance();
 
+      // ── 2026-08-02 EDITORIAL header — kicker (TRADITION · TYPE · DATE)
+      // above the serif title; the epithet joins the header block so the
+      // gold hairline closes the whole title group. The kicker carries
+      // the date, so the meta <dl> drops its Date row. Mirrors
+      // inspector.js (John's "NOT THE SAME!!" law).
+      const cleanTrad = (t) => {
+        if (!t) return '';
+        let s = String(t).trim();
+        const wl = s.match(/^\[\[([^\]|]+)(?:\|([^\]]+))?\]\]$/);
+        if (wl) s = (wl[2] || wl[1]).trim();
+        const tn = vaultNodesById.get(s);
+        if (tn && tn.title) return tn.title.split('—')[0].trim();
+        return s.replace(/^tradition-/, '').replace(/[-_]+/g, ' ').trim();
+      };
+      const tradDisplay = cleanTrad(tradition);
+      const typeLabel = node.type
+        ? String(node.type).charAt(0).toUpperCase() + String(node.type).slice(1)
+        : '';
+      const kickerSegs = [];
+      if (tradDisplay) kickerSegs.push('<span class="k-trad">' + safe(tradDisplay) + '</span>');
+      if (typeLabel)   kickerSegs.push(safe(typeLabel));
+      if (dateStr)     kickerSegs.push(safe(dateStr));
+      const kickerHtml = kickerSegs.length
+        ? '<div class="forge-side-panel-kicker">' + kickerSegs.join('<span class="k-sep">·</span>') + '</div>'
+        : '';
+
+      // Meta rows without Date (the kicker carries it); the dl + its
+      // section head render only when at least one row survives.
+      const metaRowsHtml =
+          (dbLabel  ? '<dt>Basis</dt><dd class="forge-side-panel-dating-basis forge-side-panel-dating-basis--' + safeAttr(dbasis.toLowerCase()) + '">' + safe(dbLabel) + '</dd>' : '')
+        + (dbSource ? '<dt>Source</dt><dd>' + safe(dbSource) + '</dd>' : '')
+        + (dbNotes  ? '<dt>Notes</dt><dd class="forge-side-panel-dating-notes">' + safe(dbNotes) + '</dd>' : '')
+        + (place   ? '<dt>Place</dt><dd>' + safe(place)   + '</dd>' : '')
+        + (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '');
+
       inner.innerHTML = '<div class="forge-side-panel-content" style="--family-color:' + safe(familyCol) + '">'
         + carouselHtml()
         + '<div class="forge-side-panel-header">'
+        +   kickerHtml
         +   '<div class="forge-side-panel-name">' + safe(title) + '</div>'
         +   (aka.length ? '<div class="forge-side-panel-aka">' + aka.map(safe).join(' · ') + '</div>' : '')
-        +   (tradition ? '<div class="forge-side-panel-tradition">' + safe(tradition) + '</div>' : '')
+        +   (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
         + '</div>'
-        + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
         // ── Provenance block (moved here 2026-06-02 per John: "i should be
         // able to see immediately here" — academic-backing is the FIRST
         // block under the description, not buried below bucket-pills).
         + provenanceHtml
         + actionRowHtml
-        + (pills ? '<div class="forge-side-panel-wires">' + pills + '</div>' : '')
-        + '<dl class="forge-side-panel-meta">'
-        +   (dateStr ? '<dt>Date</dt><dd>' + safe(dateStr) + '</dd>' : '')
-        // Phase B-DATING-2 (2026-05-24) — dating-basis rows.
-        // Always show the basis tier; source + notes optional.
-        +   (dbLabel  ? '<dt>Basis</dt><dd class="forge-side-panel-dating-basis forge-side-panel-dating-basis--' + safeAttr(dbasis.toLowerCase()) + '">' + safe(dbLabel) + '</dd>' : '')
-        +   (dbSource ? '<dt>Source</dt><dd>' + safe(dbSource) + '</dd>' : '')
-        +   (dbNotes  ? '<dt>Notes</dt><dd class="forge-side-panel-dating-notes">' + safe(dbNotes) + '</dd>' : '')
-        +   (place   ? '<dt>Place</dt><dd>' + safe(place)   + '</dd>' : '')
-        +   (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '')
-        + '</dl>'
+        + (pills
+            ? '<h4 class="forge-side-panel-section-h">Connections</h4>'
+              + '<div class="forge-side-panel-wires">' + pills + '</div>'
+            : '')
+        + (metaRowsHtml
+            ? '<h4 class="forge-side-panel-section-h">Chronology &amp; Place</h4>'
+              + '<dl class="forge-side-panel-meta">' + metaRowsHtml + '</dl>'
+            : '')
         // 2026-05-29 — vault body restored (was dropped in V2 → V1 had this
         // as the main content). For deities like Michael (Archangel) this
         // surfaces the full vault-authored intro instead of the truncated
         // Wikipedia extract that was causing the "third- and sec…" cut-off.
-        + (bodyHtml ? '<div class="forge-side-panel-body">' + bodyHtml + '</div>' : '')
+        + (bodyHtml
+            ? '<h4 class="forge-side-panel-section-h">Entry</h4>'
+              + '<div class="forge-side-panel-body">' + bodyHtml + '</div>'
+            : '')
         + refsHtml
         // Wikipedia extract demoted — only shown when there's no vault body
         // (so the panel still has a fallback for stub nodes) and clearly
@@ -2280,6 +2328,12 @@
             return '<button class="forge-side-panel-read-btn" data-codex-read="' + safeAttr(tk) + '" type="button">✠ Open in reader</button>';
           })()
         + '</div>';
+
+      // 2026-08-02 (F3) — fresh node ⇒ panel starts at the top. Guarded
+      // by _lastRenderedId so carousel re-renders of the SAME node keep
+      // the user's scroll depth. (inspector.js already resets.)
+      if (id !== local._lastRenderedId) inner.scrollTop = 0;
+      local._lastRenderedId = id;
 
       // Phase 21AD (2026-05-22) — face-aware object-position on the
       // carousel image. Same heuristic as the hover card: portraits
@@ -2426,6 +2480,28 @@
         local._sidePanelImageIdx[targetId] = cur;
         // Re-render the side panel (cheap; the panel is small).
         local._renderSidePanel();
+        return;
+      }
+      // 2026-08-02 (F2) — body wikilinks. Same behavior as a wire-item
+      // click: in-mode targets lock + switch the panel; out-of-mode
+      // targets route through openFor (cross-type vault fallback).
+      // Dead slugs never carry data-codex-jump (inert .is-dead spans).
+      const jump = e.target.closest('[data-codex-jump]');
+      if (jump) {
+        e.stopPropagation();
+        const slug = jump.getAttribute('data-codex-jump');
+        if (!slug) return;
+        if (local.mode && local.mode.nodesById && local.mode.nodesById.has(slug)) {
+          if (!local.lockedSet.has(slug)) {
+            toggleLock(slug);   // adds tab + (panel open) switches to it
+          } else {
+            local.openTabId = slug;
+            render();
+            renderTabs();
+          }
+        } else {
+          window._forgeSidePanel.openFor(slug);
+        }
         return;
       }
       const item = e.target.closest('.forge-side-panel-wire-item');

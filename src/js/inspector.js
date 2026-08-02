@@ -433,26 +433,50 @@
       + '<span class="forge-side-panel-action-label">Add to board</span>'
       + '</button></div>';
 
-    inner.innerHTML = '<div class="forge-side-panel-content inspector-root" style="--family-color:' + safe(familyCol) + '">'
-      + thumbHtml
-      + '<div class="forge-side-panel-header">'
-      + '<div class="forge-side-panel-name">' + safe(title) + '</div>'
-      + (aka.length ? '<div class="forge-side-panel-aka">' + aka.map(safe).join(' · ') + '</div>' : '')
-      + (tradition ? '<div class="forge-side-panel-tradition">' + safe(tradition) + '</div>' : '')
-      + '</div>'
-      + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
-      + renderProvenance(node)
-      + actionRow
-      + (pills ? '<div class="forge-side-panel-wires">' + pills + '</div>' : '')
-      + '<dl class="forge-side-panel-meta">'
-      + (dateStr ? '<dt>Date</dt><dd>' + safe(dateStr) + '</dd>' : '')
-      + (dbLabel ? '<dt>Basis</dt><dd class="forge-side-panel-dating-basis">' + safe(dbLabel) + '</dd>' : '')
+    // ── 2026-08-02 EDITORIAL header — kicker (TRADITION · TYPE · DATE)
+    // above the serif title; epithet inside the header block so the gold
+    // hairline closes the title group; the kicker carries the date so
+    // the meta <dl> drops its Date row. Kept IDENTICAL to the Forge
+    // renderer (src/js/forge/side-panel.js) — John's "NOT THE SAME!!" law.
+    const typeLabel = node.type
+      ? String(node.type).charAt(0).toUpperCase() + String(node.type).slice(1)
+      : '';
+    const kickerSegs = [];
+    if (tradition) kickerSegs.push('<span class="k-trad">' + safe(tradition) + '</span>');
+    if (typeLabel) kickerSegs.push(safe(typeLabel));
+    if (dateStr)   kickerSegs.push(safe(dateStr));
+    const kickerHtml = kickerSegs.length
+      ? '<div class="forge-side-panel-kicker">' + kickerSegs.join('<span class="k-sep">·</span>') + '</div>'
+      : '';
+    const metaRowsHtml =
+        (dbLabel ? '<dt>Basis</dt><dd class="forge-side-panel-dating-basis forge-side-panel-dating-basis--' + safe(dbasis.toLowerCase()) + '">' + safe(dbLabel) + '</dd>' : '')
       + (node.dating_basis_source ? '<dt>Source</dt><dd>' + safe(node.dating_basis_source) + '</dd>' : '')
       + (node.dating_basis_notes ? '<dt>Notes</dt><dd class="forge-side-panel-dating-notes">' + safe(node.dating_basis_notes) + '</dd>' : '')
       + (place ? '<dt>Place</dt><dd>' + safe(place) + '</dd>' : '')
-      + (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '')
-      + '</dl>'
-      + (bodyHtml ? '<div class="forge-side-panel-body">' + bodyHtml + '</div>' : '')
+      + (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '');
+
+    inner.innerHTML = '<div class="forge-side-panel-content inspector-root" style="--family-color:' + safe(familyCol) + '">'
+      + thumbHtml
+      + '<div class="forge-side-panel-header">'
+      + kickerHtml
+      + '<div class="forge-side-panel-name">' + safe(title) + '</div>'
+      + (aka.length ? '<div class="forge-side-panel-aka">' + aka.map(safe).join(' · ') + '</div>' : '')
+      + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
+      + '</div>'
+      + renderProvenance(node)
+      + actionRow
+      + (pills
+          ? '<h4 class="forge-side-panel-section-h">Connections</h4>'
+            + '<div class="forge-side-panel-wires">' + pills + '</div>'
+          : '')
+      + (metaRowsHtml
+          ? '<h4 class="forge-side-panel-section-h">Chronology &amp; Place</h4>'
+            + '<dl class="forge-side-panel-meta">' + metaRowsHtml + '</dl>'
+          : '')
+      + (bodyHtml
+          ? '<h4 class="forge-side-panel-section-h">Entry</h4>'
+            + '<div class="forge-side-panel-body">' + bodyHtml + '</div>'
+          : '')
       + refsHtml
       + (!bodyHtml && extract ? '<div class="forge-side-panel-extract">' + safe(extract) + '</div>' : '')
       + (wikiPage ? '<a class="forge-side-panel-wikilink" href="' + safe(wikiPage) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>' : '')

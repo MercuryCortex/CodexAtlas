@@ -9605,14 +9605,9 @@ function updateResetButton() {
 // All three were tied to DOM IDs that no longer exist (footer ripped
 // out). The per-view search/filter controls are the replacement.
 
-// Panel toggles: keep the view state intact (no setView re-render). The sidebar is now
-// a FIXED overlay — toggling it neither resizes nor re-layouts the canvas. The detail
-// panel is still in the grid (it owns its column).
-const _sideTabEl = document.getElementById('side-tab');
-if (_sideTabEl) _sideTabEl.addEventListener('click', () => {
-  document.body.classList.toggle('nav-collapsed');
-  _sideTabEl.textContent = document.body.classList.contains('nav-collapsed') ? '›' : '‹';
-});
+// 2026-08-02 (F4, side-panel editorial spec) — the #side-tab binding is
+// DELETED: its markup died in the 2026-05-28 legacy isolation, so the
+// getElementById always missed and the listener never fired.
 // Detail panel toggle. Cancels any in-flight CSS animations on aside.detail
 // before flipping the class — a defensive guard against the stuck-transition
 // state that can show up when the tab is rapidly hidden/shown mid-animation.
@@ -9676,8 +9671,8 @@ document.getElementById('svg').addEventListener('click', (ev) => {
 
 document.addEventListener('keydown', (ev) => {
   if (ev.target.tagName === 'INPUT') return;
-  // 2026-05-28 legacy-isolation: `[` toggled the now-deleted side-tab; key is dead in V2.
-  if (ev.key === '[' && _sideTabEl) _sideTabEl.click();
+  // 2026-05-28 legacy-isolation: `[` toggled the now-deleted side-tab; the
+  // key is dead in V2 (binding fully removed 2026-08-02, F4).
   if (ev.key === ']') {
     // toggle the panel: closed → re-open (last content); open → close
     if (document.body.classList.contains('detail-collapsed')) {
