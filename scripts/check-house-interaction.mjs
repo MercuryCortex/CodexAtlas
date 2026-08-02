@@ -597,8 +597,20 @@ const PD = parseParamDefaults(forgeSrc);
 function readPanel(rootEl) {
   const secs = [];
   let cur = null;
+  // FINDABILITY (2026-08-02): the sections live inside the kit's
+  // .lp-scroll region now (the Copy/Reset foot is pinned on the panel
+  // itself) — walk the scroll region when it exists.
+  let host = rootEl;
   for (const ch of rootEl.children) {
+    if (ch.classList && ch.classList.contains('lp-scroll')) { host = ch; break; }
+  }
+  for (let ci = 0; ci < host.children.length; ci++) {
+    const ch = host.children[ci];
     if (ch.classList.contains('lp-sec')) {
+      // the RECIPE disclosure head is an .lp-sec with no .lp-secbody —
+      // it is not a dial group, so it is not a section here.
+      const nxt = host.children[ci + 1];
+      if (!nxt || !nxt.classList || !nxt.classList.contains('lp-secbody')) continue;
       const m = /<span>([^<]+)<\/span>/.exec(ch.innerHTML);
       cur = { title: m ? m[1] : '?', open: ch.classList.contains('open'), rows: [] };
       secs.push(cur);
@@ -663,10 +675,42 @@ else fail('the house panel did not mount');
 if (!H.warns.length) ok('every dial the panel declares is placed in a section (no builder warnings)');
 else fail('unplaced controls: ' + H.warns.join(' | '));
 {
-  const closed = H.secs.filter(s => !s.open || !s.bodyOpen);
-  if (H.secs.length >= 6 && !closed.length)
-    ok('all ' + H.secs.length + ' groups render OPEN on a first visit — nothing to hunt for');
-  else fail(closed.length + ' group(s) render COLLAPSED: ' + closed.map(s => s.title).join(', '));
+  // FINDABLE BY STRUCTURE, NOT BY SCROLL (2026-08-02): the all-open
+  // panel buried 71% of the dials below the fold at John's window.
+  // The law now: exactly ONE group open on a first visit (the tree),
+  // every head on screen, Reset/Copy pinned in the foot.
+  const open = H.secs.filter(s => s.open && s.bodyOpen);
+  if (H.secs.length >= 6 && open.length === 1 && /tree/i.test(open[0].title))
+    ok('accordion first visit: only "' + open[0].title + '" opens; the other '
+      + (H.secs.length - 1) + ' heads are visible, collapsed');
+  else fail('accordion default drifted — open groups: ' + open.map(s => s.title).join(', '));
+}
+{
+  // …and OPENING one group CLOSES the rest (the accordion itself).
+  const bandSec = H.secs.find(s => /band/i.test(s.title));
+  const bandEl = (() => {
+    let host = H.el;
+    for (const ch of H.el.children) if (ch.classList && ch.classList.contains('lp-scroll')) { host = ch; break; }
+    for (const ch of host.children) {
+      if (ch.classList.contains('lp-sec') && ch.innerHTML.indexOf(bandSec ? bandSec.title : '∅') >= 0) return ch;
+    }
+    return null;
+  })();
+  if (bandEl) {
+    bandEl.fire('click');
+    const openNow = readPanel(H.el).filter(s => s.open);
+    if (openNow.length === 1 && /band/i.test(openNow[0].title))
+      ok('accordion: opening "' + openNow[0].title + '" closed the tree — one group open at a time');
+    else fail('accordion did not close the others — open: ' + openNow.map(s => s.title).join(', '));
+    bandEl.fire('click');   // leave it as found for the row walks below
+    const treeEl = (() => {
+      let host = H.el;
+      for (const ch of H.el.children) if (ch.classList && ch.classList.contains('lp-scroll')) { host = ch; break; }
+      for (const ch of host.children) if (ch.classList.contains('lp-sec') && /tree/i.test(ch.innerHTML)) return ch;
+      return null;
+    })();
+    if (treeEl) treeEl.fire('click');
+  } else fail('no band section head found to exercise the accordion');
 }
 console.log('\n  THE PANEL, AS HE READS IT:');
 let hRows = 0;
@@ -686,8 +730,11 @@ console.log('');
   // 39 → 42 on 2026-07-31: +God size (postmortem #5, the direct dial
   // asked for by name), +Captions flat|curved (postmortem #6), and
   // +Era lines (the stratum dial, postmortem #2).
-  if (hRows === 42) ok('42 controls — every house dial in the app, in one panel');
-  else fail('the panel renders ' + hRows + ' controls (expected 42 — a dial was dropped or double-placed)');
+  // 42 → 46 on 2026-08-02: +Fan drop, +Fan width (John's asks by
+  // name), +Band fit (shrink|cap), +Title settle (the settle-only
+  // title law's dial).
+  if (hRows === 46) ok('46 controls — every house dial in the app, in one panel');
+  else fail('the panel renders ' + hRows + ' controls (expected 46 — a dial was dropped or double-placed)');
   // house_geometry (CASCADE/FAN) is CANONICAL and lives on the crown.
   if (!H.secs.some(s => s.rows.some(r => r.opts && r.opts.includes('cascade'))))
     ok('Cascade | Fan is NOT here — it is canonical and stays on the VIEW panel');
@@ -728,23 +775,45 @@ fires('God size', 'houseSnap');    // the postmortem-#5 dial must re-solve the l
 fires('Band radius', 'houseSnap'); // a size dial must re-solve the layout
 fires('Distribution', 'houseMorph');
 fires('Bone strength', 'refocus');
+fires('Fan drop', 'houseSnap');    // the fan's origin dial re-solves the layout
+fires('Fan width', 'houseSnap');   // the fan's cut dial re-solves the layout
+fires('Band fit', 'houseMorph');   // shrink|cap flips a layout law — it tweens
 
 // ── D.7  THE OPEN-STATE LAW, tested with a PLANTED LEGACY STATE ──
 // This is the structural cause of three unfindable controls in two
 // days: defaults were seeded only when the WHOLE key was missing, so
 // any section added later was `undefined` ⇒ falsy ⇒ collapsed.
+// 2026-08-02: the panel is an ACCORDION now, and every returning
+// user's stored open map said all-open forever — the same trap from
+// the other side. The one-time __accordionMigr migration rewrites a
+// pre-accordion map to tree-only ONCE; choices made AFTER it stick.
 {
-  const legacy = mountPanel('house', { 'forge.housePanel.open.v1': JSON.stringify({ tree: false }) });
-  const byTitle = Object.fromEntries(legacy.secs.map(s => [s.title, s.open]));
-  const treeTitle = legacy.secs[0].title;
-  if (byTitle[treeTitle] === false) ok('a group John COLLAPSED stays collapsed for him ("' + treeTitle + '")');
-  else fail('his own collapse choice was overwritten');
-  const rest = legacy.secs.slice(1);
-  if (rest.every(s => s.open))
-    ok('the ' + rest.length + ' groups his stored state has never seen still open by DECLARATION '
-      + '(the bug that shipped three invisible controls cannot recur here)');
-  else fail('groups absent from a legacy state shipped COLLAPSED: '
-    + rest.filter(s => !s.open).map(s => s.title).join(', '));
+  // (a) the planted ALL-OPEN legacy map — every returning user today —
+  // must arrive at the accordion default, not the buried-fold panel.
+  const legacy = mountPanel('house', { 'forge.housePanel.open.v1':
+    JSON.stringify({ tree: true, band: true, ports: true, gaps: true, words: true, lines: true, feel: true }) });
+  const openL = legacy.secs.filter(s => s.open);
+  if (openL.length === 1 && /tree/i.test(openL[0].title))
+    ok('a planted ALL-OPEN legacy map migrates ONCE to tree-only (the 71%-below-the-fold panel cannot return)');
+  else fail('legacy all-open map survived migration — open: ' + openL.map(s => s.title).join(', '));
+  const migrated = JSON.parse(legacy.env.store.get('forge.housePanel.open.v1') || '{}');
+  if (migrated.__accordionMigr === 1) ok('…and the __accordionMigr marker is written, so it never re-migrates');
+  else fail('no __accordionMigr marker — the migration would run on every mount');
+  // (b) a choice made AFTER the migration sticks: a post-migration map
+  // that says band-open/tree-closed mounts exactly that way.
+  const chosen = mountPanel('house', { 'forge.housePanel.open.v1':
+    JSON.stringify({ __accordionMigr: 1, tree: false, band: true }) });
+  const openC = chosen.secs.filter(s => s.open);
+  if (openC.length === 1 && /band/i.test(openC[0].title))
+    ok('a group John opened AFTER the migration stays open for him ("' + openC[0].title + '")');
+  else fail('his own post-migration choice was overwritten — open: ' + openC.map(s => s.title).join(', '));
+  // (c) the never-stored-id fallback law survives: a section absent
+  // from a post-migration map falls back to its DECLARED default.
+  const declaredClosed = chosen.secs.filter(s => !/tree|band/i.test(s.title));
+  if (declaredClosed.every(s => !s.open))
+    ok('the ' + declaredClosed.length + ' groups his stored state has never seen arrive at their DECLARED (collapsed) default');
+  else fail('groups absent from the map opened uninvited: '
+    + declaredClosed.filter(s => s.open).map(s => s.title).join(', '));
 }
 
 // ── D.8  the dials he already tuned come WITH the panel ──────

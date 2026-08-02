@@ -5426,10 +5426,14 @@
     const css = document.createElement('style');
     css.id = CSS_ID;
     css.textContent = [
+      // FINDABILITY (2026-08-02): the panel is a flex column — the
+      // section list scrolls in .lp-scroll, the heads are sticky, and
+      // the Copy/Reset foot is PINNED (never below the fold again).
       '.forge-devkit{position:fixed;top:64px;right:12px;z-index:235;width:264px;max-height:calc(100vh - 140px);',
-      'overflow-y:auto;background:rgba(10,8,22,.92);backdrop-filter:blur(10px);border:1px solid rgba(211,184,119,.28);',
+      'display:flex;flex-direction:column;overflow:hidden;background:rgba(10,8,22,.92);backdrop-filter:blur(10px);border:1px solid rgba(211,184,119,.28);',
       'border-radius:4px;padding:10px 12px;font:11px ui-monospace,"SF Mono",Menlo,monospace;color:#918ab4;',
       'letter-spacing:.06em;pointer-events:auto}',
+      '.forge-devkit .lp-scroll{overflow-y:auto;flex:1 1 auto;min-height:0}',
       '.forge-devkit h4{margin:0 0 8px;font-size:11px;letter-spacing:.24em;color:#d3b877;font-weight:600}',
       '.forge-devkit .lp-row{margin:7px 0 2px;display:flex;justify-content:space-between;text-transform:uppercase;font-size:10px}',
       '.forge-devkit .lp-row b{color:#d3b877;font-weight:600}',
@@ -5453,7 +5457,9 @@
       // ── collapsible section headers ──
       '.forge-devkit .lp-sec{width:100%;display:flex;align-items:center;gap:6px;margin:9px 0 0;padding:5px 0;',
       'background:none;border:none;border-top:1px solid rgba(211,184,119,.16);cursor:pointer;',
-      'font:10px ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#d3b877;text-align:left}',
+      'font:10px ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#d3b877;text-align:left;',
+      // sticky heads: content scrolls under them, opaque so it reads
+      'position:sticky;top:0;background:rgba(10,8,22,.97);z-index:2}',
       '.forge-devkit .lp-sec:hover{color:#f0e2bd}',
       '.forge-devkit .lp-sec .lp-caret{display:inline-block;width:8px;color:#5e5885;transition:transform .12s ease-out}',
       '.forge-devkit .lp-sec.open .lp-caret{transform:rotate(90deg);color:#d3b877}',
@@ -5464,7 +5470,7 @@
       '.forge-devkit .lp-hint{margin:1px 0 4px;font-size:10px;line-height:1.45;color:#5e5885;letter-spacing:.04em}',
       '.forge-devkit .lp-recipe{margin-top:10px;padding:6px 8px;border:1px dashed rgba(211,184,119,.3);border-radius:3px;',
       'font-size:10px;line-height:1.5;color:#918ab4;word-break:break-word;user-select:all}',
-      '.forge-devkit .lp-btns{display:flex;gap:6px;margin-top:8px}',
+      '.forge-devkit .lp-btns{display:flex;gap:6px;margin-top:8px;flex:0 0 auto}',
       '.forge-devkit .lp-btn{flex:1;font:10px ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;',
       'background:transparent;color:#d3b877;border:1px solid rgba(211,184,119,.4);border-radius:2px;padding:5px 0;cursor:pointer}',
       '.forge-devkit .lp-x{position:absolute;top:8px;right:10px;cursor:pointer;color:#5e5885;background:none;border:none;font-size:12px}',
@@ -5572,6 +5578,13 @@
     document.body.appendChild(el);
     el.querySelector('.lp-x').addEventListener('click', () => { el.style.display = 'none'; });
 
+    // FINDABILITY (2026-08-02): the sections and the recipe live in a
+    // scroll region of their own; the Copy/Reset foot stays pinned on
+    // the panel element after it, always on screen.
+    const scroll = document.createElement('div');
+    scroll.className = 'lp-scroll';
+    el.appendChild(scroll);
+
     const recipeEl = document.createElement('div');
     function syncRecipe() {
       if (typeof spec.recipe === 'function') recipeEl.textContent = spec.recipe();
@@ -5664,19 +5677,32 @@
 
     const ctx = { addSlider, addToggles, addRadioRow, local, api, persist, syncRecipe };
 
+    const secEls = [];
     for (const sec of sections) {
       const head = document.createElement('button');
       head.className = 'lp-sec' + (openState[sec.id] ? ' open' : '');
       head.innerHTML = '<span class="lp-caret">▸</span><span>' + sec.title + '</span>';
       const body = document.createElement('div');
       body.className = 'lp-secbody' + (openState[sec.id] ? ' open' : '');
+      secEls.push({ id: sec.id, head, body });
       head.addEventListener('click', () => {
-        openState[sec.id] = !openState[sec.id];
-        head.classList.toggle('open', openState[sec.id]);
-        body.classList.toggle('open', openState[sec.id]);
+        const willOpen = !openState[sec.id];
+        // ACCORDION (2026-08-02, opt-in per panel): opening a section
+        // closes the others, so the whole panel state stays on screen.
+        if (willOpen && spec.accordion) {
+          for (const se of secEls) {
+            if (se.id === sec.id) continue;
+            openState[se.id] = false;
+            se.head.classList.remove('open');
+            se.body.classList.remove('open');
+          }
+        }
+        openState[sec.id] = willOpen;
+        head.classList.toggle('open', willOpen);
+        body.classList.toggle('open', willOpen);
         persistOpen();
       });
-      el.appendChild(head); el.appendChild(body);
+      scroll.appendChild(head); scroll.appendChild(body);
       if (sec.hint) {
         const h = document.createElement('div');
         h.className = 'lp-hint'; h.textContent = sec.hint;
@@ -5705,7 +5731,28 @@
 
     if (typeof spec.recipe === 'function') {
       recipeEl.className = 'lp-recipe';
-      el.appendChild(recipeEl);
+      if (spec.recipeCollapsed) {
+        // RECIPE DISCLOSURE (2026-08-02, opt-in): the recipe line is a
+        // spec dump, not a control — behind its own toggle head,
+        // default hidden, remembered like a section (openState.__recipe).
+        // The Copy button reads spec.recipe() directly, so copying
+        // works while collapsed.
+        if (!Object.prototype.hasOwnProperty.call(openState, '__recipe')) {
+          openState.__recipe = false;
+        }
+        const rHead = document.createElement('button');
+        rHead.className = 'lp-sec' + (openState.__recipe ? ' open' : '');
+        rHead.innerHTML = '<span class="lp-caret">▸</span><span>RECIPE — the live spec</span>';
+        recipeEl.style.display = openState.__recipe ? '' : 'none';
+        rHead.addEventListener('click', () => {
+          openState.__recipe = !openState.__recipe;
+          rHead.classList.toggle('open', openState.__recipe);
+          recipeEl.style.display = openState.__recipe ? '' : 'none';
+          persistOpen();
+        });
+        scroll.appendChild(rHead);
+      }
+      scroll.appendChild(recipeEl);
     }
     const btns = document.createElement('div');
     btns.className = 'lp-btns';
@@ -6007,8 +6054,11 @@
 //   the tree (the gods) · the band (Scriptorium + Court) · the
 //   ports (other families) · the gaps between them · the words ·
 //   the lines · the feel.
-// Every section DECLARES itself open — a control he cannot find is
-// unshipped, which has now cost four rounds.
+// FINDABLE BY STRUCTURE, NOT BY SCROLL (2026-08-02): one section
+// open at a time (accordion), every section HEAD sticky-on-screen,
+// Reset/Copy pinned in the panel foot — a control he cannot find is
+// unshipped, which has now cost four rounds, and the all-open panel
+// buried 71% of the dials below the fold at his own window.
 //
 // NOT HERE, ON PURPOSE:
 //   · Cascade | Fan (house_geometry) is CANONICAL — it changes what
@@ -6057,6 +6107,26 @@
       }
     } catch (_) { /* storage unavailable — the default already says center */ }
 
+    // ONE-TIME OPEN-MAP MIGRATION (2026-08-02): the panel is an
+    // accordion now (tree open, the rest collapsed), but every
+    // returning user's stored open map says all-open forever — the
+    // exact planted-legacy-state trap that shipped three invisible
+    // controls. Rewrite the stored map ONCE; a section John opens
+    // AFTER this ships sticks (the marker survives persistOpen, which
+    // writes the whole object back).
+    try {
+      const raw = localStorage.getItem('forge.housePanel.open.v1');
+      if (raw) {
+        const om = JSON.parse(raw);
+        if (om && typeof om === 'object' && !om.__accordionMigr) {
+          for (const k of Object.keys(om)) om[k] = (k === 'tree');
+          om.tree = true;
+          om.__accordionMigr = 1;
+          localStorage.setItem('forge.housePanel.open.v1', JSON.stringify(om));
+        }
+      }
+    } catch (_) { /* no storage — declared defaults already say tree-only */ }
+
     // [param, label, min, max, step, unit, mode] — mode names the
     // refresh deep enough for the change to appear: 'house' re-solves
     // the isolate layout, 'refocus' rebuilds per-node state, 'relabel'
@@ -6078,6 +6148,11 @@
       ['house_bed_chord',     'Row width',     0.60, 1.00, 0.01,  '×',  'house'],
       ['house_bed_fill',      'Row fill',      0.60, 1.00, 0.01,  '×',  'house'],
       ['house_bed_cap',       'Biggest god',   0.08, 0.32, 0.005, '×',  'house'],
+      // THE FAN'S OWN TWO (2026-08-02, John's asks by name): drop = the
+      // origin's offset below the house centre (×Rt; 0 = on the X axis,
+      // 0.34 = the old below-centre origin); width = degrees each side.
+      ['house_fan_dy',        'Fan drop',      0,    0.60, 0.01,  '×',  'house'],
+      ['house_fan_halfwidth', 'Fan width',     90,   140,  1,     '°',  'house'],
       // ── the band (Scriptorium + Court) ──
       ['house_band_r',        'Band radius',   0.60, 1.00, 0.005, '×',  'house'],
       ['house_band_rows',     'Band rows',     1,    4,    1,     '',   'house'],
@@ -6094,7 +6169,8 @@
       ['house_rail_glyph',    'Item size',     0.2,  0.7,  0.02,  '×',  'house'],
       // Max items = how many slots a shelf may DISPLAY (the family's
       // true count is what the header and the crown claim either way).
-      ['house_rail_cap',      'Max items',     20,   400,  10,    '',   'house'],
+      // Binds only under Band fit = cap; 'shrink' solves the cap itself.
+      ['house_rail_cap',      'Max items (cap)', 20, 400,  10,    '',   'house'],
       ['house_rail_hit',      'Item hit area', 0,    12,   0.5,   'wu', 'house'],
       // ── the ports ──
       ['house_port_inset',    'Ports ring',    0.85, 1.15, 0.005, '×',  'house'],
@@ -6137,6 +6213,9 @@
       ['house_veil',          'Veil the rest', 0,    1,    0.01,  '',   'redraw'],
       // ── the feel ──
       ['house_tween_ms',      'Morph time',    200,  800,  10,    'ms', 'redraw'],
+      // How long the camera must be still before the title re-seats
+      // (the settle-only placement law, 2026-08-02).
+      ['house_title_settle_ms', 'Title settle', 60,  600,  10,    'ms', 'redraw'],
       // Exit radius: how far out an empty click must land to leave the
       // house, as a fraction of Rh. 0 restores click-anywhere-to-leave.
       ['house_exit_r',        'Exit radius',   0,    1.4,  0.02,  '×',  'redraw'],
@@ -6157,6 +6236,9 @@
       // 'off' is the honest zero: the house holds deities only, exactly
       // as it did on 07-30.
       ['house_rails',        'Show the band', ['on', 'off']],
+      // 'shrink' solves item size so the whole family fits the band and
+      // parks only what the 0.8 wu floor refuses; 'cap' = flat Max items.
+      ['house_band_fit',     'Band fit',     ['shrink', 'cap']],
       ['house_rank_caption', 'Rank caption', ['date', 'gen', 'off'], 'redraw'],
       // FLAT is the ratified default (the toy has zero rotated text);
       // 'curved' stays so John can compare the two with one click.
@@ -6173,7 +6255,11 @@
       ['house_title_slot',   'Title spot',   ['center', 'left', 'right'], 'relabel'],
     ];
 
-    // ── THE SECTIONS — his eye, outside in. ALL OPEN. ───────────
+    // ── THE SECTIONS — his eye, outside in. ONE OPEN (2026-08-02):
+    // the all-open panel put 71% of the dials below the fold at
+    // John's own window. The law now: one section open (accordion),
+    // every section HEAD always on screen (sticky), Reset/Copy pinned
+    // in the foot — findable by structure, not by scroll. ─────────
     const SECTIONS = [
       { id: 'tree', title: 'The tree — the gods', open: true,
         hint: 'who stands where in the middle, and how big they get',
@@ -6181,6 +6267,8 @@
           { k: 'radio',  key: 'house_pack' },
           { k: 'radio',  key: 'house_ranks' },
           { k: 'radio',  key: 'house_orphans' },
+          { k: 'slider', key: 'house_fan_dy' },
+          { k: 'slider', key: 'house_fan_halfwidth' },
           { k: 'slider', key: 'house_god_size' },
           { k: 'slider', key: 'house_spread' },
           { k: 'slider', key: 'house_tree_r' },
@@ -6188,10 +6276,11 @@
           { k: 'slider', key: 'house_bed_fill' },
           { k: 'slider', key: 'house_bed_cap' },
         ] },
-      { id: 'band', title: 'The band — Scriptorium + Court', open: true,
+      { id: 'band', title: 'The band — Scriptorium + Court', open: false,
         hint: 'the ring of books and people around the gods',
         items: [
           { k: 'radio',  key: 'house_rails' },
+          { k: 'radio',  key: 'house_band_fit' },
           { k: 'slider', key: 'house_band_r' },
           { k: 'slider', key: 'house_band_rows' },
           { k: 'slider', key: 'house_band_pitch' },
@@ -6203,13 +6292,13 @@
           { k: 'slider', key: 'house_rail_cap' },
           { k: 'slider', key: 'house_rail_hit' },
         ] },
-      { id: 'ports', title: 'The ports — other families', open: true,
+      { id: 'ports', title: 'The ports — other families', open: false,
         hint: 'the outer ring you click to travel to another house',
         items: [
           { k: 'slider', key: 'house_port_inset' },
           { k: 'slider', key: 'house_port_hit' },
         ] },
-      { id: 'gaps', title: 'The gaps between them', open: true,
+      { id: 'gaps', title: 'The gaps between them', open: false,
         hint: 'clearances nothing may cross, in world units',
         items: [
           { k: 'slider', key: 'house_m_tree' },
@@ -6217,7 +6306,7 @@
           { k: 'slider', key: 'house_m_sub' },
           { k: 'slider', key: 'house_m_glyph' },
         ] },
-      { id: 'words', title: 'The words — names, dates, titles', open: true,
+      { id: 'words', title: 'The words — names, dates, titles', open: false,
         hint: 'every word the house prints',
         items: [
           { k: 'slider', key: 'house_name_max' },
@@ -6229,7 +6318,7 @@
           { k: 'radio',  key: 'house_title_slot' },
           { k: 'slider', key: 'house_hint_line' },
         ] },
-      { id: 'lines', title: 'The lines — kinship + transmission', open: true,
+      { id: 'lines', title: 'The lines — kinship + transmission', open: false,
         hint: 'the arcs from parent to child, and the wires to other families',
         items: [
           { k: 'slider', key: 'house_bones' },
@@ -6239,10 +6328,11 @@
           { k: 'radio',  key: 'house_rest_wires' },
           { k: 'slider', key: 'house_veil' },
         ] },
-      { id: 'feel', title: 'The feel — motion + the way out', open: true,
+      { id: 'feel', title: 'The feel — motion + the way out', open: false,
         hint: 'how the house moves, and where a click leaves it',
         items: [
           { k: 'slider', key: 'house_tween_ms' },
+          { k: 'slider', key: 'house_title_settle_ms' },
           { k: 'slider', key: 'house_exit_r' },
         ] },
     ];
@@ -6260,10 +6350,13 @@
         + ' · TREE god ×' + num(p.house_god_size, 1).toFixed(2)
         + ' spread ' + num(p.house_spread, 1.1).toFixed(2)
         + ' zone ' + num(p.house_tree_r, 0.86).toFixed(2)
+        + ' fandy ' + num(p.house_fan_dy, 0).toFixed(2)
+        + ' fanw ' + Math.round(num(p.house_fan_halfwidth, 108)) + '°'
         + ' bed ' + num(p.house_bed_chord, 0.74).toFixed(2)
         + '/' + num(p.house_bed_fill, 0.86).toFixed(2)
         + '/' + num(p.house_bed_cap, 0.16).toFixed(3)
         + ' · BAND ' + (p.house_rails === 'off' ? 'off' : 'on')
+        + ' fit ' + (p.house_band_fit === 'cap' ? 'cap' : 'shrink')
         + ' r ' + num(p.house_band_r, 0.86).toFixed(2)
         + ' rows ' + Math.round(num(p.house_band_rows, 3))
         + ' pitch ' + Math.round(num(p.house_band_pitch, 16))
@@ -6307,6 +6400,11 @@
       radios: RADIOS,
       sections: SECTIONS,
       radioAfter: 'houseMorph',
+      // FINDABILITY (2026-08-02): one section open at a time, sticky
+      // heads, Reset/Copy pinned in the foot, the recipe line behind a
+      // disclosure — the whole panel state on screen without a scroll.
+      accordion: true,
+      recipeCollapsed: true,
       // Its OWN keys — the LAB's blob cannot collide with these. The
       // one-time import carries over the dials John already tuned while
       // these lived in the LAB, instead of snapping to PARAM_DEFAULTS

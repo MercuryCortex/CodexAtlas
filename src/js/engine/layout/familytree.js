@@ -222,19 +222,23 @@
   // be dealt enough arc to CARRY its caption or two same-tier
   // captions abut and claim() hides one (measured: Christian's
   // "RITUALS · 5 OF 11" lost to "SYMBOLS · 12 OF 25" at 1000x1000 —
-  // a kind the header counts, captionless). 9.2 wu/char covers the
+  // a kind the header counts, captionless). 10.8 wu/char covers the
   // CAP face's mono advance at the smallest gate fit scale
-  // (9.5px × 0.62 / 0.6557); the allowance is capped so one long
-  // caption over a two-item shelf cannot crush every other shelf's
-  // pitch — past the cap it spills ±~18px into the NEIGHBOUR tier's
-  // region, which the alternating tiers absorb by construction.
-  const BAND_CAP_WU    =  9.2;   // caption arc allowance per character (wu)
-  const BAND_CAP_ARC_MAX = 120;  // allowance ceiling per shelf (wu)
+  // (11.4px (CAP × the shipped 1.2 type scale) × 0.62 / 0.6557); the
+  // allowance is capped so one long caption over a two-item shelf
+  // cannot crush every other shelf's pitch — past the cap it spills
+  // ±~18px into the NEIGHBOUR tier's region, which the alternating
+  // tiers absorb by construction.
+  const BAND_CAP_WU    =  10.8;  // caption arc allowance per character (wu)
+  const BAND_CAP_ARC_MAX = 144;  // allowance ceiling per shelf (wu)
   const RAIL_R_FRAC    =  0.40;  // glyph radius = pitch * this
   const RAIL_R_MAX     =  9;     // hard ceiling (wu)
   const RAIL_R_MIN     =  1.6;   // glyph radius floor (wu) — below this a court slot
                                  // stops being an object and the margin has to give
                                  // instead (reported as rail.squeeze.glyph)
+  const RAIL_R_FIT_MIN =  0.8;   // shrink-to-fit glyph floor (wu) — half RAIL_R_MIN.
+                                 // Below this a slot is not an object; parking resumes
+                                 // and '+N NOT SHOWN' stays the honest remainder.
   // ════════════════════════════════════════════════════════════
   // ZERO-TOLERANCE MARGINS (2026-07-31 wave 5)
   // ════════════════════════════════════════════════════════════
@@ -295,6 +299,9 @@
   // display decision, never a claim: `count` stays the family's TRUE
   // mass (what the header and the crown assert) and `overflow` is the
   // honest remainder, parked ON the crown at zero radius.
+  // Under bandFit:'shrink' (the default, 2026-08-02) the display cap
+  // is SOLVED instead — the largest count whose glyphs still reach
+  // RAIL_R_FIT_MIN — and railMax binds only in 'cap' mode.
   const RAIL_MAX       =  150;
   const WORLD_MARGIN   =  70;    // worldExtent pad beyond Rh
 
@@ -365,6 +372,12 @@
   //   railGlyph:  number  default 0.40   band glyph radius as a fraction
   //               of the solved band pitch (hard-capped by the
   //               0.49·minDist no-touch law and RAIL_R_MAX)
+  //   bandFit:    'shrink'|'cap' default 'shrink' — 'shrink' SOLVES the
+  //               display cap (largest count whose glyphs reach the
+  //               RAIL_R_FIT_MIN floor); 'cap' = the flat railMax law.
+  //   fanHalfDeg: number  default 108    the fan's DRAWN half-width in
+  //               degrees each side of 12 o'clock (clamped 60..150);
+  //               the per-ring content window scales ×11/6 with it.
   //   ── the three zones (2026-07-31 wave 3, all × Rh unless noted) ──
   //   portInset:  number  default 1.0    horizon ports ring radius
   //   bandR:      number  default 0.86   inner band centreline radius
@@ -465,6 +478,10 @@
     const capClear = Math.max(0, Math.min(60, num(o.capClear, BAND_CAP_CLEAR)));
     const railCap  = Math.max(1, Math.round(num(o.railMax, RAIL_MAX)));
     const railFrac = Math.max(0.05, Math.min(1, num(o.railGlyph, RAIL_R_FRAC)));
+    // THE BAND FITS THE FAMILY (2026-08-02). 'shrink' (default) solves
+    // the display cap so every member fits at ≥RAIL_R_FIT_MIN glyphs
+    // and parks ONLY what cannot; 'cap' is the old flat railMax law.
+    const bandFit = (o.bandFit === 'cap') ? 'cap' : 'shrink';
     const bandSpan = Math.max(0.26, Math.PI - gapRad - gapBot);
     // Shelf-label formatters — hoisted out of §7 with the band dials
     // (wave 5): docShelves runs before the tree now, so these have to
@@ -938,6 +955,15 @@
     let rowMeta = [];
     let crown;
     let fanDy = 0;
+    // THE FAN'S CUT IS A DIAL (2026-08-02). John: "control the CUT of
+    // the fan angles so i can widen them a bit... like 10 degrees each
+    // side." Degrees each side of 12 o'clock, of the DRAWN arc (the
+    // stratum arcs / date termini the chrome strikes at ±this). 108 IS
+    // today's constant; the per-ring content window scales with it
+    // (×11/6, so 108° ⇒ exactly the ratified FAN_SPAN of ±99°).
+    // An ANGLE, not a length: the lane clamp's k-scale (§ THE LANE)
+    // must NOT touch it (fanDy *= k stays; fanHalf does not scale).
+    const fanHalf = Math.max(60, Math.min(150, num(o.fanHalfDeg, 108))) * Math.PI / 180;
     if (geometry === 'cascade') {
       const beds = rows.map(row => (row.length ? bedLayout(row, C_MAX) : null));
       let totalU = 0, maxWU = 0, nB = 0;
@@ -1107,6 +1133,7 @@
       // That is a real trade and it is his to judge, so it stops being
       // a constant he cannot reach.
       fanDy = Rt * Math.max(0, Math.min(0.60, num(o.fanDy, FAN_DY)));
+      const fanSpan = fanHalf * (FAN_SPAN / (Math.PI * 0.60));   // 108° ⇒ FAN_SPAN exactly
       const rings = rows.map(row => (row.length ? bedLayout(row, Infinity) : null));
       const radU = [], braidOn = [];
       let prevRad = 0;
@@ -1125,7 +1152,7 @@
           braidOn.push(false); prevRad = radU[r]; return;
         }
         const base = prevRad ? prevRad + FAN_RING_U : FAN_R_IN_U;
-        const needFlat = (g.wU + 1) / FAN_SPAN;
+        const needFlat = (g.wU + 1) / fanSpan;
         // THE /2 IS GONE (2026-07-31, ratified in the build-order,
         // measured there at 350°+ closed annuli on Vedic/Israelite).
         // The braid staggers members ±radially but every member still
@@ -1133,7 +1160,7 @@
         // the need let a ring accept twice what ±99° can hold, and the
         // placement below (ang = xU·comp / radU) faithfully wrote the
         // overflow all the way round the circle.
-        const needBraid = (g.wU * FAN_COMP + 1) / FAN_SPAN;
+        const needBraid = (g.wU * FAN_COMP + 1) / fanSpan;
         if (needFlat <= base) { radU.push(base); braidOn.push(false); }
         else if (needBraid <= base) { radU.push(base); braidOn.push(true); }
         else { radU.push(Math.max(base, needBraid)); braidOn.push(true); }
@@ -1308,9 +1335,16 @@
       let T = 0;
       for (const g of groups) T += g.items.length;
       if (!T) return null;
+      // THE FIT IS SOLVED, NOT DIALLED (2026-08-02, John: "make the
+      // NOT SHOWN visible — the node size of the relative area can
+      // shrink to accommodate"). The old body becomes solveWithCap(cap)
+      // verbatim; under bandFit:'cap' it runs once at railCap (the old
+      // law, byte-identical), under 'shrink' the display cap is the
+      // LARGEST count whose glyphs still reach RAIL_R_FIT_MIN.
+      const solveWithCap = (cap) => {
       // Within a shelf the head is still the head of an order the
       // reader can name (docs oldest-first, court highest-degree-first).
-      const takes = spendCap(groups.map(g => g.items.length), railCap);
+      const takes = spendCap(groups.map(g => g.items.length), cap);
       const shown = [];
       const parked = [];
       for (let gi = 0; gi < groups.length; gi++) {
@@ -1441,7 +1475,25 @@
                squeeze: { port: portSqueeze, glyph: sol.glyphSqueeze },
                L: sol.L, headArc: sol.headArc, nSub: sol.nSub, cols: sol.cols,
                pitch: sol.pitch, spills: sol.spills, dr: sol.dr,
-               glyphR: sol.glyphR, thick: sol.thick };
+               glyphR: sol.glyphR, thick: sol.thick, fit: bandFit };
+      };
+      if (bandFit === 'cap') return solveWithCap(railCap);         // the old law, verbatim
+      // SHRINK: show EVERYTHING if the glyphs survive the floor…
+      const full = solveWithCap(T);
+      if (full.glyphR >= RAIL_R_FIT_MIN - 1e-9) return full;
+      // …else the display cap is the LARGEST count that still fits at
+      // the floor. lo = one slot per shelf (never delete a KIND — the
+      // W2-B law) always fits (pitch is huge, glyphR caps at
+      // RAIL_R_MAX); hi = T is known not to. Deterministic ≤ ~12
+      // probes; glyphR is non-increasing in cap once nSub has maxed
+      // (the only regime the search ever runs in — while nSub can
+      // still grow, pitch holds at pitchTgt and the floor cannot bind).
+      let lo = Math.min(T, groups.length), hi = T;
+      while (hi - lo > 1) {
+        const mid = (lo + hi) >> 1;
+        if (solveWithCap(mid).glyphR >= RAIL_R_FIT_MIN - 1e-9) lo = mid; else hi = mid;
+      }
+      return solveWithCap(lo);
     }
     // PLACE — the solved band, now that the crown exists. Nothing
     // here re-decides a size; it only walks the arc.
@@ -1506,6 +1558,7 @@
       // title attached). The header rides tier 1 so it can never
       // claim() against the tier-0 first shelf caption.
       const rail = { side, count: sol.count, shown: sol.shown, overflow: sol.count - sol.shown,
+                     fit: sol.fit,
                      pitch, glyphR,
                      nSub, dr, r: rC, rIn: rC - thick / 2, rOut: rC + thick / 2,
                      a0: angAt(0), a1: angAt(L), gapRad, gapBotRad: gapBot,
@@ -1748,7 +1801,7 @@
           },
         },
         pitch: P,
-        fanDy,
+        fanDy, fanHalf,
         crown,
         rows: rows.map(row => row.map(i => tree[i].id)),
         rowMeta,

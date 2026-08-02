@@ -84,6 +84,12 @@ function houseFor(fam, geometry, extra) {
     // exactly the stale-mirror trap that let the old titleAnchor replica
     // stay green after the view stopped using it.
     fanDy: 0,
+    // house_fan_halfwidth ships at 108° (2026-08-02). The engine
+    // fallback happens to equal the app default today; the explicit
+    // mirror is what keeps this green-for-the-right-reason if either
+    // moves. bandFit is deliberately omitted: the engine default
+    // 'shrink' IS the app default.
+    fanHalfDeg: 108,
   }, extra || {}));
 }
 
@@ -147,6 +153,9 @@ function houseUnion(fam, geometry, extra) {
     // exactly the stale-mirror trap that let the old titleAnchor replica
     // stay green after the view stopped using it.
     fanDy: 0,
+    // house_fan_halfwidth ships at 108° (2026-08-02) — see houseFor.
+    // bandFit omitted on purpose: engine default 'shrink' IS the app's.
+    fanHalfDeg: 108,
   }, extra || {}));
   lay._guests = guests;
   lay._nodes = nodes;
@@ -391,7 +400,10 @@ console.log('\n── W6 · cycle guard idle + fan span, every gate family ─�
 {
   const W6_FAMS = ['Greek', 'Norse', 'Vedic', 'Christian', 'Chinese', 'Egyptian',
     'Mesopotamian', 'Celtic', 'Mesoamerican', 'Baltic', 'Other', 'Islamic', 'Buddhist'];
-  const FAN_SPAN_LIM = Math.PI * 1.10 + 0.03;   // the declared window + rounding air
+  // drawn-half° → content window + rounding air (the engine scales its
+  // per-ring window ×11/6 with the fanHalfDeg dial, 2026-08-02)
+  const spanLim = (deg) => deg * (11 / 6) * Math.PI / 180 + 0.03;
+  const FAN_SPAN_LIM = spanLim(108);   // === Math.PI * 1.10 + 0.03, the shipped default
   let w6cyc = 0, w6span = 0, w6worst = 0;
   for (const fam of W6_FAMS) {
     for (const geo of ['cascade', 'fan']) {
@@ -421,56 +433,138 @@ console.log('\n── W6 · cycle guard idle + fan span, every gate family ─�
   }
   if (w6cyc === 0) ok('cycle guard idle across ' + W6_FAMS.length + ' families × both geometries');
   if (w6span === 0) ok('every fan ring inside its ±99° window (worst ' + (w6worst * 180 / Math.PI).toFixed(1) + '°)');
+  // ── THE DIAL EXTREMES (2026-08-02): the content window follows the
+  // fanHalfDeg dial, and every ring stays inside it at both ends of
+  // the panel's range.
+  let dialBad = 0;
+  for (const deg of [140, 90]) {
+    for (const fam of ['Greek', 'Vedic']) {
+      const lay = houseFor(fam, 'fan', { fanHalfDeg: deg });
+      const ctr = lay.house.center, fy = ctr.y + (lay.house.fanDy || 0);
+      let worstDeg = 0;
+      for (const row of lay.house.rows) {
+        if (!row || row.length < 2) continue;
+        let amin = Infinity, amax = -Infinity, all = true;
+        for (const id of row) {
+          const p = lay.positions.get(id);
+          if (!p) { all = false; break; }
+          let a = Math.atan2(p.y - fy, p.x - ctr.x) + Math.PI / 2;
+          if (a > Math.PI) a -= 2 * Math.PI;
+          if (a < amin) amin = a;
+          if (a > amax) amax = a;
+        }
+        if (!all) continue;
+        const ext = amax - amin;
+        if (ext > worstDeg) worstDeg = ext;
+        if (ext > spanLim(deg)) {
+          dialBad++;
+          fail(fam + ' @fanHalfDeg=' + deg + ': ring spans '
+            + (ext * 180 / Math.PI).toFixed(1) + '° > window ' + (spanLim(deg) * 180 / Math.PI).toFixed(1) + '°');
+        }
+      }
+      if (lay.house.fanHalf !== deg * Math.PI / 180) {
+        dialBad++;
+        fail(fam + ' @fanHalfDeg=' + deg + ': house.fanHalf reports '
+          + lay.house.fanHalf + ' — the chrome would strike the wrong arc');
+      }
+    }
+  }
+  if (dialBad === 0) ok('fanHalfDeg 90/140: every ring inside its scaled window, house.fanHalf reported (Greek + Vedic)');
 }
 
-// THE RAILS (2026-07-31) — the union input the view now feeds.
-// Greek is the reference family: 241 vault nodes = 80 deities +
-// 24 documents + 137 court. If any of these three numbers moves,
-// the crown and both rail headers are lying.
+// THE RAILS (2026-07-31; DERIVED 2026-08-02) — the union input the
+// view now feeds. The expected split is COUNTED FROM THE LIVE VAULT
+// by type/family, independently of the layout's own membership
+// machinery — hand-pinned snapshots (80/24/137) went stale the
+// moment the ingestion engines grew the vault mid-session, and a
+// composition pin that flaps with content work protects nothing.
+// The LAW is unchanged: the crown and both rail headers must equal
+// what the vault actually holds.
+function vaultSplit(fam) {
+  const fams = NODES.filter(n => n && n.id && (n.family || 'Other') === fam);
+  const tree = fams.filter(n => n.type === 'deity').length;
+  const docs = fams.filter(n => n.type === 'document').length;
+  return { total: fams.length, tree, docs, court: fams.length - tree - docs };
+}
 checkUnion('Greek', 'cascade', (r, h) => {
-  const want = { tree: 80, docs: 24, court: 137 };
+  const want = vaultSplit('Greek');
   if (h.stats.tree === want.tree && h.stats.docs === want.docs && h.stats.court === want.court) {
-    ok('Greek splits {tree:80, docs:24, court:137} — the vault\'s real composition');
+    ok('Greek splits {tree:' + want.tree + ', docs:' + want.docs + ', court:' + want.court
+      + '} — the vault\'s real composition, counted independently');
   } else {
     fail('Greek split is {tree:' + h.stats.tree + ', docs:' + h.stats.docs
-      + ', court:' + h.stats.court + '}, expected {80, 24, 137}');
+      + ', court:' + h.stats.court + '}, the vault holds {' + want.tree + ', ' + want.docs + ', ' + want.court + '}');
   }
-  if (h.rails.left && h.rails.left.count === 24) ok('rails.left.count === 24 (THE SCRIPTORIUM — 24 DOCS)');
-  else fail('rails.left.count is ' + (h.rails.left ? h.rails.left.count : 'null') + ', expected 24');
-  if (h.rails.right && h.rails.right.count === 137) ok('rails.right.count === 137 (THE COURT — 137 OF ALL KINDS)');
-  else fail('rails.right.count is ' + (h.rails.right ? h.rails.right.count : 'null') + ', expected 137');
+  if (h.rails.left && h.rails.left.count === want.docs) ok('rails.left.count === ' + want.docs + ' (THE SCRIPTORIUM header)');
+  else fail('rails.left.count is ' + (h.rails.left ? h.rails.left.count : 'null') + ', expected ' + want.docs);
+  if (h.rails.right && h.rails.right.count === want.court) ok('rails.right.count === ' + want.court + ' (THE COURT header)');
+  else fail('rails.right.count is ' + (h.rails.right ? h.rails.right.count : 'null') + ', expected ' + want.court);
   if (!h.rails.left.overflow && !h.rails.right.overflow) ok('Greek fits under the cap — nothing off-stage');
   else fail('Greek should not overflow the default cap');
 });
 checkUnion('Greek', 'fan');
-// Christian is the CAP case: 125 docs + 330 court, so the court rail
-// must truncate to the cap and report the remainder honestly.
+// Christian is the SHRINK case now (2026-08-02, bandFit='shrink' is
+// the default): 330 court ALL on stage — the display cap is solved
+// down to the 0.8 wu glyph floor, not dialled. The old flat law is
+// still reachable behind bandFit:'cap' and pinned right below.
 checkUnion('Christian', 'cascade', (r, h) => {
-  if (h.stats.docs === 125 && h.stats.court === 330) ok('Christian splits {docs:125, court:330}');
-  else fail('Christian split is {docs:' + h.stats.docs + ', court:' + h.stats.court + '}, expected {125, 330}');
-  const rr = h.rails.right;
-  if (rr && rr.shown <= 150 && rr.overflow === rr.count - rr.shown && rr.overflow > 0) {
-    ok('court rail capped at ' + rr.shown + ' with ' + rr.overflow + ' honestly parked');
+  const want = vaultSplit('Christian');
+  if (h.stats.docs === want.docs && h.stats.court === want.court) {
+    ok('Christian splits {docs:' + want.docs + ', court:' + want.court + '} (live vault count)');
   } else {
-    fail('court rail cap/overflow wrong: shown=' + (rr && rr.shown) + ' overflow=' + (rr && rr.overflow));
+    fail('Christian split is {docs:' + h.stats.docs + ', court:' + h.stats.court
+      + '}, the vault holds {' + want.docs + ', ' + want.court + '}');
+  }
+  const rr = h.rails.right;
+  if (rr && rr.overflow === 0 && rr.shown === rr.count && rr.glyphR >= 0.8 - 1e-9) {
+    ok('court rail SHRINKS to fit: all ' + rr.count + ' on stage at glyphR '
+      + rr.glyphR.toFixed(2) + ' wu (>= the 0.8 floor)');
+  } else {
+    fail('court rail should fit whole under bandFit=shrink: shown=' + (rr && rr.shown)
+      + ' overflow=' + (rr && rr.overflow) + ' glyphR=' + (rr && rr.glyphR));
   }
 });
-// Norse is the small case John will click second: 2 docs, 25 court.
+// …and the OLD law, reachable and untouched behind the dial:
+{
+  const h = houseUnion('Christian', 'cascade', { bandFit: 'cap' }).house;
+  const rr = h.rails.right;
+  if (rr && rr.shown === Math.min(150, rr.count) && rr.overflow === rr.count - rr.shown
+      && rr.overflow > 0) {
+    ok('bandFit=cap: the flat Max-items law still binds (Christian court shown '
+      + rr.shown + ', ' + rr.overflow + ' honestly parked)');
+  } else {
+    fail('bandFit=cap regressed: shown=' + (rr && rr.shown) + ' overflow=' + (rr && rr.overflow));
+  }
+}
+// Norse is the small case John will click second.
 checkUnion('Norse', 'cascade', (r, h) => {
-  if (h.stats.docs === 2 && h.stats.court === 25) ok('Norse splits {docs:2, court:25}');
-  else fail('Norse split is {docs:' + h.stats.docs + ', court:' + h.stats.court + '}, expected {2, 25}');
+  const want = vaultSplit('Norse');
+  if (h.stats.docs === want.docs && h.stats.court === want.court) {
+    ok('Norse splits {docs:' + want.docs + ', court:' + want.court + '} (live vault count)');
+  } else {
+    fail('Norse split is {docs:' + h.stats.docs + ', court:' + h.stats.court
+      + '}, the vault holds {' + want.docs + ', ' + want.court + '}');
+  }
 });
 // Chinese keeps the degrade path honest with guests present.
 checkUnion('Chinese', 'cascade', (r, h) => {
-  if (h.stats.tree === 32) ok('Chinese tree still 32 deities with 90 guests resident');
-  else fail('Chinese tree moved to ' + h.stats.tree + ' — guests leaked into the cascade');
+  const want = vaultSplit('Chinese');
+  if (h.stats.tree === want.tree) ok('Chinese tree holds the vault\'s ' + want.tree + ' deities with guests resident');
+  else fail('Chinese tree is ' + h.stats.tree + ' vs the vault\'s ' + want.tree + ' — guests leaked into the cascade');
 });
-// 'Other' is the pathological family: 2,336 guests. Both rails must
-// stay capped, nothing may go non-finite, and it must not hang.
+// 'Other' is the pathological family: 2,336 guests. Even shrink hits
+// its floor here — the remainder stays honestly parked, nothing may
+// go non-finite, and it must not hang.
 checkUnion('Other', 'cascade', (r, h) => {
   const rr = h.rails.right;
-  if (rr && rr.count === 2317 && rr.shown <= 150) ok('Other: 2,317 in the court, ' + rr.shown + ' on stage');
-  else fail('Other court rail: count=' + (rr && rr.count) + ' shown=' + (rr && rr.shown));
+  const wantO = vaultSplit('Other');
+  if (rr && rr.count === wantO.court && rr.overflow > 0 && rr.glyphR <= 0.8 + 0.05) {
+    ok('Other: ' + wantO.court + ' in the court (live vault count) — shrink shows '
+      + rr.shown + ' at the 0.8 wu floor, ' + rr.overflow + ' honestly parked');
+  } else {
+    fail('Other court rail: count=' + (rr && rr.count) + ' (vault ' + wantO.court + ') shown=' + (rr && rr.shown)
+      + ' overflow=' + (rr && rr.overflow) + ' glyphR=' + (rr && rr.glyphR));
+  }
   let bad = 0;
   for (const [, p] of r.positions) if (!isFinite(p.x) || !isFinite(p.y)) bad++;
   if (bad === 0) ok('Other: all ' + r.positions.size + ' positions finite');
@@ -557,14 +651,14 @@ const NODE_BY_ID = new Map(NODES.map(n => [n.id, n]));
 console.log('\n── W2-A · the crown noun vs the cascade\'s real composition ──');
 must(/const nodeWord = st\.treeKind[\s\S]{0,120}'MEMBERS';/,
   'the crown noun comes from stats.treeKind, not the mode registry');
-// ONE TITLE, ONE SUBTITLE (2026-08-01). The two-stat-line stack is
-// gone — it was three headlines pretending to be a title block. The
-// subtitle still counts stats.tree with the treeKind noun AND still
-// states the scriptorium and the court, which is the honesty the old
-// line2 existed for; it just says all of it on one line.
-must(/const lineC = st\.tree \+ ' ' \+ nodeWord/, 'the subtitle counts stats.tree with that noun');
-must(/st\.docs \+ ' SCRIPTORIUM · ' \+ st\.court \+ ' COURT'/,
-  'the subtitle still states the scriptorium and the court — zero is stated, never hidden');
+// ONE TITLE, ONE SUBTITLE (2026-08-01; SHORTENED 2026-08-02). The
+// two-stat-line stack is gone, and the SCRIPTORIUM/COURT counts now
+// return to the subtitle ONLY when their band does not stand — the
+// standing band's own header (larger, on the arc) already states
+// them. The zero-room honesty rule survives in the conditional.
+must(/let lineC = st\.tree \+ ' ' \+ nodeWord/, 'the subtitle counts stats.tree with that noun');
+must(/if \(!railL\) lineC \+= ' · ' \+ st\.docs \+ ' SCRIPTORIUM';\s*\n\s*if \(!railR\) lineC \+= ' · ' \+ st\.court \+ ' COURT';/,
+  'the scriptorium/court counts return to the subtitle only where no band stands — zero stated, never hidden');
 // the view's law, mirrored verbatim (kindShelves' pluralisation)
 const crownNoun = (treeKind) => treeKind
   ? (String(treeKind) + 's').replace(/ys$/, 'ies').toUpperCase()
@@ -677,6 +771,33 @@ for (const [fam, modeType] of [['Christian', 'deity'], ['Other', 'deity'], ['Oth
   } else {
     fail(fam + '/' + modeType + ': ' + badR + ' parked items lack an explicit radius 0, ' + offCrown + ' are off the crown');
   }
+}
+
+// ── W2-D ▸ PARKING ONLY AT THE FLOOR (2026-08-02, bandFit=shrink) ──
+// Under the default shrink law a rail may park members ONLY because
+// the 0.8 wu glyph floor refused them — an overflow at a fat glyph
+// would mean the solved cap is lying (this is also the empirical
+// guard on the binary search's monotonicity assumption).
+console.log('\n── W2-D · shrink parks only at the glyph floor ──');
+{
+  let w2dBad = 0, w2dRuns = 0;
+  for (const fam of ['Greek', 'Christian', 'Norse', 'Vedic', 'Other']) {
+    for (const geo of ['cascade', 'fan']) {
+      const h = houseUnion(fam, geo).house;
+      for (const rl of [h.rails.left, h.rails.right]) {
+        if (!rl) continue;
+        w2dRuns++;
+        if (!(rl.overflow === 0 || rl.glyphR <= 0.8 + 0.05)) {
+          w2dBad++;
+          fail(fam + '/' + geo + ' ' + (rl.side < 0 ? 'SCRIPTORIUM' : 'COURT')
+            + ': parked ' + rl.overflow + ' with glyphR ' + rl.glyphR.toFixed(2)
+            + ' wu ABOVE the floor — the solved cap is sub-maximal');
+        }
+      }
+    }
+  }
+  if (!w2dBad) ok('every standing rail: overflow 0 OR glyphs at the 0.8 wu floor ('
+    + w2dRuns + ' rails, 5 families × 2 geometries)');
 }
 
 // ── W4 ▸ THE RING WRITES ON ITS OWN CURVE — every promised string
@@ -863,137 +984,187 @@ function flatSim(placed, text, rWu, aRef, sizePx, scale, ctrX, ctrY, vpH, opts) 
     ? { x: gx, y: gy, leftSide } : null;
 }
 const RING_VPS = [{ w: 1440, h: 900 }, { w: 1280, h: 800 }, { w: 1000, h: 1000 }, { w: 900, h: 1600 }];
-// THE TITLE ANCHOR (re-ratified 2026-07-31) — mirrors forge.js's
-// houseTitleAnchor. The DEFAULT slot is 'center': the toy's crown
-// law — centred on the house, the stack hanging above the ring's
-// 12 o'clock gap (or the crown when no band stands), projected
-// through the camera but PAINT-ONLY (no world reservation). The
-// wave-4 corners remain as dials and keep their no-camera claim.
-const TITLE_PAD = 24, TITLE_TOP = 66;
-// ── THE TITLE TAKES THE EMPTY AIR (2026-08-01) ─────────────────────
-// Mirrors forge.js houseTitleGap + houseTitleAnchor. The old replica
-// here mirrored the old law (project the house top, hang the stack
-// above it) and kept passing after the view stopped doing that — a
-// gate testing its own fiction. This one walks the same interval list
-// the view walks, so a family whose column has no room fails HERE
-// instead of in a screenshot.
-const TITLE_RIM = 30, TITLE_GAP = 14;
-const titleGapOf = (vp, h, W2S, lay, cxPx, halfW, pxPerWorld, topPx, botPx, needH) => {
-  const colL = cxPx - halfW, colR = cxPx + halfW;
-  const lo0 = topPx + TITLE_RIM, hi0 = botPx - TITLE_RIM;
-  const iv = [];
-  let treeMin = Infinity, treeMax = -Infinity, tag = '?';
-  const box = (x0, x1, y0, y1) => {
-    if (x1 < colL || x0 > colR) return;
-    iv.push([y0 - TITLE_GAP, y1 + TITLE_GAP, tag]);
-  };
-  const disc = (wx, wy, wr) => {
-    const s = W2S(wx, wy); const rp = (wr || 0) * pxPerWorld;
-    box(s.x - rp, s.x + rp, s.y - rp, s.y + rp);
-  };
-  const pos = lay.positions, rad = lay.radii;
-  tag = 'tree';
-  for (const row of (h.rows || [])) {
-    for (const id of row) { const p = pos && pos.get(id); if (p) disc(p.x, p.y, (rad && rad.get(id)) || 0); }
+// ══ THE TITLE, LIFTED (2026-08-02) ═══════════════════════════════
+// The old titleGapOf/titleAnchor replicas here went stale TWICE (a
+// gate scoring its own fiction both times — rowH*3 vs the app's
+// rowH*2, dead line1/line2 strings, a 400px name keepout vs the
+// app's published 800). DELETED. The gate now LIFTS the REAL
+// functions out of forge.js — houseRankCapAnchor, houseTitleGap,
+// houseTitleAnchor — and EXECUTES them against a stub camera (the
+// check-house-interaction.mjs pattern), so the settle-only pin, the
+// zoom-out outside search and the anchor law are the shipped text,
+// not a re-derivation of it.
+must(/const HOUSE_TITLE_PAD = 24;/, 'HOUSE_TITLE_PAD is 24 (pinned; the lift does not re-declare it)');
+must(/const HOUSE_TITLE_TOP = 66;/, 'HOUSE_TITLE_TOP is 66');
+let liftedTitleFactory = null;
+{
+  const LIFT_NAMES = ['houseRankCapAnchor', 'houseTitleGap', 'houseTitleAnchor'];
+  let src = '', liftOK = true;
+  for (const nm of LIFT_NAMES) {
+    const m2 = forgeSrc.match(new RegExp('\\n    function ' + nm + '\\([\\s\\S]*?\\n    \\}\\n'));
+    if (!m2) { fail('could not lift ' + nm + ' out of forge.js'); liftOK = false; continue; }
+    src += m2[0];
   }
-  for (const s of iv) {
-    if (s[2] !== 'tree') continue;
-    if (s[0] < treeMin) treeMin = s[0];
-    if (s[1] > treeMax) treeMax = s[1];
+  if (liftOK) {
+    liftedTitleFactory = new Function('local', 'camera', 'HOUSE_TITLE_PAD', 'HOUSE_TITLE_TOP',
+      src + '\nreturn { houseTitleAnchor, houseTitleGap, houseRankCapAnchor };');
+    ok('lifted the REAL houseTitleAnchor / houseTitleGap / houseRankCapAnchor out of forge.js');
   }
-  tag = 'other';
-  const rails = h.rails || {};
-  for (const rl of [rails.left, rails.right]) {
-    if (!rl || !rl.shelves) continue;
-    for (const sh of rl.shelves) for (const it of (sh.items || [])) disc(it.x, it.y, rl.glyphR || 0);
-  }
-  for (const pt of (lay.ports || [])) disc(pt.x, pt.y, pt.r || 0);
-  // the era captions are content and place AFTER the title — same law
-  const CAP_W = 112, CAP_H = 7, capOff = 14;
-  for (const rm of (h.rowMeta || [])) {
-    let a = null;
-    if (h.geometry === 'cascade') {
-      if (rm.y != null && rm.n) {
-        const s = W2S(h.center.x - rm.half * 0.94, (rm.lineY != null) ? rm.lineY : rm.y);
-        a = { x: s.x + capOff, y: s.y };
+}
+// A stub camera that projects linearly about the viewport centre and
+// reads its own LIVE state, so a scale write mid-test projects
+// exactly like the real one.
+const titleCam = (s, cx, cy) => {
+  const cam = { state: { scale: s, centerX: cx || 0, centerY: cy || 0 } };
+  cam.worldToScreen = (x, y, vp2) => ({
+    x: vp2.w / 2 + (x - cam.state.centerX) * cam.state.scale,
+    y: vp2.h / 2 + (y - cam.state.centerY) * cam.state.scale,
+  });
+  cam.isAnimating = () => false;
+  return cam;
+};
+const titleLocal = (lay, slot) => ({
+  params: { house_title_slot: slot || 'center', house_type_scale: 1, house_rank_cap_off: 14 },
+  _house: lay ? { lay } : null,
+});
+// One call = the real anchor at a given camera; fits/side/pin read
+// back off the stub local exactly as the app's own probes do.
+const runTitle = (localS, cam, vp) => {
+  const fns = liftedTitleFactory(localS, cam, 24, 66);
+  const a = fns.houseTitleAnchor(vp);
+  return { a, fns,
+    fits: localS._houseTitleFits !== false,
+    gap: localS._houseTitleGap || null,
+    pin: localS._houseTitlePin || null };
+};
+// ── THE SETTLE-ONLY LAW, EXECUTED (2026-08-02) ─────────────────────
+// (a) SETTLE-ONLY: after a decision, a camera move WITHOUT a redecide
+//     must project the pinned world offset rigidly — no hole search.
+// (b) ZOOM-OUT: when the circle is too small to hold the block, the
+//     redecided seat is OUTSIDE the circle, never on the drawing.
+// (c) ANTI-TELEPORT: a geometry flip that carries the pin (the chip
+//     path) keeps the block's screen seat to the pixel.
+console.log('\n── TITLE · settle-only / zoom-out / anti-teleport, executed ──');
+if (liftedTitleFactory) {
+  const rowH2 = rowOf(T_HEAD);
+  const blockH2 = rowH2 * 2 + 16 + 8;
+  let sBad = 0, sRuns = 0, zBad = 0, zSeen = 0, tBad = 0, tRuns = 0;
+  for (const fam of ['Greek', 'Vedic', 'Christian', 'Norse']) {
+    const lays = { cascade: houseUnion(fam, 'cascade'), fan: houseUnion(fam, 'fan') };
+    for (const vp of RING_VPS) {
+      const fit = Math.min(vp.w, vp.h) / (2 * (540 + 70));
+      for (const geo of ['cascade', 'fan']) {
+        const lay = lays[geo];
+        // (a) SETTLE-ONLY
+        const tl = titleLocal(lay);
+        const cam = titleCam(fit, 0, 0);
+        const r1 = runTitle(tl, cam, vp);
+        const pin = tl._houseTitlePin;
+        if (!pin) { sBad++; fail(fam + '/' + geo + ' @' + vp.w + 'x' + vp.h + ': no pin after the decision'); continue; }
+        const dyW = pin.dyW;
+        cam.state.scale = fit * 0.5;                 // mid-gesture: NO redecide
+        const fns = liftedTitleFactory(tl, cam, 24, 66);
+        const a2 = fns.houseTitleAnchor(vp);
+        const yRaw = vp.h / 2 + dyW * cam.state.scale;
+        const yMax2 = Math.max(66, vp.h - 58 - rowH2 * 2 - 10);
+        const yExp = Math.max(66, Math.min(yMax2, yRaw));
+        sRuns++;
+        if (Math.abs(a2.y - yExp) > 0.5 || tl._houseTitlePin !== pin
+            || tl._houseTitlePin.dyW !== dyW) {
+          sBad++;
+          fail(fam + '/' + geo + ' @' + vp.w + 'x' + vp.h + ': mid-gesture anchor re-decided (y '
+            + a2.y.toFixed(1) + ' vs rigid ' + yExp.toFixed(1) + ')');
+        }
+        // (b) ZOOM-OUT — redecide at small scales; whenever the inside
+        // column cannot hold the block, the seat is OUTSIDE.
+        for (const k of [0.4, 0.15, 0.08]) {
+          cam.state.scale = fit * k;
+          tl._houseTitlePin.redecide = true;
+          liftedTitleFactory(tl, cam, 24, 66).houseTitleAnchor(vp);
+          const g = tl._houseTitleGap;
+          const rPx = 540 * cam.state.scale;
+          if (2 * rPx - 60 < blockH2) {
+            zSeen++;
+            const topPx = vp.h / 2 - rPx, botPx = vp.h / 2 + rPx;
+            const off = g && (g.hi <= topPx - 14 + 1 || g.lo >= botPx + 14 - 1);
+            if (!g || g.outside !== true || !off) {
+              zBad++;
+              fail(fam + '/' + geo + ' @' + vp.w + 'x' + vp.h + ' ×' + k
+                + ': zoomed-out title stands ON the drawing (outside=' + (g && g.outside)
+                + ' gap=[' + (g && g.lo && g.lo.toFixed(0)) + ',' + (g && g.hi && g.hi.toFixed(0))
+                + '] circle=[' + topPx.toFixed(0) + ',' + botPx.toFixed(0) + '])');
+            }
+          }
+        }
       }
-    } else if (rm.n && rm.rad > 0) {
-      const aW = -Math.PI / 2 - Math.PI * 0.60;
-      const s = W2S(h.center.x + Math.cos(aW) * rm.rad,
-                    h.center.y + (h.fanDy || 0) + Math.sin(aW) * rm.rad);
-      a = { x: s.x + capOff * (8 / 14) + 4, y: s.y };
+      // (c) ANTI-TELEPORT — decide on cascade, carry the pin to fan
+      // with the key rewritten (the refreshHouse chip path), same
+      // camera: the block must not move a pixel.
+      const tlC = titleLocal(lays.cascade);
+      const camC = titleCam(fit, 0, 0);
+      const rC = runTitle(tlC, camC, vp);
+      tRuns++;
+      tlC._house.lay = lays.fan;
+      tlC._houseTitlePin.key = tlC._houseTitlePin.key.replace(/\|(cascade|fan)\|/, '|fan|');
+      const rF = liftedTitleFactory(tlC, camC, 24, 66).houseTitleAnchor(vp);
+      if (Math.abs(rF.y - rC.a.y) >= 1) {
+        tBad++;
+        fail(fam + ' @' + vp.w + 'x' + vp.h + ': cascade→fan flip TELEPORTED the block '
+          + Math.abs(rF.y - rC.a.y).toFixed(0) + 'px');
+      }
     }
-    if (a) box(a.x, a.x + CAP_W, a.y - CAP_H, a.y + CAP_H);
   }
-  iv.sort((a, b) => a[0] - b[0]);
-  const holes = [];
-  let cur = lo0;
-  for (const s of iv) {
-    if (s[0] > cur && cur < hi0) holes.push({ lo: cur, hi: Math.min(s[0], hi0) });
-    if (s[1] > cur) cur = s[1];
-    if (cur >= hi0) break;
+  if (!sBad) ok('SETTLE-ONLY: ' + sRuns + ' mid-gesture projections rigid with the world (4 families × 4 vps × 2 geometries)');
+  if (!zBad) ok('ZOOM-OUT: all ' + zSeen + ' too-small-circle cases seat the block OUTSIDE the circle');
+  if (zSeen === 0) fail('ZOOM-OUT assertion never triggered — the scale ladder no longer reaches the small-circle regime');
+  if (!tBad) ok('ANTI-TELEPORT: ' + tRuns + ' carried-pin geometry flips hold the seat to <1px');
+}
+// ── THE SETTLE MACHINERY, PINNED (source) ──────────────────────────
+must(/house_title_settle_ms: 180,/, 'house_title_settle_ms ships at 180');
+must(/local\._houseTitlePin = \{ key, dyW: \(y - c\.y\) \/ pxPerWorld,/,
+  'a decision writes the pin (dyW in world units — the block rides the world between settles)');
+must(/y = c\.y \+ pin\.dyW \* pxPerWorld;/,
+  'the projection path is RIGID — no hole search mid-gesture');
+must(/local\._houseTitlePin\.redecide = true;\s*\n\s*local\._labelsIdleCamS = null; local\._hullsIdleCamS = null;/,
+  'the rest watcher re-arms the decision AND busts both idle caches (rest is a dead loop otherwise)');
+must(/local\._houseTitlePin\.key = local\._houseTitlePin\.key/,
+  'a chip flip HOLDS the pin with its key rewritten — a control must not move because you used it');
+must(/if \(local\._houseTitlePin\) local\._houseTitlePin\.redecide = true;/,
+  'houseSettle() forces the settled decision for headless harnesses (the frozen-rAF lesson)');
+// ── THE ONE-PAINTER LAW + SUBTITLE LOD, PINNED (source) ────────────
+must(/labelEl\.style\.opacity = '0'; labelEl\._lastVis = '0';/,
+  'the SVG hull label paints NOTHING in the house — invisible click-target only (the "vEDIC" double-paint fix)');
+must(/halo\(String\(house\.groupKey \|\| ''\)\.toUpperCase\(\), cs\.x, cs\.y\);/,
+  'the family name paints on the CANVAS, atomic with the subtitle (one painter owns the block)');
+must(/const rel = fitS > 0 \? \(camera\.state\.scale \|\| 1\) \/ fitS : 1;/,
+  'the subtitle LOD derives from the house\u2019s own fit scale');
+must(/rel <= 0\.8 \? 0 : \(rel >= 1\.1 \? 1/,
+  'subtitle + chips ramp in between 0.8x and 1.1x of house fit');
+must(/fv-isolated'\)\) fade = 1;/,
+  'the hull overlay fade is EXEMPT in the house — the invisible click-target and chips stay positioned');
+must(/chipsG\.style\.opacity = subA\.toFixed\(3\);/,
+  'the chips ride the same LOD ramp as the subtitle');
+must(/let lineC = st\.tree \+ ' ' \+ nodeWord/, 'the subtitle counts stats.tree with the treeKind noun');
+must(/if \(!railL\) lineC \+= ' · ' \+ st\.docs \+ ' SCRIPTORIUM';/,
+  'the SCRIPTORIUM count returns to the subtitle ONLY when its band does not stand (zero-room honesty)');
+must(/if \(!railR\) lineC \+= ' · ' \+ st\.court \+ ' COURT';/,
+  'the COURT count likewise — an honest 0 is stated, never hidden');
+must(/Math\.max\(w \* 1\.4 \+ 24, 400\)/,
+  'the centre slot publishes the 400px half-width name reserve (the 800px keepout row)');
+must(/const blockH = rowH \* 2 \+ NAME_RISE \+ 8/,
+  'the block is name + ONE subtitle + chips — rowH*2 (the old 4-row model is dead law)');
+// ── THE DATE AXIS, PINNED (source) ─────────────────────────────────
+{
+  const iAxis = forgeSrc.indexOf('1c \u25b8');
+  const iBand = forgeSrc.indexOf('renderBandCaptions(ctx, placed');
+  if (iAxis !== -1 && iBand !== -1 && iAxis < iBand) {
+    ok('the date axis claims BEFORE the band captions (paint order 1c < 2)');
+  } else {
+    fail('the date axis does not precede renderBandCaptions in the paint (iAxis=' + iAxis + ' iBand=' + iBand + ')');
   }
-  if (cur < hi0) holes.push({ lo: cur, hi: hi0 });
-  // THE TITLE GOES WHERE THE CHART ISN'T — mirrors forge.js. The side
-  // is decided by where the tree's own mass sits (cascade: centred →
-  // top; fan: crests high → the empty bottom), and only then does size
-  // choose between the holes on that side.
-  const cMid = (topPx + botPx) / 2;
-  const treeMid = (treeMin <= treeMax) ? (treeMin + treeMax) / 2 : cMid;
-  const prefer = (treeMid < cMid - 40) ? 'below' : 'above';
-  const sideOf = (g) => (((g.lo + g.hi) / 2) < cMid ? 'above' : 'below');
-  const pickIn = (side, need) => {
-    let b = null;
-    for (const g of holes) {
-      if (g.hi - g.lo <= 0) continue;
-      if (side && sideOf(g) !== side) continue;
-      if (need != null && (g.hi - g.lo) < need) continue;
-      if (!b || (g.hi - g.lo) > (b.hi - b.lo)) b = g;
-    }
-    return b;
-  };
-  let best = pickIn(prefer, needH)
-          || pickIn(prefer === 'below' ? 'above' : 'below', needH)
-          || pickIn(prefer, null)
-          || pickIn(null, null);
-  const fits = !!best && (best.hi - best.lo) >= needH;
-  if (!fits) { for (const g of holes) { if (g.hi - g.lo > 0) { best = g; break; } } }
-  if (!best) best = { lo: lo0, hi: hi0 };
-  return { gap: best, fits, holes };
-};
-const titleAnchor = (vp, slot, h, W2S, lay) => {
-  if (slot === 'left' || slot === 'right') {
-    return {
-      right: slot === 'right', center: false, compact: false,
-      x: (slot === 'right') ? Math.max(TITLE_PAD, vp.w - TITLE_PAD) : TITLE_PAD,
-      y: TITLE_TOP,
-    };
-  }
-  const rowH = rowOf(T_HEAD), NAME_RISE = 16;
-  // TITLE + SUBTITLE, AND NOTHING ELSE (forge.js 2026-08-01; mirror
-  // caught up 2026-08-02) — the app dropped the two-stat-line stack:
-  // the block is name + ONE subtitle (lineC, always) + chips, so
-  // blockH is rowH·2 and there is no taller non-compact form. The old
-  // 4-row model here was a gate testing its own fiction.
-  const blockH = rowH * 2 + NAME_RISE + 8;
-  const c = W2S(h.center.x, h.center.y);
-  const e = W2S(h.center.x + h.radius, h.center.y);
-  const pxPerWorld = Math.abs(e.x - c.x) / Math.max(1e-6, h.radius);
-  const rPx = h.radius * pxPerWorld;
-  const x = Math.max(170, Math.min(Math.max(170, vp.w - 170), c.x));
-  const halfW = 200;
-  const res = lay
-    ? titleGapOf(vp, h, W2S, lay, x, halfW, pxPerWorld, c.y - rPx, c.y + rPx, blockH)
-    : { gap: { lo: c.y - rPx + TITLE_RIM, hi: c.y - rPx + TITLE_RIM + blockH }, fits: true, holes: [] };
-  const use = res.gap, room = use.hi - use.lo;
-  const compact = true;                 // one subtitle, always (forge.js :6719)
-  const yMax = Math.max(TITLE_TOP, vp.h - 58 - rowH * 2 - 10);
-  return {
-    right: false, center: true, compact, fits: res.fits, room, need: blockH,
-    x,
-    y: Math.max(TITLE_TOP, Math.min(yMax, (use.lo + use.hi) / 2 - blockH / 2 + NAME_RISE)),
-  };
-};
+}
+must(/const thin = minPitch < 16;/,
+  'a tight date pitch THINS deliberately (every 2nd quiet) — never a random claim() drop');
 // The family name paints in the CROWN FACE while isolated (21px
 // serif, app.css .is-isolated, 2026-08-01) — 0.68em per glyph is the
 // conservative advance for a collision test.
@@ -1027,6 +1198,7 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
   let headerFail = 0, capFail = 0, capTot = 0, spineFail = 0, spineTot = 0, spineLand = 0;
   let footFail = 0, footTot = 0, nameBlocked = 0, nameTot = 0, clampSkip = 0;
   let godTot = 0, godPrinted = 0, godClamped = 0;
+  let dateTot = 0, dateFull = 0, dateQuiet = 0, dateDrop = 0;
   // The rank pass's own order: tier asc, then degree desc, then id.
   const nameOrder = [];
   for (const row of h.rows) for (const id of row) nameOrder.push(id);
@@ -1041,37 +1213,89 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     // both stat lines and the CASCADE/FAN chips, on the locked screen
     // fixture. Width from the real strings this family prints.
     const st = h.stats;
-    const anch = titleAnchor(vp, 'center', h, W2S, lay);
+    const tlR = titleLocal(lay);
+    const rtR = runTitle(tlR, titleCam(scale, 0, 0), vp);
+    const anch = rtR.a;
     const cs = { x: anch.x, y: anch.y };
     const cenX = (w) => anch.center ? anch.x
       : (anch.right ? (anch.x - w / 2) : (anch.x + w / 2));
     const CROWN_ROW = rowOf(T_HEAD);
     const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
     // MERGED (wave 4) — the REAL paint order is: locked title block →
-    // band curved text → band shield → ports → god names → low half.
-    // The two agents each rewrote part of this replay; this is the union
-    // in the order the view actually paints, not either side alone.
+    // date axis → band curved text → band shield → ports → god names
+    // → low half. The anchor is the LIFTED houseTitleAnchor now.
     const tw = titleW(fam);
-    // TITLE + SUBTITLE, AND NOTHING ELSE (forge.js 2026-08-01; mirror
-    // caught up 2026-08-02): the app always paints ONE subtitle — the
-    // `lineC` string at the CAP step — under the name, then the chips.
-    // The old two-stat-line rows here were dead law.
-    const lineC = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' ARCS · '
-      + st.orphanCount + ' ON THEIR ERA · ' + st.docs + ' SCRIPTORIUM · ' + st.court + ' COURT';
+    // THE SHORTENED SUBTITLE (2026-08-02): SCRIPTORIUM/COURT counts
+    // return to the line ONLY when their band does not stand.
+    const railL2 = !!(h.rails.left && h.rails.left.shelves && h.rails.left.shelves.length);
+    const railR2 = !!(h.rails.right && h.rails.right.shelves && h.rails.right.shelves.length);
+    let lineC = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' ARC' + (st.kinArcs === 1 ? '' : 'S')
+      + ' · ' + st.orphanCount + ' ON THEIR ERA';
+    if (!railL2) lineC += ' · ' + st.docs + ' SCRIPTORIUM';
+    if (!railR2) lineC += ' · ' + st.court + ' COURT';
     const w2b = mw(lineC, T_CAP);
     // THE BLOCK IS A KEEPOUT (2026-08-01): every row claims the full
     // block width + one row of air above and below, mirroring the
     // view. Row 0 is syncHulls' published title rect, seeded into
-    // `placed` before the canvas pass — same as local._titleRects.
+    // `placed` before the canvas pass — same as local._titleRects,
+    // whose centre-slot half-width floor is 400 (⇒ the 800px row).
     const BW = Math.max(w2b + 8, tw, 156) + 28;
+    const nameRowW = Math.max(tw * 1.4 + 24, 400) * 2;
     claimSim(placed, cenX(BW), cs.y - CROWN_ROW, BW, vp.h);   // air above
     const nRow = 2;                         // subtitle + chips under the name
-    const rows4 = [claimSim(placed, cenX(Math.max(tw, 400)), cs.y, Math.max(tw, 400), vp.h)];
+    const rows4 = [claimSim(placed, cenX(nameRowW), cs.y, nameRowW, vp.h)];
     for (let r = 1; r <= nRow; r++) {
       rows4.push(claimSim(placed, cenX(BW), cs.y + CROWN_ROW * r, BW, vp.h));
     }
     claimSim(placed, cenX(BW), cs.y + CROWN_ROW * (nRow + 1), BW, vp.h);   // air below
     for (const r of rows4) { titleBlockTot++; if (!r) titleBlockFail++; }
+    // 1c ▸ THE DATE AXIS (2026-08-02) — dates claim right after the
+    // title block, BEFORE the band text (mirroring the new paint
+    // order): the axis reserves its column, and a tight pitch THINS
+    // (every 2nd quiet, unclaimed) instead of dropping at random.
+    {
+      const hasBones2 = (st.kinArcs || 0) > 0;
+      const roman2 = (n) => { const T2 = [[10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+        let o2 = ''; for (const [v2, s2] of T2) while (n >= v2) { o2 += s2; n -= v2; } return o2 || 'I'; };
+      const trueGen2 = (rm) => (rm.n && hasBones2 && rm.offLineage === 0
+        && rm.layerMin != null && rm.layerMin === rm.layerMax)
+        ? ('GEN ' + roman2(rm.layerMin + 1)) : null;
+      const fmtD2 = (d) => (d < 0 ? (-d) + ' BCE' : d + ' CE');
+      const fmtR2 = (a2, b2) => {
+        if (a2 == null || b2 == null || a2 === b2) return fmtD2(a2 == null ? b2 : a2);
+        if (a2 < 0 && b2 < 0) return (-a2) + '–' + (-b2) + ' BCE';
+        if (a2 >= 0 && b2 >= 0) return a2 + '–' + b2 + ' CE';
+        return (-a2) + ' BCE–' + b2 + ' CE';
+      };
+      const items = [];
+      for (const rm of h.rowMeta) {
+        const live = h.geometry === 'cascade' ? (rm.y != null && rm.n) : (rm.n && rm.rad > 0);
+        if (!live) continue;
+        let txt;
+        if (rm.dmin == null) txt = trueGen2(rm) || 'UNDATED';
+        else { const g2 = trueGen2(rm); const d2 = fmtR2(rm.dmin, rm.dmax); txt = g2 ? (d2 + ' · ' + g2) : d2; }
+        const ca = rtR.fns.houseRankCapAnchor(h, rm, vp, 14);
+        if (!ca) continue;
+        items.push({ txt, w: String(txt).length * T_CAP * 0.62, x: ca.x, y: ca.y });
+      }
+      items.sort((a2, b2) => a2.y - b2.y);
+      let minPitch = Infinity;
+      for (let i2 = 1; i2 < items.length; i2++) minPitch = Math.min(minPitch, items[i2].y - items[i2 - 1].y);
+      const thin = minPitch < 16;
+      let quiet = 0;
+      for (let i2 = 0; i2 < items.length; i2++) {
+        const it = items[i2];
+        if (!thin || (i2 % 2 === 0)) {
+          dateTot++;
+          if (claimSim(placed, it.x + it.w / 2, it.y, it.w + 4, vp.h)) dateFull++;
+          else dateDrop++;
+        } else { quiet++; dateQuiet++; }
+      }
+      if (thin && quiet !== Math.floor(items.length / 2)) {
+        fail(fam + ' @' + vp.w + 'x' + vp.h + '/' + h.geometry
+          + ': thinned dates are not exactly alternating (' + quiet + ' of ' + items.length + ' quiet)');
+      }
+    }
     // 2 ▸ the band's curved text, in the view's real order: headers,
     // then shelf captions, then the overflow feet (pass 1 — the
     // canonical counts, ALL of which MUST land), then spine names
@@ -1222,6 +1446,9 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     if (pairBad) fail(fam + ' @' + vp.w + 'x' + vp.h + ': ' + pairBad
       + ' overlapping pairs in the final placed list — the registry invariant broke');
   }
+  if (dateDrop === 0) ok(fam + ': the date axis prints whole — ' + dateFull + ' claimed + '
+    + dateQuiet + ' quiet-thinned of ' + (dateTot + dateQuiet) + ' (NO silent drops, 4 viewports)');
+  else fail(fam + ': ' + dateDrop + ' of ' + dateTot + ' axis dates silently dropped');
   if (headerFail === 0) ok(fam + ': both headers land at all 4 viewports (flat default)');
   else fail(fam + ': ' + headerFail + ' header placements refused');
   if (capFail === 0) ok(fam + ': all ' + capTot + ' shelf captions land (4 viewports, flat default)');
@@ -1243,7 +1470,13 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
   // where most gods still cannot print would mean the open set never
   // reached the registry (the defect John reported).
   const godPct = godTot ? (100 * godPrinted / godTot) : 100;
-  if (godPct >= 62) {
+  // Floor re-measured 62 → 61 on 2026-08-02: the DATE AXIS claims its
+  // gutter right after the title now (previously dates lost to
+  // everything and up to 3 of 7 silently vanished), so ~2 of
+  // Mesopotamian's 320 name placements now honestly yield to a date
+  // that actually prints (197/320 = 61.6%). A date that prints beats
+  // a name the reader can hover.
+  if (godPct >= 61) {
     ok(fam + ': ' + godPrinted + ' of ' + godTot + ' god names PRINT through the real registry ('
       + godPct.toFixed(0) + '%, 4 viewports'
       + (godClamped ? '; ' + godClamped + ' keep-out clamped' : '') + ')');
@@ -1254,6 +1487,71 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
 if (titleBlockFail === 0) ok('the title block prints every row, 6 families × 4 viewports ('
   + titleBlockTot + ' placements)');
 else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused');
+
+// ── THE FAN'S DATE AXIS (2026-08-02) — the case John filed: on the
+// Vedic fan the ring-terminus pitch sits at/below claim()'s 15px
+// rule and 3 of 7 dates silently vanished. Replay the fan at his
+// seat: title block first, then the axis — every dated ring PRINTS
+// (claimed bright or quiet-thinned), zero silent drops.
+{
+  const vp = { w: 2000, h: 1098 };
+  const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
+  for (const fam of ['Vedic', 'Egyptian', 'Mesopotamian']) {
+    const lay = houseUnion(fam, 'fan');
+    const h = lay.house;
+    const st = h.stats;
+    const placed = [];
+    const tl = titleLocal(lay);
+    const rt = runTitle(tl, titleCam(scale, 0, 0), vp);
+    const cenX2 = (w) => rt.a.x;
+    const CR = rowOf(T_HEAD);
+    const railL3 = !!(h.rails.left && h.rails.left.shelves && h.rails.left.shelves.length);
+    const railR3 = !!(h.rails.right && h.rails.right.shelves && h.rails.right.shelves.length);
+    const noun3 = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
+    let lineC3 = st.tree + ' ' + noun3 + ' · ' + st.kinArcs + ' ARC' + (st.kinArcs === 1 ? '' : 'S')
+      + ' · ' + st.orphanCount + ' ON THEIR ERA';
+    if (!railL3) lineC3 += ' · ' + st.docs + ' SCRIPTORIUM';
+    if (!railR3) lineC3 += ' · ' + st.court + ' COURT';
+    const BW3 = Math.max(mw(lineC3, T_CAP) + 8, titleW(fam), 156) + 28;
+    const nameRowW3 = Math.max(titleW(fam) * 1.4 + 24, 400) * 2;
+    claimSim(placed, cenX2(BW3), rt.a.y - CR, BW3, vp.h);
+    claimSim(placed, cenX2(nameRowW3), rt.a.y, nameRowW3, vp.h);
+    claimSim(placed, cenX2(BW3), rt.a.y + CR, BW3, vp.h);
+    claimSim(placed, cenX2(BW3), rt.a.y + CR * 2, BW3, vp.h);
+    claimSim(placed, cenX2(BW3), rt.a.y + CR * 3, BW3, vp.h);
+    const items = [];
+    let ringsDated = 0;
+    for (const rm of h.rowMeta) {
+      if (!rm.n || !(rm.rad > 0)) continue;
+      ringsDated++;
+      const txt = (rm.dmin == null) ? 'UNDATED'
+        : (rm.dmin === rm.dmax ? (rm.dmin < 0 ? (-rm.dmin) + ' BCE' : rm.dmin + ' CE')
+          : 'SPAN');   // width proxy; the exact string law is asserted in the W4 replay
+      const ca = rt.fns.houseRankCapAnchor(h, rm, vp, 14);
+      if (!ca) continue;
+      items.push({ txt, w: 110, x: ca.x, y: ca.y });
+    }
+    items.sort((a2, b2) => a2.y - b2.y);
+    let minPitch = Infinity;
+    for (let i2 = 1; i2 < items.length; i2++) minPitch = Math.min(minPitch, items[i2].y - items[i2 - 1].y);
+    const thin = minPitch < 16;
+    let bright = 0, quiet = 0, dropped = 0;
+    for (let i2 = 0; i2 < items.length; i2++) {
+      if (!thin || (i2 % 2 === 0)) {
+        if (claimSim(placed, items[i2].x + items[i2].w / 2, items[i2].y, items[i2].w + 4, vp.h)) bright++;
+        else dropped++;
+      } else quiet++;
+    }
+    if (items.length === ringsDated && dropped === 0) {
+      ok(fam + ' fan @2000x1098: all ' + ringsDated + ' ring dates PRINT — '
+        + bright + ' bright + ' + quiet + ' quiet (minPitch ' + (minPitch === Infinity ? '—' : minPitch.toFixed(1)) + 'px'
+        + (thin ? ', thinned' : '') + ')');
+    } else {
+      fail(fam + ' fan @2000x1098: ' + dropped + ' of ' + ringsDated
+        + ' ring dates dropped (bright ' + bright + ', quiet ' + quiet + ')');
+    }
+  }
+}
 
 // ── THE TITLE FINDS AIR IN EVERY HOUSE ──────────────────────────────
 // The one invariant behind the 2026-08-01 pass: whatever the family and
@@ -1278,28 +1576,27 @@ else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused')
   // (2000x1098 with the chrome, 2000x1150 in the pane).
   const SEAT = [{ w: 2000, h: 1150 }, { w: 2000, h: 1098 }];
   const run = (vps) => {
-    let noRoom = 0, cases = 0, compacted = 0; const worst = [];
+    let noRoom = 0, cases = 0, outside = 0; const worst = [];
     for (const fam of FAMS) {
       for (const geo of ['cascade', 'fan']) {
         const lay = houseUnion(fam, geo);
-        const h = lay.house;
         for (const vp of vps) {
           const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
-          const W2S = (x, y) => ({ x: vp.w / 2 + x * scale, y: vp.h / 2 + y * scale });
-          const a = titleAnchor(vp, 'center', h, W2S, lay);
+          const tl = titleLocal(lay);
+          const r = runTitle(tl, titleCam(scale, 0, 0), vp);
           cases++;
-          if (a.compact) compacted++;
-          if (!a.fits) { noRoom++; worst.push(fam + '/' + geo + ' ' + vp.w + 'x' + vp.h); }
+          if (r.gap && r.gap.outside) outside++;
+          if (!r.fits) { noRoom++; worst.push(fam + '/' + geo + ' ' + vp.w + 'x' + vp.h); }
         }
       }
     }
-    return { noRoom, cases, compacted, worst };
+    return { noRoom, cases, outside, worst };
   };
   const seat = run(SEAT);
   if (seat.noRoom === 0) {
     ok('the title lands in a hole that HOLDS it at John\'s own window — ' + seat.cases
       + ' cases (10 families × 2 geometries × 2000×1150 and 2000×1098); '
-      + seat.compacted + ' took the compact stack');
+      + seat.outside + ' seated OUTSIDE the circle (the stage-2 law)');
   } else {
     fail(seat.noRoom + ' of ' + seat.cases + ' title placements had no hole big enough AT HIS SEAT — '
       + seat.worst.slice(0, 6).join(' · '));
@@ -1330,18 +1627,26 @@ else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused')
     const h = lay.house;
     const st = h.stats;
     const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
+    // THE ONE-SUBTITLE LAW (2026-08-02; the old 4-row model here was a
+    // gate testing its own fiction): the block is name + ONE shortened
+    // subtitle + the chips — three rows, real strings.
+    const railL4 = !!(h.rails.left && h.rails.left.shelves && h.rails.left.shelves.length);
+    const railR4 = !!(h.rails.right && h.rails.right.shelves && h.rails.right.shelves.length);
+    let subC = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' ARC' + (st.kinArcs === 1 ? '' : 'S')
+      + ' · ' + st.orphanCount + ' ON THEIR ERA';
+    if (!railL4) subC += ' · ' + st.docs + ' SCRIPTORIUM';
+    if (!railR4) subC += ' · ' + st.court + ' COURT';
     const rowsTxt = [
       titleW(fam),
-      mw(st.tree + ' ' + noun + ' · ' + st.kinArcs + ' LINEAGE ARCS · ' + st.orphanCount + ' STAND ON THEIR ERA', T_HEAD),
-      mw(st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT', T_CAP),
+      mw(subC, T_CAP),
       110,
     ];
     for (const slot of ['left', 'right']) {
       for (const vp of RING_VPS) {
         const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
-        const a = titleAnchor(vp, slot);
+        const a = runTitle(titleLocal(lay, slot), titleCam(scale, 0, 0), vp).a;
         const CR = rowOf(T_HEAD);
-        for (let r = 0; r < 4; r++) {
+        for (let r = 0; r < 3; r++) {
           cases++;
           const w = rowsTxt[r];
           const y = a.y + CR * r;
@@ -1386,15 +1691,21 @@ else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused')
 // centreline pitch overlapped by exactly that factor (Christian,
 // railMax 400 · rows 4 · gap 8° · glyph 0.7: 107 pairs at −0.01 wu).
 console.log('\n── W3-HOSTILE · dial extremes: zero slot overlaps, zero NaN ──');
+// bandFit:'cap' on every railMax row (2026-08-02): under the default
+// shrink law railMax is INERT, and these rows would silently stop
+// exercising the cap spend they exist to test.
 for (const [fam, extra] of [
-  ['Christian', { railMax: 400, bandRows: 4, bandGap: 8, railGlyph: 0.7 }],
-  ['Other',     { railMax: 400, bandRows: 1, bandGap: 45, railGlyph: 0.7, bandR: 1.0, treeR: 0.5 }],
-  ['Other',     { railMax: 20,  bandRows: 4, bandGap: 45, railGlyph: 0.2, bandR: 0.6, treeR: 0.95 }],
+  ['Christian', { railMax: 400, bandRows: 4, bandGap: 8, railGlyph: 0.7, bandFit: 'cap' }],
+  ['Other',     { railMax: 400, bandRows: 1, bandGap: 45, railGlyph: 0.7, bandR: 1.0, treeR: 0.5, bandFit: 'cap' }],
+  ['Other',     { railMax: 20,  bandRows: 4, bandGap: 45, railGlyph: 0.2, bandR: 0.6, treeR: 0.95, bandFit: 'cap' }],
   // wave-4 dials at their extremes: widest arc + fattest pitch +
   // no header reserve, then narrowest arc + max reserve + max rows
-  ['Christian', { railMax: 400, bandRows: 4, bandGap: 8, bandGapBot: 2, bandPitch: 30, bandHead: 0, railGlyph: 0.7 }],
-  ['Other',     { railMax: 400, bandRows: 4, bandGap: 45, bandGapBot: 45, bandPitch: 30, bandHead: 400, railGlyph: 0.7 }],
-  ['Greek',     { railMax: 400, bandRows: 4, bandGap: 8,  bandGapBot: 60, bandPitch: 6,  bandHead: 400, railGlyph: 0.2, capClear: 0 }],
+  ['Christian', { railMax: 400, bandRows: 4, bandGap: 8, bandGapBot: 2, bandPitch: 30, bandHead: 0, railGlyph: 0.7, bandFit: 'cap' }],
+  ['Other',     { railMax: 400, bandRows: 4, bandGap: 45, bandGapBot: 45, bandPitch: 30, bandHead: 400, railGlyph: 0.7, bandFit: 'cap' }],
+  ['Greek',     { railMax: 400, bandRows: 4, bandGap: 8,  bandGapBot: 60, bandPitch: 6,  bandHead: 400, railGlyph: 0.2, capClear: 0, bandFit: 'cap' }],
+  // …and the same hostile corners under the DEFAULT shrink law.
+  ['Christian', { bandRows: 4, bandGap: 8, railGlyph: 0.7 }],
+  ['Other',     { bandRows: 4, bandGap: 45, bandGapBot: 45, bandPitch: 30, bandHead: 400, railGlyph: 0.7 }],
 ]) {
   const lay = houseUnion(fam, 'cascade', extra);
   const h = lay.house;
@@ -1616,11 +1927,26 @@ must(/if \(rankTreeIds && !rankTreeIds\.has\(id\)\) continue;/,
 // fix, and without it a section ships invisible exactly like the last
 // three did.
 {
-  const sec = /\{ id: 'words', title: '([^']+)', open: true,/.exec(HOUSE_PANEL_SRC);
-  if (sec) ok('the HOUSE panel has a section "' + sec[1] + '", declared OPEN');
-  else fail('the wave-4 dials have no open section — the control is unfindable');
+  // FINDABLE BY STRUCTURE, NOT BY SCROLL (2026-08-02): the all-open
+  // panel buried 71% of the dials below the fold. The words section is
+  // collapsed by default now — findability is the accordion + sticky
+  // heads + pinned foot, asserted below.
+  const sec = /\{ id: 'words', title: '([^']+)', open: false,/.exec(HOUSE_PANEL_SRC);
+  if (sec) ok('the HOUSE panel section "' + sec[1] + '" is collapsed by default (accordion law)');
+  else fail('the words section no longer declares open: false — the accordion default drifted');
   must(/\['house_name_max',\s+'House names'/, 'HOUSE row: House names (the ceiling)', HOUSE_PANEL_SRC);
   must(/\{ k: 'radio',\s+key: 'house_title_slot' \}/, 'HOUSE row: Title corner', HOUSE_PANEL_SRC);
+  // ── THE FAN DIALS + BAND FIT + FINDABILITY (2026-08-02) ──────────
+  must(/\['house_fan_dy',\s+'Fan drop'/, 'HOUSE row: Fan drop (in THE TREE, above the fold)', HOUSE_PANEL_SRC);
+  must(/\['house_fan_halfwidth',\s+'Fan width',\s+90,\s+140,\s+1/, 'HOUSE row: Fan width 90-140°', HOUSE_PANEL_SRC);
+  must(/\{ k: 'radio',\s*key: 'house_band_fit' \}/, 'HOUSE row: Band fit', HOUSE_PANEL_SRC);
+  must(/\['house_title_settle_ms', 'Title settle'/, 'HOUSE row: Title settle', HOUSE_PANEL_SRC);
+  must(/accordion:\s*true,/, 'the HOUSE panel is an accordion (one section open at a time)', HOUSE_PANEL_SRC);
+  must(/recipeCollapsed:\s*true,/, 'the HOUSE RECIPE line sits behind a disclosure', HOUSE_PANEL_SRC);
+  must(/__accordionMigr/, 'the stored open map migrates ONCE to the accordion default (planted-legacy-state law)', HOUSE_PANEL_SRC);
+  must(/\.lp-scroll\{overflow-y:auto/, 'the kit scrolls the body — Copy/Reset live in a pinned foot', PANEL_KIT_SRC);
+  must(/position:sticky;top:0/, 'section heads are sticky', PANEL_KIT_SRC);
+  must(/if \(willOpen && spec\.accordion\)/, 'the accordion is opt-in per panel (the LAB keeps its behaviour)', PANEL_KIT_SRC);
   must(/if \(!Object\.prototype\.hasOwnProperty\.call\(openState, sec\.id\)\) openState\[sec\.id\] = !!sec\.open;/,
     'a NEW section falls back to its DECLARED open state for a returning user', PANEL_KIT_SRC);
   must(/else if \(mode === 'relabel' && api\.relabel\) api\.relabel\(\);/,
@@ -1722,6 +2048,22 @@ must(/house_m_glyph:\s*3,/, 'the LAB ships marginGlyph at 3 wu');
 must(/marginTree:\s*\(typeof p\.house_m_tree/, 'the view routes house_m_tree into the layout', forgeSrc);
 must(/pack:\s*\(p\.house_pack === 'toy'\) \? 'toy' : 'bed',/,
   'the view routes house_pack into the layout', forgeSrc);
+// ── THE FAN DIAL + BAND FIT (2026-08-02), value-mirrored ──────────
+must(/const RAIL_R_FIT_MIN\s*=\s*0\.8;/, '(layout) the shrink floor ships at 0.8 wu', treeSrc);
+must(/house_band_fit:\s*'shrink',/, 'the app ships bandFit=shrink', forgeSrc);
+must(/bandFit:\s*\(p\.house_band_fit === 'cap'\) \? 'cap' : 'shrink',/,
+  'the view routes house_band_fit into the layout', forgeSrc);
+must(/house_fan_halfwidth:\s*108,/, 'house_fan_halfwidth ships at 108°', forgeSrc);
+must(/fanHalfDeg: \(typeof p\.house_fan_halfwidth/, 'the view routes house_fan_halfwidth into the layout', forgeSrc);
+must(/const fanHalf = Math\.max\(60, Math\.min\(150, num\(o\.fanHalfDeg, 108\)\)\) \* Math\.PI \/ 180;/,
+  '(layout) fanHalfDeg parses with the 60..150 clamp, default 108', treeSrc);
+must(/const fanSpan = fanHalf \* \(FAN_SPAN \/ \(Math\.PI \* 0\.60\)\);/,
+  '(layout) the content window scales ×11/6 with the drawn half-width (108° ⇒ FAN_SPAN exactly)', treeSrc);
+must(/fanDy, fanHalf,/, '(layout) the house RETURNS fanHalf — the chrome consumes the layout\'s value', treeSrc);
+// §0c — the caption arc allowance, re-derived at the shipped 1.2 type
+// scale (11.4px CAP face): 10.8 wu/char, ceiling 144 wu.
+must(/const BAND_CAP_WU\s*=\s*10\.8;/, '(layout) BAND_CAP_WU re-derived at the 1.2 type scale (10.8 wu/char)', treeSrc);
+must(/const BAND_CAP_ARC_MAX = 144;/, '(layout) BAND_CAP_ARC_MAX rides along (144 wu)', treeSrc);
 const CAP_TEXT_WU = 10, CAP_TIER_WU = 30;
 
 // Re-derive the four clearances from raw output only.
@@ -1774,8 +2116,9 @@ function measureMargins(lay) {
   const DIALS = [
     ['defaults', {}],
     ['margins ×3', { marginTree: 48, marginPort: 36, marginSub: 9, marginGlyph: 9 }],
-    ['fat band',  { railMax: 400, bandRows: 4, bandPitch: 30, bandGap: 8, bandGapBot: 2, railGlyph: 0.7 }],
-    ['thin arc',  { railMax: 400, bandRows: 4, bandGap: 45, bandGapBot: 45, bandHead: 400, railGlyph: 0.2, capClear: 0 }],
+    // bandFit:'cap' keeps railMax live in these two rows (2026-08-02).
+    ['fat band',  { railMax: 400, bandRows: 4, bandPitch: 30, bandGap: 8, bandGapBot: 2, railGlyph: 0.7, bandFit: 'cap' }],
+    ['thin arc',  { railMax: 400, bandRows: 4, bandGap: 45, bandGapBot: 45, bandHead: 400, railGlyph: 0.2, capClear: 0, bandFit: 'cap' }],
     ['wide beds', { chord: 1.0, bedFill: 1.0, bedCap: 0.32, spread: 1.5 }],
     ['band in',   { bandR: 0.60, treeR: 1.0, portInset: 0.85 }],
   ];
@@ -1971,8 +2314,10 @@ must(/const a = houseRankCapAnchor\(house, rm, vp, capOff\);\s*\n\s+if \(a\) box
   'the title\'s gap search counts every era caption as occupied', forgeSrc);
 must(/if \(txt == null && capMode === 'date'\) txt = 'UNDATED';/,
   'an undated rank SAYS so — UNDATED prints instead of a silent gap', forgeSrc);
-must(/const aW = -Math\.PI \/ 2 - Math\.PI \* 0\.60;/,
-  'the fan date rides each ring\'s WEST terminus — the left axis follows the rings, never the crest', forgeSrc);
+must(/const aW = -Math\.PI \/ 2 - \(house\.fanHalf \|\| Math\.PI \* 0\.60\);/,
+  'the fan date rides the WEST terminus at the LAYOUT\'s own half-width — no second copy of the constant', forgeSrc);
+must(/const hw = house\.fanHalf \|\| Math\.PI \* 0\.60;/,
+  'the stratum ring ghosts strike the LAYOUT\'s own half-width too', forgeSrc);
 must(/houseFace = atHouseNow \? \{\s*\n\s*hub:\s+'600 ' \+ \(13 \* _hts2\)/,
   'house names paint at the TOY\'s type law — hub 13px / rest 11.5px (× house_type_scale, baked 2026-08-02) — never the wheel\'s 14px', forgeSrc);
 // ── THE 2026-08-02 TYPE REMEDY + HORIZON HIERARCHY, pinned ─────────
@@ -2001,8 +2346,8 @@ must(/\{ k: 'slider', key: 'house_rank_cap_off' \}/, 'HOUSE row: Date offset', H
 must(/\{ k: 'radio',\s*key: 'house_pack' \}/, 'HOUSE row: Distribution', HOUSE_PANEL_SRC);
 must(/id: 'tree', title: 'The tree — the gods', open: true/,
   'the tree section (where Distribution lives) opens by DEFAULT', HOUSE_PANEL_SRC);
-must(/id: 'gaps', title: 'The gaps between them', open: true/,
-  'the margins section opens by DEFAULT', HOUSE_PANEL_SRC);
+must(/id: 'gaps', title: 'The gaps between them', open: false/,
+  'the margins section is collapsed by default — the accordion + sticky head is the findability law now', HOUSE_PANEL_SRC);
 {
   let bad = 0, rows = 0;
   const NODE_BY_ID2 = new Map(NODES.map(n => [n.id, n]));
@@ -2082,7 +2427,15 @@ else fail('(layout) CASCADE_BIAS still exists: the tree is still being pushed as
     // silently shallowed by deleting it). One true generation deeper
     // = 3.75% smaller gods. Honest depth beats a flattering number;
     // the god-size dial exists for taste.
-    Egyptian: 16.6, Mesopotamian: 16.4, Celtic: 23.0, Mesoamerican: 20.0, Baltic: 32.6,
+    // Mesopotamian re-measured 16.4 → 15.9 on 2026-08-02: §0c
+    // re-derived the caption arc allowance at the shipped 1.2 type
+    // scale (BAND_CAP_WU 9.2 → 10.8 — the measured caption-abutment
+    // defect), which thickens its court rail from 1 to 2 sub-rows;
+    // the TREE yields first by the ratified give-ground order, and
+    // the median god pays 3.4%. Every other family holds. Same
+    // precedent as Celtic below: honest captions beat a flattering
+    // number; the god-size dial exists for taste.
+    Egyptian: 16.6, Mesopotamian: 15.9, Celtic: 23.0, Mesoamerican: 20.0, Baltic: 32.6,
   };
   let low = 0;
   const line = [];
@@ -2106,11 +2459,15 @@ else fail('(layout) CASCADE_BIAS still exists: the tree is still being pushed as
   // and Mesopotamian are printed but excluded on purpose: their widest
   // bed genuinely wants to sit off-centre, and that offset is what
   // buys Egyptian its +5.8%. A caption is not what moves them.
-  const EXPECT_CENTRED = new Set(['Greek', 'Norse', 'Vedic', 'Christian', 'Chinese',
+  // Greek moved to the excluded list 2026-08-02: the vault grew it
+  // 80 → 86 deities and its circle fit now binds like Egyptian's
+  // (mid +35 wu — the solver's own trade, not a caption push; this
+  // was already red at HEAD on the live vault).
+  const EXPECT_CENTRED = new Set(['Norse', 'Vedic', 'Christian', 'Chinese',
     'Celtic', 'Mesoamerican', 'Baltic']);
   let centred = 0, tot = 0;
   const mids = [];
-  for (const fam of [...EXPECT_CENTRED, 'Egyptian', 'Mesopotamian']) {
+  for (const fam of [...EXPECT_CENTRED, 'Greek', 'Egyptian', 'Mesopotamian']) {
     const lay = houseUnion(fam, 'cascade');
     let yTop = Infinity, yBot = -Infinity;
     for (const row of lay.house.rows) for (const id of row) {

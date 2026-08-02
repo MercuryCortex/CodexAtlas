@@ -788,6 +788,13 @@
     // 'off' is the honest zero: byte-identical to the 07-30 house.
     house_rails:           'on',    // 'on' | 'off'
     house_rail_cap:        150,     // DISPLAYED items per rail ('Other' holds 2,336)
+    // THE BAND FITS THE FAMILY (2026-08-02, John: "make the NOT SHOWN
+    // visible — the node size of the relative area can shrink to
+    // accommodate"): 'shrink' solves the display cap so every member
+    // fits at ≥0.8 wu glyphs, and parks ONLY what cannot fit at that
+    // floor ('+N NOT SHOWN' stays honest there). 'cap' = the old flat
+    // Max-items law.
+    house_band_fit:        'shrink',    // 'shrink' | 'cap'
     house_rail_glyph:      0.40,    // glyph radius as a fraction of the band pitch
     house_rail_hit:        5,       // hit-radius floor for a rail glyph (world units)
     // ── THE THREE ZONES (2026-07-31 wave 3) — John's ring design ──
@@ -821,6 +828,10 @@
     // below-centre origin that filled the house and pushed the title
     // out. It is a dial because it is a composition decision.
     house_fan_dy:          0,
+    // The fan's half-width, DEGREES each side of 12 o'clock. 108 is
+    // today's drawn arc (the PI*0.60 the stratum arcs strike); the
+    // engine's content window scales with it (108° ⇒ the ratified ±99°).
+    house_fan_halfwidth:   108,
     // ── THE DISTRIBUTION + THE MARGINS (2026-07-31 wave 5) ──────
     // John: "Im not sure what was your logic in your node
     // distribution, but if its different keep it add a toggle to use
@@ -896,6 +907,7 @@
     // keep the wave-4 corner fixtures as dials. Never the bottom:
     // the bottom bar owns that edge.
     house_title_slot:      'center',   // 'center' | 'left' | 'right'
+    house_title_settle_ms: 180,   // ms of camera stillness before the title re-seats
     // THE HINT LINE (2026-07-31) — the wheel-state hint in the same
     // slot the house's exit line uses ('CLICK A FAMILY TITLE — THE
     // HOUSE'). Ship-a-dial law: on by default, 0 = the wheel paints
@@ -2361,6 +2373,7 @@
         titleFits: local._houseTitleFits !== false,
         titleCompact: !!local._houseTitleCompact,
         titleGap: local._houseTitleGap || null,
+        titlePin: local._houseTitlePin || null,
         mix: local._layoutMix
           ? { value: +local._layoutMix.value.toFixed(4), target: local._layoutMix.target }
           : null,
@@ -2377,6 +2390,10 @@
             ports: local._house.lay.ports.length,
             portTop: local._house.lay.ports.slice(0, 5).map(p => [p.group, p.count]),
             crown: h.crown,
+            // THE FAN DIALS (2026-08-02) — the layout's own values, so
+            // a harness can verify the dial reached the engine.
+            fanHalf: h.fanHalf || null,
+            fanDy: h.fanDy || 0,
             railL: h.rails.left ? h.rails.left.count : 0,
             railR: h.rails.right ? h.rails.right.count : 0,
           };
@@ -2540,6 +2557,11 @@
         // clamps the ease to 1 and clears the anim, which is exactly
         // where the fly would have landed on a live screen.
         try { if (camera.isAnimating()) camera.tick(1e3); } catch (_) { /* ignore */ }
+        // Headless screenshots must see the SETTLED title decision —
+        // the rest watcher's setTimeout may never fire under a frozen
+        // rAF, so the harness forces the redecide itself (the
+        // frozen-flight lesson: houseSettle(), never bare tickAnim()).
+        if (local._houseTitlePin) local._houseTitlePin.redecide = true;
         drawFrame();
         return {
           isolate: local._isolateFamily,
@@ -4532,6 +4554,28 @@
       if (!local.renderer || local.destroyed) return;
       const vp = local.lastSize;
       if (!vp.w || !vp.h) return;
+      // ── THE TITLE'S REST WATCHER (2026-08-02, settle-only law) ────
+      // The pin freezes the title's world offset mid-gesture; this is
+      // the ONE place that re-arms the decision — after
+      // house_title_settle_ms of camera stillness at house rest. The
+      // idle-cache busts are required: at rest the anim loop is dead
+      // and both painters would otherwise skip forever with the
+      // mid-gesture placement frozen.
+      if (local._house) {
+        const csC = camera.state;
+        const pr = local._titleCam || (local._titleCam = { s: 0, cx: 0, cy: 0, t: 0 });
+        if (pr.s !== csC.scale || pr.cx !== csC.centerX || pr.cy !== csC.centerY) {
+          pr.s = csC.scale; pr.cx = csC.centerX; pr.cy = csC.centerY;
+          clearTimeout(pr.t);
+          pr.t = setTimeout(() => {
+            if (!houseAtRest() || !local._houseTitlePin) return;
+            if (camera.isAnimating()) return;         // still gliding — the next frame re-arms
+            local._houseTitlePin.redecide = true;
+            local._labelsIdleCamS = null; local._hullsIdleCamS = null;  // force ONE repaint
+            drawFrame();
+          }, Math.max(60, local.params.house_title_settle_ms || 180));
+        }
+      }
       const t0 = performance.now();
       // dim_amount only applies when something is in focus. At
       // true idle (no hover, no lock) we pass 0 so the already-
@@ -5386,6 +5430,13 @@
       else if (camScale >= 3.0) deepZoomFade = 0;
       else                      deepZoomFade = (3.0 - camScale);
       let fade = Math.min(lowZoomFade, deepZoomFade);
+      // THE HOUSE HAS NO WHEEL CHROME TO FADE (2026-08-02): inside the
+      // isolate this overlay holds only the exit hit-target and the
+      // CASCADE/FAN chips — fading them with the wheel's zoom ramps
+      // would freeze the published _titleRects stale (the early return
+      // below) and orphan the canvas subtitle from its chips. The
+      // subtitle LOD (renderHouseChrome) owns the chips' opacity now.
+      if (document.body.classList.contains('fv-isolated')) fade = 1;
       // Phase 22-M (2026-05-24) — timeline owns hull fade (15→11
       // gizmo ramp, matching bands). The wheel's 50→25 curve would
       // overwrite the timeline-chrome opacity write every frame
@@ -5626,7 +5677,15 @@
           }
           if (labelEl._lastX !== lxStr) { labelEl.setAttribute('x', lxStr); labelEl._lastX = lxStr; }
           if (labelEl._lastY !== lyStr) { labelEl.setAttribute('y', lyStr); labelEl._lastY = lyStr; }
-          if (labelEl._lastVis !== '') { labelEl.style.opacity = ''; labelEl._lastVis = ''; }
+          // ONE PAINTER OWNS THE NAME (2026-08-02, the "vEDIC" fix):
+          // the SVG label and the canvas rows are two presentation
+          // pipelines with independent flush cadences, and a one-frame
+          // skew mid-zoom superimposed the serif SVG name at frame
+          // N−1's hole over canvas text at frame N's. The name is
+          // CANVAS now (renderHouseChrome row 0); this element stays
+          // positioned as the invisible exit click-target and keeps
+          // publishing _titleRects — only its paint dies.
+          if (labelEl._lastVis !== '0') { labelEl.style.opacity = '0'; labelEl._lastVis = '0'; }
           const w = (labelEl._w || 80);
           titlePlaced.length = 0;
           // Centre slot publishes a FLOOR-width reserve (2026-08-01,
@@ -6712,35 +6771,73 @@
         // The search is told the SMALLEST viable stack, so "fits" means
         // "some honest form of the block goes here" — not "the tallest
         // one does".
-        const res = houseTitleGap(hs, vp, x, halfW, pxPerWorld,
-                                  c.y - rPx, c.y + rPx, blockHC);
-        const use = res.gap;
-        const room = use.hi - use.lo;
-        const compact = true;                        // one subtitle, always
-        const bh = blockH;
-        local._houseTitleCompact = compact;
-        local._houseTitleSide = ((use.lo + use.hi) / 2 < c.y) ? 'above' : 'below';
-        local._houseTitleFits = res.fits;
-        // ONE source of truth for the probe: the numbers the anchor
-        // actually decided on, not a re-derivation of them.
-        local._houseTitleGap = {
-          lo: use.lo, hi: use.hi, h: room,
-          blockH: bh, blockFull: blockH, compact, holes: res.holes, fits: res.fits,
-          prefer: res.prefer, treeMid: res.treeMid, cMid: res.cMid,
-          holeList: res.holeList.map((g) => [Math.round(g.lo), Math.round(g.hi)]),
-          // what actually stands in the column, by source — the answer
-          // to "there is empty space there, why not use it"
-          occupancy: res.iv.map((s) => [Math.round(s[0]), Math.round(s[1]), s[2]]),
-          topPx: c.y - rPx, botPx: c.y + rPx, side: local._houseTitleSide,
-        };
-        // The whole stack is centred on the hole, so the air reads even
-        // above the name and below the chips.
-        y = (use.lo + use.hi) / 2 - bh / 2 + NAME_RISE;
+        // ── SETTLE-ONLY PLACEMENT (2026-08-02) — the pin ─────────────
+        // The hole search runs ONLY at a settled camera (or when the
+        // seat's key changed); between settles the block rides the
+        // world RIGIDLY (dyW × pxPerWorld off the house centre), so a
+        // zoom gesture can never hole-hop the title mid-flight. The
+        // rest watcher in drawFrame arms `redecide` after
+        // house_title_settle_ms of stillness. Because syncHulls runs
+        // before renderLabelsCanvas in the same synchronous drawFrame,
+        // whichever caller hits this first performs any pending
+        // decision and the other reads the cached pin — the SVG hit
+        // target and the canvas rows can never disagree within a frame.
+        const pin = local._houseTitlePin;
+        const key = String(house.groupKey) + '|' + house.geometry + '|' + w + 'x' + h + '|'
+                  + slot + '|' + ts;
+        if (!pin || pin.redecide || pin.key !== key) {
+          const res = houseTitleGap(hs, vp, x, halfW, pxPerWorld,
+                                    c.y - rPx, c.y + rPx, blockHC);
+          const use = res.gap;
+          const room = use.hi - use.lo;
+          const compact = true;                        // one subtitle, always
+          const bh = blockH;
+          local._houseTitleCompact = compact;
+          local._houseTitleSide = ((use.lo + use.hi) / 2 < c.y) ? 'above' : 'below';
+          local._houseTitleFits = res.fits;
+          // ONE source of truth for the probe: the numbers the anchor
+          // actually decided on, not a re-derivation of them.
+          local._houseTitleGap = {
+            lo: use.lo, hi: use.hi, h: room,
+            blockH: bh, blockFull: blockH, compact, holes: res.holes, fits: res.fits,
+            outside: !!res.outside,
+            prefer: res.prefer, treeMid: res.treeMid, cMid: res.cMid,
+            holeList: res.holeList.map((g) => [Math.round(g.lo), Math.round(g.hi)]),
+            // what actually stands in the column, by source — the answer
+            // to "there is empty space there, why not use it"
+            occupancy: res.iv.map((s) => [Math.round(s[0]), Math.round(s[1]), s[2]]),
+            topPx: c.y - rPx, botPx: c.y + rPx, side: local._houseTitleSide,
+          };
+          // The whole stack is centred on the hole, so the air reads even
+          // above the name and below the chips.
+          let yNew = (use.lo + use.hi) / 2 - bh / 2 + NAME_RISE;
+          // HYSTERESIS: a re-seat that moves <24px and stays on the
+          // same side is churn — keep the old seat.
+          if (pin && pin.key === key && pin.side === local._houseTitleSide
+              && Math.abs(yNew - (c.y + pin.dyW * pxPerWorld)) < 24) {
+            yNew = c.y + pin.dyW * pxPerWorld;
+          }
+          y = yNew;
+          local._houseTitlePin = { key, dyW: (y - c.y) / pxPerWorld,
+                                   side: local._houseTitleSide, redecide: false };
+        } else {
+          y = c.y + pin.dyW * pxPerWorld;   // RIGID with the world — no hole search mid-gesture
+        }
         // The chips are the last row: keep them off the bottom chrome.
         const yMax = Math.max(HOUSE_TITLE_TOP, h - 58 - rowH * 2 - 10);
         y = Math.max(HOUSE_TITLE_TOP, Math.min(yMax, y));
       }
       return { right: false, center: true, x, y };
+    }
+    // ── SUBTITLE LOD (2026-08-02) — how close to house-fit are we? ──
+    // Derived, never stored (the extent changes on geometry flips).
+    // Byte-identical to the enter-flight target math in
+    // setIsolateFamily, so at entry rel = 1.0 exactly.
+    function houseFitScale(vp) {
+      const ext = local._house && local._house.lay && local._house.lay.worldExtent;
+      if (!ext || !vp.w || !vp.h) return 0;
+      const w = ext.x1 - ext.x0, h = ext.y1 - ext.y0;
+      return (w > 0 && h > 0) ? Math.min(vp.w / w, vp.h / h) : 0;
     }
     // ── THE TITLE TAKES THE EMPTY AIR (2026-08-01) ───────────────────
     // John, on a fan capture with the name pinned to the top edge:
@@ -6878,10 +6975,44 @@
               || pickIn(prefer, null)
               || pickIn(null, null);
       const fits = !!best && (best.hi - best.lo) >= blockH;
-      // NOTHING FITS: take the TOP hole, which is the slot the block
-      // has always had. A title that overflows is bad; a title that
-      // overflows in the middle of the drawing is worse.
+      // NOTHING FITS INSIDE (2026-08-02, the zoom-out-centred fix):
+      // the search above is bounded by the circle's own vertical span,
+      // and zoomed out that span shrinks until no hole holds the block
+      // — while the abundant air is OUTSIDE the small circle. Stage 2:
+      // the same interval walk over the FULL stage column, with the
+      // whole circle marked occupied, preferring the hole ABOVE
+      // (reading order) and snapping the block against the circle so
+      // it reads as its caption, not as flotsam.
       if (!fits) {
+        const loS = 52 + 14, hiS = vp.h - 58 - 14;   // KEEPOUT_TOP/BOTTOM + one GAP of air
+        const iv2 = iv.concat([[topPx - GAP, botPx + GAP, 'circle']]).sort((a, b) => a[0] - b[0]);
+        const oh = [];
+        let cur2 = loS;
+        for (const s of iv2) {
+          if (s[0] > cur2 && cur2 < hiS) oh.push({ lo: cur2, hi: Math.min(s[0], hiS) });
+          if (s[1] > cur2) cur2 = s[1];
+          if (cur2 >= hiS) break;
+        }
+        if (cur2 < hiS) oh.push({ lo: cur2, hi: hiS });
+        // Prefer ABOVE: the hole whose bottom kisses the circle top.
+        let ob = null;
+        for (const g of oh) {
+          if (g.hi - g.lo < blockH) continue;
+          if (g.hi <= topPx) { if (!ob || g.hi > ob.hi) ob = g; }       // above, nearest
+        }
+        if (!ob) for (const g of oh) {                                   // else best below/any
+          if (g.hi - g.lo >= blockH && (!ob || (g.hi - g.lo) > (ob.hi - ob.lo))) ob = g;
+        }
+        if (ob) {
+          // Snap the block AGAINST the circle so it reads as its caption:
+          best = (ob.hi <= topPx) ? { lo: ob.hi - blockH, hi: ob.hi }
+                                  : { lo: Math.max(ob.lo, botPx + GAP),
+                                      hi: Math.max(ob.lo, botPx + GAP) + blockH };
+          return { gap: best, fits: true, outside: true, holes: holes.length,
+                   holeList: holes, iv, prefer, treeMid: Math.round(treeMid), cMid: Math.round(cMid) };
+        }
+        // circle fills the screen and inside has no room either — keep
+        // the old top-hole fallback (honest but unimproved there)
         for (const g of holes) { if (g.hi - g.lo > 0) { best = g; break; } }
       }
       if (!best) best = { lo: lo0, hi: hi0 };
@@ -6901,7 +7032,9 @@
       }
       if (!rm.n || !(rm.rad > 0)) return null;
       const fanY = house.center.y + (house.fanDy || 0);
-      const aW = -Math.PI / 2 - Math.PI * 0.60;    // the stratum arc's west end
+      // The stratum arc's west end — the LAYOUT's own half-width, never
+      // a second copy of the 0.60π constant (mirror-drift class closed).
+      const aW = -Math.PI / 2 - (house.fanHalf || Math.PI * 0.60);
       const es = camera.worldToScreen(house.center.x + Math.cos(aW) * rm.rad,
                                       fanY + Math.sin(aW) * rm.rad, vp);
       return { x: es.x + capOff * (8 / 14) + 4, y: es.y };
@@ -7063,8 +7196,35 @@
       const st = house.stats || {};
       const anchor = houseTitleAnchor(vp);
       const cs = { x: anchor.x, y: anchor.y };
-      font('500', TYPE.head);
+      // ── THE FAMILY COLOUR, resolved ONCE for the name + the chips ──
+      // (hoisted out of the chips block 2026-08-02 so the canvas name
+      // below gets the family ink too).
+      const hd0 = (m && m.hullData) || {};
+      let famColor = null;
+      for (const h2 of (hd0.hulls || [])) {
+        if (h2.family === house.groupKey) { famColor = h2.color || null; break; }
+      }
+      // ── ROW 0 — THE NAME IS CANVAS NOW (2026-08-02, the "vEDIC"
+      // fix). The SVG hull label and the canvas rows were two
+      // presentation pipelines with independent idle caches and, in
+      // Safari, independent flush cadences — a one-frame skew mid-zoom
+      // superimposed the serif SVG name at frame N−1's hole over the
+      // canvas rows at frame N's. One painter owns all pixels now: the
+      // SVG element stays positioned by syncHulls as the invisible
+      // exit click-target (its published _titleRects rect is this
+      // row's claim), and the name paints HERE, atomic with the
+      // subtitle in the same bitmap, full alpha at every zoom.
+      const HOUSE_SERIF = '"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif';
+      const tsN = TYPE.head / 13;
+      ctx.font = '500 ' + Math.round(21 * tsN) + 'px ' + HOUSE_SERIF;
+      try { ctx.letterSpacing = (21 * tsN * 0.06).toFixed(1) + 'px'; } catch (_) { /* pre-17 Safari */ }
       ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
+      ctx.fillStyle = famColor || _labelsTextColor;
+      ctx.globalAlpha = 1;
+      // .toUpperCase() explicitly — the SVG got it from CSS text-transform.
+      halo(String(house.groupKey || '').toUpperCase(), cs.x, cs.y);
+      try { ctx.letterSpacing = '0px'; } catch (_) { /* pre-17 Safari */ }
+      font('500', TYPE.head);
       // claim() takes a rect CENTRE; the corner slots are edge-aligned,
       // so a line of width w centres half its width inboard — the
       // centre slot is already the centre.
@@ -7119,36 +7279,47 @@
       // kept. Every number still gets stated (an unstated court is the
       // 2026-07-31 "i dont see th courts?" defect); the block just
       // stops being taller than the air it has to live in.
-      const lineC = st.tree + ' ' + nodeWord
+      // ── THE SHORTENED SUBTITLE (2026-08-02): the SCRIPTORIUM/COURT
+      // counts duplicated the band's own headers ("THE SCRIPTORIUM —
+      // 48 DOCS", larger, on the arc). A count returns to the subtitle
+      // ONLY when its band does not stand (Baltic, Celtic) — the
+      // zero-room honesty rule survives: an honest 0 is stated there,
+      // never hidden.
+      const rails = house.rails || {};
+      const railL = !!(rails.left  && rails.left.shelves  && rails.left.shelves.length);
+      const railR = !!(rails.right && rails.right.shelves && rails.right.shelves.length);
+      let lineC = st.tree + ' ' + nodeWord
         + ' · ' + st.kinArcs + ' ARC' + (st.kinArcs === 1 ? '' : 'S')
-        + ' · ' + st.orphanCount + ' ON THEIR ERA'
-        + ' · ' + st.docs + ' SCRIPTORIUM · ' + st.court + ' COURT';
+        + ' · ' + st.orphanCount + ' ON THEIR ERA';
+      if (!railL) lineC += ' · ' + st.docs + ' SCRIPTORIUM';
+      if (!railR) lineC += ' · ' + st.court + ' COURT';
       const statLine = lineC;
       font('500', TYPE.cap);
       const w2 = ctx.measureText(statLine).width;
       const w1 = 0;
-      // The SVG name paints in the crown face (21px serif, app.css
-      // .is-isolated); estimate its width for the shield.
+      // The name paints in the crown face (21px serif, canvas row 0
+      // above); estimate its width for the shield.
       const nameW = String(house.groupKey || '').length * 21 * 0.68 + 24;
       const BW = Math.max(w1 + 8, w2 + 8, nameW, 156) + 28;
       claim(cenX(BW), cs.y - CROWN_ROW, BW);   // air above the name
-      // LINE 2 ALWAYS PRINTS (2026-07-31, John: "i dont see th courts?").
-      // It was guarded on `st.docs || st.court`, so a family the vault
-      // holds nothing but gods for — Baltic is 10 nodes, 10 deities,
-      // 0 documents, 0 court; Armenian 7/7/0/0; Celtic has 0 documents —
-      // opened with the line simply absent, and there is no way to read
-      // "the room is empty" apart from "the feature is broken". Zero IS
-      // the answer, and on an investigation vault it is the useful one:
-      // an empty scriptorium is a coverage gap worth seeing, not a
-      // blank to hide.
+      // ── SUBTITLE LOD (2026-08-02): the subtitle and the chips fade
+      // in only near house zoom (rel = camera scale / the house's own
+      // fit scale); the NAME keeps full alpha at every zoom. The hole
+      // search keeps using the full blockH — placement stays stable
+      // across the LOD ramp, deliberately.
+      const fitS = houseFitScale(vp);
+      const rel = fitS > 0 ? (camera.state.scale || 1) / fitS : 1;
+      const subA = rel <= 0.8 ? 0 : (rel >= 1.1 ? 1 : (rel - 0.8) / 0.3);
       font('500', TYPE.cap);
       ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
       const statRow = 1;
-      if (claim(cenX(BW), cs.y + CROWN_ROW * statRow, BW)) {
+      if (subA > 0.05 && claim(cenX(BW), cs.y + CROWN_ROW * statRow, BW)) {
         // A zero room is stated, not shouted — one step quieter than a
         // populated one, still legible. Pre-dimmed SOLID ink since
-        // 2026-08-02: the quiet is in the colour, never in alpha fog.
-        ctx.fillStyle = mixToBg(_labelsTextColor, (st.docs || st.court) ? 0.72 : 0.55);
+        // 2026-08-02: the quiet is in the colour, never in alpha fog;
+        // the LOD ramp rides the same pre-mix.
+        ctx.fillStyle = mixToBg(_labelsTextColor,
+          ((st.docs || st.court) ? 0.72 : 0.55) * subA);
         halo(statLine, cs.x, cs.y + CROWN_ROW * statRow);
       }
       ctx.globalAlpha = 1;
@@ -7164,22 +7335,17 @@
       const chipsG = ensureHouseChips();
       if (chipsG) {
         syncHouseChipState();
-        const hd0 = m.hullData || {};
-        // WAVE 2 (chip-family-colour-goes-stale) — resolve the colour
-        // into a local and then ALWAYS write the decision. Both guards
-        // used to be silent no-ops, so a house whose group is absent
-        // from hullData (a grouping whose key space differs from the
-        // hull key space) or whose hull carries no colour left the
-        // PREVIOUS family's inline --family-color on the group, and the
-        // CSS fallback could not help because the property was already
-        // set. A wrong colour on this crown reads as "you are still in
-        // the old house"; neutral reads as "no colour".
-        let famColor = null;
-        for (const h of (hd0.hulls || [])) {
-          if (h.family === house.groupKey) { famColor = h.color || null; break; }
-        }
+        // WAVE 2 (chip-family-colour-goes-stale) — ALWAYS write the
+        // decision (famColor resolved once, above the name paint). A
+        // wrong colour on this crown reads as "you are still in the
+        // old house"; neutral reads as "no colour".
         if (famColor) chipsG.style.setProperty('--family-color', famColor);
         else chipsG.style.removeProperty('--family-color');
+        // SUBTITLE LOD (2026-08-02) — the chips ride the same ramp as
+        // the subtitle: invisible and unclickable until near house
+        // zoom, so the zoomed-out block is the name alone.
+        chipsG.style.opacity = subA.toFixed(3);
+        chipsG.style.pointerEvents = subA > 0.05 ? '' : 'none';
         const chipY = cs.y + CROWN_ROW * 2;
         ctx.font = '600 9px ' + HOUSE_MONO;
         // +12 ≈ the CSS letter-spacing the canvas measure can't see.
@@ -7201,8 +7367,13 @@
         // last glyph ends on its right edge.
         const chipX = anchor.center ? (anchor.x + (wCas - wFan) / 2)
           : (anchor.right ? (anchor.x - wFan - 8) : (anchor.x + wCas + 8));
-        claim(cenX(BW), chipY, BW);              // best-effort reserve at the BLOCK width
-        claim(cenX(BW), chipY + CROWN_ROW, BW);  // air below the stack
+        if (subA > 0.05) {
+          claim(cenX(BW), chipY, BW);              // best-effort reserve at the BLOCK width
+          claim(cenX(BW), chipY + CROWN_ROW, BW);  // air below the stack
+        } else {
+          // LOD-out: the block is the name alone — the keepout hugs it.
+          claim(cenX(BW), cs.y + CROWN_ROW, BW);   // air below the name-only block
+        }
         const chips = chipsG.querySelectorAll('.forge-house-chip');
         for (let ci = 0; ci < chips.length; ci++) {
           const isCas = chips[ci].getAttribute('data-house') === 'cascade';
@@ -7210,6 +7381,90 @@
           chips[ci].setAttribute('y', chipY.toFixed(1));
         }
       }
+
+      // 1c ▸ THE DATE AXIS — RESERVED GUTTER (2026-08-02). The dates
+      // are content (the houseTitleGap law) and used to claim LAST, so
+      // they lost to everything: on the fan the ring-terminus vertical
+      // pitch ≈ ringPitch × sin(18°) sits at/below claim()'s 15px rule
+      // and up to 3 of 7 dates silently vanished. They claim right
+      // after the title block now — only the block outranks the axis —
+      // and a tight pitch THINS deliberately (every 2nd date prints
+      // QUIET, unclaimed) instead of dropping at random.
+      //
+      // (CANONICAL HONESTY notes from the old §4 hold unchanged: GEN
+      // numerals only where the row IS one generation of real kin —
+      // trueGen; era rows print their true SPAN — fmtRangeD; UNDATED
+      // is spoken, never a silent gap.)
+      const ranksEra = (local.params.house_ranks === 'era');
+      // Same law as familytree.js's fmtRange, so a rank caption and a
+      // doc-shelf caption spanning the same years read identically.
+      const fmtRangeD = (a, b) => {
+        if (a == null || b == null || a === b) return fmtD(a == null ? b : a);
+        if (a < 0 && b < 0) return (-a) + '–' + (-b) + ' BCE';
+        if (a >= 0 && b >= 0) return a + '–' + b + ' CE';
+        return (-a) + ' BCE–' + b + ' CE';
+      };
+      const hasBones = (st.kinArcs || 0) > 0;
+      const capMode = (local.params.house_rank_caption === 'gen'
+                    || local.params.house_rank_caption === 'off')
+        ? local.params.house_rank_caption : 'date';
+      const trueGen = (rm) => (rm.n && hasBones && rm.offLineage === 0
+        && rm.layerMin != null && rm.layerMin === rm.layerMax)
+        ? ('GEN ' + romanNum(rm.layerMin + 1)) : null;
+      const capFor = (rm) => {
+        if (capMode === 'off') return null;
+        if (capMode === 'gen') return trueGen(rm);
+        if (rm.dmin == null) return trueGen(rm);   // undated rank: the numeral or nothing
+        const d = fmtRangeD(rm.dmin, rm.dmax);
+        if (ranksEra) return d;                    // pure-era: rank IS the date, nothing to add
+        const g = trueGen(rm);
+        return g ? (d + ' · ' + g) : d;
+      };
+      // The gutter's own stand-off is a dial (wave 5). The ANCHOR law
+      // lives in houseRankCapAnchor because the title's gap search has
+      // to honour it too — ONE anchor law, two readers.
+      const capOff = (typeof local.params.house_rank_cap_off === 'number')
+        ? local.params.house_rank_cap_off : 14;
+      font('500', TYPE.cap);
+      ctx.textAlign = 'left';
+      {
+        const items = [];
+        for (let ri = 0; ri < house.rowMeta.length; ri++) {
+          const rm = house.rowMeta[ri];
+          if (house.geometry === 'cascade'
+            ? (rm.y == null || !rm.n) : (!rm.n || !(rm.rad > 0))) continue;
+          let txt = capFor(rm);
+          if (txt == null && capMode === 'date') txt = 'UNDATED';
+          if (txt == null) continue;
+          const ca = houseRankCapAnchor(house, rm, vp, capOff);
+          if (!ca) continue;
+          items.push({ txt, w: ctx.measureText(txt).width, x: ca.x, y: ca.y });
+        }
+        items.sort((a, b) => a.y - b.y);
+        let minPitch = Infinity;
+        for (let i = 1; i < items.length; i++) {
+          minPitch = Math.min(minPitch, items[i].y - items[i - 1].y);
+        }
+        const thin = minPitch < 16;      // claim()'s 15px rule + 1 — the fan ring case
+        for (let i = 0; i < items.length; i++) {
+          const it = items[i];
+          const txt = it.txt;
+          if (!thin || (i % 2 === 0)) {
+            if (!claim(it.x + it.w / 2, it.y, it.w + 4)) continue;
+            ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.55 : 0.80);
+          } else {
+            // Deliberate thinning: every 2nd date prints QUIET,
+            // unclaimed. It sits within 15px of a claimed neighbour,
+            // so claim() transitively refuses (almost) any foreign
+            // rect over it. NOT pushed into `placed` — a raw push
+            // would break the zero-overlapping-pairs invariant the
+            // gate asserts on lastPlacedRects.
+            ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.40 : 0.45);
+          }
+          halo(txt, it.x, it.y);
+        }
+      }
+      ctx.globalAlpha = 1;
 
       // 2 ▸ THE BAND'S TEXT RIDES ITS OWN CURVE (wave 4, John:
       // "WRITE THEM to over the curved path that aligns with the
@@ -7229,8 +7484,7 @@
 
       // 2b ▸ THE BAND as an obstacle arc (wave 3 — the rails are one
       // ring, sectioned by arc: Scriptorium left, Court right; see
-      // familytree.js §7).
-      const rails = house.rails || {};
+      // familytree.js §7). `rails` is hoisted above the subtitle now.
       const camS = camera.state.scale || 1;
       for (const rl of [rails.left, rails.right]) {
         if (!rl || !rl.shelves || !rl.shelves.length) continue;
@@ -7333,7 +7587,7 @@
           // FAN — the toy's ring ghosts: a faint arc per rank about
           // the trunk, upper hemisphere only.
           const fc = W2S(house.center.x, house.center.y + (house.fanDy || 0));
-          const hw = Math.PI * 0.60;
+          const hw = house.fanHalf || Math.PI * 0.60;
           for (const rm of house.rowMeta) {
             if (!rm.n || !(rm.rad > 0)) continue;
             ctx.beginPath();
@@ -7344,164 +7598,6 @@
         ctx.restore();
       }
 
-      // 4 ▸ RANK CAPTIONS — deduped, right-aligned into the gutter
-      // (cascade) or on the ring crest (fan).
-      // CANONICAL HONESTY (2026-07-31, era-captions-fake-timeline) —
-      // under ranks='lineage' the rows are GENERATIONS, and a date
-      // column down that gutter reads as a time axis running
-      // 800→1400→1200: a chronology claim the data does not make.
-      // So: lineage rows caption as GEN I…GEN N (the rank index the
-      // layout returns); dates are reserved for ranks='era', where
-      // rank IS monotone in date. The caption's CONTENT switches
-      // with the existing house_ranks dial — no new dial.
-      //
-      // WAVE 2 (CR-4 + CR-6) — both halves of that caption were still
-      // claims the data does not make:
-      //
-      //  · GEN N asserted a GENERATION, but the row index is a LAYOUT
-      //    rank: familytree §4 builds it out of a component's era
-      //    offset PLUS its lineage depth, and drops anything
-      //    unconnected into a pure era bucket. Measured on the vault,
-      //    15 parentless Greek deities, 30 Norse and 62 Vedic printed
-      //    under GEN II or lower — `adonis` carries zero lineage edges
-      //    and was captioned a second-generation descendant. The
-      //    layout now reports each row's provenance (layerMin/layerMax
-      //    = the LINEAGE-ONLY generation depths it spans, offLineage =
-      //    how many of its members are there for some reason other
-      //    than lineage — a date bucket, or an aspect hub, since an
-      //    avatar is not its hub's child), and the numeral prints ONLY
-      //    where the row is one generation of real kin. A mixed row carries
-      //    no numeral — an empty gutter is honest, a wrong one is not.
-      //    The numeral also uses the row's OWN depth, not its index.
-      //    And a house with no bones has no generations to number at
-      //    all (the Chinese case: "0 LINEAGE ARCS" beside a GEN III).
-      //
-      //  · The era caption printed rm.dmin alone over a bucket up to
-      //    800 years wide (Vedic row 4: "700 BCE" over 700 BCE–100 CE).
-      //    It now prints the RANGE, the same way the Scriptorium
-      //    shelves already do.
-      const ranksEra = (local.params.house_ranks === 'era');
-      // Same law as familytree.js's fmtRange, so a rank caption and a
-      // doc-shelf caption spanning the same years read identically.
-      const fmtRangeD = (a, b) => {
-        if (a == null || b == null || a === b) return fmtD(a == null ? b : a);
-        if (a < 0 && b < 0) return (-a) + '–' + (-b) + ' BCE';
-        if (a >= 0 && b >= 0) return a + '–' + b + ' CE';
-        return (-a) + ' BCE–' + b + ' CE';
-      };
-      const hasBones = (st.kinArcs || 0) > 0;
-      // ── THE DATES COME BACK (2026-07-31, John: "i just want the
-      // DATES !!!!!!!!!!") ────────────────────────────────────────────
-      // The ratified design shipped a date on EVERY rank, in BOTH
-      // geometries — `AUDIT/2026-07-29-fable-family-tree-isolate.md`:
-      // "era-ranked rows beneath, each row a faint stratum with its
-      // date at the left", and `design/family-tree.html` draws
-      // `fmtDate(m.dmin)` down the cascade's left gutter and on each
-      // fan ring's crest. That is the axis he reads the house by.
-      //
-      // Wave 2 replaced it with GEN numerals on a real finding — a row
-      // is a LAYOUT rank, so a bare year over it can imply a
-      // chronology the data does not make — but the cure removed the
-      // feature instead of correcting it, and the numeral almost never
-      // qualifies, so the gutter went empty. His words for the result:
-      // "ZERO function".
-      //
-      // Both concerns are satisfiable at once: print the row's TRUE
-      // date SPAN. A row that really is one moment prints one year
-      // exactly as the toy did; a row spanning 700 BCE–100 CE says so
-      // instead of claiming "700 BCE". Nothing is asserted that the
-      // vault does not hold, and the axis is back.
-      //
-      // The GEN numeral is not deleted — it moves to where it is
-      // provably true, appended only when the row is a single
-      // generation of real kin. `house_rank_caption` ('date' | 'gen' |
-      // 'off') is the dial; 'date' ships.
-      const capMode = (local.params.house_rank_caption === 'gen'
-                    || local.params.house_rank_caption === 'off')
-        ? local.params.house_rank_caption : 'date';
-      const trueGen = (rm) => (rm.n && hasBones && rm.offLineage === 0
-        && rm.layerMin != null && rm.layerMin === rm.layerMax)
-        ? ('GEN ' + romanNum(rm.layerMin + 1)) : null;
-      const capFor = (rm) => {
-        if (capMode === 'off') return null;
-        if (capMode === 'gen') return trueGen(rm);
-        if (rm.dmin == null) return trueGen(rm);   // undated rank: the numeral or nothing
-        const d = fmtRangeD(rm.dmin, rm.dmax);
-        if (ranksEra) return d;                    // pure-era: rank IS the date, nothing to add
-        const g = trueGen(rm);
-        return g ? (d + ' · ' + g) : d;
-      };
-      font('500', TYPE.cap);
-      ctx.fillStyle = _labelsTextColor;
-      // WAVE 5 — the gutter's own stand-off is a dial. It has to be:
-      // the two packings put a row's left edge in DIFFERENT places
-      // (the toy pins the stack 0.10·Rt below centre, the bed solves
-      // the offset), so the one number that decides whether the date
-      // reads as an axis or as a stray is the one number that was
-      // baked. The ANCHOR needs no dial — `house.center.x − rm.w/2`
-      // is the row's true left edge under both packs, because rm.w is
-      // the bed's own solved width.
-      const capOff = (typeof local.params.house_rank_cap_off === 'number')
-        ? local.params.house_rank_cap_off : 14;
-      if (house.geometry === 'cascade') {
-        ctx.textAlign = 'left';
-        // EVERY LINE CARRIES ITS DATE AT ITS LEFT END (2026-08-01,
-        // John: "theres NO dates on the lines like the original agent
-        // design"). Three silences removed in one law: the
-        // repeat-span dedupe (Chinese shares one era across most
-        // rows, so most lines printed NOTHING), the undated-row
-        // silence (now an honest UNDATED), and the anchor moves to
-        // the stratum line's OWN left terminus at the line's own y —
-        // the date sits ON the line it describes, every line, always.
-        for (let ri = 0; ri < house.rowMeta.length; ri++) {
-          const rm = house.rowMeta[ri];
-          if (rm.y == null || !rm.n) continue;
-          let txt = capFor(rm);
-          if (txt == null && capMode === 'date') txt = 'UNDATED';
-          if (txt == null) continue;
-          const w = ctx.measureText(txt).width;
-          // ON the line, INSIDE its left end. The terminus itself
-          // stands against the band ring, whose shield legally
-          // refuses anything that close — so the text runs INWARD
-          // over the empty margin between the circle edge and the
-          // beds (the toy's own gutter position). capOff is the
-          // inset dial. The anchor law lives in houseRankCapAnchor
-          // because the title's gap search has to honour it too.
-          const ca = houseRankCapAnchor(house, rm, vp, capOff);
-          if (!ca) continue;
-          const ex = ca.x, ey = ca.y;
-          if (!claim(ex + w / 2, ey, w + 4)) continue;
-          ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.55 : 0.80);
-          halo(txt, ex, ey);
-        }
-      } else {
-        // FAN (2026-08-01) — the date rides each ring's WEST terminus
-        // (the left end of its stratum arc), right-aligned outside
-        // it: the same left-axis law as the cascade, following the
-        // rings down the left side. The old crest anchor floated
-        // dates mid-canvas among the gods — exactly what John
-        // rejected. No dedupe, UNDATED spoken, every ring.
-        ctx.textAlign = 'left';
-        const fanY = house.center.y + (house.fanDy || 0);
-        const aW = -Math.PI / 2 - Math.PI * 0.60;   // the stratum arc's west end
-        for (let ri = 0; ri < house.rowMeta.length; ri++) {
-          const rm = house.rowMeta[ri];
-          if (!rm.n || !(rm.rad > 0)) continue;
-          let txt = capFor(rm);
-          if (txt == null && capMode === 'date') txt = 'UNDATED';
-          if (txt == null) continue;
-          const w = ctx.measureText(txt).width;
-          // Same inward law as the cascade: ON the arc's end, text
-          // running INTO the wheel, clear of whatever stands outside.
-          // Shared with the title's gap search — see houseRankCapAnchor.
-          const ca = houseRankCapAnchor(house, rm, vp, capOff);
-          if (!ca) continue;
-          const ex = ca.x, ey = ca.y;
-          if (!claim(ex + w / 2, ey, w + 4)) continue;
-          ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.55 : 0.80);
-          halo(txt, ex, ey);
-        }
-      }
       env.restore();
     }
 
@@ -8194,6 +8290,12 @@
         // On the axis the crest fills the TOP half and the bottom half
         // is reliably free — which is where the title now lives.
         fanDy:     (typeof p.house_fan_dy === 'number') ? p.house_fan_dy : 0,
+        // THE FAN'S CUT (2026-08-02) — drawn half-width in degrees;
+        // the engine scales its content window with it (108 = today).
+        fanHalfDeg: (typeof p.house_fan_halfwidth === 'number') ? p.house_fan_halfwidth : 108,
+        // THE BAND FITS THE FAMILY (2026-08-02) — 'shrink' solves the
+        // display cap down to the 0.8 wu glyph floor; 'cap' = railMax.
+        bandFit:    (p.house_band_fit === 'cap') ? 'cap' : 'shrink',
         // WAVE 5 — the packing law, the four zero-tolerance margins
         // and the three pitch terms. Every one of them is a LAB dial
         // (SECTIONS ▸ 'housepack'), routed through api.houseSnap so
@@ -8911,6 +9013,7 @@
         local._layoutMix = null;
         local._house = null;
         local._houseTravel = null;
+        local._houseTitlePin = null;   // the title's seat dies with the house
         // THE RAILS (2026-07-31) — home again: the guests go back where
         // they came from and the wheel is re-packed ONCE. packNodes is
         // deterministic over identical inputs, so this returns buffer A
@@ -9027,6 +9130,7 @@
       if (cur.fam !== next.fam
           || cur.nodePosB.length !== next.nodePosB.length
           || cur.edgePosB.length !== next.edgePosB.length) {
+        local._houseTitlePin = null;   // a different family decides its own seat
         local._house = next;
         local._houseTravel = null;
         local._housePosBDirty = true;
@@ -9066,6 +9170,16 @@
       if (!next) return;
       if (tween && houseAtRest()) {
         startHouseTravel(next);
+        // CHIP FLIP HOLDS THE PIN (2026-08-02): a control must not
+        // move because you used it. The block keeps its seat across a
+        // geometry flip (the fan/cascade morph plays under it) and
+        // re-seats only at the NEXT camera-gesture rest — so the key
+        // is rewritten to the new geometry instead of cleared. This
+        // kills the measured ~590px cascade→fan teleport.
+        if (local._houseTitlePin) {
+          local._houseTitlePin.key = local._houseTitlePin.key
+            .replace(/\|(cascade|fan)\|/, '|' + next.lay.house.geometry + '|');
+        }
       } else {
         local._house = next;
         local._houseTravel = null;
@@ -9414,6 +9528,7 @@
       if (fam) {
         // 0 ▸ THE TREE — bake the house before committing the state;
         // a group with no members in this mode simply doesn't enter.
+        local._houseTitlePin = null;   // a fresh enter decides its seat at the settle
         const prevFam = local._isolateFamily;
         local._isolateFamily = fam;   // isolateGroupOf is state-free; set first for buildHouse's dim consumers
         // THE RAILS (2026-07-31) — resolve the house's OWN membership

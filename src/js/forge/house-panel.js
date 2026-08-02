@@ -20,8 +20,11 @@
 //   the tree (the gods) · the band (Scriptorium + Court) · the
 //   ports (other families) · the gaps between them · the words ·
 //   the lines · the feel.
-// Every section DECLARES itself open — a control he cannot find is
-// unshipped, which has now cost four rounds.
+// FINDABLE BY STRUCTURE, NOT BY SCROLL (2026-08-02): one section
+// open at a time (accordion), every section HEAD sticky-on-screen,
+// Reset/Copy pinned in the panel foot — a control he cannot find is
+// unshipped, which has now cost four rounds, and the all-open panel
+// buried 71% of the dials below the fold at his own window.
 //
 // NOT HERE, ON PURPOSE:
 //   · Cascade | Fan (house_geometry) is CANONICAL — it changes what
@@ -70,6 +73,26 @@
       }
     } catch (_) { /* storage unavailable — the default already says center */ }
 
+    // ONE-TIME OPEN-MAP MIGRATION (2026-08-02): the panel is an
+    // accordion now (tree open, the rest collapsed), but every
+    // returning user's stored open map says all-open forever — the
+    // exact planted-legacy-state trap that shipped three invisible
+    // controls. Rewrite the stored map ONCE; a section John opens
+    // AFTER this ships sticks (the marker survives persistOpen, which
+    // writes the whole object back).
+    try {
+      const raw = localStorage.getItem('forge.housePanel.open.v1');
+      if (raw) {
+        const om = JSON.parse(raw);
+        if (om && typeof om === 'object' && !om.__accordionMigr) {
+          for (const k of Object.keys(om)) om[k] = (k === 'tree');
+          om.tree = true;
+          om.__accordionMigr = 1;
+          localStorage.setItem('forge.housePanel.open.v1', JSON.stringify(om));
+        }
+      }
+    } catch (_) { /* no storage — declared defaults already say tree-only */ }
+
     // [param, label, min, max, step, unit, mode] — mode names the
     // refresh deep enough for the change to appear: 'house' re-solves
     // the isolate layout, 'refocus' rebuilds per-node state, 'relabel'
@@ -91,6 +114,11 @@
       ['house_bed_chord',     'Row width',     0.60, 1.00, 0.01,  '×',  'house'],
       ['house_bed_fill',      'Row fill',      0.60, 1.00, 0.01,  '×',  'house'],
       ['house_bed_cap',       'Biggest god',   0.08, 0.32, 0.005, '×',  'house'],
+      // THE FAN'S OWN TWO (2026-08-02, John's asks by name): drop = the
+      // origin's offset below the house centre (×Rt; 0 = on the X axis,
+      // 0.34 = the old below-centre origin); width = degrees each side.
+      ['house_fan_dy',        'Fan drop',      0,    0.60, 0.01,  '×',  'house'],
+      ['house_fan_halfwidth', 'Fan width',     90,   140,  1,     '°',  'house'],
       // ── the band (Scriptorium + Court) ──
       ['house_band_r',        'Band radius',   0.60, 1.00, 0.005, '×',  'house'],
       ['house_band_rows',     'Band rows',     1,    4,    1,     '',   'house'],
@@ -107,7 +135,8 @@
       ['house_rail_glyph',    'Item size',     0.2,  0.7,  0.02,  '×',  'house'],
       // Max items = how many slots a shelf may DISPLAY (the family's
       // true count is what the header and the crown claim either way).
-      ['house_rail_cap',      'Max items',     20,   400,  10,    '',   'house'],
+      // Binds only under Band fit = cap; 'shrink' solves the cap itself.
+      ['house_rail_cap',      'Max items (cap)', 20, 400,  10,    '',   'house'],
       ['house_rail_hit',      'Item hit area', 0,    12,   0.5,   'wu', 'house'],
       // ── the ports ──
       ['house_port_inset',    'Ports ring',    0.85, 1.15, 0.005, '×',  'house'],
@@ -150,6 +179,9 @@
       ['house_veil',          'Veil the rest', 0,    1,    0.01,  '',   'redraw'],
       // ── the feel ──
       ['house_tween_ms',      'Morph time',    200,  800,  10,    'ms', 'redraw'],
+      // How long the camera must be still before the title re-seats
+      // (the settle-only placement law, 2026-08-02).
+      ['house_title_settle_ms', 'Title settle', 60,  600,  10,    'ms', 'redraw'],
       // Exit radius: how far out an empty click must land to leave the
       // house, as a fraction of Rh. 0 restores click-anywhere-to-leave.
       ['house_exit_r',        'Exit radius',   0,    1.4,  0.02,  '×',  'redraw'],
@@ -170,6 +202,9 @@
       // 'off' is the honest zero: the house holds deities only, exactly
       // as it did on 07-30.
       ['house_rails',        'Show the band', ['on', 'off']],
+      // 'shrink' solves item size so the whole family fits the band and
+      // parks only what the 0.8 wu floor refuses; 'cap' = flat Max items.
+      ['house_band_fit',     'Band fit',     ['shrink', 'cap']],
       ['house_rank_caption', 'Rank caption', ['date', 'gen', 'off'], 'redraw'],
       // FLAT is the ratified default (the toy has zero rotated text);
       // 'curved' stays so John can compare the two with one click.
@@ -186,7 +221,11 @@
       ['house_title_slot',   'Title spot',   ['center', 'left', 'right'], 'relabel'],
     ];
 
-    // ── THE SECTIONS — his eye, outside in. ALL OPEN. ───────────
+    // ── THE SECTIONS — his eye, outside in. ONE OPEN (2026-08-02):
+    // the all-open panel put 71% of the dials below the fold at
+    // John's own window. The law now: one section open (accordion),
+    // every section HEAD always on screen (sticky), Reset/Copy pinned
+    // in the foot — findable by structure, not by scroll. ─────────
     const SECTIONS = [
       { id: 'tree', title: 'The tree — the gods', open: true,
         hint: 'who stands where in the middle, and how big they get',
@@ -194,6 +233,8 @@
           { k: 'radio',  key: 'house_pack' },
           { k: 'radio',  key: 'house_ranks' },
           { k: 'radio',  key: 'house_orphans' },
+          { k: 'slider', key: 'house_fan_dy' },
+          { k: 'slider', key: 'house_fan_halfwidth' },
           { k: 'slider', key: 'house_god_size' },
           { k: 'slider', key: 'house_spread' },
           { k: 'slider', key: 'house_tree_r' },
@@ -201,10 +242,11 @@
           { k: 'slider', key: 'house_bed_fill' },
           { k: 'slider', key: 'house_bed_cap' },
         ] },
-      { id: 'band', title: 'The band — Scriptorium + Court', open: true,
+      { id: 'band', title: 'The band — Scriptorium + Court', open: false,
         hint: 'the ring of books and people around the gods',
         items: [
           { k: 'radio',  key: 'house_rails' },
+          { k: 'radio',  key: 'house_band_fit' },
           { k: 'slider', key: 'house_band_r' },
           { k: 'slider', key: 'house_band_rows' },
           { k: 'slider', key: 'house_band_pitch' },
@@ -216,13 +258,13 @@
           { k: 'slider', key: 'house_rail_cap' },
           { k: 'slider', key: 'house_rail_hit' },
         ] },
-      { id: 'ports', title: 'The ports — other families', open: true,
+      { id: 'ports', title: 'The ports — other families', open: false,
         hint: 'the outer ring you click to travel to another house',
         items: [
           { k: 'slider', key: 'house_port_inset' },
           { k: 'slider', key: 'house_port_hit' },
         ] },
-      { id: 'gaps', title: 'The gaps between them', open: true,
+      { id: 'gaps', title: 'The gaps between them', open: false,
         hint: 'clearances nothing may cross, in world units',
         items: [
           { k: 'slider', key: 'house_m_tree' },
@@ -230,7 +272,7 @@
           { k: 'slider', key: 'house_m_sub' },
           { k: 'slider', key: 'house_m_glyph' },
         ] },
-      { id: 'words', title: 'The words — names, dates, titles', open: true,
+      { id: 'words', title: 'The words — names, dates, titles', open: false,
         hint: 'every word the house prints',
         items: [
           { k: 'slider', key: 'house_name_max' },
@@ -242,7 +284,7 @@
           { k: 'radio',  key: 'house_title_slot' },
           { k: 'slider', key: 'house_hint_line' },
         ] },
-      { id: 'lines', title: 'The lines — kinship + transmission', open: true,
+      { id: 'lines', title: 'The lines — kinship + transmission', open: false,
         hint: 'the arcs from parent to child, and the wires to other families',
         items: [
           { k: 'slider', key: 'house_bones' },
@@ -252,10 +294,11 @@
           { k: 'radio',  key: 'house_rest_wires' },
           { k: 'slider', key: 'house_veil' },
         ] },
-      { id: 'feel', title: 'The feel — motion + the way out', open: true,
+      { id: 'feel', title: 'The feel — motion + the way out', open: false,
         hint: 'how the house moves, and where a click leaves it',
         items: [
           { k: 'slider', key: 'house_tween_ms' },
+          { k: 'slider', key: 'house_title_settle_ms' },
           { k: 'slider', key: 'house_exit_r' },
         ] },
     ];
@@ -273,10 +316,13 @@
         + ' · TREE god ×' + num(p.house_god_size, 1).toFixed(2)
         + ' spread ' + num(p.house_spread, 1.1).toFixed(2)
         + ' zone ' + num(p.house_tree_r, 0.86).toFixed(2)
+        + ' fandy ' + num(p.house_fan_dy, 0).toFixed(2)
+        + ' fanw ' + Math.round(num(p.house_fan_halfwidth, 108)) + '°'
         + ' bed ' + num(p.house_bed_chord, 0.74).toFixed(2)
         + '/' + num(p.house_bed_fill, 0.86).toFixed(2)
         + '/' + num(p.house_bed_cap, 0.16).toFixed(3)
         + ' · BAND ' + (p.house_rails === 'off' ? 'off' : 'on')
+        + ' fit ' + (p.house_band_fit === 'cap' ? 'cap' : 'shrink')
         + ' r ' + num(p.house_band_r, 0.86).toFixed(2)
         + ' rows ' + Math.round(num(p.house_band_rows, 3))
         + ' pitch ' + Math.round(num(p.house_band_pitch, 16))
@@ -320,6 +366,11 @@
       radios: RADIOS,
       sections: SECTIONS,
       radioAfter: 'houseMorph',
+      // FINDABILITY (2026-08-02): one section open at a time, sticky
+      // heads, Reset/Copy pinned in the foot, the recipe line behind a
+      // disclosure — the whole panel state on screen without a scroll.
+      accordion: true,
+      recipeCollapsed: true,
       // Its OWN keys — the LAB's blob cannot collide with these. The
       // one-time import carries over the dials John already tuned while
       // these lived in the LAB, instead of snapping to PARAM_DEFAULTS

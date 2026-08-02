@@ -62,10 +62,14 @@
     const css = document.createElement('style');
     css.id = CSS_ID;
     css.textContent = [
+      // FINDABILITY (2026-08-02): the panel is a flex column — the
+      // section list scrolls in .lp-scroll, the heads are sticky, and
+      // the Copy/Reset foot is PINNED (never below the fold again).
       '.forge-devkit{position:fixed;top:64px;right:12px;z-index:235;width:264px;max-height:calc(100vh - 140px);',
-      'overflow-y:auto;background:rgba(10,8,22,.92);backdrop-filter:blur(10px);border:1px solid rgba(211,184,119,.28);',
+      'display:flex;flex-direction:column;overflow:hidden;background:rgba(10,8,22,.92);backdrop-filter:blur(10px);border:1px solid rgba(211,184,119,.28);',
       'border-radius:4px;padding:10px 12px;font:11px ui-monospace,"SF Mono",Menlo,monospace;color:#918ab4;',
       'letter-spacing:.06em;pointer-events:auto}',
+      '.forge-devkit .lp-scroll{overflow-y:auto;flex:1 1 auto;min-height:0}',
       '.forge-devkit h4{margin:0 0 8px;font-size:11px;letter-spacing:.24em;color:#d3b877;font-weight:600}',
       '.forge-devkit .lp-row{margin:7px 0 2px;display:flex;justify-content:space-between;text-transform:uppercase;font-size:10px}',
       '.forge-devkit .lp-row b{color:#d3b877;font-weight:600}',
@@ -89,7 +93,9 @@
       // ── collapsible section headers ──
       '.forge-devkit .lp-sec{width:100%;display:flex;align-items:center;gap:6px;margin:9px 0 0;padding:5px 0;',
       'background:none;border:none;border-top:1px solid rgba(211,184,119,.16);cursor:pointer;',
-      'font:10px ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#d3b877;text-align:left}',
+      'font:10px ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:#d3b877;text-align:left;',
+      // sticky heads: content scrolls under them, opaque so it reads
+      'position:sticky;top:0;background:rgba(10,8,22,.97);z-index:2}',
       '.forge-devkit .lp-sec:hover{color:#f0e2bd}',
       '.forge-devkit .lp-sec .lp-caret{display:inline-block;width:8px;color:#5e5885;transition:transform .12s ease-out}',
       '.forge-devkit .lp-sec.open .lp-caret{transform:rotate(90deg);color:#d3b877}',
@@ -100,7 +106,7 @@
       '.forge-devkit .lp-hint{margin:1px 0 4px;font-size:10px;line-height:1.45;color:#5e5885;letter-spacing:.04em}',
       '.forge-devkit .lp-recipe{margin-top:10px;padding:6px 8px;border:1px dashed rgba(211,184,119,.3);border-radius:3px;',
       'font-size:10px;line-height:1.5;color:#918ab4;word-break:break-word;user-select:all}',
-      '.forge-devkit .lp-btns{display:flex;gap:6px;margin-top:8px}',
+      '.forge-devkit .lp-btns{display:flex;gap:6px;margin-top:8px;flex:0 0 auto}',
       '.forge-devkit .lp-btn{flex:1;font:10px ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;',
       'background:transparent;color:#d3b877;border:1px solid rgba(211,184,119,.4);border-radius:2px;padding:5px 0;cursor:pointer}',
       '.forge-devkit .lp-x{position:absolute;top:8px;right:10px;cursor:pointer;color:#5e5885;background:none;border:none;font-size:12px}',
@@ -208,6 +214,13 @@
     document.body.appendChild(el);
     el.querySelector('.lp-x').addEventListener('click', () => { el.style.display = 'none'; });
 
+    // FINDABILITY (2026-08-02): the sections and the recipe live in a
+    // scroll region of their own; the Copy/Reset foot stays pinned on
+    // the panel element after it, always on screen.
+    const scroll = document.createElement('div');
+    scroll.className = 'lp-scroll';
+    el.appendChild(scroll);
+
     const recipeEl = document.createElement('div');
     function syncRecipe() {
       if (typeof spec.recipe === 'function') recipeEl.textContent = spec.recipe();
@@ -300,19 +313,32 @@
 
     const ctx = { addSlider, addToggles, addRadioRow, local, api, persist, syncRecipe };
 
+    const secEls = [];
     for (const sec of sections) {
       const head = document.createElement('button');
       head.className = 'lp-sec' + (openState[sec.id] ? ' open' : '');
       head.innerHTML = '<span class="lp-caret">▸</span><span>' + sec.title + '</span>';
       const body = document.createElement('div');
       body.className = 'lp-secbody' + (openState[sec.id] ? ' open' : '');
+      secEls.push({ id: sec.id, head, body });
       head.addEventListener('click', () => {
-        openState[sec.id] = !openState[sec.id];
-        head.classList.toggle('open', openState[sec.id]);
-        body.classList.toggle('open', openState[sec.id]);
+        const willOpen = !openState[sec.id];
+        // ACCORDION (2026-08-02, opt-in per panel): opening a section
+        // closes the others, so the whole panel state stays on screen.
+        if (willOpen && spec.accordion) {
+          for (const se of secEls) {
+            if (se.id === sec.id) continue;
+            openState[se.id] = false;
+            se.head.classList.remove('open');
+            se.body.classList.remove('open');
+          }
+        }
+        openState[sec.id] = willOpen;
+        head.classList.toggle('open', willOpen);
+        body.classList.toggle('open', willOpen);
         persistOpen();
       });
-      el.appendChild(head); el.appendChild(body);
+      scroll.appendChild(head); scroll.appendChild(body);
       if (sec.hint) {
         const h = document.createElement('div');
         h.className = 'lp-hint'; h.textContent = sec.hint;
@@ -341,7 +367,28 @@
 
     if (typeof spec.recipe === 'function') {
       recipeEl.className = 'lp-recipe';
-      el.appendChild(recipeEl);
+      if (spec.recipeCollapsed) {
+        // RECIPE DISCLOSURE (2026-08-02, opt-in): the recipe line is a
+        // spec dump, not a control — behind its own toggle head,
+        // default hidden, remembered like a section (openState.__recipe).
+        // The Copy button reads spec.recipe() directly, so copying
+        // works while collapsed.
+        if (!Object.prototype.hasOwnProperty.call(openState, '__recipe')) {
+          openState.__recipe = false;
+        }
+        const rHead = document.createElement('button');
+        rHead.className = 'lp-sec' + (openState.__recipe ? ' open' : '');
+        rHead.innerHTML = '<span class="lp-caret">▸</span><span>RECIPE — the live spec</span>';
+        recipeEl.style.display = openState.__recipe ? '' : 'none';
+        rHead.addEventListener('click', () => {
+          openState.__recipe = !openState.__recipe;
+          rHead.classList.toggle('open', openState.__recipe);
+          recipeEl.style.display = openState.__recipe ? '' : 'none';
+          persistOpen();
+        });
+        scroll.appendChild(rHead);
+      }
+      scroll.appendChild(recipeEl);
     }
     const btns = document.createElement('div');
     btns.className = 'lp-btns';
