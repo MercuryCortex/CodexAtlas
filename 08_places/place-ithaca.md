@@ -6,6 +6,7 @@ aka: ["Ithakē (Ἰθάκη)", "eudeielos Ithakē (εὐδείελος Ἰθάκ
 region: "Ionian Islands, western Greece — traditionally the modern island of Ithaki (Thiaki), east of Cephalonia, facing the Acarnanian mainland"
 lat: 38.40
 lon: 20.68
+tradition: "Greek"
 tradition-context:
   - "[[tradition-greek-religion]]"
 period-earliest: -900
