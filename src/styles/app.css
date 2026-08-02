@@ -80,6 +80,10 @@
   --serif: "Cormorant Garamond", "Iowan Old Style", Palatino, Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  /* TYPE LAW 2026-08-02 — no browser-smeared bold, no sheared italic.
+     Real faces or honest fallback to the nearest real weight/upright. */
+  font-synthesis-weight: none;
+  font-synthesis-style: none;
 
   /* TYPE SCALE — the only legal font-size vocabulary. See 00_meta/app-architecture.md §2. */
   --h1-size: 22px;   /* modal / panel titles (detail h3 sits here) */
@@ -515,7 +519,6 @@ body.nav-hidden .side-tab { display: none !important; }
 .nav-hub-menu .nh-header-subtitle {
   font-family: var(--sans, Inter, sans-serif);
   font-size: 10px;
-  font-style: italic;
   color: var(--text-3, #6b7280);
   margin-top: 1px;
 }
@@ -669,7 +672,6 @@ body.nav-hidden .side-tab { display: none !important; }
 }
 .codex-modal-sub {
   font-family: var(--sans, Inter, sans-serif);
-  font-style: italic;
   font-size: 12px;
   color: var(--text-3, #6b7280);
   margin-bottom: 24px;
@@ -2629,7 +2631,7 @@ aside.detail .empty {
 }
 .chain-badge {
   font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em;
-  font-weight: 700; padding: 2px 8px; border-radius: 3px; flex-shrink: 0;
+  font-weight: 600; padding: 2px 8px; border-radius: 3px; flex-shrink: 0;
 }
 .chain-span {
   font-family: var(--mono); font-size: 10px; color: var(--text-3);
@@ -2698,7 +2700,7 @@ aside.detail .empty {
 .alch-add-btn:hover { background: rgba(212,165,90,0.10); border-color: var(--gold); }
 .alch-toolbox .alch-hint {
   font-family: var(--mono); font-size: 10px; color: var(--text-3);
-  letter-spacing: 0.04em; font-style: italic;
+  letter-spacing: 0.04em;
 }
 
 /* UTILITY TOOLS: layout selector + spacing slider, inline in the toolbox pill. */
@@ -2828,7 +2830,7 @@ aside.detail .empty {
   paint-order: stroke; stroke: var(--bg-0); stroke-width: 0.22em;
 }
 .alch-node-label.pick { fill: var(--text-0); font-weight: 500; font-size: 12.5px; }
-.alch-node-label.bridge { fill: var(--text-2); font-size: 9.5px; font-style: italic; }
+.alch-node-label.bridge { fill: var(--text-2); font-size: 9.5px; }
 .alch-link {
   /* Quiet slate-blue default — matches .edge-line discipline. Type color lives in
      --edge-type-color (set inline by JS); only the .hot state reveals it. */
@@ -3005,7 +3007,7 @@ aside.detail .empty {
 /* Category badge tags on preset cards */
 .alch-preset-tag {
   display: inline-block; vertical-align: middle;
-  font-family: var(--mono); font-size: 8px; font-weight: 700;
+  font-family: var(--mono); font-size: 9px; font-weight: 600;
   letter-spacing: .09em; text-transform: uppercase;
   padding: 1px 5px; border-radius: 2px;
   margin-right: 5px; margin-top: -1px;
@@ -3063,7 +3065,7 @@ aside.detail .empty {
   display: inline-flex; align-items: center; justify-content: center;
   width: 14px; height: 14px; border-radius: 50%;
   background: rgba(255,130,30,0.85); color: #fff;
-  font-size: 8px; font-weight: 700; font-family: var(--mono);
+  font-size: 9px; font-weight: 600; font-family: var(--mono);
   margin-left: 4px; vertical-align: middle; line-height: 1;
 }
 .alch-invest-dropdown {
@@ -3084,7 +3086,7 @@ aside.detail .empty {
 .alch-invest-card.alert { border-left: 2px solid rgba(255,130,30,0.65); }
 .alch-invest-header { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
 .alch-invest-flag {
-  font-family: var(--mono); font-size: 8px; font-weight: 700; color: #ff8a1e;
+  font-family: var(--mono); font-size: 9px; font-weight: 600; color: #ff8a1e;
   letter-spacing: 0.08em; background: rgba(255,130,30,0.12);
   border: 1px solid rgba(255,130,30,0.3); border-radius: 2px; padding: 1px 5px; white-space: nowrap;
 }
@@ -3345,7 +3347,6 @@ body.view-atlas main.canvas { background: var(--bg-0); }
 }
 .ph2-thumb-tagline {
   font-family: var(--sans);
-  font-style: italic;
   font-size: 12px; line-height: 1.32;
   color: var(--text-1);
   letter-spacing: 0;
@@ -7955,7 +7956,7 @@ aside.detail { overflow-x: hidden; }
   cursor: pointer;
 }
 .forge-hull-label:hover {
-  fill-opacity: 1;
+  stroke-width: 2.5px;  /* halo swells, letterform constant */
 }
 /* The isolated family's title stays lit — it is also the way out.
    THE CROWN FACE (2026-08-01, John: "the top title is over and
@@ -8020,7 +8021,7 @@ body.fv-isolated .forge-house-chips {
   letter-spacing: 0.18em;
   paint-order: stroke fill;
   stroke: rgba(0, 0, 0, 0.7);
-  stroke-width: 3px;
+  stroke-width: 1.75px;
   stroke-linejoin: round;
 }
 .forge-house-chip:hover {
@@ -8033,7 +8034,9 @@ body.fv-isolated .forge-house-chips {
 }
 .forge-hull-label {
   fill: var(--family-color, #888);
-  fill-opacity: 0.85;
+  /* TYPE 2026-08-02: fill-opacity .85 + 3px halo on ~1.3px stems was the
+     "washed and thin" wheel type. Full ink, hairline shield. */
+  fill-opacity: 1;
   font-family: var(--mono, "JetBrains Mono", Menlo, monospace);
   font-size: 11px;
   letter-spacing: 0.18em;
@@ -8044,7 +8047,7 @@ body.fv-isolated .forge-house-chips {
      crossing the label area. */
   paint-order: stroke fill;
   stroke: rgba(0, 0, 0, 0.7);
-  stroke-width: 3px;
+  stroke-width: 1.75px;
   stroke-linejoin: round;
 }
 /* Phase 20B (2026-05-21) — radial separator lines between adjacent
@@ -11734,3 +11737,6 @@ body #forge-lab-panel { z-index: 235; }
 .forge-devpanel-x--stats { position: fixed; z-index: 236; }
 /* …and the strip itself: room for the × above the fps row. */
 .forge-debug-panel.is-open { padding-top: 24px; }
+
+/* Real-weight law (2026-08-02) — panel emphasis is 600, never browser-default 700 */
+.dev-overview-cell-sub strong { font-weight: 600; }

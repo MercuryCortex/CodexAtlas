@@ -4,13 +4,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Codex Atlas</title>
+<!-- First-paint faces (2026-08-02): variable files, one preload covers every
+     weight. crossorigin is mandatory or Safari double-fetches. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_assets/vendor/fonts/jetbrainsmono__tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_assets/vendor/fonts/inter__UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_assets/vendor/fonts/cormorantgaramond__co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtKky2F7g.woff2" />
 <!-- Self-hosted fonts (vendored 2026-07-17): the Google Fonts <link>s were
      removed and all 25 families (132 woff2 subsets) pulled into
      _assets/vendor/fonts/. ZERO third-party font requests at runtime — no
      tester IP leaks to Google on load (Anonymity Law). -->
-<link rel="stylesheet" href="_assets/vendor/fonts/fonts.css?v=20260717-fonts" />
+<link rel="stylesheet" href="_assets/vendor/fonts/fonts.css?v=20260802-type1" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260801-titleair" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260802-type1" />
 <!-- ?diag=1 — BOOT ERROR RECORDER (2026-07-29). Must be the FIRST script on
      the page: an automated Safari/prod pass connects AFTER load, so without
      this there is no honest way to say "no boot errors" on a browser we
@@ -235,7 +240,7 @@
      forge.js so window.AtlasViewportFilter exists when
      rebuildForMode tries to cull the active set. -->
 <script src="src/js/engine/graph/viewport-filter.js?v=20260527T0625-reverted-blinking"></script>
-<script src="src/js/forge/_bundle.js?v=20260801-houseright"></script>
+<script src="src/js/forge/_bundle.js?v=20260802-type1"></script>
 <script src="src/js/views/forge.js?v=20260801-fanaxis"></script>
 <script src="src/js/views/boards.js?v=20260716-sealed"></script>
 <!-- Boards V2 Investigation Library data — 32 MASSIVE WINS + 11
@@ -322,7 +327,7 @@
      glyph-data.js (DATA-ONLY, powers the GLYPHS class) loads earlier —
      before app.js — per the 2026-06-10 boot-race fix. The four legacy
      renderer modules stay on disk for the _legacy snapshot. -->
-<script src="src/js/dev-panel.js?v=20260530-regated-on-opt-in"></script>
+<script src="src/js/dev-panel.js?v=20260802-type1"></script>
 <script src="src/js/views/scripture-reader.js?v=20260610-shell-kill"></script>
 <script src="src/js/views/legacy.js?v=20260525-phase24-v1a"></script>
 </body>

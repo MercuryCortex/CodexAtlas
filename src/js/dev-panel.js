@@ -275,7 +275,7 @@
       color: var(--text-2, #7a8090); font-size: 10px;
       letter-spacing: 0.04em;
     }
-    .dp-val { color: var(--text-0, #c8cdd8); font-weight: 600; font-size: 10.5px; }
+    .dp-val { color: var(--text-0, #c8cdd8); font-weight: 500; font-size: 10.5px; }
     .dp-slider {
       width: 100%; -webkit-appearance: none; appearance: none;
       height: 3px; border-radius: 2px;
