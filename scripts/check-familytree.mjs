@@ -696,8 +696,8 @@ for (const [fam, modeType] of [['Christian', 'deity'], ['Other', 'deity'], ['Oth
 // standing law that bit four times.
 console.log('\n── W4 · THE RING\'S CURVED TEXT — every promised string can land ──');
 // the view's laws, pinned so this mirror cannot drift silently
-must(/const TYPE = \{ head: 11 \* ts, name: 10 \* ts, cap: 9\.5 \* ts \};/,
-  'the type scale steps are HEAD 11 / NAME 10 / CAP 9.5 CSS px');
+must(/const TYPE = \{ head: 13 \* ts, name: 12 \* ts, cap: 11\.5 \* ts \};/,
+  'the type scale steps are HEAD 13 / NAME 12 / CAP 11.5 CSS px');
 must(/const row = \(px\) => Math\.max\(16, Math\.round\(px \* 1\.9\)\);/,
   'row pitch DERIVES from the step size and always clears the 15px rule');
 must(/const CROWN_ROW = row\(TYPE\.head\);/, 'the crown stack pitch derives from the HEAD step');
@@ -798,7 +798,7 @@ must(/const BAND_HEAD_ARC  =  230;/, '(layout) BAND_HEAD_ARC default matches the
 must(/const BAND_CAP_CLEAR =  10;/, '(layout) BAND_CAP_CLEAR default matches the dial', treeSrc);
 
 // The mirror. Mono advance ≈ 0.6em; 0.62 is the conservative bound.
-const T_HEAD = 11, T_NAME = 10, T_CAP = 9.5;
+const T_HEAD = 13, T_NAME = 12, T_CAP = 11.5;
 const rowOf = (px) => Math.max(16, Math.round(px * 1.9));
 const mw = (str, px) => String(str).length * px * 0.62 + 8;
 const KO_TOP = 52, KO_BOT = 58;
@@ -970,8 +970,12 @@ const titleAnchor = (vp, slot, h, W2S, lay) => {
     };
   }
   const rowH = rowOf(T_HEAD), NAME_RISE = 16;
-  const blockH = rowH * 3 + NAME_RISE + 8;
-  const blockHC = rowH * 2 + NAME_RISE + 8;
+  // TITLE + SUBTITLE, AND NOTHING ELSE (forge.js 2026-08-01; mirror
+  // caught up 2026-08-02) — the app dropped the two-stat-line stack:
+  // the block is name + ONE subtitle (lineC, always) + chips, so
+  // blockH is rowH·2 and there is no taller non-compact form. The old
+  // 4-row model here was a gate testing its own fiction.
+  const blockH = rowH * 2 + NAME_RISE + 8;
   const c = W2S(h.center.x, h.center.y);
   const e = W2S(h.center.x + h.radius, h.center.y);
   const pxPerWorld = Math.abs(e.x - c.x) / Math.max(1e-6, h.radius);
@@ -979,16 +983,15 @@ const titleAnchor = (vp, slot, h, W2S, lay) => {
   const x = Math.max(170, Math.min(Math.max(170, vp.w - 170), c.x));
   const halfW = 200;
   const res = lay
-    ? titleGapOf(vp, h, W2S, lay, x, halfW, pxPerWorld, c.y - rPx, c.y + rPx, blockHC)
+    ? titleGapOf(vp, h, W2S, lay, x, halfW, pxPerWorld, c.y - rPx, c.y + rPx, blockH)
     : { gap: { lo: c.y - rPx + TITLE_RIM, hi: c.y - rPx + TITLE_RIM + blockH }, fits: true, holes: [] };
   const use = res.gap, room = use.hi - use.lo;
-  const compact = room < blockH;
-  const bh = compact ? blockHC : blockH;
-  const yMax = Math.max(TITLE_TOP, vp.h - 58 - rowH * (compact ? 2 : 3) - 10);
+  const compact = true;                 // one subtitle, always (forge.js :6719)
+  const yMax = Math.max(TITLE_TOP, vp.h - 58 - rowH * 2 - 10);
   return {
-    right: false, center: true, compact, fits: res.fits, room, need: bh,
+    right: false, center: true, compact, fits: res.fits, room, need: blockH,
     x,
-    y: Math.max(TITLE_TOP, Math.min(yMax, (use.lo + use.hi) / 2 - bh / 2 + NAME_RISE)),
+    y: Math.max(TITLE_TOP, Math.min(yMax, (use.lo + use.hi) / 2 - blockH / 2 + NAME_RISE)),
   };
 };
 // The family name paints in the CROWN FACE while isolated (21px
@@ -998,9 +1001,11 @@ const titleW = (fam) => String(fam).length * 21 * 0.68 + 24;
 let titleBlockFail = 0, titleBlockTot = 0;
 // The deity names paint in the SANS face at label_size (14 CSS px);
 // 0.52em is the conservative average advance for Inter at that size.
-// THE HOUSE TYPE LAW (2026-08-01): house names paint at the toy's
-// scale — hubs (tier ≤1) '600 11px', everyone else '500 9.5px' —
-// not the wheel's 14px. 0.52em stays the conservative sans advance.
+// THE HOUSE TYPE LAW (2026-08-01, remedy 2026-08-02): house names
+// paint at the toy's scale × the BAKED 1.2 remedy — hubs (tier ≤1)
+// '600 13px', everyone else '500 11.5px' — not the wheel's 14px.
+// house_type_scale stays a 1.0-default headroom dial on top.
+// 0.52em stays the conservative sans advance.
 const sansW = (str, px) => String(str).length * (px || 14) * 0.52;
 // The wheel's tier percentiles over the DEITIES block, mirroring
 // engine/graph/node.js — the rank pass walks names in tier order, and
@@ -1042,27 +1047,25 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
       : (anch.right ? (anch.x - w / 2) : (anch.x + w / 2));
     const CROWN_ROW = rowOf(T_HEAD);
     const noun = st.treeKind ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
-    const line1 = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' LINEAGE ARCS · ' + st.orphanCount + ' STAND ON THEIR ERA';
-    const line2 = st.docs + ' IN THE SCRIPTORIUM · ' + st.court + ' IN THE COURT';
     // MERGED (wave 4) — the REAL paint order is: locked title block →
     // band curved text → band shield → ports → god names → low half.
     // The two agents each rewrote part of this replay; this is the union
     // in the order the view actually paints, not either side alone.
     const tw = titleW(fam);
-    // THE COMPACT STACK — when the column's roomiest hole cannot take
-    // four rows, the two stat lines collapse into one (forge.js
-    // `lineC`). Three rows, not four; every number still stated.
+    // TITLE + SUBTITLE, AND NOTHING ELSE (forge.js 2026-08-01; mirror
+    // caught up 2026-08-02): the app always paints ONE subtitle — the
+    // `lineC` string at the CAP step — under the name, then the chips.
+    // The old two-stat-line rows here were dead law.
     const lineC = st.tree + ' ' + noun + ' · ' + st.kinArcs + ' ARCS · '
       + st.orphanCount + ' ON THEIR ERA · ' + st.docs + ' SCRIPTORIUM · ' + st.court + ' COURT';
-    const w1 = anch.compact ? 0 : mw(line1, T_HEAD);
-    const w2b = mw(anch.compact ? lineC : line2, T_CAP);
+    const w2b = mw(lineC, T_CAP);
     // THE BLOCK IS A KEEPOUT (2026-08-01): every row claims the full
     // block width + one row of air above and below, mirroring the
     // view. Row 0 is syncHulls' published title rect, seeded into
     // `placed` before the canvas pass — same as local._titleRects.
-    const BW = Math.max(w1 + 8, w2b + 8, tw, 156) + 28;
+    const BW = Math.max(w2b + 8, tw, 156) + 28;
     claimSim(placed, cenX(BW), cs.y - CROWN_ROW, BW, vp.h);   // air above
-    const nRow = anch.compact ? 2 : 3;      // stat rows + chips under the name
+    const nRow = 2;                         // subtitle + chips under the name
     const rows4 = [claimSim(placed, cenX(Math.max(tw, 400)), cs.y, Math.max(tw, 400), vp.h)];
     for (let r = 1; r <= nRow; r++) {
       rows4.push(claimSim(placed, cenX(BW), cs.y + CROWN_ROW * r, BW, vp.h));
@@ -1080,8 +1083,18 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
       const header = rl.side < 0
         ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
         : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
-      if (!flatSim(placed, header, rl.capR + rl.capTier, rl.headA, T_HEAD,
-                   scale, ctrX, ctrY, vp.h)) headerFail++;
+      // THE HEADER YIELDS, NEVER VANISHES (2026-08-02) — same ladder
+      // as the view: own row first, then one HEAD row either way
+      // (nearest step wins), up to three rows before the honest hide.
+      let hOK = null;
+      for (let hs2 = 0; hs2 <= 3 && !hOK; hs2++) {
+        for (const hDir of (hs2 === 0 ? [1] : [1, -1])) {
+          hOK = flatSim(placed, header, rl.capR + rl.capTier, rl.headA, T_HEAD,
+                        scale, ctrX, ctrY, vp.h, { dy: hDir * rowOf(T_HEAD) * hs2 });
+          if (hOK) break;
+        }
+      }
+      if (!hOK) headerFail++;
       for (const sh of rl.shelves) {
         const txt = sh.label + ' · ' + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
         capTot++;
@@ -1132,8 +1145,14 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     for (const pt of lay.ports) {
       const ps = W2S(pt.x, pt.y);
       if (ps.x < -60 || ps.x > vp.w + 60 || ps.y < -60 || ps.y > vp.h + 60) continue;
+      if (!pt.count) {   // zero-wire: a 10px tick, no hover in a headless replay
+        const tx = ps.x + Math.cos(pt.ang) * 13;
+        const ty = Math.max(KO_TOP + 2, Math.min(vp.h - KO_BOT - 2, ps.y + Math.sin(pt.ang) * 13));
+        claimSim(placed, tx, ty, 10, vp.h);
+        continue;
+      }
       const left = Math.cos(pt.ang) < 0;
-      const txt = String(pt.group).toUpperCase() + (pt.count ? ' · ' + pt.count : '');
+      const txt = String(pt.group).toUpperCase() + ' · ' + pt.count;
       const w = mw(txt, T_NAME);
       let lx = ps.x + Math.cos(pt.ang) * 13;
       let ly = ps.y + Math.sin(pt.ang) * 13;
@@ -1156,7 +1175,7 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
       if (s.x < -100 || s.x > vp.w + 100 || s.y < -100 || s.y > vp.h + 100) continue;
       const node = NODE_BY_ID.get(id);
       const title = (node && node.title) || id;
-      const wpx = sansW(title, w4TierOf(id) <= 1 ? 11 : 9.5) + 10;
+      const wpx = sansW(title, w4TierOf(id) <= 1 ? 13 : 11.5) + 10;
       const rBub = (lay.radii.get(id) || 0) * scale;
       const ly = s.y - rBub - 6;
       if (ly < KO_TOP || ly > vp.h - KO_BOT) { godClamped++; continue; }
@@ -1954,8 +1973,23 @@ must(/if \(txt == null && capMode === 'date'\) txt = 'UNDATED';/,
   'an undated rank SAYS so — UNDATED prints instead of a silent gap', forgeSrc);
 must(/const aW = -Math\.PI \/ 2 - Math\.PI \* 0\.60;/,
   'the fan date rides each ring\'s WEST terminus — the left axis follows the rings, never the crest', forgeSrc);
-must(/houseFace = atHouseNow \? \{\s*\n\s*hub:\s+'600 ' \+ \(11 \* _hts2\)/,
-  'house names paint at the TOY\'s type law — hub 11px / rest 9.5px — never the wheel\'s 14px', forgeSrc);
+must(/houseFace = atHouseNow \? \{\s*\n\s*hub:\s+'600 ' \+ \(13 \* _hts2\)/,
+  'house names paint at the TOY\'s type law — hub 13px / rest 11.5px (× house_type_scale, baked 2026-08-02) — never the wheel\'s 14px', forgeSrc);
+// ── THE 2026-08-02 TYPE REMEDY + HORIZON HIERARCHY, pinned ─────────
+must(/house_type_scale:\s+1\.0,/,
+  'the ratified 1.2× is BAKED into TYPE/houseFace (13/12/11.5) — the dial stays a 1.0-default headroom multiplier, never a second 1.2', forgeSrc);
+must(/if \(!cnt && local\._portHoverGroup !== pt\.group\) \{/,
+  'a zero-wire port paints a TICK, not a headline — its name waits for the pointer', forgeSrc);
+must(/ctx\.fillStyle = pt\.color \|\| _labelsTextColor;\s*\n\s*halo\(txt, lx, ly\);/,
+  'a counted port paints SOLID family ink at alpha 1 — the .9/.5 fog line is dead', forgeSrc);
+must(/function mixToBg\(col, keep\) \{/,
+  'quiet standing chrome is PRE-DIMMED SOLID ink (mixToBg), never globalAlpha fog', forgeSrc);
+must(/ctx\.fillStyle = mixToBg\(_labelsTextColor, \(txt === 'UNDATED'\) \? 0\.55 : 0\.80\);/,
+  'the rank dates read quiet-but-solid — pre-mixed ink, alpha 1', forgeSrc);
+must(/&& local\._labelsIdlePortHover === \(local\._portHoverGroup \|\| null\)/,
+  'the labels idle cache repaints on port hover (and carries dpr) — a hover-shown name can actually appear', forgeSrc);
+must(/for \(let hStep = 0; hStep <= 3 && !headRes; hStep\+\+\) \{/,
+  'a band header YIELDS one row at a time to the title keepout — a canonical count never silently vanishes', forgeSrc);
 must(/const ly = \(rm\.lineY != null\) \? rm\.lineY : rm\.y;/,
   'the stratum line consumes the layout\'s lineY — computed since wave 5, finally drawn', forgeSrc);
 must(/house_stratum:\s+0\.16,/,

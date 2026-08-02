@@ -4455,9 +4455,17 @@
       if (rect.width < 8 || rect.height < 8) return;
       const w = Math.max(1, Math.floor(rect.width));
       const h = Math.max(1, Math.floor(rect.height));
-      const sizeChanged = (w !== local.lastSize.w || h !== local.lastSize.h);
+      // DPR RE-RASTERISATION (2026-08-02) — renderer.resize() already
+      // re-reads devicePixelRatio; the caller just never invoked it on
+      // a pure-DPR change (moving the window to another display left
+      // stale-DPR pixels). CSS w/h are unchanged on a DPR-only change,
+      // so the camera framing is untouched — the 2026-05-19 "no
+      // auto-refit" law is preserved; only the backing stores re-bake.
+      const dprNow = window.devicePixelRatio || 1;
+      const sizeChanged = (w !== local.lastSize.w || h !== local.lastSize.h
+        || dprNow !== local.lastSize.dpr);
       if (sizeChanged) {
-        local.lastSize = { w, h };
+        local.lastSize = { w, h, dpr: dprNow };
         canvas.style.width  = w + 'px';
         canvas.style.height = h + 'px';
         local.renderer.resize(w, h);
@@ -6025,6 +6033,36 @@
     let _labelsHaloColor = '';
     let _labelsTextColor = '';
     let _labelsGoldColor = '';              // THE HOUSE — --gold token cache
+    // ══ PRE-DIMMED SOLID INK (2026-08-02) ═══════════════════════
+    // Standing chrome used to paint at globalAlpha .5-.9, which
+    // composites the fill over its own halo and whatever is under
+    // it — ZERO pixels ever showed the intended colour, and a thin
+    // mono stem at half opacity is exactly what John reads as fog.
+    // A quiet string is now a SOLID colour pre-mixed toward the
+    // page ground (--forge-label-halo IS the ground tone) and
+    // paints at alpha 1: the letterform stays crisp, only its INK
+    // is quiet. Animation fades (wake/reveal ramps) stay alpha —
+    // they are motion, not a standing tone.
+    let _mixInkCache = new Map();
+    function mixToBg(col, keep) {
+      if (keep >= 1) return col;
+      const key = col + '|' + keep;
+      const hit = _mixInkCache.get(key);
+      if (hit) return hit;
+      const hexRe = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i;
+      const m = hexRe.exec(String(col).trim());
+      const b = hexRe.exec(String(_labelsHaloColor || '#0a0d12').trim());
+      if (!m || !b) { _mixInkCache.set(key, col); return col; }  // non-hex: honest no-op
+      const ch = (mm, i) => parseInt(mm[1].length === 3
+        ? mm[1][i] + mm[1][i] : mm[1].slice(i * 2, i * 2 + 2), 16);
+      let out = '#';
+      for (let i = 0; i < 3; i++) {
+        const v = Math.round(ch(b, i) + (ch(m, i) - ch(b, i)) * keep);
+        out += (v < 16 ? '0' : '') + v.toString(16);
+      }
+      _mixInkCache.set(key, out);
+      return out;
+    }
     let _labelsHaloRead = 0;                // ms timestamp of last CSS-var read
     function renderLabelsCanvas() {
       const vp = local.lastSize;
@@ -6058,6 +6096,7 @@
       const _lat = local._activeTiers;
       const _lfk = (_lat && _lat.size < 5 ? Array.from(_lat).sort().join('') : 'all')
         + (local._showPoliticalRisk ? '|P' : '');
+      const _ldpr = window.devicePixelRatio || 1;
       if (!local._wakeAlive
           && !local._labelFadeAlive   // a name is still arriving/leaving
           && local._labelsIdleCamS === _lcs
@@ -6067,7 +6106,9 @@
           && local._labelsIdleVisSize === _lvs
           && local._labelsIdleFilterKey === _lfk
           && local._labelsIdleW === vp.w
-          && local._labelsIdleH === vp.h) {
+          && local._labelsIdleH === vp.h
+          && local._labelsIdleDpr === _ldpr
+          && local._labelsIdlePortHover === (local._portHoverGroup || null)) {
         return; // canvas pixels still valid (wake labels animate → no skip while awake)
       }
       local._labelsIdleCamS = _lcs;
@@ -6078,8 +6119,10 @@
       local._labelsIdleFilterKey = _lfk;
       local._labelsIdleW = vp.w;
       local._labelsIdleH = vp.h;
+      local._labelsIdleDpr = _ldpr;
+      local._labelsIdlePortHover = local._portHoverGroup || null;
 
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = _ldpr;
       // Resize backing store if dimensions changed (viewport or DPR).
       if (vp.w !== _labelsCssW || vp.h !== _labelsCssH || dpr !== _labelsDpr) {
         labelsCanvas.width  = Math.round(vp.w * dpr);
@@ -6110,6 +6153,7 @@
         // the same cadence-limited computed-style pass; token law).
         _labelsGoldColor = (cs.getPropertyValue('--gold') || '').trim() || '#d3b877';
         _labelsHaloRead = now;
+        _mixInkCache.clear();   // theme flips re-mix within one cadence
       }
       const ctx = labelsCanvasCtx;
       // Transform to CSS pixels so we can use vp.w/vp.h coordinates.
@@ -6187,13 +6231,11 @@
       ctx.textBaseline = 'bottom';
       ctx.lineJoin = 'round';
       ctx.miterLimit = 2;
-      // Restored 2026-05-27: was reduced to 2px as a Safari paint-cost
-      // optimization, but the camera-idle skip (above) already eliminates
-      // most paint calls. With idle-skip in place, the per-paint cost
-      // matters less, so going back to 4px for the chunkier halo look
-      // is fine for Safari fluidity. If pan stutters return, drop back
-      // to 2px or 3px.
-      ctx.lineWidth = (face === 'voice') ? 3 : 4;
+      // TYPE REMEDY 2026-08-02 — strokeText centres the stroke, so the
+      // old 4px halo bled 2px INTO the counters of a 14px face (2.83
+      // halo px per text px of cap height read as smear, not shield).
+      // The halo now derives from the face at ~0.14em, clamped.
+      ctx.lineWidth = (face === 'voice') ? 1.4 : Math.max(1.2, Math.min(2.4, _labelSize * 0.14));
       ctx.strokeStyle = _labelsHaloColor;
       ctx.fillStyle = _labelsTextColor;
 
@@ -6231,14 +6273,18 @@
       // drop to the toy's scale (nudged +0.5px per the wave-3 blur
       // floor), keep the tier hierarchy, ride house_type_scale, and
       // derive their halo from their own face instead of inheriting
-      // the wheel's 4px stroke.
+      // the wheel's stroke.
+      // TYPE REMEDY 2026-08-02 — John judged 1.2× on his own screen;
+      // the ratified sizes are BAKED (hub 13 / rest 11.5, halo
+      // ~0.20em) and house_type_scale stays a 1.0-default headroom
+      // dial — never a second 1.2.
       const _hts2 = Math.max(0.7, Math.min(2,
         (typeof local.params.house_type_scale === 'number') ? local.params.house_type_scale : 1));
       const houseFace = atHouseNow ? {
-        hub:    '600 ' + (11 * _hts2).toFixed(1) + 'px ' + fam,
-        rest:   '500 ' + (9.5 * _hts2).toFixed(1) + 'px ' + fam,
-        hubLw:  Math.max(1.8, Math.min(3.2, 11 * _hts2 * 0.26)),
-        restLw: Math.max(1.6, Math.min(3.2, 9.5 * _hts2 * 0.26)),
+        hub:    '600 ' + (13 * _hts2).toFixed(1) + 'px ' + fam,
+        rest:   '500 ' + (11.5 * _hts2).toFixed(1) + 'px ' + fam,
+        hubLw:  Math.max(1.5, Math.min(2.8, 13 * _hts2 * 0.20)),
+        restLw: Math.max(1.4, Math.min(2.6, 11.5 * _hts2 * 0.20)),
       } : null;
       const setNameFont = (tier) => {
         if (!houseFace) return;
@@ -6638,7 +6684,7 @@
       if (house && house.center) {
         const ts = Math.max(0.7, Math.min(2,
           (typeof local.params.house_type_scale === 'number') ? local.params.house_type_scale : 1));
-        const rowH = Math.max(16, Math.round(11 * ts * 1.9));
+        const rowH = Math.max(16, Math.round(13 * ts * 1.9));
         // The block is the NAME plus three row steps under it (line 1,
         // line 2, the chips), plus the name's own rise above its
         // baseline — the crown face is 21px serif in app.css.
@@ -6869,7 +6915,7 @@
         font: ctx.font, align: ctx.textAlign, base: ctx.textBaseline,
         lw: ctx.lineWidth, fill: ctx.fillStyle, alpha: ctx.globalAlpha,
       };
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 2;
       ctx.textBaseline = 'middle';
       const W2S = (x, y) => camera.worldToScreen(x, y, vp);
       const yOK = (y) => y >= KEEPOUT_TOP && y <= vp.h - KEEPOUT_BOTTOM;
@@ -6891,7 +6937,7 @@
       //    14-20px. strokeText centres the stroke on the glyph path,
       //    so 3px bled 1.5px INWARD and flooded the counters before
       //    fillText painted over them. The halo now scales with the
-      //    face (~0.26em, clamped) and joins round so thin stems keep
+      //    face (~0.20em, clamped) and joins round so thin stems keep
       //    their corners.
       // 2. FRACTIONAL DEVICE PIXELS. Every anchor here comes from
       //    worldToScreen, so the baseline lands on a half device pixel
@@ -6911,15 +6957,19 @@
       // and its row pitch FROM ITS OWN SIZE — the next person cannot
       // reintroduce a 7.5px label with a 3px halo or a row pitch the
       // 15px claim rule refuses:
-      //   HEAD 11px — rail headers, crown line 1
-      //   NAME 10px — spine names, port labels, the hint line
-      //   CAP 9.5px — shelf captions, rank/era captions, crown line 2,
-      //               the overflow foot, orphan captions
-      // All × house_type_scale (LAB ▸ House sizes; default 1). Row
-      // pitch = max(16, size × 1.9) — always clears the 15px rule.
+      //   HEAD 13px — rail headers, crown line 1
+      //   NAME 12px — spine names, port labels, the hint line
+      //   CAP 11.5px — shelf captions, rank/era captions, crown line 2,
+      //                the overflow foot, orphan captions
+      // (TYPE REMEDY 2026-08-02 — the 1.2× John approved on his own
+      // screen is BAKED into these steps; the old 11/10/9.5 measured
+      // 49-57% solid ink, the worst of the "blurry" complaints.)
+      // All × house_type_scale (LAB ▸ House sizes; default 1 — the
+      // dial is headroom, never a second 1.2). Row pitch =
+      // max(16, size × 1.9) — always clears the 15px rule.
       const ts = Math.max(0.7, Math.min(2,
         (typeof local.params.house_type_scale === 'number') ? local.params.house_type_scale : 1));
-      const TYPE = { head: 11 * ts, name: 10 * ts, cap: 9.5 * ts };
+      const TYPE = { head: 13 * ts, name: 12 * ts, cap: 11.5 * ts };
       const row = (px) => Math.max(16, Math.round(px * 1.9));
       const font = (weight, px) => {
         ctx.font = weight + ' ' + (Math.round(px * 10) / 10) + 'px ' + HOUSE_MONO;
@@ -6934,7 +6984,7 @@
         const sx = snap(x), sy = snap(y);
         ctx.lineJoin = 'round';
         ctx.miterLimit = 2;
-        ctx.lineWidth = Math.max(1.4, Math.min(3.2, faceOf() * 0.26));
+        ctx.lineWidth = Math.max(1.2, Math.min(2.6, faceOf() * 0.20));
         ctx.strokeText(t, sx, sy);
         ctx.fillText(t, sx, sy);
       };
@@ -6942,7 +6992,7 @@
         ctx.font = saved.font; ctx.textAlign = saved.align; ctx.textBaseline = saved.base;
         ctx.lineWidth = saved.lw; ctx.fillStyle = saved.fill; ctx.globalAlpha = saved.alpha;
       };
-      return { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, yOK, claim, halo, restore, TYPE, row, font };
+      return { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, yOK, claim, halo, snap, restore, TYPE, row, font };
     }
     // Numeral for a row that IS one generation (see capFor — a layout
     // rank is not a generation, so most rows never reach this).
@@ -6999,7 +7049,7 @@
       const ports = hs.lay.ports || [];
       const m = local.mode;
       const env = houseChromeEnv(ctx, placed, vp);
-      const { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, claim, halo, TYPE, row, font } = env;
+      const { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, claim, halo, snap, TYPE, row, font } = env;
       const fmtD = (d) => (d < 0 ? (-d) + ' BCE' : d + ' CE');
 
       // 1 ▸ THE TITLE BLOCK — a LOCKED SCREEN FIXTURE since wave 4
@@ -7095,12 +7145,10 @@
       ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
       const statRow = 1;
       if (claim(cenX(BW), cs.y + CROWN_ROW * statRow, BW)) {
-        ctx.fillStyle = _labelsTextColor;
         // A zero room is stated, not shouted — one step quieter than a
-        // populated one, still legible. (Wave 3 floors: nothing in the
-        // chrome may sit under alpha 0.55 — faint plus tiny is the
-        // exact combination John reads as "blurry".)
-        ctx.globalAlpha = (st.docs || st.court) ? 0.72 : 0.55;
+        // populated one, still legible. Pre-dimmed SOLID ink since
+        // 2026-08-02: the quiet is in the colour, never in alpha fog.
+        ctx.fillStyle = mixToBg(_labelsTextColor, (st.docs || st.court) ? 0.72 : 0.55);
         halo(statLine, cs.x, cs.y + CROWN_ROW * statRow);
       }
       ctx.globalAlpha = 1;
@@ -7218,6 +7266,14 @@
       // The number is the FILTER-AWARE count (housePortVisibleCounts):
       // with LEGEND tiers off, the horizon's claim shrinks with the
       // map's stated scope instead of contradicting it.
+      // ── THE HORIZON HIERARCHY (2026-08-02) ──────────────────────
+      // A port with no wires in the STATED scope is wayfinding, not
+      // a claim: ~20 dead names at full size were the outermost
+      // ring's fog. It paints as a small tick in its family's quiet
+      // ink and speaks its name only under the pointer (housePortAt
+      // already aims at it — LAW 2's own hit path; the repaint rides
+      // the idle key's _portHoverGroup term). Counted ports keep
+      // name + count in SOLID family ink — the alpha fog line dies.
       const portCounts = housePortVisibleCounts();
       font('600', TYPE.name);
       for (const pt of ports) {
@@ -7225,6 +7281,17 @@
         if (ps.x < -60 || ps.x > vp.w + 60 || ps.y < -60 || ps.y > vp.h + 60) continue;
         const left = Math.cos(pt.ang) < 0;
         const cnt = portCounts ? (portCounts[pt.group] || 0) : (pt.count || 0);
+        if (!cnt && local._portHoverGroup !== pt.group) {
+          const tx = ps.x + Math.cos(pt.ang) * 13;
+          const ty = Math.max(KEEPOUT_TOP + 2, Math.min(vp.h - KEEPOUT_BOTTOM - 2,
+            ps.y + Math.sin(pt.ang) * 13));
+          if (!claim(tx, ty, 10)) continue;
+          ctx.fillStyle = mixToBg(pt.color || _labelsTextColor, 0.55);
+          ctx.beginPath();
+          ctx.arc(snap(tx), snap(ty), 2.5, 0, Math.PI * 2);
+          ctx.fill();
+          continue;
+        }
         const txt = String(pt.group).toUpperCase() + (cnt ? ' · ' + cnt : '');
         const w = ctx.measureText(txt).width;
         let lx = ps.x + Math.cos(pt.ang) * 13;
@@ -7235,7 +7302,6 @@
         if (!claim(cx0, ly, w + 8)) continue;
         ctx.textAlign = left ? 'right' : 'left';
         ctx.fillStyle = pt.color || _labelsTextColor;
-        ctx.globalAlpha = cnt ? 0.9 : 0.5;
         halo(txt, lx, ly);
       }
       ctx.globalAlpha = 1;
@@ -7405,7 +7471,7 @@
           if (!ca) continue;
           const ex = ca.x, ey = ca.y;
           if (!claim(ex + w / 2, ey, w + 4)) continue;
-          ctx.globalAlpha = (txt === 'UNDATED') ? 0.55 : 0.85;
+          ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.55 : 0.80);
           halo(txt, ex, ey);
         }
       } else {
@@ -7432,7 +7498,7 @@
           if (!ca) continue;
           const ex = ca.x, ey = ca.y;
           if (!claim(ex + w / 2, ey, w + 4)) continue;
-          ctx.globalAlpha = (txt === 'UNDATED') ? 0.55 : 0.85;
+          ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.55 : 0.80);
           halo(txt, ex, ey);
         }
       }
@@ -7504,7 +7570,7 @@
         ctx.textBaseline = 'middle';
         ctx.lineJoin = 'round';
         ctx.miterLimit = 2;
-        ctx.lineWidth = Math.max(1.4, Math.min(3.2, sizePx * 0.26));
+        ctx.lineWidth = Math.max(1.2, Math.min(2.6, sizePx * 0.20));
         ctx.strokeText(text, gx, gy);
         ctx.fillText(text, gx, gy);
         return { x: gx, y: gy, leftSide };
@@ -7564,7 +7630,7 @@
           }
         }
         // 3 ▸ write the glyphs on the curve. The halo law is the
-        // env's (~0.26em, round joins); the device-grid snap is not —
+        // env's (~0.20em, round joins); the device-grid snap is not —
         // a rotated glyph cannot sit on the pixel grid, which is the
         // price of riding the path.
         ctx.fillStyle = color;
@@ -7573,7 +7639,7 @@
         ctx.textBaseline = 'middle';
         ctx.lineJoin = 'round';
         ctx.miterLimit = 2;
-        ctx.lineWidth = Math.max(1.4, Math.min(3.2, sizePx * 0.26));
+        ctx.lineWidth = Math.max(1.2, Math.min(2.6, sizePx * 0.20));
         const rot = flip ? -Math.PI / 2 : Math.PI / 2;
         for (const [ch, a] of pos) {
           const gx = ctr.x + Math.cos(a) * rMid;
@@ -7622,11 +7688,30 @@
           // FLAT: the header stands at the top end of its own arc,
           // horizontal, growing away from the circle — the toy's
           // rail-header law adapted to the ring.
-          flatW(header, rl.capR + rl.capTier, rl.headA, TYPE.head, _labelsTextColor, 0.85);
+          // THE HEADER YIELDS, NEVER VANISHES (2026-08-02) — at
+          // laptop widths the (ratified, bigger) title block's
+          // keepout belt can intersect the header's natural anchor,
+          // and a canonical count must not silently drop. It tries
+          // its own row first, then one HEAD row at a time to either
+          // side (inward first, then outward — nearest step wins),
+          // and takes the first rung that claims; only after three
+          // refused rows each way may it hide, honestly, like any
+          // string. The title cannot dodge (locked fixture, claims
+          // first), so the header is the one that steps.
+          const headRow = Math.max(16, Math.round(TYPE.head * 1.9));
+          let headRes = null;
+          for (let hStep = 0; hStep <= 3 && !headRes; hStep++) {
+            for (const headDir of (hStep === 0 ? [1] : [1, -1])) {
+              headRes = flatW(header, rl.capR + rl.capTier, rl.headA, TYPE.head,
+                              mixToBg(_labelsTextColor, 0.85), 1,
+                              { dy: headDir * headRow * hStep });
+              if (headRes) break;
+            }
+          }
         } else {
           // Tier 1, over the reserved top arc (rl.headA) — radially
           // clear of the tier-0 first caption by construction.
-          arcRun(header, rl.capR + rl.capTier, rl.headA, TYPE.head, _labelsTextColor, 0.85);
+          arcRun(header, rl.capR + rl.capTier, rl.headA, TYPE.head, mixToBg(_labelsTextColor, 0.85), 1);
         }
         for (const sh of rl.shelves) {
           // WHAT AN ERA CAPTION IS (John: the "clunky dates … with
@@ -7650,8 +7735,8 @@
             + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
           font('600', TYPE.cap);
           const res = flat
-            ? flatW(txt, sh.capR, sh.capA, TYPE.cap, gold, 0.85)
-            : arcRun(txt, sh.capR, sh.capA, TYPE.cap, gold, 0.85);
+            ? flatW(txt, sh.capR, sh.capA, TYPE.cap, mixToBg(gold, 0.85), 1)
+            : arcRun(txt, sh.capR, sh.capA, TYPE.cap, mixToBg(gold, 0.85), 1);
           if (res) {
             tie(rl, sh);
             landed.push([rl, sh, res]);
@@ -7665,8 +7750,8 @@
         // bottom opening space", where no shelf can ever stand).
         if (rl.overflow > 0 && rl.foot) {
           font('600', TYPE.cap);
-          if (flat) flatW('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, gold, 0.65);
-          else arcRun('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, gold, 0.65);
+          if (flat) flatW('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, mixToBg(gold, 0.65), 1);
+          else arcRun('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, mixToBg(gold, 0.65), 1);
         }
       }
       // PASS 2 — the spine names follow their captions along the
@@ -7701,7 +7786,7 @@
           // The 16px minimum is the claim law's own floor.
           const dy = (Math.sin(sh.capA) >= 0 ? 1 : -1)
             * Math.max(16, Math.round(TYPE.name * 1.9));
-          sr = flatW(title, sh.capR, sh.capA, TYPE.name, _labelsTextColor, 0.9, { dy });
+          sr = flatW(title, sh.capR, sh.capA, TYPE.name, mixToBg(_labelsTextColor, 0.9), 1, { dy });
         } else {
           // The spine inherits its caption's flip: a run straddling the
           // 3/9 o'clock line must not flip halfway through the pair and
@@ -7713,7 +7798,7 @@
           // every other vertical-arc spine); where the arc runs
           // horizontally the x-halves separate any positive gap.
           const gapPx = Math.min(48, 17 / Math.max(0.36, Math.abs(Math.cos(res.aEnd))));
-          sr = arcRun(title, sh.capR, res.aEnd, TYPE.name, _labelsTextColor, 0.9,
+          sr = arcRun(title, sh.capR, res.aEnd, TYPE.name, mixToBg(_labelsTextColor, 0.9), 1,
                       { edge: true, flip: res.flip, gap: gapPx });
         }
         if (sr && local._bandSpineIds) {
@@ -7750,7 +7835,7 @@
         const s = W2S(oc.x, oc.y);
         const w = ctx.measureText(oc.label).width;
         if (!claim(s.x, s.y, w + 4)) continue;
-        ctx.fillStyle = _labelsTextColor; ctx.globalAlpha = 0.6;
+        ctx.fillStyle = mixToBg(_labelsTextColor, 0.6);
         halo(oc.label, s.x, s.y);
       }
       env.restore();
@@ -7807,8 +7892,7 @@
       const w = ctx.measureText(txt).width + 8;
       const hy = vp.h - env.KEEPOUT_BOTTOM - 10;
       if (env.claim(vp.w / 2, hy, w)) {
-        ctx.fillStyle = _labelsTextColor;
-        ctx.globalAlpha = 0.55;
+        ctx.fillStyle = mixToBg(_labelsTextColor, 0.55);
         env.halo(txt, vp.w / 2, hy);
       }
       env.restore();
