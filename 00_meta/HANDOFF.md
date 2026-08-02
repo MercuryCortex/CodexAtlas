@@ -1,3 +1,5 @@
+> **🟢🟢🟢 NEWEST — START AT [`HANDOFF-2026-08-01-title-and-fan-axis.md`](HANDOFF-2026-08-01-title-and-fan-axis.md)** (2026-08-01, session closed GREEN and DEPLOYED — first since three consecutive terminations). `tree == live` on `?v=20260801-fanaxis`; all three house gates pass; verified on the live site in real Safari at John's window. Carries the five rules the terminations paid for, and the open list — the date axis is now geometrically unblocked. Everything below this line is older history.
+
 > **🟢🟢🟢 NEWEST — START AT [`HANDOFF-2026-07-12.md`](HANDOFF-2026-07-12.md)** (session end 2026-07-12, account swap). Self-contained: state, the keystone-relay plan (phases 1-3 DONE, phase 4 next), the three-engine method, ranked next steps. Everything below this line is older history.
 
 # Session HANDOFF — 2026-06-09 LATE-NIGHT (🎉 THE QURAN IS COMPLETE — 37/37 within-reason suras distinguished)

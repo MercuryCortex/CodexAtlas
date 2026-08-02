@@ -76,6 +76,14 @@ function houseFor(fam, geometry, extra) {
     bearings, portWeights,
     center: { x: 0, y: 0 }, radius: 540,
     geometry,
+    // MIRROR THE APP'S DEFAULTS, NOT THE ENGINE'S FALLBACKS.
+    // house_fan_dy ships at 0 (the fan sits on the X axis, 2026-08-01);
+    // the engine's own fallback is still the pre-axis 0.34 so that any
+    // caller who wants the old origin keeps it. A gate that omits the
+    // option therefore scores a fan geometry THE APP NO LONGER DRAWS —
+    // exactly the stale-mirror trap that let the old titleAnchor replica
+    // stay green after the view stopped using it.
+    fanDy: 0,
   }, extra || {}));
 }
 
@@ -131,6 +139,14 @@ function houseUnion(fam, geometry, extra) {
     bearings, portWeights,
     center: { x: 0, y: 0 }, radius: 540,
     geometry,
+    // MIRROR THE APP'S DEFAULTS, NOT THE ENGINE'S FALLBACKS.
+    // house_fan_dy ships at 0 (the fan sits on the X axis, 2026-08-01);
+    // the engine's own fallback is still the pre-axis 0.34 so that any
+    // caller who wants the old origin keeps it. A gate that omits the
+    // option therefore scores a fan geometry THE APP NO LONGER DRAWS —
+    // exactly the stale-mirror trap that let the old titleAnchor replica
+    // stay green after the view stopped using it.
+    fanDy: 0,
   }, extra || {}));
   lay._guests = guests;
   lay._nodes = nodes;
