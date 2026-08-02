@@ -14,10 +14,20 @@ floruit-latest: -700
 historicity: "legendary"
 dating-basis: "The legendary Odysseus is placed in heroic-age tradition at the close of the Trojan War (conventionally c. -1200 in the Greek mythological chronology); the figure as we have him is the creation of the Odyssey, fixed in the oral-formulaic tradition and stabilised in writing in roughly the 8th-7th centuries BCE (Odyssey 11, the Nekyia, c. -700)."
 domains: ["cunning intelligence (mētis)", "endurance and return (nostos)", "the underworld consultation (Nekyia)"]
-relations: ["son of Laertes and Anticleia", "husband of Penelope (legendary)", "father of Telemachus", "advised by [[athena]]", "antagonist of [[poseidon]] (whose son Polyphemus he blinds)", "guided to the dead by the prophet Teiresias and the witch Circe (no nodes — legendary)"]
+relations: ["son of Laertes and Anticleia", "husband of [[penelope|Penelope]] (legendary)", "father of [[telemachus|Telemachus]]", "advised by [[athena]]", "antagonist of [[poseidon]] (whose son [[polyphemus|Polyphemus]] he blinds)", "guided to the dead by the prophet [[tiresias|Teiresias]] and the witch [[circe|Circe]]"]
 attested-in: ["[[phase-2-008-homeric-epics]]"]
-parallels: ["[[heracles]] (whose shade Odysseus meets within the Nekyia, Od. 11.601-627)", "[[orpheus]] (the other Greek living-hero descent)", "[[ishtar-akkadian]]", "[[inanna-sumerian]]"]
+events-participated: ["[[event-trojan-war]] (deviser of the wooden horse; the Odyssey is his ten-year nostos from this war)"]
+connects-to:
+  - target: "[[place-ithaca]]"
+    relation: "king-of"
+    source: "Homer, Odyssey (Loeb: Murray/Dimock 1995) — Ithaca is Odysseus's island kingdom and the goal of the ten-year nostos; Books 1-2 and 13-24 are set there."
+    source-tier: "T1"
+parallels: ["[[heracles]] (whose shade Odysseus meets within the Nekyia, Od. 11.601-627)", "[[orpheus]] (the other Greek living-hero descent)", "[[ishtar-akkadian]]", "[[inanna-sumerian]]", "[[calypso]] (the detaining goddess of Ogygia, Od. 5 — the Siduri-scene parallel)", "[[penelope]] (his wife and mētis-counterpart — the homophrosynē pair, Od. 6.181-185; the one mortal who out-tricks him, via the olive-tree bed-sign, Od. 23.181-232)", "[[tiresias]] (the seer whose shade he crosses Ocean to consult, Od. 11.90-151)", "[[nostos]] (his defining theme — the ten-year homeward return, Od. 1.5)"]
 syncretic-edges:
+  - target: "[[polyphemus]]"
+    type: "antagonist-of"
+    source: "Odyssey 9.105-566 (the Kyklopeia): Odysseus blinds the Cyclops Polyphemus; the giant's curse (Od. 9.528-536), granted by Poseidon, is point for point the plot of the epic's nostos-delay (Od. 1.68-75)."
+    source-tier: T1
   - target: "[[katabasis-and-anabasis]]"
     type: "thematic"
     source: "Odysseus is the subject of the Nekyia (Odyssey 11), the foundational Greek katabasis: at Circe's instruction he sails to the edge of Ocean, digs a pit, pours libations and sacrificial blood, and summons the shades of the dead to consult the Theban seer Teiresias. The episode is the template for every subsequent Western literary descent-and-return — Virgil's Aeneid 6, Dante's Inferno, and the broader katabasis-and-anabasis motif. Clark (1979) and Johnston (1999) treat Odyssey 11 as the canonical Western underworld-visit; Burkert (1985) on the Homeric picture of the dead."

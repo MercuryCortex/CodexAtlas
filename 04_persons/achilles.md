@@ -7,6 +7,7 @@ role: "mythical hero"
 tradition: "Hellenic (Iliad)"
 region: "Phthia / Troad"
 historicity: "legendary (Trojan-cycle hero; Bronze-Age substrate uncertain)"
+events-participated: ["[[event-trojan-war]] (the central hero of the Iliad; killed Hector, killed before the sack by Paris's arrow)"]
 status: "stub"
 refs:
   - title: "The Iliad"

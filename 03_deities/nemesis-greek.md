@@ -10,7 +10,7 @@ period-active-latest: 400
 domains: ["divine retribution", "cosmic balance", "hubris correction", "fate", "the wheel of fortune"]
 gender: "feminine"
 role: "retributive deity / cosmic balance enforcer"
-parent-of: ["Helen of Troy (by Zeus, in one tradition)"]
+parent-of: ["[[helen-of-troy]] (by Zeus, in one tradition)"]
 child-of: ["[[nyx-primordial]]"]
 consort: ["Zeus (forced union producing Helen, in some traditions)"]
 attributes: ["wheel", "apple branch", "measuring rod / cubit", "scales", "bridle", "sword", "palm branch", "wings", "crown of stags"]

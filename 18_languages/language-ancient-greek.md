@@ -15,7 +15,7 @@ date-attested-latest: -323
 date-earliest: -800
 dating-basis: B3
 dating-basis-source: "Jeffery, L. H. 1990 *The Local Scripts of Archaic Greece* (rev. ed.) OUP; Horrocks, G. 2010 *Greek: A History of the Language and Its Speakers* (2nd ed.) Wiley-Blackwell"
-dating-basis-notes: "Node covers the alphabetic Archaic + Classical stages: earliest alphabetic Greek inscriptions c. -775 to -740 (Dipylon oinochoe, 'Nestor's cup' at Pithekoussai — both already hexameter verse); conventional close at -323 (death of Alexander), where [[koine-greek]] begins by convention. Mycenaean Greek (Linear B, c. -1400) is the earlier attested stage of the same language, noted in the body but outside this node's date span. Stage division per Horrocks 2010 chs. 1-3 (Ancient) vs chs. 4-6 (Koine) — Tier-1 historiography treats Archaic/Classical Greek and Koine as distinct stages, which is why this node exists separately from [[koine-greek]]."
+dating-basis-notes: "Node covers the alphabetic Archaic + Classical stages: earliest alphabetic Greek inscriptions c. -775 to -720 (Dipylon oinochoe c. -750/-740; 'Nestor's cup' at Pithekoussai c. -740 to -720 — both already hexameter verse); conventional close at -323 (death of Alexander), where [[koine-greek]] begins by convention. Mycenaean Greek (Linear B, c. -1400) is the earlier attested stage of the same language, noted in the body but outside this node's date span. Stage division per Horrocks 2010 chs. 1-3 (Ancient) vs chs. 4-6 (Koine) — Tier-1 historiography treats Archaic/Classical Greek and Koine as distinct stages, which is why this node exists separately from [[koine-greek]]."
 liturgical-tradition: "[[tradition-greek-religion]] — hymnic, oracular, and mystery-cult usage (Homeric Hymns, Delphic responses, Orphic texts); never a fixed liturgical canon in the scriptural sense"
 texts-in-language:
   - "[[phase-2-008-homeric-epics]] (Iliad + Odyssey — the epic Kunstsprache, an artificial Ionic-Aeolic blend no one ever spoke)"
@@ -63,6 +63,11 @@ refs:
     tier: 1
     notes: "The inherited Indo-European poetic formulae shared between Homeric Greek and Vedic Sanskrit."
 syncretic-edges:
+  - target: "[[nestor]]"
+    type: "epigraphic-attestation"
+    source: "Jeffery 1990 *The Local Scripts of Archaic Greece*; Powell 1991 *Homer and the Origin of the Greek Alphabet*"
+    source-tier: "T1"
+    notes: "The 'Nestor's cup' inscription from Pithekoussai (c. -740 to -720), already invoked twice in this node (dating-basis + body) among the earliest alphabetic Greek, is — on the standard reading of the damaged first line — a hexameter joke on the epic cup of Nestor (Il. 11.632-637); this edge gives the artifact its person-node endpoint."
   - target: "[[language-proto-indo-european]]"
     type: "continuous-development"
     source: "Fortson 2010 ch. 12; Beekes 2010"
@@ -102,7 +107,7 @@ Greek is also attested four centuries before the alphabet: **Mycenaean Greek**, 
 
 ## The alphabet event
 
-Around -800, Greek speakers adopted the [[alphabet-phoenician|Phoenician abjad]] and repurposed consonant signs their language did not need as vowels — the innovation treated at [[alphabet-greek-vowel-revolution]]. The earliest surviving alphabetic Greek (the Dipylon oinochoe and "Nestor's cup," c. -775 to -740) is already hexameter verse, suggesting the alphabet was bound up with recording poetry nearly from the start (Jeffery 1990).
+Around -800, Greek speakers adopted the [[alphabet-phoenician|Phoenician abjad]] and repurposed consonant signs their language did not need as vowels — the innovation treated at [[alphabet-greek-vowel-revolution]]. The earliest surviving alphabetic Greek (the Dipylon oinochoe and "[[nestor|Nestor]]'s cup," c. -775 to -720) is already hexameter verse, suggesting the alphabet was bound up with recording poetry nearly from the start (Jeffery 1990).
 
 ## Cross-tradition findings
 

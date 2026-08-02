@@ -34,6 +34,27 @@ cross-moral-edges:
     source: "The sub-Saharan African instance: Ubuntu's relational-personhood ethic generates 'communal hospitality — the obligation to welcome and provide for strangers' (Ramose; Shutte, *Ubuntu: An Ethic for a New South Africa*, 2001), the same duty reached through a metaphysics of personhood-through-community rather than through a divine guest-visitor."
     source-tier: T1
     note: "Anchors the African end of the hub; hospitality here follows from ubuntu's communal ontology, an independent route to the same duty."
+  - target: nestor
+    type: exemplar
+    source: "Nestor's reception of Telemachus at Pylos (Odyssey 3) is the paradigm good-host scene of this hub's Greek attestation: the strangers are seated and fed at the shore-sacrifice before anyone asks their names (Od. 3.69-70). Reece, *The Stranger's Welcome* (1993), treats the Pylos episode as among the fullest realizations of the Homeric hospitality type-scene; this hub's own prose already names Nestor beside Eumaeus as the Odyssey's good hosts."
+    source-tier: T1
+    note: "Person-exemplar wire: the named paradigm host of the Greek xenia attestation now has a node."
+  - target: polyphemus
+    type: anti-type
+    source: "The Kyklopeia (Od. 9.105-566) is the negative paradigm of Greek xenia: Polyphemus demands his guests' identity before feeding them, mocks Zeus Xenios (Od. 9.275-278), devours the suppliants in his own cave, and offers as his 'guest-gift' to eat Nobody last (Od. 9.369-370). Reece, *The Stranger's Welcome* (1993), reads the episode as a systematic inversion of the Homeric hospitality type-scene."
+    source-tier: T1
+    note: "The hub's Greek section already names the man-eating Cyclops as the Odyssey's anti-host; this edge makes the anti-type wire live."
+  - target: event-trojan-war
+    type: parallel-form
+    source: "The hub's Greek section already frames the Trojan War as a xenia-violation writ large: Paris carries off Helen while a guest in Menelaus's house, and Troy is destroyed for it, under Zeus Xenios (Menelaus calls on Zeus against the guest-crime at Il. 3.351-354, and invokes Zeus Xenios by name at Il. 13.623-625). Herman, *Ritualised Friendship and the Greek City* (1987)."
+    source-tier: T1
+    note: "The hub's negative exemplum — the largest-scale consequence of a violated guest-bond in the Greek corpus; reciprocates the event node's instantiates-moral hub-edge."
+  - target: phaeacians
+    type: exemplar-narrative
+    source: "Scheria is the Odyssey's ideal-xenia panel: Nausicaa and Alcinous feed, clothe, gift, and escort the nameless castaway before ever asking who he is (Od. 6-8; the name is asked only at 8.550) — the structural counter-panel to the man-eating Cyclops and the parasitic suitors. Reece, *The Stranger's Welcome* (1993), treats the Scherian sequence as the fullest positive hospitality type-scene in Homer."
+    source-tier: T1
+    note: "The Greek narrative exemplar of the hub's duty — the host's obligations performed in full to a guest who cannot reciprocate."
+parallels: ["[[menelaus]] (the Odyssey's model host of the Telemachy, Od. 4.20-36; the xenia-violation against his house — Paris's abduction of Helen — is the guest-crime that launches the Trojan War)", "[[suitors-of-penelope]] (the paradigm xenia-violating GUESTS — the hub's bad-guest pole beside its bad hosts: they devour an absent host's house for three years and are slaughtered in his hall under the theology of Zeus Xenios, Od. 22)"]
 
 moral-tradition-context:
   - "[[tradition-greek-religion]]"

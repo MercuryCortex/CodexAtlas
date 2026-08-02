@@ -7,6 +7,7 @@ category: "political-theological"
 traditions-where-attested: ["Hebrew (Samuel-Saul, Nathan-David, Elijah-Ahab, Jeremiah-Zedekiah)", "Iranian (Zarathustra and the *kavi*-kings)", "Greek (Tiresias-and-kings, Cassandra)", "Islamic (Muhammad as prophet-and-statesman; later prophet-vs-caliph tension)"]
 appearances: ["[[phase-2-019-deuteronomistic-history]]", "[[phase-2-010-hebrew-bible-early-prophets]]", "[[phase-2-002-gathas-of-zarathustra]]"]
 deity-instances: []
+parallels: ["[[tiresias]] (the Greek instance: Tiresias-vs-Oedipus, Soph. OT 300-462; Tiresias-vs-Creon, Ant. 988-1090)"]
 status: "stub"
 refs:
   - title: "Prophecy and Society in Ancient Israel"

@@ -22,6 +22,7 @@ parallels:
   - "[[scrying-mirror-water-crystal]] (sibling in the fluid-medium family — lecanomancy, oil on water, is the ancient documented cognate of molybdomancy's lead-in-water; distinguished by needing no gazing or vision)"
   - "[[cleromancy-lot-casting]] (distinguished: cledonomancy and molybdomancy read a SPONTANEOUS sign, not a deliberately cast lot)"
   - "[[greek-oracular-divination]] (the *klēdōn*-oracle of Hermes at Pharai is the fixed-shrine, solicited variant of chance-word divination)"
+  - "[[suitors-of-penelope]] (the kledon's target: the grinding-woman's chance-heard curse of Od. 20.98-121 — the locus classicus — marks the suitors for the next day's slaughter)"
   - "[[augury-roman-bird-omens]] (Roman sibling: the *omen* — an ominous chance word — stands beside the *auspicia* as an unbidden sign in Roman religion)"
   - "[[oneiromancy-cross-tradition]] (fellow member of Cicero's natural/inspired class of divination)"
   - "[[evil-eye]] (the molten-lead pour — Greek *molyvdoskopēsē*, Turkish *kurşun dökme* — is the standard apotropaic diagnosis and cure for the evil eye)"

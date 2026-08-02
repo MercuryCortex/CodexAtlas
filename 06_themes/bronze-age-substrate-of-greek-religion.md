@@ -11,6 +11,10 @@ related-themes:
   - "[[syncretism-egyptian-greek]]"
   - "[[theme-baal-set-syncretism]]"
 hub-edges:
+  - target: "nestor"
+    type: "epic-memory-of-mycenaean-pylos"
+    source: "Blegen & Rawson 1966 *The Palace of Nestor at Pylos in Western Messenia* vol. I; Chadwick 1976 *The Mycenaean World* — the palace at Ano Englianos, source of the Pylos Linear B archive this hub rests on, was named 'Palace of Nestor' after the Homeric king of sandy Pylos; the tablets' pre-eminent po-se-da-o (Poseidon) matches the shore hecatomb to Poseidon that opens Nestor's Odyssey 3 (Od. 3.5-9)"
+    notes: "Cross-lens wire 06_themes → 04_persons: the epic figure through whom the Bronze-Age Pylos substrate is remembered; the palace name is a modern excavator's homage, not evidence of historicity"
   - target: "zeus-pantokrator-transmission"
     type: "Bronze-Age-deep-substrate-of-Zeus-iconography"
     source: "Burkert 1985 *Greek Religion* §1.3; Ventris & Chadwick 1973 *Documents in Mycenaean Greek*; Chadwick 1976 *The Mycenaean World*; Bachvarova 2016 *From Hittite to Homer* — the Mycenaean-Bronze-Age attestation of Zeus (Diwo, ~-1400) establishes the deep-time substrate of the Phidian classical Zeus iconography that the Pantokrator-transmission hypothesis builds on. Without 800+ years of pre-Phidian Zeus-attestation, the iconographic-theological identity of Zeus that Phidias monumentalizes has no historical-documentary anchor"

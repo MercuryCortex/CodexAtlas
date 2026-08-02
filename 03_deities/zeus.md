@@ -10,7 +10,7 @@ period-active-latest: 400
 domains: ["sky", "thunder", "kingship", "justice", "oaths", "hospitality"]
 gender: "masculine"
 role: "king of the gods; storm-sky-sovereign"
-parent-of: ["Athena", "Apollo", "Artemis", "Hermes", "Dionysus", "Persephone", "Heracles", "Helen", "many others"]
+parent-of: ["Athena", "Apollo", "Artemis", "Hermes", "Dionysus", "Persephone", "Heracles", "[[helen-of-troy|Helen]]", "many others"]
 child-of: ["[[kronos]]", "Rhea"]
 consort: ["[[hera]]", "many mortal and divine consorts"]
 attributes: ["thunderbolt", "eagle", "oak", "aegis"]

@@ -12,7 +12,7 @@ period-active-latest: 400
 domains: ["sun", "all-seeing witness", "kingship (in syncretic forms)", "cosmic ruler (in Neoplatonist + late-antique forms)"]
 gender: "masculine"
 role: "personified sun; in late-antique synthesis, cosmic ruler and (under Julian) supreme god of philosophical solar monotheism"
-parent-of: ["Phaethon", "Circe", "Pasiphae", "Aeëtes"]
+parent-of: ["Phaethon", "[[circe]]", "Pasiphae", "Aeëtes"]
 child-of: ["Hyperion", "Theia"]
 consort: []
 attributes: ["radiate crown (sun-rays emanating from the head)", "four-horse chariot crossing the sky", "globe / cosmic orb (in late-antique iconography)"]

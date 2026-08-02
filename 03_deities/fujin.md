@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["large bag of winds on his back", "green skin", "fearsome demon form", "clouds"]
 attested-in: ["Nihon Shoki (720 CE)", "Kojiki (712 CE — as Shina-Tsu-Hiko)", "Sōtatsu painting (Kennin-ji, c. 1620)"]
-equivalents: ["[[enlil]]", "[[shu]]", "[[pazuzu]]", "[[tlaloc]]"]
+equivalents: ["[[enlil]]", "[[shu]]", "[[pazuzu]]", "[[tlaloc]]", "[[aeolus]]"]
 syncretic-edges:
   - target: "[[raijin]]"
     type: "ancient-identification"

@@ -17,6 +17,7 @@ consort: ["Alcmene (in the post-mortem tradition, Plutarch; legendary)"]
 attributes: ["proverbial righteousness ('the justice of Rhadamanthus')", "association with Crete and its laws", "judge's authority over the dead of Asia / the East (Plato Gorgias)", "ruler of Elysium beside Kronos (Pindar)"]
 attested-in: ["the *Odyssey* — Odyssey 4.564, 7.323", "Pindar, Olympian 2.75–77", "Plato, Gorgias 523e–524a; Apology 41a; Laws 624b", "Apollodorus, Bibliotheca 3.1.1–2", "Diodorus Siculus 5.79"]
 equivalents: ["[[minos]]", "[[aeacus]]", "[[osiris]]", "[[yama-vedic]]", "[[rashnu-zoroastrian]]"]
+parallels: ["[[menelaus]] (the mortal promised the Elysian plain 'where fair-haired Rhadamanthus is' — Od. 4.561-569, the earliest Elysium attestation)"]
 syncretic-edges:
   - target: "[[psychostasia-soul-weighing]]"
     type: "thematic"
@@ -58,7 +59,7 @@ refs:
     publisher: "Harvard University Press (Loeb Classical Library)"
     type: "primary-source"
     tier: 1
-    notes: "Od. 4.561–569 (Menelaus is destined for the Elysian Plain 'where fair-haired Rhadamanthus dwells') and 7.321–324 — the earliest attestations of Rhadamanthus and of Elysium."
+    notes: "Od. 4.561–569 (Menelaus is destined for the Elysian Plain 'where fair-haired Rhadamanthus dwells') and 7.321–324 — the earliest attestation of Elysium, and the earliest text to place Rhadamanthus there (the name itself already appears at Il. 14.322)."
   - title: "The Odes of Pindar"
     author: "Pindar; trans. William H. Race (Loeb)"
     year: -476
@@ -100,7 +101,7 @@ He is treated here as a **deity** rather than a mere mortal hero: he is divinely
 
 ## In Greek myth and eschatology
 
-**Homer** gives the earliest notice. In *Odyssey* 4.561–569 Proteus foretells that Menelaus will not die but be sent by the gods to the **Elysian Plain** at the ends of the earth, "where fair-haired Rhadamanthus is, and where life is easiest for men" — the first appearance both of Elysium and of Rhadamanthus as its presiding figure. He recurs at *Odyssey* 7.321–324.
+**Homer** gives the earliest notice. In *Odyssey* 4.561–569 Proteus foretells that Menelaus will not die but be sent by the gods to the **Elysian Plain** at the ends of the earth, "where fair-haired Rhadamanthus is, and where life is easiest for men" — the first appearance of Elysium, and the first text to place Rhadamanthus there as its presiding figure (the name itself already appears in Zeus's catalogue at Il. 14.321–322). He recurs at *Odyssey* 7.321–324.
 
 **Pindar**, *Olympian* 2.75–77 (476 BCE), seats him in the afterlife of the righteous: in the Isle of the Blessed, **Kronos** rules and "Rhadamanthus is ready at his side," the trusted assessor (πάρεδρος) whose just counsel Kronos keeps. This is the locus classicus for Rhadamanthus as the righteous judge of the blessed dead.
 
@@ -124,7 +125,7 @@ Whether Rhadamanthus should be classed as a **god** or as a **deified/heroized m
 
 ## Refs
 
-1. Homer. *Odyssey* 4.561–569; 7.321–324, trans. A.T. Murray (Loeb). Harvard University Press. Tier 1 (earliest attestation of Rhadamanthus and Elysium).
+1. Homer. *Odyssey* 4.561–569; 7.321–324, trans. A.T. Murray (Loeb). Harvard University Press. Tier 1 (earliest attestation of Elysium; Rhadamanthus already named at Il. 14.322).
 2. Pindar. *Olympian* 2.75–77, trans. W.H. Race (Loeb). Harvard University Press. Tier 1 (Rhadamanthus as assessor of the blessed dead).
 3. Plato. *Gorgias* 523e–524a; *Apology* 41a; *Laws* 624b, trans. W.R.M. Lamb / R.G. Bury (Loeb). Harvard University Press. Tier 1 (the three-judge tribunal).
 4. Apollodorus. *Bibliotheca* 3.1.1–2, trans. J.G. Frazer (Loeb). Harvard University Press. Tier 1 (parentage and Cretan biography).

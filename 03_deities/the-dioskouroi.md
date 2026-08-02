@@ -16,6 +16,7 @@ consort: []
 attributes: ["white horses", "stars (St. Elmo's fire)", "piloi (egg-shaped caps, possibly from Leda's egg)", "spear and shield", "alternating astral appearances"]
 attested-in: ["Homeric Hymn 33 (To the Dioskouroi)", "Pindar Nemean 10", "Apollodorus Bibliotheca 3.11", "Theocritus Idyll 22", "Ovid Fasti 5.693–720"]
 equivalents: ["[[the-ashvins]] (Vedic)", "Ašvieniai (Baltic)", "Alcis (Germanic, per Tacitus Germania 43)"]
+parallels: ["[[helen-of-troy]] (their sister from Leda's egg — the Sun-maiden beside the Divine Twins, matching Sūryā́ beside the Aśvins in the shared Indo-European structure, West 2007 ch. 5; a single St. Elmo's light was read as Helen, the ominous sister — Pliny, NH 2.101)"]
 syncretic-edges:
   - target: "the-ashvins"
     type: "etymological-cognate"

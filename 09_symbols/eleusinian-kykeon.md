@@ -19,6 +19,8 @@ appearances:
   - "[[tradition-greek-religion]]"
   - "[[vine-grape]]"
   - "[[wheat-grain]]"
+deity-instances:
+  - "[[circe]] (the Homeric kykeon-mixer: Od. 10.234-236 — the line the kykeon-homeric variant already cites)"
 tradition-context:
   - "[[tradition-greek-religion]]"
 cross-symbol-edges:

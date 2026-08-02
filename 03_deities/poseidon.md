@@ -10,7 +10,7 @@ period-active-latest: 400
 domains: ["sea", "earthquakes", "horses"]
 gender: "masculine"
 role: "great Olympian, lord of the sea"
-parent-of: ["Triton", "Polyphemus", "Pegasus (with Medusa)", "Theseus (with Aethra)"]
+parent-of: ["Triton", "[[polyphemus]]", "Pegasus (with Medusa)", "Theseus (with Aethra)", "Nausithous (founder-king of the [[phaeacians]], Od. 7.56-63)"]
 child-of: ["[[kronos]]", "Rhea"]
 consort: ["Amphitrite"]
 attributes: ["trident", "horses", "bull", "dolphin"]

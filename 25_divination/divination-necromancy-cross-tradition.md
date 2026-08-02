@@ -26,7 +26,7 @@ key-figures:
   - "[[samuel-prophet]] (the prophet raised at En-dor; the shade who prophesies Saul's death)"
   - "the medium of En-dor (Hebrew ba'alat-'ob; the necromantic specialist of 1 Sam 28)"
   - "Saul (the Israelite king who, unanswered 'by dreams, by Urim, or by prophets', resorts to the forbidden last channel — 1 Sam 28:6)"
-  - "Tiresias (the Theban seer's shade consulted by Odysseus in the Nekyia)"
+  - "[[tiresias]] (the Theban seer's shade consulted by Odysseus in the Nekyia)"
   - "Erictho (the Thessalian necromancer of Lucan, Pharsalia 6 — the corpse-reanimation maximum)"
   - "Periander of Corinth (Herodotus 5.92 — sends to the oracle of the dead on the Acheron to consult his dead wife Melissa)"
 parallels:
@@ -118,7 +118,7 @@ The Hebrew Bible gives necromancy its most famous single scene and its sharpest 
 
 ### Greece — the Nekyia and the nekromanteia
 
-The literary template of Western necromancy is **Odyssey 11**, the *Nekyia*: on Circe's instructions Odysseus sails to the edge of Ocean, digs a pit (*bothros*), pours libations and the blood of black sheep, and the shades throng up — he must hold them from the blood with his sword until **Tiresias** drinks and foretells his homecoming. Beyond epic, Greece maintained dedicated **oracles of the dead** (*nekromanteia* / *psychomanteia*). Daniel Ogden's *Greek and Roman Necromancy* (2001) identifies four principal sites — the **Acheron** in Thesprotia, **Avernus** in Campania, **Herakleia Pontike**, and **Tainaron** — served by *psychagogoi* ("evocators of souls"). Herodotus 5.92 reports the tyrant **Periander** of Corinth sending to the Acheron oracle to consult his dead wife Melissa; Plutarch (*Cimon* 6) has the Spartan regent Pausanias seek out an evocator to appease the ghost of Kleonike.
+The literary template of Western necromancy is **Odyssey 11**, the *Nekyia*: on Circe's instructions Odysseus sails to the edge of Ocean, digs a pit (*bothros*), pours libations and the blood of black sheep, and the shades throng up — he must hold them from the blood with his sword until **[[tiresias|Tiresias]]** drinks and foretells his homecoming. Beyond epic, Greece maintained dedicated **oracles of the dead** (*nekromanteia* / *psychomanteia*). Daniel Ogden's *Greek and Roman Necromancy* (2001) identifies four principal sites — the **Acheron** in Thesprotia, **Avernus** in Campania, **Herakleia Pontike**, and **Tainaron** — served by *psychagogoi* ("evocators of souls"). Herodotus 5.92 reports the tyrant **Periander** of Corinth sending to the Acheron oracle to consult his dead wife Melissa; Plutarch (*Cimon* 6) has the Spartan regent Pausanias seek out an evocator to appease the ghost of Kleonike.
 
 ### Rome — the corpse-oracle
 

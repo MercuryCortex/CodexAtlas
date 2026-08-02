@@ -17,6 +17,10 @@ attributes: ["the golden Apple of Discord (kallisti, 'for the fairest')"]
 attested-in: []
 equivalents: []
 syncretic-edges:
+  - target: "[[event-trojan-war]]"
+    type: "mythic-cause"
+    source: "In the Cypria (via Proclus's Chrestomathy), Eris, uninvited at the wedding of Peleus and Thetis, throws the golden apple 'for the fairest', precipitating the Judgment of Paris and thence the Trojan War; Gantz 1993; West, Greek Epic Fragments 2003"
+    source-tier: T1
   - target: "discordia-roman"
     type: "interpretatio-nominal"
     source: "Roman Discordia renders Eris"

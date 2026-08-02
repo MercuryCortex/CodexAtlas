@@ -15,6 +15,10 @@ attributes: ["found in a furrow (her earth-born origin)", "the agnipariksha fire
 attested-in: ["Valmiki *Ramayana* (~-300 to 200 CE redaction)", "Adbhuta Ramayana", "Tulsidas *Ramcharitmanas* (1574)"]
 equivalents: ["[[lakshmi]]", "[[radha]]"]
 syncretic-edges:
+  - target: "[[penelope]]"
+    type: "scholarly-parallel"
+    source: "The tested-wife parallel: Sita's chastity preserved through captivity and proven in the agnipariksha; Penelope's constancy through twenty years of the suitors' siege, praised by Agamemnon's shade (Od. 24.192-198). Typological convergence, not transmission — Weber's 1870/71 Greek-influence thesis on the Ramayana is rejected (Goldman 1984 introduction); Doniger, Splitting the Difference (1999), is the fullest comparative Greece-India treatment of the doubled/tested-wife complex (its chapters centre on Sita and Helen; Penelope figures only in passing). Inversion: Sita's trials are imposed on her; Penelope authors her own tests (web, bow contest, bed-sign)."
+    source-tier: T1
   - target: "[[lakshmi]]"
     type: "ancient-identification"
     source: "Vaishnava theology: Sita is the avatar-form of Lakshmi who descends to be consort of Vishnu's Rama-avatar"
@@ -49,7 +53,7 @@ Consort of [[rama]] in the Vālmīki *Rāmāyaṇa* — and the **avatar-form of
 ## Cross-tradition identifications
 - **[[lakshmi]]** — *ancient-identification*: Sita is Lakshmi-as-Rama-consort.
 - **[[radha]]** — *scholarly-parallel*: Sita-and-Rama / Radha-and-Krishna as paired Vaishnava divine couples.
-- **Penelope** (Homeric) — *parallel-motif*: paradigmatic devoted wife awaiting hero-husband's return.
+- **[[penelope|Penelope]]** (Homeric) — *parallel-motif*: paradigmatic devoted wife awaiting hero-husband's return.
 - **[[persephone-greek]]** — *parallel-motif*: earth-born, descends/returns to the underworld/earth.
 
 ## Refs

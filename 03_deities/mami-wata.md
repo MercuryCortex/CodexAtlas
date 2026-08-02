@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["serpent wrapped around the body or held in hand", "mirror", "comb", "long hair", "mermaid form (fish-tail below waist)", "wealth items (watches, jewelry)", "chromolithograph image"]
 attested-in: []
-equivalents: ["[[yemoja]]", "[[oshun]]", "[[oya]]", "[[olokun]]", "[[tangaroa]]", "[[sedna-inuit]]"]
+equivalents: ["[[yemoja]]", "[[oshun]]", "[[oya]]", "[[olokun]]", "[[tangaroa]]", "[[sedna-inuit]]", "[[sirens]]"]
 syncretic-edges:
   - target: "[[yemoja]]"
     type: "scholarly-parallel"
@@ -118,7 +118,7 @@ Mami Wata's mermaid form participates in one of the most globally distributed vi
 - **Nāgī / Nāginī** (Hindu/Buddhist): half-woman, half-snake water deity; guardians of water bodies and treasures
 - **Ningyo** (Japanese): fish-woman; eating her flesh grants immortality
 - **Lorelei** (Germanic): mermaid-like siren on the Rhine; lures sailors to destruction
-- **Sirens** (Greek): bird-women who became fish-women in later tradition; the sea as dangerous feminine
+- **[[sirens|Sirens]]** (Greek): bird-women who became fish-women in later tradition; the sea as dangerous feminine
 - The woman-fish or woman-serpent hybrid as water-being is globally distributed — whether through deep antiquity, convergent imagination, or periodic transmission remains debated
 
 ## Iconography

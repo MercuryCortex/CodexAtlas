@@ -11,7 +11,7 @@ domains: ["sky-bearing", "the western edge of the world", "celestial-astronomy p
 gender: "masculine"
 role: "Titan condemned to bear the heavens on his shoulders"
 child-of: ["[[iapetus]]", "Clymene (Oceanid)"]
-parent-of: ["the Pleiades", "the Hyades", "Hesperides (in some recensions)", "Calypso (in some recensions)"]
+parent-of: ["the Pleiades", "the Hyades", "Hesperides (in some recensions)", "[[calypso]] (Homeric genealogy, Od. 1.52, 7.245; Theog. 359 makes a Calypso an Oceanid)"]
 attributes: ["the celestial sphere on his shoulders", "the apples of the Hesperides (guarded in his orchard)"]
 attested-in: ["[[phase-2-009-hesiod-theogony-works-and-days]] 517–520", "Apollodorus *Library* 2.5.11 (Heracles and the apples of the Hesperides)", "[[phase-3-022-plato-timaeus-critias-atlantis]] (eponym of Atlantis)"]
 equivalents: ["[[purusha]] (cosmic-pillar function)"]

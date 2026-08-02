@@ -20,10 +20,10 @@ relations:
   - "son of the goddess Venus (Greek Aphrodite) and the Trojan Anchises"
   - "father of Ascanius / Iulus, the eponymous ancestor claimed by the gens Iulia (and so by Julius Caesar and Augustus)"
   - "in the Aeneid, guided through the underworld by the Cumaean Sibyl; reunited there with the shade of his father Anchises"
-events-participated: ["the Trojan War (Iliad — a secondary Trojan champion rescued by the gods)", "the flight from burning Troy carrying Anchises and the household gods (Penates)", "the wanderings and the Carthage episode with Dido", "the descent to the underworld at Cumae (Aeneid VI)", "the war in Latium against Turnus and the founding of the Trojan settlement that leads to Rome"]
+events-participated: ["[[event-trojan-war]] (Iliad — a secondary Trojan champion rescued by the gods)", "the flight from burning Troy carrying Anchises and the household gods (Penates)", "the wanderings and the Carthage episode with Dido", "the descent to the underworld at Cumae (Aeneid VI)", "the war in Latium against Turnus and the founding of the Trojan settlement that leads to Rome"]
 texts-authored: []
 attested-in: ["Homer, *Iliad* 2, 5, 13, 20 (esp. 20.300–308, Poseidon's prophecy that Aeneas's line will rule the Trojans)", "Homeric Hymn to Aphrodite (the union of Anchises and Aphrodite)", "Stesichorus / the *Tabula Iliaca* tradition (Aeneas leaving Troy for the West)", "Dionysius of Halicarnassus, *Roman Antiquities* 1.45–64", "Livy, *Ab Urbe Condita* 1.1–2", "Virgil, *Aeneid* (esp. Book VI — the katabasis)", "Ovid, *Metamorphoses* 14.581–608 (the deification as Indiges)"]
-parallels: ["[[katabasis-and-anabasis]]", "[[underworld-descent]]", "[[orpheus]]", "[[heracles]]"]
+parallels: ["[[katabasis-and-anabasis]]", "[[underworld-descent]]", "[[orpheus]]", "[[heracles]]", "[[nostos]] (the inverted nostos — home sought ahead, not regained)"]
 syncretic-edges:
   - target: "[[katabasis-and-anabasis]]"
     type: "theme-instance"

@@ -17,7 +17,7 @@ child-of: []
 consort: []
 attributes: ["invisible — wind is not seen, only felt", "white flag or pennant (symbol of moving air)", "antelope as vāhana in some regional traditions", "rides in a chariot driven by two or more red or violet horses"]
 attested-in: ["[[phase-2-001-rig-veda-family-books]]", "[[phase-2-003-atharva-veda]]"]
-equivalents: ["[[enlil]]", "[[fujin]]", "[[stribog]]"]
+equivalents: ["[[enlil]]", "[[fujin]]", "[[stribog]]", "[[aeolus]]"]
 syncretic-edges:
   - target: "enlil"
     type: "scholarly-parallel"

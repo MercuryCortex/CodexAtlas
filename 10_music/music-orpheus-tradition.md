@@ -39,6 +39,7 @@ music-tradition-context:
 music-deity-connections:
   - [[apollo]]
   - [[dionysus]]
+  - [[sirens]]
 
 music-appearances:
   - [[plato]]

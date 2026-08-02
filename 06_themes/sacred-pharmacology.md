@@ -12,6 +12,7 @@ tags:
   - ritual
   - entheogen
   - plant-medicine
+parallels: ["[[helen-of-troy]] (the nepenthe of Odyssey 4.219-232 — the grief-banishing pharmakon Helen casts into the wine, obtained from Polydamna of Egypt, where the earth bears the most pharmaka and every man is a physician; an early Greek epic drug passage crediting Egyptian pharmacology)"]
 date_earliest: -40000
 date_latest: 2000
 dating-basis: B7

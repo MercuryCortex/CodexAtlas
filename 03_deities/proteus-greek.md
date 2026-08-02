@@ -16,6 +16,7 @@ consort: []
 attributes: ["endless self-transformation (lion, serpent, leopard, boar, water, tree)", "herds the seals of the sea", "knows all things past, present, and future"]
 attested-in: []
 equivalents: ["[[nereus]] (the other Greek 'Old Man of the Sea', likewise a shape-shifting prophet)"]
+parallels: ["[[menelaus]] (the mortal who held him fast through every transformation on Pharos — Od. 4.384-570)"]
 syncretic-edges:
   - target: "[[poseidon]]"
     type: "thematic"

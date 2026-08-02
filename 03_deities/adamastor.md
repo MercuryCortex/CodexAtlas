@@ -15,7 +15,7 @@ child-of: []
 consort: []
 attributes: ["monstrous giant form appearing from the storm-clouds", "the Cape of Good Hope (his petrified body)", "prophecy of catastrophe (Dias, Almeida, Albuquerque)", "Thetis as his unrequited love", "stone and landscape"]
 attested-in: ["Os Lusíadas, Canto V, stanzas 37–60 (Camões, 1572)"]
-equivalents: ["[[ymir]] (giant transformed into world/landscape — Norse)", "[[poseidon]] (unrequited love for a sea-deity; terror of the ocean)", "[[olokun]] (the terrifying, unfathomable deep; the ocean as chained divine power)"]
+equivalents: ["[[ymir]] (giant transformed into world/landscape — Norse)", "[[poseidon]] (unrequited love for a sea-deity; terror of the ocean)", "[[olokun]] (the terrifying, unfathomable deep; the ocean as chained divine power)", "[[polyphemus]] (the lovesick giant and the sea-nymph — the Polyphemus/Galatea topos Camões reworks into Adamastor/Thetis)"]
 syncretic-edges:
   - target: "ymir"
     type: "structural-parallel"

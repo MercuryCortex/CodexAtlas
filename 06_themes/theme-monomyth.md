@@ -9,7 +9,7 @@ region: "Global (construct coined in the United States, 1949)"
 appearances: []
 deity-instances: []
 influenced-by: ["[[carl-gustav-jung]]", "[[james-frazer]]", "[[archetype]]"]
-parallels: ["[[katabasis-and-anabasis]]", "[[underworld-descent]]", "[[dying-rising-god]]", "[[initiation]]", "[[hero-twins]]", "[[apotheosis]]", "[[mystery-initiation]]", "[[individuation]]", "[[comparative-religion-method]]"]
+parallels: ["[[katabasis-and-anabasis]]", "[[underworld-descent]]", "[[dying-rising-god]]", "[[initiation]]", "[[hero-twins]]", "[[apotheosis]]", "[[mystery-initiation]]", "[[individuation]]", "[[comparative-religion-method]]", "[[telemachus]] (Athena as Mentor — the documented source-line of the 'Mentor' archetype, via Fénelon 1699)"]
 hub-edges:
   - target: "[[joseph-campbell]]"
     type: "coined-by"

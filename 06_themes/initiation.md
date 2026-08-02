@@ -6,7 +6,7 @@ aka: ["mystery initiation", "rite of passage", "secret-bestowal ritual"]
 category: "ritual"
 appearances: ["[[phase-3-021-hermetic-corpus-earliest]]", "[[phase-4-011-corpus-hermeticum-i]]", "[[phase-4-013-discourse-on-the-eighth-and-ninth]]", "[[phase-6-026-anderson-constitutions-free-masons]]"]
 deity-instances: []
-parallels: ["[[theme-monomyth]]"]
+parallels: ["[[theme-monomyth]]", "[[telemachus]] (the Telemachy, Od. 1-4, as the classic literary rite-of-passage arc)"]
 status: "stub"
 refs:
   - title: "Rites and Symbols of Initiation"

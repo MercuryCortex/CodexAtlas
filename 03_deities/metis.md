@@ -15,6 +15,7 @@ consort: ["[[zeus]]"]
 attributes: ["shape-shifting", "the swallowed counsellor within Zeus"]
 attested-in: []
 equivalents: []
+parallels: ["[[penelope]] (the Odyssey's mortal exemplar of feminine mētis — the shroud-trick of Od. 2.93-110, the bow contest of Od. 21, the bed-test of Od. 23.181-232)"]
 syncretic-edges:
   - target: "[[zeus]]"
     type: "constituent-of"

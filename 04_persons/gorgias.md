@@ -18,6 +18,11 @@ texts-authored: ["*On Nature, or On the Non-Existent* (*Peri tou mē ontos ē pe
 events-participated: ["Embassy from Leontini to Athens (427 BCE) seeking alliance against Syracuse; his novel antithetical prose style astonished the Athenian assembly (Diodorus Siculus XII.53)", "Epideictic performances at the Panhellenic festivals of Olympia and Delphi (the *Olympikos* and *Pythikos*)"]
 mentioned-in: ["[[phase-3-002-plato-dialogues]] (*Gorgias*, *Meno* 95c, *Philebus* 58a)", "Aristotle, *Rhetoric* III and *Sophistical Refutations*", "Sextus Empiricus, *Adversus Mathematicos* VII.65–87", "pseudo-Aristotle, *De Melisso Xenophane Gorgia* (*MXG*)", "Diogenes Laertius VIII.58–59 (in the *Life of Empedocles*)", "Philostratus, *Lives of the Sophists* I.9", "Diodorus Siculus XII.53"]
 hub-edges:
+  - target: helen-of-troy
+    type: subject-of
+    source: "Gorgias, *Encomium of Helen* (DK 82 B11), preserved complete; MacDowell, D.M. (ed.), *Gorgias: Encomium of Helen*, Bristol Classical Press, 1982"
+    source-tier: T1
+    note: "The Encomium's four-cause acquittal of Helen (gods / force / logos / erōs) is the classic sophistic treatment of her guilt; its doctrine that logos acts on the soul as pharmaka act on the body is the rhetorical twin of Helen's own nepenthe scene (Od. 4.219-232). See [[helen-of-troy]]."
   - target: philosophy-sophism
     type: principal-figure-of
     source: "Kerferd, G.B. 1981 *The Sophistic Movement* chs. 1, 8; Sprague, R.K. (ed.) 1972 *The Older Sophists* (Gorgias = DK 82); Diels-Kranz, *Die Fragmente der Vorsokratiker* vol. II ch. 82; de Romilly 1992 *The Great Sophists in Periclean Athens*"

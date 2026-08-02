@@ -8,6 +8,7 @@ documents-attested: []
 deities-associated: []
 parent-theme: ""
 child-themes: []
+parallels: ["[[nostos]] (parallel-form: the returning hidden king as a nostos held open — convergence, not influence)"]
 status: "stub"
 refs:
   - title: "Portugal, a Lusophone Giant"

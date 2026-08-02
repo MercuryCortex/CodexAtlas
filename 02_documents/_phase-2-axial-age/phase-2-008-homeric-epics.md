@@ -21,8 +21,14 @@ themes: ["[[divine-council]]", "[[divine-kingship]]", "[[afterlife-judgment]]", 
 parallels: ["[[phase-2-009-hesiod-theogony-works-and-days]]", "[[phase-1-004-gilgamesh-old-babylonian]]"]
 influenced-by: ["Mycenaean Bronze Age oral tradition", "Near Eastern epic models (Gilgamesh; Hittite/Hurrian myth)"]
 influences: ["all subsequent Greek literature; Roman epic (Vergil's Aeneid); Western literary canon"]
-deities-mentioned: ["[[zeus]]", "[[hera]]", "[[athena]]", "[[apollo]]", "[[ares]]", "[[aphrodite-greek]]", "[[hermes-greek]]", "[[poseidon]]", "[[hades]]", "[[hephaestus]]", "[[artemis]]"]
-events-context: ["Trojan War (legendary, ~-1200 BCE setting)"]
+deities-mentioned: ["[[zeus]]", "[[hera]]", "[[athena]]", "[[apollo]]", "[[ares]]", "[[aphrodite-greek]]", "[[hermes-greek]]", "[[poseidon]]", "[[hades]]", "[[hephaestus]]", "[[artemis]]", "[[calypso]]"]
+events-context: ["[[event-trojan-war]] (legendary, ~-1200 BCE setting)", "[[phaeacians]] (Scheria — the court where the Apologoi, Od. 9-12, are narrated, and the hero's conveyance home, Od. 13)"]
+hub-edges:
+  - target: "place-ithaca"
+    type: "narrative-setting"
+    source: "The Odyssey's frame and destination: Books 1-2 (the Telemachy) and 13-24 (the return, recognition, and slaughter of the suitors) are set on Ithaca — the pole of the nostos. Heubeck, West, Hainsworth et al., A Commentary on Homer's Odyssey (Clarendon 1988-1992)."
+    source-tier: "T1"
+    notes: "Cross-lens: 02_documents → 08_places."
 status: "full"
 citation-audited: "2026-06-04"
 preservation: "Continuous transmission via rhapsodic recitation, then text. Pisistratus of Athens (~-550) is credited with the first authoritative written redaction (the 'Pisistratean recension'). Aristarchus of Samothrace (Alexandria, ~-200) produced the Hellenistic critical text. The medieval manuscript tradition descends through Byzantine copying. Oldest physical witnesses: papyrus fragments from ~-300 BCE (Ptolemaic Egypt); the famous Venetus A manuscript (10th c. CE) preserves Aristarchan scholia."

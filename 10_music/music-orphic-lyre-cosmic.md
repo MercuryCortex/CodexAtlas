@@ -49,6 +49,7 @@ music-tradition-context:
 music-deity-connections:
   - [[apollo]]
   - [[dionysus]]
+  - [[sirens]]
 
 refs:
   - "Ovid, Metamorphoses X–XI (c. 8 CE) — canonical Latin account of Orpheus's world-ordering power"

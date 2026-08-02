@@ -8,6 +8,7 @@ documents-attested: ["[[fernao-lopes]] (medieval Portuguese chronicles, earliest
 deities-associated: []
 parent-theme: "[[soul-exile-longing]]"
 child-themes: []
+parallels: ["[[nostos]] (the Greek homecoming theme whose word yields 'nostalgia', Hofer 1688 — saudade is the affect of the unachieved nostos)"]
 status: "stub"
 refs:
   - title: "Saudade: An Antologia"
