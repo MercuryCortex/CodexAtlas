@@ -2381,6 +2381,12 @@
         titleCompact: !!local._houseTitleCompact,
         titleGap: local._houseTitleGap || null,
         titlePin: local._houseTitlePin || null,
+        // THE AXIS PROBE (2026-08-03): every rank date's fate from the
+        // last painted frame — bright / quiet / refused(+who refused).
+        // The ratified law "an axis date may NEVER be eaten by the
+        // title" is asserted on axisEatenByTitle === 0.
+        axisDates: local._houseAxisDates || null,
+        axisEatenByTitle: local._houseAxisEaten || 0,
         mix: local._layoutMix
           ? { value: +local._layoutMix.value.toFixed(4), target: local._layoutMix.target }
           : null,
@@ -2569,6 +2575,12 @@
         // rAF, so the harness forces the redecide itself (the
         // frozen-flight lesson: houseSettle(), never bare tickAnim()).
         if (local._houseTitlePin) local._houseTitlePin.redecide = true;
+        // …and CONSUME it in the drawFrame below (2026-08-03): the
+        // settleHouse() above already repainted once, so without this
+        // bust the next paint idle-skips, the forced decision never
+        // runs, and houseState reports the PREVIOUS dial state's
+        // gap/fits — the stale-probe half of the fan-drop defect.
+        local._labelsIdleCamS = null; local._hullsIdleCamS = null;
         drawFrame();
         return {
           isolate: local._isolateFamily,
@@ -6439,7 +6451,24 @@
       // syncHulls) so a node name can never land on a family title.
       const placed = [];
       if (local._titleRects) {
-        for (let t = 0; t < local._titleRects.length; t++) placed.push(local._titleRects[t]);
+        // ONE FRAME OF TRUTH (2026-08-03): renderLabelsCanvas runs
+        // BEFORE syncHulls in drawFrame, so on the paint right after a
+        // dial-driven redecide the published title rect is one frame
+        // STALE — and a stale name rect parked on the moved date axis
+        // ate a date for exactly that frame (repro C2, Safari). At
+        // house rest the single title rect is re-anchored HERE from
+        // the same houseTitleAnchor the canvas rows use (any pending
+        // decision is performed now); syncHulls publishes the
+        // identical numbers later in this same synchronous frame.
+        const reseat = (houseAtRest() && local._isolateFamily
+                        && local._titleRects.length === 1)
+          ? houseTitleAnchor(vp) : null;
+        for (let t = 0; t < local._titleRects.length; t++) {
+          const P = local._titleRects[t];
+          placed.push(reseat
+            ? [reseat.center ? reseat.x : P[0], reseat.y, P[2]]
+            : P);
+        }
       }
       // ══ THE HOUSE (2026-07-30) ══════════════════════════════════
       // Mid-ramp, every word holds its breath (the toy's tween law —
@@ -6750,6 +6779,11 @@
       const w = (vp && vp.w) || 0, h = (vp && vp.h) || 0;
       if (slot === 'left' || slot === 'right') {
         const right = (slot === 'right');
+        // Corner slots never run the hole search — the full stack
+        // stands, so the paint claims its air rows (2026-08-03: the
+        // flag must be written here or a compact centre decision
+        // would leak into the corner's claims).
+        local._houseTitleCompact = false;
         return {
           right, center: false,
           // Never let the pad invert on a hostile viewport.
@@ -6797,20 +6831,39 @@
         // world RIGIDLY (dyW × pxPerWorld off the house centre), so a
         // zoom gesture can never hole-hop the title mid-flight. The
         // rest watcher in drawFrame arms `redecide` after
-        // house_title_settle_ms of stillness. Because syncHulls runs
-        // before renderLabelsCanvas in the same synchronous drawFrame,
+        // house_title_settle_ms of stillness. renderLabelsCanvas runs
+        // BEFORE syncHulls in the same synchronous drawFrame
+        // (2026-08-03 correction — it was documented backwards);
         // whichever caller hits this first performs any pending
         // decision and the other reads the cached pin — the SVG hit
-        // target and the canvas rows can never disagree within a frame.
+        // target and the canvas rows can never disagree within a
+        // frame, and the labels pass re-anchors the seeded title rect
+        // itself so a dial-frame redecide is never scored against the
+        // previous frame's published rect.
         const pin = local._houseTitlePin;
+        // THE FAN DIALS ARE PART OF THE SEAT'S KEY (2026-08-03). A fan
+        // drop/width move re-shapes the very gaps the seat was chosen
+        // for, so a dial move counts as a key-rewrite — ONE clean
+        // re-decision at the dial's own settled paint — exactly like
+        // the chip flip (which rewrites BOTH terms in refreshHouse to
+        // hold the pin). Without this the block kept a seat decided
+        // for the OLD fan while the date axis moved under it, and its
+        // rows silently ate rank dates (2026-08-02 verification catch).
         const key = String(house.groupKey) + '|' + house.geometry + '|' + w + 'x' + h + '|'
-                  + slot + '|' + ts;
+                  + slot + '|' + ts
+                  + '|f' + (house.fanDy || 0).toFixed(1) + ','
+                  + ((house.fanHalf || 0) * 180 / Math.PI).toFixed(1);
         if (!pin || pin.redecide || pin.key !== key) {
           const res = houseTitleGap(hs, vp, x, halfW, pxPerWorld,
-                                    c.y - rPx, c.y + rPx, blockHC);
+                                    c.y - rPx, c.y + rPx, blockHC, rowH, NAME_RISE);
           const use = res.gap;
           const room = use.hi - use.lo;
-          const compact = true;                        // one subtitle, always
+          // COMPACT means AIRLESS now (2026-08-03): the hole holds the
+          // three content rows (name + subtitle + chips) but not the
+          // two air rows — the paint skips the air claims so nothing
+          // spills past the hole's edge onto the date axis. A hole
+          // that holds the FULL stack keeps its air.
+          const compact = !!res.compact;
           const bh = blockH;
           local._houseTitleCompact = compact;
           local._houseTitleSide = ((use.lo + use.hi) / 2 < c.y) ? 'above' : 'below';
@@ -6820,7 +6873,7 @@
           local._houseTitleGap = {
             lo: use.lo, hi: use.hi, h: room,
             blockH: bh, blockFull: blockH, compact, holes: res.holes, fits: res.fits,
-            outside: !!res.outside,
+            outside: !!res.outside, axisVeto: res.axisVeto | 0,
             prefer: res.prefer, treeMid: res.treeMid, cMid: res.cMid,
             holeList: res.holeList.map((g) => [Math.round(g.lo), Math.round(g.hi)]),
             // what actually stands in the column, by source — the answer
@@ -6832,10 +6885,22 @@
           // above the name and below the chips.
           let yNew = (use.lo + use.hi) / 2 - bh / 2 + NAME_RISE;
           // HYSTERESIS: a re-seat that moves <24px and stays on the
-          // same side is churn — keep the old seat.
+          // same side is churn — keep the old seat. But an INSIDE seat
+          // is kept ONLY while its claim rows still stand inside the
+          // chosen hole: a kept seat may never hang a row over the
+          // hole's edge onto the date axis (the ratified axis
+          // priority). Outside seats stand clear of the circle — and
+          // of every date — so they keep pure hysteresis.
           if (pin && pin.key === key && pin.side === local._houseTitleSide
               && Math.abs(yNew - (c.y + pin.dyW * pxPerWorld)) < 24) {
-            yNew = c.y + pin.dyW * pxPerWorld;
+            const yOld = c.y + pin.dyW * pxPerWorld;
+            const spanT = yOld - (compact ? 0 : rowH);
+            const spanB = yOld + rowH * 2 + (compact ? 0 : rowH);
+            if (res.outside
+                || (spanT >= use.lo - 0.5 && spanB <= use.hi + 0.5
+                    && !(res.nameEatsAt && res.nameEatsAt(yOld)))) {
+              yNew = yOld;
+            }
           }
           y = yNew;
           local._houseTitlePin = { key, dyW: (y - c.y) / pxPerWorld,
@@ -6889,12 +6954,13 @@
     // the 170px of clear air between the crest and the court arc to be
     // solid, and pinned the title back on the top edge. The column is
     // an interval list; the title wants its widest hole.
-    function houseTitleGap(hs, vp, cxPx, halfW, pxPerWorld, topPx, botPx, blockH) {
+    function houseTitleGap(hs, vp, cxPx, halfW, pxPerWorld, topPx, botPx, blockH, rowH, NAME_RISE) {
       const RIM = 30;   // screen px clear of the neatline
       const GAP = 14;   // screen px clear of whatever is drawn
       const colL = cxPx - halfW, colR = cxPx + halfW;
       const lo0 = topPx + RIM, hi0 = botPx - RIM;
       const iv = [];
+      const axisPts = [];   // EVERY rank-date anchor, in or out of the column (2026-08-03)
       let treeMin = Infinity, treeMax = -Infinity;
       let tag = '?';
       const box = (x0, x1, y0, y1) => {
@@ -6944,9 +7010,22 @@
         const capOff = (typeof local.params.house_rank_cap_off === 'number')
           ? local.params.house_rank_cap_off : 14;
         const CAP_W = 112, CAP_H = 7;   // the widest era string, and its half-height
+        // THE WIDE ROW SEES EVERY DATE (2026-08-03). This column is
+        // halfW (±200) wide, but the NAME row's published reserve is
+        // 800px FULL (syncHulls doubles titlePlaced's half-width at
+        // publish) — claim()'s metric therefore reaches axis dates
+        // whose rects never enter the column. On the fan the axis
+        // runs diagonally OUT of the column, and a compact seat's
+        // name row landed 8px under the out-of-column '1500–400 BCE'
+        // (Safari probe, 2026-08-03). Every anchor is collected here,
+        // column or not, and the pick DISQUALIFIES any hole whose
+        // centred name row would sit within the claim metric of one —
+        // the ratified axis priority, enforced at decision time.
         for (const rm of (house.rowMeta || [])) {
           const a = houseRankCapAnchor(house, rm, vp, capOff);
-          if (a) box(a.x, a.x + CAP_W, a.y - CAP_H, a.y + CAP_H);
+          if (!a) continue;
+          box(a.x, a.x + CAP_W, a.y - CAP_H, a.y + CAP_H);
+          axisPts.push({ cx: a.x + CAP_W / 2, y: a.y, w: CAP_W + 4 });
         }
       }
       iv.sort((a, b) => a[0] - b[0]);
@@ -6978,23 +7057,65 @@
       const treeMid = (treeMin <= treeMax) ? (treeMin + treeMax) / 2 : cMid;
       const prefer = (treeMid < cMid - 40) ? 'below' : 'above';
       const sideOf = (g) => (((g.lo + g.hi) / 2) < cMid ? 'above' : 'below');
+      // ── THE NAME ROW MAY NEVER SIT ON A DATE (2026-08-03) ──────────
+      // The published name reserve is 800px full — far wider than this
+      // column — so its threat to the axis is tested per-date, against
+      // the y the centred stack would put the name row at. A hole that
+      // fails is DISQUALIFIED on both tiers (same centred y), counted
+      // in axisVeto so the probe can say why a side was refused.
+      const NAME_RES = 800;   // syncHulls' published reserve: max(w*1.4+24,400) half ⇒ 800 full
+      const nameEatsAt = (yN) => {
+        for (const p of axisPts) {
+          if (Math.abs(yN - p.y) < 15
+              && Math.abs(cxPx - p.cx) < (NAME_RES + p.w) / 2) return true;
+        }
+        return false;
+      };
+      let axisVeto = 0;
       const pickIn = (side, needH) => {
         let b = null;
         for (const g of holes) {
           if (g.hi - g.lo <= 0) continue;
           if (side && sideOf(g) !== side) continue;
           if (needH != null && (g.hi - g.lo) < needH) continue;
+          if (needH != null
+              && nameEatsAt((g.lo + g.hi) / 2 - blockH / 2 + NAME_RISE)) {
+            axisVeto++;
+            continue;
+          }
           if (!b || (g.hi - g.lo) > (b.hi - b.lo)) b = g;
         }
         return b;
       };
-      // the preferred side first, and only a hole that can HOLD the
-      // block counts as a candidate there
-      let best = pickIn(prefer, blockH)
-              || pickIn(prefer === 'below' ? 'above' : 'below', blockH)
-              || pickIn(prefer, null)
-              || pickIn(null, null);
-      const fits = !!best && (best.hi - best.lo) >= blockH;
+      // ── THE STACK MUST STAND WHOLE IN ITS HOLE (2026-08-03) ────────
+      // "Holds the block" used to be tested against blockH — the three
+      // CONTENT rows — while the paint claims TWO MORE rows (air above
+      // the name, air below the chips). In a hole between blockH and
+      // the full stack, the air rows hung over the hole's edge and
+      // whatever claims later within claim()'s 15px of them was
+      // refused — on the fan with fan_dy>0 that neighbour is the DATE
+      // AXIS, and rank dates silently vanished while fits said true.
+      // Two honest tiers now, preferred side first (side-stickiness
+      // unchanged from the old ladder):
+      //   FULL — name+subtitle+chips AND both air rows stand inside
+      //   CORE — the content rows alone stand; the paint then SKIPS
+      //          the air claims (compact) so nothing spills onto the
+      //          axis gutter
+      // An axis date may NEVER be eaten by the title — that priority
+      // is ratified; the axis probe (houseState().axisEatenByTitle)
+      // and check-familytree.mjs assert it.
+      const needFull = 2 * Math.max(rowH + blockH / 2 - NAME_RISE,
+                                    rowH * 3 - blockH / 2 + NAME_RISE);
+      const needCore = 2 * Math.max(blockH / 2 - NAME_RISE,
+                                    rowH * 2 - blockH / 2 + NAME_RISE);
+      const otherSide = prefer === 'below' ? 'above' : 'below';
+      let compact = false;
+      let best = pickIn(prefer, needFull);
+      if (!best) { best = pickIn(prefer, needCore); compact = !!best; }
+      if (!best) best = pickIn(otherSide, needFull);
+      if (!best) { best = pickIn(otherSide, needCore); compact = !!best; }
+      const fits = !!best;
+      if (!best) best = pickIn(prefer, null) || pickIn(null, null);
       // NOTHING FITS INSIDE (2026-08-02, the zoom-out-centred fix):
       // the search above is bounded by the circle's own vertical span,
       // and zoomed out that span shrinks until no hole holds the block
@@ -7028,15 +7149,30 @@
           best = (ob.hi <= topPx) ? { lo: ob.hi - blockH, hi: ob.hi }
                                   : { lo: Math.max(ob.lo, botPx + GAP),
                                       hi: Math.max(ob.lo, botPx + GAP) + blockH };
-          return { gap: best, fits: true, outside: true, holes: holes.length,
-                   holeList: holes, iv, prefer, treeMid: Math.round(treeMid), cMid: Math.round(cMid) };
+          // outside seats stand clear of the circle (and of every axis
+          // date inside it) — the full stack keeps its air out there
+          return { gap: best, fits: true, outside: true, compact: false, axisVeto, nameEatsAt,
+                   holes: holes.length, holeList: holes, iv, prefer,
+                   treeMid: Math.round(treeMid), cMid: Math.round(cMid) };
         }
-        // circle fills the screen and inside has no room either — keep
-        // the old top-hole fallback (honest but unimproved there)
-        for (const g of holes) { if (g.hi - g.lo > 0) { best = g; break; } }
+        // Circle fills the screen and inside has no room either — the
+        // documented fallback IS the top slot (the headroom note:
+        // "the block falls back to the top slot"). It used to park in
+        // the topmost HOLE instead, and with fan_dy>0 the top hole
+        // vanishes and the topmost hole is a sliver BETWEEN the axis
+        // dates — the park landed amid the axis and its rows ate up to
+        // 3 of 7 dates (2026-08-03). The top slot sits above every
+        // rank line, so the park can never cost an axis date.
+        {
+          // mid such that the anchor's centring formula lands the name
+          // baseline exactly on HOUSE_TITLE_TOP
+          const topMid = HOUSE_TITLE_TOP + blockH / 2 - NAME_RISE;
+          best = { lo: topMid - blockH / 2, hi: topMid + blockH / 2 };
+        }
       }
       if (!best) best = { lo: lo0, hi: hi0 };
-      return { gap: best, fits, holes: holes.length, holeList: holes, iv, prefer,
+      return { gap: best, fits, compact, axisVeto, nameEatsAt,
+               holes: holes.length, holeList: holes, iv, prefer,
                treeMid: Math.round(treeMid), cMid: Math.round(cMid) };
     }
     // ONE anchor law for the rank/era caption, shared by the pass that
@@ -7321,7 +7457,11 @@
       // above); estimate its width for the shield.
       const nameW = String(house.groupKey || '').length * 21 * 0.68 + 24;
       const BW = Math.max(w1 + 8, w2 + 8, nameW, 156) + 28;
-      claim(cenX(BW), cs.y - CROWN_ROW, BW);   // air above the name
+      // COMPACT/AIRLESS (2026-08-03): in a hole that holds only the
+      // content rows, the air rows are NOT claimed — an air claim that
+      // hangs past the hole's edge is exactly what ate axis dates.
+      const titleAir = !local._houseTitleCompact;
+      if (titleAir) claim(cenX(BW), cs.y - CROWN_ROW, BW);   // air above the name
       // ── SUBTITLE LOD (2026-08-02): the subtitle and the chips fade
       // in only near house zoom (rel = camera scale / the house's own
       // fit scale); the NAME keeps full alpha at every zoom. The hole
@@ -7389,9 +7529,11 @@
           : (anchor.right ? (anchor.x - wFan - 8) : (anchor.x + wCas + 8));
         if (subA > 0.05) {
           claim(cenX(BW), chipY, BW);              // best-effort reserve at the BLOCK width
-          claim(cenX(BW), chipY + CROWN_ROW, BW);  // air below the stack
+          if (titleAir) claim(cenX(BW), chipY + CROWN_ROW, BW);  // air below the stack
         } else {
           // LOD-out: the block is the name alone — the keepout hugs it.
+          // (This is the SUBTITLE's own row — inside the core span —
+          // so it stays claimed even in the compact/airless form.)
           claim(cenX(BW), cs.y + CROWN_ROW, BW);   // air below the name-only block
         }
         const chips = chipsG.querySelectorAll('.forge-house-chip');
@@ -7466,11 +7608,42 @@
           minPitch = Math.min(minPitch, items[i].y - items[i - 1].y);
         }
         const thin = minPitch < 16;      // claim()'s 15px rule + 1 — the fan ring case
+        // ── THE AXIS PROBE (2026-08-03) — every date's fate, recorded.
+        // "Nothing announces the loss" was half the 08-02 defect: a
+        // refused date now says who refused it. Everything in `placed`
+        // at this point is the title block (its seeded name rect plus
+        // the rows section 1 claimed — the axis claims right after the
+        // block by design), so a refusal that traces to one of those
+        // rects violates the ratified axis priority and is counted in
+        // axisEatenByTitle for the gate and the Safari harness.
+        const titleClaimEnd = placed.length;
+        const axisRec = [];
+        let axisEaten = 0;
         for (let i = 0; i < items.length; i++) {
           const it = items[i];
           const txt = it.txt;
           if (!thin || (i % 2 === 0)) {
-            if (!claim(it.x + it.w / 2, it.y, it.w + 4)) continue;
+            if (!claim(it.x + it.w / 2, it.y, it.w + 4)) {
+              // refused — find the blocker with claim()'s own metric
+              let by = (it.y < KEEPOUT_TOP || it.y > vp.h - KEEPOUT_BOTTOM)
+                ? 'keepout' : 'other';
+              if (by !== 'keepout') {
+                const cx0 = it.x + it.w / 2, wD = it.w + 4;
+                for (let k = 0; k < placed.length; k++) {
+                  const P = placed[k];
+                  if (Math.abs(cx0 - P[0]) < (wD + P[2]) / 2
+                      && Math.abs(it.y - P[1]) < 15) {
+                    by = (k < titleClaimEnd) ? 'title' : 'other';
+                    break;
+                  }
+                }
+              }
+              if (by === 'title') axisEaten++;
+              axisRec.push({ txt, x: Math.round(it.x), y: Math.round(it.y),
+                             mode: 'refused', by });
+              continue;
+            }
+            axisRec.push({ txt, x: Math.round(it.x), y: Math.round(it.y), mode: 'bright' });
             ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.55 : 0.80);
           } else {
             // Deliberate thinning: every 2nd date prints QUIET,
@@ -7479,10 +7652,13 @@
             // rect over it. NOT pushed into `placed` — a raw push
             // would break the zero-overlapping-pairs invariant the
             // gate asserts on lastPlacedRects.
+            axisRec.push({ txt, x: Math.round(it.x), y: Math.round(it.y), mode: 'quiet' });
             ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.40 : 0.45);
           }
           halo(txt, it.x, it.y);
         }
+        local._houseAxisDates = axisRec;
+        local._houseAxisEaten = axisEaten;
       }
       ctx.globalAlpha = 1;
 
@@ -9034,6 +9210,8 @@
         local._house = null;
         local._houseTravel = null;
         local._houseTitlePin = null;   // the title's seat dies with the house
+        local._houseAxisDates = null;  // …and so does the axis probe
+        local._houseAxisEaten = 0;
         // THE RAILS (2026-07-31) — home again: the guests go back where
         // they came from and the wheel is re-packed ONCE. packNodes is
         // deterministic over identical inputs, so this returns buffer A
@@ -9198,7 +9376,14 @@
         // kills the measured ~590px cascade→fan teleport.
         if (local._houseTitlePin) {
           local._houseTitlePin.key = local._houseTitlePin.key
-            .replace(/\|(cascade|fan)\|/, '|' + next.lay.house.geometry + '|');
+            .replace(/\|(cascade|fan)\|/, '|' + next.lay.house.geometry + '|')
+            // …and the fan terms (2026-08-03): the key carries the fan
+            // dials now, and cascade reports fanDy 0 while the fan
+            // reports Rt×dial — without this rewrite a chip flip under
+            // a non-zero fan drop would mismatch the key and re-seat
+            // the block, which is exactly the teleport the hold kills.
+            .replace(/\|f[^|]*$/, '|f' + (next.lay.house.fanDy || 0).toFixed(1) + ','
+                                 + ((next.lay.house.fanHalf || 0) * 180 / Math.PI).toFixed(1));
         }
       } else {
         local._house = next;

@@ -840,8 +840,17 @@ must(/if \(x1 < colL \|\| x0 > colR\) return;\s+\/\/ not in the title's column/,
 // holes on that side.
 must(/const prefer = \(treeMid < cMid - 40\) \? 'below' : 'above';/,
   'the title takes the side the DRAWING has vacated — cascade centred ⇒ top, fan crests high ⇒ the empty bottom');
-must(/let best = pickIn\(prefer, blockH\)\s*\n\s*\|\| pickIn\(prefer === 'below' \? 'above' : 'below', blockH\)/,
-  'the preferred side is tried FIRST, and only a hole that can hold the block counts there');
+// 2026-08-03 (fan-drop fix): "holds the block" is honest about the
+// FULL claim stack now — the two air rows the paint claims are part
+// of the requirement (needFull), and a hole that only holds the three
+// content rows places the block COMPACT (needCore, air claims
+// skipped). Preferred side keeps first refusal on BOTH tiers.
+must(/let best = pickIn\(prefer, needFull\);\s*\n\s*if \(!best\) \{ best = pickIn\(prefer, needCore\); compact = !!best; \}/,
+  'the preferred side is tried FIRST, on both honest tiers (FULL stack, then CORE/compact)');
+must(/const needFull = 2 \* Math\.max\(rowH \+ blockH \/ 2 - NAME_RISE,\s*\n\s*rowH \* 3 - blockH \/ 2 \+ NAME_RISE\);/,
+  'needFull covers the whole claim stack — air row above the name to air row below the chips');
+must(/const needCore = 2 \* Math\.max\(blockH \/ 2 - NAME_RISE,\s*\n\s*rowH \* 2 - blockH \/ 2 \+ NAME_RISE\);/,
+  'needCore covers the three content rows — the compact form that skips the air claims');
 must(/const aStep = 22 \/ Math\.max\(1e-6, rl\.r \* camS\);/,
   'the band obstacle shield follows the ARC at 22px screen pitch');
 must(/const bi = Math\.round\(gy \/ 16\);/,
@@ -1034,6 +1043,7 @@ const runTitle = (localS, cam, vp) => {
   const a = fns.houseTitleAnchor(vp);
   return { a, fns,
     fits: localS._houseTitleFits !== false,
+    compact: !!localS._houseTitleCompact,   // 2026-08-03: airless core form
     gap: localS._houseTitleGap || null,
     pin: localS._houseTitlePin || null };
 };
@@ -1131,6 +1141,27 @@ must(/local\._houseTitlePin\.key = local\._houseTitlePin\.key/,
   'a chip flip HOLDS the pin with its key rewritten — a control must not move because you used it');
 must(/if \(local\._houseTitlePin\) local\._houseTitlePin\.redecide = true;/,
   'houseSettle() forces the settled decision for headless harnesses (the frozen-rAF lesson)');
+// ── THE FAN-DROP FIX, PINNED (2026-08-03) ──────────────────────────
+must(/\+ '\|f' \+ \(house\.fanDy \|\| 0\)\.toFixed\(1\) \+ ','/,
+  'the seat key carries the FAN DIALS — a fan drop/width move is a key-rewrite (one clean re-decision)');
+must(/next\.lay\.house\.fanDy \|\| 0\)\.toFixed\(1\)/,
+  'a chip flip rewrites the key\'s fan terms too — the pin still holds across the flip under non-zero fan dials');
+must(/if \(local\._houseTitlePin\) local\._houseTitlePin\.redecide = true;\s*\n(\s*\/\/[^\n]*\n)*\s*local\._labelsIdleCamS = null; local\._hullsIdleCamS = null;/,
+  'houseSettle() also busts the idle caches — the forced decision is CONSUMED, never left as a stale probe');
+must(/const titleAir = !local\._houseTitleCompact;/,
+  'the paint skips the AIR claims in the compact form — an air row past the hole edge is what ate axis dates');
+must(/local\._houseAxisDates = axisRec;/,
+  'the axis probe records every date\'s fate (bright/quiet/refused + who refused) — a loss is never silent');
+must(/by = \(k < titleClaimEnd\) \? 'title' : 'other';/,
+  'a refused date names its refuser — axisEatenByTitle counts the ratified-law violations');
+must(/const topMid = HOUSE_TITLE_TOP \+ blockH \/ 2 - NAME_RISE;/,
+  'the no-room fallback parks at the TOP SLOT — above every rank line, it can never cost an axis date');
+must(/const NAME_RES = 800;/,
+  'the axis veto tests dates against the published 800px name reserve — wider than the walk\'s column');
+must(/axisPts\.push\(\{ cx: a\.x \+ CAP_W \/ 2, y: a\.y, w: CAP_W \+ 4 \}\);/,
+  'EVERY date anchor is collected for the veto, in or out of the column (the diagonal-axis escape)');
+must(/&& !\(res\.nameEatsAt && res\.nameEatsAt\(yOld\)\)/,
+  'the hysteresis keep is refused when the OLD seat\'s name row would sit on a date');
 // ── THE ONE-PAINTER LAW + SUBTITLE LOD, PINNED (source) ────────────
 must(/labelEl\.style\.opacity = '0'; labelEl\._lastVis = '0';/,
   'the SVG hull label paints NOTHING in the house — invisible click-target only (the "vEDIC" double-paint fix)');
@@ -1240,14 +1271,22 @@ for (const fam of ['Greek', 'Christian', 'Norse', 'Egyptian', 'Mesopotamian', 'O
     // `placed` before the canvas pass — same as local._titleRects,
     // whose centre-slot half-width floor is 400 (⇒ the 800px row).
     const BW = Math.max(w2b + 8, tw, 156) + 28;
+    // The ×2 is REAL (re-verified against the live rects 2026-08-03):
+    // syncHulls stores HALF-widths in titlePlaced and doubles them at
+    // publish (`[P[0], P[1], P[2] * 2]`), so the centre slot's name
+    // row claims a full 800px in the registry.
     const nameRowW = Math.max(tw * 1.4 + 24, 400) * 2;
-    claimSim(placed, cenX(BW), cs.y - CROWN_ROW, BW, vp.h);   // air above
+    // The air rows follow the LIFTED decision: a compact (airless)
+    // seat claims content rows only — mirroring renderHouseChrome's
+    // titleAir (2026-08-03), from the real function, not a re-model.
+    const titleAir = !tlR._houseTitleCompact;
+    if (titleAir) claimSim(placed, cenX(BW), cs.y - CROWN_ROW, BW, vp.h);   // air above
     const nRow = 2;                         // subtitle + chips under the name
     const rows4 = [claimSim(placed, cenX(nameRowW), cs.y, nameRowW, vp.h)];
     for (let r = 1; r <= nRow; r++) {
       rows4.push(claimSim(placed, cenX(BW), cs.y + CROWN_ROW * r, BW, vp.h));
     }
-    claimSim(placed, cenX(BW), cs.y + CROWN_ROW * (nRow + 1), BW, vp.h);   // air below
+    if (titleAir) claimSim(placed, cenX(BW), cs.y + CROWN_ROW * (nRow + 1), BW, vp.h);   // air below
     for (const r of rows4) { titleBlockTot++; if (!r) titleBlockFail++; }
     // 1c ▸ THE DATE AXIS (2026-08-02) — dates claim right after the
     // title block, BEFORE the band text (mirroring the new paint
@@ -1513,12 +1552,15 @@ else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused')
     if (!railL3) lineC3 += ' · ' + st.docs + ' SCRIPTORIUM';
     if (!railR3) lineC3 += ' · ' + st.court + ' COURT';
     const BW3 = Math.max(mw(lineC3, T_CAP) + 8, titleW(fam), 156) + 28;
+    // 800px name row (the syncHulls ×2 at publish) + LIFTED compact
+    // flag (2026-08-03) — same model as the W4 replay above.
     const nameRowW3 = Math.max(titleW(fam) * 1.4 + 24, 400) * 2;
-    claimSim(placed, cenX2(BW3), rt.a.y - CR, BW3, vp.h);
+    const air3 = !rt.compact;
+    if (air3) claimSim(placed, cenX2(BW3), rt.a.y - CR, BW3, vp.h);
     claimSim(placed, cenX2(nameRowW3), rt.a.y, nameRowW3, vp.h);
     claimSim(placed, cenX2(BW3), rt.a.y + CR, BW3, vp.h);
     claimSim(placed, cenX2(BW3), rt.a.y + CR * 2, BW3, vp.h);
-    claimSim(placed, cenX2(BW3), rt.a.y + CR * 3, BW3, vp.h);
+    if (air3) claimSim(placed, cenX2(BW3), rt.a.y + CR * 3, BW3, vp.h);
     const items = [];
     let ringsDated = 0;
     for (const rm of h.rowMeta) {
@@ -1553,6 +1595,159 @@ else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused')
   }
 }
 
+// ── THE FAN DIALS vs THE DATE AXIS (2026-08-03) ────────────────────
+// The 2026-08-02 verification catch: with house_fan_dy > 0 the fan's
+// below-gap shrinks, and the title block — seat stale (its key
+// carried no fan terms) or its AIR rows hanging past a "fits" hole —
+// landed on the date-axis gutter and silently ate 1-2 rank dates
+// while fits said true. The fix: the fan dials are part of the seat's
+// key (one clean re-decision per dial move), a hole must hold the
+// FULL claim stack (or the block goes compact/airless), and the
+// no-room fallback parks at the top slot. This section replays the
+// dial matrix through the LIFTED functions and asserts the ratified
+// law: AN AXIS DATE MAY NEVER BE EATEN BY THE TITLE.
+console.log('\n── FAN DIALS · fan_dy 0.2 × width 108/118, the axis never loses ──');
+{
+  const T_ROWH = rowOf(T_HEAD);
+  const DIAL_BLOCK = T_ROWH * 2 + 16 + 8;                 // the anchor's own blockH law
+  const NEED_FULL = 2 * Math.max(T_ROWH + DIAL_BLOCK / 2 - 16, T_ROWH * 3 - DIAL_BLOCK / 2 + 16);
+  const NEED_CORE = 2 * Math.max(DIAL_BLOCK / 2 - 16, T_ROWH * 2 - DIAL_BLOCK / 2 + 16);
+  const fmtDX = (d) => (d < 0 ? (-d) + ' BCE' : d + ' CE');
+  const fmtRX = (a2, b2) => {
+    if (a2 == null || b2 == null || a2 === b2) return fmtDX(a2 == null ? b2 : a2);
+    if (a2 < 0 && b2 < 0) return (-a2) + '–' + (-b2) + ' BCE';
+    if (a2 >= 0 && b2 >= 0) return a2 + '–' + b2 + ' CE';
+    return (-a2) + ' BCE–' + b2 + ' CE';
+  };
+  let dialBadDates = 0, dialBadHonesty = 0, dialEaten = 0, dialCases = 0;
+  for (const fam of ['Greek', 'Vedic']) {
+    for (const wdeg of [108, 118]) {
+      const lay = houseUnion(fam, 'fan', { fanDy: 0.2, fanHalfDeg: wdeg });
+      const h = lay.house;
+      const st = h.stats;
+      for (const vp of [{ w: 2000, h: 1098 }, { w: 1440, h: 900 }]) {
+        dialCases++;
+        const scale = Math.min(vp.w, vp.h) / (2 * (540 + 70));
+        const tl = titleLocal(lay);
+        const rt = runTitle(tl, titleCam(scale, 0, 0), vp);
+        const g = tl._houseTitleGap;
+        const tag = fam + ' fan_dy=0.2 w=' + wdeg + ' @' + vp.w + 'x' + vp.h;
+        // 1 ▸ the title's claimed rects, exactly as the paint claims
+        // them (air rows follow the lifted compact flag)
+        const placed = [];
+        const railLd = !!(h.rails.left && h.rails.left.shelves && h.rails.left.shelves.length);
+        const railRd = !!(h.rails.right && h.rails.right.shelves && h.rails.right.shelves.length);
+        const nounD = st.treeKind
+          ? (String(st.treeKind) + 's').replace(/ys$/, 'ies').toUpperCase() : 'MEMBERS';
+        let lineD = st.tree + ' ' + nounD + ' · ' + st.kinArcs + ' ARC' + (st.kinArcs === 1 ? '' : 'S')
+          + ' · ' + st.orphanCount + ' ON THEIR ERA';
+        if (!railLd) lineD += ' · ' + st.docs + ' SCRIPTORIUM';
+        if (!railRd) lineD += ' · ' + st.court + ' COURT';
+        const BWd = Math.max(mw(lineD, T_CAP) + 8, titleW(fam), 156) + 28;
+        const nameRowWd = Math.max(titleW(fam) * 1.4 + 24, 400) * 2;   // the published 800px row
+        const airD = !rt.compact;
+        if (airD) claimSim(placed, rt.a.x, rt.a.y - T_ROWH, BWd, vp.h);
+        claimSim(placed, rt.a.x, rt.a.y, nameRowWd, vp.h);
+        claimSim(placed, rt.a.x, rt.a.y + T_ROWH, BWd, vp.h);
+        claimSim(placed, rt.a.x, rt.a.y + T_ROWH * 2, BWd, vp.h);
+        if (airD) claimSim(placed, rt.a.x, rt.a.y + T_ROWH * 3, BWd, vp.h);
+        const titleRects = placed.slice();
+        // 2 ▸ the axis, REAL strings, real anchors, real thinning
+        const items = [];
+        let ringsDated = 0;
+        const hasBonesD = (st.kinArcs || 0) > 0;
+        const romanD = (n) => { const T2 = [[10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+          let o2 = ''; for (const [v2, s2] of T2) while (n >= v2) { o2 += s2; n -= v2; } return o2 || 'I'; };
+        const trueGenD = (rm) => (rm.n && hasBonesD && rm.offLineage === 0
+          && rm.layerMin != null && rm.layerMin === rm.layerMax)
+          ? ('GEN ' + romanD(rm.layerMin + 1)) : null;
+        for (const rm of h.rowMeta) {
+          if (!rm.n || !(rm.rad > 0)) continue;
+          ringsDated++;
+          let txt;
+          if (rm.dmin == null) txt = trueGenD(rm) || 'UNDATED';
+          else {
+            const g2 = trueGenD(rm);
+            const d2 = fmtRX(rm.dmin, rm.dmax);
+            txt = g2 ? (d2 + ' · ' + g2) : d2;   // the view's capFor law, full width
+          }
+          const ca = rt.fns.houseRankCapAnchor(h, rm, vp, 14);
+          if (!ca) continue;
+          items.push({ txt, w: mw(txt, T_CAP), x: ca.x, y: ca.y });
+        }
+        items.sort((a2, b2) => a2.y - b2.y);
+        let minPitch = Infinity;
+        for (let i2 = 1; i2 < items.length; i2++) {
+          minPitch = Math.min(minPitch, items[i2].y - items[i2 - 1].y);
+        }
+        const thin = minPitch < 16;
+        let bright = 0, quiet = 0, dropped = 0;
+        for (let i2 = 0; i2 < items.length; i2++) {
+          const it = items[i2];
+          if (!thin || (i2 % 2 === 0)) {
+            if (claimSim(placed, it.x + it.w / 2, it.y, it.w + 4, vp.h)) bright++;
+            else { dropped++; }
+          } else quiet++;
+        }
+        // 3 ▸ THE RATIFIED LAW — zero axis dates inside the title's
+        // claimed rects, bright AND quiet, by claim()'s own metric.
+        let eaten = 0;
+        for (const it of items) {
+          const cx0 = it.x + it.w / 2, wD = it.w + 4;
+          for (const P of titleRects) {
+            if (Math.abs(cx0 - P[0]) < (wD + P[2]) / 2 && Math.abs(it.y - P[1]) < 15) {
+              eaten++;
+              fail(tag + ': axis date "' + it.txt + '" (y ' + it.y.toFixed(0)
+                + ') inside a title rect (y ' + P[1].toFixed(0) + ', w ' + P[2].toFixed(0) + ')');
+              break;
+            }
+          }
+        }
+        dialEaten += eaten;
+        if (items.length !== ringsDated || dropped > 0) {
+          dialBadDates++;
+          fail(tag + ': ' + dropped + ' of ' + ringsDated + ' rank dates dropped ('
+            + bright + ' bright + ' + quiet + ' quiet)');
+        }
+        // 4 ▸ HONEST STATE — fits:true (full, compact, or outside), or
+        // an honest no-room park: fits:false is legal ONLY when no
+        // inside hole holds even the CORE form, and then the block
+        // stands at the TOP SLOT (y 66), above every rank line.
+        const maxHole = (g && g.holeList || []).reduce((m2, [lo, hi]) => Math.max(m2, hi - lo), 0);
+        const holeH = g ? (g.hi - g.lo) : 0;
+        if (rt.fits) {
+          const wantCompact = !g.outside && holeH < NEED_FULL;
+          if (wantCompact !== rt.compact) {
+            dialBadHonesty++;
+            fail(tag + ': compact flag dishonest — hole ' + holeH.toFixed(0) + 'px vs needFull '
+              + NEED_FULL + ', compact=' + rt.compact);
+          }
+        } else if (maxHole >= NEED_CORE + 1 && !(g && g.axisVeto > 0)) {
+          // +1: holeList is published ROUNDED (the probe's own law), so
+          // a true 57.7px hole can read as 58 — only a rounded height
+          // that GUARANTEES core room may call the report a lie. And a
+          // hole the AXIS VETO disqualified (its centred name row would
+          // sit on a date) is honestly unusable at any height.
+          dialBadHonesty++;
+          fail(tag + ': fits:false but a ' + maxHole.toFixed(0) + 'px hole holds the core ('
+            + NEED_CORE + 'px) — the report lies');
+        } else if (Math.abs(rt.a.y - 66) > 0.5) {
+          dialBadHonesty++;
+          fail(tag + ': no-room park is not the top slot (y ' + rt.a.y.toFixed(1) + ')');
+        }
+      }
+    }
+  }
+  if (!dialBadDates && !dialEaten) {
+    ok('fan_dy 0.2 × width 108/118 (Greek + Vedic, 2000×1098 + 1440×900): every rank date prints, '
+      + 'ZERO eaten by the title — ' + dialCases + ' cases');
+  }
+  if (!dialBadHonesty) {
+    ok('…and the state is honest in all ' + dialCases
+      + ' cases: fits true (full/compact/outside) or a true no-room top-slot park');
+  }
+}
+
 // ── THE TITLE FINDS AIR IN EVERY HOUSE ──────────────────────────────
 // The one invariant behind the 2026-08-01 pass: whatever the family and
 // whatever the geometry, the block goes in a hole that can HOLD it. It
@@ -1576,7 +1771,7 @@ else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused')
   // (2000x1098 with the chrome, 2000x1150 in the pane).
   const SEAT = [{ w: 2000, h: 1150 }, { w: 2000, h: 1098 }];
   const run = (vps) => {
-    let noRoom = 0, cases = 0, outside = 0; const worst = [];
+    let noRoom = 0, cases = 0, outside = 0, veto = 0; const worst = [];
     for (const fam of FAMS) {
       for (const geo of ['cascade', 'fan']) {
         const lay = houseUnion(fam, geo);
@@ -1586,13 +1781,19 @@ else fail(titleBlockFail + ' of ' + titleBlockTot + ' title-block rows refused')
           const r = runTitle(tl, titleCam(scale, 0, 0), vp);
           cases++;
           if (r.gap && r.gap.outside) outside++;
+          if (r.gap && r.gap.axisVeto) veto += r.gap.axisVeto;
           if (!r.fits) { noRoom++; worst.push(fam + '/' + geo + ' ' + vp.w + 'x' + vp.h); }
         }
       }
     }
-    return { noRoom, cases, outside, worst };
+    return { noRoom, cases, outside, veto, worst };
   };
   const seat = run(SEAT);
+  // DEFAULT-IDENTITY GUARD (2026-08-03): the axis veto exists for the
+  // fan DIALS — at default dials it must never fire at John's seat, or
+  // the fix would have moved a default placement he has already judged.
+  if (seat.veto === 0) ok('the axis veto never fires at default dials at his seat (placements untouched)');
+  else fail(seat.veto + ' axis vetoes at DEFAULT dials at his seat — a default seat moved');
   if (seat.noRoom === 0) {
     ok('the title lands in a hole that HOLDS it at John\'s own window — ' + seat.cases
       + ' cases (10 families × 2 geometries × 2000×1150 and 2000×1098); '
@@ -2310,7 +2511,7 @@ must(/const es = camera\.worldToScreen\(house\.center\.x - rm\.half \* 0\.94, ly
 // regression ships unnoticed, so both callsites are pinned.
 must(/const ca = houseRankCapAnchor\(house, rm, vp, capOff\);/,
   'the era caption reads its anchor from the ONE shared law', forgeSrc);
-must(/const a = houseRankCapAnchor\(house, rm, vp, capOff\);\s*\n\s+if \(a\) box\(/,
+must(/const a = houseRankCapAnchor\(house, rm, vp, capOff\);\s*\n\s+if \(!a\) continue;\s*\n\s+box\(/,
   'the title\'s gap search counts every era caption as occupied', forgeSrc);
 must(/if \(txt == null && capMode === 'date'\) txt = 'UNDATED';/,
   'an undated rank SAYS so — UNDATED prints instead of a silent gap', forgeSrc);
