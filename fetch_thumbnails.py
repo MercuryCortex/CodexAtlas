@@ -29,7 +29,13 @@ from pathlib import Path
 VAULT = Path(__file__).parent
 CACHE = VAULT / "_assets" / "thumbs_cache.json"
 
-NODE_DIRS = ["02_documents", "03_deities", "04_persons", "05_events", "06_themes", "07_traditions", "09_symbols"]
+NODE_DIRS = ["02_documents", "03_deities", "04_persons", "05_events", "06_themes", "07_traditions", "09_symbols",
+             # ---- extension pass (2026-08-02): every remaining numbered node folder ----
+             "08_places", "10_music", "11_alphabets", "12_alchemy", "13_morals", "14_rituals",
+             "15_philosophy", "16_mathematics", "17_medicine", "18_languages", "19_astronomy",
+             "20_sacred_architecture", "21_theology", "22_practices", "23_material_culture",
+             "24_pharmacology", "25_divination", "26_calendars", "27_attire",
+             "28_exchange_networks", "29_technology", "31_consciousness"]
 
 USER_AGENT = "GnosticPathAtlas/0.2 (educational research vault; +https://obsidian.md)"
 TIMEOUT = 6
@@ -69,7 +75,7 @@ def gather_nodes():
         if not root.exists():
             continue
         for md in root.rglob("*.md"):
-            if md.name.startswith("_"):
+            if md.name.startswith("_") or md.name == "README.md":
                 continue
             text = md.read_text(encoding="utf-8")
             fm_text, _ = split_frontmatter(text)
@@ -116,7 +122,7 @@ OVERRIDES = {
     "yahweh": "Yahweh",
     "phase-2-001-rig-veda-family-books": "Rigveda",
     "phase-2-002-gathas-of-zarathustra": "Gathas",
-    "phase-2-008-homeric-epics": "Homer",
+    "phase-2-008-homeric-epics": "Venetus A",  # 2026-08-03: Iliad manuscript beats the Homer bust (scout pick)
     "phase-2-009-hesiod-theogony-works-and-days": "Theogony",
     "phase-2-012-brihadaranyaka-upanishad": "Brihadaranyaka Upanishad",
     "phase-2-013-chandogya-upanishad": "Chandogya Upanishad",
@@ -129,7 +135,7 @@ OVERRIDES = {
     "phase-3-006-septuagint": "Septuagint",
     "phase-3-008-book-of-daniel": "Book of Daniel",
     "phase-3-011-dead-sea-scrolls": "Dead Sea Scrolls",
-    "phase-3-012-wisdom-of-solomon": "Wisdom of Solomon",
+    "phase-3-012-wisdom-of-solomon": "Book of Wisdom",  # 2026-08-03: article title with the actual thumbnail
     "phase-3-013-philo-of-alexandria": "Philo",
     "phase-3-015-pauline-epistles": "Pauline epistles",
     "phase-3-016-gospel-of-mark": "Gospel of Mark",
@@ -3136,6 +3142,69 @@ OVERRIDES = {
     "kesa":                                         "Kāṣāya (clothing)",
     "dalmatic":                                     "Dalmatic",
     "cope":                                         "Cope",
+
+    # ---- Image pipeline pass (2026-08-03) — top-demand cache-null OVERRIDES ----
+    # Every article title below was verified via the REST summary API to return
+    # a real thumbnail (>=100px) before being added. Blocklisted ids fixed here
+    # were ALSO removed from BLOCKLIST_2026_05_30 per that set's own convention
+    # (remove from set + correct OVERRIDES entry).
+    "phase-4-072-plutarch-de-iside-et-osiride":    "Moralia",
+    "phase-4-081-mashafa-henok-geez-1-enoch":      "Book of Enoch",
+    "phase-6-009-agrippa-de-occulta-philosophia":  "Three Books of Occult Philosophy",
+    "phase-6-008-paracelsus-corpus":               "Paracelsus",
+    "phase-2-017-mahabharata-ramayana-oral-layers":"Mahabharata",
+    "phase-1-017-descent-of-inanna":               "Inanna",
+    "phase-5-021-ibn-arabi-fusus-al-hikam":        "Ibn Arabi",
+    "phase-6-018-rosicrucian-manifestos":          "Fama Fraternitatis",
+    "phase-6-034-khunrath-amphitheatrum-sapientiae": "Heinrich Khunrath",
+    "phase-5-028-meister-eckhart-sermons":         "Meister Eckhart",
+    "phase-5-005-shankara-brahma-sutra-bhasya":    "Adi Shankara",
+    "phase-6-003-pico-oration-900-conclusions":    "Giovanni Pico della Mirandola",
+    "phase-2-006-brahmanas-aranyakas":             "Yajurveda",
+    "phase-5-014-abhinavagupta-tantraloka":        "Abhinavagupta",
+    "phase-5-044-ibn-sina-kitab-al-shifa":         "Avicenna",
+    "phase-4-073-tabula-smaragdina":               "Emerald Tablet",
+    "phase-4-104-sukhavativyuha-larger":           "Sukhavati",
+    "phase-4-079-coptic-asclepius-nhc-vi-8":       "Nag Hammadi library",
+    "phase-6-006-reuchlin-de-arte-cabalistica":    "Johann Reuchlin",
+    "phase-2-033-shujing-book-of-documents":       "Book of Documents",
+    "phase-4-008-trimorphic-protennoia":           "Nag Hammadi library",
+    "phase-4-024b-tertullian-against-valentinians":"Tertullian",
+    "phase-4-026-origen-on-first-principles":      "Origen",
+    "phase-4-066-polycarp-philippians":            "Polycarp",
+    "phase-5-046-ibn-rushd-tahafut-al-tahafut":    "Averroes",
+    "phase-5-003-maximus-confessor-ambigua":       "Maximus the Confessor",
+    "phase-5-038-mashafa-berhan":                  "Zara Yaqob",
+    "phase-4-082-ethiopic-biblical-canon":         "Garima Gospels",
+    "phase-5-011-rasail-ikhwan-al-safa":           "Brethren of Purity",
+    "phase-5-018-suhrawardi-hikmat-al-ishraq":     "Yahya Suhrawardi",
+    "phase-5-036-mashafa-mistir-giyorgis":         "Giyorgis of Segla",
+    "document-exodus":                             "Book of Exodus",
+    "apas":                                        "Rigveda",
+    # wrong-image fix: fuzzy pass had cached the rock band for the book of Genesis
+    "document-genesis":                            "Book of Genesis",
+    "angkor-wat-temple-complex":                   "Angkor Wat",
+    "solomons-temple-first":                       "Solomon's Temple",
+    "music-pythagorean-harmony":                   "Musica universalis",
+    "python":                                      "Python (mythology)",
+    # 08_places stubs whose auto-name doesn't reduce to the toponym
+    # (the generic "Place <X>" prefix is handled in candidate_titles).
+    # All verified to return a thumbnail. place-coptos ("Qift") has no
+    # article image — intentionally left out (missing >> wrong).
+    "tiwanaku-bolivia":                            "Tiwanaku",
+    "nok-culture-west-africa":                     "Nok culture",
+    "sintashta-andronovo-culture":                 "Sintashta culture",
+    "ile-ife-yoruba-origin":                       "Ife",
+    "oyo-yoruba-alaafin-capital":                  "Oyo Empire",
+    "place-heliopolis":                            "Heliopolis (ancient Egypt)",
+    "place-mogador":                               "Essaouira",
+    "place-jenne":                                 "Djenné",
+    "place-sar-i-sang-badakhshan":                 "Sar-i Sang",
+    "place-muziris":                               "Muziris",
+    "place-sijilmasa":                             "Sijilmasa",
+    "place-calicut":                               "Kozhikode",
+    "place-cochin":                                "Kochi",
+    "place-hormuz":                                "Ormus",
 }
 
 
@@ -3148,27 +3217,16 @@ OVERRIDES = {
 # OVERRIDES entry (or simply leave it absent if no clean Wikipedia
 # article exists — missing image >> wrong image).
 # Audit trail: AUDIT/2026-05-30-stripped-doc-thumbnails.tsv
+# 2026-08-03: 37 ids unblocked per the convention above (removed here +
+# verified OVERRIDES entry added) — image pipeline pass, see OVERRIDES tail.
 BLOCKLIST_2026_05_30 = {
-    'phase-1-004-gilgamesh-old-babylonian',
-    'phase-1-017-descent-of-inanna',
     'phase-1-024-shijing',
     'phase-1-025-shujing',
-    'phase-2-006-brahmanas-aranyakas',
-    'phase-2-008-homeric-epics',
-    'phase-2-009-hesiod-theogony-works-and-days',
-    'phase-2-016-early-buddhist-suttas',
-    'phase-2-017-mahabharata-ramayana-oral-layers',
     'phase-2-033-shujing',
     'phase-2-040-orphic-gold-tablets',
-    'phase-3-002-plato-dialogues',
-    'phase-3-012-wisdom-of-solomon',
-    'phase-3-013-philo-of-alexandria',
-    'phase-4-008-trimorphic-protennoia',
     'phase-4-009-pistis-sophia',
     'phase-4-010-sophia-of-jesus-christ',
     'phase-4-024-tertullian-apology',
-    'phase-4-024b-tertullian-against-valentinians',
-    'phase-4-026-origen-on-first-principles',
     'phase-4-040-pliny-trajan-correspondence',
     'phase-4-043-apophthegmata-patrum',
     'phase-4-044-basil-on-the-holy-spirit',
@@ -3177,34 +3235,16 @@ BLOCKLIST_2026_05_30 = {
     'phase-4-052-gregory-dialogues',
     'phase-4-055-ephrem-hymns-on-paradise',
     'phase-4-057-allogenes',
-    'phase-4-066-polycarp-philippians',
-    'phase-4-072-plutarch-de-iside-et-osiride',
-    'phase-4-073-tabula-smaragdina',
     'phase-4-075-mulamadhyamakakarika',
     'phase-4-077-abhidharmakosa',
     'phase-4-078-prayer-of-thanksgiving-nhc-vi-7',
-    'phase-4-079-coptic-asclepius-nhc-vi-8',
-    'phase-4-081-mashafa-henok-geez-1-enoch',
-    'phase-4-082-ethiopic-biblical-canon',
-    'phase-4-104-sukhavativyuha-larger',
-    'phase-5-003-maximus-confessor-ambigua',
-    'phase-5-005-shankara-brahma-sutra-bhasya',
     'phase-5-010-saadia-emunot-ve-deot',
-    'phase-5-011-rasail-ikhwan-al-safa',
-    'phase-5-014-abhinavagupta-tantraloka',
-    'phase-5-018-suhrawardi-hikmat-al-ishraq',
-    'phase-5-021-ibn-arabi-fusus-al-hikam',
     'phase-5-022-madhva-brahma-sutra-bhasya',
-    'phase-5-028-meister-eckhart-sermons',
     'phase-5-034-vivekachudamani',
-    'phase-5-036-mashafa-mistir-giyorgis',
     'phase-5-037-bernard-de-laude-novae-militiae',
-    'phase-5-038-mashafa-berhan',
     'phase-5-039-jabir-corpus-arabic-alchemy',
     'phase-5-040-meqabyan-ethiopian-maccabees',
     'phase-5-043-ibn-ishaq-sirat-rasul-allah',
-    'phase-5-044-ibn-sina-kitab-al-shifa',
-    'phase-5-046-ibn-rushd-tahafut-al-tahafut',
     'phase-5-047-ibn-tufayl-hayy-ibn-yaqdhan',
     'phase-5-049-bodhicaryavatara',
     'phase-5-049-yosippon-ethiopian-recension',
@@ -3214,19 +3254,13 @@ BLOCKLIST_2026_05_30 = {
     'phase-5-060-bon-kangyur',
     'phase-5-061-kiteba-cilwe',
     'phase-6-002-ficino-theologia-platonica',
-    'phase-6-003-pico-oration-900-conclusions',
     'phase-6-004-pico-heptaplus-conclusiones-cabalisticae',
-    'phase-6-006-reuchlin-de-arte-cabalistica',
     'phase-6-007-luther-bondage-of-will',
-    'phase-6-008-paracelsus-corpus',
-    'phase-6-009-agrippa-de-occulta-philosophia',
     'phase-6-015-luria-vital-etz-chayyim',
     'phase-6-017-boehme-aurora-mysterium-magnum',
-    'phase-6-018-rosicrucian-manifestos',
     'phase-6-022-fludd-utriusque-cosmi-historia',
     'phase-6-025-nathan-of-gaza-treatise-on-dragons',
     'phase-6-027-swedenborg-arcana-heaven-and-hell',
-    'phase-6-034-khunrath-amphitheatrum-sapientiae',
     'phase-6-038-teresa-interior-castle',
     'phase-6-040-bandarra-trovas',
     'phase-6-043-dee-libri-mysteriorum-enochian',
@@ -3329,6 +3363,12 @@ def candidate_titles(node):
     if nid in OVERRIDES:
         out.append(OVERRIDES[nid])
     raw = node["title"]
+    # Stub place nodes are auto-named "Place <toponym>" (e.g. "Place Timbuktu")
+    # which can never match a Wikipedia title — try the bare toponym first.
+    # All the usual gates (similarity, extract length, no fuzzy fallback for
+    # non-documents) still apply to the stripped candidate. (2026-08-03 pass)
+    if raw.startswith("Place ") and len(raw) > 6:
+        out.append(raw[6:].strip())
     # DISAMBIGUATED FIRST — for deities especially, a bare title like "Geb" or "Nun"
     # routes to the modern military officer / actual nuns rather than the deity.
     # Prepend disambiguators based on node type + tradition so the religious page wins.
