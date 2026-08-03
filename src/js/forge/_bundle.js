@@ -5954,6 +5954,10 @@
       ['wire_min_screen_px', 'Wire min',     0.5,  3,    0.1,  'px', 'redraw'],
       ['wire_max_screen_px', 'Wire max',     1,    6,    0.1,  'px', 'redraw'],
       ['wire_hot_screen_px', 'Wire hot',     0,    6,    0.1,  'px', 'redraw'],
+      // 2026-08-02 WIRING FLAIR — directional flow on hot wires.
+      ['wire_flow',        'Flow',        0,  1,  0.01, '',     'redraw'],
+      ['wire_flow_speed',  'Flow speed',  4,  80, 1,    'px/s', 'redraw'],
+      ['wire_flow_len',    'Flow length', 8,  80, 1,    'px',   'redraw'],
       // AUDIT P2-10 — tier-aware max size: hubs stay hubs at deep zoom
       ['node_max_screen_px_hub',   'Hub max size',   24, 48, 1, 'px', 'rebake'],
       ['node_max_screen_px_mid',   'Mid max size',   16, 36, 1, 'px', 'rebake'],
@@ -6028,6 +6032,9 @@
         { k: 'slider', key: 'wire_min_screen_px' },
         { k: 'slider', key: 'wire_max_screen_px' },
         { k: 'slider', key: 'wire_hot_screen_px' },
+        { k: 'slider', key: 'wire_flow' },
+        { k: 'slider', key: 'wire_flow_speed' },
+        { k: 'slider', key: 'wire_flow_len' },
       ] },
       { id: 'sizes', title: 'Sizes', open: false, items: [
         { k: 'slider', key: 'node_max_screen_px_hub' },

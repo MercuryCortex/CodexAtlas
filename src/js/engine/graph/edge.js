@@ -245,7 +245,14 @@
       data[off +  7] = alpha;
       data[off +  8] = idleW * WIDTH_SCALE;
       data[off +  9] = curveVal;
-      data[off + 10] = BUCKET_INDEX[buc];
+      // 2026-08-02 WIRING FLAIR — dirMode packed above the bucket:
+      // 0 = symmetric, 1 = semantic dir == data order, 2 = reversed
+      // (REVERSE_DIRECTION types point the "wrong" way in the vault).
+      // Decoded in EDGE_SHADER fs/vs as floor(raw/8); absent
+      // edgeStyleFor => 0 => today's behavior (graceful degradation).
+      const st = (window.edgeStyleFor) ? window.edgeStyleFor(e.type) : null;
+      const dirMode = (st && st.directional) ? (st.reverse ? 2 : 1) : 0;
+      data[off + 10] = BUCKET_INDEX[buc] + 8 * dirMode;
       data[off + 11] = hotW * WIDTH_SCALE;
     }
 

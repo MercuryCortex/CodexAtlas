@@ -76,6 +76,11 @@ must(/house_rest_wires:\s*'off',/, "the shipped rest-wires default is 'off'", fo
 must(/for \(const \[ei, w\] of h\.bones\.arc\)/, 'the bones lift iterates the LAYOUT arcs', forgeSrc);
 must(/applyEdgeHiddenFilters\(newTargets\);[\s\S]{0,400}applyHouseBonesOverride\(newTargets\);[\s\S]*applyEdgeHiddenFilters\(newTargets\);[\s\S]{0,500}applyHouseBonesOverride\(newTargets\);/,
   'the tier/political filter runs at BOTH edge-target sites, before the bones', forgeSrc);
+// ── WIRING FLAIR (2026-08-02) — the flow law's two musts ──
+must(/return vec4<f32>\(color\.rgb \* grad_mult \* flow_mult \* a, a\);/,
+  'flow multiplies RGB only, alpha untouched', gpuSrc);
+must(/let flow_mult = 1\.0 \+ flow_on \* flow_gate/,
+  'wire_flow 0 or recipe off ⇒ multiplier is exactly 1.0 (honest zeros)', gpuSrc);
 
 const P = (() => {                                   // shipped defaults
   const grab = (k) => {

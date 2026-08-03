@@ -708,6 +708,14 @@
       // nothing). Both z and w only bite through the per-instance
       // house lane, which is zero-filled with no isolate.
       layout_mix:             vec4<f32>,
+      // 2026-08-02 WIRING FLAIR — edge-only trailing vec4 (byte 304).
+      // x = flow strength 0..1 (0 = today, bit-true)
+      // y = flow speed, FB px/sec (JS pre-multiplies dpr)
+      // z = flow wavelength, FB px   w = reserved (type-signature)
+      // NODE/GLYPH structs stay 304 bytes - binding the larger buffer
+      // is valid (min-binding-size is per pipeline). If the node
+      // shader ever grows past 304, it must mirror this vec4 first.
+      wire_flair:             vec4<f32>,
     };
     @group(0) @binding(0) var<uniform> v: View;
 
@@ -719,6 +727,7 @@
       @location(3) bucket_index: f32,    // interpolated; floor() in fs
       @location(4) edge_t:       f32,    // 0 at source, 1 at target — gradient direction
       @location(5) ext_class:    f32,    // instance-constant; 0 in-house, 1 member↔port, 2 port↔port, 3 parked (no terminus)
+      @location(6) arc_fb:       f32,   // FB px from the SEMANTIC origin
     };
 
     fn bezier_pos(p0: vec2<f32>, p1: vec2<f32>, p2: vec2<f32>, t: f32) -> vec2<f32> {
@@ -838,6 +847,12 @@
       out.bucket_index = inst_extra.z;
       out.edge_t       = t;
       out.ext_class    = inst_house.y;
+      // WIRING FLAIR - arc-length proxy measured from the semantic
+      // origin (dirMode 2 flips). clen and world_to_fb already exist.
+      let fl_raw  = floor(inst_extra.z + 0.5);
+      let fl_dm   = floor(fl_raw / 8.0);
+      let fl_t    = select(t, 1.0 - t, fl_dm > 1.5);
+      out.arc_fb  = fl_t * clen * world_to_fb;
       return out;
     }
 
@@ -850,10 +865,14 @@
       // (not per-vertex) so interpolation is exact; floor + clamp for
       // safety against float drift at instance boundaries.
       let bidx_raw = floor(in.bucket_index + 0.5);
+      // 2026-08-02 WIRING FLAIR - the raw float is bucket + 8*dirMode
+      // (0 symmetric / 1 data-order / 2 reversed); strip the direction
+      // before the palette lookup.
+      let dmode    = floor(bidx_raw / 8.0);
       // Phase 5C (2026-05-20) — clamp to 6 (was 7). The 8th vec4
       // slot in the View uniform was repurposed for glyph_params;
       // bucket count is now 7 (real bucket count anyway).
-      let bidx     = clamp(i32(bidx_raw), 0, 6);
+      let bidx     = clamp(i32(bidx_raw - dmode * 8.0), 0, 6);
       let hot      = v.bucket_hot_colors[bidx];
 
       // Phase 6d4 convention flip:
@@ -920,6 +939,18 @@
       // makes the wire-end blunt against the disk it terminates
       // into. DO NOT extend grad_mult to alpha.
       let grad_mult = mix(1.0, 0.50, in.edge_t);
+      // WIRING FLAIR (2026-08-02) - a light crest drifts origin ->
+      // destination on DIRECTIONAL wires only, and only when the wire
+      // is fully HOT (house bones at 0.75 stay solemn and steady, and
+      // a dead rAF loop can never leave a frozen half-wave visible).
+      // RGB ONLY - same law as grad_mult; alpha and AA are untouched.
+      // Honest zeros: wire_flair.x = 0 OR recipe off => mult == 1.0.
+      let flow_on   = v.wire_flair.x * step(0.5, dmode) * step(1.0, v.recipe_pad_b.x);
+      let flow_gate = smoothstep(0.8, 1.0, vis_state);
+      let fl_wl     = max(v.wire_flair.z, 4.0);
+      let fl_ph     = fract((in.arc_fb - v.recipe_pad_c.x * v.wire_flair.y) / fl_wl);
+      let fl_wave   = smoothstep(0.0, 0.45, fl_ph) * (1.0 - smoothstep(0.55, 1.0, fl_ph));
+      let flow_mult = 1.0 + flow_on * flow_gate * (fl_wave - 0.5) * 0.9;
       // Phase 21AU (2026-05-23) — multiply alpha by (1 - hidden) so
       // state >= 1.5 (HIDDEN, set by the source-tier filter in
       // forge.js recomputeFocus) goes to alpha=0 and is discarded.
@@ -927,7 +958,7 @@
       // Phase 6d — same discard logic as nodes: AA halo fragments
       // shouldn't write depth, else they block disks behind them.
       if (a < 0.02) { discard; }
-      return vec4<f32>(color.rgb * grad_mult * a, a);
+      return vec4<f32>(color.rgb * grad_mult * flow_mult * a, a);
     }
   `;
 
@@ -1231,7 +1262,10 @@
     // THE HOUSE (2026-07-30) — 288 → 304: layout_mix vec4 appended
     // (only .x live). Edge + glyph shaders pad their structs to the
     // same offset so ONE buffer serves all passes.
-    const VIEW_UBO_SIZE = 304;
+    // WIRING FLAIR (2026-08-02) — 304 → 320: wire_flair vec4 appended,
+    // declared by the EDGE struct ONLY (node/glyph stay 304 — binding
+    // the larger buffer is valid; min-binding-size is per pipeline).
+    const VIEW_UBO_SIZE = 320;
     const viewUbo = own(device.createBuffer({
       label: 'forge-view-ubo', size: VIEW_UBO_SIZE,
       usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
@@ -1984,7 +2018,7 @@
         // Phase 6c grew the header 176→192 (added dim_nodes,
         // Phase 7 (2026-05-20) — selected slot now carries
         // (size_mult, stroke_w, stroke RGBA) instead of glow uniforms.
-        const viewData = new Float32Array(76);  // 304 / 4
+        const viewData = new Float32Array(80);  // 320 / 4
         viewData[0]  = viewScaleX;
         viewData[1]  = viewScaleY;
         viewData[2]  = viewOffsetX;
@@ -2070,6 +2104,13 @@
           ? Math.max(0, frame.houseBonePx) * dpr : 0;
         viewData[75] = (typeof frame.houseRestMinClass === 'number')
           ? frame.houseRestMinClass : 3;
+        // 2026-08-02 WIRING FLAIR - floats 76..79 (bytes 304..319).
+        // Read by the EDGE shader only. Absent => 0 => today exactly.
+        viewData[76] = (typeof frame.wireFlow === 'number')
+          ? Math.max(0, Math.min(1, frame.wireFlow)) : 0;
+        viewData[77] = ((typeof frame.wireFlowSpeed === 'number') ? frame.wireFlowSpeed : 0) * dpr;
+        viewData[78] = ((typeof frame.wireFlowLen === 'number') ? frame.wireFlowLen : 24) * dpr;
+        viewData[79] = 0;   // reserved: candidate-B signature strength
         device.queue.writeBuffer(viewUbo, 0, viewData);
 
         // ── Instance buffers (static geometry) ──────

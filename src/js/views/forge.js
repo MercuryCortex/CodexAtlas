@@ -590,6 +590,13 @@
     // 0 = off ⇒ the shader collapses to the old flat clamp exactly.
     wire_hot_screen_px:   2.5,
 
+    // ── WIRES · FLAIR (2026-08-02) ── directional flow on HOT wires.
+    // 0 = today's rendering exactly. Only directional buckets/types
+    // move (transmission, attestation, lineage); symmetric stay steady.
+    wire_flow:        0.55,   // crest strength 0..1
+    wire_flow_speed:  22,     // CSS px/sec (dpr applied at the UBO)
+    wire_flow_len:    26,     // CSS px wavelength
+
     // ── GLYPHS ──
     glyph_scale:   0.85,
     glyph_opacity: 0.86,
@@ -2865,6 +2872,11 @@
             dim_amount_nodes:         local.params.dim_amount_nodes,
             wire_min_screen_px:       local.params.wire_min_screen_px,
             wire_max_screen_px:       local.params.wire_max_screen_px,
+            // 2026-08-02 WIRING FLAIR — the flow dials, so a harness
+            // can read the dial through the app's own probe.
+            wire_flow:                local.params.wire_flow,
+            wire_flow_speed:          local.params.wire_flow_speed,
+            wire_flow_len:            local.params.wire_flow_len,
             idle_opacity_fusion:      local.params.idle_opacity_fusion,
             idle_color_fusion:        local.params.idle_color_fusion,
             active_color_transmission: local.params.active_color_transmission,
@@ -4777,6 +4789,14 @@
         // 0 restores the old flat clamp exactly.
         wireHotScreenPx:       (typeof local.params.wire_hot_screen_px === 'number')
                                  ? local.params.wire_hot_screen_px : 0,
+        // 2026-08-02 WIRING FLAIR — directional flow on hot wires.
+        // Absent ⇒ 0 ⇒ the shader's flow multiplier is exactly 1.0.
+        wireFlow:              (typeof local.params.wire_flow === 'number')
+                                 ? local.params.wire_flow : 0,
+        wireFlowSpeed:         (typeof local.params.wire_flow_speed === 'number')
+                                 ? local.params.wire_flow_speed : 0,
+        wireFlowLen:           (typeof local.params.wire_flow_len === 'number')
+                                 ? local.params.wire_flow_len : 24,
         // Phase 7 (2026-05-20) — SELECTED uniforms: size + stroke.
         // Glow halo deleted. Stroke is a solid ring inside the disk edge.
         selectedSizeMult:      local.params.selected_size_mult,
