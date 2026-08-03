@@ -24,6 +24,11 @@ influences: ["[[phase-6-024-kircher-oedipus-aegyptiacus]]", "later English esote
 deities-mentioned: ["the Hebrew Tetragrammaton (with Kabbalistic letter-mysticism)", "[[hermes-trismegistus]]"]
 events-context: ["Fludd's defense of the Rosicrucian manifestos (*Apologia Compendiaria* 1616) — Fludd is the principal English Rosicrucian apologist"]
 status: "metadata"
+depictions:
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/RobertFuddBewusstsein17Jh.png/500px-RobertFuddBewusstsein17Jh.png"
+    caption: "De Bry engraved plate from Fludd's Utriusque Cosmi Historia (Tomus II, 1619–1621) — the human mind's faculties mapped between microcosm and macrocosm"
+    source: "Wikimedia Commons"
+    license: "Public Domain"
 preservation: "*Utriusque Cosmi Maioris scilicet et Minoris Metaphysica, Physica atque Technica Historia*, in two main parts (Macrocosm 1617–1618; Microcosm 1619–1621), printed at Oppenheim and Frankfurt by Johann Theodore de Bry. The de Bry engravings — diagrams of cosmic chains, music of the spheres, the Tetragrammaton, the human as microcosm — are among the most iconic Renaissance esoteric images. Three further volumes / continuations (1626, 1629, 1633). Latin only; full English translation not yet completed."
 refs:
   - title: "Robert Fludd: Hermetic Philosopher and Surveyor of Two Worlds"

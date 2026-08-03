@@ -30,10 +30,10 @@ tradition-context:
   - "[[tradition-christianity-canonical]]"
   - "[[tradition-portuguese-hermeticism]]"
 depictions:
-  - src: ""
-    caption: "Cross of the Order of Christ on a Portuguese caravel sail (modern artistic reconstruction; commonly used as Portuguese-maritime-heritage iconography)"
-    source: "Wikimedia Commons (multiple licensed renderings)"
-    license: "various — typically CC-BY-SA"
+  - src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Cross_of_the_Military_Order_of_Christ.svg/500px-Cross_of_the_Military_Order_of_Christ.svg.png"
+    caption: "Cross of the Order of Christ — red outer cross-pattée with white interior cross, the insignia carried on Portuguese caravel sails during the Age of Discoveries"
+    source: "Wikimedia Commons"
+    license: "CC BY-SA 3.0"
 cross-symbol-edges:
   - target: "cross-pattee-templar"
     type: "ancestor-of"
