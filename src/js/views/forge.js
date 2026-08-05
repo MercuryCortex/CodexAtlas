@@ -915,6 +915,19 @@
     // the bottom bar owns that edge.
     house_title_slot:      'center',   // 'center' | 'left' | 'right'
     house_title_settle_ms: 180,   // ms of camera stillness before the title re-seats
+    // ── THE RE-SEAT GLIDES, IT DOES NOT CUT (2026-08-05) ─────────
+    // John: "the font still wrong place once i click fan or wtver,
+    // takes time and movemnet to make it strisght." The 08-02 pass
+    // met a measured ~590px cascade→fan teleport by HOLDING the old
+    // seat across a chip flip — trading a jump for a STALE seat, and
+    // the stale seat is what he is reporting: the block keeps a hole
+    // that the new geometry has filled with tree, and only corrects
+    // when a later camera gesture happens to arm the settle watcher.
+    // Both symptoms are the same missing thing — a re-seat has no
+    // transition. With one, the flip can re-decide HONESTLY and the
+    // block travels to its new hole instead of appearing in it.
+    // 0 = a hard cut (exactly the pre-2026-08-05 motion, for A/B).
+    house_title_ease_ms:   220,
     // THE HINT LINE (2026-07-31) — the wheel-state hint in the same
     // slot the house's exit line uses ('CLICK A FAMILY TITLE — THE
     // HOUSE'). Ship-a-dial law: on by default, 0 = the wheel paints
@@ -2404,6 +2417,17 @@
         titleCompact: !!local._houseTitleCompact,
         titleGap: local._houseTitleGap || null,
         titlePin: local._houseTitlePin || null,
+        // THE GLIDE, VISIBLE (2026-08-05). A time-based tween cannot be
+        // observed where rAF is throttled (background pane, headless
+        // driver), so it reports itself: from/to in world units and how
+        // far through it is. `armed` proves a re-seat CHOSE to travel;
+        // its absence right after a geometry flip proves the block cut.
+        titleEase: local._houseTitleEase ? {
+          from: local._houseTitleEase.from, to: local._houseTitleEase.to,
+          ms: local._houseTitleEase.ms,
+          k: Math.max(0, Math.min(1,
+            (performance.now() - local._houseTitleEase.t0) / local._houseTitleEase.ms)),
+        } : null,
         // THE AXIS PROBE (2026-08-03): every rank date's fate from the
         // last painted frame — bright / quiet / refused(+who refused).
         // The ratified law "an axis date may NEVER be eaten by the
@@ -6213,6 +6237,7 @@
       const _ldpr = window.devicePixelRatio || 1;
       if (!local._wakeAlive
           && !local._labelFadeAlive   // a name is still arriving/leaving
+          && !local._houseTitleEase   // the title is gliding to its new seat
           && local._labelsIdleCamS === _lcs
           && local._labelsIdleCamCx === _lcx
           && local._labelsIdleCamCy === _lcy
@@ -6875,6 +6900,21 @@
         // itself so a dial-frame redecide is never scored against the
         // previous frame's published rect.
         const pin = local._houseTitlePin;
+        // ── THE RE-SEAT GLIDES (2026-08-05) ─────────────────────────
+        // Reads the live ease, in WORLD units so it stays correct
+        // through a zoom that runs across the transition. Returns null
+        // when no ease is alive or it has finished (and clears it).
+        // Both the decision path and the rigid path consult this, or
+        // the very next frame would snap back to the pin's raw dyW.
+        const easeDyW = () => {
+          const e = local._houseTitleEase;
+          if (!e) return null;
+          const k = (performance.now() - e.t0) / e.ms;
+          if (!(k >= 0) || k >= 1) { local._houseTitleEase = null; return null; }
+          const s = k < 0.5 ? 4 * k * k * k          // easeInOutCubic: leaves
+                            : 1 - Math.pow(-2 * k + 2, 3) / 2;  // and lands calm
+          return e.from + (e.to - e.from) * s;
+        };
         // THE FAN DIALS ARE PART OF THE SEAT'S KEY (2026-08-03). A fan
         // drop/width move re-shapes the very gaps the seat was chosen
         // for, so a dial move counts as a key-rewrite — ONE clean
@@ -6937,10 +6977,39 @@
             }
           }
           y = yNew;
+          const prevDyW = pin ? pin.dyW : null;
           local._houseTitlePin = { key, dyW: (y - c.y) / pxPerWorld,
                                    side: local._houseTitleSide, redecide: false };
+          // Arm the glide. Only for a REAL move (>6px on screen) and
+          // only when there was a previous seat to leave — a first
+          // decision (house entry, family change) must appear where it
+          // belongs, never slide in from a seat it never had. An ease
+          // already running is re-aimed FROM ITS CURRENT POSITION, so
+          // two flips in quick succession chain smoothly instead of
+          // snapping back to the original seat.
+          const easeMs = Math.max(0, Math.min(600,
+            (typeof local.params.house_title_ease_ms === 'number')
+              ? local.params.house_title_ease_ms : 220));
+          const live = easeDyW();
+          const fromDyW = (live != null) ? live : prevDyW;
+          if (easeMs > 0 && fromDyW != null
+              && Math.abs(local._houseTitlePin.dyW - fromDyW) * pxPerWorld > 6) {
+            local._houseTitleEase = { from: fromDyW, to: local._houseTitlePin.dyW,
+                                      t0: performance.now(), ms: easeMs };
+            // The glide needs frames to glide in. Guarded because the
+            // gate LIFTS this function out and executes it standalone
+            // (check-familytree replays real seat decisions) — there is
+            // no anim loop there, and a bare call makes the harness
+            // throw instead of testing the law.
+            if (typeof startAnimLoop === 'function') startAnimLoop();
+            y = c.y + fromDyW * pxPerWorld;   // this frame starts AT the old seat
+          }
         } else {
-          y = c.y + pin.dyW * pxPerWorld;   // RIGID with the world — no hole search mid-gesture
+          // RIGID with the world — no hole search mid-gesture. The ease
+          // (if one is alive) rides on top: it is the ONLY thing allowed
+          // to move the block between decisions.
+          const live = easeDyW();
+          y = c.y + ((live != null) ? live : pin.dyW) * pxPerWorld;
         }
         // The chips are the last row: keep them off the bottom chrome.
         const yMax = Math.max(HOUSE_TITLE_TOP, h - 58 - rowH * 2 - 10);
@@ -9289,6 +9358,7 @@
         local._house = null;
         local._houseTravel = null;
         local._houseTitlePin = null;   // the title's seat dies with the house
+        local._houseTitleEase = null;  // …and any glide it was mid-way through
         local._houseAxisDates = null;  // …and so does the axis probe
         local._houseAxisEaten = 0;
         // THE RAILS (2026-07-31) — home again: the guests go back where
@@ -9408,6 +9478,7 @@
           || cur.nodePosB.length !== next.nodePosB.length
           || cur.edgePosB.length !== next.edgePosB.length) {
         local._houseTitlePin = null;   // a different family decides its own seat
+        local._houseTitleEase = null;  // …and any glide it was mid-way through
         local._house = next;
         local._houseTravel = null;
         local._housePosBDirty = true;
@@ -9447,23 +9518,25 @@
       if (!next) return;
       if (tween && houseAtRest()) {
         startHouseTravel(next);
-        // CHIP FLIP HOLDS THE PIN (2026-08-02): a control must not
-        // move because you used it. The block keeps its seat across a
-        // geometry flip (the fan/cascade morph plays under it) and
-        // re-seats only at the NEXT camera-gesture rest — so the key
-        // is rewritten to the new geometry instead of cleared. This
-        // kills the measured ~590px cascade→fan teleport.
-        if (local._houseTitlePin) {
-          local._houseTitlePin.key = local._houseTitlePin.key
-            .replace(/\|(cascade|fan)\|/, '|' + next.lay.house.geometry + '|')
-            // …and the fan terms (2026-08-03): the key carries the fan
-            // dials now, and cascade reports fanDy 0 while the fan
-            // reports Rt×dial — without this rewrite a chip flip under
-            // a non-zero fan drop would mismatch the key and re-seat
-            // the block, which is exactly the teleport the hold kills.
-            .replace(/\|f[^|]*$/, '|f' + (next.lay.house.fanDy || 0).toFixed(1) + ','
-                                 + ((next.lay.house.fanHalf || 0) * 180 / Math.PI).toFixed(1));
-        }
+        // CHIP FLIP RE-DECIDES, AND GLIDES (2026-08-05) — supersedes
+        // "CHIP FLIP HOLDS THE PIN" (2026-08-02).
+        // The 08-02 law rewrote the pin's geometry + fan terms so the
+        // key still matched and the block KEPT its seat across a flip,
+        // because a re-decision was a hard cut and the measured
+        // cascade→fan move was ~590px. But cascade and fan put their
+        // mass in different places — the seat that was a hole in one
+        // is tree in the other — so holding it left the title standing
+        // ON the drawing until some later camera gesture happened to
+        // arm the settle watcher. John, on a NATIVE-AMERICAN fan with
+        // the title across Sun Bearer and White Buffalo Calf Woman:
+        // "the font still wrong place once i click fan or wtver, takes
+        // time and movemnet to make it strisght."
+        // Now the key is left ALONE. It no longer matches the new
+        // geometry, so the next paint re-decides honestly, and
+        // house_title_ease_ms carries the block to the new hole
+        // instead of cutting to it. The control still does not "jump"
+        // — it travels, under the morph that is already playing.
+        // (Set the dial to 0 to get the 08-02 cut back for an A/B.)
       } else {
         local._house = next;
         local._houseTravel = null;
@@ -9813,6 +9886,7 @@
         // 0 ▸ THE TREE — bake the house before committing the state;
         // a group with no members in this mode simply doesn't enter.
         local._houseTitlePin = null;   // a fresh enter decides its seat at the settle
+        local._houseTitleEase = null;  // …and any glide it was mid-way through
         const prevFam = local._isolateFamily;
         local._isolateFamily = fam;   // isolateGroupOf is state-free; set first for buildHouse's dim consumers
         // THE RAILS (2026-07-31) — resolve the house's OWN membership

@@ -182,6 +182,9 @@
       // How long the camera must be still before the title re-seats
       // (the settle-only placement law, 2026-08-02).
       ['house_title_settle_ms', 'Title settle', 60,  600,  10,    'ms', 'redraw'],
+      // How long the block takes to TRAVEL to a new seat (2026-08-05).
+      // 0 = the old hard cut. See house_title_ease_ms in PARAM_DEFAULTS.
+      ['house_title_ease_ms',   'Title glide',  0,   600,  10,    'ms', 'redraw'],
       // Exit radius: how far out an empty click must land to leave the
       // house, as a fraction of Rh. 0 restores click-anywhere-to-leave.
       ['house_exit_r',        'Exit radius',   0,    1.4,  0.02,  '×',  'redraw'],
@@ -299,6 +302,7 @@
         items: [
           { k: 'slider', key: 'house_tween_ms' },
           { k: 'slider', key: 'house_title_settle_ms' },
+          { k: 'slider', key: 'house_title_ease_ms' },
           { k: 'slider', key: 'house_exit_r' },
         ] },
     ];

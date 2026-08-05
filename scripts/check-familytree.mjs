@@ -1134,19 +1134,42 @@ if (liftedTitleFactory) {
 must(/house_title_settle_ms: 180,/, 'house_title_settle_ms ships at 180');
 must(/local\._houseTitlePin = \{ key, dyW: \(y - c\.y\) \/ pxPerWorld,/,
   'a decision writes the pin (dyW in world units — the block rides the world between settles)');
-must(/y = c\.y \+ pin\.dyW \* pxPerWorld;/,
+// 2026-08-05: the rigid line now reads the glide first (see below). The
+// law it guards is unchanged — between decisions the block is projected,
+// never re-searched — so the pin follows the line to its new form.
+must(/y = c\.y \+ \(\(live != null\) \? live : pin\.dyW\) \* pxPerWorld;/,
   'the projection path is RIGID — no hole search mid-gesture');
 must(/local\._houseTitlePin\.redecide = true;\s*\n\s*local\._labelsIdleCamS = null; local\._hullsIdleCamS = null;/,
   'the rest watcher re-arms the decision AND busts both idle caches (rest is a dead loop otherwise)');
-must(/local\._houseTitlePin\.key = local\._houseTitlePin\.key/,
-  'a chip flip HOLDS the pin with its key rewritten — a control must not move because you used it');
+// ── THE RE-SEAT GLIDES (2026-08-05) — supersedes "chip flip HOLDS the
+// pin" (2026-08-02). That law rewrote the key so a flip kept its seat,
+// because a re-decision was a hard CUT and cascade→fan measured ~590px.
+// But the seat that is a hole in cascade is TREE in fan, so holding it
+// left the title standing on the drawing until a later camera gesture
+// armed the settle watcher — John: "the font still wrong place once i
+// click fan or wtver, takes time and movemnet to make it strisght."
+// The key is now left alone (honest re-decision) and the block TRAVELS.
+must(/local\._houseTitleEase = \{ from: fromDyW, to: local\._houseTitlePin\.dyW,/,
+  'a re-seat that moves >6px GLIDES to the new hole — it never cuts');
+must(/const live = easeDyW\(\);\s*\n\s*y = c\.y \+ \(\(live != null\) \? live : pin\.dyW\) \* pxPerWorld;/,
+  'the RIGID path consults the glide too — otherwise the next frame snaps back to the raw pin');
+must(/&& !local\._houseTitleEase   \/\/ the title is gliding/,
+  'the labels idle-skip yields while a glide is alive (a tween in a skipped repaint is a freeze)');
+must(/const fromDyW = \(live != null\) \? live : prevDyW;/,
+  'a glide interrupted mid-flight re-aims FROM ITS CURRENT POSITION — two fast flips chain, never snap back');
+must(/house_title_ease_ms:   220,/,
+  'the glide is a DIAL — 0 restores the 2026-08-02 hard cut for an A/B');
 must(/if \(local\._houseTitlePin\) local\._houseTitlePin\.redecide = true;/,
   'houseSettle() forces the settled decision for headless harnesses (the frozen-rAF lesson)');
 // ── THE FAN-DROP FIX, PINNED (2026-08-03) ──────────────────────────
 must(/\+ '\|f' \+ \(house\.fanDy \|\| 0\)\.toFixed\(1\) \+ ','/,
   'the seat key carries the FAN DIALS — a fan drop/width move is a key-rewrite (one clean re-decision)');
-must(/next\.lay\.house\.fanDy \|\| 0\)\.toFixed\(1\)/,
-  'a chip flip rewrites the key\'s fan terms too — the pin still holds across the flip under non-zero fan dials');
+// (The companion pin — "a chip flip rewrites the key's fan terms too" —
+// is deleted with the law it mirrored. The seat key still CARRIES the
+// fan terms, pinned above; what is gone is refreshHouse rewriting them
+// to suppress the re-decision. A gate asserting the rewrite would now
+// be green on a law the view no longer has, which is exactly the
+// stale-mirror failure this harness has already been bitten by twice.)
 must(/if \(local\._houseTitlePin\) local\._houseTitlePin\.redecide = true;\s*\n(\s*\/\/[^\n]*\n)*\s*local\._labelsIdleCamS = null; local\._hullsIdleCamS = null;/,
   'houseSettle() also busts the idle caches — the forced decision is CONSUMED, never left as a stale probe');
 must(/const titleAir = !local\._houseTitleCompact;/,
