@@ -8071,7 +8071,21 @@ body.fv-isolated .forge-house-chips {
   font-weight: 600;
   cursor: default;   /* clicking the active chip is a no-op */
 }
-.forge-hull-label {
+/* ONE RULE FOR A FAMILY NAME (2026-08-05 → 08-06).
+   `.forge-house-port` is the SAME name seen from inside the house —
+   the ring of neighbouring traditions. It used to be painted on the
+   CANVAS, which meant a second, hand-copied type declaration AND a
+   second rasteriser: page text is hinted, canvas text is not, so on a
+   non-Retina display the two read as different qualities of the same
+   word. John: "can you SEE the same names in both images DIFFERENT —
+   one super sharp the other blurry very uggly?"  They share this
+   declaration now, and share the browser's text engine, so they
+   cannot drift in face, size, tracking, halo OR sharpness.
+   Ports deliberately do NOT carry `.forge-hull-label`: the
+   `body.fv-isolated .forge-hull-label:not(.is-isolated)` rule below
+   retires the WHEEL's titles inside a house, and would zero these. */
+.forge-hull-label,
+.forge-house-port {
   fill: var(--family-color, #888);
   /* TYPE 2026-08-02: fill-opacity .85 + 3px halo on ~1.3px stems was the
      "washed and thin" wheel type. Full ink, hairline shield. */

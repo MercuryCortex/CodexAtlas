@@ -7872,6 +7872,9 @@
       // inside the room. It gets the wheel's declaration, not the
       // house's TYPE ladder. Was: font('600', TYPE.name).
       famNameFont();
+      // Still measured on canvas with the IDENTICAL declaration, so
+      // claim() reserves the box the SVG will actually fill.
+      let portsUsed = 0;
       for (const pt of ports) {
         const ps = W2S(pt.x, pt.y);
         if (ps.x < -60 || ps.x > vp.w + 60 || ps.y < -60 || ps.y > vp.h + 60) continue;
@@ -7896,10 +7899,24 @@
         ly = Math.max(KEEPOUT_TOP + 2, Math.min(vp.h - KEEPOUT_BOTTOM - 2, ly));
         const cx0 = left ? lx - w / 2 : lx + w / 2;
         if (!claim(cx0, ly, w + 8)) continue;
-        ctx.textAlign = left ? 'right' : 'left';
-        ctx.fillStyle = pt.color || _labelsTextColor;
-        halo(txt, lx, ly, FAM.halo);
+        // The decision is made — hand it to page text. Position and
+        // colour only; face/size/tracking/halo come from the shared
+        // CSS rule, which is the whole point (see ensureHousePorts).
+        // Coordinates are CSS px in the overlay's 1:1 viewBox, and are
+        // NOT snapped: the browser positions its own glyphs better
+        // than a pre-rounded origin does.
+        const el = housePortEl(portsUsed);
+        if (el) {
+          el.textContent = txt;
+          el.setAttribute('x', lx.toFixed(1));
+          el.setAttribute('y', ly.toFixed(1));
+          el.setAttribute('text-anchor', left ? 'end' : 'start');
+          el.style.setProperty('--family-color', pt.color || _labelsTextColor);
+          if (el.style.display === 'none') el.style.display = '';
+          portsUsed++;
+        }
       }
+      housePortsHideFrom(portsUsed);
       famNameEnd();   // letterSpacing is sticky — every later string
                       // in this frame would inherit 1.98px otherwise.
       ctx.globalAlpha = 1;
@@ -8349,6 +8366,61 @@
     // control. The CHOICE is canonical + persistent: clicks route
     // through _forgeViewSettings.setHouseGeometry, the single owner
     // of the forge.viewSettings.v7 key. Tuning stays in LAB.
+    // ── THE RING NAMES ARE PAGE TEXT, NOT PAINT (2026-08-06) ──────
+    // The neighbouring-tradition labels used to be painted onto the
+    // labels canvas. Matching the wheel's TYPE (2026-08-05) was not
+    // enough: page text is hinted by the browser's text engine and
+    // canvas text is not, so the same word rendered sharp on the wheel
+    // and soft inside the house — worst on a non-Retina display, where
+    // an 11px glyph has half the samples to work with. John, holding
+    // the two side by side: "one super sharp the other blurry very
+    // uggly." No canvas setting closes that gap, because it is not a
+    // setting — it is a different rasteriser. So the ring names now
+    // ARE page text, in the same SVG overlay and off the same CSS rule
+    // as the wheel's titles (`.forge-hull-label, .forge-house-port`).
+    // They cannot differ again by construction.
+    // The canvas pass still OWNS the decision: it measures, runs
+    // claim() against the one registry (law 5), and hands each winner
+    // a position. This is the chips' pattern (ensureHouseChips), not a
+    // second label system.
+    function ensureHousePorts() {
+      if (local._housePortsG && local._housePortsG.parentNode) return local._housePortsG;
+      if (!hullsOverlay) return null;
+      ensureHullStructure();
+      const g = document.createElementNS(SVG_NS, 'g');
+      g.setAttribute('id', 'forge-house-ports');
+      // AFTER hullLabelsG so the ring reads above the wedge chrome,
+      // and OUTSIDE it so the family-titles toggle never hides the
+      // house's own wayfinding.
+      hullsOverlay.appendChild(g);
+      local._housePortsG = g;
+      local._housePortEls = [];
+      return g;
+    }
+    // Give the pass a text node for slot i, creating on demand.
+    function housePortEl(i) {
+      const g = ensureHousePorts();
+      if (!g) return null;
+      if (!local._housePortEls) local._housePortEls = [];
+      let el = local._housePortEls[i];
+      if (!el) {
+        el = document.createElementNS(SVG_NS, 'text');
+        el.setAttribute('class', 'forge-house-port');
+        g.appendChild(el);
+        local._housePortEls[i] = el;
+      }
+      return el;
+    }
+    // Retire every slot from `used` up. Called at the end of the port
+    // pass AND whenever the house is not on screen — an orphaned ring
+    // name outliving its house is the "vEDIC double-paint" bug class.
+    function housePortsHideFrom(used) {
+      const els = local._housePortEls;
+      if (!els) return;
+      for (let i = used; i < els.length; i++) {
+        if (els[i].style.display !== 'none') els[i].style.display = 'none';
+      }
+    }
     function ensureHouseChips() {
       if (local._houseChipsG && local._houseChipsG.parentNode) return local._houseChipsG;
       if (!hullLabelsG) return null;
@@ -9359,6 +9431,7 @@
         local._houseTravel = null;
         local._houseTitlePin = null;   // the title's seat dies with the house
         local._houseTitleEase = null;  // …and any glide it was mid-way through
+        try { housePortsHideFrom(0); } catch (_) {}  // …and the ring names
         local._houseAxisDates = null;  // …and so does the axis probe
         local._houseAxisEaten = 0;
         // THE RAILS (2026-07-31) — home again: the guests go back where
@@ -9479,6 +9552,7 @@
           || cur.edgePosB.length !== next.edgePosB.length) {
         local._houseTitlePin = null;   // a different family decides its own seat
         local._houseTitleEase = null;  // …and any glide it was mid-way through
+        try { housePortsHideFrom(0); } catch (_) {}  // …and the ring names
         local._house = next;
         local._houseTravel = null;
         local._housePosBDirty = true;
@@ -9887,6 +9961,7 @@
         // a group with no members in this mode simply doesn't enter.
         local._houseTitlePin = null;   // a fresh enter decides its seat at the settle
         local._houseTitleEase = null;  // …and any glide it was mid-way through
+        try { housePortsHideFrom(0); } catch (_) {}  // …and the ring names
         const prevFam = local._isolateFamily;
         local._isolateFamily = fam;   // isolateGroupOf is state-free; set first for buildHouse's dim consumers
         // THE RAILS (2026-07-31) — resolve the house's OWN membership

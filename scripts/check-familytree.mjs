@@ -2550,7 +2550,10 @@ must(/house_type_scale:\s+1\.0,/,
   'the ratified 1.2× is BAKED into TYPE/houseFace (13/12/11.5) — the dial stays a 1.0-default headroom multiplier, never a second 1.2', forgeSrc);
 must(/if \(!cnt && local\._portHoverGroup !== pt\.group\) \{/,
   'a zero-wire port paints a TICK, not a headline — its name waits for the pointer', forgeSrc);
-must(/ctx\.fillStyle = pt\.color \|\| _labelsTextColor;\s*\n\s*halo\(txt, lx, ly, FAM\.halo\);/,
+// 2026-08-06: the ring is page text now, so "solid family ink" is
+// carried by the CSS var + fill-opacity:1 on the shared rule rather
+// than by a canvas fillStyle. Same law, new expression.
+must(/el\.style\.setProperty\('--family-color', pt\.color \|\| _labelsTextColor\);/,
   'a counted port paints SOLID family ink at alpha 1 — the .9/.5 fog line is dead', forgeSrc);
 // ── ONE DECLARATION FOR A FAMILY NAME (2026-08-05) ─────────────────
 // John: "the TITLES of the families must remain 100% the same size on
@@ -2561,8 +2564,34 @@ must(/ctx\.fillStyle = pt\.color \|\| _labelsTextColor;\s*\n\s*halo\(txt, lx, ly
 // pin below, which fails the moment the two drift apart again.
 must(/const FAM = \{ px: 11, weight: '400', track: 0\.18, halo: 1\.75 \};/,
   'the house transcribes the WHEEL\'s family-name declaration — 11px / 400 / 0.18em / 1.75px halo', forgeSrc);
-must(/famNameFont\(\);\s*\n\s*for \(const pt of ports\) \{/,
-  'port labels paint as FAMILY NAMES (famNameFont), never off the house TYPE ladder', forgeSrc);
+// ── ONE RENDERER, NOT JUST ONE TYPE LAW (2026-08-06) ──────────────
+// Matching the type was not enough: page text is hinted, canvas text
+// is not, so the same name read sharp on the wheel and soft in the
+// house. The ring names are page text now, off the SAME CSS rule.
+{
+  const shared = /\.forge-hull-label,\s*\n\.forge-house-port\s*\{/.test(cssSrc);
+  if (shared) ok('the wheel title and the house ring name share ONE css rule — they cannot drift in face, size, tracking, halo or SHARPNESS');
+  else fail('SOURCE DRIFT — `.forge-hull-label, .forge-house-port` is no longer one rule: the two family-name surfaces can diverge again');
+  // The isolate-hide rule must NOT reach the ports, or the ring vanishes
+  // inside the very house it labels.
+  // Strip comments first: prose ABOUT a selector is not the selector,
+  // and this check tripped on its own explanatory comment.
+  const cssNoComments = cssSrc.replace(/\/\*[\s\S]*?\*\//g, '');
+  if (/body\.fv-isolated \.forge-hull-label:not\(\.is-isolated\)/.test(cssNoComments)
+      && !/body\.fv-isolated[^{]*\.forge-house-port/.test(cssNoComments)) {
+    ok('the isolate-hide rule retires the WHEEL titles only — the house ring is untouched by it');
+  } else {
+    fail('the isolate-hide rule now reaches .forge-house-port — the ring names would vanish inside the house they label');
+  }
+}
+must(/el\.setAttribute\('class', 'forge-house-port'\);/,
+  'a ring name is an SVG text node off the shared rule — NOT canvas paint', forgeSrc);
+must(/housePortsHideFrom\(portsUsed\);/,
+  'unused ring slots are retired every pass — an orphan name outliving its house is the double-paint bug class', forgeSrc);
+must(/if \(!claim\(cx0, ly, w \+ 8\)\) continue;/,
+  'the ring still claims through the ONE registry before it is handed to the DOM (law 5 intact)', forgeSrc);
+must(/famNameFont\(\);\s*\n(\s*\/\/[^\n]*\n)*\s*let portsUsed = 0;/,
+  'the ring is still MEASURED on canvas with the identical declaration, so the claim matches the painted box', forgeSrc);
 must(/famNameEnd\(\);/,
   'the sticky ctx.letterSpacing is cleared after the port pass — later strings never inherit the tracking', forgeSrc);
 // The canvas must ask for the faces we actually vendor. Before
@@ -2585,7 +2614,7 @@ must(/const HOUSE_MONO = '"JetBrains Mono","SF Mono",Menlo,Consolas,monospace';/
   // font-size lives in the second. Concatenate every bare-selector
   // block in file order and take the LAST value of each property —
   // that is what the cascade does, so it is what the gate must do.
-  const blocks = [...cssSrc.matchAll(/\.forge-hull-label\s*\{([\s\S]*?)\}/g)].map(m => m[1]);
+  const blocks = [...cssSrc.matchAll(/\.forge-hull-label\s*(?:,\s*\.forge-house-port\s*)?\{([\s\S]*?)\}/g)].map(m => m[1]);
   const rule = blocks.length ? { 1: blocks.join('\n') } : null;
   const num  = (re, src) => {
     const all = [...String(src || '').matchAll(new RegExp(re.source, 'g'))];
