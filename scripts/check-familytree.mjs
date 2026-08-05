@@ -583,6 +583,7 @@ checkUnion('Other', 'cascade', (r, h) => {
 // quietly measuring a fiction.
 const forgeSrc = readFileSync(join(root, 'src/js/views/forge.js'), 'utf8');
 const treeSrc  = readFileSync(join(root, 'src/js/engine/layout/familytree.js'), 'utf8');
+const cssSrc   = readFileSync(join(root, 'src/styles/app.css'), 'utf8');
 // 2026-07-31 — the house dials moved OUT of the Node Lab into their own
 // DEV door (John: "IN TH ENODE LAB?!?!?!?! ... is SUPER CLUTTED / I
 // ASKED TO DO ITS OWN CLEAN SIMPLE TO ACESS ONE OPANEL FOR HTIS"). The
@@ -2526,8 +2527,78 @@ must(/house_type_scale:\s+1\.0,/,
   'the ratified 1.2× is BAKED into TYPE/houseFace (13/12/11.5) — the dial stays a 1.0-default headroom multiplier, never a second 1.2', forgeSrc);
 must(/if \(!cnt && local\._portHoverGroup !== pt\.group\) \{/,
   'a zero-wire port paints a TICK, not a headline — its name waits for the pointer', forgeSrc);
-must(/ctx\.fillStyle = pt\.color \|\| _labelsTextColor;\s*\n\s*halo\(txt, lx, ly\);/,
+must(/ctx\.fillStyle = pt\.color \|\| _labelsTextColor;\s*\n\s*halo\(txt, lx, ly, FAM\.halo\);/,
   'a counted port paints SOLID family ink at alpha 1 — the .9/.5 fog line is dead', forgeSrc);
+// ── ONE DECLARATION FOR A FAMILY NAME (2026-08-05) ─────────────────
+// John: "the TITLES of the families must remain 100% the same size on
+// both states." The wheel's ring (SVG .forge-hull-label, app.css:8074)
+// and the house's horizon (canvas port labels) print the SAME object,
+// and used to disagree on face, size, weight, tracking AND halo. These
+// pins are worth little on their own — the real guard is the CSS-side
+// pin below, which fails the moment the two drift apart again.
+must(/const FAM = \{ px: 11, weight: '400', track: 0\.18, halo: 1\.75 \};/,
+  'the house transcribes the WHEEL\'s family-name declaration — 11px / 400 / 0.18em / 1.75px halo', forgeSrc);
+must(/famNameFont\(\);\s*\n\s*for \(const pt of ports\) \{/,
+  'port labels paint as FAMILY NAMES (famNameFont), never off the house TYPE ladder', forgeSrc);
+must(/famNameEnd\(\);/,
+  'the sticky ctx.letterSpacing is cleared after the port pass — later strings never inherit the tracking', forgeSrc);
+// The canvas must ask for the faces we actually vendor. Before
+// 2026-08-05 this stack had no JetBrains Mono in it at all, so every
+// house string rendered in a platform system mono and every `600` was
+// synthesised (font-synthesis:none governs CSS only, never canvas 2D).
+must(/const HOUSE_MONO = '"JetBrains Mono","SF Mono",Menlo,Consolas,monospace';/,
+  'the house canvas asks for the VENDORED mono — a system fallback stack means faked weights', forgeSrc);
+// ── THE ONE THAT ACTUALLY GUARDS IT ────────────────────────────────
+// The pins above only prove forge.js still says what it says today. A
+// family name has TWO sources of truth that no regex can reconcile —
+// the CSS rule the wheel paints from and the JS constants the house
+// paints from — so this reads BOTH and compares the numbers. It is the
+// only assertion here that fails when someone restyles the wheel and
+// forgets the house (or vice versa), which is exactly how the five-way
+// disagreement John reported was built in the first place.
+{
+  // app.css declares `.forge-hull-label { }` MORE THAN ONCE (7993 and
+  // 8074 today). Reading only the first is how a checker lies: the
+  // font-size lives in the second. Concatenate every bare-selector
+  // block in file order and take the LAST value of each property —
+  // that is what the cascade does, so it is what the gate must do.
+  const blocks = [...cssSrc.matchAll(/\.forge-hull-label\s*\{([\s\S]*?)\}/g)].map(m => m[1]);
+  const rule = blocks.length ? { 1: blocks.join('\n') } : null;
+  const num  = (re, src) => {
+    const all = [...String(src || '').matchAll(new RegExp(re.source, 'g'))];
+    return all.length ? parseFloat(all[all.length - 1][1]) : NaN;
+  };
+  const famJs = /const FAM = \{ px: ([\d.]+), weight: '(\d+)', track: ([\d.]+), halo: ([\d.]+) \};/.exec(forgeSrc);
+  if (!rule)  fail('.forge-hull-label is gone from app.css — the wheel side of the family-name law cannot be read');
+  else if (!famJs) fail('FAM is gone from forge.js — the house side of the family-name law cannot be read');
+  else {
+    const css = rule[1];
+    const cssPx    = num(/font-size:\s*([\d.]+)px/, css);
+    const cssTrack = num(/letter-spacing:\s*([\d.]+)em/, css);
+    const cssHalo  = num(/stroke-width:\s*([\d.]+)px/, css);
+    // The wheel declares no font-weight, so it inherits 400.
+    const cssWeightN = num(/font-weight:\s*(\d+)/, css);
+    const cssWeight = Number.isNaN(cssWeightN) ? 400 : cssWeightN;
+    const jsPx = parseFloat(famJs[1]), jsWeight = parseInt(famJs[2], 10),
+          jsTrack = parseFloat(famJs[3]), jsHalo = parseFloat(famJs[4]);
+    const rows = [
+      ['size',     cssPx,     jsPx,     'px'],
+      ['weight',   cssWeight, jsWeight, ''],
+      ['tracking', cssTrack,  jsTrack,  'em'],
+      ['halo',     cssHalo,   jsHalo,   'px'],
+    ];
+    const drift = rows.filter(([, a, b]) => !(Math.abs(a - b) < 1e-6));
+    if (drift.length) {
+      for (const [what, a, b, u] of drift) {
+        fail(`FAMILY-NAME DRIFT — ${what}: the wheel says ${a}${u} (app.css .forge-hull-label), `
+           + `the house says ${b}${u} (forge.js FAM). A tradition's name must look the SAME in both states.`);
+      }
+    } else {
+      ok('a family name is ONE declaration — wheel (app.css .forge-hull-label) and house (forge.js FAM) agree '
+       + `on all four: ${jsPx}px · ${jsWeight} · ${jsTrack}em · ${jsHalo}px halo`);
+    }
+  }
+}
 must(/function mixToBg\(col, keep\) \{/,
   'quiet standing chrome is PRE-DIMMED SOLID ink (mixToBg), never globalAlpha fog', forgeSrc);
 must(/ctx\.fillStyle = mixToBg\(_labelsTextColor, \(txt === 'UNDATED'\) \? 0\.55 : 0\.80\);/,

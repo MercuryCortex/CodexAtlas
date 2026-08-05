@@ -1957,6 +1957,29 @@
     const labelsCanvasCtx = labelsCanvas.getContext('2d');
     // labelsCanvas size is set lazily inside renderLabelsCanvas()
     // when local.lastSize first becomes valid.
+    // ── CANVAS DOES NOT LOAD WEBFONTS (2026-08-05) ───────────────
+    // A `ctx.font` naming "JetBrains Mono" does NOT trigger the
+    // @font-face fetch the way a DOM node does — canvas silently
+    // takes the next stack entry if the face is not resolved YET.
+    // On a cold load our label pass can therefore paint in the
+    // system fallback, and because renderLabelsCanvas() carries an
+    // idle-skip cache (it returns early while the camera rests) that
+    // wrong-face frame can STICK until something else invalidates
+    // it. The result would be a fix that looks like it did nothing
+    // until you happen to pan. So: when the faces actually land,
+    // bust the two idle caches and force exactly one repaint. Same
+    // bust pair the settle watcher uses (~line 4598). Cheap, once.
+    // NOTE for the next reader: document.fonts.check() LIES about
+    // canvas readiness (it answers for CSS) — .ready is the honest
+    // signal, and an ink test is the honest verification.
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        if (!labelsCanvas.isConnected) return;   // view was unmounted
+        local._labelsIdleCamS = null;
+        local._hullsIdleCamS  = null;
+        try { drawFrame(); } catch (_) { /* pre-mount, next frame covers it */ }
+      }).catch(() => { /* never block the view on a font promise */ });
+    }
 
     // Phase 19B (2026-05-21) — Forge uses the existing GLOBAL
     // aside.detail panel from index.html for the deity inspector.
@@ -6734,7 +6757,18 @@
     //   (leaving-name crossfades, then the hint line — the caller)
     // Whole words or nothing; losers hide; the chrome keep-outs are
     // the same bands the node names respect.
-    const HOUSE_MONO = 'ui-monospace,"SF Mono",Menlo,monospace';
+    // THE CANVAS ASKS FOR THE FONTS WE ACTUALLY VENDOR (2026-08-05).
+    // This stack used to be 'ui-monospace,"SF Mono",Menlo,monospace' —
+    // JetBrains Mono was not in it AT ALL, so every string the house
+    // paints on canvas rendered in a platform system mono while every
+    // DOM/SVG sibling rendered in the vendored face (--mono,
+    // app.css:82). The 2026-08-02 type pass vendored the variable
+    // 400-800 JBM and killed synthetic bold with
+    // `font-synthesis-weight: none` — but that property governs CSS
+    // ONLY, never canvas 2D, so the house's `600` weights were being
+    // SYNTHESISED from a 400 system face. That is the smear the pass
+    // thought it had killed. Mirror of --mono; the two move together.
+    const HOUSE_MONO = '"JetBrains Mono","SF Mono",Menlo,Consolas,monospace';
     // ══ THE TITLE BLOCK IS A LOCKED SCREEN FIXTURE (wave 4) ══════
     // John: "the title is taking TOO MUCH space and central that
     // forces the nodes to be around it… theres no reason for that,
@@ -7269,19 +7303,57 @@
         const m2 = /(\d+(?:\.\d+)?)px/.exec(ctx.font || '');
         return m2 ? parseFloat(m2[1]) : 8.5;
       };
-      const halo = (t, x, y) => {
+      const halo = (t, x, y, lw) => {
         const sx = snap(x), sy = snap(y);
         ctx.lineJoin = 'round';
         ctx.miterLimit = 2;
-        ctx.lineWidth = Math.max(1.2, Math.min(2.6, faceOf() * 0.20));
+        ctx.lineWidth = (typeof lw === 'number')
+          ? lw : Math.max(1.2, Math.min(2.6, faceOf() * 0.20));
         ctx.strokeText(t, sx, sy);
         ctx.fillText(t, sx, sy);
+      };
+      // ══ ONE DECLARATION FOR "A FAMILY NAME" (2026-08-05) ═════════
+      // John: "the TITLES of the families must remain 100% the same
+      // size on both states… all fonts seem bigger when transition to
+      // the focus family."  He is right, and it was not one setting
+      // but FIVE. A tradition's name is ONE object seen from two
+      // places — the wheel's ring (SVG `.forge-hull-label`,
+      // app.css:8074) and the house's horizon (the port labels, §3) —
+      // and the two painters agreed on nothing:
+      //         wheel (SVG)              house (canvas, before)
+      //   face  JetBrains Mono           SF Mono / Menlo
+      //   size  11px                     12px
+      //   wght  400                      600  (and SYNTHESISED)
+      //   trk   0.18em                   0
+      //   halo  1.75px                   2.4px
+      // So focus changed the typeface, went a size up, went two
+      // weights heavier and dropped the tracking — all at once. That
+      // compound is what reads as "everything got bigger".
+      // The constants below ARE that CSS rule, transcribed. They are
+      // deliberately NOT the TYPE ladder: TYPE is the house's own
+      // chrome vocabulary, a family name is a wheel object that the
+      // house happens to show. If app.css:8074 changes, change these
+      // in the SAME commit — that is the whole point of the block.
+      const FAM = { px: 11, weight: '400', track: 0.18, halo: 1.75 };
+      // Tracking rides ctx.letterSpacing (Safari 17+; the try/catch is
+      // this file's standing pattern for older builds). It also feeds
+      // measureText, so the claim rects stay honest for free — but it
+      // is STICKY on the context, hence the mandatory famNameEnd().
+      const famNameFont = () => {
+        ctx.font = FAM.weight + ' ' + FAM.px + 'px ' + HOUSE_MONO;
+        try {
+          ctx.letterSpacing = (FAM.px * FAM.track).toFixed(2) + 'px';
+        } catch (_) { /* pre-17 Safari */ }
+      };
+      const famNameEnd = () => {
+        try { ctx.letterSpacing = '0px'; } catch (_) { /* pre-17 Safari */ }
       };
       const restore = () => {
         ctx.font = saved.font; ctx.textAlign = saved.align; ctx.textBaseline = saved.base;
         ctx.lineWidth = saved.lw; ctx.fillStyle = saved.fill; ctx.globalAlpha = saved.alpha;
       };
-      return { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, yOK, claim, halo, snap, restore, TYPE, row, font };
+      return { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, yOK, claim, halo, snap, restore, TYPE, row, font,
+               FAM, famNameFont, famNameEnd };
     }
     // Numeral for a row that IS one generation (see capFor — a layout
     // rank is not a generation, so most rows never reach this).
@@ -7338,7 +7410,8 @@
       const ports = hs.lay.ports || [];
       const m = local.mode;
       const env = houseChromeEnv(ctx, placed, vp);
-      const { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, claim, halo, snap, TYPE, row, font } = env;
+      const { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, claim, halo, snap, TYPE, row, font,
+              FAM, famNameFont, famNameEnd } = env;
       const fmtD = (d) => (d < 0 ? (-d) + ' BCE' : d + ' CE');
 
       // 1 ▸ THE TITLE BLOCK — a LOCKED SCREEN FIXTURE since wave 4
@@ -7725,7 +7798,11 @@
       // the idle key's _portHoverGroup term). Counted ports keep
       // name + count in SOLID family ink — the alpha fog line dies.
       const portCounts = housePortVisibleCounts();
-      font('600', TYPE.name);
+      // A port label IS a family name (see FAM in houseChromeEnv) —
+      // the same string the wheel prints on its ring, seen from
+      // inside the room. It gets the wheel's declaration, not the
+      // house's TYPE ladder. Was: font('600', TYPE.name).
+      famNameFont();
       for (const pt of ports) {
         const ps = W2S(pt.x, pt.y);
         if (ps.x < -60 || ps.x > vp.w + 60 || ps.y < -60 || ps.y > vp.h + 60) continue;
@@ -7752,8 +7829,10 @@
         if (!claim(cx0, ly, w + 8)) continue;
         ctx.textAlign = left ? 'right' : 'left';
         ctx.fillStyle = pt.color || _labelsTextColor;
-        halo(txt, lx, ly);
+        halo(txt, lx, ly, FAM.halo);
       }
+      famNameEnd();   // letterSpacing is sticky — every later string
+                      // in this frame would inherit 1.98px otherwise.
       ctx.globalAlpha = 1;
 
       // 4a ▸ THE STRATUM LINES (2026-07-31, postmortem #2 — the
