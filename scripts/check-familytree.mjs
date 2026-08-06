@@ -2586,6 +2586,30 @@ must(/const FAM = \{ px: 11, weight: '400', track: 0\.18, halo: 1\.75 \};/,
 }
 must(/el\.setAttribute\('class', 'forge-house-port'\);/,
   'a ring name is an SVG text node off the shared rule — NOT canvas paint', forgeSrc);
+// ── THE WHOLE HOUSE WRITES IN PAGE TEXT (2026-08-06) ──────────────
+// John, after the ring names landed: "make sure all fonts are crisp on
+// the focus mode, becasue theres none crisp except the one you just
+// did." Canvas gets no hinting; page text does. Every focus-mode
+// string is an SVG node now — and the split from the wheel is load-
+// bearing, not stylistic (see the cost note in forge.js).
+must(/const halo = \(t, x, y, lw\) => \{\s*\n\s*houseTextEmit\(String\(t\), x, y, \{/,
+  'halo() is the ONE chokepoint: every steady chrome string becomes page text there, and no painter upstream had to change', forgeSrc);
+must(/if \(atHouseNow\) \{\s*\n\s*houseTextEmit\(it\.title, it\.x, it\.y, \{/,
+  'god names go to page text IN THE HOUSE ONLY — the wheel keeps canvas, because its label set is unbounded', forgeSrc);
+must(/\} else if \(it\.c\.reach && anim === 'unveil' && nv < 0\.999\) \{/,
+  'the wheel\'s canvas name path SURVIVES intact — this is a house split, not a replacement', forgeSrc);
+must(/local\._houseTextUsed = 0;\s*\n\s*local\._labelsIdleCamS = _lcs;/,
+  'the page-text layer resets AFTER the idle-skip return — a skipped frame must not blank the house', forgeSrc);
+must(/houseTextFlush\(\);\s*\n\s*\}/,
+  'every painted frame retires the slots it did not use — on the wheel that is what clears the house\'s strings', forgeSrc);
+{
+  const cssNC = cssSrc.replace(/\/\*[\s\S]*?\*\//g, '');
+  if (/#forge-house-text text\s*\{[^}]*paint-order:\s*stroke fill/.test(cssNC)) {
+    ok('the page-text layer carries the halo SHIELD only — face/size/weight stay inline from the JS TYPE ladder (one source of truth)');
+  } else {
+    fail('#forge-house-text lost its paint-order shield — house strings will draw their halo OVER the glyph');
+  }
+}
 must(/housePortsHideFrom\(portsUsed\);/,
   'unused ring slots are retired every pass — an orphan name outliving its house is the double-paint bug class', forgeSrc);
 must(/if \(!claim\(cx0, ly, w \+ 8\)\) continue;/,

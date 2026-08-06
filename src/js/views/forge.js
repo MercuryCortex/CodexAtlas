@@ -6250,6 +6250,11 @@
           && local._labelsIdlePortHover === (local._portHoverGroup || null)) {
         return; // canvas pixels still valid (wake labels animate → no skip while awake)
       }
+      // THE PAGE-TEXT LAYER IS REBUILT PER PAINT (2026-08-06). Reset
+      // here, AFTER the idle-skip early return — a skipped frame must
+      // leave the existing nodes exactly where they are, or the house's
+      // whole text would blink out every time the camera came to rest.
+      local._houseTextUsed = 0;
       local._labelsIdleCamS = _lcs;
       local._labelsIdleCamCx = _lcx;
       local._labelsIdleCamCy = _lcy;
@@ -6737,7 +6742,21 @@
           try { ctx.letterSpacing = (trackBase + tr).toFixed(1) + 'px'; } catch (e) { /* Safari quirk */ }
         }
         ctx.globalAlpha = a;
-        if (it.c.reach && anim === 'unveil' && nv < 0.999) {
+        // THE GOD NAMES GO TO PAGE TEXT — IN THE HOUSE ONLY
+        // (2026-08-06). They are the content John actually reads, so
+        // they get the hinted renderer like everything else in focus
+        // mode. The WHEEL keeps canvas: its label set is unbounded
+        // (thousands), which is exactly what the 2026-05 DOM-overlay
+        // removal was about. The gate pins this split.
+        if (atHouseNow) {
+          houseTextEmit(it.title, it.x, it.y, {
+            font: ctx.font, fill: ctx.fillStyle, align: ctx.textAlign,
+            baseline: ctx.textBaseline,
+            track: trackBase + tr,
+            halo: ctx.lineWidth, alpha: a,
+            reveal: (it.c.reach && anim === 'unveil' && nv < 0.999) ? it.c.rv : null,
+          });
+        } else if (it.c.reach && anim === 'unveil' && nv < 0.999) {
           // written left→right
           ctx.save();
           ctx.beginPath();
@@ -6762,6 +6781,10 @@
       // paint ([centerX, y, width] rects). _forgeDebug.lastPlacedRects
       // asserts zero overlapping pairs and keep-out compliance.
       local._lastPlacedRects = placed;
+      // Retire whatever this paint did not use. Runs on EVERY painted
+      // frame, house or wheel — on the wheel nothing is emitted, so
+      // this is what clears the house's strings when you leave it.
+      houseTextFlush();
     }
 
     // ══ THE HOUSE — tree chrome through the ONE label registry ══
@@ -7372,14 +7395,25 @@
         const m2 = /(\d+(?:\.\d+)?)px/.exec(ctx.font || '');
         return m2 ? parseFloat(m2[1]) : 8.5;
       };
+      // THE ONE CHOKEPOINT (2026-08-06). Every steady chrome string in
+      // the house arrives here, so this is where canvas paint becomes
+      // page text — eight painters upstream keep speaking canvas
+      // (ctx.font / fillStyle / textAlign) and none of them changed.
+      // The ctx state IS the style: it was already set correctly by the
+      // caller, and reading it back keeps the TYPE ladder the single
+      // source of truth. Positions are NOT snapped any more — the
+      // browser places its own glyphs better than a pre-rounded origin.
       const halo = (t, x, y, lw) => {
-        const sx = snap(x), sy = snap(y);
-        ctx.lineJoin = 'round';
-        ctx.miterLimit = 2;
-        ctx.lineWidth = (typeof lw === 'number')
-          ? lw : Math.max(1.2, Math.min(2.6, faceOf() * 0.20));
-        ctx.strokeText(t, sx, sy);
-        ctx.fillText(t, sx, sy);
+        houseTextEmit(String(t), x, y, {
+          font: ctx.font,
+          fill: ctx.fillStyle,
+          align: ctx.textAlign,
+          baseline: ctx.textBaseline,
+          track: parseFloat(ctx.letterSpacing) || 0,
+          halo: (typeof lw === 'number')
+            ? lw : Math.max(1.2, Math.min(2.6, faceOf() * 0.20)),
+          alpha: ctx.globalAlpha,
+        });
       };
       // ══ ONE DECLARATION FOR "A FAMILY NAME" (2026-08-05) ═════════
       // John: "the TITLES of the families must remain 100% the same
@@ -8021,15 +8055,13 @@
         const leftSide = Math.cos(aRef) < 0;
         const w = ctx.measureText(text).width;
         if (!claim(leftSide ? gx - w / 2 : gx + w / 2, gy, w + 6)) return null;
-        ctx.fillStyle = color;
-        ctx.globalAlpha = alpha;
-        ctx.textAlign = leftSide ? 'right' : 'left';
-        ctx.textBaseline = 'middle';
-        ctx.lineJoin = 'round';
-        ctx.miterLimit = 2;
-        ctx.lineWidth = Math.max(1.2, Math.min(2.6, sizePx * 0.20));
-        ctx.strokeText(text, gx, gy);
-        ctx.fillText(text, gx, gy);
+        // Page text, like every other house string (2026-08-06). The
+        // rail headers and shelf captions ride this writer.
+        houseTextEmit(text, gx, gy, {
+          font: ctx.font, fill: color, align: leftSide ? 'right' : 'left',
+          baseline: 'middle', track: parseFloat(ctx.letterSpacing) || 0,
+          halo: Math.max(1.2, Math.min(2.6, sizePx * 0.20)), alpha,
+        });
         return { x: gx, y: gy, leftSide };
       };
       // ── the curved-run writer ─────────────────────────────────
@@ -8366,6 +8398,87 @@
     // control. The CHOICE is canonical + persistent: clicks route
     // through _forgeViewSettings.setHouseGeometry, the single owner
     // of the forge.viewSettings.v7 key. Tuning stays in LAB.
+    // ══ THE HOUSE WRITES IN PAGE TEXT (2026-08-06) ═══════════════
+    // Sibling of the ring-name layer below, generalised. Canvas text
+    // gets no hinting from the browser's text engine; page text does.
+    // That is the whole difference between "crisp" and "blurry very
+    // uggly", and no ctx setting closes it (measured: device-snapping
+    // every glyph advance moved partial-coverage pixels 43.5%→42.0%).
+    // So the focus view emits STRINGS here instead of painting them.
+    //
+    // COST, measured in-page at the real load (217 strings/frame):
+    // canvas 0.24ms vs DOM 0.22ms including a forced layout flush.
+    // The DOM path is not the slower one — but it is only used in the
+    // HOUSE, where the string count is bounded (~217). The wheel keeps
+    // canvas: its label set is unbounded and that is what the 2026-05
+    // DOM-overlay removal was about. Do not "unify" the two.
+    //
+    // Style is written INLINE from the JS TYPE ladder so that ladder
+    // stays the one source of truth for the type law; the CSS rule
+    // (#forge-house-text text) carries only the halo shield.
+    function ensureHouseTextG() {
+      if (local._houseTextG && local._houseTextG.parentNode) return local._houseTextG;
+      if (!hullsOverlay) return null;
+      ensureHullStructure();
+      const g = document.createElementNS(SVG_NS, 'g');
+      g.setAttribute('id', 'forge-house-text');
+      g.setAttribute('pointer-events', 'none');
+      hullsOverlay.appendChild(g);
+      local._houseTextG = g;
+      local._houseTextEls = [];
+      local._houseTextUsed = 0;
+      return g;
+    }
+    // Canvas vocabulary → SVG vocabulary, so callers keep speaking the
+    // one they already speak.
+    const ANCHOR_OF = { left: 'start', right: 'end', center: 'middle',
+                        start: 'start', end: 'end' };
+    // canvas 'middle' centres on the em box; SVG's nearest equivalent
+    // is 'central' ('middle' is x-height-based and sits ~1px low).
+    const BASELINE_OF = { middle: 'central', alphabetic: '', top: 'text-before-edge',
+                          bottom: 'text-after-edge' };
+    function houseTextEmit(txt, x, y, o) {
+      const g = ensureHouseTextG();
+      if (!g) return null;
+      if (!local._houseTextEls) local._houseTextEls = [];
+      const i = local._houseTextUsed || 0;
+      let el = local._houseTextEls[i];
+      if (!el) {
+        el = document.createElementNS(SVG_NS, 'text');
+        g.appendChild(el);
+        local._houseTextEls[i] = el;
+      }
+      local._houseTextUsed = i + 1;
+      if (el.textContent !== txt) el.textContent = txt;
+      el.setAttribute('x', x.toFixed(1));
+      el.setAttribute('y', y.toFixed(1));
+      el.setAttribute('text-anchor', ANCHOR_OF[o.align] || 'start');
+      const base = BASELINE_OF[o.baseline] || '';
+      if (base) el.setAttribute('dominant-baseline', base);
+      else el.removeAttribute('dominant-baseline');
+      const st = el.style;
+      st.font = o.font;                       // '<weight> <px> <family>'
+      st.letterSpacing = o.track ? o.track + 'px' : '';
+      st.fill = o.fill;
+      st.strokeWidth = (o.halo || 0) + 'px';
+      st.opacity = (o.alpha == null || o.alpha >= 0.999) ? '' : o.alpha.toFixed(3);
+      // The unveil writes a name left→right; inset() is the DOM twin of
+      // the canvas clip rect the animation used.
+      st.clipPath = (o.reveal != null && o.reveal < 0.999)
+        ? 'inset(-30% ' + ((1 - o.reveal) * 100).toFixed(1) + '% -30% -30%)' : '';
+      if (st.display === 'none') st.display = '';
+      return el;
+    }
+    // Retire every slot the frame did not use. MUST run once per frame
+    // (including frames that emit nothing, or the last house's strings
+    // outlive it — the "vEDIC double-paint" bug class).
+    function houseTextFlush() {
+      const els = local._houseTextEls;
+      if (!els) return;
+      for (let i = local._houseTextUsed || 0; i < els.length; i++) {
+        if (els[i].style.display !== 'none') els[i].style.display = 'none';
+      }
+    }
     // ── THE RING NAMES ARE PAGE TEXT, NOT PAINT (2026-08-06) ──────
     // The neighbouring-tradition labels used to be painted onto the
     // labels canvas. Matching the wheel's TYPE (2026-08-05) was not

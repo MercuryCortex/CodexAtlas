@@ -8071,6 +8071,21 @@ body.fv-isolated .forge-house-chips {
   font-weight: 600;
   cursor: default;   /* clicking the active chip is a no-op */
 }
+/* THE HOUSE'S TEXT IS PAGE TEXT (2026-08-06). Every string the focus
+   view draws — the title, the subtitle, the dates, the rail headers,
+   the shelf captions, the spine names, the god names — is an SVG text
+   node in #forge-house-text, not canvas paint. John, after the ring
+   names landed: "make sure all fonts are crisp on the focus mode,
+   becasue theres none crisp except the one you just did."
+   Only the SHIELD lives here; face, size, weight, tracking and fill
+   are written inline from the JS TYPE ladder, which stays the single
+   source of truth for the type law. */
+#forge-house-text text {
+  paint-order: stroke fill;
+  stroke: rgba(0, 0, 0, 0.7);
+  stroke-linejoin: round;
+  white-space: pre;
+}
 /* ONE RULE FOR A FAMILY NAME (2026-08-05 → 08-06).
    `.forge-house-port` is the SAME name seen from inside the house —
    the ring of neighbouring traditions. It used to be painted on the
