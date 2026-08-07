@@ -11842,6 +11842,27 @@
         if (local.destroyed) return;
         const cssX = ev.clientX - canvasRect.left;
         const cssY = ev.clientY - canvasRect.top;
+        // PINCH OUTRANKS PAN: while two fingers are down this is a zoom,
+        // and the pan branch below must never also run for the same move.
+        if (pinchPts.has(ev.pointerId)) {
+          pinchPts.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+        }
+        if (pinchOn && pinchPts.size === 2 && pinchD0 > 0) {
+          const dNow = pinchSpread();
+          if (dNow > 0) {
+            // Absolute against the gesture's OWN start, never a running
+            // product of per-move factors: rounding in an incremental
+            // chain makes a pinch that returns to where it began fail to
+            // return to the scale it began at.
+            const target = pinchS0 * (dNow / pinchD0);
+            const factor = target / camera.state.scale;
+            const [mx, my] = pinchMid();
+            camera.zoomAt(factor, mx - canvasRect.left, my - canvasRect.top,
+                          { w: local.lastSize.w, h: local.lastSize.h });
+          }
+          ev.preventDefault();
+          return;
+        }
         // Pan: track delta from last move while button is held.
         if (local.panActive) {
           const dx = ev.clientX - local.panLastX;
@@ -11903,6 +11924,34 @@
         }
       });
 
+      // ── PINCH TO ZOOM (2026-08-07) ────────────────────────────────
+      // John: "on mobile i cant zoom in or out ?"  He could not, and it
+      // was not his phone. This canvas declares `touch-action: none`,
+      // which is a PROMISE to the browser that this code handles touch
+      // gestures — so the browser stops doing its own pinch. Only pan
+      // was ever written, so the promise was half kept and zoom stayed
+      // wheel-only, i.e. desktop-only, for the life of the view.
+      // MEASURED before the fix, at 375x812: touchstart/touchmove/
+      // gesturestart listeners = 0, touches[1] = 0, one pointerId
+      // tracked. One finger panned and NOTHING zoomed.
+      //
+      // Two live pointers ARE the gesture. The spread ratio drives
+      // zoomAt about the MIDPOINT between the fingers, so the point you
+      // pinch around stays under your fingers — the behaviour every
+      // maps app has taught. zoomAt and NOT nudgeZoomTarget on purpose:
+      // the wheel needs easing because a notch is a discrete jump, but
+      // a finger is already continuous, and easing it reads as lag.
+      const pinchPts = new Map();          // pointerId → {x, y} in CLIENT px
+      let pinchD0 = 0, pinchS0 = 0, pinchOn = false;
+      const pinchSpread = () => {
+        const it = pinchPts.values(); const a = it.next().value, b = it.next().value;
+        return (a && b) ? Math.hypot(a.x - b.x, a.y - b.y) : 0;
+      };
+      const pinchMid = () => {
+        const it = pinchPts.values(); const a = it.next().value, b = it.next().value;
+        return [(a.x + b.x) / 2, (a.y + b.y) / 2];
+      };
+      const pinchEnd = () => { pinchOn = false; pinchD0 = 0; pinchS0 = 0; };
       // Pan: pointerdown to start; pointerup/cancel to end.
       canvas.addEventListener('pointerdown', (ev) => {
         if (local.destroyed) return;
@@ -11926,9 +11975,36 @@
         local.panLastY   = ev.clientY;
         local.panSamples = [{ x: ev.clientX, y: ev.clientY, t: performance.now() }];
         canvas.classList.add('is-panning');
+        // A SECOND FINGER IS A ZOOM, NOT A PAN. The first finger has
+        // already armed a pan above (touch arrives as button 0), so the
+        // pan must be stood down here or the map would slide while it
+        // scales. Deliberately NOT gated on pointerType — a precision
+        // trackpad or pen pair behaves the same way and there is no
+        // reason to refuse it.
+        pinchPts.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+        if (pinchPts.size === 2) {
+          pinchD0 = pinchSpread();
+          pinchS0 = camera.state.scale;
+          pinchOn = pinchD0 > 0;
+          if (pinchOn) {
+            camera.stopAnim();            // kill inertia from the first finger
+            local.panActive = false;
+            local.panMoved  = true;       // suppress the click that ends a pan
+            local.panSamples = [];
+            canvas.classList.remove('is-panning');
+          }
+        }
         ev.preventDefault();
       });
       const endPan = (ev) => {
+        // The pinch bookkeeping runs even though the pinch already stood
+        // the pan down — otherwise a lifted finger stays in the map for
+        // ever and the NEXT single tap looks like a second finger. That
+        // is why it sits ABOVE the panActive early-return.
+        if (pinchPts.size) {
+          pinchPts.delete(ev.pointerId);
+          if (pinchPts.size < 2) pinchEnd();
+        }
         if (!local.panActive) return;
         try { canvas.releasePointerCapture(ev.pointerId); } catch (e) { /* ignore */ }
         local.panActive = false;
