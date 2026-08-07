@@ -1,15 +1,15 @@
 # Unresolved wikilink targets (priority queue)
 
-_Auto-generated 2026-06-29. Targets sorted by incoming reference count (descending)._
+_Auto-generated 2026-08-07. Targets sorted by incoming reference count (descending)._
 
 | Refs | Target | Sources (first 3) |
 |---:|---|---|
-| 3 | `` | `2026-06-13-next-steps-plan`, `STATUS`, `sikh-five-ks` |
+| 3 | `` | `sikh-five-ks`, `2026-06-13-next-steps-plan`, `STATUS` |
 | 3 | `slug` | `asymmetric-backlinks-2026-05-23`, `HANDOFF-2026-05-29-shell-foundation-wrong`, `STATUS` |
-| 3 | `…` | `2026-06-15-headwater-nodes-handoff`, `STATUS`, `2026-06-13-doc-ingestion-plan` |
-| 2 | `phase-2-018-pali-canon-suttas` | `theme-buddhist-transmission-of-hindu-deities`, `sakra-buddhist` |
+| 3 | `…` | `2026-06-13-doc-ingestion-plan`, `2026-06-15-headwater-nodes-handoff`, `STATUS` |
+| 2 | `phase-2-018-pali-canon-suttas` | `sakra-buddhist`, `theme-buddhist-transmission-of-hindu-deities` |
 | 2 | `event-aleister-crowley-boca-do-inferno-1930` | `tradition-portuguese-hermeticism`, `fernando-pessoa` |
-| 2 | `event-coronation-of-charlemagne-800` | `divine-kingship`, `charlemagne` |
+| 2 | `event-coronation-of-charlemagne-800` | `charlemagne`, `divine-kingship` |
 | 2 | `fear-of-the-lord` | `phase-3-007-sirach` |
 | 2 | `honor-of-fathers` | `phase-3-007-sirach` |
 | 2 | `poor-and-marginalized` | `phase-3-018-luke-acts` |
@@ -66,15 +66,16 @@ _Auto-generated 2026-06-29. Targets sorted by incoming reference count (descendi
 | 2 | `ritual-knowledge-transmission` | `phase-8-009-dreaming-narratives` |
 | 2 | `poetic-craft` | `phase-8-015-prose-edda-snorri` |
 | 2 | `mythological-systematization` | `phase-8-015-prose-edda-snorri` |
-| 2 | `phase-4-083-apuleius-metamorphoses-book-11` | `2026-05-14`, `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-14` |
-| 2 | `deity-slug` | `sacred-geometry-lens-spec-2026-05-23`, `MUSIC-INVESTIGATION` |
+| 2 | `apeiron` | `2026-07-05-branch-population-benchmark`, `STATUS` |
+| 2 | `phase-4-083-apuleius-metamorphoses-book-11` | `MASSIVE-WINS-AND-INVESTIGATION-LEADS-session-2026-05-14`, `2026-05-14` |
+| 2 | `deity-slug` | `MUSIC-INVESTIGATION`, `sacred-geometry-lens-spec-2026-05-23` |
 | 2 | `origen-of-alexandria` | `2026-05-14` |
 | 2 | `app.js` | `2026-05-pre-W3` |
 | 2 | `color-slug` | `sacred-geometry-lens-spec-2026-05-23` |
 | 2 | `red` | `sacred-geometry-lens-spec-2026-05-23` |
 | 2 | `geometry-slug` | `sacred-geometry-lens-spec-2026-05-23` |
 | 2 | `was-sceptre` | `06_symbology_proposal`, `forge-deity-spine-findings-2026-05-21` |
-| 2 | `syncretism-indigenous` | `tradition-won-buddhism`, `tradition-donghak` |
+| 2 | `syncretism-indigenous` | `tradition-donghak`, `tradition-won-buddhism` |
 | 2 | `phase-2-004-old-testament-hebrew-bible` | `sacred-smoke`, `sacred-spring` |
 | 2 | `event-second-council-of-nicaea-787` | `iconography-and-aniconism` |
 | 2 | `phase-6-006-paracelsus-archidoxes` | `signatures-of-things` |
@@ -144,7 +145,6 @@ _Auto-generated 2026-06-29. Targets sorted by incoming reference count (descendi
 | 1 | `babylonian-talmud` | `celsus` |
 | 1 | `code-of-ur-nammu` | `ur-nammu` |
 | 1 | `theme-hermetic-court-patronage` | `rudolf-ii-habsburg` |
-| 1 | `apeiron` | `anaximander` |
 | 1 | `mahadeviyakka` | `basava` |
 | 1 | `mansur-al-hallaj` | `choe-je-u` |
 | 1 | `ethiopian-monasticism` | `the-nine-saints` |
@@ -158,7 +158,6 @@ _Auto-generated 2026-06-29. Targets sorted by incoming reference count (descendi
 | 1 | `event-council-of-jerusalem-c-49` | `cornelius-centurion` |
 | 1 | `rasa-theory` | `bharatamuni` |
 | 1 | `svatmarama` | `matsyendranath` |
-| 1 | `pelagius` | `theodore-of-mopsuestia` |
 | 1 | `event-greek-arabic-translation-movement-8th-10th-c` | `harun-al-rashid` |
 | 1 | `harranian-sabians` | `harun-al-rashid` |
 | 1 | `vishtaspa` | `zarathustra` |
@@ -292,6 +291,7 @@ _Auto-generated 2026-06-29. Targets sorted by incoming reference count (descendi
 | 1 | `tradition-native-american` | `ritual-potlatch` |
 | 1 | `azar` | `ritual-shabbat-havdalah` |
 | 1 | `ARTHURIAN-CYCLE` | `HOW-WE-WORK` |
+| 1 | `nestorian-stele` | `STATUS` |
 | 1 | `alphabet-*` | `STATUS` |
 | 1 | `document-*` | `STATUS` |
 | 1 | `avicenna` | `STATUS` |

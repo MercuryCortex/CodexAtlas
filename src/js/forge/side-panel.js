@@ -265,7 +265,16 @@
       // was about node.thumb_extract (Wikipedia snippet, truncated source-
       // side); rendering node.body where present gives full vault content
       // and demotes thumb_extract to a fallback for stubs.
-      const bodyRaw = String(node.body || '').trim();
+      // THE STUB SHIELD (2026-08-07) — ONE definition, in
+      // src/js/stub-shield.js, shared with inspector.js. Read the
+      // header there before changing anything: the discriminator is
+      // the build vocabulary, not the word "stub", because the vault's
+      // bibliographies contain "Stubbs, John (trans.)".
+      const _shield = (window.atlasStubShield && window.atlasStubShield.strip)
+        ? window.atlasStubShield.strip(node.body)
+        : { text: String(node.body || '').trim(), unwritten: false };
+      const bodyRaw = _shield.text;
+      const bodyUnwritten = _shield.unwritten;
       const refs    = Array.isArray(node.refs) ? node.refs : [];
 
       // Wire-bucket counts + per-bucket neighbor lists.
@@ -789,13 +798,19 @@
         + (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '');
 
       inner.innerHTML = '<div class="forge-side-panel-content" style="--family-color:' + safe(familyCol) + '">'
-        + carouselHtml()
+        // ── TITLE BEFORE PHOTO (2026-08-07) ────────────────────────
+        // The hero carousel used to open the panel, which pushed the
+        // first sentence of prose to y≈996 — below John's fold on his
+        // own screen. You should learn WHAT you clicked before you are
+        // shown a picture of it. The image is still the second thing,
+        // so the panel still opens with something to look at.
         + '<div class="forge-side-panel-header">'
         +   kickerHtml
         +   '<div class="forge-side-panel-name">' + safe(title) + '</div>'
         +   (aka.length ? '<div class="forge-side-panel-aka">' + aka.map(safe).join(' · ') + '</div>' : '')
         +   (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
         + '</div>'
+        + carouselHtml()
         // ── Provenance block (moved here 2026-06-02 per John: "i should be
         // able to see immediately here" — academic-backing is the FIRST
         // block under the description, not buried below bucket-pills).
@@ -816,7 +831,18 @@
         + (bodyHtml
             ? '<h4 class="forge-side-panel-section-h">Entry</h4>'
               + '<div class="forge-side-panel-body">' + bodyHtml + '</div>'
-            : '')
+            // Only claim "not written" when there is genuinely nothing
+            // else — the Wikipedia extract below is a real fallback, and
+            // printing both would contradict itself on the same screen.
+            : (bodyUnwritten && !extract
+                ? '<h4 class="forge-side-panel-section-h">Entry</h4>'
+                  + '<div class="forge-side-panel-unwritten">'
+                  +   '<div class="forge-side-panel-unwritten-h">Not written yet</div>'
+                  +   '<p>This node is real — its place on the map and the '
+                  +   'connections above are drawn from the vault. The written '
+                  +   'entry is still to come.</p>'
+                  + '</div>'
+                : ''))
         + refsHtml
         // Wikipedia extract demoted — only shown when there's no vault body
         // (so the panel still has a fallback for stub nodes) and clearly

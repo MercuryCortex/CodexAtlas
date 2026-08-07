@@ -2201,7 +2201,18 @@ aside.detail {
   background: var(--panel-bg);
   backdrop-filter: var(--panel-blur);
   -webkit-backdrop-filter: var(--panel-blur);
-  border-left: var(--panel-edge);
+  /* ── THE PANEL GETS AN EDGE (2026-08-07) ──────────────────────────
+     MEASURED: panel-vs-canvas contrast was 1.03:1 — the largest
+     surface in the app had no visible boundary at all, while every
+     small pill in it carries `1px solid var(--gold-soft)`. So this is
+     not a new visual primitive: it is the app's OWN edge language,
+     finally applied to the surface that lacked it.
+     Deliberately NOT done by changing --panel-edge: that token is
+     shared by six surfaces, and restyling all of them is a different
+     decision from the one John asked for. --gold-soft is defined in
+     all four themes, so this follows the theme instead of pinning a
+     colour. */
+  border-left: 1px solid var(--gold-soft);
   box-shadow: -8px 0 24px -8px rgba(0,0,0,0.45);
   overflow: hidden;
   display: flex; flex-direction: column;
@@ -2254,6 +2265,34 @@ aside.detail .empty {
   text-transform: uppercase;
   padding: 90px 12px;
   text-align: center;
+}
+/* ── "NOT WRITTEN YET" (2026-08-07) ─────────────────────────────────
+   387 nodes were printing their own build scaffolding to readers —
+   "**Stub.** Auto-created 2026-05-20 during the orchestrated
+   initial-wave goblin batch (`goblin-attire-1` …)". The shield lives
+   in side-panel.js; this is how the honest replacement reads.
+   It is a STATUS, not an error: quiet, no alarm colour, and it keeps
+   the reader's attention on the connections above it, which are real.
+   Type comes off the panel's own ladder — no new sizes. */
+.forge-side-panel-unwritten {
+  border-left: 2px solid var(--gold-soft);
+  padding: 2px 0 2px 14px;
+  margin: 2px 0 4px;
+  opacity: 0.82;
+}
+.forge-side-panel-unwritten-h {
+  font: 400 10.5px/1.5 "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+.forge-side-panel-unwritten p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.66;
+  color: rgba(230,230,230,0.62);
+  max-width: 46ch;
 }
 
 /* FOOTER — 2026-05-27 — DELETED. The legacy <footer> + #footer-toggle were

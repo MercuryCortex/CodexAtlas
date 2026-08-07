@@ -292,7 +292,15 @@
     let desc = node.role || node.description || node.brief || '';
     if (!desc && Array.isArray(node.domains) && node.domains.length) desc = node.domains.join(', ');
     const familyCol = node.family_color || node.tradition_color || '#888';
-    const bodyRaw = String(node.body || '').trim();
+    // THE STUB SHIELD (2026-08-07) — ONE definition, in
+    // src/js/stub-shield.js, shared with forge/side-panel.js. These two
+    // are renderers of the SAME node and have drifted apart before;
+    // they must consume the same function, never two copies of it.
+    const _shield = (window.atlasStubShield && window.atlasStubShield.strip)
+      ? window.atlasStubShield.strip(node.body)
+      : { text: String(node.body || '').trim(), unwritten: false };
+    const bodyRaw = _shield.text;
+    const bodyUnwritten = _shield.unwritten;
     const refs = Array.isArray(node.refs) ? node.refs : [];
     const extract = String(node.thumb_extract || '');
     const wikiPage = node.thumb_page || '';
@@ -456,13 +464,16 @@
       + (domains ? '<dt>Domains</dt><dd>' + safe(domains) + '</dd>' : '');
 
     inner.innerHTML = '<div class="forge-side-panel-content inspector-root" style="--family-color:' + safe(familyCol) + '">'
-      + thumbHtml
+      // TITLE BEFORE PHOTO (2026-08-07) — mirrors side-panel.js. The
+      // hero used to open the panel, pushing the first prose to y≈996,
+      // below John's fold. You learn WHAT you clicked, then see it.
       + '<div class="forge-side-panel-header">'
       + kickerHtml
       + '<div class="forge-side-panel-name">' + safe(title) + '</div>'
       + (aka.length ? '<div class="forge-side-panel-aka">' + aka.map(safe).join(' · ') + '</div>' : '')
       + (desc ? '<div class="forge-side-panel-desc">' + safe(desc) + '</div>' : '')
       + '</div>'
+      + thumbHtml
       + renderProvenance(node)
       + actionRow
       + (pills
@@ -476,7 +487,18 @@
       + (bodyHtml
           ? '<h4 class="forge-side-panel-section-h">Entry</h4>'
             + '<div class="forge-side-panel-body">' + bodyHtml + '</div>'
-          : '')
+          // Only claim "not written" when there is nothing else — the
+          // Wikipedia extract below is a real fallback, and printing
+          // both would contradict itself on the same screen.
+          : (bodyUnwritten && !extract
+              ? '<h4 class="forge-side-panel-section-h">Entry</h4>'
+                + '<div class="forge-side-panel-unwritten">'
+                +   '<div class="forge-side-panel-unwritten-h">Not written yet</div>'
+                +   '<p>This node is real — its place on the map and the '
+                +   'connections above are drawn from the vault. The written '
+                +   'entry is still to come.</p>'
+                + '</div>'
+              : ''))
       + refsHtml
       + (!bodyHtml && extract ? '<div class="forge-side-panel-extract">' + safe(extract) + '</div>' : '')
       + (wikiPage ? '<a class="forge-side-panel-wikilink" href="' + safe(wikiPage) + '" target="_blank" rel="noopener noreferrer">Open Wikipedia ↗</a>' : '')
