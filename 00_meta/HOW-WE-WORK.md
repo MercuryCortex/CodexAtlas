@@ -1,5 +1,18 @@
 # HOW WE WORK — Cast-and-Go Routing for Agents
 
+> ## ▶ START HERE — CURRENT HANDOFF (2026-08-06)
+> **`00_meta/HANDOFF-2026-08-06-crisp-type.md`** is the live pickup
+> document. Read its **§0** (how John works — five rules that cost a
+> whole session) and **§5** (the ranked worklist) before anything else.
+> It is written to be self-sufficient for an agent with no prior context.
+>
+> Two things that will confuse you otherwise:
+> **(1)** Git history was rewritten on 2026-08-06 to purge an identity
+> leak — every commit SHA changed, so SHAs quoted in older docs will not
+> resolve. That is expected. **(2)** John judges ONLY
+> `https://codexatlas.org`; committed-but-not-deployed work is invisible
+> to him, and an un-bumped `?v=` in `index.html` ships nothing.
+
 > **Read this and ONLY this on cast.** Everything else is reference, loaded on demand. This file replaces the ~100 KB pre-flight burden of reading ONTOLOGY + CORE-THEMES + PROTOCOL + LANES + claim file *before doing anything*.
 >
 > **You still read the heavier docs — just only when you actually need them**, not as a pre-flight tax on every cast. The "When to read" pointers at the bottom tell you which doc to pull when.
