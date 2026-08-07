@@ -7,7 +7,7 @@ category: "architectural-form / cosmological"
 region: "Mesopotamia · Egypt · Levant · South Asia · Southeast Asia · East Asia · Mesoamerica · Andes · North American Woodlands"
 date-earliest: -3000
 dating-basis: B3
-dating-basis-source: "\"Crawford, H. 1991 *Sumer and the Sumerians* CUP; George, A.R. 1993 *House Most High* Eisenbrauns\""
+dating-basis-source: "\"Pollock, S. 1999 *Ancient Mesopotamia* CUP; Crawford, H. 1991 *Sumer and the Sumerians* CUP; George, A.R. 1993 *House Most High* Eisenbrauns\""
 dating-basis-notes: "B3 (oldest dated archaeology): the Uruk White Temple platform (Eanna precinct, c. -3200/-3000) is the earliest surviving monumental raised temple-platform. NOTE: the archaeology dates the BUILDING TYPE, not the cosmic-mountain INTERPRETATION — the earliest native texts that attach mountain language to a temple are the Sumerian ceremonial temple names (É.KUR etc.) and Gudea's building hymns, c. -2100. The gap between the two dates is itself part of this node's argument."
 status: "full"
 traditions-affected:
@@ -342,7 +342,7 @@ Before any of that: **"cosmic mountain" is not a native term anywhere.** It rend
 This node therefore does two jobs at once:
 
 1. **Assemble the evidence** — tradition by tradition, what the builders themselves said.
-2. **Sort the connections** — which cross-tradition links are documented **transmission** and which are structural **parallel**. Per [`CODEX.md`](../00_meta/CODEX.md) §III and the seven edge buckets, these are different claims with different burdens of proof, and the difference is visible in the YAML above: transmission claims live in `cross-tradition-edges`, parallels in `cross-tradition-parallels`, and they render as different-coloured wires in the viewer.
+2. **Sort the connections** — which cross-tradition links are documented **transmission** and which are structural **parallel**. Per the project CODEX §III and the seven edge buckets, these are different claims with different burdens of proof, and the difference is visible in the YAML above: transmission claims live in `cross-tradition-edges`, parallels in `cross-tradition-parallels`, and they render as different-coloured wires in the viewer.
 
 The rule applied throughout: **an emic statement licenses the claim for that tradition only.** A native text or temple-name saying "this building is that mountain" is excellent evidence about *that* culture. It is no evidence at all that two cultures are connected.
 
@@ -452,7 +452,7 @@ The motif is **widespread, not universal** — and its distribution is uneven in
 | **The corrective** (J.Z. Smith 1987) | Eliade's universal Centre was assembled from thin and sometimes misreported ethnography. | T1 | Standing correction. Every use of the category in this vault is downstream of it. |
 | **The disciplined version** (Clifford 1972) | Keep "cosmic mountain" where a tradition's own texts license it; refuse the export. | T1 | The method this node follows. |
 
-**On Eliade specifically.** The vault's posture is disclosure, not concealment ([`CODEX.md`](../00_meta/CODEX.md) §I): Eliade is included, cited, and labelled — [[mircea-eliade]], [[phase-7-013-eliade-myth-of-eternal-return]]. He is an interpretive school, not an evidentiary source. His universalism is not the consensus (Smith 1987), and the formation of his comparative programme has itself been the subject of mainstream critical scholarship (Wasserstrom 1999). None of that makes his descriptive vocabulary useless; it makes it a vocabulary rather than a finding.
+**On Eliade specifically.** The vault's posture is disclosure, not concealment (the project CODEX §I): Eliade is included, cited, and labelled — [[mircea-eliade]], [[phase-7-013-eliade-myth-of-eternal-return]]. He is an interpretive school, not an evidentiary source. His universalism is not the consensus (Smith 1987), and the formation of his comparative programme has itself been the subject of mainstream critical scholarship (Wasserstrom 1999). None of that makes his descriptive vocabulary useless; it makes it a vocabulary rather than a finding.
 
 **The line this entry will not cross:** resemblance is not descent. Where a tradition's own texts say "this building is that mountain," we record it for that tradition. Where two traditions resemble each other and no contact is documented, the wire is teal, not terracotta — however satisfying the alternative would be.
 
@@ -482,7 +482,7 @@ The corollary matters too: because the pattern demonstrably arose at least twice
 - → [[divine-kingship]] / [[theme-divine-kingship-and-temple-as-royal-pact]] — who pays for the mountain, and what he gets back
 - → [[primordial-waters]] / [[nun-primordial-waters]] — the water the mound rises from
 - → [[microcosm-macrocosm]] — the temple as a small model of the whole
-- → [[theme-mandala-as-architectural-programme]] / [[mandala-circle]] — the same cosmos seen from above (the Kālacakra maṇḍala is the fullest tantric case; no node yet)
+- → [[theme-mandala-as-architectural-programme]] / [[mandala-circle]] / [[kalachakra-symbol]] — the same cosmos seen from above
 - → [[theme-temple-as-city]] / [[theme-paired-shrine-cosmology]] — adjacent architectural-ideology motifs
 - → [[world-tree]] / [[yggdrasil]] / [[djed-pillar]] / [[pyramid-triangle]] / [[sacred-geometry-cosmic-proportion]] — sibling symbol nodes
 
