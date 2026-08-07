@@ -872,7 +872,7 @@ must(/const gapPx = Math\.min\(48, 17 \/ Math\.max\(0\.36, Math\.abs\(Math\.cos\
   'the follower gap DERIVES from the bucket law (a vertical-arc spine must clear a full y-band)');
 must(/const txt = g\.label \+ ' · '\s*\n?\s*\+ \(\(g\.items\.length < g\.count\) \? \(g\.items\.length \+ ' OF ' \+ g\.count\) : g\.count\);/,
   '(layout) the caption arc allowance measures the SAME string the view prints', treeSrc);
-must(/renderBandCaptions\(ctx, placed, claim, W2S, TYPE, font, house, vp\);[\s\S]{0,2600}const aStep = 22/,
+must(/renderBandCaptions\(ctx, placed, claim, W2S, TYPE, font, house, vp, lodA\);[\s\S]{0,2600}const aStep = 22/,
   'the band text claims BEFORE the band shield (canonical counts outrank their own shield)');
 must(/const step = Math\.max\(rBub \+ 32, bandPx - ul \+ 32\);/,
   'a rail slot\'s reach name steps RADIALLY outboard, 32px off the glyph OR the band centreline, whichever is farther');
@@ -2614,7 +2614,7 @@ must(/housePortsHideFrom\(portsUsed\);/,
   'unused ring slots are retired every pass — an orphan name outliving its house is the double-paint bug class', forgeSrc);
 must(/if \(!claim\(cx0, ly, w \+ 8\)\) continue;/,
   'the ring still claims through the ONE registry before it is handed to the DOM (law 5 intact)', forgeSrc);
-must(/famNameFont\(\);\s*\n(\s*\/\/[^\n]*\n)*\s*let portsUsed = 0;/,
+must(/famNameFont\(\);\s*\n(\s*(?:\/\/[^\n]*|const portA = lodA\('port'\);)\n)*\s*let portsUsed = 0;/,
   'the ring is still MEASURED on canvas with the identical declaration, so the claim matches the painted box', forgeSrc);
 must(/famNameEnd\(\);/,
   'the sticky ctx.letterSpacing is cleared after the port pass — later strings never inherit the tracking', forgeSrc);
@@ -2677,8 +2677,12 @@ must(/const HOUSE_MONO = '"JetBrains Mono","SF Mono",Menlo,Consolas,monospace';/
 }
 must(/function mixToBg\(col, keep\) \{/,
   'quiet standing chrome is PRE-DIMMED SOLID ink (mixToBg), never globalAlpha fog', forgeSrc);
-must(/ctx\.fillStyle = mixToBg\(_labelsTextColor, \(txt === 'UNDATED'\) \? 0\.55 : 0\.80\);/,
-  'the rank dates read quiet-but-solid — pre-mixed ink, alpha 1', forgeSrc);
+// 2026-08-07 — the LOD ramp had to ride the SAME pre-mix. The pin now
+// requires the axisA multiplier to be INSIDE mixToBg's keep argument:
+// that is what stops the next agent reaching for ctx.globalAlpha and
+// reintroducing the halo-shows-through-the-fill defect on a fade.
+must(/ctx\.fillStyle = mixToBg\(_labelsTextColor,\s*\n?\s*\(\(txt === 'UNDATED'\) \? 0\.55 : 0\.80\) \* axisA\);/,
+  'the rank dates read quiet-but-solid — pre-mixed ink, alpha 1, and the zoom LOD rides that same pre-mix', forgeSrc);
 must(/&& local\._labelsIdlePortHover === \(local\._portHoverGroup \|\| null\)/,
   'the labels idle cache repaints on port hover (and carries dpr) — a hover-shown name can actually appear', forgeSrc);
 must(/for \(let hStep = 0; hStep <= 3 && !headRes; hStep\+\+\) \{/,

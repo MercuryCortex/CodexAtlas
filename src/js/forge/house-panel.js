@@ -159,6 +159,9 @@
       // family in the vault (Vedic, 97); 0 is the honest zero.
       ['house_name_max',      'House names',   0,    200,  5,     '',   'relabel'],
       ['house_type_scale',    'Type scale',    0.8,  1.6,  0.05,  '×',  'house'],
+      // How hard the chrome retires as the house shrinks under a
+      // zoom-out. 1 = the LOD ladder; 0 = the old always-on chrome.
+      ['house_chrome_lod',    'Chrome LOD',    0,    1,    0.05,  '',   'redraw'],
       // The rank DATE's own stand-off from the cascade's left gutter
       // (the fan crest rides the same dial at its 8/14 ratio).
       ['house_rank_cap_off',  'Date offset',   0,    40,   1,     'px', 'redraw'],
@@ -280,6 +283,7 @@
         items: [
           { k: 'slider', key: 'house_name_max' },
           { k: 'slider', key: 'house_type_scale' },
+          { k: 'slider', key: 'house_chrome_lod' },
           { k: 'radio',  key: 'house_rank_caption' },
           { k: 'radio',  key: 'house_caption_style' },
           { k: 'slider', key: 'house_rank_cap_off' },

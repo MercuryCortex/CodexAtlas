@@ -889,6 +889,12 @@
     // is the measured root cause of "the fonts still very blurry
     // and tiny": 15-17 device px at half opacity on retina.
     house_type_scale:      1.0,
+    // ZOOM-INVARIANCE (2026-08-07) — how hard the house chrome retires
+    // as you pull back off it. 1 = the tertiary-first LOD ladder in
+    // houseChromeEnv (dates out first, rail headers last, god names
+    // never); 0 = the old always-on chrome that John called
+    // "medieveal" when the dates went huge over the nodes.
+    house_chrome_lod:      1.0,
     // ── THE GODS GET THEIR NAMES BACK (2026-07-31 wave 4) ────────
     // John: "the DEities nodes are the most important and NEVER
     // appear, i need to OVER to see the names.... even at 100%
@@ -2405,6 +2411,28 @@
       },
       hitTestAt:    (x, y) => hitTestAt(x, y),
       cameraState:  () => camera.state,
+      // ZOOM-INVARIANCE HARNESS (2026-08-07). A zoom law cannot be
+      // verified without driving zoom, and synthetic wheel events do
+      // not reach the camera (they never have — that is why enterHouse
+      // exists below). This goes through camera.setScale, so it is
+      // clamped by the SAME scale bounds a real pinch hits: a probe
+      // cannot reach a zoom John cannot. Returns the clamped result,
+      // and the gizmo percentage + the house's own `rel` beside it,
+      // because those are three different numbers and confusing them
+      // is how the 2026-08-06 handoff got the wheel's LOD law wrong.
+      setCameraScale: (s) => {
+        if (!camera || !camera.setScale || !(s > 0)) return null;
+        camera.setScale(s);
+        const vp = local.lastSize;
+        const wheelFit = (typeof computeFitScale === 'function') ? computeFitScale() : 0;
+        const houseFit = (typeof houseFitScale === 'function' && vp) ? houseFitScale(vp) : 0;
+        const sc = camera.state.scale;
+        return {
+          scale: sc,
+          gizmoPct: wheelFit > 0 ? +(sc / wheelFit).toFixed(4) : null,
+          rel: houseFit > 0 ? +(sc / houseFit).toFixed(4) : null,
+        };
+      },
       // ── THE HOUSE (2026-07-30) — verification surfaces ────
       // Synthetic pointers don't reach the canvas under WebDriver;
       // harnesses drive the isolate through these instead.
@@ -6538,11 +6566,22 @@
         return;
       }
       if (houseAtRest()) {
-        // HIGH half only (crown → rail obstacles/headers → ports →
-        // era/gen captions). The LOW half (shelf captions, spine
-        // names, orphan captions) paints AFTER the deity-name pass
-        // below, so a caption can never outrank a god's name —
-        // audit: house-chrome-priority-order-inverted.
+        // HIGH half. The LOW half (orphan captions) paints AFTER the
+        // deity-name pass below — audit:
+        // house-chrome-priority-order-inverted.
+        //
+        // ⚠️ CORRECTED 2026-08-07 — this comment used to name "shelf
+        // captions, spine names" as LOW. THEY ARE NOT AND CANNOT
+        // TRIVIALLY BE: renderBandCaptions fills local._bandSpineIds,
+        // and the deity-name pass right below READS that set to honour
+        // ONE NAME PER NODE. Move the spines after the names and the
+        // set is empty when it is read, so every spine node gets named
+        // twice. Two other comments said the same false thing; all
+        // three are fixed. If you want the spines in LOW, the
+        // dedup set has to be decoupled FIRST — that is the real work,
+        // and it is not a comment's worth of it.
+        // What actually keeps chrome off the names at low zoom is the
+        // LOD ladder in houseChromeEnv, not the half it lives in.
         local._bandSpineIds = new Set();
         renderHouseChrome(ctx, placed, vp);
       } else {
@@ -6656,10 +6695,12 @@
                      flw: houseFace ? ctx.lineWidth : 0 });
       }
       // THE HOUSE (2026-07-31) — LOW-priority chrome lands here: the
-      // names above have claimed their rects, so shelf captions,
-      // spine names and orphan captions yield to every deity name
-      // (the documented order) while still outranking the LEAVING
+      // names above have claimed their rects, so the orphan captions
+      // yield to every deity name while still outranking the LEAVING
       // names below, which are a crossfade nicety, not content.
+      // (CORRECTED 2026-08-07 — shelf captions and spine names were
+      // listed here and have never been in this half; see the note at
+      // the HIGH callsite for why they cannot simply move.)
       if (houseAtRest()) {
         renderHouseChromeLow(ctx, placed, vp);
       }
@@ -6793,15 +6834,28 @@
     // audit house-chrome-priority-order-inverted — a caption must
     // never outrank a god's name). Actual paint order:
     //   HIGH (renderHouseChrome, BEFORE the names): crown stats +
-    //     CASCADE/FAN chips → the band's curved text (headers →
-    //     shelf captions → spine names, all riding the arc — wave 4,
+    //     CASCADE/FAN chips → THE DATE AXIS → the band's text
+    //     (headers → shelf captions → overflow foot → spine names —
     //     renderBandCaptions; canonical counts outrank the wayfinding
-    //     ports AND their own shield) → band shield → ports →
-    //     era/generation captions
+    //     ports AND their own shield) → band shield → ports
     //   (deity names — hovered > locked > woken > rank — the caller)
     //   LOW (renderHouseChromeLow, AFTER the names): orphan domain
-    //     captions (the overflow foot rides the band's curved-text
-    //     pass since wave 4 — it is a canonical count)
+    //     captions (the overflow foot rides the band's own pass since
+    //     wave 4 — it is a canonical count)
+    //
+    // ⚠️ CORRECTED 2026-08-07 — the order above is now the one the
+    // code actually runs. It used to list "era/generation captions"
+    // LAST in HIGH; the date axis was promoted to THIRD on 2026-08-02
+    // (see §1c, which documents the promotion and the defect it fixed:
+    // up to 3 of 7 dates were silently vanishing) and this line was
+    // never updated. Do not "restore" it — read §1c first.
+    //
+    // WHY SO MUCH CHROME OUTRANKS A GOD'S NAME: six classes claim
+    // ahead of the names, and only ONE of them is free to move (see
+    // the _bandSpineIds note at the HIGH callsite). The zoom half of
+    // that problem — chrome swamping the names as the house shrinks —
+    // is solved by the LOD ladder in houseChromeEnv, not by this
+    // ordering. The ordering question is still open at house zoom.
     //   (leaving-name crossfades, then the hint line — the caller)
     // Whole words or nothing; losers hide; the chrome keep-outs are
     // the same bands the node names respect.
@@ -7382,6 +7436,77 @@
       // All × house_type_scale (LAB ▸ House sizes; default 1 — the
       // dial is headroom, never a second 1.2). Row pitch =
       // max(16, size × 1.9) — always clears the 15px rule.
+      // ══ ZOOM-INVARIANCE — THE HOUSE GETS THE WHEEL'S LOD LAW ═══════
+      // (2026-08-07) John: "stuff like DATES, the scriptorium, court
+      // families names, they are HUGE when zooming out… the dates
+      // becoming huge over the nodes are medieveal."
+      //
+      // MEASURED, Greek house at gizmo 15%: 3 god names printed
+      // against 24 chrome strings, and `THE COURT — 149 OF ALL KINDS`
+      // rendered 225px wide on a house 160px across. Even at house
+      // entry the chrome outweighs the names 1.9:1 in ink.
+      //
+      // THE CAUSE: every chrome string is FIXED SCREEN PX. The house
+      // shrinks as you pull back; the chrome does not. So the ratio of
+      // chrome-ink to name-ink inverts, and wayfinding ends up sitting
+      // on top of the thing it was pointing at.
+      //
+      // `rel` — camera scale ÷ THIS house's own fit scale — is the
+      // house's zoom (1 = seated in it). It already existed and it
+      // already drove the subtitle, but it was computed INSIDE the
+      // title block where no other section could reach it, which is
+      // exactly why the subtitle was the only class that ever got an
+      // LOD. It is env now, so every section rides one ramp.
+      const fitS = houseFitScale(vp);
+      const rel = fitS > 0 ? (camera.state.scale || 1) / fitS : 1;
+      // WHY ALPHA AND NOT A SIZE MULTIPLIER: the wheel's own LOD (the
+      // shape this follows, syncHulls ~5501) is a pure OPACITY ramp on
+      // the overlay — it never touches a face size. And the house's
+      // hole search reads the title block's FULL height on purpose, so
+      // placement stays stable across a ramp. A face that shrank with
+      // zoom would move the block while he zooms, which is exactly the
+      // title-jump defect closed on 2026-08-06. Chrome retires; it
+      // does not diet.
+      //
+      // WHY THE WHEEL'S CONSTANTS ARE NOT REUSED: the wheel ramps on
+      // camScale ÷ computeFitScale (the WHOLE wheel's extent) between
+      // 0.50 and 0.25 — that is the gizmo percentage. `rel` divides by
+      // the HOUSE's extent, which is far smaller, so the two numbers
+      // are not comparable: rel is 1.0 at house entry while the gizmo
+      // reads well above 100%. Copying 0.50/0.25 onto rel would be a
+      // category error. The bands below are set against `rel`'s own
+      // scale — anchored to the subtitle ramp that already lives on
+      // it (0.8→1.1) and to the measured ink ratio, which is already
+      // 4.4:1 chrome-to-names by rel 0.57.
+      // (The 2026-08-06 handoff described this wheel law as "1.0 →
+      // 0.53 → 0.0 between 62% and 16%". Those constants have never
+      // existed in this file — `git log -S` finds no commit for them.
+      // Verify a cited law before building on it.)
+      //
+      // THE LADDER — tertiary retires FIRST, structure retires LAST,
+      // and A GOD'S NAME NEVER RETIRES. Chrome is wayfinding: the
+      // moment it costs more ink than the thing it points at, it goes.
+      // Each entry is [gone-below, full-above]; between them it is a
+      // linear dissolve, so a zoom step is a fade and never a pop.
+      const LOD_BANDS = {
+        axis:   [0.62, 0.92],   // rank dates — pure detail, first out
+        port:   [0.58, 0.88],   // horizon family names
+        cap:    [0.52, 0.80],   // shelf + era/generation captions
+        spine:  [0.46, 0.74],   // spine names
+        head:   [0.34, 0.58],   // rail headers — the last chrome standing
+      };
+      // The dial is a MIX, not a switch: 1 = the ladder above, 0 = the
+      // old always-on chrome, exactly as it shipped before today. A
+      // reversible dev-stage visual number ships as a slider with a
+      // chosen default (2026-07-29 cardinal), never as a question.
+      const lodMix = Math.max(0, Math.min(1,
+        (typeof local.params.house_chrome_lod === 'number') ? local.params.house_chrome_lod : 1));
+      const lodA = (k) => {
+        const b = LOD_BANDS[k];
+        if (!b || lodMix <= 0) return 1;
+        const a = rel <= b[0] ? 0 : (rel >= b[1] ? 1 : (rel - b[0]) / (b[1] - b[0]));
+        return 1 - lodMix * (1 - a);
+      };
       const ts = Math.max(0.7, Math.min(2,
         (typeof local.params.house_type_scale === 'number') ? local.params.house_type_scale : 1));
       const TYPE = { head: 13 * ts, name: 12 * ts, cap: 11.5 * ts };
@@ -7456,7 +7581,7 @@
         ctx.lineWidth = saved.lw; ctx.fillStyle = saved.fill; ctx.globalAlpha = saved.alpha;
       };
       return { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, yOK, claim, halo, snap, restore, TYPE, row, font,
-               FAM, famNameFont, famNameEnd };
+               FAM, famNameFont, famNameEnd, rel, lodA };
     }
     // Numeral for a row that IS one generation (see capFor — a layout
     // rank is not a generation, so most rows never reach this).
@@ -7514,7 +7639,7 @@
       const m = local.mode;
       const env = houseChromeEnv(ctx, placed, vp);
       const { KEEPOUT_TOP, KEEPOUT_BOTTOM, W2S, claim, halo, snap, TYPE, row, font,
-              FAM, famNameFont, famNameEnd } = env;
+              FAM, famNameFont, famNameEnd, rel, lodA } = env;
       const fmtD = (d) => (d < 0 ? (-d) + ' BCE' : d + ' CE');
 
       // 1 ▸ THE TITLE BLOCK — a LOCKED SCREEN FIXTURE since wave 4
@@ -7643,8 +7768,10 @@
       // fit scale); the NAME keeps full alpha at every zoom. The hole
       // search keeps using the full blockH — placement stays stable
       // across the LOD ramp, deliberately.
-      const fitS = houseFitScale(vp);
-      const rel = fitS > 0 ? (camera.state.scale || 1) / fitS : 1;
+      // `rel` is env now (see houseChromeEnv ▸ ZOOM-INVARIANCE) — the
+      // subtitle was the ONLY class that had this ramp, because this
+      // was the only place the number existed. Every chrome section
+      // reads it now.
       const subA = rel <= 0.8 ? 0 : (rel >= 1.1 ? 1 : (rel - 0.8) / 0.3);
       font('500', TYPE.cap);
       ctx.textAlign = anchor.center ? 'center' : (anchor.right ? 'right' : 'left');
@@ -7765,7 +7892,19 @@
         ? local.params.house_rank_cap_off : 14;
       font('500', TYPE.cap);
       ctx.textAlign = 'left';
-      {
+      // ZOOM-INVARIANCE (2026-08-07) — the dates are the FIRST class
+      // out, and they retire BEFORE they claim, not after they paint.
+      // That ordering is the point: a retired class hands its registry
+      // space back to the god names instead of holding a rect nothing
+      // draws into. John's exact words were "the dates becoming huge
+      // over the nodes are medieveal" — this is that line's fix.
+      const axisA = lodA('axis');
+      if (axisA <= 0.05) {
+        // Honest zero for the probe/gate — a stale list would read as
+        // "7 dates printed" on a zoom where none did.
+        local._houseAxisDates = [];
+        local._houseAxisEaten = 0;
+      } else {
         const items = [];
         for (let ri = 0; ri < house.rowMeta.length; ri++) {
           const rm = house.rowMeta[ri];
@@ -7820,7 +7959,11 @@
               continue;
             }
             axisRec.push({ txt, x: Math.round(it.x), y: Math.round(it.y), mode: 'bright' });
-            ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.55 : 0.80);
+            // The LOD rides the SAME pre-mixed solid ink the quiet
+            // rows use — the house's standing law is that dimness
+            // lives in the colour, never in alpha fog (2026-08-02).
+            ctx.fillStyle = mixToBg(_labelsTextColor,
+              ((txt === 'UNDATED') ? 0.55 : 0.80) * axisA);
           } else {
             // Deliberate thinning: every 2nd date prints QUIET,
             // unclaimed. It sits within 15px of a claimed neighbour,
@@ -7829,7 +7972,8 @@
             // would break the zero-overlapping-pairs invariant the
             // gate asserts on lastPlacedRects.
             axisRec.push({ txt, x: Math.round(it.x), y: Math.round(it.y), mode: 'quiet' });
-            ctx.fillStyle = mixToBg(_labelsTextColor, (txt === 'UNDATED') ? 0.40 : 0.45);
+            ctx.fillStyle = mixToBg(_labelsTextColor,
+              ((txt === 'UNDATED') ? 0.40 : 0.45) * axisA);
           }
           halo(txt, it.x, it.y);
         }
@@ -7852,7 +7996,7 @@
       // are canonical counts and outrank the wayfinding ports; they
       // live in the caption annulus OUTSIDE the tree zone, so they
       // cannot take a deity name's spot.
-      renderBandCaptions(ctx, placed, claim, W2S, TYPE, font, house, vp);
+      renderBandCaptions(ctx, placed, claim, W2S, TYPE, font, house, vp, lodA);
 
       // 2b ▸ THE BAND as an obstacle arc (wave 3 — the rails are one
       // ring, sectioned by arc: Scriptorium left, Court right; see
@@ -7908,8 +8052,14 @@
       famNameFont();
       // Still measured on canvas with the IDENTICAL declaration, so
       // claim() reserves the box the SVG will actually fill.
+      // ZOOM-INVARIANCE (2026-08-07) — the horizon retires second.
+      // Ports point at OTHER houses; pulled back off this one they are
+      // the least of what he is reading, and the tick branch below
+      // claims registry space too, so the whole section stands down
+      // together rather than leaving invisible rects behind.
+      const portA = lodA('port');
       let portsUsed = 0;
-      for (const pt of ports) {
+      for (const pt of (portA > 0.05 ? ports : [])) {
         const ps = W2S(pt.x, pt.y);
         if (ps.x < -60 || ps.x > vp.w + 60 || ps.y < -60 || ps.y > vp.h + 60) continue;
         const left = Math.cos(pt.ang) < 0;
@@ -7919,7 +8069,7 @@
           const ty = Math.max(KEEPOUT_TOP + 2, Math.min(vp.h - KEEPOUT_BOTTOM - 2,
             ps.y + Math.sin(pt.ang) * 13));
           if (!claim(tx, ty, 10)) continue;
-          ctx.fillStyle = mixToBg(pt.color || _labelsTextColor, 0.55);
+          ctx.fillStyle = mixToBg(pt.color || _labelsTextColor, 0.55 * portA);
           ctx.beginPath();
           ctx.arc(snap(tx), snap(ty), 2.5, 0, Math.PI * 2);
           ctx.fill();
@@ -7946,6 +8096,11 @@
           el.setAttribute('y', ly.toFixed(1));
           el.setAttribute('text-anchor', left ? 'end' : 'start');
           el.style.setProperty('--family-color', pt.color || _labelsTextColor);
+          // The port is page text, so its ramp is element opacity —
+          // which multiplies the CSS halo and the fill TOGETHER. That
+          // is the same property that killed the black-outline-on-fade
+          // defect on 2026-08-06; a canvas fade could not do it.
+          el.style.opacity = portA >= 1 ? '' : portA.toFixed(3);
           if (el.style.display === 'none') el.style.display = '';
           portsUsed++;
         }
@@ -8022,7 +8177,20 @@
     // exactly 16px apart: the zero-overlapping-pairs invariant of
     // _forgeDebug.lastPlacedRects holds by construction, and the
     // curved replay in check-familytree.mjs asserts it.
-    function renderBandCaptions(ctx, placed, claim, W2S, TYPE, font, house, vp) {
+    function renderBandCaptions(ctx, placed, claim, W2S, TYPE, font, house, vp, lodA) {
+      // ZOOM-INVARIANCE (2026-08-07) — this one function paints THREE
+      // rungs of the ladder, so it takes the env's lodA rather than a
+      // single alpha: rail headers are the LAST chrome standing (they
+      // are the room's structure), shelf captions and the overflow
+      // foot go with the mid rung, spine names just before them.
+      //
+      // The fade is written into the COLOUR, never into alpha. Both
+      // writers below must behave identically, and arcRun paints on
+      // CANVAS — a canvas globalAlpha fade paints strokeText then
+      // fillText over it, so the halo reads as a black outline as it
+      // goes (the defect closed on 2026-08-06). mixToBg keeps the ink
+      // solid at every step of the ramp, for both painters.
+      const lod = (typeof lodA === 'function') ? lodA : () => 1;
       const rails = house.rails || {};
       const nodesById = local.mode.nodesById;
       const gold = _labelsGoldColor || '#d3b877';
@@ -8167,13 +8335,24 @@
       // in priority order (a spine may lose to a caption, never the
       // reverse — hence the two passes).
       const landed = [];
+      // The three rungs this function owns, resolved once per frame.
+      // `THE COURT — 149 OF ALL KINDS` is the exact string John saw
+      // render 225px wide on a house 160px across; headLod is what
+      // stands it down before it can do that again.
+      const headLod = lod('head');
+      const capLod = lod('cap');
       for (const rl of [rails.left, rails.right]) {
         if (!rl || !rl.shelves || !rl.shelves.length) continue;
         const header = (rl.side < 0)
           ? ('THE SCRIPTORIUM — ' + rl.count + ' DOCS')
           : ('THE COURT — ' + rl.count + ' OF ALL KINDS');
         font('600', TYPE.head);
-        if (flat) {
+        const headInk = mixToBg(_labelsTextColor, 0.85 * headLod);
+        if (headLod <= 0.05) {
+          // Retired. It claims NOTHING — the header stepping through
+          // three rows to find a slot (below) is exactly the kind of
+          // hunt that was stealing space from god names at low zoom.
+        } else if (flat) {
           // FLAT: the header stands at the top end of its own arc,
           // horizontal, growing away from the circle — the toy's
           // rail-header law adapted to the ring.
@@ -8192,7 +8371,7 @@
           for (let hStep = 0; hStep <= 3 && !headRes; hStep++) {
             for (const headDir of (hStep === 0 ? [1] : [1, -1])) {
               headRes = flatW(header, rl.capR + rl.capTier, rl.headA, TYPE.head,
-                              mixToBg(_labelsTextColor, 0.85), 1,
+                              headInk, 1,
                               { dy: headDir * headRow * hStep });
               if (headRes) break;
             }
@@ -8200,7 +8379,7 @@
         } else {
           // Tier 1, over the reserved top arc (rl.headA) — radially
           // clear of the tier-0 first caption by construction.
-          arcRun(header, rl.capR + rl.capTier, rl.headA, TYPE.head, mixToBg(_labelsTextColor, 0.85), 1);
+          arcRun(header, rl.capR + rl.capTier, rl.headA, TYPE.head, headInk, 1);
         }
         for (const sh of rl.shelves) {
           // WHAT AN ERA CAPTION IS (John: the "clunky dates … with
@@ -8223,9 +8402,10 @@
           const txt = sh.label + ' · '
             + ((sh.shown < sh.count) ? (sh.shown + ' OF ' + sh.count) : sh.count);
           font('600', TYPE.cap);
-          const res = flat
-            ? flatW(txt, sh.capR, sh.capA, TYPE.cap, mixToBg(gold, 0.85), 1)
-            : arcRun(txt, sh.capR, sh.capA, TYPE.cap, mixToBg(gold, 0.85), 1);
+          const capInk = mixToBg(gold, 0.85 * capLod);
+          const res = (capLod <= 0.05) ? null : (flat
+            ? flatW(txt, sh.capR, sh.capA, TYPE.cap, capInk, 1)
+            : arcRun(txt, sh.capR, sh.capA, TYPE.cap, capInk, 1));
           if (res) {
             tie(rl, sh);
             landed.push([rl, sh, res]);
@@ -8237,17 +8417,21 @@
         // captions, before the spines — and rides the curve at the
         // foot bearing, half a bottom-gap past the arc's end ("the
         // bottom opening space", where no shelf can ever stand).
-        if (rl.overflow > 0 && rl.foot) {
+        // The foot is a canonical count, so it rides the caption rung
+        // it already claims with — never a rung of its own.
+        if (rl.overflow > 0 && rl.foot && capLod > 0.05) {
           font('600', TYPE.cap);
-          if (flat) flatW('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, mixToBg(gold, 0.65), 1);
-          else arcRun('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, mixToBg(gold, 0.65), 1);
+          const footInk = mixToBg(gold, 0.65 * capLod);
+          if (flat) flatW('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, footInk, 1);
+          else arcRun('+' + rl.overflow + ' NOT SHOWN', rl.capR, rl.foot.a, TYPE.cap, footInk, 1);
         }
       }
       // PASS 2 — the spine names follow their captions along the
       // arc, in the reading direction, on the same tier. They yield
       // to every caption and both feet (all passes claim through the
       // same list).
-      for (const [, sh, res] of landed) {
+      const spineLod = lod('spine');
+      for (const [, sh, res] of (spineLod > 0.05 ? landed : [])) {
         if (!sh.spineId) continue;
         const node = nodesById && nodesById.get ? nodesById.get(sh.spineId) : null;
         const full = (node && node.title) || sh.spineId;
@@ -8275,7 +8459,8 @@
           // The 16px minimum is the claim law's own floor.
           const dy = (Math.sin(sh.capA) >= 0 ? 1 : -1)
             * Math.max(16, Math.round(TYPE.name * 1.9));
-          sr = flatW(title, sh.capR, sh.capA, TYPE.name, mixToBg(_labelsTextColor, 0.9), 1, { dy });
+          sr = flatW(title, sh.capR, sh.capA, TYPE.name,
+                     mixToBg(_labelsTextColor, 0.9 * spineLod), 1, { dy });
         } else {
           // The spine inherits its caption's flip: a run straddling the
           // 3/9 o'clock line must not flip halfway through the pair and
@@ -8287,7 +8472,8 @@
           // every other vertical-arc spine); where the arc runs
           // horizontally the x-halves separate any positive gap.
           const gapPx = Math.min(48, 17 / Math.max(0.36, Math.abs(Math.cos(res.aEnd))));
-          sr = arcRun(title, sh.capR, res.aEnd, TYPE.name, mixToBg(_labelsTextColor, 0.9), 1,
+          sr = arcRun(title, sh.capR, res.aEnd, TYPE.name,
+                      mixToBg(_labelsTextColor, 0.9 * spineLod), 1,
                       { edge: true, flip: res.flip, gap: gapPx });
         }
         if (sr && local._bandSpineIds) {
@@ -8318,13 +8504,18 @@
       // gap. This half keeps only the orphan captions.)
 
       // 6 ▸ ORPHAN DOMAIN CAPTIONS — last in line, yield to everything.
+      // ZOOM-INVARIANCE (2026-08-07) — these are captions, so they ride
+      // the caption rung. They already yield to every name; retiring
+      // them as well is what stops the pulled-back house from printing
+      // a domain word over the orphan row it labels.
+      const orphanLod = env.lodA('cap');
       font('500', TYPE.cap);
       ctx.textAlign = 'center';
-      for (const oc of (house.orphanCaptions || [])) {
+      for (const oc of (orphanLod > 0.05 ? (house.orphanCaptions || []) : [])) {
         const s = W2S(oc.x, oc.y);
         const w = ctx.measureText(oc.label).width;
         if (!claim(s.x, s.y, w + 4)) continue;
-        ctx.fillStyle = mixToBg(_labelsTextColor, 0.6);
+        ctx.fillStyle = mixToBg(_labelsTextColor, 0.6 * orphanLod);
         halo(oc.label, s.x, s.y);
       }
       env.restore();

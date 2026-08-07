@@ -733,8 +733,9 @@ console.log('');
   // 42 → 46 on 2026-08-02: +Fan drop, +Fan width (John's asks by
   // name), +Band fit (shrink|cap), +Title settle (the settle-only
   // title law's dial).
-  if (hRows === 47) ok('47 controls — every house dial in the app, in one panel');
-  else fail('the panel renders ' + hRows + ' controls (expected 47 — a dial was dropped or double-placed)');
+  // 48 since 2026-08-07 — "Chrome LOD" joined the words section.
+  if (hRows === 48) ok('48 controls — every house dial in the app, in one panel');
+  else fail('the panel renders ' + hRows + ' controls (expected 48 — a dial was dropped or double-placed)');
   // house_geometry (CASCADE/FAN) is CANONICAL and lives on the crown.
   if (!H.secs.some(s => s.rows.some(r => r.opts && r.opts.includes('cascade'))))
     ok('Cascade | Fan is NOT here — it is canonical and stays on the VIEW panel');
