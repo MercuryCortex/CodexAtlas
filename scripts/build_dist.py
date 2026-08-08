@@ -4,7 +4,7 @@
 #   177 MB basemap, and _legacy.
 # - Splits data.js into <25MB chunks (Pages caps files at 25 MB).
 # - Rewrites index.html: sets the hide-map alpha flag + the split data tags.
-import os, re, json, shutil, sys
+import hashlib, os, re, json, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIST = os.path.join(ROOT, 'dist')
@@ -51,9 +51,32 @@ if flagged:
           f'before shipping. First: {flagged[:5]}')
     sys.exit(1)
 
+# ══ CACHE-BUSTING THE DATA CHUNKS (2026-08-08) ═════════════════════════
+# These four files ARE the vault in production — index.html never loads
+# data.js, it loads these. They shipped with NO `?v=` at all, so their
+# URLs never changed and every returning browser kept serving itself
+# whatever chunks it cached the first time it visited.
+#
+# HOW IT SURFACED: after consolidating eight duplicate nodes, production
+# still reported 29,487 edges and all eight duplicates present, while the
+# freshly built local data had 29,476 and none. The chunks on disk were
+# correct and current — the browser simply never re-fetched them.
+#
+# It is invisible from the author's side, because a first-ever visit and
+# a hard reload both look perfect. Only a RETURNING browser sees the
+# stale vault — which is exactly John, every day.
+#
+# Each tag now carries a sha1 of the bytes it points at, so the URL
+# changes if and only if the content does: a rebuild that changes
+# nothing re-deploys byte-identical HTML, and a rebuild that changes
+# anything cannot be cached over.
+def _bust(path, body):
+    open(path, 'w', encoding='utf-8').write(body)
+    return hashlib.sha1(body.encode('utf-8')).hexdigest()[:10]
+
 nodes = obj.pop('nodes')
 base = 'window.VAULT_DATA=' + json.dumps(obj, separators=(',', ':'), ensure_ascii=False) + ';window.VAULT_DATA.nodes=[];'
-open(os.path.join(DIST, 'data-base.js'), 'w', encoding='utf-8').write(base)
+base_v = _bust(os.path.join(DIST, 'data-base.js'), base)
 CHUNK = 12 * 1024 * 1024
 chunks, cur, cur_b = [], [], 0
 for n in nodes:
@@ -62,11 +85,12 @@ for n in nodes:
         chunks.append(cur); cur, cur_b = [], 0
     cur.append(n); cur_b += len(s) + 1
 if cur: chunks.append(cur)
-data_tags = ['<script src="data-base.js" onerror="document.getElementById(\'missing-data\').style.display=\'flex\'"></script>']
+data_tags = [f'<script src="data-base.js?v={base_v}" onerror="document.getElementById(\'missing-data\').style.display=\'flex\'"></script>']
 for i, ch in enumerate(chunks, 1):
     body = 'window.VAULT_DATA.nodes.push(' + ','.join(json.dumps(n, separators=(',', ':'), ensure_ascii=False) for n in ch) + ');'
-    open(os.path.join(DIST, f'data-nodes-{i}.js'), 'w', encoding='utf-8').write(body)
-    data_tags.append(f'<script src="data-nodes-{i}.js"></script>')
+    v = _bust(os.path.join(DIST, f'data-nodes-{i}.js'), body)
+    data_tags.append(f'<script src="data-nodes-{i}.js?v={v}"></script>')
+print(f'   data chunks: {len(chunks) + 1} files, cache-busted (base v={base_v})')
 
 # ── rewrite index.html ──────────────────────────────────────────────────
 html = open(rel('index.html'), 'r', encoding='utf-8').read()
