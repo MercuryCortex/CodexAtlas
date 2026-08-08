@@ -342,7 +342,7 @@ The śruti/smṛti distinction is a **claim about authority**, not a description
 
 ## Vault coverage note
 
-This node is the vault's **most in-linked node** (≈175 incoming links). Its sub-tradition nodes are unevenly developed: [[tradition-vedic-hinduism]], [[tradition-vaishnavism]] and [[tradition-advaita-vedanta]] carry real content, while [[tradition-shaivism]], [[tradition-shaktism]] and [[tradition-ramanandi]] are still stubs — a notable gap given that Śaivism was, on Sanderson's account, the dominant religious formation of early medieval South and Southeast Asia. Also note two near-duplicate node pairs in the person lens (`shankara`/`adi-shankara`, `chaitanya-mahaprabhu`/`chaitanya`, `basava`/`basavanna`, `swami-vivekananda`/`vivekananda`); this node links the fuller member of each pair.
+This node is the vault's **most in-linked node** (≈175 incoming links). Its sub-tradition nodes are unevenly developed: [[tradition-vedic-hinduism]], [[tradition-vaishnavism]] and [[tradition-advaita-vedanta]] carry real content, while [[tradition-shaivism]], [[tradition-shaktism]] and [[tradition-ramanandi]] are still stubs — a notable gap given that Śaivism was, on Sanderson's account, the dominant religious formation of early medieval South and Southeast Asia. (The four near-duplicate person pairs this node originally flagged — `shankara`/`adi-shankara`, `chaitanya-mahaprabhu`/`chaitanya`, `basava`/`basavanna`, `swami-vivekananda`/`vivekananda` — were consolidated on 2026-08-08, along with four more outside this tradition. Each survivor absorbed its twin's links and content; see `00_meta/canonical-slugs.md` for the alias record.)
 
 ## Refs
 

@@ -2863,7 +2863,8 @@ canonical-slug
 - `bartholomew-apostle`
 - `baruch-spinoza`
 - `basava`
-- `basavanna`
+  also seen as: basavanna
+  notes: merged 2026-08-08 — the duplicate `basavanna` node was merged into `basava` and deleted. Its original vault-authored Basava/Eckhart structural parallel and the Ramanujan "body as temple" vacana were preserved in the survivor.
 - `basil-of-caesarea`
 - `basilides`
 - `battle-of-talas`
@@ -2923,6 +2924,8 @@ canonical-slug
 - `chaim-vital`
 - `chaitanya`
 - `chaitanya-mahaprabhu`
+  also seen as: chaitanya
+  notes: merged 2026-08-08 — the duplicate `chaitanya` node was merged into `chaitanya-mahaprabhu` and deleted; its inbound wikilinks were repointed here.
 - `chang-shuhong`
 - `char-dham`
 - `charlemagne`
@@ -3531,6 +3534,8 @@ canonical-slug
 - `muhammad-ibn-abdullah`
 - `muhammad-iqbal`
 - `muhammad-prophet`
+  also seen as: muhammad-ibn-abdullah
+  notes: merged 2026-08-08 — the duplicate `muhammad-ibn-abdullah` node was merged into `muhammad-prophet` and deleted; its inbound wikilinks were repointed here.
 - `mulla-omar`
 - `mulla-sadra`
 - `murad-iv`
@@ -3686,6 +3691,8 @@ canonical-slug
 - `quadratus-the-apologist`
 - `quetzalcoatl-historical`
 - `rabbi-akiva`
+  also seen as: akiva-ben-yosef
+  notes: merged 2026-08-08 — the duplicate `akiva-ben-yosef` node was merged into `rabbi-akiva` and deleted; its inbound wikilinks were repointed here.
 - `rabbi-ishmael-ben-elisha`
 - `rabbi-judah-loew`
 - `rabbi-nehunya-ben-ha-qanah`
@@ -3766,6 +3773,8 @@ canonical-slug
 - `shamanism-altered-states`
 - `shammai`
 - `shankara`
+  also seen as: adi-shankara
+  notes: merged 2026-08-08 — the duplicate `adi-shankara` node was merged into `shankara` and deleted; its inbound wikilinks were repointed here.
 - `shariputra`
 - `sheikh-farid`
 - `shenhui`
@@ -3817,6 +3826,8 @@ canonical-slug
 - `suryavarman-ii`
 - `susan-niles`
 - `swami-vivekananda`
+  also seen as: vivekananda
+  notes: merged 2026-08-08 — the duplicate `vivekananda` node was merged into `swami-vivekananda` and deleted; its inbound wikilinks were repointed here.
 - `sylvanus-morley`
 - `symeon-the-new-theologian`
 - `t-g-h-strehlow`
@@ -5663,6 +5674,8 @@ canonical-slug
 - `tradition-scottish-rite-freemasonry`
 - `tradition-sebastianism`
 - `tradition-second-temple-judaism`
+  also seen as: tradition-judaism-second-temple
+  notes: merged 2026-08-08 — the duplicate `tradition-judaism-second-temple` node was merged into `tradition-second-temple-judaism` and deleted; its inbound wikilinks were repointed here.
 - `tradition-secular-turkish-state`
 - `tradition-seon-buddhism`
 - `tradition-sethian-gnosticism`
@@ -5689,6 +5702,8 @@ canonical-slug
 - `tradition-sufism`
 - `tradition-sumerian-mesopotamian`
 - `tradition-sunni-islam`
+  also seen as: tradition-islam-sunni
+  notes: merged 2026-08-08 — the duplicate `tradition-islam-sunni` node was merged into `tradition-sunni-islam` and deleted; its inbound wikilinks were repointed here.
 - `tradition-syriac-christianity`
 - `tradition-syriac-orthodox`
 - `tradition-tang-buddhism`

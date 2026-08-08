@@ -55,7 +55,7 @@ The most significant historical transmission from Lal Ded's work is to **Shaikh 
 Lal Ded is the hinge figure between:
 - **Kashmir Shaivism** (Abhinavagupta's tradition, 200 years prior) — she inherits and popularizes the Pratyabhijñā recognition structure
 - **Kashmiri Sufism** (Nund Rishi / Rishi Order) — her vocabulary and recognition doctrine directly shaped the founding Sufi synthesis in Kashmir
-- **Bhakti movement** — her vernacular, caste-transcending approach parallels Basavanna in Karnataka (~1131 CE) and Kabir in North India (~15th c.)
+- **Bhakti movement** — her vernacular, caste-transcending approach parallels [[basava|Basavanna]] in Karnataka (~1131 CE) and [[kabir]] in North India (~15th c.)
 
 ## Refs
 1. Grierson & Barnett (1920). *Lal Ded*. Royal Asiatic Society.
