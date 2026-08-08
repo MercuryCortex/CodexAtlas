@@ -12,7 +12,7 @@ historicity: "documented"
 texts-authored: ["*Kitāb al-Hind* (Book of India, ~1017–1030) — the most comprehensive Arabic account of Indian philosophy, religion, mathematics, and astronomy produced before the modern era", "*Taḥqīq mā li-l-Hind* (Verification of What Pertains to India)", "*Qānūn al-Masʿūdī* (astronomical compendium)", "*Kitāb al-Āthār al-Bāqiyah* (Chronology of Ancient Nations)", "***Kitāb al-Tafhīm li-awāʾil ṣināʿat al-tanjīm*** (*Book of Instruction in the Elements of the Art of Astrology*, 1029) — parallel Arabic and Persian versions, ~530 questions and answers running from geometry and arithmetic through astronomy, geography and the astrolabe to the full astrological apparatus; the most complete single-volume statement of the medieval technical system"]
 astrology-apparatus: ["[[astrology-horoscope-twelve-places]]", "[[astrology-planetary-dignities]]", "[[astrology-aspect-doctrine]]", "[[astrology-lots-and-parts]] (the *Tafhīm* tabulates roughly a hundred lots — the high-water mark of their proliferation)", "[[astrology-great-conjunctions-mundane]]"]
 key-figures-engaged: ["[[varahamihira]] (read and cited directly in the *Kitāb al-Hind*)", "[[abu-mashar-al-balkhi]]", "[[mashallah-ibn-athari]]", "[[ptolemy-astronomer]]"]
-status: "stub"
+status: "metadata"
 cross-tradition-edges:
   - target: astronomy-brahmasphutasiddhanta
     type: attested-in
@@ -67,6 +67,19 @@ Al-Biruni is the critical figure in the hypothesis that **Kashmir Shaivism's con
 - Was read by subsequent Islamic philosophers working in the Persian intellectual world
 
 The transmission hypothesis runs: al-Biruni's *Kitāb al-Hind* → Persian philosophical readers including possibly Suhrawardi (1154–1191) → Suhrawardi's Illuminationist philosophy → Ibn Arabi's circle. No scholar has confirmed a direct citation chain, but al-Biruni is the most plausible Arabic conduit for Shaiva non-dual metaphysics into Islamic philosophy.
+
+## The astrological half — the *Kitāb al-Tafhīm* (1029)
+
+Al-Bīrūnī's place in the astrological transmission chain is usually left out of accounts that treat him as a mathematician and comparativist, and it should not be. The ***Kitāb al-Tafhīm li-awāʾil ṣināʿat al-tanjīm*** — "Book of Instruction in the Elements of the Art of Astrology", written in 1029 in parallel Arabic and Persian versions — is **the most complete single-volume statement of the medieval astrological system that survives**.
+
+Its structure is an argument in itself. Some 530 questions and answers proceed from geometry and arithmetic, through astronomy, the calendar, geography and the use of the [[technology-astrolabe-instrument|astrolabe]], and only then to astrology proper: the signs, the [[astrology-planetary-dignities|dignities]], the [[astrology-aspect-doctrine|aspects]], the [[astrology-horoscope-twelve-places|twelve places]], the [[astrology-lots-and-parts|lots]] (of which he tabulates roughly a hundred — the high-water mark of their proliferation), and the mundane technique of the [[astrology-great-conjunctions-mundane|great conjunctions]]. Astrology is presented as the **capstone of the mathematical sciences**, unreachable without everything beneath it. That ordering is the clearest statement anyone in the tradition made of what astrology claimed to be.
+
+He also closes a loop that runs the length of the vault's astrology spine. Al-Bīrūnī read Sanskrit and read [[varahamihira|Varāhamihira]] directly, reporting Indian astrology in the *Kitāb al-Hind* — so Greek horoscopic material, absorbed into Sanskrit in late antiquity and systematized in sixth-century Ujjain, is reported back into Arabic four centuries later by a scholar who could compare the Indian, Greek and Arabic versions of the same system side by side. He is, on this axis as on others, both a participant in the transmission and its earliest serious historian.
+
+## Disputes
+
+- **Did he believe it?** Al-Bīrūnī wrote the definitive manual of an art about which he expressed reservations, and was openly contemptuous of many practising astrologers. Readings range from "a working astrologer with a scholar's irritation at incompetence" to "a sceptic writing a systematic exposition for a court patron and a livelihood". The tension is real and documented; its resolution is not settled, and the vault records it as an open question rather than picking the flattering answer. It is, in any case, a useful reminder that "wrote the textbook" and "endorsed the claims" are separable — the same separation the vault's own posture requires.
+- **What is claimed here.** That al-Bīrūnī wrote the *Tafhīm*, that it is the fullest surviving statement of the medieval apparatus, and that he read and reported Indian astrology at first hand, is Tier-1 documented history. The art's predictive claims are reported as the tradition's, not as findings.
 
 ## Cross-tradition position
 - **← Kashmir Shaivism / Vedanta**: first Arabic transmitter

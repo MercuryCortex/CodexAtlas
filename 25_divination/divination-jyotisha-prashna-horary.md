@@ -15,13 +15,20 @@ methods:
   - "Ārūḍha analysis: the rising sign + houses' lords' positions encode the answer; specific houses signify different question-types (7th = marriage, 10th = career, 4th = real-estate, 12th = travel/loss)"
   - "Tājika-Niḥkañju method (Perso-Arabic-derived 14th-15th c. innovation): includes the Western horary doctrines of perfection, prohibition, translation of light, collection of light — adapted to jyotiṣa nakṣatra framework"
   - "Bhṛgu-praśna: the Kerala-specialized prashna form involving questions referred to ancestral Bhṛgu lineage diviners"
+astrology-apparatus:
+  - "[[astrology-horoscope-twelve-places]] — the Hellenistic chart apparatus praśna consults; the lens boundary is that THIS node is the way of asking a question, that node is the sky-model being asked"
+  - "[[astrology-planetary-dignities]] — the house-lord and dignity judgement praśna runs on"
+  - "[[astrology-aspect-doctrine]] — the imported Greek aspect scheme, alongside the indigenous dṛṣṭi"
+  - "[[astronomy-indian-nakshatras]] — the indigenous lunar-mansion layer"
 key-documents:
-  - "Bṛhat Jātaka of Varāhamihira (~+550, Ujjain) — earliest comprehensive jyotiṣa treatise including praśna section"
+  - "[[phase-4-111-varahamihira-brihajjataka]] — the *Bṛhajjātaka* of [[varahamihira]] (~+550, Ujjain); earliest comprehensive jyotiṣa treatise including praśna material"
+  - "[[phase-3-041-yavanajataka]] — the Greek-derived horoscopic frame praśna inherits"
   - "Praśna Mārga (Anonymous, ~17th c. Kerala) — the canonical Kerala praśna handbook; 32 chapters covering questions of every type"
   - "Praśna Tantra (Nilakaṇṭha Daivajña, 16th-c. Kerala) — earlier Kerala praśna source feeding into the Praśna Mārga"
   - "Tājika Nilakaṇṭhī (Nilakaṇṭha Daivajña, ~1586) — Perso-Arabic-derived horary system in Sanskrit, incorporating Abū Maʿshar + al-Kindi horary doctrines"
 key-figures:
-  - "Varāhamihira (~505-587) — founding systematic-jyotiṣa figure"
+  - "[[varahamihira]] (~505-587) — founding systematic-jyotiṣa figure"
+  - "[[abu-mashar-al-balkhi]] and [[al-kindi]] — the Perso-Arabic horary doctrine the 14th–16th-c. Tājika school imports back into jyotiṣa, itself descending from [[dorotheus-of-sidon]] via [[umar-ibn-al-farrukhan-al-tabari]]'s Arabic translation"
   - "Nilakaṇṭha Daivajña (~1500-1570, Kāśī) — Tājika translator + synthesizer of Perso-Arabic and Sanskrit horary"
   - "The anonymous Praśna Mārga compiler (~17th c. Kerala) — definitive Kerala synthesis"
   - "Modern Kerala practitioners: K.N. Rao (1931-) — author of multiple modern prashna handbooks; the Bhṛgu-praśna lineage diviners of Kerala"
