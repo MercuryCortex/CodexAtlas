@@ -94,6 +94,18 @@
     { value: 'attire',              label: 'Attire',              glyph: '⌘', nodeType: 'attire' },
     { value: 'exchange-networks',   label: 'Exchange networks',   glyph: '⇄', nodeType: 'exchange-network' },
     { value: 'technology',          label: 'Technology',          glyph: '⚙', nodeType: 'technology' },
+    // ── 30_astrology PROMOTED 2026-08-08 ────────────────────────────
+    // John: "cant see astrology as a lens on the site?" — because a
+    // lens is registered in TWO places and only one of them is the
+    // build. `build_data.py` NODE_DIRS makes the nodes EXIST; this list
+    // is what makes them REACHABLE. Registering the folder without this
+    // ships a lens nobody can open.
+    // ⚠️ IF YOU ADD A LENS, ADD IT HERE IN THE SAME COMMIT.
+    // Saturn for the glyph — classically astrological and distinct from
+    // astronomy's ✷, calendars' ☉ and divination's ☯, which are its
+    // three nearest neighbours in this list and the three it is most
+    // often confused with.
+    { value: 'astrology',           label: 'Astrology',           glyph: '♄', nodeType: 'astrology' },
     // Scriptures (labeled "Codex") was MOVED to position 2 (right
     // after Deities) on 2026-05-28. See entry above. Its enumeration
     // audit is at AUDIT/2026-05-28-scripture-ids-enumeration.md and
