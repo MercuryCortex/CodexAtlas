@@ -828,6 +828,13 @@ def collect_node_edges(nodes_by_id):
             ("key-traditions",     "co-tradition"),       # → 07_traditions
             ("key-themes",         "has-theme"),          # → 06_themes
             ("related-systems",    "parallel"),           # sibling systems
+            # A FIFTH one, found the same day by a fifth agent (2026-08-08).
+            # 117 nodes — including `full` ones like `non-duality` and
+            # `providence-and-fate` that carry substantial wiring in it.
+            # `related` (Association) rather than `has-theme`: this field
+            # links a concept to ADJACENT concepts, which is ambient
+            # context, not "this node has that theme".
+            ("related-themes",     "related"),            # → adjacent concepts
             # NOT registered: `parallel-system` (5 nodes) holds a BARE
             # SLUG, not a wikilink — `wikilinks()` finds nothing in it,
             # and loosening this loop to bare slugs would start matching
