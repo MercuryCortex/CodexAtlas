@@ -835,6 +835,17 @@ def collect_node_edges(nodes_by_id):
             # links a concept to ADJACENT concepts, which is ambient
             # context, not "this node has that theme".
             ("related-themes",     "related"),            # → adjacent concepts
+            # ── AND THE LAST FIVE (2026-08-08) ──────────────────────
+            # Found when `finisterre-end-of-world` turned out to be
+            # emitting ZERO edges — EVERY field it used was unregistered.
+            # That is what finally made this a structural problem rather
+            # than five separate oversights, so all of them go in
+            # together and the gate below stops the next one.
+            ("traditions-where-attested", "co-tradition"),   # 70 nodes
+            ("deities-associated",        "tradition-deity"),# 28 nodes
+            ("documents-attested",        "attested-in"),    # 30 nodes
+            ("parent-theme",              "related"),        # 32 nodes
+            ("child-themes",              "related"),        # 29 nodes
             # NOT registered: `parallel-system` (5 nodes) holds a BARE
             # SLUG, not a wikilink — `wikilinks()` finds nothing in it,
             # and loosening this loop to bare slugs would start matching
@@ -913,7 +924,98 @@ def collect_node_edges(nodes_by_id):
                 if notes:
                     edge_obj["edge_notes"] = notes
                 edges.append(edge_obj)
+    report_unregistered_wikilink_fields(nodes_by_id)
     return edges
+
+
+# ══ THE LOOP-BREAKER (2026-08-08) ══════════════════════════════════════
+# On one day, FIVE separate ingestion agents independently tripped over
+# the same defect: a YAML field full of hand-written [[wikilinks]] that
+# `collect_node_edges` never reads, so every connection in it is authored
+# by a human and silently dropped. Each agent assumed it was a local
+# quirk of the node it happened to be writing. It was ten fields and 444
+# nodes.
+#
+# Registering those ten fixed the instances. This function fixes the
+# CLASS — per the loop-detection protocol, after the third round of
+# "+N more of the same kind of gap" you stop patching and remove the
+# reason it keeps happening.
+#
+# The reason it keeps happening: a content author can invent a plausible
+# field name (`traditions-where-attested`, `deities-associated`) and
+# NOTHING ANYWHERE COMPLAINS. The node looks right, the YAML lints, the
+# build succeeds, and the edges simply never exist. There is no failure
+# to notice — which is precisely why it survived for months.
+#
+# So the build now says so out loud, every time.
+def report_unregistered_wikilink_fields(nodes_by_id):
+    """Warn about YAML fields carrying wikilinks that emit NO edges.
+
+    Advisory, not fatal: a new field is a legitimate thing to invent,
+    and failing the build on one would block the author who is doing it
+    right. But it can no longer happen SILENTLY, which was the whole
+    problem.
+    """
+    # Harvest field names ONLY from the (field, edge-type) tuples in the
+    # three registries, so the allow-list cannot drift from the code that
+    # actually reads them.
+    #
+    # ⚠️ AN EARLIER VERSION ALSO HARVESTED EVERY `fm.get("…")` IN THIS
+    # FILE and consequently reported nothing at all — build_data.py reads
+    # dozens of non-edge keys that way, so effectively every field looked
+    # registered. A check that cannot fail is worse than no check: it
+    # tells you the problem is solved. Keep this narrow.
+    registered = set()
+    try:
+        src = open(__file__, encoding="utf-8").read()
+        for m in re.finditer(r'\(\s*"([a-z0-9\-]+)"\s*,\s*"[a-z0-9\-]+"\s*\)', src):
+            registered.add(m.group(1))
+    except Exception:
+        return                        # never break a build over a warning
+
+    # ⚠️ ONLY EDGE-SHAPED FIELDS. A second false start reported
+    # `frontmatter` (4,033 nodes), `tradition`, `role` and
+    # `role_description` — prose and raw blocks that merely CONTAIN a
+    # wikilink. That is noise, and a warning that cries wolf is a
+    # warning nobody reads. An edge field is a LIST of wikilinks, or a
+    # scalar that is nothing but a wikilink; prose is neither.
+    def edge_shaped(val):
+        if isinstance(val, list):
+            items = [str(v).strip() for v in val if str(v).strip()]
+            return bool(items) and all(
+                i.startswith("[[") and i.endswith("]]") for i in items)
+        s = str(val).strip()
+        return s.startswith("[[") and s.endswith("]]") and "\n" not in s
+
+    # The one field that is edge-shaped and SHOULD NOT be an edge.
+    # `tradition:` is MEMBERSHIP, and membership is singular — it sets
+    # the node's home family and its wedge placement, and is consumed by
+    # tradition_family()/family colour rather than by the edge builder.
+    # Emitting it as an edge would be the exact membership-vs-wire
+    # conflation MEMBERSHIP-AND-WIRES.md exists to forbid.
+    # Documented rather than silently skipped, so the next reader knows
+    # it was considered and rejected, not missed.
+    KNOWN_NON_EDGE = {"tradition"}
+
+    counts = {}
+    for node_id, fm in nodes_by_id.items():
+        if not isinstance(fm, dict):
+            continue
+        for key, val in fm.items():
+            if key in registered or key in KNOWN_NON_EDGE:
+                continue
+            if "_" in key:                       # baked keys use _, YAML uses -
+                continue
+            if not edge_shaped(val):
+                continue
+            counts[key] = counts.get(key, 0) + 1
+    if not counts:
+        return
+    print("\n⚠️  UNREGISTERED WIKILINK FIELDS — these carry [[links]] that")
+    print("    become NO EDGES. Either register them in collect_node_edges")
+    print("    or move the content to a field that is registered.")
+    for key, n in sorted(counts.items(), key=lambda kv: -kv[1]):
+        print(f"      {key:<34} {n:>4} nodes")
 
 
 # Body-table row matcher. Three cells. Cell-1 = `[[slug]]` (with optional
