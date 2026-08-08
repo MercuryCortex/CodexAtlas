@@ -798,6 +798,40 @@ def collect_node_edges(nodes_by_id):
         SCALAR_WIKILINK_EDGE_FIELDS = [
             ("scripts-used",      "written-in-script"),   # 18_languages → 11_alphabets
             ("texts-in-language", "attests-text"),        # 18_languages → 02_documents
+            # ── FOUR INERT FIELDS REGISTERED 2026-08-08 ──────────────
+            # Authors have been writing cross-tradition reach into these
+            # for months and NONE of it reached the graph: the fields
+            # were never registered, so every wikilink in them was read
+            # by a human and dropped by the build. Measured before the
+            # fix — 327 nodes carrying edges that did not exist:
+            #
+            #   traditions-related  161 nodes      key-themes    66
+            #   key-traditions       77 nodes      related-systems 23
+            #
+            # This is the same defect class twice over: two separate
+            # ingestion agents hit it independently on 2026-08-08 (one
+            # on `key-themes` over 58 tradition nodes, one on
+            # `related-systems` in the divination lens) and each assumed
+            # it was a local quirk. It was vault-wide.
+            #
+            # ⚠️ TYPES ARE CHOSEN FROM THE REGISTERED VOCABULARY ONLY.
+            # src/js/edge-buckets.js does `EDGE_BUCKET[type] ||
+            # 'association'`, so an unregistered type does not fail
+            # loudly — it silently paints as ambient grey. Inventing
+            # `related-system` here would have looked like it worked.
+            #   co-tradition → Association   has-theme → Association
+            #   parallel     → Parallel
+            # `has-theme` deliberately matches what the already-wired
+            # `themes` field emits, so `key-themes` and `themes` are the
+            # same edge and cannot drift apart.
+            ("traditions-related", "co-tradition"),       # → 07_traditions
+            ("key-traditions",     "co-tradition"),       # → 07_traditions
+            ("key-themes",         "has-theme"),          # → 06_themes
+            ("related-systems",    "parallel"),           # sibling systems
+            # NOT registered: `parallel-system` (5 nodes) holds a BARE
+            # SLUG, not a wikilink — `wikilinks()` finds nothing in it,
+            # and loosening this loop to bare slugs would start matching
+            # prose. It needs its own explicit handling, not a shortcut.
         ]
         for sw_field, sw_etype in SCALAR_WIKILINK_EDGE_FIELDS:
             sw_raw = fm.get(sw_field)
