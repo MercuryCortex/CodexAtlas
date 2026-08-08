@@ -317,7 +317,7 @@
       // risk filter, both must pass.
       const sideActiveTiers   = local._activeTiers;
       const sideShowPolitical = !!local._showPoliticalRisk;
-      const sideTierFilterOn  = sideActiveTiers && sideActiveTiers.size < 5;
+      const sideTierFilterOn  = sideActiveTiers && sideActiveTiers.size < 6;
       if (vaultEdges) {
         const EB = window.EDGE_BUCKET || {};
         for (let i = 0; i < vaultEdges.length; i++) {

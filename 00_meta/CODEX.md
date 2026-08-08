@@ -1,8 +1,9 @@
 # CODEX — Investigative Charter of the Codex Atlas Project
 
-*Version 1.3 — locked 2026-05-23. Living document; revisions require a dated AUDIT/ doc.*
+*Version 1.4 — locked 2026-08-08. Living document; revisions require a dated AUDIT/ doc.*
 
 *Changelog:*
+*- v1.4 (2026-08-08) — **T0 — ORIGIN tier** (§IV.0). The primary text in its own voice, NOT a weaker T1 and not on the T1→T5 scale at all: T0 reports what a source SAYS, T1–T5 grade what scholarship makes of it. When a T0 and a T1 disagree on the same point BOTH stay on the panel — the disagreement is the finding, not an error to resolve toward the academy. Where the graph can only draw one value (a timeline coordinate), pick one system, apply it consistently, and carry the alternative in `date-note:`/`## Disputes`. Rationale: `AUDIT/2026-08-08-t0-origin-tier.md`.*
 *- v1.3 (2026-05-23) — **SFW / MAGNUM doctrine** (§IX). The vault has TWO deployment forms: MAGNUM (full vault, local-only by default, eventually auth-gated for trusted subscribers / institutions / academies) and SFW (full vault MINUS every political-risk-flagged node and edge, no orphans, no clues). Default upload posture = SFW. MAGNUM upload requires explicit human audit of `00_meta/HIGH-ALERT-INDEX.md`. Agents NEVER self-censor at gather-time — they catalogue everything, label heavily, and the SFW filter at deploy-time is the safety gate. The 99% of humans benefit from full investigation; the gate exists for the 1% bad-actor / low-context pipeline. Added `scripts/build_sfw.py` as the SFW builder.*
 *- v1.2 (2026-05-23) — **Tier and political-risk-flag are ORTHOGONAL axes**, not the same scale. T5 measures intellectual mainstream-acceptance; political-risk-flag measures real-world harm-wiring. Codified the **⛔ BLACK ALERT** visual escalation: any node/edge with `political-risk-flag: true` gets escalated chrome regardless of tier, distinguishing politically-dangerous content (racial-mysticism, ethno-nationalist occultism) from intellectually-contested content (psychedelic mysticism, parapsychology). Added the HIGH-ALERT-INDEX.md generator for fast human + agent triage.*
 *- v1.1 (2026-05-23) — added T5 disclaimer-required tier (Icke / Evola / Theosophy-as-Nazi-substrate cases) + investigation-as-prompt rule (fringe-author claims open investigation toward legitimate-source parallels)*
@@ -77,6 +78,36 @@ Each type maps to a Wikidata property where applicable (P138, P144, P460, P461, 
 ## IV. The 4-Tier Source System
 
 Every node and edge carries a source-tier label. Four levels:
+
+### T0 — Origin: what the source itself says
+
+**Added v1.4, 2026-08-08, on John's direction:** *"having different views or frictions ARE GOOD and we should always keep them IF THEY'RE strong enough … ACADEMIC doesn't mean right by default … it's ok to have a T0 origin and a T1 academic simultaneously on the panel if that's something being contested."*
+
+The primary text in its own voice — scripture, inscription, papyrus, ostracon, a tradition's own account of itself.
+
+**⚠️ T0 IS NOT A WEAKER T1. It is not on the T1→T5 scale at all.**
+T1→T5 grades ONE thing: how strongly current scholarship supports a claim. T0 grades nothing — it reports. **T0 tells you what the source SAYS; T1–T5 tell you what scholarship makes of it.** It sits at 0 because it comes *before* interpretation, not *below* it.
+
+**Examples**: *Enūma Anu Enlil* on celestial omens · *Bṛhat Saṃhitā* 2.15 on the Yavanas · the Ferrara ledger of 1442 · Varāhamihira conceding the Greek debt from inside his own tradition · a Śvetāmbara chronology giving Mahāvīra's dates.
+
+### When T0 and T1 disagree, KEEP BOTH — the disagreement is the finding
+
+This is the rule the tier exists for, and it is the charter's own posture (§I: investigation, not advocacy) applied to the source stack.
+
+A tradition's account and the academic account routinely diverge. **That divergence is not an error to clean up, and it is not resolved by deferring to the academy.** Codex Atlas is an investigative instrument — it *contests*, it does not only search. Academic consensus is the best-supported reading available; it is not true by definition, and it revises.
+
+So on a contested point the panel carries **both rows**, at equal visual weight:
+
+```
+T0  Śvetāmbara tradition: Mahāvīra 599–527 BCE (epoch of the Vīra Nirvāṇa era)
+T1  Academic chronology: c. 497–425 BCE, following the redating of the Buddha
+```
+
+**Neither row is deleted.** A vault that silently dropped the T0 row would be telling the reader the question is closed, which is a claim in itself — and usually a false one.
+
+**Where a single value must still be chosen** (a timeline coordinate, a wedge placement — the graph cannot draw two positions at once), pick one system, apply it *consistently across the whole graph*, and carry the alternative in `date-note:` / `## Disputes` with its source. **Consistency in the machinery, plurality in the record.** The 2026-08-08 Mahāvīra fix is the worked example: the timeline uses the academic dates because the Buddha node does, and the traditional dates are stated in full on the node.
+
+**When NOT to keep both:** T0 is for a source whose claim is *live* — held by a tradition, or genuinely contested in the literature. It is not a licence to preserve every error. A primary text that is simply mistaken on a matter of fact (a chronicle miscounting regnal years) is a T0 *about what that chronicle says*, and the correction is stated plainly beside it. John's own bar: keep the friction **"IF THEY'RE strong enough"**.
 
 ### T1 — Mainstream peer-reviewed
 

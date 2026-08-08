@@ -6260,7 +6260,7 @@
       // keeps claiming the pre-filter numbers until the next pan.
       // Cheap: ≤5 tiers, string compare.
       const _lat = local._activeTiers;
-      const _lfk = (_lat && _lat.size < 5 ? Array.from(_lat).sort().join('') : 'all')
+      const _lfk = (_lat && _lat.size < 6 ? Array.from(_lat).sort().join('') : 'all')
         + (local._showPoliticalRisk ? '|P' : '');
       const _ldpr = window.devicePixelRatio || 1;
       if (!local._wakeAlive
@@ -7609,7 +7609,7 @@
       if (!m || !m.edges || !m.nodesById) return null;
       const activeTiers = local._activeTiers;
       const showPolitical = !!local._showPoliticalRisk;
-      const tierFilterOn = !!(activeTiers && activeTiers.size < 5);
+      const tierFilterOn = !!(activeTiers && activeTiers.size < 6);
       const key = (tierFilterOn ? Array.from(activeTiers).sort().join('') : 'all')
         + (showPolitical ? '|P' : '');
       const cache = local._housePortCounts;
@@ -9612,7 +9612,7 @@
     function applyEdgeHiddenFilters(targets) {
       const activeTiers   = local._activeTiers;
       const showPolitical = !!local._showPoliticalRisk;
-      const tierFilterOn  = activeTiers && activeTiers.size < 5;
+      const tierFilterOn  = activeTiers && activeTiers.size < 6;
       if (!tierFilterOn && showPolitical) return;
       const edges = local.mode.edges;
       const n = Math.min(edges.length, targets.length);

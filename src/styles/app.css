@@ -1612,6 +1612,21 @@ body.fv-hide-wires         .forge-canvas { /* the actual hide is renderer-side: 
   line-height: 1;
   flex: 0 0 auto;
 }
+/* T0 = ORIGIN — what the source itself says (added 2026-08-08).
+   ⚠️ IT IS NOT "BELOW T1". T1→T5 is one scale, running from consensus
+   down to rejected, and it is coloured as a gradient from quiet grey
+   into red. T0 is NOT on that scale at all — it is a different KIND of
+   claim, the primary text in its own voice, before anyone interprets
+   it. So it deliberately steps OUT of the grey→red ramp and takes the
+   vault's own gold: the reader must not read T0 as "even weaker than
+   T4". Its whole purpose is to sit BESIDE a T1 on a contested point,
+   at equal visual weight, so the disagreement is legible as a finding
+   rather than resolved away in favour of the academy. */
+.vs-tier-pill--t0 {
+  color: var(--gold, #d4a55a);
+  border-color: rgba(212,165,90,0.45);
+  background: rgba(212,165,90,0.09);
+}
 /* T1 = mainstream silent default — keep the pill VISIBLE so the
    disclaimer system is legible on every row, but quiet (grey-ish)
    so it doesn't visually shout on the 99% of edges that ARE T1. */

@@ -69,7 +69,19 @@ current scholarship**, per CODEX §IV. ONTOLOGY §5's table is retired.
    disclaimer chrome and the political-risk flag. ONTOLOGY's tiers drive
    nothing. Only one of the two is load-bearing.
 
-## 4. Primary sources are a KIND, not a TIER
+## 4. Primary sources are a KIND — and they carry T0
+
+> **AMENDED the same day.** This section originally read "a KIND, not a
+> TIER", and stopped there. John pushed back: if only scholarship
+> carries a tier, only scholarship is visibly sourced, and the atlas
+> silently sides with the academy on every contested point. He is right
+> — that was a substantive editorial position adopted by omission.
+> **`T0` now exists** (CODEX v1.4 §IV.0): the origin, what the source
+> itself says, off the T1→T5 scale entirely, and shown BESIDE a
+> conflicting T1 rather than instead of it. Rationale:
+> `AUDIT/2026-08-08-t0-origin-tier.md`. The rest of this section stands
+> — the point was always that primaries sit on a different axis, and T0
+> is what that axis is called.
 
 Retiring ONTOLOGY's table does **not** demote primary sources — it stops
 mis-filing them on the wrong axis. This vault already runs orthogonal

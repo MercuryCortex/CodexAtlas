@@ -15,7 +15,7 @@
      tester IP leaks to Google on load (Anonymity Law). -->
 <link rel="stylesheet" href="_assets/vendor/fonts/fonts.css?v=20260802-type1" />
 <link rel="stylesheet" href="_assets/vendor/maplibre/maplibre-gl.css?v=5.24.0" />
-<link rel="stylesheet" href="src/styles/app.css?v=20260807-panel" />
+<link rel="stylesheet" href="src/styles/app.css?v=20260808-t0" />
 <!-- ?diag=1 — BOOT ERROR RECORDER (2026-07-29). Must be the FIRST script on
      the page: an automated Safari/prod pass connects AFTER load, so without
      this there is no honest way to say "no boot errors" on a browser we
@@ -244,8 +244,8 @@
      forge.js so window.AtlasViewportFilter exists when
      rebuildForMode tries to cull the active set. -->
 <script src="src/js/engine/graph/viewport-filter.js?v=20260527T0625-reverted-blinking"></script>
-<script src="src/js/forge/_bundle.js?v=20260807-panel"></script>
-<script src="src/js/views/forge.js?v=20260807-pinch"></script>
+<script src="src/js/forge/_bundle.js?v=20260808-t0"></script>
+<script src="src/js/views/forge.js?v=20260808-t0"></script>
 <script src="src/js/views/boards.js?v=20260716-sealed"></script>
 <!-- Boards V2 Investigation Library data — 32 MASSIVE WINS + 11
      TRANSMISSIONS generated from MASSIVE-WINS-INDEX.md. Loads BEFORE
@@ -285,7 +285,7 @@
 <!-- CANONICAL NODE INSPECTOR (2026-06-10) — the V2 renderer behind
      window.selectNode for every non-Forge surface; replaces the deleted
      V01 renderDetail(). Loads BEFORE app.js (boot-race rule). -->
-<script src="src/js/inspector.js?v=20260807-panel"></script>
+<script src="src/js/inspector.js?v=20260808-t0"></script>
 <script src="src/js/app.js?v=20260802-editorial"></script>
 <!-- Supabase (Phase B, 2026-07-17) — vendored client + config + the auth seam.
      Signed out → app is 100% local; signed in → Folio/boards use RLS-guarded

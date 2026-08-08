@@ -433,7 +433,8 @@
 // tooltips with viewport-clamped positioning, click-outside-
 // to-close, LS persistence of tier-state under
 // `forge.viewSettings.v7`, and the body-class toggles
-// `fv-hide-tier-t{1..5}` + `fv-show-political-risk`.
+// `fv-hide-tier-t{0..5}` + `fv-show-political-risk`.  T0 added
+// 2026-08-08 (origin/primary — see CODEX §IV.0).
 //
 // Boundary contract:
 //   window._forgeLegend.attach({
@@ -486,6 +487,29 @@
         // vocabulary is visually identical everywhere. Hover-tooltip
         // body explains the criterion + example author / school.
         const TIERS = [
+          // ── T0 ADDED 2026-08-08, John's call ──────────────────────
+          // "having different views or frictions ARE GOOD and we should
+          //  always keep them IF THEY'RE strong enough … ACADEMIC
+          //  doesn't mean right by default … it's ok to have a T0
+          //  origin and a T1 academic simultaneously on the panel if
+          //  that's something being contested."
+          //
+          // He is right, and this fixes a flaw in the 2026-08-08 tier
+          // resolution. That decision correctly stopped grading primary
+          // texts on the SCHOLARLY scale — but it left them with no
+          // label at all, which risks the atlas quietly siding with the
+          // academy on every contested point. This is an INVESTIGATIVE
+          // tool: it contests, it does not only search.
+          //
+          // T0 is NOT "weaker than T1". It is a DIFFERENT KIND — the
+          // origin itself, before interpretation. It sits at 0 because
+          // it comes BEFORE the readings of it, not below them.
+          // A T0 and a T1 on the same claim is not a conflict to
+          // resolve — THE DISAGREEMENT IS THE FINDING, and both stay
+          // on the panel.
+          { key: 't0', label: 'T0',
+            title: 'Origin — what the source itself says',
+            body: 'The primary text, in its own voice: scripture, inscription, papyrus, the tradition\'s own account. NOT a weaker T1 — a different kind of claim. T0 tells you what the source SAYS; T1–T5 tell you what scholarship makes of it. When a T0 and a T1 disagree on the same point, both stay on the panel: that disagreement is itself a finding, not an error to clean up. ON by default.' },
           { key: 't1', label: 'T1',
             title: 'Mainstream',
             body: 'Peer-reviewed mainstream scholarship. Standard academic consensus. The silent default — most edges in the atlas are T1.' },
@@ -557,6 +581,13 @@
             if (raw) s = JSON.parse(raw) || {};
           } catch (_) {}
           return {
+            // T0 defaults ON (2026-08-08). A returning user's stored
+            // blob predates this key, so `typeof` is 'undefined' and
+            // the default applies — the 2026-07-31 findability trap in
+            // reverse, and the reason this is a default and not a
+            // migration. Origin sources should be visible unless he
+            // deliberately hides them.
+            T0: typeof s.tierT0 === 'boolean' ? s.tierT0 : true,
             T1: typeof s.tierT1 === 'boolean' ? s.tierT1 : true,
             T2: typeof s.tierT2 === 'boolean' ? s.tierT2 : true,
             T3: typeof s.tierT3 === 'boolean' ? s.tierT3 : true,
@@ -569,6 +600,7 @@
           try {
             const raw = localStorage.getItem(LEGEND_LS_KEY);
             const s = raw ? JSON.parse(raw) : {};
+            s.tierT0 = !!ts.T0;
             s.tierT1 = !!ts.T1;
             s.tierT2 = !!ts.T2;
             s.tierT3 = !!ts.T3;
@@ -588,6 +620,7 @@
           if (prRow) prRow.classList.toggle('is-on', !!ts.politicalRisk);
           // Push to the engine and refresh filtered state.
           const tiers = new Set();
+          if (ts.T0) tiers.add('T0');
           if (ts.T1) tiers.add('T1');
           if (ts.T2) tiers.add('T2');
           if (ts.T3) tiers.add('T3');
@@ -598,6 +631,7 @@
           local._showPoliticalRisk = !!ts.politicalRisk;
           // Body classes for any CSS that keys off them (none yet but
           // future legend/SFW chrome will).
+          document.body.classList.toggle('fv-hide-tier-t0', !ts.T0);
           document.body.classList.toggle('fv-hide-tier-t1', !ts.T1);
           document.body.classList.toggle('fv-hide-tier-t2', !ts.T2);
           document.body.classList.toggle('fv-hide-tier-t3', !ts.T3);
@@ -1811,7 +1845,7 @@
       // risk filter, both must pass.
       const sideActiveTiers   = local._activeTiers;
       const sideShowPolitical = !!local._showPoliticalRisk;
-      const sideTierFilterOn  = sideActiveTiers && sideActiveTiers.size < 5;
+      const sideTierFilterOn  = sideActiveTiers && sideActiveTiers.size < 6;
       if (vaultEdges) {
         const EB = window.EDGE_BUCKET || {};
         for (let i = 0; i < vaultEdges.length; i++) {
