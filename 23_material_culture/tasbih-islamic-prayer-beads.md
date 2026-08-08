@@ -15,7 +15,7 @@ dating-basis-source: "\"Henry, Gray (ed.) 2002 *Beads of Faith*. Fons Vitae; Gol
 dating-basis-notes: "Earliest hadith references to systematic prayer-counting (Tirmidhī, Abū Dāwūd) describe finger-counting or pebble-counting; the bead-string itself enters Islamic practice in the 8th-9th c. via Sufi orders, likely under Indic-Buddhist contact through Khurasan + Transoxiana per Goldziher. 99-bead form (corresponding to the asmāʾ al-ḥusnā, the 99 Beautiful Names of God) crystallizes by the 10th-11th c.; the 33-bead-thrice-counted variant is the equally-common alternative."
 source-tier: T1
 region: "Originating Sufi-mediated Central Asia / Khurasan; canonical across the Sunni + Shi'a + Sufi Islamic world by 1000 CE; carried throughout the Muslim diaspora; intermediate transmission step from Indic japa-mala to Christian rosary"
-key-figures: ["[[muhammad-ibn-abdullah]] (the hadith tradition of post-prayer dhikr counting)", "[[al-ghazali]] (10th-11th c. systematization of dhikr practice in *Iḥyāʾ ʿUlūm al-Dīn*)", "[[rumi]] (the Mevlevi practice of bead-mediated dhikr)"]
+key-figures: ["[[muhammad-prophet]] (the hadith tradition of post-prayer dhikr counting)", "[[al-ghazali]] (10th-11th c. systematization of dhikr practice in *Iḥyāʾ ʿUlūm al-Dīn*)", "[[rumi]] (the Mevlevi practice of bead-mediated dhikr)"]
 related-rituals: ["[ritual-dhikr-islamic-remembrance]"]
 related-relics: ["[[mala-prayer-beads-indic]]", "[rosary]"]
 status: "full"
@@ -100,7 +100,7 @@ The Eastern Christian *komboskini* / *chotki* (knotted-wool prayer-cord used for
 
 ## Cross-references
 
-- **Wikilinks**: [[muhammad-ibn-abdullah]], [[al-ghazali]], [[rumi]], [[tradition-islam]], [[tradition-sufism]], [[mala-prayer-beads-indic]], [rosary], [ritual-dhikr-islamic-remembrance], [asmāʾ al-ḥusnā].
+- **Wikilinks**: [[muhammad-prophet]], [[al-ghazali]], [[rumi]], [[tradition-islam]], [[tradition-sufism]], [[mala-prayer-beads-indic]], [rosary], [ritual-dhikr-islamic-remembrance], [asmāʾ al-ḥusnā].
 
 ## Sources
 

@@ -16,7 +16,7 @@ date-earliest: -1000
 dating-basis: B1
 dating-basis-source: "Sáenz-Badillos, A. 1993 *A History of the Hebrew Language* Cambridge UP; Hornkohl, A. & Khan, G. eds. 2021 *New Perspectives in Biblical and Rabbinic Hebrew* OBP"
 dating-basis-notes: "Earliest substantial epigraphic evidence: Gezer Calendar (c. -925), Khirbet Qeiyafa ostracon (c. -1000, contested), Mesha Stele (Moabite-Hebrew interface, c. -840). Biblical-Hebrew literary corpus crystallizes c. -1000 to -200; subdivided into Archaic Biblical Hebrew (-1200 to -1000, fragments in Genesis 49, Exodus 15, Judges 5, Deuteronomy 32), Standard Biblical Hebrew (-1000 to -500, monarchic-period prose + early prophets), and Late Biblical Hebrew (-500 to -200, post-Exilic books — Esther, Ecclesiastes, Chronicles, Ezra-Nehemiah). Mishnaic Hebrew conventionally begins c. -200; later codified in the [[phase-4-031-mishnah|Mishnah]] (c. 200 CE)."
-liturgical-tradition: "[[tradition-judaism]] + [[tradition-judaism-second-temple]] + (through translation/influence) all Christian + Islamic traditions"
+liturgical-tradition: "[[tradition-judaism]] + [[tradition-second-temple-judaism]] + (through translation/influence) all Christian + Islamic traditions"
 texts-in-language:
   - "[[phase-2-005-hebrew-bible-j-source]] / [[phase-2-007-hebrew-bible-e-source]] / [[phase-2-011-hebrew-bible-d-source]] / [[phase-2-018-hebrew-bible-p-source]] (the documentary-hypothesis sources of the Pentateuch)"
   - "[[phase-2-010-hebrew-bible-early-prophets]] + later prophetic books (Isaiah, Jeremiah, Ezekiel, the Twelve)"
@@ -109,7 +109,7 @@ The [[phase-3-006-septuagint|Septuagint]] carries the Hebrew Bible into [[koine-
 - [[language-latin-ecclesiastical]] — Vulgate target language
 - [[classical-arabic]] — Semitic cousin + Qur'anic counterpart
 - [[phase-4-031-mishnah]] — Tannaitic-Hebrew successor stage
-- [[tradition-judaism]] / [[tradition-judaism-second-temple]] — institutional contexts
+- [[tradition-judaism]] / [[tradition-second-temple-judaism]] — institutional contexts
 
 ## Refs
 

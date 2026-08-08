@@ -15,7 +15,7 @@ dating-basis-source: "\"Saliba, Jamil 2002 *Prayer Rugs from the Islamic World*.
 dating-basis-notes: "Earliest hadith references describe the Prophet praying on a flat surface (the ground, a date-palm-leaf mat, sometimes a sheepskin). The dedicated prayer-rug as a distinct textile form emerges by the 8th-9th c. with the development of Islamic high-textile-craft traditions; surviving examples date from the 15th c. onward (earlier rugs do not survive due to organic-material decay). The Anatolian + Persian + Caucasian + Central Asian + Indian + North African regional prayer-rug traditions are mature by 1500."
 source-tier: T1
 region: "Originating early Islamic Arabia (7th-8th c.); develops elaborate regional textile traditions across the Islamic world — Anatolian (Ladik, Ghiordes, Konya, Bergama), Persian (Tabriz, Kashan, Qom), Caucasian (Daghestan, Shirvan), Central Asian (Turkmen, Uzbek), Indian (Mughal), North African (Berber, Moroccan), West African + Indonesian regional forms"
-key-figures: ["[[muhammad-ibn-abdullah]] (the hadith tradition of praying on flat surfaces — date-palm mat, sheepskin)"]
+key-figures: ["[[muhammad-prophet]] (the hadith tradition of praying on flat surfaces — date-palm mat, sheepskin)"]
 related-rituals: ["[[ritual-salat-five-prayers]]"]
 related-symbols: ["[[mihrab-mosque-qibla-niche]]"]
 related-relics: ["[[tasbih-islamic-prayer-beads]]"]
@@ -120,7 +120,7 @@ The cross-tradition pattern: ritual action requires demarcated-pure ground; the 
 
 ## Cross-references
 
-- **Wikilinks**: [[muhammad-ibn-abdullah]], [[tradition-islam]], [[tradition-sunni-islam]], [[tradition-shia-islam]], [[tradition-sufism]], [[mihrab-mosque-qibla-niche]], [[tasbih-islamic-prayer-beads]], [[kaaba]], [[ritual-salat-five-prayers]], [mat-vedic-ritual-darbha].
+- **Wikilinks**: [[muhammad-prophet]], [[tradition-islam]], [[tradition-sunni-islam]], [[tradition-shia-islam]], [[tradition-sufism]], [[mihrab-mosque-qibla-niche]], [[tasbih-islamic-prayer-beads]], [[kaaba]], [[ritual-salat-five-prayers]], [mat-vedic-ritual-darbha].
 
 ## Sources
 

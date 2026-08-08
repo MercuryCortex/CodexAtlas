@@ -6,7 +6,7 @@ aka: ["संन्यासी", "saṃnyāsin", "kashaya vastra", "gerua / gai
 category: ascetic-anti-luxury
 tradition: "[[tradition-hinduism]]"
 traditions-related: ["[[tradition-advaita-vedanta]]", "[[tradition-bhakti-vaishnavism]]", "[[tradition-shaivism]]", "[[tradition-shaktism]]", "[[tradition-shaiva-siddhanta]]", "[[tradition-dashanami-sampradaya]]", "[[tradition-ramanandi]]"]
-key-figures-worn-by: ["[[adi-shankara]]", "[[ramanuja]]", "[[madhva]]", "[[ramakrishna]]", "[[swami-vivekananda]]", "[[ramana-maharshi]]", "[[chaitanya]]"]
+key-figures-worn-by: ["[[shankara]]", "[[ramanuja]]", "[[madhva]]", "[[ramakrishna]]", "[[swami-vivekananda]]", "[[ramana-maharshi]]", "[[chaitanya-mahaprabhu]]"]
 liturgical-occasion: ["sannyāsa-dīkṣā (the initiation into renunciation)", "[[ritual-kumbh-mela-pilgrimage]]", "daily life of the renunciate (worn continuously)"]
 parallel-attire: ["[[kasaya-buddhist-robe]]", "[[sufi-khirqah]]", "[[monastic-habit-benedictine]]", "[[ihram-pilgrim-garment]]"]
 related-symbols: ["[[aum-om]]"]

@@ -16,7 +16,7 @@ methods:
 key-documents:
   - "[[phase-5-007-sahih-al-bukhari]] (hadith Bukhari 1162 + parallels — the canonical Prophetic establishment of the practice; Jabir ibn Abdullah transmits the istikhara supplication from Muhammad)"
 key-figures:
-  - "[[muhammad-ibn-abdullah]] (Prophetic establisher; the canonical hadith records him teaching the practice)"
+  - "[[muhammad-prophet]] (Prophetic establisher; the canonical hadith records him teaching the practice)"
   - "Jabir ibn Abdullah (transmitter of the principal hadith)"
 key-traditions:
   - "[[tradition-islam]]"

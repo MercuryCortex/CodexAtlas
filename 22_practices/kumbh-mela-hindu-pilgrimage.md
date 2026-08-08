@@ -16,7 +16,7 @@ methods:
   - "*Darshan* of holy persons — the Kumbh is the great occasion for darshan of revered swamis + sadhus + mahants who converge from across India"
   - "Variant scales: Maha Kumbh (12-year cycle at each site = 3 years apart by rotation); Ardh Kumbh (half-Kumbh, 6 years between full Kumbhs at Prayāgrāj + Haridwar); Magh Mela (annual at Prayāgrāj)"
 key-figures:
-  - "[[adi-shankara]] (788-820; the Ādi Śaṅkarācārya traditional codification of the four-site rotational system, attached to his digvijaya consolidation of Vedanta + the daśanāmī monastic order)"
+  - "[[shankara]] (788-820; the Ādi Śaṅkarācārya traditional codification of the four-site rotational system, attached to his digvijaya consolidation of Vedanta + the daśanāmī monastic order)"
   - "Major contemporary akhāḍā mahants (heads of monastic orders) who lead processions"
   - "The Mauryan-Gupta period rulers (Prayāgrāj has continuous pilgrimage attestation back to Hsüan-tsang's 7th-c. travelogue, which describes the *Mahāmokṣa-parishad* assembly at Prayāgrāj under Harshavardhana)"
 key-traditions:

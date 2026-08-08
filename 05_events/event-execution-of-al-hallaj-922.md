@@ -5,7 +5,7 @@ name: "Execution of Al-Hallaj — 'The Passion of Islamic Mysticism'"
 date-earliest: 922
 date-latest: 922
 region: "Baghdad (Abbasid Caliphate)"
-traditions-involved: ["[[tradition-sufism]]", "[[tradition-islam-sunni]]"]
+traditions-involved: ["[[tradition-sufism]]", "[[tradition-sunni-islam]]"]
 persons-involved: ["[[al-hallaj]]"]
 hub-edges:
   - target: "executed-divine-claimant"

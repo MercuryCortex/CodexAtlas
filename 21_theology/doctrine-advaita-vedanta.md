@@ -21,7 +21,7 @@ key-texts:
 key-figures:
   - "Gauḍapāda (c. 6th-7th c.; Śaṅkara's paramaguru by tradition; *Māṇḍūkya-kārikā*)"
   - "Govinda Bhagavatpāda (Śaṅkara's direct teacher per the doxographies)"
-  - "[[adi-shankara|Ādi Śaṅkara]] (c. 788–820; the systematic founder)"
+  - "[[shankara|Ādi Śaṅkara]] (c. 788–820; the systematic founder)"
   - "Sureśvara (Śaṅkara's direct disciple; the *Naiṣkarmyasiddhi*)"
   - "Padmapāda (Śaṅkara's disciple; the *Pañcapādikā* — root of the Vivaraṇa sub-school)"
   - "Vācaspati Miśra (c. 9th–10th c.; *Bhāmatī* — root of the Bhāmatī sub-school)"
@@ -90,7 +90,7 @@ tags: [doctrine, theology, advaita, vedanta, non-dualism, shankara, hinduism, br
 
 # Advaita Vedānta
 
-**Advaita Vedānta** is the non-dualist (*a-dvaita* = "not-two") systematic theology of Brahmanical Hinduism — the doctrinal position that Brahman (the ultimate) and Ātman (the self) are non-different, and that the apparent plurality of the world is *māyā* (the cosmic appearance) sustained by *avidyā* (ignorance). It is the dominant philosophical-theological articulation of Vedānta and the largest single school within Hindu *darśana* (philosophical-theological systems) from the 8th c. to the present, formalised by [[adi-shankara|Ādi Śaṅkara]] (c. 788–820 CE) on a base of Upaniṣadic exegesis (the *prasthāna-trayī* — Upaniṣads + Brahma-Sūtra + Bhagavad-Gītā — read through Gauḍapāda's *Māṇḍūkya-kārikā*).
+**Advaita Vedānta** is the non-dualist (*a-dvaita* = "not-two") systematic theology of Brahmanical Hinduism — the doctrinal position that Brahman (the ultimate) and Ātman (the self) are non-different, and that the apparent plurality of the world is *māyā* (the cosmic appearance) sustained by *avidyā* (ignorance). It is the dominant philosophical-theological articulation of Vedānta and the largest single school within Hindu *darśana* (philosophical-theological systems) from the 8th c. to the present, formalised by [[shankara|Ādi Śaṅkara]] (c. 788–820 CE) on a base of Upaniṣadic exegesis (the *prasthāna-trayī* — Upaniṣads + Brahma-Sūtra + Bhagavad-Gītā — read through Gauḍapāda's *Māṇḍūkya-kārikā*).
 
 ## The doctrinal core
 

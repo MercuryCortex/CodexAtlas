@@ -16,7 +16,7 @@ script: "Arabic"
 region: "Khurasan (Bukhara); Iraq; Hijaz; Egypt — collecting tour"
 city-of-origin: "Bukhara (compiler's hometown); composition during 16-year travel"
 authorship: "known (Muḥammad ibn Ismāʿīl al-Bukhārī, 810–870)"
-key-figures: ["[[al-bukhari]]", "[[muhammad-ibn-abdullah]]", "[[aisha-bint-abi-bakr]] (highest-volume female hadith-isnād)", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]"]
+key-figures: ["[[al-bukhari]]", "[[muhammad-prophet]]", "[[aisha-bint-abi-bakr]] (highest-volume female hadith-isnād)", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]"]
 themes: ["[[divine-kingship]]", "[[ethical-dualism]]", "[[afterlife-judgment]]"]
 parallels: ["[[phase-5-042-sahih-muslim|Sahih Muslim ~875]]", "Sunan Abu Dawud", "Jami al-Tirmidhi", "Sunan al-Nasa'i", "Sunan Ibn Majah", "[[phase-5-043-ibn-ishaq-sirat-rasul-allah]]"]
 influenced-by: ["[[phase-4-034-quran]]", "earlier *muṣannaf* collections (ʿAbd al-Razzāq, Ibn Abī Shaybah)"]

@@ -7,7 +7,7 @@ date-end: 130
 duration-years: 60
 region: "Yavneh (Jamnia, coastal Judea)"
 event-type: "founding"
-participants: ["[[yohanan-ben-zakkai]]", "[[gamaliel-ii]]", "[[joshua-ben-hananiah]]", "[[eliezer-ben-hyrcanus]]", "[[akiva-ben-yosef]]", "[[ishmael-ben-elisha]]"]
+participants: ["[[yohanan-ben-zakkai]]", "[[gamaliel-ii]]", "[[joshua-ben-hananiah]]", "[[eliezer-ben-hyrcanus]]", "[[rabbi-akiva]]", "[[ishmael-ben-elisha]]"]
 traditions-affected: ["[[tradition-judaism]]", "[[tradition-christianity-canonical]]"]
 documents-produced: ["earliest stratum of *Mishnah*-precursor materials", "*Birkat ha-Minim* benediction (traditional attribution; modern scholarship complicates the dating)"]
 documents-affected: ["the Hebrew Bible canon (the rabbinic affirmation of the 24-book Tanakh, though the so-called 'Council of Jamnia' as canonical-defining council is now rejected by mainstream scholarship)"]

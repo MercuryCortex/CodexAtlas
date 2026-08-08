@@ -32,7 +32,7 @@ hub-edges:
     source: "Diogenes the Cynic (c. -412 to -323) made begging, propertylessness (autarkeia) and public shamelessness a philosophical discipline rather than a religious one — the beggar-philosopher with staff, cloak and knapsack (pēra). Desmond 2008 (*Cynics*) and Navia 1996 read the Cynic beggar as a Greek structural analogue to the śramaṇa renunciate: identical outward form (voluntary poverty, mendicant subsistence, itinerancy), different justification (rational self-sufficiency vs. soteriological merit). A convergence, not a transmission."
     source-tier: T1
     notes: "The explicitly non-religious member: same form (holy/philosophical begging), secular rationale. Cross-lens 22_practices → 04_persons / 15_philosophy."
-parallels: ["[[tradition-franciscan-order]]", "[[tradition-dominican-order]]", "[[mahavira]]", "[[adi-shankara]]", "[[philosophy-cynicism]]", "[[phase-2-016-early-buddhist-suttas]]", "[[divyavadana]]"]
+parallels: ["[[tradition-franciscan-order]]", "[[tradition-dominican-order]]", "[[mahavira]]", "[[shankara]]", "[[philosophy-cynicism]]", "[[phase-2-016-early-buddhist-suttas]]", "[[divyavadana]]"]
 status: "full"
 refs:
   - title: "Saṃnyāsa Upaniṣads: Hindu Scriptures on Asceticism and Renunciation"

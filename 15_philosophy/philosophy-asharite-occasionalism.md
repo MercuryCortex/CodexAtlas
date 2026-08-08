@@ -3,7 +3,7 @@ id: philosophy-asharite-occasionalism
 title: "Ashʿarite Occasionalism (Islamic causation-by-God-alone)"
 type: philosophy
 philosophy-type: school
-tradition: "[[tradition-islam-sunni]]"
+tradition: "[[tradition-sunni-islam]]"
 also-in-traditions:
   - tradition-islamic-kalam-philosophy
 date_earliest: 935

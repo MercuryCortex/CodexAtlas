@@ -8,7 +8,7 @@ duration-years: 1
 region: "Yarmuk River (modern Syria–Jordan border)"
 event-type: "battle"
 participants: ["[[umar-ibn-al-khattab|Caliph ʿUmar ibn al-Khaṭṭāb]]", "Khalid ibn al-Walid (Rashidun commander)", "[[heraclius-byzantine-emperor|Emperor Heraclius]] (Byzantine command via Theodore the Sakellarios, Vahan the Armenian)"]
-traditions-affected: ["[[tradition-eastern-orthodoxy]] (loss of the Levant)", "[[tradition-islam-sunni]] (decisive military breakthrough)"]
+traditions-affected: ["[[tradition-eastern-orthodoxy]] (loss of the Levant)", "[[tradition-sunni-islam]] (decisive military breakthrough)"]
 status: "stub"
 refs:
   - title: "The Great Arab Conquests"

@@ -7,7 +7,7 @@ date-end: 136
 duration-years: 4
 region: "Roman Judaea (renamed Syria Palaestina after the revolt)"
 event-type: "conquest"
-participants: ["Simon bar Kokhba (Shimon bar Kosiba; messianic claimant)", "[[akiva-ben-yosef]] (alleged supporter)", "Emperor Hadrian", "General Sextus Julius Severus"]
+participants: ["Simon bar Kokhba (Shimon bar Kosiba; messianic claimant)", "[[rabbi-akiva]] (alleged supporter)", "Emperor Hadrian", "General Sextus Julius Severus"]
 traditions-affected: ["[[tradition-judaism]]", "[[tradition-christianity-canonical]]"]
 status: "metadata"
 refs:

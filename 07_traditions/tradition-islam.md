@@ -7,7 +7,7 @@ date-end: ""
 region-origin: "Arabia (Hijaz — Mecca and Medina)"
 regions-spread: ["Arabian peninsula", "Syria, Egypt, North Africa, Spain (by 711)", "Iran, Central Asia, the Indian subcontinent", "later: West Africa, Southeast Asia, the Balkans", "modern: global"]
 key-deities: ["[[allah]]"]
-key-persons: ["[[muhammad-ibn-abdullah]]", "[[khadija-bint-khuwaylid]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]", "[[aisha-bint-abi-bakr]]", "[[muawiya-ibn-abi-sufyan]]", "[[ibn-ishaq]]", "[[al-kindi]]", "[[al-farabi]]", "[[ibn-sina|Ibn Sīnā / Avicenna]]", "[[ibn-rushd|Ibn Rushd / Averroes]]", "[[ibn-tufayl]]", "[[al-ghazali]]", "[[ibn-taymiyya]]"]
+key-persons: ["[[muhammad-prophet]]", "[[khadija-bint-khuwaylid]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]", "[[aisha-bint-abi-bakr]]", "[[muawiya-ibn-abi-sufyan]]", "[[ibn-ishaq]]", "[[al-kindi]]", "[[al-farabi]]", "[[ibn-sina|Ibn Sīnā / Avicenna]]", "[[ibn-rushd|Ibn Rushd / Averroes]]", "[[ibn-tufayl]]", "[[al-ghazali]]", "[[ibn-taymiyya]]"]
 key-documents: ["[[phase-4-034-quran]]", "[[phase-5-007-sahih-al-bukhari]]", "[[phase-5-042-sahih-muslim]]", "Other hadith collections (the *Sunan* of Abū Dāwūd, al-Tirmidhī, al-Nasāʾī, Ibn Mājah — the *Kutub al-Sitta* / Six Books)", "[[phase-5-043-ibn-ishaq-sirat-rasul-allah]] (Sira)", "[[phase-5-009-tabari-tafsir]] (Tafsir + Tārīkh)", "[[phase-5-044-ibn-sina-kitab-al-shifa]] (falsafa)", "[[phase-5-045-al-ghazali-tahafut-al-falasifa]] + [[phase-5-046-ibn-rushd-tahafut-al-tahafut]] (the Tahafut controversy)", "[[phase-5-015-al-ghazali-ihya]]"]
 sister-traditions: ["[[tradition-pre-islamic-arabian]] (parent religious milieu)", "[[tradition-judaism]]", "[[tradition-christianity-canonical]]", "[[tradition-ethiopian-orthodox-tewahedo]] (Aksumite-Arabian late-antique context)", "[[tradition-mandaeism]]", "[[tradition-sufism]]", "[[tradition-shia-islam]]", "[[tradition-ismailism]]", "[[tradition-yazidi]]", "[[tradition-druze]]", "[[tradition-baha-i]]"]
 hub-edges:
@@ -53,7 +53,7 @@ tags: [tradition, islamic, abrahamic, monotheism, late-antique-origin]
 # Islam
 
 ## Overview
-A monotheistic Abrahamic tradition founded in the early seventh century by the prophet [[muhammad-ibn-abdullah]] (~570–632) in the Hijaz region of western Arabia. Islam claims to fulfill and correct the prior Abrahamic revelations to Adam, Noah, Abraham, Moses, David, and Jesus; the Quran is held to be God's uncreated final word, transmitted to Muhammad via the angel Jibrīl (Gabriel) over 22 years (610–632), codified under Caliph Uthman ~650. Islam's foundational practices are the Five Pillars (shahada, salat, zakat, sawm, hajj); its foundational doctrine is *tawhid* (radical divine unity).
+A monotheistic Abrahamic tradition founded in the early seventh century by the prophet [[muhammad-prophet]] (~570–632) in the Hijaz region of western Arabia. Islam claims to fulfill and correct the prior Abrahamic revelations to Adam, Noah, Abraham, Moses, David, and Jesus; the Quran is held to be God's uncreated final word, transmitted to Muhammad via the angel Jibrīl (Gabriel) over 22 years (610–632), codified under Caliph Uthman ~650. Islam's foundational practices are the Five Pillars (shahada, salat, zakat, sawm, hajj); its foundational doctrine is *tawhid* (radical divine unity).
 
 ## Historical phases
 1. **Meccan period** (610–622) — Muhammad's preaching of monotheism amidst Meccan polytheism; persecution.

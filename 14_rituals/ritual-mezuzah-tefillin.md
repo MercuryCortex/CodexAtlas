@@ -90,7 +90,7 @@ The mezuzah and tefillin are the ritualized daily enactment of a universal pre-m
 - [[tradition-second-temple-judaism]] — Qumran tefillin confirm Second Temple origin
 - [[tradition-buddhism]] — prayer flags/wheels and gau amulets
 - [[tradition-hinduism]] — yantra and sacred inscription on body/architecture
-- [[tradition-islam-sunni]] — tawiz amulets and Quranic calligraphy as architecture
+- [[tradition-sunni-islam]] — tawiz amulets and Quranic calligraphy as architecture
 - [[tradition-christianity-canonical]] — ichthys, cross on doorways, scriptural inscription
 - [[alphabet-sefer-yetzirah]] — Hebrew letters as creation materials
 - [[alphabet-devanagari-sacred]] — Devanagari as city of the gods

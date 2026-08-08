@@ -16,7 +16,7 @@ script: "Hijazi script (early); Kufic and Naskhi (later)"
 region: "Arabia (Hijaz)"
 city-of-origin: "Mecca and Medina"
 authorship: "revealed (according to Islamic tradition: God's word, transmitted via the angel Jibrīl/Gabriel to Muhammad over ~22 years 610–632; collected and codified under Caliph Uthman ~650)"
-key-figures: ["[[muhammad-ibn-abdullah]]", "[[khadija-bint-khuwaylid]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]", "[[aisha-bint-abi-bakr]]"]
+key-figures: ["[[muhammad-prophet]]", "[[khadija-bint-khuwaylid]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]", "[[aisha-bint-abi-bakr]]"]
 themes: ["[[hidden-god]]", "[[chosen-people]]", "[[end-times-judgment]]", "[[divine-kingship]]", "[[hanif-monotheism]]", "[[satanic-verses-incident]]"]
 parallels: ["[[document-genesis]]", "[[document-exodus]]", "[[phase-3-017-gospel-of-matthew]]", "[[phase-3-020-gospel-of-john]]", "[[phase-2-005-hebrew-bible-j-source]]", "[[phase-3-016-gospel-of-mark]]", "[[phase-4-080-garima-gospels]]", "[[phase-4-081-mashafa-henok-geez-1-enoch]]", "Syriac Christian homiletic tradition"]
 influenced-by: ["Late-antique Jewish, Christian, and Arabian religious traditions (an enormous and contested literature; in particular: Hijazi-Arabian polytheism in polemical engagement [[allat]] / [[al-uzza]] / [[manat]] / [[wadd]] / [[nasr-pre-islamic]] / [[hubal]] — see [[tradition-pre-islamic-arabian]]; Talmudic and Targumic narrative material; Syriac Christological controversies — Griffith 2013, Reynolds 2010; the [[hanif-monotheism|*ḥanīf*]] late-antique Arabian Abrahamic monotheist milieu; Aksumite Christian Yemen — Bowersock 2013, *Sūrat al-Fīl* 105 and [[event-kaleb-aksum-himyar-invasion-525]])"]

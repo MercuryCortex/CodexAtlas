@@ -16,7 +16,7 @@ script: "Naskhi Arabic"
 region: "Arabia / Iraq — original composition by Ibn Isḥāq partly in Medina, partly in Iraq (Hīra, Baghdad); recension by Ibn Hisham at Fusṭāṭ (Egypt) c. 833"
 city-of-origin: "Baghdad (original Ibn Isḥāq composition) / Fusṭāṭ (Ibn Hisham recension)"
 authorship: "known (compound) — original by [[ibn-ishaq|Ibn Isḥāq]] (~767); canonical recension by ʿAbd al-Malik ibn Hisham (~833)"
-key-figures: ["[[ibn-ishaq]] (original author)", "ʿAbd al-Malik ibn Hisham (recension-editor)", "[[muhammad-ibn-abdullah]] (subject)", "[[khadija-bint-khuwaylid]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]", "[[aisha-bint-abi-bakr]]", "[[muawiya-ibn-abi-sufyan]]"]
+key-figures: ["[[ibn-ishaq]] (original author)", "ʿAbd al-Malik ibn Hisham (recension-editor)", "[[muhammad-prophet]] (subject)", "[[khadija-bint-khuwaylid]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]", "[[aisha-bint-abi-bakr]]", "[[muawiya-ibn-abi-sufyan]]"]
 themes: ["[[hanif-monotheism]]", "[[satanic-verses-incident]]", "[[oral-tradition-transmission]]"]
 parallels: ["[[phase-5-007-sahih-al-bukhari]]", "[[phase-5-042-sahih-muslim]]", "[[phase-5-009-tabari-tafsir]]"]
 influenced-by: ["the early 8th-c. Medinan hadith and biographical-historical traditions; ʿUrwa ibn al-Zubayr (~712 — Medinan early-biographer whose Sira material partly survives in Ibn Isḥāq); broader Mawlā-Medinan-historical scholarship"]

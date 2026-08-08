@@ -73,7 +73,7 @@ This is not a theological claim — it is a linguistic-historical fact. The Kadd
 
 - [[tradition-rabbinic-judaism]] — home tradition
 - [[tradition-christianity-canonical]] — linguistic connection (Jesus's Aramaic) and structural parallel (Requiem/Gloria Patri)
-- [[tradition-islam-sunni]] — inna lillahi parallel
+- [[tradition-sunni-islam]] — inna lillahi parallel
 - [[tradition-buddhism]] — merit-transfer chanting parallel
 - [[ritual-funeral-rites]] — broader context of death ritual
 - [[ritual-daily-prayer]] — Kaddish is embedded in the daily prayer structure

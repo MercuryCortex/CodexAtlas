@@ -8,7 +8,7 @@ date-attested-earliest: -130
 date-attested-latest: 1450
 region-span: "Chang'an / Luoyang (China) → Hexi Corridor → Tarim Basin (northern + southern oasis arcs) → Pamirs → Sogdiana (Samarkand, Bukhara) → Khurasan → Iranian plateau → Mesopotamia → Levantine and Anatolian termini (Antioch, Tyre, Constantinople)"
 key-commodities: ["[[silk-as-commodity]]", "[[lapis-lazuli-trade]]", "[[jade]]", "[[porcelain]]", "[[frankincense-as-trade-commodity]]", "[[myrrh]]", "[[horses-ferghana]]", "[[paper-as-trade-good]]"]
-key-traditions-transmitted: ["[[tradition-buddhism-mahayana]]", "[[tradition-manichaeism]]", "[[tradition-church-of-the-east]]", "[[tradition-zoroastrianism]]", "[[tradition-islam-sunni]]", "[[tradition-judaism-radhanite-diaspora]]"]
+key-traditions-transmitted: ["[[tradition-buddhism-mahayana]]", "[[tradition-manichaeism]]", "[[tradition-church-of-the-east]]", "[[tradition-zoroastrianism]]", "[[tradition-sunni-islam]]", "[[tradition-judaism-radhanite-diaspora]]"]
 key-hubs: ["[[place-changan]]", "[[place-dunhuang]]", "[[place-kashgar]]", "[[place-samarkand]]", "[[place-bukhara]]", "[[place-merv]]", "[[place-ctesiphon]]", "[[place-antioch]]", "[[place-constantinople]]"]
 key-trading-peoples: ["[[sogdian-trading-network]]", "[[exchange-network-radhanites]]"]
 parallel-routes: ["[[maritime-silk-road]]", "[[incense-trade-route-south-arabian]]", "[[trans-saharan-gold-and-salt-trade]]"]
@@ -89,7 +89,7 @@ The Silk Road is the principal vector by which **Buddhism reached East Asia**. T
 
 **The Church of the East** ([[tradition-church-of-the-east]], "Nestorian") establishes congregations along the entire route. The **Xi'an Stele** (781 CE), erected at the Tang capital, records 150 years of East-Syrian Christian presence under Tang patronage. Nestorian metropolitan sees existed at Merv, Samarkand, and as far east as Khanbaliq (Beijing) under the Mongols.
 
-**Islam** ([[tradition-islam-sunni]]) reaches Central Asia with the Umayyad conquest of Transoxiana (705-715 CE under Qutayba ibn Muslim) and the Abbasid victory at the [[battle-of-talas]] in 751 CE. Islam then becomes the dominant religion of the road's central segment, displacing or absorbing Buddhism, Manichaeism, and Zoroastrianism between the 9th and 14th centuries.
+**Islam** ([[tradition-sunni-islam]]) reaches Central Asia with the Umayyad conquest of Transoxiana (705-715 CE under Qutayba ibn Muslim) and the Abbasid victory at the [[battle-of-talas]] in 751 CE. Islam then becomes the dominant religion of the road's central segment, displacing or absorbing Buddhism, Manichaeism, and Zoroastrianism between the 9th and 14th centuries.
 
 **Zoroastrianism** ([[tradition-zoroastrianism]]) was the Sasanian state religion at the road's western terminus. Sogdian merchants ([[sogdian-trading-network]]) carried Zoroastrian practice as far as Tang Chang'an, where Han Chinese sources call it *xianjiao* and document state-registered temples in the foreign quarter (Forte 1996).
 

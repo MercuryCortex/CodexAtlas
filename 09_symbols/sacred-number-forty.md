@@ -34,7 +34,7 @@ traditions:
 persons:
   - "[[moses]]"
   - "[[elijah-prophet]]"
-  - "[[muhammad-ibn-abdullah]]"
+  - "[[muhammad-prophet]]"
   - "[[husayn-ibn-ali]]"
 documents:
   - "[[phase-5-029-bardo-thodol]]"

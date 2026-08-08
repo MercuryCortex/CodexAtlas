@@ -11,7 +11,7 @@ date-born: 90
 date-died: 135
 historicity: "documented (in rabbinic sources)"
 texts-authored: ["traditions in Mishnah, Tosefta, *Mekhilta de-Rabbi Ishmael*", "later pseudonymous: extensive *Hekhalot Rabbati* and other early-medieval Merkavah corpus traditionally ascribed"]
-events-participated: ["Studied with [[eliezer-ben-hyrcanus]] and [[joshua-ben-hananiah]]", "Contemporary of [[akiva-ben-yosef|Akiva]]; together they represent the two major exegetical schools of the second Tannaitic generation", "Traditional martyrdom during the [[event-bar-kokhba-revolt-132-136]] (the 'Ten Martyrs' legend)"]
+events-participated: ["Studied with [[eliezer-ben-hyrcanus]] and [[joshua-ben-hananiah]]", "Contemporary of [[rabbi-akiva|Akiva]]; together they represent the two major exegetical schools of the second Tannaitic generation", "Traditional martyrdom during the [[event-bar-kokhba-revolt-132-136]] (the 'Ten Martyrs' legend)"]
 mentioned-in: ["[[phase-4-031-mishnah]]", "*Mekhilta de-Rabbi Ishmael*", "*Sifra*, *Sifrei*", "[[phase-5-013-hekhalot-literature]] (pseudonymously)"]
 status: "stub"
 refs:
@@ -40,7 +40,7 @@ tags: [person, judaism, tannaitic, ishmael-ben-elisha, akiva, mekhilta, hermeneu
 # Ishmael ben Elisha
 
 ## Identity
-Major second-generation Tannaitic rabbi, traditional grandson of a late Second Temple high priest (hence the patronymic). Together with [[akiva-ben-yosef]] he represents the two principal exegetical schools of the early-2nd-century rabbinic movement: where Akiva pursued maximalist exegesis (every Torah letter and particle yields meaning), **R. Ishmael famously held that "the Torah speaks in human language"** (*dibrah Torah ki-leshon bnei adam*) — i.e., not every grammatical particularity carries exegetical weight. The **thirteen *middot* (hermeneutical rules)** of Ishmael are the standard rabbinic exegetical method.
+Major second-generation Tannaitic rabbi, traditional grandson of a late Second Temple high priest (hence the patronymic). Together with [[rabbi-akiva]] he represents the two principal exegetical schools of the early-2nd-century rabbinic movement: where Akiva pursued maximalist exegesis (every Torah letter and particle yields meaning), **R. Ishmael famously held that "the Torah speaks in human language"** (*dibrah Torah ki-leshon bnei adam*) — i.e., not every grammatical particularity carries exegetical weight. The **thirteen *middot* (hermeneutical rules)** of Ishmael are the standard rabbinic exegetical method.
 
 ## Historical evidence
 Rabbinic only; multiply attested in Mishnah, Tosefta, and the named *Mekhilta de-Rabbi Ishmael* (the legal midrash on Exodus that bears his school's name). His martyrdom during the Bar Kokhba period is part of the "Ten Martyrs" hagiographic tradition (cf. *Hekhalot Rabbati*, *Eleh Ezkerah*), of late and stylized character.

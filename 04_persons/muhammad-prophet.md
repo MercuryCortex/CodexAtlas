@@ -42,7 +42,7 @@ connects-to:
     relation: "described-by"
     source: "John of Damascus, *De Haeresibus* ch. 100/101 (c. 730s–740s); Hoyland 1997 *Seeing Islam As Others Saw It* (Darwin Press); Sahas 1972 *John of Damascus on Islam* (Brill) — the earliest sustained Christian theological account of Muhammad's teaching, written by an official inside the Umayyad administration."
     source-tier: "T1"
-  - target: "[[muhammad-ibn-abdullah]]"
+  - target: "[[muhammad-prophet]]"
     relation: "same-as"
     source: "Parallel vault node for the same historical figure, entered under his patronymic; flagged for consolidation (this node carries 45 inbound links, the patronymic node 26)."
     source-tier: "T1"

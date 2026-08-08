@@ -7,7 +7,7 @@ date-end: 632
 duration-years: 1
 region: "Arabia — Medina"
 event-type: "founding"
-participants: ["[[muhammad-ibn-abdullah]]", "[[aisha-bint-abi-bakr]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[ali-ibn-abi-talib]]", "Saʿd ibn ʿUbāda (Khazraji leader; the Anṣārī candidate at the Saqīfa)", "Abū ʿUbayda ibn al-Jarrāḥ"]
+participants: ["[[muhammad-prophet]]", "[[aisha-bint-abi-bakr]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[ali-ibn-abi-talib]]", "Saʿd ibn ʿUbāda (Khazraji leader; the Anṣārī candidate at the Saqīfa)", "Abū ʿUbayda ibn al-Jarrāḥ"]
 traditions-affected: ["[[tradition-islam]]", "[[tradition-shia-islam]]"]
 documents-produced: []
 documents-affected: ["[[phase-4-034-quran]] (Quran 5:3 *'al-yawma akmaltu lakum dīnakum'* / 'today I have perfected your religion for you' — traditionally the final revelation, dated to Muhammad's Farewell Pilgrimage shortly before death; some sources place 2:281 as the actual final revelation)", "[[phase-5-043-ibn-ishaq-sirat-rasul-allah]] (the canonical Sira-narrative)"]

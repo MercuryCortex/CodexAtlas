@@ -7,7 +7,7 @@ date-end: 630
 duration-years: 1
 region: "Arabia — Mecca and surrounding Hijaz"
 event-type: "conquest"
-participants: ["[[muhammad-ibn-abdullah]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[ali-ibn-abi-talib]]", "Khalid ibn al-Walid", "ʿAmr ibn al-ʿĀṣ", "Abū Sufyān ibn Ḥarb (the Meccan Umayyad opponent who converts at the conquest)"]
+participants: ["[[muhammad-prophet]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[ali-ibn-abi-talib]]", "Khalid ibn al-Walid", "ʿAmr ibn al-ʿĀṣ", "Abū Sufyān ibn Ḥarb (the Meccan Umayyad opponent who converts at the conquest)"]
 traditions-affected: ["[[tradition-islam]]", "[[tradition-pre-islamic-arabian]]"]
 documents-produced: []
 documents-affected: ["[[phase-4-034-quran]] (the conquest of Mecca is the immediate political context of several Quranic verses, especially Sūrat al-Naṣr 110 'when the help of God comes and the victory, and you see people entering God's religion in throngs...')", "[[phase-5-043-ibn-ishaq-sirat-rasul-allah]] (the canonical Sira-narrative of the conquest)"]

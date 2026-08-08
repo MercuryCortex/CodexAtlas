@@ -6,7 +6,7 @@ aka: ["טַלִּית", "tallith", "tallis (Ashkenazi pronunciation)", "tzitzit 
 category: ritual-garment
 tradition: "[[tradition-rabbinic-judaism]]"
 traditions-related: ["[[tradition-second-temple-judaism]]", "[[tradition-orthodox-judaism]]", "[[tradition-conservative-judaism]]", "[[tradition-reform-judaism]]", "[[tradition-kabbalah-lurianic]]"]
-key-figures-worn-by: ["[[moses]] (commanded the law; Numbers 15)", "[[aaron]]", "every Jewish adult male (traditionally)", "[[akiva-ben-yosef]]", "[[maimonides]]", "[[isaac-luria]]"]
+key-figures-worn-by: ["[[moses]] (commanded the law; Numbers 15)", "[[aaron]]", "every Jewish adult male (traditionally)", "[[rabbi-akiva]]", "[[maimonides]]", "[[isaac-luria]]"]
 liturgical-occasion: ["morning prayer (Shacharit)", "[[ritual-bar-mitzvah-coming-of-age]]", "[[ritual-mezuzah-tefillin]] (parallel daily commandment)", "Yom Kippur (worn for all five services)", "wedding canopy (chuppah)", "burial (the dead are wrapped in their tallit)"]
 parallel-attire: ["[[ihram-pilgrim-garment]]", "[[vestment-chasuble]]", "[[sikh-five-ks]]"]
 related-symbols: ["[[swastika]]"]

@@ -16,7 +16,7 @@ script: "Hebrew square script"
 region: "Roman Palestine (Galilee)"
 city-of-origin: "Sepphoris (and Beit She'arim — Rabbi Judah's seats)"
 authorship: "redacted (by Rabbi Judah ha-Nasi ~200 from the teachings of the tannaim back to Hillel and Shammai)"
-key-figures: ["[[judah-ha-nasi]]", "[[hillel-the-elder]]", "[[shammai]]", "[[akiva-ben-yosef]]", "[[meir-rabbi]]"]
+key-figures: ["[[judah-ha-nasi]]", "[[hillel-the-elder]]", "[[shammai]]", "[[rabbi-akiva]]", "[[meir-rabbi]]"]
 themes: ["[[chosen-people]]", "[[divine-kingship]]"]
 parallels: ["[[phase-4-032-jerusalem-talmud]]", "[[phase-4-033-babylonian-talmud]]", "Tosefta (~250)"]
 influenced-by: ["[[phase-2-005-hebrew-bible-j-source]] (Torah-as-base)", "Pharisaic oral tradition", "Qumran legal traditions (parallel-development)"]

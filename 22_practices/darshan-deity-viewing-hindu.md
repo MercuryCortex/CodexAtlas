@@ -16,7 +16,7 @@ methods:
   - "Yantra + image-of-image darshan — extension to non-anthropomorphic visual mediations (yantras, śāligrāma stones, lingam) where the reciprocal-seeing principle still operates"
   - "Cinematic darshan — modern extension into film + television (Doordarshan = 'television' itself is a play on darshan); the Ramayana / Mahabharata TV serials of the 1980s-90s were treated as darshan-occasion by millions"
 key-figures:
-  - "[[adi-shankara]] (788-820; codified temple-cult darshan theology within Vedānta)"
+  - "[[shankara]] (788-820; codified temple-cult darshan theology within Vedānta)"
   - "Vaiṣṇava ācāryas — Rāmānuja (1017-1137), Madhva (1238-1317), [[chaitanya-mahaprabhu]] (1486-1534) — codified the bhakti-darshan tradition centered on Viṣṇu / Kṛṣṇa images"
   - "[[ramana-maharshi]] (1879-1950; classic modern figure receiving darshan of countless devotees at Arunachala)"
   - "Diana L. Eck (b. 1945; *Darśan: Seeing the Divine Image in India* 1981 — the canonical modern academic study)"

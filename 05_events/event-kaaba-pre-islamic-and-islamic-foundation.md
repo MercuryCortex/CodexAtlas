@@ -7,7 +7,7 @@ date-end:
 duration-years:
 region: "Mecca (Makkah al-Mukarramah), Hijaz, western Arabian Peninsula"
 event-type: "founding"
-participants: ["[[muhammad-ibn-abdullah]]", "Quraysh tribe (custodians of the pre-Islamic Kaaba)", "Abd al-Muttalib (Muhammad's grandfather; Hashimite custodial line)", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]"]
+participants: ["[[muhammad-prophet]]", "Quraysh tribe (custodians of the pre-Islamic Kaaba)", "Abd al-Muttalib (Muhammad's grandfather; Hashimite custodial line)", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]"]
 traditions-affected: ["[[tradition-pre-islamic-arabian]]", "[[tradition-islam]]"]
 documents-produced: ["[[phase-4-034-quran]]"]
 documents-affected: ["[[phase-5-043-ibn-ishaq-sirat-rasul-allah]]", "[[phase-5-007-sahih-al-bukhari]]"]
@@ -75,7 +75,7 @@ Muhammad's Meccan preaching (c. 610–622 CE) was a strict monotheist rejection 
 - [[event-conquest-of-mecca-630]] — *founding-of-Islamic-Kaaba*; the political-military event that converts the Kaaba from a Quraysh polytheist shrine into the Islamic *qibla*.
 - [[event-hegira-622]] — *shared-milieu*; the migration to Medina that precedes and conditions the 630 return-to-Mecca.
 - [[event-death-of-muhammad-632]] — *shared-milieu*.
-- [[muhammad-ibn-abdullah]], [[abu-bakr]], [[umar-ibn-al-khattab]] — *participants*.
+- [[muhammad-prophet]], [[abu-bakr]], [[umar-ibn-al-khattab]] — *participants*.
 - [[hubal]], [[allat]], [[al-uzza]], [[manat]], [[allah]] — *deities-of-the-sanctuary* (pre-Islamic + Islamic phase).
 - [[tradition-pre-islamic-arabian]], [[tradition-islam]] — *traditions-affected*.
 - [[satanic-verses-incident]] — *associated-theme*.

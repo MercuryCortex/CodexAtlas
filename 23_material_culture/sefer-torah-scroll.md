@@ -14,7 +14,7 @@ dating-basis: B1
 dating-basis-source: "\"Tov, E. 2004 *Scribal Practices and Approaches Reflected in the Texts Found in the Judean Desert*. Brill\""
 dating-basis-notes: "Earliest physical Torah-scroll fragments: Dead Sea Scrolls 4QExodb, 4QpaleoExodm, 4QGenb, etc. dated c. -250 to -50; the parchment-scroll Torah is a Second Temple-period crystallisation, with the full ~245-column scribal-codified form locked by the rabbinic Soferim period 200-500 CE."
 region: "Originating Second Temple Judea; central liturgical object in every synagogue worldwide; continuously written + read for 2,200+ years"
-key-figures: ["[[moses]] (Pentateuchal attribution)", "Ezra the Scribe (Persian-period redactor + scribal tradition founder)", "[[akiva-ben-yosef]] (Masoretic-precursor rabbinic codifier)", "[[maimonides]] (*Mishneh Torah*, Hilchot Sefer Torah)", "the Masoretes of Tiberias (Aaron ben Asher, 10th c. — the textual standard)"]
+key-figures: ["[[moses]] (Pentateuchal attribution)", "Ezra the Scribe (Persian-period redactor + scribal tradition founder)", "[[rabbi-akiva]] (Masoretic-precursor rabbinic codifier)", "[[maimonides]] (*Mishneh Torah*, Hilchot Sefer Torah)", "the Masoretes of Tiberias (Aaron ben Asher, 10th c. — the textual standard)"]
 related-rituals: ["[[ritual-torah-reading-synagogue]]", "[[ritual-bar-mitzvah-coming-of-age]]", "[[ritual-daily-prayer]]"]
 related-attire: ["[[tallit-with-tzitzit]]"]
 related-documents: ["[[document-exodus]]", "[[document-leviticus]]", "[[document-numbers]]", "[[phase-4-031-mishnah]]", "[[phase-4-033-babylonian-talmud]]"]
@@ -149,7 +149,7 @@ The Sefer Torah is one of the cleanest examples in religious-history of a **cult
 
 ## Cross-references
 
-- **Wikilinks**: [[moses]], [[akiva-ben-yosef]], [[maimonides]], [[document-exodus]], [[document-leviticus]], [[document-numbers]], [[phase-4-031-mishnah]], [[phase-4-033-babylonian-talmud]], [[ritual-torah-reading-synagogue]], [[ritual-bar-mitzvah-coming-of-age]], [[tradition-rabbinic-judaism]], [[tradition-second-temple-judaism]], [[tradition-samaritanism]], [[alphabet-hebrew-aleph-bet]], [[alphabet-masoretes]], [[tefillin-phylacteries]], [[mezuzah]], [[tallit-with-tzitzit]], [[phase-6-016-guru-granth-sahib]], [[tetragrammaton]], [[menorah]].
+- **Wikilinks**: [[moses]], [[rabbi-akiva]], [[maimonides]], [[document-exodus]], [[document-leviticus]], [[document-numbers]], [[phase-4-031-mishnah]], [[phase-4-033-babylonian-talmud]], [[ritual-torah-reading-synagogue]], [[ritual-bar-mitzvah-coming-of-age]], [[tradition-rabbinic-judaism]], [[tradition-second-temple-judaism]], [[tradition-samaritanism]], [[alphabet-hebrew-aleph-bet]], [[alphabet-masoretes]], [[tefillin-phylacteries]], [[mezuzah]], [[tallit-with-tzitzit]], [[phase-6-016-guru-granth-sahib]], [[tetragrammaton]], [[menorah]].
 
 ## Sources
 

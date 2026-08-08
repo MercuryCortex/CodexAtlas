@@ -15,7 +15,7 @@ dating-basis-source: "\"Bühnemann, Gudrun 1988 *Pūjā: A Study in Smārta Ritu
 dating-basis-notes: "Earliest iconographic depictions of forehead marks on deity-images + worshippers appear in the Gupta period (4th-6th c. CE); textual canonization of tripundra (Śaiva) + urdhva-pundra (Vaiṣṇava) forms in Purāṇic + Tantric literature (6th-12th c.); continuous daily practice across Hindu communities to the present."
 source-tier: T1
 region: "Originating Indic religious context (late Vedic / Upaniṣadic period); canonical across Hindu sectarian + regional traditions; carried throughout the Hindu diaspora; distinguishes Vaiṣṇava + Śaiva + Śākta sectarian identity at a glance"
-key-figures: ["[[adi-shankara]] (8th c.; codifies tripundra-Śaiva tradition)", "[[ramanuja]] (11th-12th c.; codifies urdhva-pundra-Vaiṣṇava tradition)", "[[madhva]] (13th c.; codifies Dvaita-Vaiṣṇava variant)"]
+key-figures: ["[[shankara]] (8th c.; codifies tripundra-Śaiva tradition)", "[[ramanuja]] (11th-12th c.; codifies urdhva-pundra-Vaiṣṇava tradition)", "[[madhva]] (13th c.; codifies Dvaita-Vaiṣṇava variant)"]
 related-rituals: ["[ritual-puja-hindu-worship]"]
 related-symbols: ["[bindi-hindu-married-woman-mark]"]
 status: "full"
@@ -109,7 +109,7 @@ Hindu daily-tilaka practice is exceptional in its **routine universality**: most
 
 ## Cross-references
 
-- **Wikilinks**: [[adi-shankara]], [[ramanuja]], [[madhva]], [[tradition-hinduism]], [[tradition-vaishnavism]], [[tradition-shaivism]], [[tradition-shaktism]], [bindi-hindu-married-woman-mark], [doctrine-ajna-cakra-third-eye], [theme-aniconism-iconoclasm-comparative], [ritual-puja-hindu-worship].
+- **Wikilinks**: [[shankara]], [[ramanuja]], [[madhva]], [[tradition-hinduism]], [[tradition-vaishnavism]], [[tradition-shaivism]], [[tradition-shaktism]], [bindi-hindu-married-woman-mark], [doctrine-ajna-cakra-third-eye], [theme-aniconism-iconoclasm-comparative], [ritual-puja-hindu-worship].
 
 ## Sources
 

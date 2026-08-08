@@ -24,7 +24,7 @@ ritual-festivals:
   - "ʿAshura (Muharram 10) — Sunni voluntary fast + Shi'i commemoration of Karbala"
   - "Mawlid al-Nabi (Rabīʿ al-Awwal 12) — Prophet's birthday (celebrated in most but not all Islamic traditions)"
 key-figures:
-  - "[[muhammad-ibn-abdullah]] (Hegira event of 622 CE, the epoch)"
+  - "[[muhammad-prophet]] (Hegira event of 622 CE, the epoch)"
   - "Caliph Umar ibn al-Khattab (638 CE establishment of the Hijri-year reckoning)"
 related-traditions:
   - "[[tradition-islam]]"

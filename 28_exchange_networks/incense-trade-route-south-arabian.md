@@ -8,7 +8,7 @@ date-attested-earliest: -1500
 date-attested-latest: 300
 region-span: "Dhofar (Oman) + Hadramawt (Yemen) → Shabwa → Marib (Sabaean capital) → Najran → Yathrib (Medina) → Dedan / Hegra → Petra (Nabataean) → Gaza / Rhinocolura (Mediterranean terminals); maritime branch via Qana (Yemen) and Aden across the Red Sea to Berenike and Myos Hormos in Roman Egypt"
 key-commodities: ["[[frankincense-as-trade-commodity]]", "[[myrrh-as-trade-commodity]]", "[[balm-of-gilead]]", "[[cinnamon]]", "[[gold]]", "[[ivory]]", "[[pearls]]"]
-key-traditions-transmitted: ["[[tradition-sabaean-religion]]", "[[tradition-minaean-religion]]", "[[tradition-nabataean-religion]]", "[[tradition-judaism-second-temple]]", "[[tradition-early-christianity]]", "[[tradition-greco-roman-paganism]]"]
+key-traditions-transmitted: ["[[tradition-sabaean-religion]]", "[[tradition-minaean-religion]]", "[[tradition-nabataean-religion]]", "[[tradition-second-temple-judaism]]", "[[tradition-early-christianity]]", "[[tradition-greco-roman-paganism]]"]
 key-hubs: ["[[place-shabwa]]", "[[place-marib]]", "[[place-najran]]", "[[place-dedan]]", "[[place-hegra]]", "[[place-petra]]", "[[place-gaza]]", "[[place-qana]]", "[[place-berenike]]"]
 key-trading-peoples: ["[[tradition-sabaeans]]", "[[tradition-minaeans]]", "[[tradition-nabataeans]]", "[[tradition-himyarites]]"]
 parallel-routes: ["[[maritime-silk-road]]", "[[silk-road-overland]]"]

@@ -96,7 +96,7 @@ The mikveh is thus the ritual grandmother of the practice that has been administ
 - [[tradition-second-temple-judaism]] — the mikveh's flourishing context
 - [[tradition-rabbinic-judaism]] — post-Temple maintenance of the practice
 - [[tradition-christianity-canonical]] — inherits and transforms into baptism
-- [[tradition-islam-sunni]] — parallel ghusl practice
+- [[tradition-sunni-islam]] — parallel ghusl practice
 - [[tradition-hinduism]] — parallel snana practice
 - [[tradition-shinto]] — parallel misogi practice
 - [[phase-3-011-dead-sea-scrolls]] — Qumran mikveh installations

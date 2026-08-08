@@ -16,7 +16,7 @@ traditions-affected:
   - "[[tradition-egyptian-religion]]"
   - "[[tradition-canaanite-ugaritic]]"
   - "[[tradition-judaism]]"
-  - "[[tradition-judaism-second-temple]]"
+  - "[[tradition-second-temple-judaism]]"
   - "[[tradition-hinduism]]"
   - "[[tradition-buddhism]]"
   - "[[tradition-jainism]]"

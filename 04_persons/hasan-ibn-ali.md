@@ -40,7 +40,7 @@ tags: [person, islam, shia, imam, second-imam, hasan, al-mujtaba, abdication, mu
 # Hasan ibn Ali
 
 ## Identity
-Elder son of [[ali-ibn-abi-talib]] by Fatima al-Zahra, daughter of the Prophet [[muhammad-ibn-abdullah]]; older brother of [[husayn-ibn-ali]]. Born in Medina ~625; the elder of the two grandsons whom the Prophet held in special affection. For Shi'i Islam, the **Second Imam**, succeeding his father after Ali's assassination in January 661. Briefly proclaimed caliph in Kufa after Ali's death, but in summer 661, facing the military superiority of Mu'awiya's Syrian forces and internal Kufan fragility, signed an abdication treaty with Mu'awiya ceding the caliphate. Retired to Medina, where he lived another ~9 years and died (poisoned, per Shi'i tradition, at the instigation of Mu'awiya) in 670.
+Elder son of [[ali-ibn-abi-talib]] by Fatima al-Zahra, daughter of the Prophet [[muhammad-prophet]]; older brother of [[husayn-ibn-ali]]. Born in Medina ~625; the elder of the two grandsons whom the Prophet held in special affection. For Shi'i Islam, the **Second Imam**, succeeding his father after Ali's assassination in January 661. Briefly proclaimed caliph in Kufa after Ali's death, but in summer 661, facing the military superiority of Mu'awiya's Syrian forces and internal Kufan fragility, signed an abdication treaty with Mu'awiya ceding the caliphate. Retired to Medina, where he lived another ~9 years and died (poisoned, per Shi'i tradition, at the instigation of Mu'awiya) in 670.
 
 ## Historical evidence
 Documented in the Sunni and Shi'i hadith corpora, the *sira* tradition, and the early historiographers ([[al-tabari]], Baladhuri, Ya'qubi). The abdication of 661 is a particularly well-attested political event; the precise terms (which scholars debate — Madelung 1997 is the principal critical reconstruction) included Hasan's renunciation of caliphal claim, financial provisions, and (per some sources) provisions about the succession after Mu'awiya — provisions Mu'awiya then violated by designating his son Yazid I.
@@ -61,7 +61,7 @@ The line of Imams in Twelver Shi'ism continues *not* through Hasan but through H
 
 ## Cross-tradition connections
 - ↔ [[ali-ibn-abi-talib]] (father), [[husayn-ibn-ali]] (brother) — the central genealogical triad of early Shi'ism.
-- ↔ [[muhammad-ibn-abdullah]] — maternal grandfather.
+- ↔ [[muhammad-prophet]] — maternal grandfather.
 - ↔ [[event-karbala-680]] — Hasan's earlier abdication is the political-theological pre-condition for the Husayn-Yazid confrontation at Karbala; Hasan's accommodation was repudiated by Husayn's confrontation.
 - ↔ [[tradition-shia-islam]], Zaydi Shi'ism — Hasanid descent is the alternative claim-line; Zaydi imams have included Hasanids alongside Husaynids.
 

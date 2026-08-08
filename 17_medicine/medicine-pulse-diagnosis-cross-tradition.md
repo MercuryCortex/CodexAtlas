@@ -19,7 +19,7 @@ instances:
   - "[[medicine-tibetan-sowa-rigpa]] — *rtsa* pulse-reading in the *rGyud bzhi* (Four Tantras, Final Tantra); itself a downstream synthesis of Chinese, Indian, and Greco-Persian inputs"
 key-traditions:
   - "[[tradition-hinduism]]"
-  - "[[tradition-islam-sunni]]"
+  - "[[tradition-sunni-islam]]"
   - "[[tradition-tibetan-buddhism]]"
 related-persons:
   - "[[galen-of-pergamon]]"

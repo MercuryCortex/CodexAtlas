@@ -7,7 +7,7 @@ date-end: 622
 duration-years: 1
 region: "Arabia (Mecca to Yathrib/Medina)"
 event-type: "founding"
-participants: ["[[muhammad-ibn-abdullah]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[aisha-bint-abi-bakr]] (child, emigrated with her father Abū Bakr)", "the early Muslim community"]
+participants: ["[[muhammad-prophet]]", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[aisha-bint-abi-bakr]] (child, emigrated with her father Abū Bakr)", "the early Muslim community"]
 traditions-affected: ["[[tradition-islam]]", "[[tradition-pre-islamic-arabian]] (pre-Hegira religious context)"]
 documents-produced: ["the Constitution of Medina (Sahifat al-Madinah) shortly after", "the Medinan-period suras of [[phase-4-034-quran]] eventually compiled under [[uthman|ʿUthmān]]"]
 hub-edges:

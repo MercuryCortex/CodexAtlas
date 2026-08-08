@@ -16,7 +16,7 @@ script: "Naskhi Arabic"
 region: "Khurasan / Persian east — composed at Nishapur"
 city-of-origin: "Nishapur (Iran)"
 authorship: "known — Abū al-Ḥusayn Muslim ibn al-Ḥajjāj al-Naysābūrī (~822–875 CE)"
-key-figures: ["Muslim ibn al-Ḥajjāj (the compiler)", "[[muhammad-ibn-abdullah]] (subject)", "[[aisha-bint-abi-bakr]] (major hadith-isnād)", "Abū Hurayra (highest-volume hadith-isnād)", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]"]
+key-figures: ["Muslim ibn al-Ḥajjāj (the compiler)", "[[muhammad-prophet]] (subject)", "[[aisha-bint-abi-bakr]] (major hadith-isnād)", "Abū Hurayra (highest-volume hadith-isnād)", "[[abu-bakr]]", "[[umar-ibn-al-khattab]]", "[[uthman]]", "[[ali-ibn-abi-talib]]"]
 themes: ["[[ecclesial-authority]]", "[[oral-tradition-transmission]]", "[[commentary-as-genre]]"]
 parallels: ["[[phase-5-007-sahih-al-bukhari]] (the paired canonical Sunni hadith collection — the two are conventionally called *al-Ṣaḥīḥān* 'the Two Sound Books' and rank as the highest-authority hadith sources in Sunni tradition; together they form the foundation of Sunni hadith methodology)"]
 influenced-by: ["[[phase-5-007-sahih-al-bukhari]] (Bukhārī was Muslim's older contemporary and partial teacher; Muslim's *Ṣaḥīḥ* is composed in awareness of and in productive dialogue with Bukhārī's *Ṣaḥīḥ*)", "the 9th-c. hadith-criticism tradition (Yaḥyā ibn Maʿīn, ʿAlī ibn al-Madīnī, Aḥmad ibn Ḥanbal — the Baghdad and Khurasan *muḥaddithūn*-tradition)"]

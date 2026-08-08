@@ -8,7 +8,7 @@ date-end: 630
 region-origin: "Arabian peninsula — Hijaz, Najd, Yemen, Nabataean north, Palmyrene oases, Safaitic/Hismaic desert"
 regions-spread: ["Arabian peninsula (Hijaz, Najd, Yemen)", "Nabataean kingdom (Petra, Hegra, Sinai)", "Palmyra and the Syrian-Arabian frontier", "northern Arabian Safaitic / Hismaic / Thamudic graffito-zones"]
 key-deities: ["[[allah]]", "[[hubal]]", "[[allat]]", "[[al-uzza]]", "[[manat]]", "[[wadd]]", "[[nasr-pre-islamic]]"]
-key-persons: ["[[muhammad-ibn-abdullah]]", "Quss ibn Saʿida al-Iyadi (legendary hanif preacher)", "Zayd ibn ʿAmr ibn Nufayl (hanif, Islamic-tradition memory)", "Waraqa ibn Nawfal (hanif cousin of Khadija)"]
+key-persons: ["[[muhammad-prophet]]", "Quss ibn Saʿida al-Iyadi (legendary hanif preacher)", "Zayd ibn ʿAmr ibn Nufayl (hanif, Islamic-tradition memory)", "Waraqa ibn Nawfal (hanif cousin of Khadija)"]
 key-documents: ["[[phase-4-034-quran]] (the principal Islamic-period textual witness to pre-Islamic Arabian religion, by polemical engagement)", "Nabataean and Palmyrene inscriptions (epigraphic primary attestation)", "Safaitic / Hismaic / Thamudic graffiti (~30,000+ rock inscriptions, c. -100 to 400 CE)", "Ibn al-Kalbi *Kitāb al-Aṣnām* (Book of Idols, ~9th c. CE — later Islamic-tradition reconstructive source)", "South Arabian Sabaic / Minaean / Qatabanian / Himyarite inscriptions (Yemen, c. -800 onward)"]
 sister-traditions: ["[[tradition-canaanite-ugaritic]]", "[[tradition-mesopotamian]]", "[[tradition-zoroastrianism]]", "[[tradition-judaism]]", "[[tradition-christianity-canonical]]", "[[tradition-ethiopian-orthodox-tewahedo]]", "[[tradition-mandaeism]]"]
 status: "metadata"

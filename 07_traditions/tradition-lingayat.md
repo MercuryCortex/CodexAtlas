@@ -10,7 +10,7 @@ tradition-context:
   - "[[tradition-shaivism]]"
   - "[[tradition-hinduism]]"
 related-persons:
-  - "[[basavanna]]"
+  - "[[basava]]"
   - "`allama-prabhu`"
   - "`akka-mahadevi`"
 related-themes:
@@ -43,7 +43,7 @@ tags: [tradition, india, shaivism, lingayat, virashaiva, basavanna, vacana, bhak
 
 # Lingayat / Vīraśaiva Tradition (12th c. CE onward)
 
-A South Indian Shaiva reform movement that emerged in the 12th c. CE in northern Karnataka under the leadership of **[[basavanna]]** (Basava, ~1131–1167) and a circle of *vacanakāras* (poet-saints) including **`allama-prabhu`** and **`akka-mahadevi`**. The tradition is theologically Shaiva-monotheistic (Shiva as the sole supreme reality, worshipped via the personal *iṣṭa-liṅga* — a small portable lingam worn on the body), socially anti-caste-anti-Brahmanical-anti-temple, and philosophically distinct from the older Shaiva Siddhanta + Kashmir Shaivism traditions.
+A South Indian Shaiva reform movement that emerged in the 12th c. CE in northern Karnataka under the leadership of **[[basava]]** (Basava, ~1131–1167) and a circle of *vacanakāras* (poet-saints) including **`allama-prabhu`** and **`akka-mahadevi`**. The tradition is theologically Shaiva-monotheistic (Shiva as the sole supreme reality, worshipped via the personal *iṣṭa-liṅga* — a small portable lingam worn on the body), socially anti-caste-anti-Brahmanical-anti-temple, and philosophically distinct from the older Shaiva Siddhanta + Kashmir Shaivism traditions.
 
 ## Core practice — the *iṣṭa-liṅga*
 
@@ -66,7 +66,7 @@ The contemporary political-legal status of Lingayatism (whether it should be cla
 
 ## Cross-tradition edges
 
-- [[basavanna]] — the founder
+- [[basava]] — the founder
 - `allama-prabhu` + `akka-mahadevi` — the major *vacanakāra* poet-saints
 - [[tradition-shaivism]] — the broader Shaiva tradition
 - [[tradition-kashmir-shaivism]] — the sister tradition (Kashmir vs. Karnataka Shaivism)

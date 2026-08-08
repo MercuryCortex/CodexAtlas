@@ -18,7 +18,7 @@ methods:
   - "Daṇḍavat-pradakṣiṇā — prostration-circumambulation, advancing one body-length per cycle; extreme-austerity form, takes weeks for a major mountain"
 key-figures:
   - "Vedic ṛṣis (the Saṃhitā + Brāhmaṇa literature codifies agni-pradakṣiṇā as the central rubric of Vedic sacrifice)"
-  - "[[adi-shankara]] (788-820; codified the standard temple-pradakṣiṇā theology of the four-cardinal-circuits in the digvijaya)"
+  - "[[shankara]] (788-820; codified the standard temple-pradakṣiṇā theology of the four-cardinal-circuits in the digvijaya)"
   - "[[ramana-maharshi]] (1879-1950; revived the Arunachala giri-pradakṣiṇā as a contemplative practice for modern seekers — full-moon walking-meditation circuit)"
   - "Chaitanya Mahāprabhu (1486-1534; canonized the Govardhan-parikrama in Gauḍīya Vaiṣṇava tradition)"
 key-traditions:

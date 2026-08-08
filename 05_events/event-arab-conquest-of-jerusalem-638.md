@@ -8,7 +8,7 @@ duration-years: 1
 region: "Jerusalem (Byzantine → Rashidun caliphate)"
 event-type: "conquest"
 participants: ["[[umar-ibn-al-khattab|Caliph ʿUmar ibn al-Khaṭṭāb]]", "Patriarch Sophronius of Jerusalem (surrendered the city)", "[[heraclius-byzantine-emperor|Emperor Heraclius]] (lost the city)"]
-traditions-affected: ["[[tradition-eastern-orthodoxy]]", "[[tradition-islam-sunni]]"]
+traditions-affected: ["[[tradition-eastern-orthodoxy]]", "[[tradition-sunni-islam]]"]
 status: "stub"
 refs:
   - title: "The Great Arab Conquests"

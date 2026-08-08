@@ -15,7 +15,7 @@ dating-basis-source: "\"Khanna, Madhu 1979 *Yantra: The Tantric Symbol of Cosmic
 dating-basis-notes: "Earliest textual references to yantra-form in the Saṃhitā-period tantric corpus (post-Gupta, 6th-8th c. CE); the canonical Śrī Yantra is fixed by the Śrīvidyā Tantric tradition by the 9th-10th c. (textual locus: *Saundarya Laharī* attributed to Śaṅkara, 8th c.). Continuously produced + used in Hindu Tantric ritual to the present."
 source-tier: T1
 region: "Originating Indic Tantric milieu (post-Gupta India, ~6th-10th c. CE); canonical across Hindu Tantric schools (Śrīvidyā, Kālīkula, Trika-Kashmir-Shaivism, Vaikhānasa); transmitted with Tantric Buddhism to Tibet + East Asia; influences global esoteric + occult traditions"
-key-figures: ["[[adi-shankara]] (8th c.; the *Saundarya Laharī* canonical Śrī Yantra text traditionally attributed to him)", "[[abhinavagupta]] (10th-11th c. Kashmir Trika tantric)"]
+key-figures: ["[[shankara]] (8th c.; the *Saundarya Laharī* canonical Śrī Yantra text traditionally attributed to him)", "[[abhinavagupta]] (10th-11th c. Kashmir Trika tantric)"]
 related-rituals: ["[ritual-yantra-puja]"]
 related-symbols: ["[[mandala-buddhist-cosmic-diagram]]"]
 status: "full"
@@ -97,7 +97,7 @@ The Hindu yantra and Buddhist [[mandala-buddhist-cosmic-diagram]] are sister-for
 
 ## Cross-references
 
-- **Wikilinks**: [[adi-shankara]], [[abhinavagupta]], [[tradition-hinduism]], [[tradition-shaktism]], [[tradition-shaivism]], [[tradition-vaishnavism]], [[tradition-tantra]], [[mandala-buddhist-cosmic-diagram]], [theme-microcosm-macrocosm], [sacred-geometry-pythagorean], [ritual-yantra-puja].
+- **Wikilinks**: [[shankara]], [[abhinavagupta]], [[tradition-hinduism]], [[tradition-shaktism]], [[tradition-shaivism]], [[tradition-vaishnavism]], [[tradition-tantra]], [[mandala-buddhist-cosmic-diagram]], [theme-microcosm-macrocosm], [sacred-geometry-pythagorean], [ritual-yantra-puja].
 
 ## Sources
 

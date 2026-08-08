@@ -14,7 +14,7 @@ dating-basis: B1
 dating-basis-source: "\"Yadin, Y. 1969 *Tefillin from Qumran (X Q Phyl 1-4)*. Israel Exploration Society\""
 dating-basis-notes: "Earliest physical tefillin recovered: Qumran cave finds (X Q Phyl 1-4 and 4QPhyl A-U) dating c. -100 to +70; Letter of Aristeas §159 references the practice c. -200."
 region: "Originating Second Temple Judea; carried throughout the Jewish diaspora; continuously practiced to the present"
-key-figures: ["[[moses]] (commanded the law; Exodus 13, Deuteronomy 6 + 11)", "[[akiva-ben-yosef]] (rabbinic codifier of order)", "[[maimonides]] (*Mishneh Torah*, Hilchot Tefillin)", "Rashi of Troyes (the standard Ashkenazi script order)", "Rabbeinu Tam (alternative script order)"]
+key-figures: ["[[moses]] (commanded the law; Exodus 13, Deuteronomy 6 + 11)", "[[rabbi-akiva]] (rabbinic codifier of order)", "[[maimonides]] (*Mishneh Torah*, Hilchot Tefillin)", "Rashi of Troyes (the standard Ashkenazi script order)", "Rabbeinu Tam (alternative script order)"]
 related-rituals: ["[[ritual-mezuzah-tefillin]]", "[[ritual-daily-prayer]]"]
 related-attire: ["[[tallit-with-tzitzit]]"]
 related-documents: ["[[document-exodus]]", "[[document-numbers]]", "[[phase-4-031-mishnah]]", "[[phase-4-033-babylonian-talmud]]"]
@@ -133,7 +133,7 @@ The Christian *phylacterion* terminology (Matthew 23:5: *πλατύνουσιν 
 ## Cross-references
 
 - **Pair object**: the [[mezuzah]] (doorpost-scroll) is the apartment-threshold version of the same Pentateuchal command; the tefillin is the body-threshold version. The Talmud Bavli Menachot 36b explicitly pairs them — *"Anyone who has tefillin on his head and tefillin on his arm and tzitzit on his garment and a mezuzah on his door, is presumed not to sin..."*. The three commandment-objects together form the **Jewish enveloping practice**: the body (tefillin + tallit) and the home (mezuzah) are both inscribed with the text of the covenant. See [[ritual-mezuzah-tefillin]].
-- **Wikilinks**: [[tallit-with-tzitzit]], [[mezuzah]], [[moses]], [[akiva-ben-yosef]], [[maimonides]], [[document-exodus]], [[phase-4-031-mishnah]], [[phase-4-033-babylonian-talmud]], [[ritual-mezuzah-tefillin]], [[ritual-daily-prayer]], [[tradition-rabbinic-judaism]], [[tradition-second-temple-judaism]], [[tetragrammaton]].
+- **Wikilinks**: [[tallit-with-tzitzit]], [[mezuzah]], [[moses]], [[rabbi-akiva]], [[maimonides]], [[document-exodus]], [[phase-4-031-mishnah]], [[phase-4-033-babylonian-talmud]], [[ritual-mezuzah-tefillin]], [[ritual-daily-prayer]], [[tradition-rabbinic-judaism]], [[tradition-second-temple-judaism]], [[tetragrammaton]].
 
 ## Sources
 

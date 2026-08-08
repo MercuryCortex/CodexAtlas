@@ -86,7 +86,7 @@ The world's two largest religions organized their primary worship institution �
 - [[tradition-rabbinic-judaism]] — home tradition
 - [[tradition-second-temple-judaism]] — development context
 - [[tradition-christianity-canonical]] — inherits the synagogue model wholesale
-- [[tradition-islam-sunni]] — mosque as third-generation synagogue
+- [[tradition-sunni-islam]] — mosque as third-generation synagogue
 - [[tradition-buddhism]] — parallel sutra reading practices
 - [[music-torah-cantillation]] — the cantillation system deployed
 - [[music-levitical-temple-music]] — the Temple musical tradition that predates and shapes synagogue chanting

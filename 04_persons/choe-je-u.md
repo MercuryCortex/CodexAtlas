@@ -44,7 +44,7 @@ Choe Je-u (pen-name *Su-un*, 水雲, "Water-Cloud") was the founder of [[traditi
 ## The founding vision (1860)
 In 1860, after years of spiritual searching and travel through Joseon, Choe Je-u received a mystical experience that he described as a direct communication from *Cheonju* (the Heavenly Lord, *Hanullim*). The divine voice addressed him, identified itself, and gave him the *innaecheon* revelation: "God is within humans; humans are Heaven." He was simultaneously given a thirteen-character mantra (*jumun*) for meditation and healing practice.
 
-The experience was disorienting and frightening — he describes not initially knowing whether he was receiving a demonic or divine communication. This ambivalence in the founding encounter is characteristic of many prophetic accounts (compare: Muhammad's initial terror at the cave of Hira, [[muhammad-ibn-abdullah]]; Joseph Smith's initial uncertainty, [[joseph-smith]]). Choe Je-u concludes the vision was genuinely divine and begins teaching.
+The experience was disorienting and frightening — he describes not initially knowing whether he was receiving a demonic or divine communication. This ambivalence in the founding encounter is characteristic of many prophetic accounts (compare: Muhammad's initial terror at the cave of Hira, [[muhammad-prophet]]; Joseph Smith's initial uncertainty, [[joseph-smith]]). Choe Je-u concludes the vision was genuinely divine and begins teaching.
 
 ## Core teaching: Innaecheon
 The doctrine of *innaecheon* (人乃天, "Humans are Heaven") was Choe Je-u's most radical and consequential teaching: every human being — regardless of social rank, gender, or education — carries the divine principle within them. In the rigidly hierarchical Confucian Joseon society, where class, gender, and hereditary status determined nearly every dimension of life, this was an explosive egalitarianism. The Heavenly Lord was not accessible only through Confucian scholarly meditation, Buddhist monasticism, or Catholic priestly ritual — *Hanullim* was already present in every person, accessed through the *jumun* mantra and sincere *sicheonju* ("serving the Heavenly Lord").
@@ -71,7 +71,7 @@ Three independent instances of the "human-divine identity" claim across Islam, V
 ## Relations
 - founded: [[tradition-donghak]]
 - pattern: [[executed-divine-claimant]]
-- parallel: [[muhammad-ibn-abdullah]] (founding vision archetype)
+- parallel: [[muhammad-prophet]] (founding vision archetype)
 - parallel: [[joseph-smith]] (founding vision archetype)
 - parallel: [[al-hallaj]] (human-divine identity claim generating persecution)
 - contemporary-political-context: [[event-donghak-peasant-revolution-1894]] (the posthumous explosion of his teaching)
