@@ -200,6 +200,25 @@ Equally important when contact is implausible. The hypothesis is "human mind und
 
 Every claim must trace to a referenceable source. No claim hangs in the air.
 
+> ⚠️ **THIS TABLE IS RETIRED (2026-08-08). THE TIER SYSTEM IS `CODEX.md`
+> §IV.** For years this section and CODEX §IV carried DIFFERENT
+> definitions of T1 — here T1 meant *primary source*, there it means
+> *mainstream peer-reviewed* — so **Boyce and Doniger were T2 in this
+> table and T1 in CODEX**, and a reader could not tell which scale a
+> wire was written on.
+>
+> **T1..T4 now mean how strongly a claim is supported by current
+> scholarship, per CODEX §IV.** The table below is kept only so older
+> nodes remain readable; do not tier new work from it.
+>
+> Primary sources are not demoted — they are a KIND, not a tier. They
+> live as document nodes, as Attestation-bucket edges (`attested-in`,
+> `attests`, `primary-source`), and in `refs:`. A primary source cited
+> for what a tradition SAYS is unimpeachable; cited for what HAPPENED it
+> is an interpretive claim and takes the tier its scholarship earns.
+>
+> Full reasoning: `00_meta/ONTOLOGY-RATIONALE-2026-08-08-source-tiers.md`.
+
 | Tier | Name | What | Examples |
 |---|---|---|---|
 | **T1** | Primary | Direct access to source text in original language or critical translation. The actual evidence. | ETCSL (Oxford), CDLI, Sefaria, Perseus, Nag Hammadi Library (Robinson ed.), ANET (Pritchard), Loeb Classical Library, Dead Sea Scrolls Digital Library, Study Quran (Nasr et al.) |

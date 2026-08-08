@@ -8,9 +8,9 @@ role-description: "Mahāvīra (Vardhamāna) — 24th and last Tīrthaṅkara of 
 tradition: "Jainism"
 role-tokens: ["tirthankara-jain", "founder", "kevali"]
 region: "Videha and Magadha — the eastern Gangetic plain (modern Bihar)"
-date-born: -599
-date-died: -527
-date-note: "YAML carries the ŚVETĀMBARA TRADITIONAL dating (-599 to -527), which is also the epoch of the Vīra Nirvāṇa Saṃvat era still used in the Jain calendar. Digambara tradition gives -582 to -510. Current academic chronology, following the redating of the Buddha's death to c. -400, places Mahāvīra's death c. -425 to -400. See ## Disputes — the range is carried in prose per ONTOLOGY §5."
+date-born: -497
+date-died: -425
+date-note: "ACADEMIC CHRONOLOGY, carried here so the graph is internally consistent. The vault dates the Buddha to c. -480/-400 (the short chronology, on siddhartha-gautama-buddha and event-buddha-parinirvana-c-400-bce); both traditions call Mahavira and the Buddha CONTEMPORARIES, so Mahavira must be dated in the same system or the timeline manufactures a contradiction. It previously carried the SVETAMBARA TRADITIONAL -599/-527 against the Buddha's academic -400, which placed Mahavira dead 127 years before his own contemporary. That was a mixing of two dating systems, not a real dispute. TRADITIONAL DATES ARE NOT DISCARDED: Svetambara -599/-527 (also the epoch of the Vira Nirvana Samvat era still used in the Jain calendar) and Digambara -582/-510 are stated in ## Disputes with their sources. Fixed 2026-08-08."
 floruit-earliest: -540
 floruit-latest: -468
 historicity: "likely-historical (independently attested in the Buddhist Pali canon)"

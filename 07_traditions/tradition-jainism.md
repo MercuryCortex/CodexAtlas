@@ -3,7 +3,8 @@ type: tradition
 id: "tradition-jainism"
 name: "Jainism"
 parent-tradition: ""
-date-emergence: -600
+date-emergence: -500
+dating-basis-notes: "Harmonised 2026-08-08 to the same ACADEMIC chronology the vault uses for Mahavira (-497/-425) and the Buddha (-480/-400). It previously read -600, which followed the Svetambara traditional dating while the Buddha node followed the academic one — two systems on one timeline. Jainism's own claim to far greater antiquity through the 24 tirthankaras is a doctrinal claim about the tradition, not a date for its historical emergence, and is treated as such in the body."
 date-end:
 region-origin: "Magadha / Videha (eastern Gangetic plain, modern Bihar)"
 regions-spread: ["pan-Indian subcontinent (concentrated in Gujarat, Rajasthan, Karnataka)", "global diaspora"]
