@@ -9,6 +9,7 @@ Run from the vault root:
     python3 build_data.py
 """
 
+import hashlib
 import json
 import os
 import re
@@ -1245,6 +1246,47 @@ def _attach_classification_provenance(nodes):
             node["classification_provenance"] = prov
 
 
+def stamp_index_cache_buster():
+    """Bump `data.js?v=…` in index.html to match THIS build.
+
+    ══ WHY THIS EXISTS (2026-08-08) ══════════════════════════════════
+    index.html asked for `data.js?v=20260621-035413` — a cache-buster
+    frozen since 21 JUNE. data.js is 47 MB and its URL never changed,
+    so every browser that had ever loaded the site kept serving itself
+    JUNE'S VAULT. Weeks of ingestion were invisible to anyone but a
+    first-time visitor or someone who hard-reloaded.
+
+    It was found the honest way: after consolidating eight duplicate
+    nodes the live page still reported 29,487 edges and all eight
+    duplicates present, while the freshly built local file had 29,476
+    and none. The earlier check that morning had only looked correct
+    because that browser tab had never fetched data.js before.
+
+    THE FIX IS STRUCTURAL, NOT A REMINDER. The repo already had a
+    standing rule that an un-bumped `?v=` ships nothing, and a memory
+    about it, and it still happened — because the bump was a separate
+    chore a human had to remember. So the BUILD now does it: you cannot
+    rebuild the data without also shipping it. Same reasoning as "a gate
+    moves in the same commit as the law it guards".
+    """
+    idx = VAULT / "index.html"
+    if not idx.exists():
+        return
+    html = idx.read_text(encoding="utf-8")
+    # Derived from the file we just wrote, so identical content that is
+    # rebuilt twice does not churn index.html for no reason.
+    digest = hashlib.sha1(OUT.read_bytes()).hexdigest()[:10]
+    # The lookbehind matters: `glyph-data.js?v=…` also ends in "data.js",
+    # and it is a DIFFERENT file with its own lifetime. Anchor on the
+    # src attribute so this can never stamp the wrong script.
+    new = re.sub(r'(src="data\.js\?v=)[A-Za-z0-9._-]+', r"\g<1>" + digest, html, count=1)
+    if new == html:
+        print("--  index.html cache-buster already current")
+        return
+    idx.write_text(new, encoding="utf-8")
+    print(f"OK  index.html data.js?v={digest}  (cache-buster stamped)")
+
+
 def main():
     print(f"Scanning vault at {VAULT} ...")
     THUMBS = load_thumbnail_cache()
@@ -1621,6 +1663,7 @@ def main():
     payload = json.dumps(out, indent=2, ensure_ascii=False)
     OUT.write_text(f"window.VAULT_DATA = {payload};\n", encoding="utf-8")
     print(f"OK  wrote {OUT}")
+    stamp_index_cache_buster()
 
     # 2026-05-23 — CODEX v1.2 — emit HIGH-ALERT-INDEX.md so John + agents
     # can `cat 00_meta/HIGH-ALERT-INDEX.md` for a fast triage list of
