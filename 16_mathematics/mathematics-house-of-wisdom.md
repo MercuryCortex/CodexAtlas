@@ -22,6 +22,16 @@ tags:
   - abbasid
 
 cross-tradition-edges:
+  - target: astronomy-zij-al-sindhind
+    type: constituent-of
+    source: "Neugebauer, O. 1962 *The Astronomical Tables of al-Khwārizmī* Kgl. Danske Videnskabernes Selskab; Kennedy, E. S. 1956 'A Survey of Islamic Astronomical Tables' TAPS 46/2; Gutas, D. 1998 *Greek Thought, Arabic Culture* Routledge"
+    source-tier: "T1"
+    notes: "The House of Wisdom's characteristic product, and the astronomical counterpart to the algebra. Al-Khwārizmī's *Zīj al-Sindhind* is not a translation of any one tradition but a working synthesis of three — Indian mean motions, Ptolemaic equation structure, Sasanian chronology — computed in Indian sine trigonometry. It survives only in Adelard of Bath's Latin version of an Andalusian recension, which is itself the shape of the whole transmission."
+  - target: astronomy-brahmasphutasiddhanta
+    type: heir-of
+    source: "Pingree, D. 1970 'The Fragments of the Works of al-Fazārī' JNES 29: 103-123; Plofker, K. 2009 *Mathematics in India* Princeton UP ch. 8; Gutas 1998"
+    source-tier: "T1"
+    notes: "The sequence matters and is easily lost. The Sindhind translation of 771/773 — an Indian delegation to al-Manṣūr, rendered into Arabic by al-Fazārī and Yaʿqūb ibn Ṭāriq — PREDATES the great Greek-to-Arabic scientific translation wave. Abbasid exact science is Indian first, then Persian, then Greek, and the resulting tension between the Indian *Sindhind* line and the Ptolemaic *mumtaḥan* line organises Islamic astronomy for two centuries."
   - target: mathematics-babylonian-temple
     type: heir-of
     note: The House of Wisdom's astronomers worked directly from Babylonian astronomical traditions transmitted through Persian intermediaries; al-Khwarizmi's astronomical tables incorporate Babylonian sexagesimal notation as the operational base.

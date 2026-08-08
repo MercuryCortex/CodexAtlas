@@ -16,9 +16,9 @@ script: "Devanāgarī (later mss); the tradition is Sanskritic"
 region: "Western/Central India (Avanti / Ujjain)"
 city-of-origin: "Ujjain"
 authorship: "known — Varāhamihira (c. 505–587 CE), the great astronomer-astrologer of Ujjain, also author of the *Bṛhat Saṃhitā* (encyclopaedia of omens and natural science) and the *Pañcasiddhāntikā* (a digest of five astronomical schools, two of them — Romaka and Pauliśa — Greek-derived)"
-key-figures: []
+key-figures: ["[[varahamihira]]"]
 themes: ["[[divinatory-omen-reading]]", "[[microcosm-macrocosm]]", "[[wisdom-as-cosmic-order]]"]
-parallels: ["[[phase-3-041-yavanajataka]]", "[[phase-3-038-ptolemy-tetrabiblos]]"]
+parallels: ["[[phase-3-041-yavanajataka]]", "[[phase-3-038-ptolemy-tetrabiblos]]", "[[astrology-horoscope-twelve-places]]"]
 influenced-by: ["[[phase-3-041-yavanajataka]] (the Greek-derived horā stratum of Indian astrology that Varāhamihira systematizes)", "the indigenous Vedic *nakṣatra* (lunar-mansion) tradition", "Greek (yavana) horoscopic astrology, which Varāhamihira explicitly honours", "[[tradition-jyotisha-indian-astrology]]"]
 influences: ["the entire later classical and medieval *jyotiṣa* tradition (Bhaṭṭotpala's 10th-c. commentary; the standard curriculum of Indian astrology to the present)", "[[tradition-jyotisha-indian-astrology]]"]
 deities-mentioned: []

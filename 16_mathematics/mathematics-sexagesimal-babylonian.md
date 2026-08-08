@@ -19,6 +19,16 @@ cross-tradition-edges:
     source: "Robson, E. 2008 *Mathematics in Ancient Iraq* Princeton; Hunger, H. & Pingree, D. 1989 *MUL.APIN*"
     source-tier: T1
     note: "Babylonian astronomy is computed ENTIRELY in sexagesimal: the MUL.APIN intercalation rules, rising-time and shadow-length tables, and the 360° / 12×30 ideal-year scheme (ancestor of the zodiac and the 360-degree circle) are base-60 arithmetic. The number system is the computational substrate of the celestial order the Enuma Elish cosmogony establishes."
+  - target: "[[astronomy-babylonian-system-a-b]]"
+    type: "computational-substrate-of"
+    source: "Neugebauer, O. 1955 *Astronomical Cuneiform Texts* (3 vols.) Lund Humphries; Ossendrijver, M. 2012 *Babylonian Mathematical Astronomy: Procedure Texts* Springer; Neugebauer, O. 1957 *The Exact Sciences in Antiquity* Brown UP"
+    source-tier: "T1"
+    notes: "This is why base-60 outlived Babylon. The ephemerides of System A and System B are sexagesimal place-value arithmetic end to end — the notation is what makes computing future lunar and planetary positions feasible at all. When Greek astronomy took over the Babylonian parameters it had to take over the notation with them, which is how the sexagesimal fraction entered Ptolemy, Islamic astronomy and then Europe, and why every clock, protractor and celestial coordinate is still divided into sixties. The most durable artefact of Babylonian science is a way of writing numbers."
+  - target: "[[hebrew-calendar]]"
+    type: "computational-substrate-of"
+    source: "Stern, S. 2001 *Calendar and Community: A History of the Jewish Calendar* Oxford UP; Neugebauer, O. 1957 *The Exact Sciences in Antiquity* Brown UP"
+    source-tier: "T1"
+    notes: "A sexagesimal Babylonian value still in weekly liturgical use. The rabbinic calendar's *molad* — the assumed mean lunation — is 29 days, 12 hours and 793 *ḥalaqim* (1080ths of an hour), which converted to sexagesimal is exactly 29;31,50,8,20 days: the Babylonian System B mean synodic month, the same figure Ptolemy states in *Almagest* IV.2. The Babylonian month-names carried in the Jewish calendar (Nisan, Tammuz, Elul, Tishrei, Kislev, Adar) travelled by the same exile-period channel."
 refs:
   - title: "Mathematics in Ancient Iraq"
     author: "Robson, Eleanor"

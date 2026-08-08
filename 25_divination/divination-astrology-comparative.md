@@ -15,6 +15,11 @@ methods:
   - "Interrogational / horary astrology — a chart cast for the moment a QUESTION is asked, the chart encoding the answer; the Indian praśna ([[divination-jyotisha-prashna-horary]]) and the Latin-English horary of Bonatti and Lilly ([[phase-6-054-lilly-christian-astrology]]) are the same genre on a shared Hellenistic ancestor."
 parallels:
   - "[[phase-1-019-enuma-anu-enlil]] (the Babylonian celestial-omen series — head of the transmission chain)"
+  - "[[astrology-horoscope-twelve-places]] (the APPARATUS itself — the ascendant and twelve places; the Hellenistic break this spine's chain turns on)"
+  - "[[astrology-planetary-dignities]] (the rulership scheme — Babylonian exaltations, Egyptian decans, Greek systematization)"
+  - "[[astrology-aspect-doctrine]] (the geometric layer — the clearest genuinely Greek contribution)"
+  - "[[astrology-lots-and-parts]] (the klēroi, and the 'Arabic Parts' misnomer that hides their Greek origin)"
+  - "[[astrology-great-conjunctions-mundane]] (the Sasanian-Persian contribution — history itself as an astrological object)"
   - "[[astronomy-babylonian-zodiac]] (the 12-sign coordinate frame the chain is built on)"
   - "[[alchemy-emerald-tablet]] (the Hermetic 'as above, so below' correspondence axiom that underwrites astrological influence — attributed to [[hermes-trismegistus]])"
   - "[[phase-3-040-dorotheus-carmen-astrologicum]] (early Hellenistic katarchic/horary astrology)"
@@ -197,6 +202,8 @@ Before the comparison, the object needs defining. "Astrology" in the lens spans 
 | **Interrogational / horary** | the moment a **question** is asked | [[divination-jyotisha-prashna-horary]] (praśna); [[phase-6-054-lilly-christian-astrology]] (Lilly) |
 
 The **omen** branch is the oldest and is the bridge to the hub [[divinatory-omen-reading]]; the **natal** branch (a chart with Ascendant, twelve houses, planets in zodiac signs, and aspects) is the Hellenistic innovation that makes "astrology" in the strict sense; the **electional** and **horary** branches share that apparatus and turn it from reading-a-life to choosing-a-moment or answering-a-question.
+
+**Lens note (2026-08-08).** Since the promotion of `30_astrology/`, the **apparatus itself** — the ascendant and [[astrology-horoscope-twelve-places|twelve places]], the [[astrology-planetary-dignities|dignities]], the [[astrology-aspect-doctrine|aspects]], the [[astrology-lots-and-parts|lots]], and the mundane technique of the [[astrology-great-conjunctions-mundane|great conjunctions]] — lives in the astrology lens. This node remains in `25_divination/` because it is a comparative spine over **divinatory consultation**: it maps how celestial sign-systems are consulted for answers, and how one such system was transmitted while others arose independently. The sky-model is next door; the asking is here.
 
 ## The documented transmission chain (Babylon -> Greece -> India -> Islam -> Europe)
 

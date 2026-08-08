@@ -27,6 +27,16 @@ tags:
   - negative-numbers
 
 cross-tradition-edges:
+  - target: astronomy-brahmasphutasiddhanta
+    type: ancient-identification
+    source: "Plofker, K. 2009 *Mathematics in India* Princeton UP ch. 5; Colebrooke, H. T. (trans.) 1817 *Algebra, with Arithmetic and Mensuration, from the Sanscrit of Brahmegupta and Bháscara* John Murray; Pingree, D. 1981 *Jyotiḥśāstra* Harrassowitz"
+    source-tier: "T1"
+    notes: "His treatise of 628 CE, now a node in the astronomy lens. Self-dated in the text: composed in Śaka 550 at Bhillamāla under the Cāpa king Vyāghramukha, when the author was thirty. Twenty-four chapters, of which chapter 11 attacks Āryabhaṭa by name, chapter 12 is arithmetic and mensuration, and chapter 18 gives the first surviving arithmetic of zero and of negative quantities anywhere in the world."
+  - target: astronomy-zij-al-sindhind
+    type: ancestor-of
+    source: "Pingree, D. 1970 'The Fragments of the Works of al-Fazārī' JNES 29: 103-123; Neugebauer, O. 1962 *The Astronomical Tables of al-Khwārizmī* Kgl. Danske Videnskabernes Selskab; Plofker 2009 ch. 8"
+    source-tier: "T1"
+    notes: "The named mechanism of the transfer, with a date and a city. An Indian delegation reaching Baghdad in 771/773 brought a Sanskrit *siddhānta* to the caliph al-Manṣūr; al-Fazārī and Yaʿqūb ibn Ṭāriq rendered it as the *Zīj al-Sindhind al-kabīr*, which al-Khwārizmī then rewrote as his own zīj a generation later. Indian astronomy therefore reaches Baghdad BEFORE the great Greek-to-Arabic translation wave — Islamic astronomy is Indian before it is Greek."
   - target: mathematics-zero-india
     type: parent-of
     note: Brahmagupta's Brahmasphutasiddhanta (Chapter 18, 628 CE) contains the first written arithmetic rules for zero as a number — not a placeholder but an operand. His rules (n + 0 = n; n − 0 = n; n × 0 = 0) are correct and foundational. His rule for 0 ÷ 0 = 0 was wrong and would not be correctly addressed until Bhaskara II (12th c.) and rigorously until the 19th century. Before Brahmagupta, zero existed as a scribal placeholder; he made it mathematics.

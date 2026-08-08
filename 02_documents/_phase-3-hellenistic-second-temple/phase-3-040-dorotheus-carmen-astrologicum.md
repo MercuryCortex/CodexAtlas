@@ -16,11 +16,11 @@ script: "Greek; Pahlavi; Arabic"
 region: "Roman East → Sasanian Iran → ʿAbbāsid Iraq"
 city-of-origin: "Sidon (Dorotheus's home; the poem is set partly in Egypt)"
 authorship: "attributed — Dorotheus of Sidon, a 1st-century CE astrologer who wrote a didactic hexameter poem in Greek; the work survives chiefly through a Sasanian Pahlavi version and its c. 800 CE Arabic translation by ʿUmar ibn al-Farrukhān al-Ṭabarī"
-key-figures: []
+key-figures: ["[[dorotheus-of-sidon]]", "[[umar-ibn-al-farrukhan-al-tabari]] (the named translator of the surviving Arabic text, c. 800 CE)", "[[mashallah-ibn-athari]]", "[[abu-mashar-al-balkhi]]"]
 themes: ["[[divinatory-omen-reading]]", "[[microcosm-macrocosm]]", "[[wisdom-as-cosmic-order]]"]
-parallels: ["[[phase-3-038-ptolemy-tetrabiblos]]", "[[phase-3-039-vettius-valens-anthologiae]]"]
+parallels: ["[[phase-3-038-ptolemy-tetrabiblos]]", "[[phase-3-039-vettius-valens-anthologiae]]", "[[astrology-horoscope-twelve-places]]"]
 influenced-by: ["[[phase-1-019-enuma-anu-enlil]] (the Babylonian celestial-omen and zodiacal substrate)", "the Nechepso–Petosiris Egyptian-Hellenistic charter corpus", "earlier Hellenistic technical astrology"]
-influences: ["[[phase-3-041-yavanajataka]] (Dorothean material reached India as part of the Greek astrological transmission)", "Māshāʾallāh ibn Atharī and the early ʿAbbāsid astrologers", "[[al-kindi]] and the Arabic electional-and-horary tradition", "[[tradition-western-astrology]] (electional/horary doctrine descends substantially from Dorotheus)", "medieval Latin astrology (via the Arabic)"]
+influences: ["[[phase-3-041-yavanajataka]] (Dorothean material reached India as part of the Greek astrological transmission)", "[[mashallah-ibn-athari]] and the early ʿAbbāsid astrologers", "[[abu-mashar-al-balkhi]] (the systematization through which Dorothean doctrine reaches Latin Europe)", "[[al-kindi]] and the Arabic electional-and-horary tradition", "[[tradition-western-astrology]] (electional/horary doctrine descends substantially from Dorotheus)", "medieval Latin astrology (via the Arabic)"]
 deities-mentioned: ["[[utu-shamash]]", "[[nanna-sin]]"]
 events-context: ["the early Roman Empire (original); the Sasanian Pahlavi translation movement (3rd–7th c.); the ʿAbbāsid Greek-to-Arabic translation movement (8th–9th c.)"]
 status: "full"

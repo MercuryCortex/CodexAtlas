@@ -16,11 +16,11 @@ script: "Devanāgarī (later mss); the tradition is Sanskritic"
 region: "Western India (Gujarat / the Kṣatrapa realm)"
 city-of-origin: "the Western Kṣatrapa milieu (Ujjain / the Gujarat coast)"
 authorship: "attributed — versified Sanskrit text ascribed to Sphujidhvaja; said to render an earlier prose Sanskrit work by Yavaneśvara ('Lord of the Greeks', c. 149/150 CE), itself adapting Greek (yavana) astrological material"
-key-figures: []
+key-figures: ["[[varahamihira]] (the 6th-c. systematizer of the Greek-derived horā stratum this text introduces)", "[[dorotheus-of-sidon]]", "[[ptolemy-astronomer]]"]
 themes: ["[[divinatory-omen-reading]]", "[[microcosm-macrocosm]]", "[[wisdom-as-cosmic-order]]"]
-parallels: ["[[phase-3-038-ptolemy-tetrabiblos]]", "[[phase-3-040-dorotheus-carmen-astrologicum]]"]
+parallels: ["[[phase-3-038-ptolemy-tetrabiblos]]", "[[phase-3-040-dorotheus-carmen-astrologicum]]", "[[astrology-horoscope-twelve-places]]"]
 influenced-by: ["Hellenistic Greek horoscopic astrology (the *yavana* — 'Ionian/Greek' — source material; the Greek-derived technical vocabulary is the decisive evidence)", "[[tradition-western-astrology]] (the Hellenistic synthesis is the transmitted source)", "indigenous Vedic *nakṣatra* (lunar-mansion) astronomy, into which the Greek zodiacal system is grafted"]
-influences: ["Varāhamihira (the 6th-c. *Bṛhajjātaka* and the wider classical *jyotiṣa* synthesis build on this Greek-derived horā astrology)", "[[tradition-jyotisha-indian-astrology]] (the entire horoscopic branch of Indian astrology)", "later Sanskrit *horā* literature"]
+influences: ["[[varahamihira]] (the 6th-c. [[phase-4-111-varahamihira-brihajjataka|*Bṛhajjātaka*]] and the wider classical *jyotiṣa* synthesis build on this Greek-derived horā astrology)", "[[tradition-jyotisha-indian-astrology]] (the entire horoscopic branch of Indian astrology)", "later Sanskrit *horā* literature"]
 deities-mentioned: []
 events-context: ["the Western Kṣatrapa period of Indo-Greek and Indo-Scythian cultural contact in western India (1st–3rd c. CE)"]
 status: "full"

@@ -9,8 +9,21 @@ region: "Khwarezm (modern Uzbekistan); later Ghazni (Afghanistan)"
 date-born: 973
 date-died: 1048
 historicity: "documented"
-texts-authored: ["*Kitāb al-Hind* (Book of India, ~1017–1030) — the most comprehensive Arabic account of Indian philosophy, religion, mathematics, and astronomy produced before the modern era", "*Taḥqīq mā li-l-Hind* (Verification of What Pertains to India)", "*Qānūn al-Masʿūdī* (astronomical compendium)", "*Kitāb al-Āthār al-Bāqiyah* (Chronology of Ancient Nations)"]
+texts-authored: ["*Kitāb al-Hind* (Book of India, ~1017–1030) — the most comprehensive Arabic account of Indian philosophy, religion, mathematics, and astronomy produced before the modern era", "*Taḥqīq mā li-l-Hind* (Verification of What Pertains to India)", "*Qānūn al-Masʿūdī* (astronomical compendium)", "*Kitāb al-Āthār al-Bāqiyah* (Chronology of Ancient Nations)", "***Kitāb al-Tafhīm li-awāʾil ṣināʿat al-tanjīm*** (*Book of Instruction in the Elements of the Art of Astrology*, 1029) — parallel Arabic and Persian versions, ~530 questions and answers running from geometry and arithmetic through astronomy, geography and the astrolabe to the full astrological apparatus; the most complete single-volume statement of the medieval technical system"]
+astrology-apparatus: ["[[astrology-horoscope-twelve-places]]", "[[astrology-planetary-dignities]]", "[[astrology-aspect-doctrine]]", "[[astrology-lots-and-parts]] (the *Tafhīm* tabulates roughly a hundred lots — the high-water mark of their proliferation)", "[[astrology-great-conjunctions-mundane]]"]
+key-figures-engaged: ["[[varahamihira]] (read and cited directly in the *Kitāb al-Hind*)", "[[abu-mashar-al-balkhi]]", "[[mashallah-ibn-athari]]", "[[ptolemy-astronomer]]"]
 status: "stub"
+cross-tradition-edges:
+  - target: astronomy-brahmasphutasiddhanta
+    type: attested-in
+    source: "Sachau, E. C. (trans.) 1888 *Alberuni's India* Trübner; Pingree, D. 1983 'Brahmagupta, Balabhadra, Pṛthūdaka and al-Bīrūnī' Journal of the American Oriental Society 103: 353-360; Plofker, K. 2009 *Mathematics in India* Princeton UP ch. 8"
+    source-tier: "T1"
+    notes: "The point at which the Arabic reception of Indian astronomy stops being second-hand and becomes direct textual scholarship. Al-Bīrūnī learned Sanskrit, read Brahmagupta in the original, and quotes and argues with him at length in the *Kitāb al-Hind* (c. 1030) — including a famous passage rebuking Brahmagupta for writing against his own knowledge on eclipse theory in deference to popular religion. He also produced an Arabic version of Brahmagupta's later handbook, the *Khaṇḍakhādyaka*, known in Arabic as the *Zīj al-Arkand*. Two and a half centuries after the Sindhind translation, the same Indian source is being read rather than relayed."
+  - target: astronomy-zij-al-sindhind
+    type: attested-in
+    source: "Sachau 1888 *Alberuni's India*; Pingree, D. 1970 'The Fragments of the Works of al-Fazārī' JNES 29: 103-123; Kennedy, E. S. 1956 'A Survey of Islamic Astronomical Tables' TAPS 46/2"
+    source-tier: "T1"
+    notes: "Al-Bīrūnī is one of the principal witnesses for the 771/773 Baghdad transmission itself — much of what is known about al-Fazārī's lost *Zīj al-Sindhind al-kabīr* and about which Sanskrit text underlay it comes from his testimony, and Pingree's reconstruction of the fragments depends on him. He is simultaneously a participant in the tradition and its earliest serious historian."
 refs:
   - title: "Alberuni's India"
     author: "Sachau, Edward C. (trans.)"
@@ -24,7 +37,21 @@ refs:
     publisher: "Oriens"
     type: "article"
     tier: 2
-tags: [person, islam, india, medieval, philosopher, scholar, transmission, al-biruni, central-asia]
+  - title: "The Book of Instruction in the Elements of the Art of Astrology (Kitāb al-Tafhīm), Arabic facsimile with English translation"
+    author: "Wright, R. Ramsay (trans.)"
+    year: 1934
+    publisher: "Luzac & Co., London"
+    type: "primary-translation"
+    tier: 1
+    notes: "The standard English rendering of al-Bīrūnī's astrological manual — the fullest surviving single-volume account of the medieval technical apparatus."
+  - title: "'Al-Bīrūnī' (biographical and scientific survey)"
+    author: "Kennedy, E. S."
+    year: 1970
+    publisher: "Dictionary of Scientific Biography, vol. 2, Charles Scribner's Sons"
+    type: "encyclopedia"
+    tier: 1
+    notes: "The standard survey of al-Bīrūnī's exact-scientific output, including the astrological works and his relation to the astrologers of his day."
+tags: [person, islam, india, medieval, philosopher, scholar, transmission, al-biruni, central-asia, astrology, islamic-astrology, kitab-al-tafhim, astral-sciences]
 ---
 
 # Al-Biruni

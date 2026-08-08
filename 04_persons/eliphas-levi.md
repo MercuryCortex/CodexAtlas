@@ -15,6 +15,19 @@ originator-of: ["**the Sabbatic Goat Baphomet image** (1854) — the iconic goat
 events-participated: ["Catholic seminary studies (~1825–1836); expelled before ordination", "1840s French socialist-utopian milieu (associated with the Saint-Simonian and Fourierist movements)", "imprisoned 1841 and 1846 for revolutionary-pamphlet activity", "post-1851 turn away from political radicalism toward Hermetic-occult writing", "extensive 1850s–1870s correspondence with continental and English Hermetic-and-Masonic circles"]
 mentioned-in: ["**Helena Petrovna Blavatsky** (*Isis Unveiled* 1877, *The Secret Doctrine* 1888) — extensive citation", "**Albert Pike** (*Morals and Dogma* 1871) — Scottish Rite Masonic engagement", "**Order of the Golden Dawn** founders (Mathers, Westcott, Crowley) — foundational influence", "modern Western-esoteric scholarship (Hanegraaff, McIntosh, Faivre)"]
 influences: ["[[tradition-hermetic-order-golden-dawn]]", "[[samuel-liddell-macgregor-mathers]]", "[[arthur-edward-waite]] (English translator — The Mysteries of Magic 1886; Transcendental Magic 1896)", "[[papus]]"]
+connects-to:
+  - target: "[[comte-de-mellet]]"
+    relation: "priority — the tarot ↔ Hebrew-alphabet correspondence Lévi is popularly credited with originating was first published by the comte de Mellet in 1781, seventy-three years before Dogme et rituel. Lévi systematized it; he did not invent it"
+    source: "Decker, Depaulis & Dummett 1996 *A Wicked Pack of Cards* (Duckworth / St. Martin's); Decker & Dummett 2002 *A History of the Occult Tarot 1870–1970*; Farley 2009 *A Cultural History of Tarot* (I.B. Tauris)"
+    source-tier: "T1"
+  - target: "[[tarot-divination-system]]"
+    relation: "systematizer — Dogme et rituel de la haute magie (1854–1856) welds the 22 trumps to the 22 Hebrew letters and the 22 paths of the sefirotic tree, producing the 'portable Kabbalah' that organizes every later occult tarot system"
+    source: "Decker & Dummett 2002; Hanegraaff 2012 *Esotericism and the Academy* (Cambridge UP); Farley 2009. The correspondence has no basis in the 15th-c. Italian pack or in pre-modern Kabbalah — it is a documented 19th-c. construction on an 18th-c. proposal"
+    source-tier: "T1"
+  - target: "[[sefirot-tree-of-life]]"
+    relation: "iconographic-borrowing — takes a live Jewish mystical diagram into a French occult system as the organizing armature of the tarot"
+    source: "Lévi 1854–1856 *Dogme et rituel de la haute magie*; documented as a 19th-c. borrowing by Decker & Dummett 2002 and Hanegraaff 2012"
+    source-tier: "T1"
 status: "metadata"
 refs:
   - title: "Eliphas Lévi and the French Occult Revival"
@@ -97,6 +110,7 @@ Lévi is **one of the foundational bridges** between (a) the 19th-c. French Cath
 - **→ Modern Satanism** (Anton LaVey, Satanic Temple) *iconographic-source*.
 
 ## Disputes
+- **Priority on the tarot–Kabbalah correspondence.** Lévi is routinely credited — in popular accounts and in much of the occult literature that descends from him — with discovering or inventing the mapping of the 22 tarot trumps onto the 22 Hebrew letters. He did neither. The mapping was first published by [[comte-de-mellet]] in *Le Monde primitif* vol. 8 (**1781**), alongside [[antoine-court-de-gebelin]]'s Egyptian-origin essay. Lévi's contribution, in *Dogme et rituel* (1854–1856), was to **systematize** de Mellet's proposal — extending it onto the 22 paths of the [[sefirot-tree-of-life]], assigning the suits to the Tetragrammaton and the four Kabbalistic worlds, and attaching his own authority to it. Lévi himself presented the correspondence as an ancient recovered secret; no source of any kind predating 1781 has ever been produced (Decker, Depaulis & Dummett 1996; Decker & Dummett 2002). See [[tarot-divination-system]].
 - **Lévi's actual occult-practical content vs. literary-synthetic content.** Some scholars (Hanegraaff 2012) emphasize the largely-literary character of Lévi's "ceremonial magic" — Lévi himself rarely practiced; he synthesized texts. Other readings (Faivre 1994; McIntosh 2011) treat Lévi as a sincere practitioner.
 - **The exact source of the Sabbatic Goat image.** Lévi credits the inspiration variously to Hammer-Purgstall's Baphomet construction and to medieval-grimoiric demonological iconography. The image is substantially Lévi's own synthesis.
 - **Lévi's relationship to political socialism after 1851.** His turn from socialist activism toward Hermetic occultism is variously read as genuine spiritual conversion, as opportunistic post-1848-failure retreat, or as continuous-underlying-utopianism in changed register.

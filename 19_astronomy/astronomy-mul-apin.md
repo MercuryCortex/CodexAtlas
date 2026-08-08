@@ -41,7 +41,11 @@ syncretic-edges:
     source: "Rochberg 2004; Koch 2005 *Mesopotamian Divination Texts*"
     source-tier: "T1"
     notes: "MUL.APIN sits at the intersection of Mesopotamian *astronomy* + *celestial divination* — the same intellectual class produces astronomical observation data + celestial-omen texts (the *Enūma Anu Enlil* compendium of celestial omens parallels MUL.APIN's astronomical compendium). The bodily-omen tradition of extispicy is the non-celestial sibling-divinatory institution; the two operate side by side in Mesopotamian religious + state institutional life for two millennia."
-status: "metadata"
+  - target: "[[astronomy-babylonian-system-a-b]]"
+    type: "ancestor-of"
+    source: "Rochberg, F. 2004 *The Heavenly Writing* Cambridge UP; Hunger, H. & Pingree, D. 1999 *Astral Sciences in Mesopotamia* Brill; Ossendrijver, M. 2012 *Babylonian Mathematical Astronomy: Procedure Texts* Springer"
+    source-tier: "T1"
+    notes: "What this compendium becomes. MUL.APIN describes — which stars rise when, roughly how long the planets take to return, how to intercalate. Six centuries later the same scribal institution, working from the continuous observational record of the Astronomical Diaries, is *computing* future lunar and planetary positions by step functions and zigzag functions. The intervening stages are documented (the Diaries from -652, the Goal-Year texts, the early 'System Zero' schemes): this is a continuous descent inside one profession, not a break."
 refs:
   - title: "MUL.APIN: An Astronomical Compendium in Cuneiform"
     author: "Hunger, Hermann & Pingree, David"

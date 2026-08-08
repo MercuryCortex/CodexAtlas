@@ -37,6 +37,11 @@ syncretic-edges:
     source: "Rochberg 1998; Pingree 1997 *From Astral Omens to Astrology* IsIAO"
     source-tier: "T1"
     notes: "The horoscopic astrology of the Hellenistic world (which becomes Western astrology) is built on the Babylonian zodiac as its mathematical substrate. The earliest preserved horoscopes are Babylonian (Rochberg 1998); the Greek horoscopic tradition is a re-elaboration of the Babylonian framework. (single-bracketed pending hellenistic-astrology node creation)"
+  - target: "[[astronomy-babylonian-system-a-b]]"
+    type: "constituent-of"
+    source: "Rochberg, F. 1998 *Babylonian Horoscopes* American Philosophical Society; Britton, J. P. 2010 'Studies in Babylonian Lunar Theory: Part III' Archive for History of Exact Sciences 64; Ossendrijver, M. 2012 *Babylonian Mathematical Astronomy: Procedure Texts* Springer"
+    source-tier: "T1"
+    notes: "The two innovations are contemporary and mutually necessary. System A's step functions are defined on *arcs of the zodiac* — the Sun advances at one rate through one zodiacal arc and another rate through the complementary arc — which is only possible once the ecliptic has been made a uniform mathematical division of twelve equal 30° signs rather than a belt of unequal constellations. The zodiac is the coordinate frame the ephemerides are written in; the ephemerides are why a uniform frame was needed."
 status: "metadata"
 refs:
   - title: "Babylonian Horoscopes"

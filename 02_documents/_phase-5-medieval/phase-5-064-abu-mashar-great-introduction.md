@@ -16,9 +16,9 @@ script: "Arabic"
 region: "Abbasid Iraq"
 city-of-origin: "Baghdad"
 authorship: "known — Abū Maʿshar al-Balkhī (Latin Albumasar, 787–886), the most influential astrologer of the Islamic world, originally from Balkh (Khurasan), active at the Abbasid court in Baghdad"
-key-figures: []
+key-figures: ["[[abu-mashar-al-balkhi]]", "[[mashallah-ibn-athari]] (the conjunction doctrine Abū Maʿshar systematizes)", "[[umar-ibn-al-farrukhan-al-tabari]]", "[[al-kindi]]"]
 themes: ["[[divinatory-omen-reading]]", "[[microcosm-macrocosm]]", "[[wisdom-as-cosmic-order]]"]
-parallels: ["[[phase-3-038-ptolemy-tetrabiblos]]", "[[phase-3-040-dorotheus-carmen-astrologicum]]"]
+parallels: ["[[phase-3-038-ptolemy-tetrabiblos]]", "[[phase-3-040-dorotheus-carmen-astrologicum]]", "[[astrology-horoscope-twelve-places]]"]
 influenced-by: ["[[phase-3-038-ptolemy-tetrabiblos]] (the Arabic *Kitāb al-Arbaʿa*)", "[[phase-3-040-dorotheus-carmen-astrologicum]] (the Arabic *Carmen*)", "[[al-kindi]] (the Baghdad falsafa engagement with the stars)", "Aristotelian natural philosophy (especially the *De generatione et corruptione* on the celestial causation of change in the sublunary world)", "[[phase-1-019-enuma-anu-enlil]] (the ultimate Mesopotamian substrate)"]
 influences: ["12th-century Latin Europe (translated twice — by John of Seville, 1133, and by Hermann of Carinthia, 1140 — as the *Introductorium maius*)", "Latin scholastic natural philosophy (a principal channel by which Aristotle's physics of celestial causation re-entered the West — Lemay 1962)", "[[tradition-western-astrology]]", "Renaissance astrology"]
 deities-mentioned: ["[[utu-shamash]]", "[[nanna-sin]]"]

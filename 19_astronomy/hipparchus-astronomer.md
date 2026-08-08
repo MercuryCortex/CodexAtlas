@@ -33,7 +33,11 @@ syncretic-edges:
     source: "Pingree 1971 'On the Greek Origin of the Indian Planetary Model' JHA 2; Pingree 1981 *Jyotihśāstra*"
     source-tier: "T1"
     notes: "Hipparchus's chord function (the geometric primitive for spherical-astronomical computation) is the Hellenistic predecessor of the Indian *jyā* / half-chord = sine function tabulated in Aryabhata's *Āryabhaṭīya*. The transmission runs Greek-chord → Indian-half-chord (= sine) → Arabic *jiba* → Latin *sinus* — one of the most-cited examples of cross-tradition technical-vocabulary transmission."
-status: "metadata"
+  - target: "[[astronomy-babylonian-system-a-b]]"
+    type: "heir-of"
+    source: "Toomer, G. J. 1988 'Hipparchus and Babylonian Astronomy' in *A Scientific Humanist: Studies in Memory of Abraham Sachs*; Neugebauer, O. 1975 *A History of Ancient Mathematical Astronomy* Springer Part I + III; Jones, A. 1991 'The Adaptation of Babylonian Methods in Greek Numerical Astronomy' Isis 82: 441-453"
+    source-tier: "T1"
+    notes: "Reciprocal of the Babylonian wire, and the specific mechanism behind it. Hipparchus works with Babylonian *numbers*: the System B mean synodic month of 29;31,50,8,20 days, the 223-month eclipse period, and the 251-synodic-to-269-anomalistic month relation. None of these could have been derived from the short Greek observational record; they require the centuries-long Babylonian baseline. Toomer 1988 is the standard demonstration that Hipparchus had direct access to Babylonian material. Hipparchus is the join: Babylonian arithmetic entering Greek geometry."
 refs:
   - title: "Hipparchus"
     author: "Toomer, G. J."

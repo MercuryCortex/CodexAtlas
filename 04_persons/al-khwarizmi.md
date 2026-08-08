@@ -29,6 +29,16 @@ tags:
   - transmission
 
 cross-tradition-edges:
+  - target: astronomy-zij-al-sindhind
+    type: ancient-identification
+    source: "Neugebauer, O. 1962 *The Astronomical Tables of al-Khwārizmī* Kgl. Danske Videnskabernes Selskab; Suter, H. 1914 *Die astronomischen Tafeln des Muhammed ibn Mūsā al-Khwārizmī* Copenhagen; Kennedy, E. S. 1956 'A Survey of Islamic Astronomical Tables' TAPS 46/2"
+    source-tier: "T1"
+    notes: "His astronomical work, now a node in its own right — and the clearest single object in the Sanskrit-to-Arabic-to-Latin chain. Three traditions are stacked inside it: Indian mean motions from the Sindhind translation of the 770s, Ptolemaic equation structure, and Sasanian chronology from the *Zīj al-Shāh*. The Arabic original is lost; the text survives only as Adelard of Bath's Latin translation (c. 1126) of Maslama al-Majrīṭī's Córdoban recension — so the book reaches us solely because Latin Europe wanted it."
+  - target: astronomy-brahmasphutasiddhanta
+    type: heir-of
+    source: "Pingree, D. 1970 'The Fragments of the Works of al-Fazārī' JNES 29: 103-123; Plofker, K. 2009 *Mathematics in India* Princeton UP ch. 8; Sachau, E. C. (trans.) 1888 *Alberuni's India* Trübner"
+    source-tier: "T1"
+    notes: "The named Sanskrit source-tradition, now a node. Arabic sources report that in 771/773 an Indian delegation reached al-Manṣūr's court with a Sanskrit astronomical work, translated by al-Fazārī and Yaʿqūb ibn Ṭāriq as the *Zīj al-Sindhind al-kabīr*; al-Bīrūnī identifies the source with Brahmagupta's *Brāhmasphuṭasiddhānta* and the transmitted parameters are Brāhmapakṣa. Pingree allows that the exact exemplar may have been another work of that school — the school is certain, the book probable."
   - target: mathematics-house-of-wisdom
     type: member-of
     note: Al-Khwarizmi worked at the House of Wisdom under Caliph al-Ma'mun (r. 813–833 CE) — the intellectual center of the Abbasid Caliphate's translation movement. He represents the House of Wisdom's defining achievement: synthesizing Greek, Indian, Persian, and Babylonian mathematical traditions into a new synthetic science. The institution funded and protected his work; he was its most consequential mathematician.

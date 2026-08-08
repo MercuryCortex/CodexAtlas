@@ -31,12 +31,24 @@ key-traditions:
 related-systems:
   - "[[extispicy-mesopotamian]] (the entrails-omen partner-tradition; bodily-omen reading)"
   - "[[oneiromancy-cross-tradition]] (the dream-omen partner-tradition)"
-  - "`augury-roman-bird-omens` (cross-tradition parallel — institutional terrestrial-omen reading)"
+  - "[[augury-roman-bird-omens]] (cross-tradition parallel — institutional terrestrial-omen reading)"
 hub-edges:
   - target: "divinatory-omen-reading"
     type: "principal-canonical-corpus"
-    source: "The *Šumma ālu* series is the most-systematic + most-comprehensive canonical omen-compendium surviving from the ancient Near East — the principal corpus for the cross-tradition study of conditional-omen reading"
-status: "metadata"
+    source: "Freedman 1998–2017 *If a City Is Set on a Height* (Penn Museum, 3 vols); Koch-Westenholz 1995 *Mesopotamian Astrology* (Museum Tusculanum); Bottéro 1987 / 1992 *Mesopotamia: Writing, Reasoning, and the Gods* (U Chicago Press) — the *Šumma ālu* series is the most systematic and most comprehensive canonical omen-compendium surviving from the ancient Near East, and the principal corpus for the cross-tradition study of conditional-omen reading"
+    source-tier: "T1"
+    notes: "Citation added 2026-08-08 — this edge previously carried a bare assertion in the `source:` slot with no reference and no tier, which defaulted it silently to T1 in the build. CODEX §II requires source + tier on every wire."
+  - target: "extispicy-mesopotamian"
+    type: "constituent-of"
+    source: "Koch-Westenholz 1995; Bottéro 1987 / 1992; Freedman 1998–2017"
+    source-tier: "T1"
+    notes: "Internal wire, not cross-tradition. *Šumma ālu* (terrestrial phenomena) and *Bārûtu* (entrails) are two series of one canonical omen corpus, consulted by specialists of the same scribal establishment — *āšipu* and *bārû* respectively. Reciprocal of the extispicy node's edge."
+  - target: "haruspicy-etruscan-roman"
+    type: "substrate-influence"
+    source: "Bottéro 1987 / 1992; Burkert 1992 *The Orientalizing Revolution* (Harvard UP); Jeyes 1989 *Babylonian Liver Omens*; Cicero *De Divinatione* for the Roman testimony of Etruscan origin"
+    source-tier: "T1"
+    notes: "Mechanism: the whole Mesopotamian omen-institution — its conditional protasis-apodosis form, its topical organisation, and its portable teaching-objects — is the substrate on which Etruscan and then Roman institutional divination is built. The liver-omen branch (*Bārûtu* → Piacenza Liver) is the best-documented single strand; see [[extispicy-mesopotamian]]."
+status: "full"
 refs:
   - title: "If a City Is Set on a Height: The Akkadian Omen Series Šumma Alu ina Mêlê Šakin (3 vols)"
     author: "Freedman, Sally M."
@@ -112,7 +124,7 @@ This is one of the headline cross-tradition findings in the comparative history 
 
 - **Hittite + Hurrian omen-texts** (~-1500-1200) — the Hattuša archives include omen-texts directly modeled on Babylonian originals; the Hittites adapted the Mesopotamian system for their own use
 - **Aramaean + Phoenician omen-texts** (~-900-500) — fragmentary; show continued Mesopotamian influence
-- **Etruscan + Roman augury + haruspicy** — the *Šumma ālu* bird-and-animal sections + the *Bārûtu* liver-omens are documented (Bottéro, Wardle) as parts of the chain that ends in Etruscan augury + Roman haruspicy (see [[haruspicy-etruscan-roman]] + `augury-roman-bird-omens`)
+- **Etruscan + Roman augury + haruspicy** — the *Šumma ālu* bird-and-animal sections + the *Bārûtu* liver-omens are documented (Bottéro, Wardle) as parts of the chain that ends in Etruscan augury + Roman haruspicy (see [[haruspicy-etruscan-roman]] + [[augury-roman-bird-omens]])
 - **Hellenistic astrology** — the *Enūma Anu Enlil* celestial-omen series is the documented source-stream for Hellenistic astrology (Rochberg 1998 *Babylonian Horoscopes*; Furley + Gysembergh 2015 — Greek extispicy preserves direct Mesopotamian transmission)
 - **Hebrew Bible** — multiple omen-references (the *teraphim*, Joseph's silver-cup divination, the Urim and Thummim) reflect a Levantine omen-cultural milieu shaped by Mesopotamian institutional precedent
 

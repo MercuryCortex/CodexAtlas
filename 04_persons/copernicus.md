@@ -41,6 +41,26 @@ cross-tradition-edges:
   - target: mathematics-house-of-wisdom
     type: heir-of
     note: Copernicus worked with the Arabic-Islamic astronomical tradition that the House of Wisdom had assembled. His De revolutionibus uses Ptolemaic mathematical techniques that reached him through Arabic transmission. Modern scholarship (Noel Swerdlow, George Saliba) has shown that Copernicus borrowed specific mathematical devices from 14th-century Islamic astronomers at the Maragha observatory (al-Tusi's couple, ibn al-Shatir's models) — probably via Jewish intermediaries in Italy. The Copernican revolution has Islamic mathematical roots.
+  - target: al-battani-astronomer
+    type: heir-of
+    source: "Swerdlow, N. M. & Neugebauer, O. 1984 *Mathematical Astronomy in Copernicus's De Revolutionibus* (2 vols.) Springer; Hartner, W. 1970 'al-Battānī' in *Dictionary of Scientific Biography* vol. I; Nallino, C. A. 1899-1907 *Al-Battānī sive Albatenii Opus Astronomicum* Milan"
+    source-tier: "T1"
+    notes: "The DOCUMENTED Arabic inheritance, and the vault's reference case against which the contested Maragha claim should be read. Copernicus cites al-Battānī repeatedly by name in *De revolutionibus* and uses his solar parameters, his precession constant and his year length. The route needs no inference: Arabic zīj (al-Raqqa, c. 900) → Latin *De motu stellarum*, translated by Plato of Tivoli at Barcelona c. 1116 → printed at Nuremberg 1537 → Copernicus's desk. Swerdlow & Neugebauer 1984 reconstruct the borrowings parameter by parameter."
+  - target: astronomy-toledan-tables
+    type: heir-of
+    source: "Chabás, J. & Goldstein, B. R. 2003 *The Alfonsine Tables of Toledo* Kluwer/Springer; Swerdlow & Neugebauer 1984; Gingerich, O. 1993 *The Eye of Heaven: Ptolemy, Copernicus, Kepler* American Institute of Physics"
+    source-tier: "T1"
+    notes: "The numbers he grew up with. Copernicus learned practical astronomy on the Alfonsine Tables as a student at Kraków in the 1490s — the Toledan Tables' successor, printed at Venice in 1483 — and computed with them for years before he had a theory of his own. Those tables carry Indian mean motions via al-Khwārizmī's Sindhind and al-Battānī's Ptolemaic parameters, both re-based at Toledo. His own models were in turn converted to tables by Erasmus Reinhold as the *Prutenic Tables* of 1551, which is how the Copernican system actually reached working astronomers."
+  - target: astronomy-tusi-couple
+    type: heir-of
+    source: "Hartner, W. 1973 'Copernicus, the Man, the Work, and Its History' PAPS 117: 413-422; Swerdlow & Neugebauer 1984; Saliba, G. 2007 *Islamic Science and the Making of the European Renaissance* MIT Press ch. 7; Ragep, F. J. 2007 'Copernicus and his Islamic Predecessors' History of Science 45: 65-81; COUNTER: Di Bono, M. 1995 JHA 26: 133-154; Blåsjö, V. 2014 'A Critique of the Arguments for Maragha Influence on Copernicus' JHA 45: 183-195"
+    source-tier: "T2"
+    notes: "CONTESTED — identity established, channel inferred. The Ṭūsī couple appears in *De revolutionibus* (Book III, for trepidation; Book V, for Mercury) and already in the *Commentariolus*, geometrically identical to al-Ṭūsī's. Hartner 1973 noted that Copernicus's diagram letters correspond to a transliteration of the Arabic letters in al-Ṭūsī's figure. AGAINST: Copernicus never names al-Ṭūsī though he names other Arabic astronomers freely; no Latin *Tadhkira* is known; Di Bono 1995 and Blåsjö 2014 argue independent access or independent rediscovery cannot be excluded, and that a Greek precedent may exist in Proclus. Held at T2 with the rebuttal attached per CODEX §IV."
+  - target: ibn-al-shatir-astronomer
+    type: heir-of
+    source: "Roberts, V. 1957 'The Solar and Lunar Theory of Ibn ash-Shāṭir' Isis 48: 428-432; Kennedy, E. S. & Roberts, V. 1959 'The Planetary Theory of Ibn al-Shāṭir' Isis 50: 227-235; Swerdlow & Neugebauer 1984; Saliba 2007 ch. 7; COUNTER: Blåsjö 2014 JHA 45"
+    source-tier: "T2"
+    notes: "CONTESTED on the same footing. Copernicus's lunar model is mathematically identical to Ibn al-Shāṭir's (Damascus, c. 1350), and so is his Mercury model — established by Roberts 1957 and Kennedy & Roberts 1959, confirmed from the Copernican side by Swerdlow & Neugebauer 1984. What is not established is how it reached him: no Latin translation of the *Nihāyat al-suʾl* is known and Copernicus never names him. Byzantine intermediaries existed (Gregory Chioniades studied at Tabriz c. 1300 and carried Persian astronomy into Greek), and Copernicus studied at Bologna and Padua — but no manuscript has been placed in his hands."
   - target: tradition-neoplatonism
     type: heir-of
     note: Copernicus's aesthetic argument for heliocentrism is Neoplatonic. The Sun as the visible god, ruler and illuminator of the cosmos, is the Neo-Platonic-Pythagorean image of the Good/One at the center radiating being outward. He explicitly cites Marsilio Ficino's solar theology and Hermes Trismegistus (Corpus Hermeticum) in the preface — placing his astronomical revolution in the tradition of Renaissance Neoplatonism and Hermeticism. The heliocentric revolution was partly a religious argument about the Sun's metaphysical centrality.

@@ -47,6 +47,11 @@ syncretic-edges:
     source: "Park 2008; Krisciunas 1992"
     source-tier: "T1"
     notes: "Cheomseongdae (Silla Korea +647), Maragha (Mongol Iran +1259), Samarkand (Timurid Uzbekistan +1424) form a chronological series of major pre-modern Asian state-observatories across 800 years."
+  - target: "[[astronomy-tusi-couple]]"
+    type: "heir-of"
+    source: "Saliba, G. 1994 *A History of Arabic Astronomy* New York UP; Ragep, F. J. 2001 'Freeing Astronomy from Philosophy: An Aspect of Islamic Influence on Science' Osiris 16: 49-71; Sayılı, A. 1960 *The Observatory in Islam* Turkish Historical Society"
+    source-tier: "T1"
+    notes: "The Maragha apparatus is standard equipment at Samarkand, two centuries on. ʿAlī Qushjī — who directed the observatory after al-Kāshī's death and later taught at Istanbul — works with the Ṭūsī couple and pushes its implications further than the Maragha generation did, arguing that astronomy need not be constrained by Aristotelian physics at all. Ragep 2001 treats that argument as a real precondition for what European astronomy later permitted itself."
 status: "metadata"
 refs:
   - title: "A More Complete Analysis of the Errors in Ulugh Beg's Star Catalogue"

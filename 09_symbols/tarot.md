@@ -12,11 +12,11 @@ variants:
   - id: "tarocchi-card-game"
     description: "The **original tarot**: a card game (*gioco dei tarocchi*) played in northern Italy from c. 1440 onward. The earliest surviving deck is the **Visconti-Sforza** (Milan, c. 1440–1450), hand-painted on vellum for the Visconti and Sforza ducal families. The game uses a standard playing card deck (4 suits) with an added trump (*trionfi*) suit of allegorical cards — The Fool, The Magician, The Popess, etc. The game remains actively played in France (*tarot*), Germany (*Tarock*), and Italy (*tarocchi*) today."
   - id: "divinatory-etteilla-tarot"
-    description: "**Etteilla** (Jean-Baptiste Alliette, 1738–1791): the first professional cartomancer, who in 1788 published the first deck explicitly designed for divination. Etteilla reorganized the Arcana sequence and added specific divinatory meanings to each card, establishing the template for all subsequent divinatory tarot. The divinatory tarot is an **18th-century French invention**, not an ancient tradition."
+    description: "**Etteilla** (Jean-Baptiste Alliette, 1738–1791): the first documented professional cartomancer, who published card divination with an ordinary 32-card piquet pack in **1770** — eleven years before Court de Gébelin's essay — extended the method to tarot in 1783–1785, and issued the *Livre de Thot* (c. 1788–1789), the first deck explicitly designed for divination. He reorganized the Arcana sequence and fixed divinatory meanings upright and reversed, establishing the template for all subsequent divinatory tarot. The divinatory tarot is an **18th-century French invention**, not an ancient tradition — and it began with the cheapest deck in France, not with the tarot. See [[etteilla-jean-baptiste-alliette]] and [[divination-cartomancy-playing-card]]."
   - id: "egyptian-origin-myth"
     description: "**Antoine Court de Gébelin** (*Le Monde Primitif*, 1781): the FIRST claim that tarot contains encoded ancient Egyptian wisdom — the Major Arcana = the 22 pages of the lost 'Book of Thoth,' smuggled out of Egypt by Romany gypsies. This claim is **historically false** (Egypt had no such cards; playing cards are attested in China from the 9th c. CE and reached Europe via the Islamic world in the 14th c.). But it is massively influential: it launched the entire esoteric tarot tradition and is the source of the 'Egyptian tarot' narrative that persists in popular occultism."
   - id: "kabbalistic-tarot-levi"
-    description: "**Eliphas Lévi** (*Dogme et Rituel de la Haute Magie*, 1854–1856): the Kabbalistic-tarot synthesis. Lévi mapped the **22 Major Arcana** to the **22 Hebrew letters** (Aleph–Tav) and to the **22 paths** on the Kabbalistic **Tree of Life**. This correspondence — whether Lévi invented it or discovered a genuinely earlier tradition — became the organizing logic of all subsequent Western esoteric tarot. The mapping is elegant: 22 cards = 22 letters = 22 paths. If the Tree of Life is the diagram of creation, then the Major Arcana is the same diagram as a portable card sequence."
+    description: "**Eliphas Lévi** (*Dogme et Rituel de la Haute Magie*, 1854–1856): the Kabbalistic-tarot synthesis. Lévi mapped the **22 Major Arcana** to the **22 Hebrew letters** (Aleph–Tav) and to the **22 paths** on the Kabbalistic **Tree of Life**. The letter-mapping itself was **not his**: it was first published by the [[comte-de-mellet]] in the same 1781 volume of *Le Monde Primitif* that carried Court de Gébelin's Egyptian essay. Lévi extended it onto the sefirotic paths and the Tetragrammaton, and his systematization became the organizing logic of all subsequent Western esoteric tarot. The mapping is elegant — 22 cards = 22 letters = 22 paths — and it is a **dated 18th–19th-century construction**, not an ancient inheritance: no Kabbalistic source before 1781 mentions cards, and the trumps number 22 for reasons of 15th-c. Italian game structure. See [[eliphas-levi]] and [[tarot-divination-system]]."
   - id: "golden-dawn-rider-waite-smith"
     description: "The **Hermetic Order of the Golden Dawn** (founded 1888) elaborated Lévi's system: each Major Arcanum was assigned a Hebrew letter + planet or zodiac sign; each of the 40 Minor Arcana pip cards was assigned an astrological **decan** (one of 36 × 10-degree segments of the zodiac). **A.E. Waite** and **Pamela Colman Smith** (Golden Dawn members) designed the **Rider-Waite-Smith deck** (1909, Rider Company) — the first deck to illustrate all 78 cards including the previously unillustrated pip cards. It is the most influential tarot deck ever published and established the iconic imagery (the Fool as wanderer, the Hanged Man, the Tower, Death, the World) that now defines 'tarot' for most of the world."
   - id: "thoth-tarot-crowley"
@@ -49,6 +49,30 @@ connections:
     type: "systematized-by"
     source: "Papus, Le Tarot des Bohémiens (1889; Eng. 1892/1910) — generally regarded as the first book-length systematization of Lévi's tarot–Kabbalah correspondence (Decker & Dummett 2002)."
     source-tier: T1
+  - target: "visconti-sforza-tarocchi-deck"
+    type: "continuous-development"
+    source: "Dummett 1980 *The Game of Tarot* (Duckworth); Caldwell, Depaulis & Ponzi 2010 *Explaining the Tarot* — the earliest surviving tarot cards, Milan 1440s–1450s; earliest secure documentary reference to *carte da trionfi* is the Ferrara court ledger of 1442"
+    source-tier: T1
+  - target: "antoine-court-de-gebelin"
+    type: "prefiguration-claim"
+    source: "Court de Gébelin 1781 *Le Monde Primitif* vol. 8. REBUTTAL: Dummett 1980; Decker, Depaulis & Dummett 1996 *A Wicked Pack of Cards*"
+    source-tier: T4
+    notes: "⚠️ T4 — popular claim, rejected. The Egyptian *Book of Thoth* origin. No academic defenders; refuted by the 1442 Ferrara record and by the fact that Egyptian script was undeciphered until Champollion in 1822."
+  - target: "comte-de-mellet"
+    type: "scholarly-parallel"
+    source: "de Mellet 1781 *Recherches sur les Tarots*, in Le Monde Primitif vol. 8. DOCUMENTED AS A RETROFIT BY: Decker, Depaulis & Dummett 1996; Decker & Dummett 2002; Farley 2009"
+    source-tier: T4
+    notes: "⚠️ T4 as ancient correspondence; T1-documented as a 1781 construction. The 22-trumps ↔ 22-Hebrew-letters mapping originates here, not with Lévi."
+  - target: "etteilla-jean-baptiste-alliette"
+    type: "continuous-development"
+    source: "Decker, Depaulis & Dummett 1996; Farley 2009 *A Cultural History of Tarot* (I.B. Tauris)"
+    source-tier: T1
+    notes: "First divinatory tarot system (1783–1785) and first deck designed for divination (c. 1788–1789), built on a piquet-pack cartomancy practice he had been running since 1770."
+  - target: "pamela-colman-smith"
+    type: "iconographic-borrowing"
+    source: "Decker & Dummett 2002 *A History of the Occult Tarot 1870–1970*; Kaplan, Greer, O'Connor & Parsons 2018 *Pamela Colman Smith: The Untold Story*"
+    source-tier: T1
+    notes: "The 1909 imagery that now defines the symbol worldwide is Smith's. Her fully pictorial Minor Arcana are the deck's decisive innovation; several designs, notably the Three of Swords, correspond closely to the 15th-c. Sola-Busca pack photographed for the British Museum in 1907."
 status: "metadata"
 refs:
   - title: "The Game of Tarot: From Ferrara to Salt Lake City"
@@ -137,7 +161,7 @@ No documented transmission between Buddhist mandala tradition and the esoteric t
 
 - **The Egyptian-origin myth**: Court de Gébelin (1781) invented this; Etteilla elaborated it; it has no evidentiary basis. The playing card entered Europe from the Islamic world, not Egypt. The claim persists in popular occultism because it is a more glamorous origin story than "14th-century Islamic card game."
 - **Did the tarot encode occult wisdom from the beginning?** Dummett (1980) definitively argues: no. The trump sequence encodes a Renaissance hierarchy of allegorical virtues and temporal powers (Emperor, Pope, etc.) — a cultural statement about social and moral order, not an occult initiation system. The esoteric meaning was projected backward onto the cards by Court de Gébelin and Lévi centuries later.
-- **The Lévi correspondence (22 Arcana = 22 letters)**: Lévi claimed this correspondence was ancient; most scholars (Dummett, Decker) believe Lévi either invented it or adapted it from a very recent oral tradition. The correspondence is elegant and generative, but it is almost certainly an 18th–19th century synthesis, not an ancient secret.
+- **The Lévi correspondence (22 Arcana = 22 letters)**: Lévi claimed the correspondence was ancient. It is not, and the record is unusually precise about it. The letter-mapping was **first published in 1781** by the [[comte-de-mellet]], in the same volume of *Le Monde Primitif* as Court de Gébelin's Egyptian essay; Lévi systematized it seventy-three years later. **No source of any kind predating 1781 links Hebrew letters to cards** (Decker, Depaulis & Dummett 1996; Decker & Dummett 2002). That the French school (Aleph → the Magician) and the Golden Dawn (Aleph → the Fool) produced **incompatible** attribution schemes within the same decade, 1888–1889, is further evidence of construction rather than transmission. The correspondence is elegant, generative, and an 18th–19th century synthesis with named authors and firm dates — not an ancient secret.
 - **Divination validity**: The academic consensus (Dummett) is that tarot divination has no scientifically established validity. The tarot's value as a divinatory tool is psychological and reflective (Carl Jung's concept of synchronicity; the tarot as a projective system that surfaces unconscious content) — not predictive in a literal sense.
 
 ## Cross-symbol edges

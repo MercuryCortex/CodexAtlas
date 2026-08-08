@@ -16,9 +16,9 @@ script: "Greek"
 region: "Roman East"
 city-of-origin: "Antioch (Valens's home; with study travels to Egypt)"
 authorship: "known — Vettius Valens of Antioch (b. 120 CE), a working astrologer who compiled the Anthology from his own practice and teaching"
-key-figures: []
-themes: ["[[divinatory-omen-reading]]", "[[microcosm-macrocosm]]", "[[ascent-of-the-soul]]"]
-parallels: ["[[phase-3-038-ptolemy-tetrabiblos]]", "[[phase-3-005-stoic-foundational-texts]]", "[[phase-3-021-hermetic-corpus-earliest]]"]
+key-figures: ["[[vettius-valens]]", "[[dorotheus-of-sidon]]", "[[ptolemy-astronomer]]"]
+themes: ["[[divinatory-omen-reading]]", "[[microcosm-macrocosm]]", "[[ascent-of-the-soul]]", "[[providence-and-fate]]"]
+parallels: ["[[phase-3-038-ptolemy-tetrabiblos]]", "[[phase-3-005-stoic-foundational-texts]]", "[[phase-3-021-hermetic-corpus-earliest]]", "[[astrology-horoscope-twelve-places]]"]
 influenced-by: ["[[phase-1-019-enuma-anu-enlil]] (the Babylonian celestial-omen and zodiacal substrate)", "the Nechepso–Petosiris pseudepigraphic corpus (the legendary Egyptian charter of Hellenistic astrology, which Valens repeatedly cites as 'the king and the priest')", "earlier Hellenistic technical astrology (Hipparchan astronomy; Dorotheus)", "Stoic fatalism (*heimarmenē*)"]
 influences: ["the later Hellenistic and Byzantine astrological compendia", "[[al-kindi]] and the Arabic astrologers (the *Anthology* was translated into Pahlavi and excerpted in the Arabic tradition)", "[[tradition-western-astrology]]", "modern reconstruction of ancient astronomy (Neugebauer & Van Hoesen used Valens's datable charts to recover Hellenistic computational practice)"]
 deities-mentioned: ["[[utu-shamash]]", "[[nanna-sin]]"]
