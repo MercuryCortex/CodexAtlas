@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19",
+  "generatedAt": "2026-08-08",
   "note": "Top-10 deities by transmission score; heatmap sorted by civilization-lens reach (mention-count lower bound).",
   "lensKeys": [
     "law",
@@ -22,15 +22,15 @@
       "sourced": 12,
       "equiv": 25,
       "cross": 22,
-      "civScore": 110,
+      "civScore": 115,
       "lenses": {
-        "law": 10,
+        "law": 13,
         "phil": 13,
         "math": 13,
         "med": 7,
         "astr": 5,
-        "div": 6,
-        "cal": 5,
+        "div": 7,
+        "cal": 6,
         "mus": 42,
         "alch": 9
       }
@@ -44,15 +44,15 @@
       "sourced": 24,
       "equiv": 3,
       "cross": 12,
-      "civScore": 105,
+      "civScore": 115,
       "lenses": {
-        "law": 15,
+        "law": 21,
         "phil": 24,
         "math": 3,
         "med": 6,
-        "astr": 0,
-        "div": 2,
-        "cal": 7,
+        "astr": 1,
+        "div": 3,
+        "cal": 9,
         "mus": 33,
         "alch": 15
       }
@@ -66,15 +66,15 @@
       "sourced": 1,
       "equiv": 21,
       "cross": 19,
-      "civScore": 98,
+      "civScore": 103,
       "lenses": {
-        "law": 1,
+        "law": 2,
         "phil": 5,
         "math": 8,
         "med": 6,
         "astr": 6,
-        "div": 11,
-        "cal": 2,
+        "div": 14,
+        "cal": 3,
         "mus": 27,
         "alch": 32
       }
@@ -88,15 +88,15 @@
       "sourced": 5,
       "equiv": 29,
       "cross": 27,
-      "civScore": 30,
+      "civScore": 37,
       "lenses": {
-        "law": 1,
+        "law": 2,
         "phil": 0,
         "math": 3,
         "med": 3,
-        "astr": 3,
-        "div": 4,
-        "cal": 2,
+        "astr": 5,
+        "div": 6,
+        "cal": 4,
         "mus": 13,
         "alch": 1
       }
@@ -110,39 +110,17 @@
       "sourced": 8,
       "equiv": 14,
       "cross": 15,
-      "civScore": 25,
+      "civScore": 29,
       "lenses": {
-        "law": 1,
+        "law": 2,
         "phil": 0,
         "math": 5,
         "med": 2,
-        "astr": 0,
+        "astr": 2,
         "div": 4,
-        "cal": 1,
+        "cal": 2,
         "mus": 7,
         "alch": 5
-      }
-    },
-    {
-      "slug": "osiris",
-      "name": "Osiris",
-      "tradition": "Egyptian",
-      "transmissionRank": 4,
-      "transmissionScore": 52.5,
-      "sourced": 4,
-      "equiv": 27,
-      "cross": 22,
-      "civScore": 23,
-      "lenses": {
-        "law": 3,
-        "phil": 0,
-        "math": 1,
-        "med": 1,
-        "astr": 9,
-        "div": 1,
-        "cal": 1,
-        "mus": 4,
-        "alch": 3
       }
     },
     {
@@ -154,17 +132,39 @@
       "sourced": 10,
       "equiv": 12,
       "cross": 18,
-      "civScore": 21,
+      "civScore": 26,
       "lenses": {
-        "law": 4,
+        "law": 6,
         "phil": 3,
         "math": 0,
         "med": 2,
-        "astr": 0,
+        "astr": 2,
         "div": 2,
-        "cal": 5,
+        "cal": 6,
         "mus": 4,
         "alch": 1
+      }
+    },
+    {
+      "slug": "osiris",
+      "name": "Osiris",
+      "tradition": "Egyptian",
+      "transmissionRank": 4,
+      "transmissionScore": 52.5,
+      "sourced": 4,
+      "equiv": 27,
+      "cross": 22,
+      "civScore": 25,
+      "lenses": {
+        "law": 4,
+        "phil": 0,
+        "math": 1,
+        "med": 1,
+        "astr": 10,
+        "div": 1,
+        "cal": 1,
+        "mus": 4,
+        "alch": 3
       }
     },
     {
@@ -176,15 +176,15 @@
       "sourced": 9,
       "equiv": 24,
       "cross": 17,
-      "civScore": 8,
+      "civScore": 10,
       "lenses": {
         "law": 0,
         "phil": 1,
         "math": 2,
         "med": 1,
         "astr": 1,
-        "div": 0,
-        "cal": 2,
+        "div": 1,
+        "cal": 3,
         "mus": 0,
         "alch": 1
       }
@@ -198,15 +198,15 @@
       "sourced": 9,
       "equiv": 20,
       "cross": 18,
-      "civScore": 8,
+      "civScore": 10,
       "lenses": {
         "law": 0,
         "phil": 1,
         "math": 0,
         "med": 0,
         "astr": 0,
-        "div": 2,
-        "cal": 0,
+        "div": 3,
+        "cal": 1,
         "mus": 3,
         "alch": 2
       }
@@ -220,14 +220,14 @@
       "sourced": 8,
       "equiv": 20,
       "cross": 15,
-      "civScore": 1,
+      "civScore": 2,
       "lenses": {
         "law": 0,
         "phil": 0,
         "math": 0,
         "med": 0,
         "astr": 0,
-        "div": 0,
+        "div": 1,
         "cal": 1,
         "mus": 0,
         "alch": 0

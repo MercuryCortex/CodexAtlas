@@ -7,7 +7,14 @@
 //   • methodology + caveats inline
 //   • top unmatched-tradition values (data-hygiene signal)
 //
-// Launched from `✦ user-menu` → Dev → Overview.
+// ⚠️ LAUNCHED FROM: the DEV drawer → "Overview" (bottom-right of the
+// map → DEV → Overview). This comment used to say `✦ user-menu → Dev →
+// Overview`, which is where it lived BEFORE the dev-drawer refactor —
+// and that stale line cost a real search on 2026-08-07 when John could
+// not find this panel and neither could an agent reading this file.
+// The wiring is in src/js/forge/dev-drawer.js (data-dev-panel="overview").
+// IF YOU MOVE A SURFACE, MOVE ITS "how do I get here" LINE IN THE SAME
+// COMMIT — see 00_meta/WHERE-THINGS-LIVE.md.
 // Self-contained overlay. Reuses canonical theme CSS vars
 // (--bg-1, --text-1, --gold, --mono, etc) per SEVERITY DOGMA.
 // ESC + click-outside + close-button all close.

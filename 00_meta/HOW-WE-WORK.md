@@ -13,6 +13,12 @@
 > `https://codexatlas.org`; committed-but-not-deployed work is invisible
 > to him, and an un-bumped `?v=` in `index.html` ships nothing.
 
+> **CAN'T FIND A SURFACE? → `00_meta/WHERE-THINGS-LIVE.md`** (one screen).
+> Every user-reachable surface, its route, and the file that owns it. Added
+> 2026-08-07 after the DEV Overview took a long search to locate because its
+> own header still named the menu it lived in before a refactor. **If you
+> move a surface, update its route line in the same commit.**
+>
 > **Read this and ONLY this on cast.** Everything else is reference, loaded on demand. This file replaces the ~100 KB pre-flight burden of reading ONTOLOGY + CORE-THEMES + PROTOCOL + LANES + claim file *before doing anything*.
 >
 > **You still read the heavier docs — just only when you actually need them**, not as a pre-flight tax on every cast. The "When to read" pointers at the bottom tell you which doc to pull when.
