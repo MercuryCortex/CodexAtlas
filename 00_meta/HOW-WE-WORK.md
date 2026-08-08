@@ -161,6 +161,7 @@ Numbered content folders under the vault root. Each = one lens. Each holds nodes
 | 24 | `24_pharmacology/` | `substance` |
 | 25 | `25_divination/` | `divination-system` |
 | 26 | `26_calendars/` | `calendar-system` |
+| 30 | `30_astrology/` ⭐ new 2026-08-08 | `astrology` |
 
 **Boundary cases between lenses are documented in each folder's `README.md`.** Read the README of the lens you're about to write into.
 

@@ -52,6 +52,18 @@ NODE_DIRS = {
     "attire":            ["27_attire"],
     "exchange-network":  ["28_exchange_networks"],
     "technology":        ["29_technology"],
+    # ── 30_astrology PROMOTED 2026-08-08 ────────────────────────────
+    # NOT a new decision — the 2026-05-18 rationale §2.3 deferred this
+    # folder with an explicit promotion path ("if astrology accumulates
+    # enough volume to warrant its own folder later, promote it then.
+    # Don't pre-create the folder"), on John's own direction that
+    # "astronomy should be astronomy, astrology should be astrology".
+    # The volume arrived. Rationale: ONTOLOGY-RATIONALE-2026-08-08.md.
+    # ⚠️ THIS LENS HOLDS ASTROLOGY-PROPER ONLY — the zodiac, the houses,
+    # aspects, decans, techniques and systems. Astrologers stay in
+    # 04_persons and their texts stay in 02_documents; Ptolemy does not
+    # move because he wrote the Tetrabiblos. Membership is singular.
+    "astrology":         ["30_astrology"],
     # Phase TL-1-adjacent (2026-05-24) — seed the consciousness lens.
     # Per AUDIT/consciousness-lens-spec-2026-05-23.md §2: ~55-figure
     # catalog includes consciousness-figures, csr-findings, contemplative-
